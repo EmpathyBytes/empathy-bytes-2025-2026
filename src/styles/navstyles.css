@@ -1,0 +1,187 @@
+:root {
+    --tr: 0.25s;
+    --navbar-top-height: 6rem;
+    --logo-top-height: 7.5rem;
+    --navbar-scrolled-height: 4rem;
+    --logo-scrolled-height: 4.5rem;
+  
+    --color-techgold: #b3a369;
+    --color-navyblue: #003057;
+    --color-greymatter: #54585a;
+    --color-pimile: #d6dbd4;
+    --color-diploma: #f9f6e5;
+    --color-buzzgold: #eaaa00;
+  }
+  
+  html,
+  body {
+    font-family: "Segoe UI Variable Display", "Segoe UI", -apple-system, Roboto,
+      sans-serif, serif;
+    margin: 0;
+    overflow-x: hidden;
+  }
+  
+  /* Desktop classes will disappear at breakpoint
+     and vice versa for mobile
+  
+     Currently set at 750px, but can change in the future
+     */
+  .desktop {
+    display: block;
+  }
+  .mobile {
+    display: none;
+  }
+  @media (max-width: 750px) {
+    .desktop {
+      display: none;
+    }
+    .mobile {
+      display: block;
+    }
+  }
+  
+  /* navbar stuff */
+  .navbar-outer {
+    z-index: 10;
+    width: 100%;
+    display: flex;
+    position: fixed;
+    top: 0;
+  
+    transition: var(--tr);
+    height: var(--navbar-top-height);
+  
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+  }
+  
+  .navbar-background {
+    background: var(--color-navyblue);
+  }
+  
+  .scrolled.navbar-outer {
+    height: var(--navbar-scrolled-height);
+    background: var(--color-navyblue);
+  }
+  
+  .navbar-link {
+    text-decoration: none;
+    color: white; /* Change this to proper color in the future */
+    font-size: 1.25rem;
+  }
+  
+  .navbar-selected {
+    font-weight: bold;
+  }
+  
+  .nav-container {
+    display: grid;
+    width: 100%;
+    transition: var(--tr);
+    height: var(--navbar-top-height);
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+  }
+  
+  .scrolled.nav-container {
+    height: var(--navbar-scrolled-height);
+  }
+  
+  .navbar-grid-left {
+    grid-column: 1;
+    transition: var(--tr);
+    height: var(--navbar-top-height)
+  }
+  
+  /* This style needs to exist so that the text buttons stay vertically centered */
+  .scrolled.navbar-grid-left{
+    height: var(--navbar-scrolled-height)
+  }
+  
+  .navbar-grid-right {
+    grid-column: 2;
+    display: flex;
+    justify-content: space-evenly;
+  }
+  
+  .logo {
+    transition: var(--tr);
+    margin-left: 2rem;
+    margin-top: 1rem;
+    height: var(--logo-top-height);
+  }
+  
+  .scrolled.logo {
+    height: var(--logo-scrolled-height);
+    margin-top: 0.5rem;
+  }
+  
+  .navbar-gradient {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: calc(var(--navbar-top-height) * 1.25);
+  
+    background: linear-gradient( #000000aa 0%, transparent 100%);
+    transition: var(--tr);
+    opacity: 100%;
+  }
+  
+  .scrolled.navbar-gradient {
+    height: var(--navbar-scrolled-height); /* remove this if it doesn't do anything */
+    opacity: 0;
+  }
+  
+  .navbar-link-bar {
+    margin-top: 1px;
+    background: white;
+    border-radius: 1px;
+    width: 100%;
+    height:2px;
+    transition: var(--tr);
+    transform: scale3d(0, 1, 1);
+    opacity: 50%;
+  }
+  
+  .navbar-link:hover .navbar-link-bar {
+    transform: scale3d(1, 1, 1);
+    opacity: 100%;
+  }
+  
+  .row {
+    display: flex;
+  }
+  
+  .column {
+    flex: 50%;
+  }
+  
+  textarea {
+    width: 100%;
+    height: 150px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    font-size: 16px;
+    resize: none;
+  }
+  
+  button {
+    background-color: #003057;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    border-radius: 50px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-right: 16px;
+  }
+  
+  

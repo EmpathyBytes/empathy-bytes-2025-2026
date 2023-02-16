@@ -1,7 +1,7 @@
-import React, { useContext, useEffect } from "react";
+import * as React from "react";
 // import "../styles.css";
 // import NavBar from "../components/navbar";
-// import Layout from "../components/layout";
+import Layout from "../components/layout";
 
 const pageStyles = {
   color: "#232129",
@@ -36,7 +36,7 @@ const labelStyle = {
 const contactPage = () => {
   return (
     <div>
-      {/* <NavBar /> */}
+      <Layout>
       <main style={pageStyles}>
         <div class="row">
           <div class="column" width="50%">
@@ -74,6 +74,7 @@ const contactPage = () => {
         </div>
         <div></div>
       </main>
+      </Layout>
     </div>
   );
 };

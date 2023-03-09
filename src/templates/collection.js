@@ -12,15 +12,31 @@ const container = {
     paddingTop: 120,
 };
 
+const col = {
+    padding: 10,
+};
+
+const img_style = {
+    height: "240",
+    width: "240",
+    objectFit: 'cover',
+};
+
 function Collection({data}) {
     const post = data.nodeCollection;
 
     return (
         <Layout>
         <div style={container}>
-            <h1>{post.title}</h1>
-            <img src={"https://empathybytes.library.gatech.edu" + post.relationships.field_image.uri.url}></img>
-            <div dangerouslySetInnerHTML={{ __html: post.body.processed }}></div>
+            <div class="row">
+                <div class="col" style={col}>
+                        <img style = {img_style} src={"https://empathybytes.library.gatech.edu" + post.relationships.field_image.uri.url}/>
+                </div>
+                <div class="col" style={col}>
+                    <h1>{post.title}</h1>
+                </div>
+                <div class="col" style={col}><div dangerouslySetInnerHTML={{ __html: post.body.processed }}/></div>
+            </div>
         </div>
         </Layout>
     );

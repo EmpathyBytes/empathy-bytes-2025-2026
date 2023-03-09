@@ -6,6 +6,9 @@ exports.createPages = async ({actions, graphql}) => {
     const { createPage } = actions;
 
 
+    /**
+     * GENERATING ARTICLE PAGES
+     */
     // This is specifically for article pages
     const articles = await graphql(`
     {
@@ -32,23 +35,15 @@ exports.createPages = async ({actions, graphql}) => {
         })
     );
 
-    //evelyn
+
+    /**
+     * GENERATING COLLECTION PAGES
+     */
     const collections = await graphql(`
     {
         allNodeCollection {
           nodes {
             id
-            title
-            body {
-              processed
-            }
-            field_image {
-              alt
-              title
-              width
-              height
-              drupal_internal__target_id
-            }
             path {
                 alias
             }
@@ -57,7 +52,6 @@ exports.createPages = async ({actions, graphql}) => {
       }
     `);
 
-    // Looping through the data gathered, creating a page for each component
     collections.data.allNodeCollection.nodes.map(collectionData =>
         createPage({
             path: "/collections" + collectionData.path.alias,
@@ -67,4 +61,31 @@ exports.createPages = async ({actions, graphql}) => {
             },
         })
     );
+
+
+    /**
+     * GENERATING INTERVIEW PAGES
+     */
+    const interviews = await graphql(`
+    {
+      allNodeInterview {
+        nodes {
+          id
+          path {
+            alias
+          }
+        }
+      }
+    }
+    `)
+
+    interviews.data.allNodeInterview.nodes.map(interviewData =>
+      createPage({
+          path: "/collections" + interviewData.path.alias,
+          component: path.resolve(`src/templates/interview.js`),
+          context: {
+              InterviewId: interviewData.id,
+          },
+      })
+  );
 }

@@ -1,0 +1,11 @@
+@import "./fonts.css";
+
+
+/* The Fullscreen images on the homepage */
+.spash-image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100vw;
+    height: 100vh;
+}

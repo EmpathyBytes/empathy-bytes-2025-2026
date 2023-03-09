@@ -1,6 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
+import Layout from "../components/layout"
+
+import "../styles/articles.css";
 
 // Functional Article Component
 // This Function will find all the article components on the drupal site, and create a page
@@ -9,11 +12,13 @@ function Article({data}) {
     const post = data.nodeArticle;
 
     return (
-        <div>
-            <h1>{post.title}</h1>
-            <img src={post.relationships.field_image.localFile.url}></img>
-            <div dangerouslySetInnerHTML={{ __html: post.body.processed }}></div>
-        </div>
+        <Layout>
+            <div className="articleContainer">
+                <h1 className="articleTitle">{post.title}</h1>
+                <img className="articleImage" src={post.relationships.field_image.localFile.url}></img>
+                <div className="articleText" dangerouslySetInnerHTML={{ __html: post.body.processed }}></div>
+            </div>
+        </Layout>
     );
 }
 

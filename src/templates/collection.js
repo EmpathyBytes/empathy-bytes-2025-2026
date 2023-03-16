@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import Layout from "../components/layout";
+import InterviewCard from '../components/interviewcard';
 
 // Functional Collection Component
 // This Function will find all the collection components on the drupal site, and create a page
@@ -22,33 +23,30 @@ const img_style = {
     objectFit: 'cover',
 };
 
+const collection_name = {
+    ["text-align"]: 'center',
+    ['padding-top']: 10,
+    color: '#b3a369',
+}
+
 function Collection({data}) {
-    const post = data.collection;
+    const collection = data.collection;
     const interview = data.interview.nodes;
 
     return (
         <Layout>
         <div style={container}>
-            <div class="row">
-                <div class="col" style={col}>
-                        <img style ={{width:"240px", height:"240px", objectFit: "cover"}} src={"https://empathybytes.library.gatech.edu" + post.relationships.field_image.uri.url}/>
-                </div>
-                <div class="col" style={col}>
-                    <h1>{post.title}</h1>
-                </div>
-                <div class="col" style={col}><div dangerouslySetInnerHTML={{ __html: post.body.processed }}/></div>
-                </div>
+            <h1 style={collection_name}>{collection.title}</h1>
+            <div dangerouslySetInnerHTML={{ __html: collection.body.processed}}/>
+            <p></p>
                 {interview.map((i) => (
-                    <div class="row">
-                        <div class="col" style={col}>
-                            <img style ={{width:"240px", height:"240px", objectFit:"cover"}} src={"https://empathybytes.library.gatech.edu" + i.relationships.field_image.uri.url}/>
-                        </div>
-                        <div class="col" style={col}><h1>{i.title}</h1></div>
-                        <div class="col" style={col}>
-                            <div dangerouslySetInnerHTML={{ __html: i.body.processed }}/>
-                            <p>{i.field_hg_dateline}</p>
-                        </div>
-                    </div>
+                    <InterviewCard
+                    img = {"https://empathybytes.library.gatech.edu" + i.relationships.field_image.uri.url}
+                    title = {i.title}
+                    author = {i.field_author}
+                    date = {i.field_hg_dateline}
+                    body = {i.body.processed}
+                    />
                 ))}
 
         </div>
@@ -100,37 +98,4 @@ export const query = graphql`
         }
     }
 `;
-
-/**
- *     nodeArticle(field_collection: { eq: "Distance Math" }) {
-        id
-        title
-        body {
-            processed
-        }
-        relationships {
-            field_image {
-                uri {
-                    url
-                    value
-                }
-            }
-        }
-    }
- */
-
-/**
- *                 {articles.map((article) => ( // Mapping interview data to grid layout
-                    <div class="row">
-                    <div class="col" style={col}> 
-                        <img stle = {img_style} src={"https://empathybytes.library.gatech.edu" + article.relationships.field_image.uri.url}/>
-                    </div>
-                        <div class="col" style={col}>
-                            <h1>{article.title}</h1>
-                        </div>
-                    <div class="col" style={col}><div dangerouslySetInnerHTML={{ __html: article.body.processed }}/></div>
-                    </div>
-                ))}
- */
-
 export default Collection;

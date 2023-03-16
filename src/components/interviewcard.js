@@ -1,4 +1,5 @@
 import React from "react";
+import styles from "../styles/navstyles.css";
 
 /**
  * This component is used on each collection page to house individual interview titles, authors, photos, 
@@ -7,16 +8,42 @@ import React from "react";
  * @param {*} props 
  * @returns the card component
  */
-export default function CollectionCard(props) {
+
+const col = {
+    padding: 10,
+};
+
+
+const row = {
+    ["border-bottom"]: '5px solid #b3a369',
+    padding: 15,
+};
+
+const img_style = {
+    ["border-radius"]: '10px',
+    width: '240px', 
+    height: '240px', 
+    objectFit: 'cover',
+};
+
+const summary = {
+    ['line-clamp']: 3,
+    ['text-overflow']: 'ellipsis',
+    overflow: 'hidden',
+}
+
+export default function InterviewCard(props) {
     return (
-        <div class="row">
+        <div class="row" style={row}>
             <div class="col" style={col}>
-                <img style ={{width:"240px", height:"240px", objectFit:"cover"}} src={"https://empathybytes.library.gatech.edu" + props.relationships.field_image.uri.url}/>
+                <img style ={img_style} src={props.img}/>
             </div>
-            <div class="col" style={col}><h1>{props.title}</h1></div>
             <div class="col" style={col}>
-                <div dangerouslySetInnerHTML={{ __html: props.body.processed }}/>
-                <p>{props.field_hg_dateline}</p>
+                <h2>{props.title}</h2>
+                <p>By {props.author}</p>
+                <div style={summary} dangerouslySetInnerHTML={{ __html: props.body}}/>
+                <p>{props.date}</p>
+                <span class="border-bottom"></span>
             </div>
     </div>
     );

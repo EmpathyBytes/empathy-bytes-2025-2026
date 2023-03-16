@@ -1,3 +1,4 @@
+/**
 import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
@@ -18,7 +19,6 @@ function Interview({data}) {
     return (
         <Layout>
         <div style={container}>
-            <img src={"https://empathybytes.library.gatech.edu" + post.relationships.field_photo.uri.url}></img>
             <div dangerouslySetInnerHTML={{ __html: post.body.processed }}></div>
         </div>
         </Layout>
@@ -41,15 +41,22 @@ export const query = graphql`
         body {
             processed
         }
-        relationships {
-            field_photo {
-                uri {
-                    url
-                }
-            }
-        }
     }
 }
 `
 
 export default Interview;
+
+/**
+ *         relationships {
+            field_image {
+                uri {
+                    url
+                    value
+                }
+            }
+        }
+
+
+        <img src={post.relationships.field_image.uri.url ? ("https://empathybytes.library.gatech.edu" + post.relationships.field_image.uri.url) : "../images/icon.png"}></img>
+ */

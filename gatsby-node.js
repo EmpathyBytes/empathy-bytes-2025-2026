@@ -66,6 +66,7 @@ exports.createPages = async ({actions, graphql}) => {
     /**
      * GENERATING INTERVIEW PAGES
      */
+    /**
     const interviews = await graphql(`
     {
       allNodeInterview {
@@ -88,4 +89,5 @@ exports.createPages = async ({actions, graphql}) => {
           },
       })
   );
+   */
 }

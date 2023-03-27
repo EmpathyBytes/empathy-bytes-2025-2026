@@ -10,11 +10,11 @@ import "react-multi-carousel/lib/styles.css"
 import { BiRightArrow } from 'react-icons/bi'
 import { BiLeftArrow } from 'react-icons/bi'
 
-// Importing Data from the Mock Database - Jacob
+// Importing Data from the Mock Database
 import Members from "../database/members"
 
 
-// Making the Carousels Responsive - Jacob
+// Making the Carousels Responsive
 const responsive = {
   desktop: {
     breakpoint: { max: 3000, min: 1024 },

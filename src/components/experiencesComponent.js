@@ -28,7 +28,7 @@ const pfp = {
   paddingBottom: "1%"
 }
 // Default Card Component. Has props to changed the profile picture, name, and role - Jacob
-function PeopleCard(props) {
+function ExperiencesComponent(props) {
   return (
     <div style={card}>
       <img style={ pfp } src={props.img} alt={props.alt}></img>
@@ -38,10 +38,10 @@ function PeopleCard(props) {
   );
 }
 // Default Info the Card will be populated with if not found in from the WordPress call - Jacob
-PeopleCard.defaultProps = {
+ExperiencesComponent.defaultProps = {
   name: "Default name",
   img: "https://t4.ftcdn.net/jpg/00/64/67/63/240_F_64676383_LdbmhiNM6Ypzb3FM4PPuFP9rHe7ri8Ju.jpg",
   alt: "No alt has been added to this image",
 };
 
-export default PeopleCard;
+export default ExperiencesComponent;

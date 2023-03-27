@@ -7,7 +7,7 @@ import splash1 from "../images/homepage/splash1.jpg"
 import splash2 from "../images/homepage/splash2.jpg"
 
 import Carousel from 'react-material-ui-carousel'
-import KeyboardDoubleArrowDownIcon from '@mui/icons-material/KeyboardDoubleArrowDown';
+import Grid2 from '@mui/material/Unstable_Grid2';
 
 
 
@@ -38,14 +38,24 @@ function IndexPage() {
       </div>
 
       <div id="info" className="info">
-        <h1 className="header">What is Empathy Bytes?</h1>
+      <Grid2 container spacing={2}>
+        <Grid2 xs={8}>
+          <h1 className="header">What is Empathy Bytes?</h1>
+        </Grid2>
+        <Grid2 xs={4}>
+
+        </Grid2>
+        <Grid2 xs={7}>
         <p className="paragraph">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore 
-        et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut 
-        aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum 
-        dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia 
-        deserunt mollit anim id est laborum.
+          Empathy Bytes is a student run research project focused on creating immersive technology and media centered around empathy. 
+          We think outside traditional modes of communication and documentation to create radical and unique experiences. Our research 
+          currently focusses on identifying and presenting distinct communities connected to Georgia Tech.
         </p>
+        </Grid2>
+        <Grid2 xs={5}>
+          
+        </Grid2>
+      </Grid2>
       </div>
     </Layout>
   )

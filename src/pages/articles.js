@@ -9,19 +9,21 @@ const topPadding = {
     padding: "10% 5% 10% 5%",
   };
 
+const articlePadding = {
+  padding: ".5% 0 .5% 0"
+}
+
 function Articles() {
     const data = useStaticQuery(graphql`
 {
     allNodeArticle {
       nodes {
-        title
-        id
-        body {
-          summary
-        }
         path {
           alias
         }
+        title
+        id
+        field_blurb
       }
     }
   }
@@ -32,15 +34,19 @@ console.log(data);
     return(
         <Layout>
             <div style={topPadding}>
-            <h1>Articles</h1>
-            {articles.map(article => (
-                <ArticlePreview 
-                key = {article.id}
-                title = {article.title}
-                path = {article.path.alias}
-                summary = {article.body.summary}
-            />
-            ))}
+              <h1>Articles</h1>
+              <div>
+                  {articles.map(article => (
+                    <div style={articlePadding}>
+                      <ArticlePreview 
+                        key = {article.id}
+                        title = {article.title}
+                        path = {article.path.alias}
+                        summary = {article.field_blurb}
+                      />
+                    </div>
+                ))}
+              </div>
             </div>
         </Layout>
     )

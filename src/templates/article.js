@@ -1,53 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
-import Layout from "../components/layout.js"
+import Layout from "../components/layout"
+
+import "../styles/articles.css";
 
 // Functional Article Component
 // This Function will find all the article components on the drupal site, and create a page
 // on the gatsby site for each component
-
-const container = {
-    padding: "6% 5% 6% 5%",
-    paddingTop: 120,
-};
-
-const img_container = {
-    position: 'relative',
-    ['text-align']: 'center',
-    color: 'white',
-}
-
-const img_style = {
-    ["border-radius"]: '10px',
-    width: '1200px', 
-    height: '600px', 
-    objectFit: 'cover',
-};
-
-const overlay = {
-    position: 'absolute',
-    ['text-align']: 'left',
-    bottom: 8,
-    left: 100,
-}
-
 function Article({data}) {
     const post = data.nodeArticle;
 
     return (
-        <Layout>
-            <div style={container}>
-                <div style={img_container}>
-                    <img style={img_style} src={post.relationships.field_image.localFile.url}></img>
-                    <div style={overlay}>
-                    <h1>{post.title}</h1>
-                    <h3>By {post.field_author}</h3>
-                    </div>
-                </div>
-                <div dangerouslySetInnerHTML={{ __html: post.body.processed }}></div>
-            </div>
-        </Layout>
+        <div>
+            <h1>{post.title}</h1>
+            <img src={post.relationships.field_image.localFile.url}></img>
+            <div dangerouslySetInnerHTML={{ __html: post.body.processed }}></div>
+        </div>
     );
 }
 
@@ -83,3 +52,13 @@ export const query = graphql`
 `;
 
 export default Article;
+
+            // <div style={container}>
+            //     <div style={img_container}>
+            //         <img style={img_style} src={post.relationships.field_image.localFile.url}></img>
+            //         <div style={overlay}>
+            //         <h1>{post.title}</h1>
+            //         <h3>By {post.field_author}</h3>
+            //         </div>
+            //     </div>
+            //     <div dangerouslySetInnerHTML={{ __html: post.body.processed }}></div>

@@ -1,0 +1,7 @@
+/* Importing Google's Roboto Slab */
+/* This will be our HEADER font */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;700&display=swap');
+
+/* Importing Google's Roboto */
+/* This will be our regular / body font */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700&display=swap');

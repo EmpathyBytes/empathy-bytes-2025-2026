@@ -21,8 +21,8 @@ const row = {
 
 const img_style = {
     ["border-radius"]: '10px',
-    width: '240px', 
-    height: '240px', 
+    width: '300px', 
+    height: '300px', 
     objectFit: 'cover',
 };
 
@@ -42,6 +42,7 @@ export default function InterviewCard(props) {
                 <h2>{props.title}</h2>
                 <p>By {props.author}</p>
                 <div style={summary} dangerouslySetInnerHTML={{ __html: props.body}}/>
+                <a href={props.url}>Learn More</a>
                 <p>{props.date}</p>
                 <span class="border-bottom"></span>
             </div>

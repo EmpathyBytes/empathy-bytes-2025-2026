@@ -13,16 +13,6 @@ const container = {
     paddingTop: 120,
 };
 
-const col = {
-    padding: 10,
-};
-
-const img_style = {
-    height: "240",
-    width: "240",
-    objectFit: 'cover',
-};
-
 const collection_name = {
     ["text-align"]: 'center',
     ['padding-top']: 10,
@@ -45,7 +35,8 @@ function Collection({data}) {
                     title = {i.title}
                     author = {i.field_author}
                     date = {i.field_hg_dateline}
-                    body = {i.body.processed}
+                    body = {i.field_blurb}
+                    url = {i.path.alias}
                     />
                 ))}
 
@@ -80,10 +71,14 @@ export const query = graphql`
         }
         interview: allNodeArticle(filter: {field_collection: {eq: $CollectionId}}) {
             nodes {
+                path {
+                    alias
+                }
                 id
                 title
                 field_author
                 field_hg_dateline
+                field_blurb
                 body {
                     processed
                 }

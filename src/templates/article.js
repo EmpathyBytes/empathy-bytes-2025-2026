@@ -12,11 +12,18 @@ function Article({data}) {
     const post = data.nodeArticle;
 
     return (
-        <div>
-            <h1>{post.title}</h1>
-            <img src={post.relationships.field_image.localFile.url}></img>
-            <div dangerouslySetInnerHTML={{ __html: post.body.processed }}></div>
-        </div>
+        <Layout>
+            <div className="articleContainer">
+            <div className="articleImageContainer">
+                <img className="articleImage" src={post.relationships.field_image.localFile.url}></img>
+                <div className="articleTitleInfo">
+                    <h1>{post.title}</h1>
+                    <h3>By {post.field_author}</h3>
+                </div>
+            </div>
+            <div className="articleText" dangerouslySetInnerHTML={{ __html: post.body.processed }}></div>
+            </div>
+        </Layout>
     );
 }
 

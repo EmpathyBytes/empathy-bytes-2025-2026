@@ -5,3 +5,15 @@
 .people-container {
     padding: 1% 5% 1% 5%;
 }
+
+.header-about {
+    font-family: 'Roboto Slab', serif;
+    font-size: 3vw;
+    color: white;
+}
+
+.paragraph-about {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.3vw;
+    color: white;
+}

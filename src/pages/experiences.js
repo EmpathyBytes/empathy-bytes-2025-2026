@@ -4,8 +4,8 @@ import Layout from "../components/layout"
 import Grid from '@mui/material/Unstable_Grid2';
 import "../styles/experiences.css"
 
-import splash1 from "../images/homepage/splash1.jpg"
-import splash2 from "../images/homepage/splash2.jpg"
+import VR from "../images/experiences/vr.png"
+import APP from "../images/experiences/app.png"
 
 
 function ExperiencesPage() {
@@ -14,8 +14,13 @@ function ExperiencesPage() {
       <Grid container spacing={2}>
         <Grid xs={6}>
           <a href="/appteam">
-            <div className="container-half">
-              <h1 className="top-text-2">App</h1>
+          <div className="container-half">
+              <div className="text-overlay">
+                <h1 className="text-experience">App</h1>
+              </div>
+              <div className="image-overlay">
+              <img className="splash-experience" src={APP}></img>
+              </div>
             </div>
           </a>
         </Grid>
@@ -23,7 +28,12 @@ function ExperiencesPage() {
         <Grid xs={6}>
           <a href="/emergingtech">
             <div className="container-half">
-              <h1 className="top-text-2">Emerging Tech</h1>
+              <div className="text-overlay">
+                <h1 className="text-experience">Emerging Tech</h1>
+              </div>
+              <div className="image-overlay">
+              <img className="splash-experience" src={VR}></img>
+              </div>
             </div>
           </a>
         </Grid>

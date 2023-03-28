@@ -6,6 +6,8 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 
+import "../styles/about.css"
+
 
 // Styling for the individual html elements - Jacob
 const card = {
@@ -22,7 +24,7 @@ const role = {
   fontFamily: "Roboto",
   fontWeight: "100",
   fontSize: "1.2vw",
-  color: "#000",
+  color: "#fff",
   margin: 1,
 };
 
@@ -32,33 +34,33 @@ const pfp = {
   paddingBottom: "1%"
 }
 // Default Card Component. Has props to changed the profile picture, name, and role - Jacob
-// function PeopleCard(props) {
-//   return (
-//     <div style={card}>
-//       <img style={ pfp } src={props.img} alt={props.alt}></img>
-//       <h3 style={role}> {props.name} </h3>
-//       <h3 style={role}> {props.role} </h3>
-//     </div>
-//   );
-// }
-
 function PeopleCard(props) {
   return (
-    
-    <div>
-      <Card sx={{ maxWidth: 345 }}>
-        <CardMedia
-          sx={{ height: 140 }}
-          image={props.img}
-        />
-        <CardContent>
-          <h3> {props.name} </h3>
-          <h3> {props.role} </h3>
-        </CardContent>
-      </Card>
+    <div style={card}>
+      <img style={ pfp } src={props.img} alt={props.alt}></img>
+      <h3 className="paragraph"> {props.name} </h3>
+      <h3 className="paragraph"> {props.role} </h3>
     </div>
   );
 }
+
+// function PeopleCard(props) {
+//   return (
+    
+//     <div>
+//       <Card sx={{ maxWidth: 345 }}>
+//         <CardMedia
+//           sx={{ height: 140 }}
+//           image={props.img}
+//         />
+//         <CardContent>
+//           <h3> {props.name} </h3>
+//           <h3> {props.role} </h3>
+//         </CardContent>
+//       </Card>
+//     </div>
+//   );
+// }
 
 // Default Info the Card will be populated with if not found in from the WordPress call - Jacob
 PeopleCard.defaultProps = {

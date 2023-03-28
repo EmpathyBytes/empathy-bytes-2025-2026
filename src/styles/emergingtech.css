@@ -1,0 +1,6 @@
+@import "./fonts.css";
+
+.vr-container {
+    height: 100vh;
+    width: 100vw;
+}

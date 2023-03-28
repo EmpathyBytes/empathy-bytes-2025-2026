@@ -107,9 +107,29 @@ function IndexPage() {
         <Grid xs={12}>
           <h1 className="header">Want to Learn More?</h1>
           <p className="paragraph">
-            Check out or Emerging Tech and Project tabs to learn more about the type of work we do!
+            Check out or Experiences and Project Pages to learn more about the type of work we do!
           </p>
         </Grid>
+        <Grid xs={3}></Grid>
+        <Grid xs={3}>
+        <a href="/experiences">
+          <Card sx={{ maxWidth: 360 }}>
+            <CardContent style={{backgroundColor: "#003057"}}>
+              <h1 className="card-text">Experiences</h1>
+            </CardContent>
+          </Card>
+          </a>
+        </Grid>
+        <Grid xs={3}>
+          <a href="/projects">
+          <Card sx={{ maxWidth: 360 }}>
+            <CardContent style={{backgroundColor: "#003057"}}>
+              <h1 className="card-text">Projects</h1>
+            </CardContent>
+          </Card>
+          </a>
+        </Grid>
+        <Grid xs={3}></Grid>
       </Grid>
       </div>
     </Layout>

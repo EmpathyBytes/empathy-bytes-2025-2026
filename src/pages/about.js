@@ -5,7 +5,7 @@ import Layout from "../components/layout"
 // Importing Data from the Mock Database - Jacob
 import Members from "../database/members"
 
-import "../styles/homepage.css"
+import "../styles/about.css"
 
 
 
@@ -118,8 +118,8 @@ function AboutPage() {
     <Layout>
       <div style={container}>
         <div>
-          <h1 style={header}>About Us</h1>
-          <p style={paragraph}>
+          <h1 className="header-about">About Us</h1>
+          <p className="paragraph-about">
             We are a Vertically Integrated Project team at Georgia Tech
             exploring the lives of those touched by Georgia Tech’s research and
             technology initiatives. The Vertically Integrated Project Program at
@@ -132,7 +132,7 @@ function AboutPage() {
         </div>
         {/* Web Team Info - Jacob */}
         <div style={gapS}>
-          <h1 style={header2}>Web Team</h1>
+          <h1 className="header-about">Web Team</h1>
           <MCarousel 
             responsive={responsive} 
             autoPlay={true}
@@ -153,7 +153,7 @@ function AboutPage() {
         </div>
         {/* Media Team Info */}
         <div style={gapS}>
-          <h1 style={header2}>Media Team</h1>
+          <h1 className="header-about">Media Team</h1>
           <MCarousel 
             responsive={responsive}
             autoPlay={true}
@@ -172,7 +172,7 @@ function AboutPage() {
         </div>
         {/* App Team Info */}
         <div style={gapS}>
-          <h1 style={header2}>App Team</h1>
+          <h1 className="header-about">App Team</h1>
           <MCarousel 
             responsive={responsive}
             autoPlay={true}
@@ -191,7 +191,7 @@ function AboutPage() {
         </div>
         {/* Emerging Tech Team Info */}
         <div style={gapS}>
-          <h1 style={header2}>Emerging Tech Team</h1>
+          <h1 className="header-about">Emerging Tech Team</h1>
           <MCarousel 
             responsive={responsive}
             autoPlay={true}

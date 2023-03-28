@@ -6,6 +6,9 @@ exports.createPages = async ({actions, graphql}) => {
     const { createPage } = actions;
 
 
+    /**
+     * GENERATING ARTICLE PAGES
+     */
     // This is specifically for article pages
     const articles = await graphql(`
     {
@@ -31,4 +34,60 @@ exports.createPages = async ({actions, graphql}) => {
             },
         })
     );
+
+
+    /**
+     * GENERATING COLLECTION PAGES
+     */
+    const collections = await graphql(`
+    {
+        allNodeCollection {
+          nodes {
+            id
+            path {
+                alias
+            }
+          }
+        }
+      }
+    `);
+
+    collections.data.allNodeCollection.nodes.map(collectionData =>
+        createPage({
+            path: "/collections" + collectionData.path.alias,
+            component: path.resolve(`src/templates/collection.js`),
+            context: {
+                CollectionId: collectionData.id,
+            },
+        })
+    );
+
+
+    /**
+     * GENERATING INTERVIEW PAGES
+     */
+    /**
+    const interviews = await graphql(`
+    {
+      allNodeInterview {
+        nodes {
+          id
+          path {
+            alias
+          }
+        }
+      }
+    }
+    `)
+
+    interviews.data.allNodeInterview.nodes.map(interviewData =>
+      createPage({
+          path: "/collections" + interviewData.path.alias,
+          component: path.resolve(`src/templates/interview.js`),
+          context: {
+              InterviewId: interviewData.id,
+          },
+      })
+  );
+   */
 }

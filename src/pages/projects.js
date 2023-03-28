@@ -1,60 +1,60 @@
 import * as React from "react";
-//import Box from "@mui/material/Box";
 import Layout from "../components/layout";
 import { graphql } from "gatsby"
+import CollectionCard from "../components/collectioncard";
+import Grid from "@mui/material/Grid";
 
 const container = {
     padding: "6% 5% 6% 5%",
-    paddingTop: 180,
+    paddingTop: 120,
 };
 
-export const query = graphql`
-    query collectionQuery {
-        collections: allNodeCollection {
-            nodes {
-                id
-                title
-                body {
-                    processed
-                  }
-                  field_image {
-                    alt
-                    title
-                    width
-                    height
-                    drupal_internal__target_id
-                  }
-            }
-        }
-    }
-    `
 const projectsPage = ({data}) => {
 
     const arr = data.collections.nodes;
-
-    /**
-    * TODO: 
-    * 1) Make it so processed body text does not have tags :(
-    * 2) Make a collection component so all this junk is elsewhere
-    * 3) Make a button to link to interviews? make interview
-    *   cards? design questions?
-    * 4) How to get images?????
-    */
     return (
         <Layout>
             <div style={container}>
                 <h1>Interview Collections</h1>
-                
-                {arr.map((item) => (
-                    <ul>
-                    <h3>{item.title}</h3>
-                    {item.body.processed}
-                    </ul>
+                <Grid container spacing={2}>
+                {arr.map((item) => ( // Mapping collection data to card component
+                    <Grid item xs={4}>
+                    <CollectionCard 
+                    title = {item.title}
+                    image = {item.relationships.field_image.uri.url}
+                    url = {item.path.alias}
+                    />
+                    </Grid>
                 ))}
-                
+                </Grid>
             </div>
         </Layout>
     );
 }
 
 export default projectsPage;
+
+// Query all collections
+export const query = graphql`
+    query collectionQuery {
+        collections: allNodeCollection {
+            nodes {
+                id
+                path {
+                    alias
+                }
+                title
+                body {
+                    processed
+                  }
+                  relationships {
+                    field_image {
+                        uri {
+                            url
+                        }
+                    }
+                  }
+            }
+        }
+    }
+    `

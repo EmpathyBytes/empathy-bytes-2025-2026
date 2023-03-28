@@ -1,0 +1,39 @@
+@import "../fonts.css";
+
+.container {
+    width: 100vw;
+    margin: auto;
+    background-color: #003057;
+    padding: 1% 0 1% 0;
+}
+
+.grouping {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.text-footer-title {
+    font-family: 'Roboto', sans-serif;
+    font-size: 2vw;
+    color: white;
+    text-align: center;
+}
+
+.text-heading {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1vw;
+    color: white;
+}
+
+.text-anchor {
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.8vw;
+    color: whitesmoke;
+    text-decoration: none;
+}
+
+.text-anchor:hover {
+    cursor: pointer;
+    opacity: 0.8;
+}

@@ -2,16 +2,19 @@ import * as React from "react"
 import PeopleCard from "../components/PeopleCard"
 import Layout from "../components/layout"
 
+// Importing Data from the Mock Database - Jacob
+import Members from "../database/members"
+
+import "../styles/homepage.css"
+
+
+
+
+
 // Multi Bootstrap Imports
 import MCarousel from "react-multi-carousel"
 import "react-multi-carousel/lib/styles.css"
 
-// React Icons Imports
-import { BiRightArrow } from 'react-icons/bi'
-import { BiLeftArrow } from 'react-icons/bi'
-
-// Importing Data from the Mock Database - Jacob
-import Members from "../database/members"
 
 
 // Making the Carousels Responsive - Jacob
@@ -33,34 +36,6 @@ const responsive = {
   },
 };
 
-// Custom Arrows on the About Page (Not working bc of container issues)
-// Styling for custom buttons on the carousel (NOT IN USE CURRENTLY) - Jacob
-const arrowStyleRight = {
-  background: "transparent",
-  color: "#fff",
-  fontSize: "80px",
-  position: "absolute",
-  top: "30%",
-  right: "calc(-4% + 1px)",
-};
-const arrowStyleLeft = {
-  background: "transparent",
-  color: "#fff",
-  fontSize: "80px",
-  position: "absolute",
-  top: "30%",
-  left: "calc(-4% + 1px)",
-};
-const CustomRight = ({ onClick }) => (
-  <button onClick={onClick} style={arrowStyleRight}>
-    <BiRightArrow style={{ fontSize: "2vw" }}></BiRightArrow>
-  </button>
-);
-const CustomLeft = ({ onClick }) => (
-  <button onClick={onClick} style={arrowStyleLeft}>
-    <BiLeftArrow style={{ fontSize: "2vw" }}></BiLeftArrow>
-  </button>
-);
 
 
 // Styling for html components & Layout - Jacob
@@ -115,6 +90,29 @@ const paragraph = {
   color: "white",
 };
 
+// function AboutPage(props) {
+//   return(
+//     <Layout>
+//       <div className="container">
+//       <h1>Meet the Team!</h1>
+//       <div className="people-container">
+//         <Grid container spacing={2}>
+//           {Members.map((item) => (
+//                   <Grid xs={3}>
+//                     <PeopleCard
+//                       name={item.name}
+//                       img={item.image}
+//                       role={item.role}
+//                     />
+//                   </Grid>
+//                 ))}
+//         </Grid>
+//       </div>
+//     </div>
+//     </Layout>
+//   );
+// }
+
 function AboutPage() {
   return (
     <Layout>
@@ -146,7 +144,7 @@ function AboutPage() {
               <div style={carouselInner}>
                 <PeopleCard
                   name={item.name}
-                  image={item.image}
+                  img={item.image}
                   role={item.role}
                 />
               </div>

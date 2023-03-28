@@ -1,0 +1,27 @@
+@import "../fonts.css";
+
+.paper {
+    width: 80vw;
+    margin: auto;
+}
+
+.card {
+    padding: .5% 2% .5% 2%;
+}
+
+.link {
+    text-decoration: none;
+}
+
+.text-title {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.5vw;
+    color: black;
+}
+
+.text-summary {
+    padding: 0 2% 1% 2%;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1vw;
+    color: #3B3C36;
+}

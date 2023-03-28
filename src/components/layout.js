@@ -2,6 +2,8 @@ import * as React from "react";
 import Navbar from "./navbar";
 import "../styles/navstyles.css";
 
+var year = new Date().getFullYear;
+
 export default function Layout(props) {
   return (
     <div>
@@ -11,7 +13,9 @@ export default function Layout(props) {
    <div id="content-wrap">
       {props.children}
    </div>
-   <footer id="footer">test</footer>
+   <footer id="footer">
+    © ${year} by Empathy Bytes
+    </footer>
  </div>
     </div>
   );

@@ -3,6 +3,8 @@ import Navbar from "./navbar";
 import Footer from "./footer"
 import "../styles/navstyles.css";
 
+var year = new Date().getFullYear;
+
 export default function Layout(props) {
   return (
     <div>

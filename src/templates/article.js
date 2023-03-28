@@ -19,6 +19,9 @@ function Article({data}) {
                 <div className="articleTitleInfo">
                     <h1>{post.title}</h1>
                     <h3>By {post.field_author}</h3>
+                    <audio controls>
+                        <source src={post.relationships.field_audio.internal.alias} type="audio/mp3"/>
+                    </audio>
                 </div>
             </div>
             <div className="articleText" dangerouslySetInnerHTML={{ __html: post.body.processed }}></div>
@@ -51,6 +54,11 @@ export const query = graphql`
             field_image {
                 localFile {
                     url
+                }
+            }
+            field_audio {
+                internal {
+                    contentFilePath
                 }
             }
         }

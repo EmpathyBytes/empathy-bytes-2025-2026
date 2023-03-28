@@ -1,47 +1,86 @@
-// Card component to hold the people information
+import React from 'react';
 
-import React from "react";
+const experiencesContainer = {
+display: "flex",
+justifyContent: "center",
+alignItems: "center",
+flexWrap: "wrap",
+marginTop: "500px", // Add margin-top for space
+};
 
-
-// Styling for the individual html elements - Jacob
 const card = {
-  background: "rgba(0, 0, 0, 0)",
-  borderRadius: "1%",
-  padding: "1%",
-  width: "75%",
-  height: "15%",
-  margin: "1%",
-  float: "left",
+background: "#fff",
+borderRadius: "10px",
+padding: "5rem",
+width: "calc(50% - 10px)", // Increase width for wider cards
+height: "450px",
+margin: "20px",
+boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
+display: "flex",
+flexDirection: "column",
+justifyContent: "space-between",
+};
+
+const imgContainer = {
+width: "100%",
+height: "60%",
+overflow: "hidden",
+borderRadius: "10px",
+};
+
+const img = {
+width: "100%",
+height: "100%",
+objectFit: "cover",
 };
 
 const role = {
-  fontFamily: "Roboto",
-  fontWeight: "100",
-  fontSize: "1.2vw",
-  color: "#fff",
-  margin: 1,
+fontFamily: "Roboto",
+fontWeight: "300",
+fontSize: "1rem",
+color: "#666",
+margin: "0",
 };
 
-const pfp = {
-  height: "100%",
-  width: "100%",
-  paddingBottom: "1%"
-}
-// Default Card Component. Has props to changed the profile picture, name, and role - Jacob
-function ExperiencesComponent(props) {
-  return (
-    <div style={card}>
-      <img style={ pfp } src={props.img} alt={props.alt}></img>
-      <h3 style={role}> {props.name} </h3>
-      <h3 style={role}> {props.role} </h3>
-    </div>
-  );
-}
-// Default Info the Card will be populated with if not found in from the WordPress call - Jacob
-ExperiencesComponent.defaultProps = {
-  name: "Default name",
-  img: "https://t4.ftcdn.net/jpg/00/64/67/63/240_F_64676383_LdbmhiNM6Ypzb3FM4PPuFP9rHe7ri8Ju.jpg",
-  alt: "No alt has been added to this image",
+const name = {
+fontFamily: "Roboto",
+fontWeight: "500",
+fontSize: "1.5rem",
+color: "#000",
+margin: "1rem 0 0 0",
 };
+
+function ExperiencesComponent(props) {
+const { appSection, vrSection } = props;
+
+return (
+<div>
+<div style={{ backgroundColor: "#f6f7fb", display: "flex", justifyContent: "center", alignItems: "center" }}>
+<div className="container" style={{display: "flex", justifyContent: "center", alignItems: "center"}}>
+<div className="row">
+<div className="col-md-6" style={{display: "flex", justifyContent: "center", alignItems: "center"}}>{appSection}</div>
+<div className="col-md-6" style={{display: "flex", justifyContent: "center", alignItems: "center"}}>{vrSection}</div>
+</div>
+</div>
+</div>
+<div style={experiencesContainer}>
+<div style={card}>
+<div style={imgContainer}>
+<img style={img} src="https://via.placeholder.com/600x400" alt="experience" />
+</div>
+<p style={role}>Role</p>
+<h3 style={name}>Experience Name</h3>
+</div>
+<div style={card}>
+<div style={imgContainer}>
+<img style={img} src="https://via.placeholder.com/600x400" alt="experience" />
+</div>
+<p style={role}>Role</p>
+<h3 style={name}>Experience Name</h3>
+</div>
+</div>
+</div>
+);
+}
 
 export default ExperiencesComponent;

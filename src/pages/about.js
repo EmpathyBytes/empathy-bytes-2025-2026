@@ -2,16 +2,19 @@ import * as React from "react"
 import PeopleCard from "../components/PeopleCard"
 import Layout from "../components/layout"
 
+// Importing Data from the Mock Database - Jacob
+import Members from "../database/members"
+
+import "../styles/about.css"
+
+
+
+
+
 // Multi Bootstrap Imports
 import MCarousel from "react-multi-carousel"
 import "react-multi-carousel/lib/styles.css"
 
-// React Icons Imports
-import { BiRightArrow } from 'react-icons/bi'
-import { BiLeftArrow } from 'react-icons/bi'
-
-// Importing Data from the Mock Database - Jacob
-import Members from "../database/members"
 
 
 // Making the Carousels Responsive - Jacob
@@ -33,34 +36,6 @@ const responsive = {
   },
 };
 
-// Custom Arrows on the About Page (Not working bc of container issues)
-// Styling for custom buttons on the carousel (NOT IN USE CURRENTLY) - Jacob
-const arrowStyleRight = {
-  background: "transparent",
-  color: "#fff",
-  fontSize: "80px",
-  position: "absolute",
-  top: "30%",
-  right: "calc(-4% + 1px)",
-};
-const arrowStyleLeft = {
-  background: "transparent",
-  color: "#fff",
-  fontSize: "80px",
-  position: "absolute",
-  top: "30%",
-  left: "calc(-4% + 1px)",
-};
-const CustomRight = ({ onClick }) => (
-  <button onClick={onClick} style={arrowStyleRight}>
-    <BiRightArrow style={{ fontSize: "2vw" }}></BiRightArrow>
-  </button>
-);
-const CustomLeft = ({ onClick }) => (
-  <button onClick={onClick} style={arrowStyleLeft}>
-    <BiLeftArrow style={{ fontSize: "2vw" }}></BiLeftArrow>
-  </button>
-);
 
 
 // Styling for html components & Layout - Jacob
@@ -115,13 +90,36 @@ const paragraph = {
   color: "white",
 };
 
+// function AboutPage(props) {
+//   return(
+//     <Layout>
+//       <div className="container">
+//       <h1>Meet the Team!</h1>
+//       <div className="people-container">
+//         <Grid container spacing={2}>
+//           {Members.map((item) => (
+//                   <Grid xs={3}>
+//                     <PeopleCard
+//                       name={item.name}
+//                       img={item.image}
+//                       role={item.role}
+//                     />
+//                   </Grid>
+//                 ))}
+//         </Grid>
+//       </div>
+//     </div>
+//     </Layout>
+//   );
+// }
+
 function AboutPage() {
   return (
     <Layout>
       <div style={container}>
         <div>
-          <h1 style={header}>About Us</h1>
-          <p style={paragraph}>
+          <h1 className="header-about">About Us</h1>
+          <p className="paragraph-about">
             We are a Vertically Integrated Project team at Georgia Tech
             exploring the lives of those touched by Georgia Tech’s research and
             technology initiatives. The Vertically Integrated Project Program at
@@ -134,7 +132,7 @@ function AboutPage() {
         </div>
         {/* Web Team Info - Jacob */}
         <div style={gapS}>
-          <h1 style={header2}>Web Team</h1>
+          <h1 className="header-about">Web Team</h1>
           <MCarousel 
             responsive={responsive} 
             autoPlay={true}
@@ -146,7 +144,7 @@ function AboutPage() {
               <div style={carouselInner}>
                 <PeopleCard
                   name={item.name}
-                  image={item.image}
+                  img={item.image}
                   role={item.role}
                 />
               </div>
@@ -155,7 +153,7 @@ function AboutPage() {
         </div>
         {/* Media Team Info */}
         <div style={gapS}>
-          <h1 style={header2}>Media Team</h1>
+          <h1 className="header-about">Media Team</h1>
           <MCarousel 
             responsive={responsive}
             autoPlay={true}
@@ -174,7 +172,7 @@ function AboutPage() {
         </div>
         {/* App Team Info */}
         <div style={gapS}>
-          <h1 style={header2}>App Team</h1>
+          <h1 className="header-about">App Team</h1>
           <MCarousel 
             responsive={responsive}
             autoPlay={true}
@@ -193,7 +191,7 @@ function AboutPage() {
         </div>
         {/* Emerging Tech Team Info */}
         <div style={gapS}>
-          <h1 style={header2}>Emerging Tech Team</h1>
+          <h1 className="header-about">Emerging Tech Team</h1>
           <MCarousel 
             responsive={responsive}
             autoPlay={true}

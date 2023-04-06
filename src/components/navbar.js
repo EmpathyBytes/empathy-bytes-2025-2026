@@ -58,7 +58,6 @@ export default function Navbar({ transparent }) {
           <ReactiveLink name="Experiences" path="/experiences" />
           <ReactiveLink name="About" path="/about" />
           <ReactiveLink name="Contact" path="/contact" />
-          <ReactiveLink name="Experiences" path="/experiences" />
         </div>
       </div>
       {transparent && <div className={`navbar-gradient ${scroll}`}></div>}

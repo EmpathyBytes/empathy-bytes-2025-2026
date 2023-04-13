@@ -17,3 +17,34 @@
     font-size: 1.3vw;
     color: white;
 }
+
+.emerging-tech-about {
+    visibility: visible;
+}
+
+.web-about {
+    visibility: visible;
+}
+
+.media-about {
+    visibility: visible;
+}
+
+.app-about {
+    visibility: visible;
+}
+
+.about-nav {
+    text-align: center;
+}
+
+.text-controls {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.3vw;
+    color: white;
+}
+
+.text-controls:hover {
+    cursor: pointer;
+    opacity: 0.8;
+}

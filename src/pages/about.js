@@ -1,4 +1,4 @@
-import * as React from "react"
+import React, { useState } from "react"
 import PeopleCard from "../components/PeopleCard"
 import Layout from "../components/layout"
 
@@ -6,6 +6,9 @@ import Layout from "../components/layout"
 import Members from "../database/members"
 
 import "../styles/about.css"
+
+
+import Grid from '@mui/material/Unstable_Grid2';
 
 
 
@@ -114,6 +117,38 @@ const paragraph = {
 // }
 
 function AboutPage() {
+
+  const [visEmerging, setToggleEmerging] = useState(false);
+  const [visWeb, setToggleWeb] = useState(true);
+  const [visMedia, setToggleMedia] = useState(false);
+  const [visApp, setToggleApp] = useState(false);
+
+
+  function toggleEmerging() {
+    setToggleEmerging(true);
+    setToggleWeb(false);
+    setToggleMedia(false);
+    setToggleApp(false);
+  }
+  function toggleWeb() {
+    setToggleEmerging(false);
+    setToggleWeb(true);
+    setToggleMedia(false);
+    setToggleApp(false);
+  }
+  function toggleMedia() {
+    setToggleEmerging(false);
+    setToggleWeb(false);
+    setToggleMedia(true);
+    setToggleApp(false);
+  }
+  function toggleApp() {
+    setToggleEmerging(false);
+    setToggleWeb(false);
+    setToggleMedia(false);
+    setToggleApp(true);
+  }
+
   return (
     <Layout>
       <div style={container}>
@@ -130,7 +165,49 @@ function AboutPage() {
             program here.
           </p>
         </div>
-        {/* Web Team Info - Jacob */}
+
+        <div className="about-nav">
+        <Grid container spacing={2}>
+          <Grid xs={3}>
+            <p className="text-controls" onClick={toggleEmerging}>Emerging</p>
+          </Grid>
+
+          <Grid xs={3}>
+            <p className="text-controls" onClick={toggleWeb}>Web</p>
+          </Grid>
+
+          <Grid xs={3}>
+            <p className="text-controls" onClick={toggleMedia}>Media</p>
+          </Grid>
+
+          <Grid xs={3}>
+            <p className="text-controls" onClick={toggleApp}>App</p>
+          </Grid>
+        </Grid>
+        </div>
+
+
+
+        <div className="emerging-tech-about" style={{ display: visEmerging ? 'block' : 'none' }}>
+          <p className="paragraph-about">Emerging Tech About</p>
+        </div>
+
+        <div className="web-about" style={{ display: visWeb ? 'block' : 'none' }}>
+          <p className="paragraph-about">Web About</p>
+        </div>
+
+        <div className="media-about" style={{ display: visMedia ? 'block' : 'none' }}>
+          <p className="paragraph-about">Media About</p>
+        </div>
+
+        <div className="app-about" style={{ display: visApp ? 'block' : 'none' }}>
+          <p className="paragraph-about">App About</p>
+        </div>
+        
+        
+{/*         
+        
+        
         <div style={gapS}>
           <h1 className="header-about">Web Team</h1>
           <MCarousel 
@@ -151,7 +228,7 @@ function AboutPage() {
             ))}
           </MCarousel>
         </div>
-        {/* Media Team Info */}
+        
         <div style={gapS}>
           <h1 className="header-about">Media Team</h1>
           <MCarousel 
@@ -170,7 +247,7 @@ function AboutPage() {
             ))}
           </MCarousel>
         </div>
-        {/* App Team Info */}
+        
         <div style={gapS}>
           <h1 className="header-about">App Team</h1>
           <MCarousel 
@@ -189,7 +266,7 @@ function AboutPage() {
             ))}
           </MCarousel>
         </div>
-        {/* Emerging Tech Team Info */}
+        
         <div style={gapS}>
           <h1 className="header-about">Emerging Tech Team</h1>
           <MCarousel 
@@ -207,7 +284,7 @@ function AboutPage() {
               </div>
             ))}
           </MCarousel>
-        </div>
+        </div> */}
       </div>
     </Layout>
   );

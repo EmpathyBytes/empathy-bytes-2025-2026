@@ -1,7 +1,18 @@
+.projectsContainer {
+    padding: 8% 20% 8% 20%;
+    display: block;
+}
+
+.projectsTitle {
+    font-family: 'Roboto Slab', serif;
+    font-size: 2vw;
+    padding: 0% 25% 0% 25%;
+}
+
 .gradient_bg {
     background: rgb(135,182,255);
     background: linear-gradient(-45deg, rgba(135,182,255,1), rgba(255,249,202,1), rgba(255,255,255,1));
-    background-size: 400% 400%;
+    background-size: cover;
     animation: gradient 10s ease infinite;
 }
 

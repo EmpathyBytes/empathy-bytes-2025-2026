@@ -58,3 +58,7 @@
 .clicker:focus + .hiddendiv{
     display:block;
 }
+
+.articleAudio {
+    width:150%;
+}

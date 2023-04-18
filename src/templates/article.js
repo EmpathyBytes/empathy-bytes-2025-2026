@@ -19,7 +19,7 @@ function Article({data}) {
                 <div className="articleTitleInfo">
                     <h1>{post.title}</h1>
                     <h3>By {post.field_author}</h3>
-                       <audio src = {post.relationships.field_audio != null ? "https://www.empathybytes.library.gatech.edu" + post.relationships.field_audio.path.alias : "https://www.empathybytes.library.gatech.edu/sites/default/files/2023-02/Usselman-Interview-Nov.-13-2019.mp3"} controls>
+                       <audio className="articleAudio" src = {post.relationships.field_audio != null ? "https://www.empathybytes.library.gatech.edu" + post.relationships.field_audio.path.alias : "https://www.empathybytes.library.gatech.edu/sites/default/files/2023-02/Usselman-Interview-Nov.-13-2019.mp3"} controls>
                         There is no audio for this article.
                        </audio>
                 </div>

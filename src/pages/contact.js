@@ -18,13 +18,21 @@ const headingAccentStyles = {
 
 const button = {
   background: "#fff",
-  borderRadius: "4px", // Update border radius for a more rounded shape
-  padding: "8px 16px", // Update padding for better spacing
-  width: "15vw",
+  borderRadius: "16px",
+  padding: "16px 32px",
+  width: "30vw",
   height: "1.5vw",
   margin: "1%",
-  border: "none", // Remove default button border
-  cursor: "pointer", // Add cursor pointer for hover effect
+  cursor: "pointer",
+  fontFamily: "-apple-system, Roboto, sans-serif, serif",
+  fontSize: "1.7vw",
+  color: "#232129",
+  textDecoration: "none",
+  textAlign: "center", // Center align text
+  border: "3px solid navy", // Thicker navy border
+  display: "flex", // Use flexbox for centering
+  justifyContent: "center", // Center horizontally
+  alignItems: "center", // Center vertically
 };
 
 const labelStyle = {
@@ -51,13 +59,12 @@ const contactPage = () => {
             </div>
             <div className="column">
               <label style={labelStyle}>
-                Email <br />
                 <button
                   style={button}
                   type="button"
                   onClick={handleEmailButtonClick}
                 >
-                  Contact via Email
+                  Click here to send us an email!
                 </button>
               </label>
             </div>
@@ -69,6 +76,7 @@ const contactPage = () => {
 };
 
 export default contactPage;
+
 
 
 

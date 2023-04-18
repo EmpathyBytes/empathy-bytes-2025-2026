@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import Layout from "../components/layout"
+import Logo from "../images/empbytes.jpg"
 
 // Importing Data from the Mock Database - Jacob
 import Members from "../database/members"
@@ -168,19 +169,19 @@ function AboutPage() {
         <div className="about-nav">
         <Grid container spacing={2}>
           <Grid xs={3}>
-            <p className="text-controls" onClick={toggleEmerging}>Emerging</p>
+            <p className="about-nav-text" onClick={toggleEmerging}>Emerging</p>
           </Grid>
 
           <Grid xs={3}>
-            <p className="text-controls" onClick={toggleWeb}>Web</p>
+            <p className="about-nav-text" onClick={toggleWeb}>Web</p>
           </Grid>
 
           <Grid xs={3}>
-            <p className="text-controls" onClick={toggleMedia}>Media</p>
+            <p className="about-nav-text" onClick={toggleMedia}>Media</p>
           </Grid>
 
           <Grid xs={3}>
-            <p className="text-controls" onClick={toggleApp}>App</p>
+            <p className="about-nav-text" onClick={toggleApp}>App</p>
           </Grid>
         </Grid>
         </div>
@@ -189,6 +190,11 @@ function AboutPage() {
 
         <div className="emerging-tech-about" style={{ display: visEmerging ? 'block' : 'none' }}>
           <p className="paragraph-about">Emerging Tech About</p>
+          <div class="hex">
+            <div class="hex-background">
+              <img  src= {Logo} alt="person"></img>
+            </div>
+          </div>
         </div>
 
         <div className="web-about" style={{ display: visWeb ? 'block' : 'none' }}>

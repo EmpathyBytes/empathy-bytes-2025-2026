@@ -55,6 +55,7 @@ export default function Navbar({ transparent }) {
         </div>
         <div className="navbar-grid-right">
           <ReactiveLink name="Projects" path="/projects" />
+          <ReactiveLink name="Experiences" path="/experiences" />
           <ReactiveLink name="About" path="/about" />
           <ReactiveLink name="Contact" path="/contact" />
           <ReactiveLink name="Experiences" path="/experiences" />

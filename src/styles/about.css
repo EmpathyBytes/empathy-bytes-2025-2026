@@ -1,0 +1,50 @@
+@import "./fonts.css";
+.container {
+    padding-top: 180px;
+}
+.people-container {
+    padding: 1% 5% 1% 5%;
+}
+
+.header-about {
+    font-family: 'Roboto Slab', serif;
+    font-size: 3vw;
+    color: white;
+}
+
+.paragraph-about {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.3vw;
+    color: white;
+}
+
+.emerging-tech-about {
+    visibility: visible;
+}
+
+.web-about {
+    visibility: visible;
+}
+
+.media-about {
+    visibility: visible;
+}
+
+.app-about {
+    visibility: visible;
+}
+
+.about-nav {
+    text-align: center;
+}
+
+.text-controls {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.3vw;
+    color: white;
+}
+
+.text-controls:hover {
+    cursor: pointer;
+    opacity: 0.8;
+}

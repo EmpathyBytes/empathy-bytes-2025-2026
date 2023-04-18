@@ -1,13 +1,17 @@
 // I think it will be better to store people info in a "Mock" Database for now, until we figure out how to do it on Drupal
+import Jacob from "../images/people/Jacob.jpg"
+import Evelyn from "../images/people/Evelyn.jpg"
+import Audrey from "../images/people/Audrey.jpg"
+import Yunsu from "../images/people/Yunsu.jpg"
 
 const members = [
     {
         key: 1,
         name: "Jacob Amin",
-        role: "Web Team Project Lead",
+        role: "Web Team Lead",
         year: "4th Year",
         major: "Computational Media",
-        image: "https://http.cat/101"
+        image: Jacob
     },
     {
         key: 2,
@@ -15,7 +19,7 @@ const members = [
         role: "Web Team",
         year: "3rd Year",
         major: "Computer Science",
-        image: "https://http.cat/101"
+        image: Evelyn
     },
     {
         key: 3,
@@ -23,7 +27,7 @@ const members = [
         role: "Web Team",
         year: "3rd Year",
         major: "Computational Media",
-        image: "https://http.cat/101"
+        image: Audrey
     },
     {
         key: 4,
@@ -31,7 +35,7 @@ const members = [
         role: "Web Team",
         year: "3rd Year",
         major: "Computer Science",
-        image: "https://http.cat/101"
+        image: Yunsu
     },
     {
         key: 5,

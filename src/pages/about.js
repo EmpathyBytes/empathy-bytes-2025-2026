@@ -1,17 +1,23 @@
-import * as React from "react"
-import PeopleCard from "../components/PeopleCard"
+import React, { useState } from "react"
 import Layout from "../components/layout"
+import Logo from "../images/empbytes.jpg"
+
+// Importing Data from the Mock Database - Jacob
+import Members from "../database/members"
+
+import "../styles/about.css"
+
+
+import Grid from '@mui/material/Unstable_Grid2';
+
+
+
+
 
 // Multi Bootstrap Imports
 import MCarousel from "react-multi-carousel"
 import "react-multi-carousel/lib/styles.css"
 
-// React Icons Imports
-import { BiRightArrow } from 'react-icons/bi'
-import { BiLeftArrow } from 'react-icons/bi'
-
-// Importing Data from the Mock Database - Jacob
-import Members from "../database/members"
 
 
 // Making the Carousels Responsive - Jacob
@@ -33,34 +39,6 @@ const responsive = {
   },
 };
 
-// Custom Arrows on the About Page (Not working bc of container issues)
-// Styling for custom buttons on the carousel (NOT IN USE CURRENTLY) - Jacob
-const arrowStyleRight = {
-  background: "transparent",
-  color: "#fff",
-  fontSize: "80px",
-  position: "absolute",
-  top: "30%",
-  right: "calc(-4% + 1px)",
-};
-const arrowStyleLeft = {
-  background: "transparent",
-  color: "#fff",
-  fontSize: "80px",
-  position: "absolute",
-  top: "30%",
-  left: "calc(-4% + 1px)",
-};
-const CustomRight = ({ onClick }) => (
-  <button onClick={onClick} style={arrowStyleRight}>
-    <BiRightArrow style={{ fontSize: "2vw" }}></BiRightArrow>
-  </button>
-);
-const CustomLeft = ({ onClick }) => (
-  <button onClick={onClick} style={arrowStyleLeft}>
-    <BiLeftArrow style={{ fontSize: "2vw" }}></BiLeftArrow>
-  </button>
-);
 
 
 // Styling for html components & Layout - Jacob
@@ -115,13 +93,68 @@ const paragraph = {
   color: "white",
 };
 
+// function AboutPage(props) {
+//   return(
+//     <Layout>
+//       <div className="container">
+//       <h1>Meet the Team!</h1>
+//       <div className="people-container">
+//         <Grid container spacing={2}>
+//           {Members.map((item) => (
+//                   <Grid xs={3}>
+//                     <PeopleCard
+//                       name={item.name}
+//                       img={item.image}
+//                       role={item.role}
+//                     />
+//                   </Grid>
+//                 ))}
+//         </Grid>
+//       </div>
+//     </div>
+//     </Layout>
+//   );
+// }
+
 function AboutPage() {
+
+  const [visEmerging, setToggleEmerging] = useState(false);
+  const [visWeb, setToggleWeb] = useState(true);
+  const [visMedia, setToggleMedia] = useState(false);
+  const [visApp, setToggleApp] = useState(false);
+
+
+  function toggleEmerging() {
+    setToggleEmerging(true);
+    setToggleWeb(false);
+    setToggleMedia(false);
+    setToggleApp(false);
+  }
+  function toggleWeb() {
+    setToggleEmerging(false);
+    setToggleWeb(true);
+    setToggleMedia(false);
+    setToggleApp(false);
+  }
+  function toggleMedia() {
+    setToggleEmerging(false);
+    setToggleWeb(false);
+    setToggleMedia(true);
+    setToggleApp(false);
+  }
+  function toggleApp() {
+    setToggleEmerging(false);
+    setToggleWeb(false);
+    setToggleMedia(false);
+    setToggleApp(true);
+  }
+
   return (
     <Layout>
       <div style={container}>
         <div>
-          <h1 style={header}>About Us</h1>
-          <p style={paragraph}>
+          <h1 className="header-about">About Us</h1>
+          <p className="paragraph-about">
             We are a Vertically Integrated Project team at Georgia Tech
             exploring the lives of those touched by Georgia Tech’s research and
             technology initiatives. The Vertically Integrated Project Program at
@@ -132,9 +165,56 @@ function AboutPage() {
             program here.
           </p>
         </div>
-        {/* Web Team Info - Jacob */}
+
+        <div className="about-nav">
+        <Grid container spacing={2}>
+          <Grid xs={3}>
+            <p className="about-nav-text" onClick={toggleEmerging}>Emerging</p>
+          </Grid>
+
+          <Grid xs={3}>
+            <p className="about-nav-text" onClick={toggleWeb}>Web</p>
+          </Grid>
+
+          <Grid xs={3}>
+            <p className="about-nav-text" onClick={toggleMedia}>Media</p>
+          </Grid>
+
+          <Grid xs={3}>
+            <p className="about-nav-text" onClick={toggleApp}>App</p>
+          </Grid>
+        </Grid>
+        </div>
+
+
+
+        <div className="emerging-tech-about" style={{ display: visEmerging ? 'block' : 'none' }}>
+          <p className="paragraph-about">Emerging Tech About</p>
+          <div class="hex">
+            <div class="hex-background">
+              <img  src= {Logo} alt="person"></img>
+            </div>
+          </div>
+        </div>
+
+        <div className="web-about" style={{ display: visWeb ? 'block' : 'none' }}>
+          <p className="paragraph-about">Web About</p>
+        </div>
+
+        <div className="media-about" style={{ display: visMedia ? 'block' : 'none' }}>
+          <p className="paragraph-about">Media About</p>
+        </div>
+
+        <div className="app-about" style={{ display: visApp ? 'block' : 'none' }}>
+          <p className="paragraph-about">App About</p>
+        </div>
+        
+        
+{/*         
+        
+        
         <div style={gapS}>
-          <h1 style={header2}>Web Team</h1>
+          <h1 className="header-about">Web Team</h1>
           <MCarousel 
             responsive={responsive} 
             autoPlay={true}
@@ -146,16 +226,16 @@ function AboutPage() {
               <div style={carouselInner}>
                 <PeopleCard
                   name={item.name}
-                  image={item.image}
+                  img={item.image}
                   role={item.role}
                 />
               </div>
             ))}
           </MCarousel>
         </div>
-        {/* Media Team Info */}
+        
         <div style={gapS}>
-          <h1 style={header2}>Media Team</h1>
+          <h1 className="header-about">Media Team</h1>
           <MCarousel 
             responsive={responsive}
             autoPlay={true}
@@ -172,9 +252,9 @@ function AboutPage() {
             ))}
           </MCarousel>
         </div>
-        {/* App Team Info */}
+        
         <div style={gapS}>
-          <h1 style={header2}>App Team</h1>
+          <h1 className="header-about">App Team</h1>
           <MCarousel 
             responsive={responsive}
             autoPlay={true}
@@ -191,9 +271,9 @@ function AboutPage() {
             ))}
           </MCarousel>
         </div>
-        {/* Emerging Tech Team Info */}
+        
         <div style={gapS}>
-          <h1 style={header2}>Emerging Tech Team</h1>
+          <h1 className="header-about">Emerging Tech Team</h1>
           <MCarousel 
             responsive={responsive}
             autoPlay={true}
@@ -209,7 +289,7 @@ function AboutPage() {
               </div>
             ))}
           </MCarousel>
-        </div>
+        </div> */}
       </div>
     </Layout>
   );

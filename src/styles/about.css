@@ -1,0 +1,97 @@
+@import "./fonts.css";
+.container {
+    padding-top: 180px;
+}
+.people-container {
+    padding: 1% 5% 1% 5%;
+}
+
+.header-about {
+    font-family: 'Roboto Slab', serif;
+    font-size: 3vw;
+    color: white;
+}
+
+.paragraph-about {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.3vw;
+    color: white;
+}
+
+.emerging-tech-about {
+    visibility: visible;
+}
+
+.web-about {
+    visibility: visible;
+}
+
+.media-about {
+    visibility: visible;
+}
+
+.app-about {
+    visibility: visible;
+}
+
+.about-nav {
+    text-align: center;
+}
+
+.text-controls {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.3vw;
+    color: white;
+}
+
+.text-controls:hover {
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+.about-nav-text {
+    font-size: 2vw;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    background-color: #005091;
+    padding: 10%;
+    border-radius: 4px;
+}
+
+.about-nav-text:hover {
+    background-color: darkblue;
+    cursor: pointer;
+    transition: background-color 200ms linear;
+}
+
+.hex {
+    display: block;
+    margin: 0 auto;
+    position: relative;
+    width: 320px;
+    height: 277.12px; /* width * 0.866 */
+    background: white;
+    box-sizing: border-box;
+    -webkit-clip-path: polygon(0% 50%, 25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%);
+    -moz-clip-path: polygon(0% 50%, 25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%);
+  }
+
+  .hex-background {
+    position: absolute;
+    background-color: orange; /*color of the main-background*/
+    top: 2px; /* equal to border thickness */
+    left: 2px; /* equal to border thickness */
+    width: 316px; /* container height - (border thickness * 2) */
+    height: 273.12px; /* container height - (border thickness * 2) */
+    -webkit-clip-path: polygon(0% 50%, 25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%);
+    -moz-clip-path: polygon(0% 50%, 25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%);
+  }
+
+  .hex img {
+    position: absolute;
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover;
+    -webkit-clip-path: polygon(0% 50%, 25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%);
+    -moz-clip-path: polygon(0% 50%, 25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%);
+  }

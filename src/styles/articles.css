@@ -1,0 +1,41 @@
+@import "./fonts.css";
+
+.articleContainer {
+    padding: 8% 2% 8% 2%;
+    display: block;
+}
+
+.articleTitle {
+    font-family: 'Roboto Slab', serif;
+    font-size: 2vw;
+    padding: 0% 25% 0% 25%;
+}
+
+.articleImageContainer {
+    position: relative;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+.articleImage {
+    border-radius: 10px;
+    justify-content: center;
+    width: 80%;
+    height: 80%;
+    object-fit: 'cover';
+}
+
+.articleText {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1vw;
+    padding: 0% 25% 0% 25%;
+}
+
+.articleTitleInfo {
+    position: absolute;
+    text-align: left;
+    color: white;
+    bottom: 1%;
+    left: 12%;
+}

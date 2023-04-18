@@ -7,7 +7,7 @@
 
 .articleTitle {
     font-family: 'Roboto Slab', serif;
-    font-size: 2vw;
+    font-size: 1vw;
     padding: 0% 25% 0% 25%;
 }
 
@@ -21,8 +21,8 @@
 .articleImage {
     border-radius: 10px;
     justify-content: center;
-    width: 80%;
-    height: 80%;
+    width: 40%;
+    height: 40%;
     object-fit: 'cover';
 }
 
@@ -37,5 +37,24 @@
     text-align: left;
     color: white;
     bottom: 1%;
-    left: 12%;
+    left: 31%;
+    inline-size: 350px;
+    overflow-wrap: break-word;
+    text-shadow: 1px 1px 1px rgba(63,107,169, 0.5);
+}
+
+.clicker {
+    padding: 0% 25% 0% 25%;
+    outline:none;
+    cursor:pointer;
+    text-decoration: underline dotted;
+    color:rgba(63,107,169);
+}
+    
+.hiddendiv{
+    display:none;
+}
+    
+.clicker:focus + .hiddendiv{
+    display:block;
 }

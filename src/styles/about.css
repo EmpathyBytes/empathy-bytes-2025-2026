@@ -68,8 +68,8 @@
     display: block;
     margin: 0 auto;
     position: relative;
-    width: 320px;
-    height: 277.12px; /* width * 0.866 */
+    width: 256px;
+    height: 221px; /* width * 0.866 */
     background: white;
     box-sizing: border-box;
     -webkit-clip-path: polygon(0% 50%, 25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%);
@@ -78,11 +78,11 @@
 
   .hex-background {
     position: absolute;
-    background-color: orange; /*color of the main-background*/
+    background-color: white; /*color of the main-background*/
     top: 2px; /* equal to border thickness */
     left: 2px; /* equal to border thickness */
-    width: 316px; /* container height - (border thickness * 2) */
-    height: 273.12px; /* container height - (border thickness * 2) */
+    width: 256px; /* container height - (border thickness * 2) */
+    height: 221px; /* container height - (border thickness * 2) */
     -webkit-clip-path: polygon(0% 50%, 25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%);
     -moz-clip-path: polygon(0% 50%, 25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%);
   }
@@ -94,4 +94,23 @@
     object-fit: cover;
     -webkit-clip-path: polygon(0% 50%, 25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%);
     -moz-clip-path: polygon(0% 50%, 25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%);
+  }
+
+  .full-image {
+    width: 60vw; 
+    height: 60vh;
+  }
+
+  .grid-inner-about {
+    padding: 0 2% 0 2%;
+  }
+
+  .center-text {
+    text-align: center;
+  }
+
+  .paper-about {
+    justify-content: center;
+    width: 95%;
+    height: 95%;
   }

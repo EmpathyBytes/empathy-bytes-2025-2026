@@ -1,14 +1,18 @@
 import React, { useState } from "react"
 import Layout from "../components/layout"
 import Logo from "../images/empbytes.jpg"
+import Webfull from "../images/full/Web-Full.jpg"
 
 // Importing Data from the Mock Database - Jacob
 import Members from "../database/members"
 
 import "../styles/about.css"
+import "../styles/all.css"
 
 
 import Grid from '@mui/material/Unstable_Grid2';
+import { Paper } from '@mui/material';
+
 
 
 
@@ -190,15 +194,42 @@ function AboutPage() {
 
         <div className="emerging-tech-about" style={{ display: visEmerging ? 'block' : 'none' }}>
           <p className="paragraph-about">Emerging Tech About</p>
-          <div class="hex">
-            <div class="hex-background">
-              <img  src= {Logo} alt="person"></img>
-            </div>
-          </div>
         </div>
 
         <div className="web-about" style={{ display: visWeb ? 'block' : 'none' }}>
           <p className="paragraph-about">Web About</p>
+
+          <Grid container spacing={0} className="grid-inner-about" justifyContent="center">
+
+<Grid xs={8}>
+  {/* <img src={Webfull} alt="full web image" className="full-image"></img> */}
+</Grid>
+
+<Grid xs={4}>
+  
+</Grid>
+
+{Members.map((item) => (
+<Grid container xs={3.5} alignItems="center" justifyContent="center" direction="column">
+  {/* <Paper elevation={3} className="paper-about b-0"> */}
+    <Grid xs={7}>
+    <div class="hex">
+        <div class="hex-background">
+          <img src= {item.image} alt="person"></img>
+          <p className="paragraph-about">{ item.name }</p>
+        <p className="paragraph-about">{ item.role }</p>
+        </div>
+      </div>
+    </Grid>
+    <Grid xs={5}>
+      <div className="center-text">
+        <p className="paragraph-about">{ item.name }</p>
+      </div>
+    </Grid>
+  {/* </Paper> */}
+</Grid>
+))}
+</Grid>
         </div>
 
         <div className="media-about" style={{ display: visMedia ? 'block' : 'none' }}>

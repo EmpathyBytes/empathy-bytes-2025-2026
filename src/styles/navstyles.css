@@ -110,6 +110,7 @@
     margin-left: 2rem;
     margin-top: 1rem;
     height: var(--logo-top-height);
+    border-radius: 50%;
   }
   
   .scrolled.logo {
@@ -204,6 +205,6 @@
     color: var(--color-navyblue)
   }
 
-  img {
+  /* .img-nav {
     border-radius: 50%;
-  }
+  } */

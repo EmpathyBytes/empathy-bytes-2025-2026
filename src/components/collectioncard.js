@@ -2,6 +2,7 @@ import React from "react";
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import CardMedia from "@mui/material/CardMedia";
+import { CardContent } from "@mui/material";
 import Button from "@mui/material/Button";
 
 /**
@@ -23,10 +24,14 @@ export default function CollectionCard(props) {
         src={"https://empathybytes.library.gatech.edu" + props.image}
         alt="img"
       />
+      <CardContent>
+        <h5>{props.title}</h5>
+        <div dangerouslySetInnerHTML={{ __html: props.body }} />
+      </CardContent>
       <CardActions>
         <Button href={"/collections" + props.url}
           size="small">
-          {props.title}
+          Learn More
         </Button>
       </CardActions>
     </Card>

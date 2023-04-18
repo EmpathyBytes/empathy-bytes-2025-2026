@@ -1,5 +1,4 @@
 import React, { useState } from "react"
-import PeopleCard from "../components/PeopleCard"
 import Layout from "../components/layout"
 
 // Importing Data from the Mock Database - Jacob

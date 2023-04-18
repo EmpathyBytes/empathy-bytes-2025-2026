@@ -1,6 +1,7 @@
 import * as React from "react";
 import { Link } from "gatsby";
 import { useEffect, useState } from "react";
+import Logo from "../images/empbytes.jpg";
 
 const ReactiveLink = ({ name, path }) => {
   return (
@@ -48,7 +49,7 @@ export default function Navbar({ transparent }) {
           <Link to={`/`}>
             <img
               className={`logo ${scroll}`}
-              src="https://educast.library.gatech.edu/wp-content/uploads/2020/10/cropped-cropped-cropped-logoGearsTechRound100x100-1.png"
+              src= {Logo}
               alt="Empathy Bytes Logo"
             />
           </Link>

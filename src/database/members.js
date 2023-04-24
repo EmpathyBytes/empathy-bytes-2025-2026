@@ -3,6 +3,7 @@ import Jacob from "../images/people/Jacob.jpg"
 import Evelyn from "../images/people/Evelyn.jpg"
 import Audrey from "../images/people/Audrey.jpg"
 import Yunsu from "../images/people/Yunsu.jpg"
+import Carly from "../images/people/Carly.png"
 
 const members = [
     {
@@ -43,7 +44,7 @@ const members = [
         role: "Web Team",
         year: "1st Year",
         major: "Computer Science",
-        image: "https://http.cat/101"
+        image: Carly
     },
 
 ];

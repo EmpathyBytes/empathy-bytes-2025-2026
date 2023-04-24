@@ -19,9 +19,18 @@ function Article({data}) {
                 <div className="articleTitleInfo">
                     <h1>{post.title}</h1>
                     <h3>By {post.field_author}</h3>
+                       <audio className="articleAudio" src = {post.relationships.field_audio != null ? "https://www.empathybytes.library.gatech.edu" + post.relationships.field_audio.path.alias : "https://www.empathybytes.library.gatech.edu/sites/default/files/2023-02/Usselman-Interview-Nov.-13-2019.mp3"} controls>
+                        There is no audio for this article.
+                       </audio>
                 </div>
             </div>
+
+
             <div className="articleText" dangerouslySetInnerHTML={{ __html: post.body.processed }}></div>
+            <div class="clicker" tabindex="1">View Transcript</div>
+            <div class="hiddendiv">
+                <div className="articleText" dangerouslySetInnerHTML={{ __html: post.field_transcript.processed }}></div>
+            </div>
             </div>
         </Layout>
     );
@@ -53,6 +62,14 @@ export const query = graphql`
                     url
                 }
             }
+            field_audio {
+                path {
+                    alias
+                }
+                internal {
+                    contentFilePath
+                }
+            }
         }
     }
 }
@@ -60,12 +77,8 @@ export const query = graphql`
 
 export default Article;
 
-            // <div style={container}>
-            //     <div style={img_container}>
-            //         <img style={img_style} src={post.relationships.field_image.localFile.url}></img>
-            //         <div style={overlay}>
-            //         <h1>{post.title}</h1>
-            //         <h3>By {post.field_author}</h3>
-            //         </div>
-            //     </div>
-            //     <div dangerouslySetInnerHTML={{ __html: post.body.processed }}></div>
+/**
+ *          <audio controls>
+            <source src={"https://www.empathybytes.library.gatech.edu" + post.relationships.field_audio.path.alias} type="audio/mp3"/>
+            </audio>
+ */

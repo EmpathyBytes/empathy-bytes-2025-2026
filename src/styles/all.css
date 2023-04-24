@@ -1,0 +1,23 @@
+/* This stylesheet contains basic styling components that will be used in all pages */
+
+
+.bg-1 {
+    background-color: #F8FAFB;
+}
+.bg-2 {
+    background-color: #F2F0F0;
+}
+.bg-3 {
+    background-color: #E2E0E0;
+}
+
+.b-1 {
+    background-color: #3074BF;
+}
+
+.b-2 {
+    background-color: #2767AD;
+}
+.b-0 {
+    background-color: #1B3F66;
+}

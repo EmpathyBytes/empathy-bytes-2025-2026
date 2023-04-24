@@ -110,6 +110,7 @@
     margin-left: 2rem;
     margin-top: 1rem;
     height: var(--logo-top-height);
+    border-radius: 50%;
   }
   
   .scrolled.logo {
@@ -200,10 +201,10 @@
   }
   
   #content-wrap {
-    padding-bottom: 2.5rem;    /* Footer height */
+    /* padding-bottom: 2.5rem; */
     color: var(--color-navyblue)
   }
 
-  img {
+  /* .img-nav {
     border-radius: 50%;
-  }
+  } */

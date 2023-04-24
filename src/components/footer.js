@@ -9,7 +9,7 @@ function Footer(props) {
 
   return (
     <footer>
-      <div className="container">
+      <div className="container-footer">
         <Grid container spacing={2}>
           
           <Grid xs={4}>

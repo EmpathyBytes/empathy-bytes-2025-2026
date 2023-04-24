@@ -61,15 +61,17 @@ const contactPage = () => {
               <span style={headingAccentStyles}>Contact Us</span>
             </h1>
           </div>
-          <label style={labelStyle}>
-            <button
-              style={button}
-              type="button"
-              onClick={handleEmailButtonClick}
-            >
-              Click here to send us an email!
-            </button>
-          </label>
+          <div style={{ textAlign: "center" }}>
+            <label style={labelStyle}>
+              <button
+                style={button}
+                type="button"
+                onClick={handleEmailButtonClick}
+              >
+                Click here to send us an email!
+              </button>
+            </label>
+          </div>
         </main>
       </Layout>
     </div>

@@ -1,6 +1,6 @@
 import React from "react";
 import Layout from "../components/layout";
-import "./contactPage.css"; // Import CSS file for contactPage
+import "../styles/contactPage.css"; // Import CSS file for contactPage
 
 const contactPage = () => {
   const handleEmailButtonClick = () => {

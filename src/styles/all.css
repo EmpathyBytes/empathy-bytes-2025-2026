@@ -21,3 +21,7 @@
 .b-0 {
     background-color: #1B3F66;
 }
+
+.noUnderline {
+    text-decoration: none;
+}

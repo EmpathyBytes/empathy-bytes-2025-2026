@@ -50,18 +50,28 @@
 }
 
 .about-nav-text {
-    font-size: 2vw;
-    font-family: 'Roboto', sans-serif;
+    font-size: 1.5vw;
+    font-family: 'Roboto Slab', sans-serif;
     color: white;
-    background-color: #005091;
     padding: 10%;
-    border-radius: 4px;
+    border-radius: 150px;
 }
 
 .about-nav-text:hover {
-    background-color: darkblue;
+    background-color: #003057;
     cursor: pointer;
     transition: background-color 200ms linear;
+}
+
+.navBG {
+    display: flex;
+    background-color: #1B3F66;
+    border-radius: 150px;
+    width: 70%;
+    height: 50%;
+    top: 50px;
+    margin: auto;
+    justify-content: center;
 }
 
 .hex {
@@ -113,4 +123,34 @@
     justify-content: center;
     width: 95%;
     height: 95%;
+  }
+
+  .padding-bottom-about {
+    padding-bottom: 5%;
+  }
+
+  .about-full {
+    width: 100vw;
+    height: 80vh;
+    object-fit: cover;
+  }
+
+  .padding-about {
+    padding: "0% 5% 6% 5%";
+  }
+
+  .top-about {
+    width: 100vw;
+    height: 60vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    background-color: rgba(0, 0, 0, 0.3)
+  }
+
+  .about-container-full {
+    padding: "0% 5% 6% 5%";
+    background-color: #003663;
+    top: 120px;
   }

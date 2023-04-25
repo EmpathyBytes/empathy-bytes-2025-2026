@@ -6,6 +6,8 @@ import { Environment, OrbitControls } from '@react-three/drei'
 
 import BuzzPlaque from "../components/canvas/buzzplaque";
 import Football from "../components/canvas/football";
+import Sweater from "../components/canvas/tSweater";
+import Converse from "../components/canvas/rightconverse";
 
 import Grid from '@mui/material/Unstable_Grid2';
 
@@ -77,14 +79,14 @@ function EmergingTech() {
                     </Grid>
 
                     <Grid xs={6} container className="" alignItems="center" justifyContent="center" direction="column">
-                        <h1>Signed GT Football</h1>
+                        <h1>Buzs's Right Converse</h1>
                     </Grid>
 
 
                     <Grid xs={6} className="vr-container-1 b-1">
                         <Canvas>
                             <Suspense>
-                                <BuzzPlaque scale={.1} />
+                                <BuzzPlaque scale={3.5} />
                                 <Environment preset="sunset" />
                                 <OrbitControls />
                             </Suspense>
@@ -94,7 +96,7 @@ function EmergingTech() {
                         <Grid xs={6} className="vr-container-2 b-2">
                             <Canvas>
                                 <Suspense>
-                                    <Football scale={.07} />
+                                    <Converse scale={6} />
                                     <Environment preset="sunset" />
                                     <OrbitControls />
                                 </Suspense>

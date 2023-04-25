@@ -1,6 +1,8 @@
 import React from "react";
 import Layout from "../components/layout";
 
+import technologies from "../images/gatsbyanddrupal.png"
+
 import Grid from '@mui/material/Unstable_Grid2';
 
 import "../styles/experiencesIndividual.css"
@@ -56,7 +58,17 @@ function web() {
                             web application to act as a portal showcasing our research on communities within Georgia Tech.
                             </p>
                         </Grid>
+
+
                     </div>
+
+                </Grid>
+
+                <Grid container spacing={0}>
+
+                        <Grid xs={12} container className="bg-1" alignItems="center" justifyContent="center" direction="column">
+                            <img src={technologies}></img>
+                        </Grid>
 
                 </Grid>
             </div>

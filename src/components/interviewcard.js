@@ -13,10 +13,10 @@ const col = {
     padding: 10,
 };
 
-
 const row = {
     ["border-bottom"]: '5px solid #b3a369',
     padding: 15,
+    ["font-family"]: 'Roboto',
 };
 
 const img_style = {

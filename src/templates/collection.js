@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import Layout from "../components/layout";
 import InterviewCard from '../components/interviewcard';
+import "../styles/fonts.css"
 
 // Functional Collection Component
 // This Function will find all the collection components on the drupal site, and create a page
@@ -11,11 +12,13 @@ import InterviewCard from '../components/interviewcard';
 const container = {
     padding: "6% 5% 6% 5%",
     paddingTop: 120,
+    ["font-family"]: 'Roboto',
 };
 
 const collection_name = {
     ["text-align"]: 'center',
     ['padding-top']: 10,
+    ['font-family']: 'Roboto Slab, serif',
     color: '#b3a369',
 }
 

@@ -8,12 +8,17 @@ import splash1 from "../images/homepage/splash1.jpg"
 import splash2 from "../images/homepage/splash2.jpg"
 import teampic from "../images/homepage/teampic.jpg"
 
+import webicon from "../images/subteam-icons/webteambordered.png"
+import mediaicon from "../images/subteam-icons/mediateambordered.png"
+import appicon from "../images/subteam-icons/appteambordered.png"
+import emtechicon from "../images/subteam-icons/emergingtechteambordered.png"
+
+
 import Carousel from 'react-material-ui-carousel'
 import Grid from '@mui/material/Unstable_Grid2';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
-
 
 
 function IndexPage() {
@@ -71,7 +76,7 @@ function IndexPage() {
           <Card sx={{ maxWidth: 360 }}>
             <CardMedia
               sx={{ height: 250 }}
-              image="https://thenounproject.com/api/private/icons/5621920/edit/?backgroundShape=SQUARE&backgroundShapeColor=%23000000&backgroundShapeOpacity=0&exportSize=752&flipX=false&flipY=false&foregroundColor=%23000000&foregroundOpacity=1&imageFormat=png&rotation=0&token=gAAAAABkImQoebjxN2U6ruMR1S1kXBaLMX0XXLTJfr0AIfn9rZVtjnpEWEpTZonhDkMgCLfCXsxrrZLRD1QbArALB87ewW5mDg%3D%3D"
+              image={webicon}
             />
             <CardContent style={{backgroundColor: "#003057"}}>
               <h1 className="card-text">Web Track</h1>
@@ -82,7 +87,7 @@ function IndexPage() {
         <Card sx={{ maxWidth: 360 }}>
             <CardMedia
               sx={{ height: 250 }}
-              image="https://thenounproject.com/api/private/icons/2462652/edit/?backgroundShape=SQUARE&backgroundShapeColor=%23000000&backgroundShapeOpacity=0&exportSize=752&flipX=false&flipY=false&foregroundColor=%23000000&foregroundOpacity=1&imageFormat=png&rotation=0&token=gAAAAABkImQoebjxN2U6ruMR1S1kXBaLMX0XXLTJfr0AIfn9rZVtjnpEWEpTZonhDkMgCLfCXsxrrZLRD1QbArALB87ewW5mDg%3D%3D"
+              image={emtechicon}
             />
             <CardContent style={{backgroundColor: "#003057"}}>
               <h1 className="card-text">VR Track</h1>
@@ -93,7 +98,7 @@ function IndexPage() {
         <Card sx={{ maxWidth: 360 }}>
             <CardMedia
               sx={{ height: 250 }}
-              image="https://thenounproject.com/api/private/icons/1295152/edit/?backgroundShape=SQUARE&backgroundShapeColor=%23000000&backgroundShapeOpacity=0&exportSize=752&flipX=false&flipY=false&foregroundColor=%23000000&foregroundOpacity=1&imageFormat=png&rotation=0&token=gAAAAABkImQoebjxN2U6ruMR1S1kXBaLMX0XXLTJfr0AIfn9rZVtjnpEWEpTZonhDkMgCLfCXsxrrZLRD1QbArALB87ewW5mDg%3D%3D"
+              image={appicon}
             />
             <CardContent style={{backgroundColor: "#003057"}}>
               <h1 className="card-text">App Track</h1>
@@ -104,7 +109,7 @@ function IndexPage() {
         <Card sx={{ maxWidth: 360 }}>
             <CardMedia
               sx={{ height: 250 }}
-              image="https://thenounproject.com/api/private/icons/1682527/edit/?backgroundShape=SQUARE&backgroundShapeColor=%23000000&backgroundShapeOpacity=0&exportSize=752&flipX=false&flipY=false&foregroundColor=%23000000&foregroundOpacity=1&imageFormat=png&rotation=0&token=gAAAAABkImQoebjxN2U6ruMR1S1kXBaLMX0XXLTJfr0AIfn9rZVtjnpEWEpTZonhDkMgCLfCXsxrrZLRD1QbArALB87ewW5mDg%3D%3D"
+              image = {mediaicon}
             />
             <CardContent style={{backgroundColor: "#003057"}}>
               <h1 className="card-text">Media Track</h1>

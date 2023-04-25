@@ -56,8 +56,7 @@
 }
 
 .paragraph2 {
-    font-weight: bold;
-    font-family: 'Garamond', serif;
+    font-family: 'Roboto', sans-serif;
     font-size: 1.3vw;
     /*position: absolute; /* taken out of the normal flow of the document */
     top: 50%; /* moved down by 50% of the screen height */

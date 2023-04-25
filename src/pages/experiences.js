@@ -13,6 +13,7 @@ import "../styles/all.css"
 import EmergingTech from "../images/experiences/emergingtech.png"
 import App from "../images/experiences/app.png"
 import Web from "../images/experiences/web.png"
+import Media from "../images/experiences/mediaBTS.jpg"
 
 
 function ExperiencesPage() {
@@ -65,7 +66,7 @@ function ExperiencesPage() {
                   <CardMedia
                     component="img"
                     height="250"
-                    image={EmergingTech}
+                    image={Media}
                     alt="Media"
                     className="rotate"
                   />

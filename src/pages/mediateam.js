@@ -31,8 +31,8 @@ function Media() {
 
                         <Grid xs={7}>
                             <p className="paragraph-experiences paragraph-indent-experiences-left">
-                                Our team develops mobile applications to showcase our research and 
-                                explore empathy with Mixed Reality technologies.
+                                Our team creates media artifacts to support our other track's endevours. We also
+                                create behhind the scenes content and interviews featuring our members.
                             </p>
                         </Grid>
 
@@ -46,13 +46,14 @@ function Media() {
                     <div className="grid-margins-experiences">
 
                         <Grid xs={12} className="right-align-experiences">
-                            <h1 className="sub-header-experiences">Test</h1>
+                            <h1 className="sub-header-experiences">Behind the Scenes Interviews</h1>
                         </Grid>
 
 
                         <Grid xs={12}>
-                            <p className="paragraph-experiences paragraph-indent-experiences-left">Empathy Bytes is developing a 
-                            mobile application to act as a portal showcasing our research on communities within Georgia Tech.
+                            <p className="paragraph-experiences paragraph-indent-experiences-left">
+                                Empathy Bytes conducted behind the scenes interviews with team members to learn more about the "Why" behind our
+                                projects. Watch the videos below to learn more!
                             </p>
                         </Grid>
                     </div>

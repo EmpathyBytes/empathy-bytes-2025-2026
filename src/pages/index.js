@@ -5,6 +5,7 @@ import "../styles/homepage.css"
 
 import splash1 from "../images/homepage/splash1.jpg"
 import splash2 from "../images/homepage/splash2.jpg"
+import teampic from "../images/homepage/teampic.jpg"
 
 import Carousel from 'react-material-ui-carousel'
 import Grid from '@mui/material/Unstable_Grid2';
@@ -44,11 +45,20 @@ function IndexPage() {
       <Grid container spacing={2}>
         <Grid xs={12}>
           <h1 className="header">What is Empathy Bytes?</h1>
-          <p className="paragraph">
-            Empathy Bytes is a student run research project focused on creating immersive technology and media centered around empathy. 
+          <div class="container-row">
+
+    <div class="image">
+      <img src={teampic} alt="" width="580" height="350"></img>
+    </div>
+    <div class="parag">
+    <p className="paragraph2">
+            "Empathy Bytes is a student run research project focused on creating immersive technology and media centered around empathy. 
             We think outside traditional modes of communication and documentation to create radical and unique experiences. Our research 
-            currently focuses on identifying and presenting distinct communities connected to Georgia Tech.
+            currently focuses on identifying and presenting distinct communities connected to Georgia Tech."
           </p>
+  </div>
+  </div>
+    
         </Grid>
         <Grid xs={12}>
         <hr></hr>

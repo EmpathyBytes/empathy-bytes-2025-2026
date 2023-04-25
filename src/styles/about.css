@@ -154,3 +154,10 @@
     background-color: #003663;
     top: 120px;
   }
+
+  .about-nav-past {
+    text-align: center;
+    height: 150px;
+    width: 300px;
+    margin: auto;
+}

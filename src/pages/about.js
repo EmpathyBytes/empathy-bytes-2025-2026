@@ -267,6 +267,11 @@ function AboutPage() {
           ))}
           </Grid>
         </div>
+          <div className="about-nav-past" style={{paddingTop: 25, paddingBottom: 25}}>
+              <a href="/pastmembers" className="noUnderline">
+                <h3 className="about-nav-text">Past Members</h3>
+              </a>
+          </div>
       </div>
     </Layout>
   );

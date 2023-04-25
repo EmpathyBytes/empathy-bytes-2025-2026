@@ -1,62 +1,30 @@
 @import "./fonts.css";
 
-/* Scroll behavior */
-* {
-  scroll-behavior: smooth;
+*{scroll-behavior: smooth;}
+
+.container-contact {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(to bottom, #003057,
+  #264e86,
+  #457fb3,
+  /* #8ab4d9, */
+  #B3A380,
+  #b3a369);
 }
 
-.pageStyles {
-    color: #232129;
-    padding: 96px;
-    padding-top: 180px;
-    font-family: -apple-system, Roboto, sans-serif, serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-  }
-  
-  .headingStyles {
-    margin-top: 0;
-    margin-bottom: 32px;
-    max-width: 320px;
+.heading-styles {
+    font-family: 'Roboto Slab', serif;
+    font-size: 4vw;
     text-align: center;
-    margin: 0 auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
   
-  .headingAccentStyles {
-    color: #663399;
-  }
-  
-  .button {
-    background: #fff;
-    border-radius: 16px;
-    padding: 16px 32px;
-    width: 30vw;
-    height: 1.5vw;
-    margin: 1% auto;
-    cursor: pointer;
-    font-family: -apple-system, Roboto, sans-serif, serif;
-    font-size: 1.7vw;
-    color: #232129;
-    text-decoration: none;
-    text-align: center;
-    border: 3px solid navy;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .labelStyle {
-    font-family: Roboto;
-    font-size: 1.7vw;
-    margin-bottom: 1%;
-  }
-  
-  .footerStyles {
-    margin-top: auto;
-    text-align: center;
-    padding-bottom: 24px;
-    margin-top: 16px;
-  }
+
   

@@ -14,18 +14,18 @@ import Button from "@mui/material/Button";
 export default function CollectionCard(props) {
 
   return (
-    <Card sx={{ maxWidth: 380 }}>
+    <Card sx={{ maxWidth: '40vw' }}>
       <CardMedia
         component="img"
         img
         height="240"
-        width="240"
+        width="350"
         objectFit='cover'
         src={"https://empathybytes.library.gatech.edu" + props.image}
         alt="img"
       />
       <CardContent>
-        <h5>{props.title}</h5>
+        <h5 style = {{['font-family']: 'Roboto Slab'}}>{props.title}</h5>
         <div dangerouslySetInnerHTML={{ __html: props.body }} />
       </CardContent>
       <CardActions>

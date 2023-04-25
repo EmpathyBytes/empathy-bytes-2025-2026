@@ -13,7 +13,7 @@ const projectsPage = ({data}) => {
             <Layout>
                 <div className="projectsContainer">
                     <h1 className="projectsTitle">Interview Collections</h1>
-                    <Grid container spacing={2}>
+                    <Grid container spacing={4}>
                     {arr.map((item) => ( // Mapping collection data to card component
                         <Grid item xs={6}>
                         <CollectionCard 

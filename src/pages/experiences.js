@@ -3,16 +3,97 @@ import * as React from "react"
 import Layout from "../components/layout"
 
 import Grid from '@mui/material/Unstable_Grid2';
-import "../styles/experiences.css"
+import Card from '@mui/material/Card';
+import CardMedia from '@mui/material/CardMedia';
+import { Button, CardActionArea, CardActions } from '@mui/material';
 
-import VR from "../images/experiences/vr.png"
-import APP from "../images/experiences/app.png"
+import "../styles/experiences.css"
+import "../styles/all.css"
+
+import EmergingTech from "../images/experiences/emergingtech.png"
+import App from "../images/experiences/app.png"
+import Web from "../images/experiences/web.png"
 
 
 function ExperiencesPage() {
   return (
     <Layout>
-      <Grid container spacing={2}>
+      <div className="container-experiences-homepage">
+        <Grid container spacing={4} rowSpacing={0}
+              alignItems="center"
+              justifyContent="center">
+
+          <Grid xs={5} container alignItems="center" justifyContent="center">
+            <a href="/appteam" className="noUnderline">
+              <Card sx={{ width: 600 }}>
+                <CardActionArea style={{backgroundColor: "#1B3F66"}}>
+                  <CardMedia
+                    component="img"
+                    height="250"
+                    image={App}
+                    alt="App"
+                  />
+                  <h1 className="text-experience">App</h1>
+                </CardActionArea>
+              </Card>
+            </a>
+          </Grid>
+
+          <Grid xs={5} container alignItems="center" justifyContent="center">
+            <a href="/emergingtech" className="noUnderline">
+              <Card sx={{ width: 600 }}>
+                <CardActionArea style={{backgroundColor: "#1B3F66"}}>
+                  <CardMedia
+                    component="img"
+                    height="250"
+                    image={EmergingTech}
+                    alt="Emerging Tech"
+                  />
+                  <h1 className="text-experience">Emerging Tech</h1>
+                </CardActionArea>
+              </Card>
+            </a>
+          </Grid>
+
+          <Grid xs={12} container style={{paddingTop: 30}} 
+              alignItems="center"
+              justifyContent="center">
+          <Grid xs={5} container alignItems="center" justifyContent="center">
+            <a href="/mediateam" className="noUnderline">
+            <Card sx={{ width: 600 }}>
+                <CardActionArea style={{backgroundColor: "#1B3F66"}}>
+                  <CardMedia
+                    component="img"
+                    height="250"
+                    image={EmergingTech}
+                    alt="Media"
+                    className="rotate"
+                  />
+                  <h1 className="text-experience">Media</h1>
+                </CardActionArea>
+              </Card>
+            </a>
+          </Grid>
+
+          <Grid xs={5} container alignItems="center" justifyContent="center">
+            <a href="/webteam" className="noUnderline">
+              <Card sx={{ width: 600 }}>
+                <CardActionArea style={{backgroundColor: "#1B3F66"}}>
+                  <CardMedia
+                    component="img"
+                    height="250"
+                    image={Web}
+                    alt="Web"
+                  />
+                  <h1 className="text-experience">Web</h1>
+                </CardActionArea>
+              </Card>
+            </a>
+          </Grid>
+          </Grid>
+        </Grid>
+      </div>
+      {/* <Grid container spacing={2}>
         <Grid xs={6}>
           <a href="/appteam">
           <div className="container-half">
@@ -38,62 +119,35 @@ function ExperiencesPage() {
             </div>
           </a>
         </Grid>
-      </Grid>
+
+        <Grid xs={6}>
+          <a href="/mediateam">
+            <div className="container-half">
+              <div className="text-overlay">
+                <h1 className="text-experience">Media</h1>
+              </div>
+              <div className="image-overlay">
+              <img className="splash-experience" src={VR}></img>
+              </div>
+            </div>
+          </a>
+        </Grid>
+
+        <Grid xs={6}>
+          <a href="/webteam">
+            <div className="container-half">
+              <div className="text-overlay">
+                <h1 className="text-experience">Web</h1>
+              </div>
+              <div className="image-overlay">
+              <img className="splash-experience" src={VR}></img>
+              </div>
+            </div>
+          </a>
+        </Grid>
+      </Grid> */}
     </Layout>
   );
 }
-
-
-// import React from 'react';
-// import ExperiencesComponent from "../components/ExperiencesComponent";
-// import Navbar from "../components/navbar";
-
-// const ExperiencesPage = () => {
-//   return (
-//     <div>
-//       <Navbar transparent={false}/>
-//       <div style={{ display: "flex", justifyContent: "center", alignItems: "center", marginTop: "200px", textAlign: "center" }}>
-//         <ExperiencesComponent 
-//           appSection={
-//             <section style={{
-//                 width: "50%",
-//                 height: "550px",
-//                 background: "#fff",
-//                 boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
-//                 borderRadius: "10px",
-//                 margin: "0 50px 50px",
-//                 display: "flex",
-//                 flexDirection: "column",
-//                 justifyContent: "center",
-//                 alignItems: "center",
-//                 textAlign: "center",
-//               }}>
-//               <h2>App</h2>
-//               <p style={{lineHeight: "350px"}}>Here's where we'll showcase information about our app.</p>
-//             </section>
-//           }
-//           vrSection={
-//             <section style={{
-//                 width: "50%",
-//                 height: "550px",
-//                 background: "#fff",
-//                 boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
-//                 borderRadius: "10px",
-//                 margin: "0 50px 50px",
-//                 display: "flex",
-//                 flexDirection: "column",
-//                 justifyContent: "center",
-//                 alignItems: "center",
-//                 textAlign: "center",
-//               }}>
-//               <h2>VR</h2>
-//               <p style={{lineHeight: "350px"}}>Here's where we'll showcase information about our VR experiences.</p>
-//             </section>
-//           }
-//         />
-//       </div>
-//     </div>
-//   );
-// }
 
 export default ExperiencesPage;

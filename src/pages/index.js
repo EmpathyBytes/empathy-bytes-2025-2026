@@ -2,6 +2,7 @@ import * as React from "react"
 import Layout from "../components/layout"
 
 import "../styles/homepage.css"
+import "../styles/all.css"
 
 import splash1 from "../images/homepage/splash1.jpg"
 import splash2 from "../images/homepage/splash2.jpg"
@@ -112,7 +113,7 @@ function IndexPage() {
         </Grid>
         <Grid xs={3}></Grid>
         <Grid xs={3}>
-        <a href="/experiences">
+        <a href="/experiences" className="noUnderline">
           <Card sx={{ maxWidth: 360 }}>
             <CardContent style={{backgroundColor: "#003057"}}>
               <h1 className="card-text">Experiences</h1>
@@ -121,7 +122,7 @@ function IndexPage() {
           </a>
         </Grid>
         <Grid xs={3}>
-          <a href="/projects">
+          <a href="/projects" className="noUnderline">
           <Card sx={{ maxWidth: 360 }}>
             <CardContent style={{backgroundColor: "#003057"}}>
               <h1 className="card-text">Projects</h1>

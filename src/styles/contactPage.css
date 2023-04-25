@@ -1,0 +1,30 @@
+@import "./fonts.css";
+
+*{scroll-behavior: smooth;}
+
+.container-contact {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(to bottom, #003057,
+  #264e86,
+  #457fb3,
+  /* #8ab4d9, */
+  #B3A380,
+  #b3a369);
+}
+
+.heading-styles {
+    font-family: 'Roboto Slab', serif;
+    font-size: 4vw;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+
+  

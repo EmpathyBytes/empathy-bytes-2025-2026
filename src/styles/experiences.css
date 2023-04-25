@@ -1,5 +1,9 @@
 @import "./fonts.css";
 
+.container-experiences-homepage {
+    padding-top: 130px;
+    padding-bottom: 90px;
+}
 .container-half {
     position: relative;
     height: 95vh;
@@ -7,18 +11,12 @@
 }
 
 .text-experience {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-
+    text-align: center;
     font-family: 'Roboto Slab', serif;
-    font-size: 3vw;
+    font-size: 2.7vw;
     color: white;
 }
 
-.splash-experience {
-}
 
 .text-overlay {
     width: 100%;
@@ -27,8 +25,12 @@
 }
 
 .image-overlay {
+    width: 700px;
+    height: 500px;
     position: absolute;
     z-index: -10;
-    bottom: 6vh;
-    left: 5vw;
+}
+
+.rotate {
+    transform: rotate(30);
 }

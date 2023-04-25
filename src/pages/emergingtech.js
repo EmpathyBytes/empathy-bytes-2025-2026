@@ -10,27 +10,27 @@ import Football from "../components/canvas/football";
 import Grid from '@mui/material/Unstable_Grid2';
 
 
-import "../styles/emergingtech.css"
+import "../styles/experiencesIndividual.css"
 import "../styles/all.css"
 
 
 function EmergingTech() {
     return(
         <Layout>
-            <div className="full-container-emerging-tech">
+            <div className="full-container-experiences">
                 <Grid container spacing={2} className="">
-                    <div className="grid-margins-emerging-tech">
+                    <div className="grid-margins-experiences">
                         <Grid xs={12}>
-                            <h1 className="header-emerging-tech">The Emerging Technologies Team</h1>
+                            <h1 className="header-experiences">The Emerging Technologies Team</h1>
                         </Grid>
                     </div>
                 </Grid>
 
 
                 <Grid container spacing={0} className="bg-1">
-                    <div className="grid-margins-emerging-tech">
+                    <div className="grid-margins-experiences">
                         <Grid xs={10}>
-                            <h1 className="sub-header-emerging-tech">what we do</h1>
+                            <h1 className="sub-header-experiences">What We Do</h1>
                         </Grid>
 
                         <Grid xs={2}>
@@ -38,7 +38,7 @@ function EmergingTech() {
                         </Grid>
 
                         <Grid xs={7}>
-                            <p className="paragraph-emerging-tech paragraph-intent-emerging-tech-left">
+                            <p className="paragraph-experiences paragraph-indent-experiences-left">
                                 Our team develops experiential technologies relating to Virtual and Mixed reality. We foster empathy through
                                 the preservation of communities, artifacts, and experiences using 3D technologies.
                             </p>
@@ -51,15 +51,15 @@ function EmergingTech() {
                 </Grid>
 
                 <Grid container spacing={0} className="">
-                    <div className="grid-margins-emerging-tech">
+                    <div className="grid-margins-experiences">
 
-                        <Grid xs={12} className="right-align-emerging-tech">
-                            <h1 className="sub-header-emerging-tech">the VR archives</h1>
+                        <Grid xs={12} className="right-align-experiences">
+                            <h1 className="sub-header-experiences">The VR Archives</h1>
                         </Grid>
 
 
                         <Grid xs={12}>
-                            <p className="paragraph-emerging-tech paragraph-intent-emerging-tech-left">Empathy Bytes is developing a 
+                            <p className="paragraph-experiences paragraph-indent-experiences-left">Empathy Bytes is developing a 
                             Virtual Reality Museum where anyone can experience and learn artifacts in the Georgia Tech Archives.
                             Our team is able digitally preserve items such as an official 1996 Atlanta Olympics Torch, Buzz’s Converses 
                             from 1988, and a 1937 rat cap through the use of photogrammetry and hand-modeling techniques. We hope this VR experience 

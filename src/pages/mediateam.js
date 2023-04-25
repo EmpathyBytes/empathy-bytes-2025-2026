@@ -3,19 +3,17 @@ import Layout from "../components/layout";
 
 import Grid from '@mui/material/Unstable_Grid2';
 
-import MockUp from "../images/experiences/appMockUp.png"
-
 import "../styles/experiencesIndividual.css"
 import "../styles/all.css"
 
-function App() {
+function Media() {
     return(
         <Layout>
             <div className="full-container-experiences">
                 <Grid container spacing={2} className="">
                     <div className="grid-margins-experiences">
                         <Grid xs={12}>
-                            <h1 className="header-experiences">The App Development Team</h1>
+                            <h1 className="header-experiences">The Media Team</h1>
                         </Grid>
                     </div>
                 </Grid>
@@ -44,31 +42,26 @@ function App() {
                     </div>
                 </Grid>
 
-                <Grid container spacing={2} className="">
+                <Grid container spacing={0} className="">
+                    <div className="grid-margins-experiences">
 
                         <Grid xs={12} className="right-align-experiences">
-                            <div className="grid-margins-experiences">
-                                <h1 className="sub-header-experiences">The Empathy Bytes App</h1>
-                            </div>
+                            <h1 className="sub-header-experiences">Test</h1>
                         </Grid>
 
 
-                        <Grid xs={6} container className="" alignItems="center" justifyContent="center">
-                            <div className="grid-margins-experiences">
-                                <p className="paragraph-experiences paragraph-indent-experiences-left">Empathy Bytes is developing a 
-                                mobile application to act as a portal showcasing our research on communities within Georgia Tech.</p>
-                            </div>
+                        <Grid xs={12}>
+                            <p className="paragraph-experiences paragraph-indent-experiences-left">Empathy Bytes is developing a 
+                            mobile application to act as a portal showcasing our research on communities within Georgia Tech.
+                            </p>
                         </Grid>
-                        <Grid xs={6} container className="" alignItems="center" justifyContent="center">
-                            <div className="grid-margins-experiences">
-                                <img src={MockUp}></img>
-                            </div>
-                        </Grid>
+                    </div>
 
                 </Grid>
+
             </div>
         </Layout>
     );
 }
 
-export default App;
+export default Media;

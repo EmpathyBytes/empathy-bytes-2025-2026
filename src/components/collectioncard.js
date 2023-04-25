@@ -4,6 +4,7 @@ import CardActions from "@mui/material/CardActions";
 import CardMedia from "@mui/material/CardMedia";
 import { CardContent } from "@mui/material";
 import Button from "@mui/material/Button";
+import "../styles/components/collectioncard.css";
 
 /**
  * Creates a Collection component in the form of a card with 
@@ -24,13 +25,13 @@ export default function CollectionCard(props) {
         src={"https://empathybytes.library.gatech.edu" + props.image}
         alt="img"
       />
-      <CardContent>
-        <h5 style = {{['font-family']: 'Roboto Slab'}}>{props.title}</h5>
-        <div dangerouslySetInnerHTML={{ __html: props.body }} />
+      <CardContent className="collectionCard">
+        <h5 className="collectionTitle">{props.title}</h5>
+        <div className="collectionText" dangerouslySetInnerHTML={{ __html: props.body }} />
       </CardContent>
-      <CardActions>
+      <CardActions className="collectionCard">
         <Button href={"/collections" + props.url}
-          size="small">
+          size="small" style={{color: 'lightgray'}}>
           Learn More
         </Button>
       </CardActions>

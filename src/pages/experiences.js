@@ -15,6 +15,7 @@ import App from "../images/experiences/app.png"
 import Web from "../images/experiences/web.png"
 import Media from "../images/experiences/mediaBTS.jpg"
 
+const gitPagesPath = '/empathy-bytes-2023';
 
 function ExperiencesPage() {
   return (
@@ -25,7 +26,7 @@ function ExperiencesPage() {
               justifyContent="center">
 
           <Grid xs={5} container alignItems="center" justifyContent="center">
-            <a href="/appteam" className="noUnderline">
+            <a href={gitPagesPath + "/appteam"} className="noUnderline">
               <Card sx={{ width: 600 }}>
                 <CardActionArea style={{backgroundColor: "#1B3F66"}}>
                   <CardMedia
@@ -41,7 +42,7 @@ function ExperiencesPage() {
           </Grid>
 
           <Grid xs={5} container alignItems="center" justifyContent="center">
-            <a href="/emergingtech" className="noUnderline">
+            <a href={gitPagesPath + "/emergingtech"} className="noUnderline">
               <Card sx={{ width: 600 }}>
                 <CardActionArea style={{backgroundColor: "#1B3F66"}}>
                   <CardMedia
@@ -60,7 +61,7 @@ function ExperiencesPage() {
               alignItems="center"
               justifyContent="center">
           <Grid xs={5} container alignItems="center" justifyContent="center">
-            <a href="/mediateam" className="noUnderline">
+            <a href={gitPagesPath + "/mediateam"} className="noUnderline">
             <Card sx={{ width: 600 }}>
                 <CardActionArea style={{backgroundColor: "#1B3F66"}}>
                   <CardMedia
@@ -77,7 +78,7 @@ function ExperiencesPage() {
           </Grid>
 
           <Grid xs={5} container alignItems="center" justifyContent="center">
-            <a href="/webteam" className="noUnderline">
+            <a href={gitPagesPath + "/webteam"} className="noUnderline">
               <Card sx={{ width: 600 }}>
                 <CardActionArea style={{backgroundColor: "#1B3F66"}}>
                   <CardMedia

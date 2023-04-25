@@ -12,6 +12,9 @@ import "../styles/components/collectioncard.css";
  * of a Drupal collection and links to a page containing the collection's interviews.
  * @returns the card 
  */
+
+const gitPagesPath = '/empathy-bytes-2023';
+
 export default function CollectionCard(props) {
 
   return (
@@ -30,7 +33,7 @@ export default function CollectionCard(props) {
         <div className="collectionText" dangerouslySetInnerHTML={{ __html: props.body }} />
       </CardContent>
       <CardActions className="collectionCard">
-        <Button href={"/collections" + props.url}
+        <Button href={gitPagesPath + "/collections" + props.url}
           size="small" style={{color: 'lightgray'}}>
           Learn More
         </Button>

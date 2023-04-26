@@ -79,7 +79,7 @@ function EmergingTech() {
                     </Grid>
 
                     <Grid xs={6} container className="" alignItems="center" justifyContent="center" direction="column">
-                        <h1>Buzs's Right Converse</h1>
+                        <h1>Buzz's Right Converse</h1>
                     </Grid>
 
 

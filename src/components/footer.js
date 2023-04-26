@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "gatsby";
 
 import Grid from '@mui/material/Unstable_Grid2';
 
@@ -19,25 +20,27 @@ function Footer(props) {
           <Grid xs={2} className="grouping">
             <h1 className="text-heading">About</h1>
 
-            <a className="text-anchor" href="">Home</a>
-            <a className="text-anchor" href="/#info">About Us</a>
-            <a className="text-anchor" href="/contact">Contact</a>
+            <Link className="text-anchor" to="">Home</Link>
+            <Link className="text-anchor" to="/about">About Us</Link>
+            <Link className="text-anchor" to="/contact">Contact</Link>
           </Grid>
 
           <Grid xs={2} className="grouping">
             <h1 className="text-heading">Experiences</h1>
 
-            <a className="text-anchor" href="/appteam">App Experience</a>
-            <a className="text-anchor" href="/emergingtech">VR Experience</a>
+            <Link className="text-anchor" to="/appteam">App Experience</Link>
+            <Link className="text-anchor" to="/emergingtech">VR Experience</Link>
+            <Link className="text-anchor" to="/mediateam">Media Experience</Link>
+            <Link className="text-anchor" to="/webteam">Web Experience</Link>
           </Grid>
 
           <Grid xs={2} className="grouping">
             <h1 className="text-heading">Communities</h1>
 
-            <a className="text-anchor" href="/collections/distance-math/">Distance Math</a>
-            <a className="text-anchor" href="/collections/covid-freshman/">Covid Freshman</a>
-            <a className="text-anchor" href="/collections/makerspaces/">Makerspace</a>
-            <a className="text-anchor" href="/articles">Misc</a>
+            <Link className="text-anchor" to="/collections/distance-math/">Distance Math</Link>
+            <Link className="text-anchor" to="/collections/covid-freshman/">Covid Freshman</Link>
+            <Link className="text-anchor" to="/collections/makerspaces/">Makerspace</Link>
+            <Link className="text-anchor" to="/articles">Misc</Link>
           </Grid>
 
           <Grid xs={2} className="grouping">

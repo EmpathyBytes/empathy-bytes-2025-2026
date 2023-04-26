@@ -1,5 +1,6 @@
 import * as React from "react"
 import Layout from "../components/layout"
+import { Link } from "gatsby";
 
 import "../styles/homepage.css"
 import "../styles/all.css"
@@ -128,22 +129,22 @@ function IndexPage() {
         </Grid>
         <Grid xs={3}></Grid>
         <Grid xs={3}>
-        <a href="/experiences" className="noUnderline">
+        <Link to="/experiences" className="noUnderline">
           <Card sx={{ maxWidth: 360 }}>
             <CardContent style={{backgroundColor: "#003057"}}>
               <h1 className="card-text">Experiences</h1>
             </CardContent>
           </Card>
-          </a>
+          </Link>
         </Grid>
         <Grid xs={3}>
-          <a href="/projects" className="noUnderline">
+          <Link to="/projects" className="noUnderline">
           <Card sx={{ maxWidth: 360 }}>
             <CardContent style={{backgroundColor: "#003057"}}>
               <h1 className="card-text">Projects</h1>
             </CardContent>
           </Card>
-          </a>
+          </Link>
         </Grid>
         <Grid xs={3}></Grid>
       </Grid>

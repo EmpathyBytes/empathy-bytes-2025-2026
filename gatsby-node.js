@@ -1,5 +1,5 @@
 const path = require('path');
-const gitPagesPath = '/empathy-bytes-2023'
+
 
 // Runs a GraphQL Call
 exports.createPages = async ({actions, graphql}) => {
@@ -27,7 +27,7 @@ exports.createPages = async ({actions, graphql}) => {
     // Looping through the data gathered, creating a page for each component
     articles.data.allNodeArticle.nodes.map(articleData =>
         createPage({
-            path: gitPagesPath + articleData.path.alias,
+            path: articleData.path.alias,
             component: path.resolve(`src/templates/article.js`),
             context: {
                 ArticleId: articleData.id,
@@ -54,7 +54,7 @@ exports.createPages = async ({actions, graphql}) => {
 
     collections.data.allNodeCollection.nodes.map(collectionData =>
         createPage({
-            path: gitPagesPath + "/collections" + collectionData.path.alias,
+            path: "/collections" + collectionData.path.alias,
             component: path.resolve(`src/templates/collection.js`),
             context: {
                 CollectionId: collectionData.id,

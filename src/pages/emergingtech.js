@@ -1,19 +1,19 @@
 import React from "react";
-import Layout from "../../components/layout";
+import Layout from "../components/layout";
 import { Suspense } from 'react'
 import { Canvas } from '@react-three/fiber'
 import { Environment, OrbitControls } from '@react-three/drei'
 
-import BuzzPlaque from "../../components/canvas/buzzplaque";
-import Football from "../../components/canvas/football";
-import Sweater from "../../components/canvas/tSweater";
-import Converse from "../../components/canvas/rightconverse";
+import BuzzPlaque from "../components/canvas/buzzplaque";
+import Football from "../components/canvas/football";
+import Sweater from "../components/canvas/tSweater";
+import Converse from "../components/canvas/rightconverse";
 
 import Grid from '@mui/material/Unstable_Grid2';
 
 
-import "../../styles/experiencesIndividual.css"
-import "../../styles/all.css"
+import "../styles/experiencesIndividual.css"
+import "../styles/all.css"
 
 
 function EmergingTech() {

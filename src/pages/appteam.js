@@ -1,12 +1,12 @@
 import React from "react";
-import Layout from "../../components/layout";
+import Layout from "../components/layout";
 
 import Grid from '@mui/material/Unstable_Grid2';
 
-import MockUp from "../../images/experiences/appMockUp.png"
+import MockUp from "../images/experiences/appMockUp.png"
 
-import "../../styles/experiencesIndividual.css"
-import "../../styles/all.css"
+import "../styles/experiencesIndividual.css"
+import "../styles/all.css"
 
 function App() {
     return(

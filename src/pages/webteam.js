@@ -1,12 +1,12 @@
 import React from "react";
-import Layout from "../../components/layout";
+import Layout from "../components/layout";
 
-import technologies from "../../images/gatsbyanddrupal.png"
+import technologies from "../images/gatsbyanddrupal.png"
 
 import Grid from '@mui/material/Unstable_Grid2';
 
-import "../../styles/experiencesIndividual.css"
-import "../../styles/all.css"
+import "../styles/experiencesIndividual.css"
+import "../styles/all.css"
 
 function web() {
     return(

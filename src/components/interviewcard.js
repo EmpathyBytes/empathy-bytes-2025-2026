@@ -9,8 +9,6 @@ import styles from "../styles/navstyles.css";
  * @returns the card component
  */
 
-const gitPagesPath = '/empathy-bytes-2023';
-
 const col = {
     padding: 10,
 };
@@ -44,7 +42,7 @@ export default function InterviewCard(props) {
                 <h2>{props.title}</h2>
                 <p>By {props.author}</p>
                 <div style={summary} dangerouslySetInnerHTML={{ __html: props.body}}/>
-                <a href={gitPagesPath + props.url}>Learn More</a>
+                <a href={props.url}>Learn More</a>
                 <p>{props.date}</p>
                 <span class="border-bottom"></span>
             </div>

@@ -8,7 +8,7 @@ import { useGLTF } from "@react-three/drei";
 
 
 function BuzzPlaque(props) {
-  const { nodes, materials } = useGLTF("/static/models/BuzzPlaque.glb");
+  const { nodes, materials } = useGLTF("./models/BuzzPlaque.glb");
   return (
     <group {...props} dispose={null}>
       <mesh
@@ -22,6 +22,6 @@ function BuzzPlaque(props) {
   );
 }
 
-useGLTF.preload("/static/models/BuzzPlaque.glb");
+useGLTF.preload("./models/BuzzPlaque.glb");
 
 export default BuzzPlaque;

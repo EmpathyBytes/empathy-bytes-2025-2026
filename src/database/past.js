@@ -1,3 +1,5 @@
+// Mock database for importing all the member information from past members. This data is being utilized in pastmembers.js - Jacob
+
 import Jocelyn from "../images/Alumni/Jocelyn.jpg"
 import LeeLee from "../images/Alumni/LeeLee.png"
 import Rutika from "../images/Alumni/Rutika.jpg"

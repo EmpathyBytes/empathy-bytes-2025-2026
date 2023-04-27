@@ -1,3 +1,5 @@
+// This page contains all the information about the emerging tech team... 3D model implementation is also done at the end of this page. - Jacob
+
 import React from "react";
 import Layout from "../components/layout";
 import { Suspense } from 'react'
@@ -82,8 +84,9 @@ function EmergingTech() {
                         <h1>Buzz's Right Converse</h1>
                     </Grid>
 
-
+                    {/* Loading 3D Models */}
                     <Grid xs={6} className="vr-container-1 b-1">
+                        {/* I would recommend following this structure for importing future models - Jacob */}
                         <Canvas>
                             <Suspense>
                                 <BuzzPlaque scale={3.5} />

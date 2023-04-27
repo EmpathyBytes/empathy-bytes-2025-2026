@@ -1,3 +1,5 @@
+// This page contains all the info about our past members in the VIP - Jacob
+
 import React from "react";
 import members from "../database/past"
 

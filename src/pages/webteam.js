@@ -1,3 +1,5 @@
+// This is the Web Team page! - Jacob
+
 import React from "react";
 import Layout from "../components/layout";
 

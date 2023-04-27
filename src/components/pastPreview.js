@@ -4,6 +4,8 @@ import "../styles/components/articlePreview.css"
 
 import Paper from '@mui/material/Paper';
 
+// This component is utilized to display all of our past members of the VIP and team. These components are utilized in the /pastmembers page - Jacob
+
 function PastPreview(props) {
 
     const paperSX = {

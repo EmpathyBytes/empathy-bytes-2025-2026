@@ -26,6 +26,7 @@ import { Paper } from '@mui/material';
 
 function AboutPage() {
 
+  // These functions set the visibility of each team
   const [visEmerging, setToggleEmerging] = useState(false);
   const [visWeb, setToggleWeb] = useState(true);
   const [visMedia, setToggleMedia] = useState(false);
@@ -81,7 +82,7 @@ function AboutPage() {
           </p>
         </div> */}
 
-        
+        {/* Div that contains the navbar */}
         <div className="about-nav" style={{paddingTop: 25, paddingBottom: 25}}>
         <Grid container spacing={2} className="navBG">
             <Grid xs={2}>
@@ -115,7 +116,7 @@ function AboutPage() {
         </div>
 
 
-
+        {/* The section that contains emerging tech information */}
         <div id="about-emerging" className="emerging-tech-about" style={{ display: visEmerging ? 'block' : 'none' }}>
 
           <Grid container spacing={0}  justifyContent="center">
@@ -154,6 +155,7 @@ function AboutPage() {
           </Grid>
         </div>
 
+        {/* The section that contains web team information */}
         <div id="about-web" className="web-about" style={{ display: visWeb ? 'block' : 'none' }}>
 
 
@@ -193,6 +195,8 @@ function AboutPage() {
           </Grid>
         </div>
 
+
+        {/* The section that contains media team information */}
         <div id="about-media" className="media-about" style={{ display: visMedia ? 'block' : 'none' }}>
           <Grid container spacing={0} justifyContent="center">
 
@@ -230,6 +234,7 @@ function AboutPage() {
           
         </div>
 
+        {/* The section that contains app team information */}
         <div id="about-app" className="app-about" style={{ display: visApp ? 'block' : 'none' }}>
 
           <Grid container spacing={0} justifyContent="center">
@@ -245,6 +250,7 @@ function AboutPage() {
             
           </Grid>
 
+          {/* The section contains the button to past member information */}
           {appMembers.map((item) => (
           <Grid container xs={3.5} alignItems="center" justifyContent="center" direction="column">
             {/* <Paper elevation={3} className="paper-about b-0"> */}

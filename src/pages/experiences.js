@@ -1,3 +1,4 @@
+// This is the hompage for each team's track. - Jacob
 
 import * as React from "react"
 import Layout from "../components/layout"

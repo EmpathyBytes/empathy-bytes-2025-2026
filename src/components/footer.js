@@ -6,6 +6,10 @@ import Grid from '@mui/material/Unstable_Grid2';
 import "../styles/components/footer.css"
 
 
+// Here is a footer component for the website. This component is used in the "layout" component that is included in every page.
+// The links in the footer navigate to various other pages on the site. - Jacob
+
+
 function Footer(props) {
 
   return (

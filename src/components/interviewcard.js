@@ -43,7 +43,7 @@ export default function InterviewCard(props) {
                 <h2>{props.title}</h2>
                 <p>By {props.author}</p>
                 <div style={summary} dangerouslySetInnerHTML={{ __html: props.body}}/>
-                <Link href={props.url}>Learn More</Link>
+                <Link to={props.url}>Learn More</Link>
                 <p>{props.date}</p>
                 <span class="border-bottom"></span>
             </div>

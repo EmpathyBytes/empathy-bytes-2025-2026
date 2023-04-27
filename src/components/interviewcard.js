@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "../styles/navstyles.css";
+import { Link } from "gatsby";
 
 /**
  * This component is used on each collection page to house individual interview titles, authors, photos, 
@@ -42,7 +43,7 @@ export default function InterviewCard(props) {
                 <h2>{props.title}</h2>
                 <p>By {props.author}</p>
                 <div style={summary} dangerouslySetInnerHTML={{ __html: props.body}}/>
-                <a href={props.url}>Learn More</a>
+                <Link href={props.url}>Learn More</Link>
                 <p>{props.date}</p>
                 <span class="border-bottom"></span>
             </div>

@@ -6,6 +6,8 @@ import { CardContent } from "@mui/material";
 import Button from "@mui/material/Button";
 import "../styles/components/collectioncard.css";
 
+import { Link } from "gatsby";
+
 /**
  * Creates a Collection component in the form of a card with 
  * set height and width that uses the title and featured image 
@@ -30,10 +32,11 @@ export default function CollectionCard(props) {
         <div className="collectionText" dangerouslySetInnerHTML={{ __html: props.body }} />
       </CardContent>
       <CardActions className="collectionCard">
-        <Button href={"/collections" + props.url}
-          size="small" style={{color: 'lightgray'}}>
-          Learn More
-        </Button>
+        <Link to={"/collections" + props.url}>
+          <Button size="small" style={{color: 'lightgray'}}>
+            Learn More
+          </Button>
+        </Link>
       </CardActions>
     </Card>
   );

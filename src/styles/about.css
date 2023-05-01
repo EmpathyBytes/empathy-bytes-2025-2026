@@ -129,6 +129,11 @@
     padding-bottom: 5%;
   }
 
+  .bottom-about {
+    position: relative;
+    z-index: -10;
+  }
+
   .about-full {
     width: 100vw;
     height: 80vh;
@@ -141,7 +146,7 @@
 
   .top-about {
     width: 100vw;
-    height: 60vh;
+    height: 80vh;
     position: absolute;
     top: 0;
     left: 0;
@@ -149,8 +154,7 @@
     background-color: rgba(0, 0, 0, 0.3)
   }
 
-  .about-container-full {
-    padding: "0% 5% 6% 5%";
+  .a-c-full {
     background-color: #003663;
     top: 120px;
   }

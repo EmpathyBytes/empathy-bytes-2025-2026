@@ -43,8 +43,9 @@ function EmergingTech() {
 
                         <Grid xs={7}>
                             <p className="paragraph-experiences paragraph-indent-experiences-left">
-                                Our team develops experiential technologies relating to Virtual and Mixed reality. We foster empathy through
-                                the preservation of communities, artifacts, and experiences using 3D technologies.
+                            Our team develops Virtual and Augmented Reality experiences with the goal of fostering empathy and understanding. 
+                            Through the use of 3D technologies, we aim to preserve communities and their artifacts, giving others the chance 
+                            to see and learn more about them.
                             </p>
                         </Grid>
 
@@ -64,7 +65,7 @@ function EmergingTech() {
 
                         <Grid xs={12}>
                             <p className="paragraph-experiences paragraph-indent-experiences-left">Empathy Bytes is developing a 
-                            Virtual Reality Museum where anyone can experience and learn artifacts in the Georgia Tech Archives.
+                            Virtual Reality Museum where anyone can experience and learn about artifacts in the Georgia Tech Archives.
                             Our team is able digitally preserve items such as an official 1996 Atlanta Olympics Torch, Buzz’s Converses 
                             from 1988, and a 1937 rat cap through the use of photogrammetry and hand-modeling techniques. We hope this VR experience 
                             allows the Georgia Tech Community to strengthen its connection to the school’s past and safely preserve these memories.

@@ -9,6 +9,7 @@ import appMembers from "../database/appMembers"
 import mediaMembers from "../database/mediaMembers"
 import emergingTechMembers from "../database/emergingTechMembers"
 
+
 import "../styles/about.css"
 import "../styles/all.css"
 
@@ -61,26 +62,32 @@ function AboutPage() {
   return (
     <Layout>
 
-      <div className="top-about top-text dim">
+      <div className="top-about dim">
         {/* <h1>About Us</h1> */}
       </div>
-      <div className="bottom">
+      <div className="bottom-about">
         <img src={All} className="about-full"></img>
       </div>
-      <div className="about-container-full">
-        {/* <div>
+      <div className="a-c-full">
+        <div style={{padding: "2% 5% 1% 5%"}}>
           <h1 className="header-about">About Us</h1>
           <p className="paragraph-about">
-            We are a Vertically Integrated Project team at Georgia Tech
-            exploring the lives of those touched by Georgia Tech’s research and
-            technology initiatives. The Vertically Integrated Project Program at
-            Georgia Tech brings together teams of undergraduate students from
-            various years, disciplines, and backgrounds with faculty and
-            graduate students to work on long-term, large-scale,
-            multidisciplinary projects. Learn more about Georgia Tech’s VIP
-            program here.
+            Empathy Bytes VIP explores how multimedia and emerging technologies can enhance empathy and understanding as we 
+            create digital scholarship. This VIP section looks to document the stories of diverse communities in Georgia and beyond. 
+            The team explores how technology can enhance empathy, as well as improve access to resources. Most importantly, the students on 
+            this team ask themselves how these advanced technologies allow us to understand new perspectives, solve problems, or simply be a 
+            better person in a world full of daily challenges.
           </p>
-        </div> */}
+          <p className="paragraph-about">
+            Empathy Bytes is broken down into sub-groups that specialize in different areas of research to accomplish the overall goals of the project. 
+            Within sub teams, students explore areas of personal research interest, while learning project management skills and terminology.
+          </p>
+          <p className="paragraph-about">
+            Current technologies being used include: React, GatsbyJS, Drupal, and GraphQL the web team, the Adobe Creative Suite for the Media team.
+            Unity and Blender for the Emerging Tech team, and Swift for the App team.
+          </p>
+          
+        </div>
 
         {/* Div that contains the navbar */}
         <div className="about-nav" style={{paddingTop: 25, paddingBottom: 25}}>
@@ -121,7 +128,7 @@ function AboutPage() {
 
           <Grid container spacing={0}  justifyContent="center">
 
-          <Grid xs={8}>
+          <Grid xs={8} style={{padding: "0% 5% 1% 5%"}}>
             <h1 className="header-about">Emerging Tech Team</h1>
             <p className="paragraph-about padding-bottom-about">The emerging tech team is comprised of students from a variety of different backgrounds
             and majors, including Computational Media and Computer Science. The team focuses on exploring cutting edge technologies and their ability
@@ -161,7 +168,7 @@ function AboutPage() {
 
           <Grid container spacing={0} justifyContent="center">
 
-          <Grid xs={8}>
+          <Grid xs={8} style={{padding: "0% 5% 1% 5%"}}>
             <h1 className="header-about">Web Team</h1>
             <p className="paragraph-about padding-bottom-about">The Web team is comprised of students from a variety of backgrounds, such as Computer Science
             and Computational Media. The team maintains the external facing Empathy Bytes website which uses GatsbyJS, GraphQL, and Drupal. The team also
@@ -200,7 +207,7 @@ function AboutPage() {
         <div id="about-media" className="media-about" style={{ display: visMedia ? 'block' : 'none' }}>
           <Grid container spacing={0} justifyContent="center">
 
-          <Grid xs={8}>
+          <Grid xs={8} style={{padding: "0% 5% 1% 5%"}}>
             <h1 className="header-about">Media Team</h1>
             <p className="paragraph-about padding-bottom-about">The Web team is comprised of students from a variety of backgrounds, such as Computer Science
             and Computational Media. The team creates media content for the site in addition to working across teams to help with design needs.</p>
@@ -239,7 +246,7 @@ function AboutPage() {
 
           <Grid container spacing={0} justifyContent="center">
 
-          <Grid xs={8}>
+          <Grid xs={8} style={{padding: "0% 5% 1% 5%"}}>
             <h1 className="header-about">App Team</h1>
             <p className="paragraph-about padding-bottom-about">The Web team is comprised of students from a variety of backgrounds, such as Computer Science
             and Computational Media. The team is currently creating a Mobile Application to present the teams research with future hopes of publishing on the

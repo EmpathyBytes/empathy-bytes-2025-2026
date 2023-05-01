@@ -33,8 +33,10 @@ function Media() {
 
                         <Grid xs={7}>
                             <p className="paragraph-experiences paragraph-indent-experiences-left">
-                                Our team creates media artifacts to support our other track's endevours. We also
-                                create behhind the scenes content and interviews featuring our members.
+                                The Media Team strives to explore new communities, document the work of all of our sub-teams, and promote our VIP 
+                                in new and creative ways. When exploring communities we often interview several members to find a clear view of what 
+                                makes their community special. We also search for different artifacts that we can pass on to our different sub-teams 
+                                so that they can discover new ways to preserve them in an engaging way.
                             </p>
                         </Grid>
 

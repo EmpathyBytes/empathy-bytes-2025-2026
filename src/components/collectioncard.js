@@ -9,9 +9,9 @@ import "../styles/components/collectioncard.css";
 import { Link } from "gatsby";
 
 /**
- * Creates a Collection component in the form of a card with 
- * set height and width that uses the title and featured image 
- * of a Drupal collection and links to a page containing the collection's interviews.
+ * This component is used in projects.js to display categories
+ * of interviews. It uses the MUI card component and contains 
+ * an image, title, blurb, and link pulled from Drupal.
  * @returns the card 
  */
 export default function CollectionCard(props) {

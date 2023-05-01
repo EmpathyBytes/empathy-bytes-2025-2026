@@ -5,6 +5,13 @@ import CollectionCard from "../components/collectioncard";
 import Grid from "@mui/material/Grid";
 import "../styles/projects.css"
 
+/**
+ * This is the projects homepage. It displays all of the
+ * interview collections.
+ * 
+ * @param {*} param0 - graphql query 
+ * @returns projectsPage
+ */
 const projectsPage = ({data}) => {
 
     const arr = data.collections.nodes;
@@ -22,7 +29,7 @@ const projectsPage = ({data}) => {
                         url = {item.path.alias}
                         body = {item.body.summary}
                         />
-                        </Grid>
+                        </Grid> // This is a MUI grid.
                     ))}
                     </Grid>
                 </div>

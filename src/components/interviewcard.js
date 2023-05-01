@@ -3,12 +3,15 @@ import styles from "../styles/navstyles.css";
 import { Link } from "gatsby";
 
 /**
- * This component is used on each collection page to house individual interview titles, authors, photos, 
+ * This component is used on each collection page (../templates/collection.js) to 
+ * house individual interview titles, authors, photos, 
  * and descriptions. Each component is a grid row.
  * 
  * @param {*} props 
  * @returns the card component
  */
+
+// TODO: Styling should be in a separate file
 
 const col = {
     padding: 10,

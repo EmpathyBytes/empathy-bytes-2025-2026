@@ -36,8 +36,9 @@ function App() {
 
                         <Grid xs={7}>
                             <p className="paragraph-experiences paragraph-indent-experiences-left">
-                                Our team develops mobile applications to showcase our research and 
-                                explore empathy with Mixed Reality technologies.
+                                Our team is currently developing a mobile application compatible with iOS devices using Swift and Xcode to showcase 
+                                our research and interactions with communities. We hope to explore a variety of ways to use multimedia and Mixed Reality 
+                                technologies as a means to cultivate empathy within users.
                             </p>
                         </Grid>
 
@@ -61,9 +62,10 @@ function App() {
                 <Grid container spacing={2} className="bg-1">
                     <Grid xs={6} container className="" alignItems="center" justifyContent="center">
                         <div className="grid-margins-experiences">
-                            <p className="paragraph-experiences paragraph-indent-experiences-left" style={{marginLeft: 150}}>Empathy Bytes is developing a 
-                            mobile application to act as a portal showcasing our research on communities within Georgia Tech through interactive content 
-                            such as video/audio interviews and augmented reality games and models.</p>
+                            <p className="paragraph-experiences paragraph-indent-experiences-left" style={{marginLeft: 150}}>
+                                The Empathy Bytes mobile application acts as a portal showcasing our research on communities within 
+                                Georgia Tech through interactive content such as video/audio interviews and augmented reality 
+                                games and models.</p>
                         </div>
                     </Grid>
                     <Grid xs={6} container className="" alignItems="center" justifyContent="center">

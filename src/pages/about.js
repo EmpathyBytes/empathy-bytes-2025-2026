@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import Layout from "../components/layout"
 import Logo from "../images/empbytes.jpg"
 import All from "../images/people/fullTeam.jpg"
+import { Link } from "gatsby";
 
 // Importing Data from the Mock Database - Jacob
 import webMembers from "../database/webMembers"
@@ -281,9 +282,9 @@ function AboutPage() {
           </Grid>
         </div>
           <div className="about-nav-past" style={{paddingTop: 25, paddingBottom: 25}}>
-              <a href="/pastmembers" className="noUnderline">
+              <Link to="/pastmembers" className="noUnderline">
                 <h3 className="about-nav-text">Past Members</h3>
-              </a>
+              </Link>
           </div>
       </div>
     </Layout>

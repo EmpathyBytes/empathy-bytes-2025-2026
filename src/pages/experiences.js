@@ -28,7 +28,7 @@ function ExperiencesPage() {
 
           <Grid xs={5} container alignItems="center" justifyContent="center">
             <Link to="/appteam" className="noUnderline">
-              <Card sx={{ width: 600 }}>
+              <Card sx={{ width: 500 }}>
                 <CardActionArea style={{backgroundColor: "#1B3F66"}}>
                   <CardMedia
                     component="img"
@@ -44,7 +44,7 @@ function ExperiencesPage() {
 
           <Grid xs={5} container alignItems="center" justifyContent="center">
             <Link to="/emergingtech" className="noUnderline">
-              <Card sx={{ width: 600 }}>
+              <Card sx={{ width: 500 }}>
                 <CardActionArea style={{backgroundColor: "#1B3F66"}}>
                   <CardMedia
                     component="img"
@@ -63,7 +63,7 @@ function ExperiencesPage() {
               justifyContent="center">
           <Grid xs={5} container alignItems="center" justifyContent="center">
             <Link to="/mediateam" className="noUnderline">
-            <Card sx={{ width: 600 }}>
+            <Card sx={{ width: 500 }}>
                 <CardActionArea style={{backgroundColor: "#1B3F66"}}>
                   <CardMedia
                     component="img"
@@ -80,7 +80,7 @@ function ExperiencesPage() {
 
           <Grid xs={5} container alignItems="center" justifyContent="center">
             <Link to="/webteam" className="noUnderline">
-              <Card sx={{ width: 600 }}>
+              <Card sx={{ width: 500 }}>
                 <CardActionArea style={{backgroundColor: "#1B3F66"}}>
                   <CardMedia
                     component="img"

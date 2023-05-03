@@ -74,6 +74,22 @@ function App() {
                         </div>
                     </Grid>
                 </Grid>
+
+                <Grid container spacing={2} className="bg-1" style={{padding: "2% 0 2% 0"}}>
+                    <Grid xs={6} container className="right-align-experiences" alignItems="center" justifyContent="center" direction="column">
+                        <h1 className="sub-header-experiences">Spring 2023 Progress</h1>
+                    </Grid>
+
+
+                    <Grid container xs={6} alignItems="center" justifyContent="center" direction="column">
+                        <iframe width="469" height="833" src="https://www.youtube.com/embed/zYQYxpvwx8U" 
+                            title="App Team Demo Spring 2023" frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                            allowfullscreen>
+                        </iframe>
+                    </Grid>
+                </Grid>
+                
             </div>
         </Layout>
     );

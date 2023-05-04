@@ -29,7 +29,7 @@ function ContactPage() {
         <main>
           <div className="headerStyles">
             <h1>
-              <span className="headingAccentStyles">Contact Us</span>
+              <span className="centerStyles">Interested in Empathy Bytes?</span>
             </h1>
           </div>
           <div className="centerStyles">

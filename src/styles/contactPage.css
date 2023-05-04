@@ -25,6 +25,14 @@
     left: 50%;
     transform: translate(-50%, -50%);
   }
+
+  .centerStyles {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px; /* adjust this value to set the desired spacing */
+  }
+  
   
 
   

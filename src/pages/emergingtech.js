@@ -70,6 +70,9 @@ function EmergingTech() {
                             from 1988, and a 1937 rat cap through the use of photogrammetry and hand-modeling techniques. We hope this VR experience 
                             allows the Georgia Tech Community to strengthen its connection to the school’s past and safely preserve these memories.
                             </p>
+                            <p className="paragraph-experiences paragraph-indent-experiences-left">Please click and drag the 3D models below to see
+                                in 360 degree view.
+                            </p>
                         </Grid>
                     </div>
 

@@ -210,7 +210,7 @@ function AboutPage() {
 
           <Grid xs={8} style={{padding: "0% 5% 1% 5%"}}>
             <h1 className="header-about">Media Team</h1>
-            <p className="paragraph-about padding-bottom-about">The Web team is comprised of students from a variety of backgrounds, such as Computer Science
+            <p className="paragraph-about padding-bottom-about">The Media team is comprised of students from a variety of backgrounds, such as Computer Science
             and Computational Media. The team creates media content for the site in addition to working across teams to help with design needs.</p>
           </Grid>
 
@@ -249,7 +249,7 @@ function AboutPage() {
 
           <Grid xs={8} style={{padding: "0% 5% 1% 5%"}}>
             <h1 className="header-about">App Team</h1>
-            <p className="paragraph-about padding-bottom-about">The Web team is comprised of students from a variety of backgrounds, such as Computer Science
+            <p className="paragraph-about padding-bottom-about">The App team is comprised of students from a variety of backgrounds, such as Computer Science
             and Computational Media. The team is currently creating a Mobile Application to present the teams research with future hopes of publishing on the
             Apple Store.</p>
           </Grid>

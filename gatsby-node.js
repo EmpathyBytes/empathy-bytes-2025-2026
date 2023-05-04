@@ -1,5 +1,27 @@
 const path = require('path');
 
+exports.onCreateWebpackConfig = ({
+  // rules,
+  // loaders,
+  // plugins,
+  actions
+}) => {
+  actions.setWebpackConfig({
+    module: {
+      rules: [
+        {
+          test: /\.(glb|gltf)$/i,
+          use: {
+            loader: "url-loader",
+            options: {
+              limit: 8192,
+            },
+          }
+        },
+      ]
+    }
+  })
+}
 
 // Runs a GraphQL Call
 exports.createPages = async ({actions, graphql}) => {

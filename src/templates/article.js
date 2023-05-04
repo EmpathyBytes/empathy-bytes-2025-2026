@@ -8,6 +8,8 @@ import "../styles/articles.css";
 // Functional Article Component
 // This Function will find all the article components on the drupal site, and create a page
 // on the gatsby site for each component
+
+// TODO: Interviews without audio currently have the Usselman interview. Need a better solution for this.
 function Article({data}) {
     const post = data.nodeArticle;
 
@@ -47,6 +49,7 @@ export const query = graphql`
     query($ArticleId: String!) {
         nodeArticle(id: { eq: $ArticleId }) {
         field_author
+        
         field_hg_dateline
         id
         title
@@ -76,9 +79,3 @@ export const query = graphql`
 `;
 
 export default Article;
-
-/**
- *          <audio controls>
-            <source src={"https://www.empathybytes.library.gatech.edu" + post.relationships.field_audio.path.alias} type="audio/mp3"/>
-            </audio>
- */

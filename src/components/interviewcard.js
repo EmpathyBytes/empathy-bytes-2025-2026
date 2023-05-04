@@ -1,22 +1,26 @@
 import React from "react";
 import styles from "../styles/navstyles.css";
+import { Link } from "gatsby";
 
 /**
- * This component is used on each collection page to house individual interview titles, authors, photos, 
+ * This component is used on each collection page (../templates/collection.js) to 
+ * house individual interview titles, authors, photos, 
  * and descriptions. Each component is a grid row.
  * 
  * @param {*} props 
  * @returns the card component
  */
 
+// TODO: Styling should be in a separate file
+
 const col = {
     padding: 10,
 };
 
-
 const row = {
     ["border-bottom"]: '5px solid #b3a369',
     padding: 15,
+    ["font-family"]: 'Roboto',
 };
 
 const img_style = {
@@ -42,7 +46,7 @@ export default function InterviewCard(props) {
                 <h2>{props.title}</h2>
                 <p>By {props.author}</p>
                 <div style={summary} dangerouslySetInnerHTML={{ __html: props.body}}/>
-                <a href={props.url}>Learn More</a>
+                <Link to={props.url}>Learn More</Link>
                 <p>{props.date}</p>
                 <span class="border-bottom"></span>
             </div>

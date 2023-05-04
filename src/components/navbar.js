@@ -3,6 +3,8 @@ import { Link } from "gatsby";
 import { useEffect, useState } from "react";
 import Logo from "../images/empbytes.jpg";
 
+// Here is the Navbar component made by Joseph in Fall 2022 - Jacob
+
 const ReactiveLink = ({ name, path }) => {
   return (
     <Link className={`navbar-link`} to={path} activeClassName="navbar-selected">

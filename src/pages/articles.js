@@ -1,3 +1,5 @@
+// This the directory page which displays all the articles gotten from drupal - Jacob
+
 import React from "react";
 import PropTypes from "prop-types";
 import { useStaticQuery, graphql } from "gatsby";

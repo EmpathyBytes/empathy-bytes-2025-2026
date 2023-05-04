@@ -1,28 +1,33 @@
+// This is the App Team page! - Jacob
+
 import React from "react";
 import Layout from "../components/layout";
 
+
 import Grid from '@mui/material/Unstable_Grid2';
 
-import "../styles/emergingtech.css"
+import MockUp from "../images/experiences/appMockUp.png"
+
+import "../styles/experiencesIndividual.css"
 import "../styles/all.css"
 
 function App() {
     return(
         <Layout>
-            <div className="full-container-emerging-tech">
+            <div className="full-container-experiences">
                 <Grid container spacing={2} className="">
-                    <div className="grid-margins-emerging-tech">
+                    <div className="grid-margins-experiences">
                         <Grid xs={12}>
-                            <h1 className="header-emerging-tech">The App Development Team</h1>
+                            <h1 className="header-experiences">The App Development Team</h1>
                         </Grid>
                     </div>
                 </Grid>
 
 
                 <Grid container spacing={0} className="bg-1">
-                    <div className="grid-margins-emerging-tech">
+                    <div className="grid-margins-experiences">
                         <Grid xs={10}>
-                            <h1 className="sub-header-emerging-tech">what we do</h1>
+                            <h1 className="sub-header-experiences">What We Do</h1>
                         </Grid>
 
                         <Grid xs={2}>
@@ -30,9 +35,10 @@ function App() {
                         </Grid>
 
                         <Grid xs={7}>
-                            <p className="paragraph-emerging-tech paragraph-intent-emerging-tech-left">
-                                Our team develops mobile applications to showcase our research and 
-                                explore empathy with Mixed Reality technologies.
+                            <p className="paragraph-experiences paragraph-indent-experiences-left">
+                                Our team is currently developing a mobile application compatible with iOS devices using Swift and Xcode to showcase 
+                                our research and interactions with communities. We hope to explore a variety of ways to use multimedia and Mixed Reality 
+                                technologies as a means to cultivate empathy within users.
                             </p>
                         </Grid>
 
@@ -42,41 +48,48 @@ function App() {
                     </div>
                 </Grid>
 
-                <Grid container spacing={0} className="">
-                    <div className="grid-margins-emerging-tech">
+                <Grid container spacing={2} className="">
 
-                        <Grid xs={12} className="right-align-emerging-tech">
-                            <h1 className="sub-header-emerging-tech">the empathy bytes mobile app</h1>
+                        <Grid xs={12} className="right-align-experiences">
+                            <div className="grid-margins-experiences">
+                                <h1 className="sub-header-experiences">The Empathy Bytes App</h1>
+                            </div>
                         </Grid>
 
-
-                        <Grid xs={12}>
-                            <p className="paragraph-emerging-tech paragraph-intent-emerging-tech-left">Empathy Bytes is developing a 
-                            mobile application to act as a portal showcasing our research on communities within Georgia Tech.
-                            </p>
-                        </Grid>
-                    </div>
 
                 </Grid>
 
-                <Grid container spacing={0} className="bg-1">
-                    <div className="grid-margins-emerging-tech">
+                <Grid container spacing={2} className="bg-1">
+                    <Grid xs={6} container className="" alignItems="center" justifyContent="center">
+                        <div className="grid-margins-experiences">
+                            <p className="paragraph-experiences paragraph-indent-experiences-left" style={{marginLeft: 150}}>
+                                The Empathy Bytes mobile application acts as a portal showcasing our research on communities within 
+                                Georgia Tech through interactive content such as video/audio interviews and augmented reality 
+                                games and models.</p>
+                        </div>
+                    </Grid>
+                    <Grid xs={6} container className="" alignItems="center" justifyContent="center">
+                        <div className="grid-margins-experiences">
+                            <img src={MockUp}></img>
+                        </div>
+                    </Grid>
+                </Grid>
 
-                        <Grid xs={12} className="right-align-emerging-tech">
-                            <h1 className="sub-header-emerging-tech">App Mock Ups</h1>
-                        </Grid>
-                    </div>
+                <Grid container spacing={2} className="bg-1" style={{padding: "2% 0 2% 0"}}>
+                    <Grid xs={6} container className="right-align-experiences" alignItems="center" justifyContent="center" direction="column">
+                        <h1 className="sub-header-experiences">Spring 2023 Progress</h1>
+                    </Grid>
 
+
+                    <Grid container xs={6} alignItems="center" justifyContent="center" direction="column">
+                        <iframe width="469" height="833" src="https://www.youtube.com/embed/zYQYxpvwx8U" 
+                            title="App Team Demo Spring 2023" frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                            allowfullscreen>
+                        </iframe>
+                    </Grid>
                 </Grid>
                 
-                <Grid container spacing={0} className="" alignItems="center" justifyContent="center" direction="column">
-                    <div className="grid-margins-emerging-tech">
-                        <Grid container xs={12}>
-                            <iframe src="https://youtube.com/embed/PGEr1T6ilTw?feature=share" title="App Redesign" width="640px" height="480px"></iframe>
-                        </Grid>
-                    </div>
-
-                </Grid>
             </div>
         </Layout>
     );

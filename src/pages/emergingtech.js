@@ -7,8 +7,8 @@ import { Canvas } from '@react-three/fiber'
 import { Environment, OrbitControls } from '@react-three/drei'
 
 import BuzzPlaque from "../components/canvas/buzzplaque";
-import Football from "../components/canvas/football";
-import Sweater from "../components/canvas/tSweater";
+// import Football from "../components/canvas/football";
+// import Sweater from "../components/canvas/tSweater";
 import Converse from "../components/canvas/rightconverse";
 
 import Grid from '@mui/material/Unstable_Grid2';
@@ -94,7 +94,14 @@ function EmergingTech() {
                         <Canvas>
                             <Suspense>
                                 <BuzzPlaque scale={3.5} />
-                                <Environment preset="sunset" />
+
+                                {/*PLEASE READ (6/10/2023)
+                                    There is a compatibility issue with this Environment component and the new version of three.js, I think it should be resolved soon though.
+                                    For now, I have inlcuded an ambientLight component instead. When this issue is resolved, feel free to add the Environment component back in.
+                                - Jacob Amin */}
+
+                                {/* <Environment /> */}
+                                <ambientLight />
                                 <OrbitControls />
                             </Suspense>
                         </Canvas>
@@ -104,7 +111,14 @@ function EmergingTech() {
                             <Canvas>
                                 <Suspense>
                                     <Converse scale={6} />
-                                    <Environment preset="sunset" />
+
+                                    {/*PLEASE READ (6/10/2023)
+                                        There is a compatibility issue with this Environment component and the new version of three.js, I think it should be resolved soon though.
+                                        For now, I have inlcuded an ambientLight component instead. When this issue is resolved, feel free to add the Environment component back in.
+                                    - Jacob Amin */}
+
+                                    {/* <Environment /> */}
+                                    <ambientLight />
                                     <OrbitControls />
                                 </Suspense>
                             </Canvas>

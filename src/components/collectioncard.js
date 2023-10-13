@@ -6,11 +6,14 @@ import { CardContent } from "@mui/material";
 import Button from "@mui/material/Button";
 import "../styles/components/collectioncard.css";
 
+import { Link } from "gatsby";
+
 /**
- * Creates a Collection component in the form of a card with 
- * set height and width that uses the title and featured image 
- * of a Drupal collection and links to a page containing the collection's interviews.
+ * This component is used in projects.js to display categories
+ * of interviews. It uses the MUI card component and contains 
+ * an image, title, blurb, and link pulled from Drupal.
  * @returns the card 
+ * test line kjgjhgjhg
  */
 export default function CollectionCard(props) {
 
@@ -30,10 +33,11 @@ export default function CollectionCard(props) {
         <div className="collectionText" dangerouslySetInnerHTML={{ __html: props.body }} />
       </CardContent>
       <CardActions className="collectionCard">
-        <Button href={"/collections" + props.url}
-          size="small" style={{color: 'lightgray'}}>
-          Learn More
-        </Button>
+        <Link to={"/collections" + props.url}>
+          <Button size="small" style={{color: 'lightgray'}}>
+            Learn More
+          </Button>
+        </Link>
       </CardActions>
     </Card>
   );

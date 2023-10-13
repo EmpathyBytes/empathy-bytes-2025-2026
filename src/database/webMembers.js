@@ -1,4 +1,5 @@
-// I think it will be better to store people info in a "Mock" Database for now, until we figure out how to do it on Drupal
+// Mock database for importing all the member information for the web team. This data is being utilized in about.js - Jacob
+
 import Jacob from "../images/people/Jacob.jpg"
 import Evelyn from "../images/people/Evelyn.jpg"
 import Audrey from "../images/people/Audrey.jpg"

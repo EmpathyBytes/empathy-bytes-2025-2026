@@ -1,3 +1,6 @@
+// Mock database for importing all the member information for the app team. This data is being utilized in about.js - Jacob
+
+
 import Princess from "../images/people/Princess.jpg"
 import Greyson from "../images/people/Greyson.jpg"
 import Sruti from "../images/people/Sruti.jpg"

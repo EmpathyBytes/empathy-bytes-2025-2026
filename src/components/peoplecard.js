@@ -1,3 +1,5 @@
+// THIS IS NO LONGER BEING USED ON THE LIVE SITE! SEE about.js FOR THE CURRENT VERSION
+
 // Card component to hold the people information
 
 import React from "react";

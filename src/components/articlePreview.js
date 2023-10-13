@@ -6,6 +6,10 @@ import "../styles/components/articlePreview.css"
 
 import Paper from '@mui/material/Paper';
 
+
+// This component is used in the "/articles" page of our repository. It just contains links to all the different article pages
+// available - Jacob
+
 function ArticlePreview(props) {
 
     const paperSX = {

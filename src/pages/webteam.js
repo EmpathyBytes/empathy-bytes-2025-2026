@@ -1,5 +1,9 @@
+// This is the Web Team page! - Jacob
+
 import React from "react";
 import Layout from "../components/layout";
+
+import technologies from "../images/gatsbyanddrupal.png"
 
 import Grid from '@mui/material/Unstable_Grid2';
 
@@ -56,8 +60,33 @@ function web() {
                             web application to act as a portal showcasing our research on communities within Georgia Tech.
                             </p>
                         </Grid>
+
+
                     </div>
 
+                </Grid>
+
+                <Grid container spacing={0}>
+
+                        <Grid xs={12} container className="bg-1" alignItems="center" justifyContent="center" direction="column">
+                            <img src={technologies}></img>
+                        </Grid>
+
+                </Grid>
+
+                <Grid container spacing={2} className="bg-1" style={{padding: "2% 0 2% 0"}}>
+                    <Grid xs={6} container className="right-align-experiences" alignItems="center" justifyContent="center" direction="column">
+                        <h1 className="sub-header-experiences">Spring 2023 Progress</h1>
+                    </Grid>
+
+
+                    <Grid container xs={6} alignItems="center" justifyContent="center" direction="column">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/hL6BJbFQqqk" 
+                            title="YouTube video player" frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                            allowfullscreen>
+                        </iframe>
+                    </Grid>
                 </Grid>
             </div>
         </Layout>

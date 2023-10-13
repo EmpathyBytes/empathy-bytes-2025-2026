@@ -25,3 +25,31 @@
     font-size: 1vw;
     color: #3B3C36;
 }
+
+.text-year {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1vw;
+    color: #3B3C36;
+}
+
+.paper-about {
+    width: 23vw;
+    margin: auto;
+}
+
+.past-image {
+    width: 125px;
+    height: 125px;
+    border-radius: 100px;
+}
+
+.card-past {
+    padding: 2% 2% 2% 2%;
+    display: flex;
+}
+
+.card-text-div {
+    padding-left: 10%;
+    float: right;
+}
+

@@ -22,6 +22,7 @@ function Article({data}) {
                        <audio className="articleAudio" src = {post.relationships.field_audio != null ? "https://www.empathybytes.library.gatech.edu" + post.relationships.field_audio.path.alias : "https://www.empathybytes.library.gatech.edu/sites/default/files/2023-02/Usselman-Interview-Nov.-13-2019.mp3"} controls>
                         There is no audio for this article.
                        </audio>
+                       <video src = {post.field_video != null ? post.field_video : "https://www.youtube.com/watch?v=cNX_BLfW8KU&t=11s"} />
                 </div>
             </div>
 
@@ -50,6 +51,7 @@ export const query = graphql`
         field_hg_dateline
         id
         title
+        field_video
         body {
             processed
         }

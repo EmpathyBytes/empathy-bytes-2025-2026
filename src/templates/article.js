@@ -24,12 +24,17 @@ function Article({data}) {
                        <audio className="articleAudio" src = {post.relationships.field_audio != null ? "https://www.empathybytes.library.gatech.edu" + post.relationships.field_audio.path.alias : "https://www.empathybytes.library.gatech.edu/sites/default/files/2023-02/Usselman-Interview-Nov.-13-2019.mp3"} controls>
                         There is no audio for this article.
                        </audio>
-                       <video src = {post.field_video != null ? post.field_video : "https://www.youtube.com/watch?v=cNX_BLfW8KU&t=11s"} />
                 </div>
             </div>
 
 
             <div className="articleText" dangerouslySetInnerHTML={{ __html: post.body.processed }}></div>
+            
+            <iframe width="887" height="499" 
+            src={post.field_video_url} title="Empathy Bytes Team Welcome" 
+            frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
+            </iframe>
+            
             <div class="clicker" tabindex="1">View Transcript</div>
             <div class="hiddendiv">
                 <div className="articleText" dangerouslySetInnerHTML={{ __html: post.field_transcript.processed }}></div>
@@ -54,7 +59,7 @@ export const query = graphql`
         field_hg_dateline
         id
         title
-        field_video
+        field_video_url
         body {
             processed
         }

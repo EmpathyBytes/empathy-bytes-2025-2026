@@ -15,10 +15,15 @@ import useMediaQuery from '@mui/material/useMediaQuery';
  */
 const ProjectsPage = ({data}) => {
 
+    //const matches takes in the width of the device
     const matches = useMediaQuery('(min-width:600px)');
 
+    //const arr takes in data from drupal
     const arr = data.collections.nodes;
-    if (matches) {
+
+    //use if statement to make the dif layouts
+    //might change to switch statement if we're feeling ambitious about a tablet view lol
+    if (matches) { //desktop view rendered
         return (
             <div className="gradient_bg">
                 <Layout>
@@ -41,7 +46,7 @@ const ProjectsPage = ({data}) => {
                 </Layout>
             </div>
         );
-    } else {
+    } else { //mobile view rendered
         return (
             <div className="gradient_bg">
                 <Layout>

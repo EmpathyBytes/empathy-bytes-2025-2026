@@ -18,15 +18,15 @@ const col = {
 };
 
 const row = {
-    ["border-bottom"]: '5px solid #b3a369',
+    ["borderBottom"]: '5px solid #b3a369',
     padding: 15,
     ["font-family"]: 'Roboto',
 };
 
 const img_style = {
     ["border-radius"]: '10px',
-    width: '300px', 
-    height: '300px', 
+    width: '20vw', 
+    height: '20vw', 
     objectFit: 'cover',
 };
 

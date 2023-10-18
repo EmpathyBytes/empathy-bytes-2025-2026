@@ -23,7 +23,7 @@ export default function CollectionCard(props) {
   if (matches) { //desktop
     return (
       <Card sx={{ maxWidth: '40vw' }}>
-        <Link to={"/collections" + props.url}>
+        <Link style={{ textDecoration: 'none' }} to={"/collections" + props.url}>
             <CardActionArea>
               <CardMedia
                 component="img"

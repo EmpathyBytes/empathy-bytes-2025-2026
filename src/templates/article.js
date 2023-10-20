@@ -30,10 +30,13 @@ function Article({data}) {
 
             <div className="articleText" dangerouslySetInnerHTML={{ __html: post.body.processed }}></div>
             
-            <iframe width="887" height="499" 
-            src={post.field_video_url} title="Empathy Bytes Team Welcome" 
-            frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
-            </iframe>
+            { post.field_video_url ?
+                <iframe className="articleVideo" width="887" height="499" 
+                    src={post.field_video_url} title="Empathy Bytes Team Welcome" 
+                    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
+                </iframe>
+                : null
+            }
             
             <div class="clicker" tabindex="1">View Transcript</div>
             <div class="hiddendiv">

@@ -1,6 +1,7 @@
 import React from "react";
-import styles from "../styles/navstyles.css";
+import styles from "../styles/inProgress.css";
 import { Link } from "gatsby";
+
 
 /**
  * This component is used on each collection page (../templates/collection.js) to 
@@ -11,7 +12,7 @@ import { Link } from "gatsby";
  * @returns the card component
  */
 
-// TODO: Styling should be in a separate file
+// TODO: change styling to use css 
 
 const col = {
     padding: 10,

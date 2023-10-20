@@ -54,7 +54,6 @@ export const query = graphql`
         field_hg_dateline
         id
         title
-        field_video_url
         body {
             processed
         }

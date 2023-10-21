@@ -11,19 +11,11 @@
 }
 
 .gradient_bg {
-    @media only screen and (min-width: 480px) {
-        /* styles for devices with a minimum screen width of 480px */
-        background: rgb(135,182,255);
-        background: linear-gradient(-45deg, rgba(135,182,255,1), rgba(255,249,202,1), rgba(255,255,255,1));
-        background-size: cover;
-        animation: gradient 10ms ease infinite;
-        }
-        
-        @media only screen and (max-width: 480px) {
-        /* styles for devices with a maximum screen width of 480px */
-        background: black;
-        }
-    
+    /* styles for devices with a minimum screen width of 480px */
+    background: rgb(135,182,255);
+    background: linear-gradient(-45deg, rgba(135,182,255,1), rgba(255,249,202,1), rgba(255,255,255,1));
+    background-size: cover;
+    animation: gradient 10ms ease infinite;
 }
 
 @keyframes gradient {

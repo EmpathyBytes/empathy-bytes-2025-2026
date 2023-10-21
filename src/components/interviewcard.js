@@ -5,7 +5,6 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 import "../styles/components/interviewcard.css";
 import Grid from "@mui/material/Grid";
 import styles from "../styles/inProgress.css";
-import { Link } from "gatsby";
 
 
 /**
@@ -55,7 +54,7 @@ export default function InterviewCard(props) {
         );
     } else {
         return (
-            <div className="card">
+            <div className="int_card">
                 <Grid
                     container spacing={2}
                     alignItems="center"

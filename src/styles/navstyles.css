@@ -18,7 +18,7 @@
     font-family: "Segoe UI Variable Display", "Segoe UI", -apple-system, Roboto,
       sans-serif, serif;
     margin: 0;
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
   }
   
   /* Desktop classes will disappear at breakpoint
@@ -222,6 +222,8 @@
   /* .img-nav {
     border-radius: 50%;
   } */
+
+  /* //trying to make mobile view */
 
   .topnav {
     overflow: hidden;

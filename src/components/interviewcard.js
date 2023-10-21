@@ -1,7 +1,8 @@
 import React from "react";
-import styles from "../styles/navstyles.css";
 import { Link } from "gatsby";
-
+import useMediaQuery from '@mui/material/useMediaQuery';
+import "../styles/components/interviewcard.css";
+import Grid from "@mui/material/Grid";
 /**
  * This component is used on each collection page (../templates/collection.js) to 
  * house individual interview titles, authors, photos, 
@@ -23,13 +24,6 @@ const row = {
     ["font-family"]: 'Roboto',
 };
 
-const img_style = {
-    ["border-radius"]: '10px',
-    width: '20vw', 
-    height: '20vw', 
-    objectFit: 'cover',
-};
-
 const summary = {
     ['line-clamp']: 3,
     ['text-overflow']: 'ellipsis',
@@ -37,19 +31,59 @@ const summary = {
 }
 
 export default function InterviewCard(props) {
-    return (
-        <div class="row" style={row}>
-            <div class="col" style={col}>
-                <img style ={img_style} src={props.img}/>
+    const matches = useMediaQuery('(min-width:600px)');
+    if (matches) {
+        return (
+            <div class="row" style={row}>
+                <div class="col" style={col}>
+                    <img className="img-style" src={props.img}/>
+                </div>
+                <div class="col" style={col}>
+                    <h2>{props.title}</h2>
+                    <p>By {props.author}</p>
+                    <div style={summary} dangerouslySetInnerHTML={{ __html: props.body}}/>
+                    <Link to={props.url}>Learn More</Link>
+                    <p>{props.date}</p>
+                    <span class="border-bottom"></span>
+                </div>
             </div>
-            <div class="col" style={col}>
-                <h2>{props.title}</h2>
-                <p>By {props.author}</p>
-                <div style={summary} dangerouslySetInnerHTML={{ __html: props.body}}/>
-                <Link to={props.url}>Learn More</Link>
-                <p>{props.date}</p>
-                <span class="border-bottom"></span>
+        );
+    } else {
+        return (
+            <div className="card">
+                <Grid
+                    container spacing={2}
+                    alignItems="center"
+                >
+                    <Grid item xs={4}>
+                        <img className="img-style" src={props.img}/>
+                    </Grid>
+                    <Grid item xs={8}>
+                        <h2>{props.title}</h2>
+                        <p>By {props.author}</p>
+                    </Grid>
+                    <Grid item xs={12}>                
+                        <div className="summary" dangerouslySetInnerHTML={{ __html: props.body}}/>
+                        <Link to={props.url}>Learn More</Link>
+                        <p>{props.date}</p>               
+                    </Grid>
+                </Grid>
             </div>
-    </div>
-    );
+            
+            
+            // <div class="row" style={row}>
+            //     <div class="col" style={col}>
+            //         <img style ={img_style} src={props.img}/>
+            //     </div>
+            //     <div class="col" style={col}>
+            //         <h2>{props.title}</h2>
+            //         <p>By {props.author}</p>
+            //         <Link to={props.url}>Learn More</Link>
+            //         <p>{props.date}</p>
+            //         <span class="border-bottom"></span>
+            //     </div>
+            // </div>
+        );
+    }
+    
 }

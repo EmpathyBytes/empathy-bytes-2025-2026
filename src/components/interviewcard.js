@@ -54,7 +54,7 @@ export default function InterviewCard(props) {
         );
     } else {
         return (
-            <div className="int_card">
+            <section className="int_card">
                 <Grid
                     container spacing={2}
                     alignItems="center"
@@ -72,21 +72,7 @@ export default function InterviewCard(props) {
                         <p>{props.date}</p>               
                     </Grid>
                 </Grid>
-            </div>
-            
-            
-            // <div class="row" style={row}>
-            //     <div class="col" style={col}>
-            //         <img style ={img_style} src={props.img}/>
-            //     </div>
-            //     <div class="col" style={col}>
-            //         <h2>{props.title}</h2>
-            //         <p>By {props.author}</p>
-            //         <Link to={props.url}>Learn More</Link>
-            //         <p>{props.date}</p>
-            //         <span class="border-bottom"></span>
-            //     </div>
-            // </div>
+            </section>
         );
     }
     

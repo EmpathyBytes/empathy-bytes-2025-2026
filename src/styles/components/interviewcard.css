@@ -3,11 +3,11 @@
     margin: 15px;
 }
 .summary {
-    display: -webkit-box;
+    /* display: -webkit-box;
     -webkit-line-clamp: 3;
     line-clamp: 3;
     text-overflow: ellipsis;
-    overflow: hidden;
+    overflow: hidden; */
 }
 
 .img-style {

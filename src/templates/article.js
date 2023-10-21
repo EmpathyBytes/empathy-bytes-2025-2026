@@ -29,6 +29,7 @@ function Article({data}) {
 
 
             <div className="articleText" dangerouslySetInnerHTML={{ __html: post.body.processed }}></div>
+            
             <div class="clicker" tabindex="1">View Transcript</div>
             <div class="hiddendiv">
                 <div className="articleText" dangerouslySetInnerHTML={{ __html: post.field_transcript.processed }}></div>

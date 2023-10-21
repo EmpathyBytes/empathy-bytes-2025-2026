@@ -1,8 +1,13 @@
 import React from "react";
+
 import { Link } from "gatsby";
 import useMediaQuery from '@mui/material/useMediaQuery';
 import "../styles/components/interviewcard.css";
 import Grid from "@mui/material/Grid";
+import styles from "../styles/inProgress.css";
+import { Link } from "gatsby";
+
+
 /**
  * This component is used on each collection page (../templates/collection.js) to 
  * house individual interview titles, authors, photos, 
@@ -12,7 +17,7 @@ import Grid from "@mui/material/Grid";
  * @returns the card component
  */
 
-// TODO: Styling should be in a separate file
+// TODO: change styling to use css 
 
 const col = {
     padding: 10,

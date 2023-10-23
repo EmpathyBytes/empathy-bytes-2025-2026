@@ -210,13 +210,15 @@
     text-align: center;
   }
   #page-container {
-    position: relative;
+    /* position: relative; */
     min-height: 100vh;
+    margin-top: var(var(--navbar-top-height));
   }
   
   #content-wrap {
     /* padding-bottom: 2.5rem; */
-    color: var(--color-navyblue)
+    color: var(--color-navyblue);
+    margin-top: var(var(--navbar-top-height));
   }
 
   /* .img-nav {

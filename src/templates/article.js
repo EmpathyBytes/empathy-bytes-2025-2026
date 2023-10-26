@@ -30,6 +30,7 @@ function Article({data}) {
 
             <div className="articleText" dangerouslySetInnerHTML={{ __html: post.body.processed }}></div>
             
+<<<<<<< HEAD
             { post.field_video_url ?
                 <iframe className="articleVideo" width="887" height="499" 
                     src={post.field_video_url} title="Empathy Bytes Team Welcome" 
@@ -38,6 +39,8 @@ function Article({data}) {
                 : null
             }
             
+=======
+>>>>>>> master
             <div class="clicker" tabindex="1">View Transcript</div>
             <div class="hiddendiv">
                 <div className="articleText" dangerouslySetInnerHTML={{ __html: post.field_transcript.processed }}></div>
@@ -62,7 +65,6 @@ export const query = graphql`
         field_hg_dateline
         id
         title
-        field_video_url
         body {
             processed
         }

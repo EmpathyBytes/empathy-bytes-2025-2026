@@ -66,6 +66,7 @@ exports.createPages = async ({actions, graphql}) => {
         allNodeCollection {
           nodes {
             id
+            title
             path {
                 alias
             }
@@ -79,37 +80,8 @@ exports.createPages = async ({actions, graphql}) => {
             path: "/collections" + collectionData.path.alias,
             component: path.resolve(`src/templates/collection.js`),
             context: {
-                CollectionId: collectionData.id,
+                CollectionTitle: collectionData.title,
             },
         })
     );
-
-
-    /**
-     * GENERATING INTERVIEW PAGES
-     */
-    /**
-    const interviews = await graphql(`
-    {
-      allNodeInterview {
-        nodes {
-          id
-          path {
-            alias
-          }
-        }
-      }
-    }
-    `)
-
-    interviews.data.allNodeInterview.nodes.map(interviewData =>
-      createPage({
-          path: "/collections" + interviewData.path.alias,
-          component: path.resolve(`src/templates/interview.js`),
-          context: {
-              InterviewId: interviewData.id,
-          },
-      })
-  );
-   */
 }

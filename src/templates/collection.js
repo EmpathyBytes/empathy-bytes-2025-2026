@@ -27,28 +27,28 @@ const collection_name = {
     color: '#b3a369',
 }
 
-function Collection({data}) {
+function Collection({ data }) {
     const collection = data.collection;
-    const interview = data.interview.nodes;
+    const interview = Array.from(data.interview.relationships.node__article);
 
     return (
         <Layout>
-        <div style={container}>
-            <h1 style={collection_name}>{collection.title}</h1>
-            <div dangerouslySetInnerHTML={{ __html: collection.body.processed}}/>
-            <p></p>
+            <div style={container}>
+                <h1 style={collection_name}>{collection.title}</h1>
+                <div dangerouslySetInnerHTML={{ __html: collection.body.processed }} />
+                <p></p>
                 {interview.map((i) => (
                     <InterviewCard
-                    img = {"https://empathybytes.library.gatech.edu" + i.relationships.field_image.uri.url}
-                    title = {i.title}
-                    author = {i.field_author}
-                    date = {i.field_hg_dateline}
-                    body = {i.field_blurb}
-                    url = {i.path.alias}
+                        img={"https://empathybytes.library.gatech.edu" + i.relationships.field_image.uri.url}
+                        title={i.title}
+                        author={i.field_author}
+                        date={i.field_hg_dateline}
+                        body={i.field_blurb}
+                        url={i.path.alias}
                     />
                 ))}
 
-        </div>
+            </div>
         </Layout>
     );
 }
@@ -65,8 +65,8 @@ Collection.propTypes = {
  * with the same collection id are pulled.
  */
 export const query = graphql`
-    query Collections ($CollectionId: String!) {
-        collection: nodeCollection(id: { eq: $CollectionId }) {
+    query ($CollectionTitle: String!) {
+        collection: nodeCollection(title: { eq: $CollectionTitle }) {
             id
             title
             body {
@@ -81,27 +81,31 @@ export const query = graphql`
                 }
             }
         }
-        interview: allNodeArticle(filter: {field_collection: {eq: $CollectionId}}) {
-            nodes {
-                path {
-                    alias
-                }
-                id
-                title
-                field_author
-                field_hg_dateline
-                field_blurb
-                body {
-                    processed
-                }
-                relationships {
-                    field_image {
-                        uri {
-                            url
+        interview: taxonomyTermTags(name: {glob: $CollectionTitle }) {
+              relationships {
+                node__article {
+                        path {
+                            alias
                         }
+                        id
+                        title
+                        field_author
+                        field_hg_dateline
+                        field_blurb
+                        body {
+                            processed
+                        }
+                        
+                        relationships {
+                            field_image {
+                                uri {
+                                    url
+                                }
+                            }
+                        }
+
                     }
                 }
-            }
         }
     }
 `;

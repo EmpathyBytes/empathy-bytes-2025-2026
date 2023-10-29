@@ -11,10 +11,17 @@
 }
 
 .gradient_bg {
-    background: rgb(135,182,255);
+    /* styles for devices with a minimum screen width of 480px */
+    /* background: rgb(135,182,255);
     background: linear-gradient(-45deg, rgba(135,182,255,1), rgba(255,249,202,1), rgba(255,255,255,1));
     background-size: cover;
-    animation: gradient 10s ease infinite;
+    animation: gradient 10ms ease infinite; */
+    @media screen and (min-width: 600px) {
+        background-color: antiquewhite;
+      }
+      @media screen and (max-width: 600px) {
+        background-color: black;
+      }
 }
 
 @keyframes gradient {

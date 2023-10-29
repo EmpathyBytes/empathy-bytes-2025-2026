@@ -12,6 +12,7 @@ import BuzzPlaque from "../components/canvas/buzzplaque";
 import Converse from "../components/canvas/rightconverse";
 
 import Grid from '@mui/material/Unstable_Grid2';
+import useMediaQuery from '@mui/material/useMediaQuery';
 
 
 import "../styles/experiencesIndividual.css"
@@ -19,130 +20,243 @@ import "../styles/all.css"
 
 
 function EmergingTech() {
-    return(
-        <Layout>
-            <div className="full-container-experiences">
-                <Grid container spacing={2} className="">
-                    <div className="grid-margins-experiences">
-                        <Grid xs={12}>
-                            <h1 className="header-experiences">The Emerging Technologies Team</h1>
-                        </Grid>
-                    </div>
-                </Grid>
-
-
-                <Grid container spacing={0} className="bg-1">
-                    <div className="grid-margins-experiences">
-                        <Grid xs={10}>
-                            <h1 className="sub-header-experiences">What We Do</h1>
-                        </Grid>
-
-                        <Grid xs={2}>
-                            
-                        </Grid>
-
-                        <Grid xs={7}>
-                            <p className="paragraph-experiences paragraph-indent-experiences-left">
-                            Our team develops Virtual and Augmented Reality experiences with the goal of fostering empathy and understanding. 
-                            Through the use of 3D technologies, we aim to preserve communities and their artifacts, giving others the chance 
-                            to see and learn more about them.
-                            </p>
-                        </Grid>
-
-                        <Grid xs={5}>
-                            
-                        </Grid>
-                    </div>
-                </Grid>
-
-                <Grid container spacing={0} className="">
-                    <div className="grid-margins-experiences">
-
-                        <Grid xs={12} className="right-align-experiences">
-                            <h1 className="sub-header-experiences">The VR Archives</h1>
-                        </Grid>
-
-
-                        <Grid xs={12}>
-                            <p className="paragraph-experiences paragraph-indent-experiences-left">Empathy Bytes is developing a 
-                            Virtual Reality Museum where anyone can experience and learn about artifacts in the Georgia Tech Archives.
-                            Our team is able digitally preserve items such as an official 1996 Atlanta Olympics Torch, Buzz’s Converses 
-                            from 1988, and a 1937 rat cap through the use of photogrammetry and hand-modeling techniques. We hope this VR experience 
-                            allows the Georgia Tech Community to strengthen its connection to the school’s past and safely preserve these memories.
-                            </p>
-                            <p className="paragraph-experiences paragraph-indent-experiences-left">Please click and drag the 3D models below to see
-                                in 360 degree view.
-                            </p>
-                        </Grid>
-                    </div>
-
-                </Grid>
-
-                <Grid container spacing={2} className="bg-1">
-                    
-                    <Grid xs={6} container className="" alignItems="center" justifyContent="center" direction="column">
-                        <h1>Buzz's Plaque</h1>
+    const matches = useMediaQuery('(min-width:600px)');
+    if (matches) {
+        return(
+            <Layout>
+                <div className="full-container-experiences">
+                    <Grid container spacing={2} className="">
+                        <div className="grid-margins-experiences">
+                                <h1 className="header-experiences">The Emerging Technologies Team</h1>
+                        </div>
                     </Grid>
-
-                    <Grid xs={6} container className="" alignItems="center" justifyContent="center" direction="column">
-                        <h1>Buzz's Right Converse</h1>
+    
+    
+                    <Grid container spacing={0} className="bg-1">
+                        <div className="grid-margins-experiences">
+                            <Grid xs={10}>
+                                <h1 className="sub-header-experiences">What We Do</h1>
+                            </Grid>
+    
+                            <Grid xs={2}>
+                                
+                            </Grid>
+    
+                            <Grid xs={7}>
+                                <p className="paragraph-experiences paragraph-indent-experiences-left">
+                                Our team develops Virtual and Augmented Reality experiences with the goal of fostering empathy and understanding. 
+                                Through the use of 3D technologies, we aim to preserve communities and their artifacts, giving others the chance 
+                                to see and learn more about them.
+                                </p>
+                            </Grid>
+    
+                            <Grid xs={5}>
+                                
+                            </Grid>
+                        </div>
                     </Grid>
-
-                    {/* Loading 3D Models */}
-                    <Grid xs={6} className="vr-container-1 b-1">
-                        {/* I would recommend following this structure for importing future models - Jacob */}
-                        <Canvas>
-                            <Suspense>
-                                <BuzzPlaque scale={3.5} />
-
-                                {/*PLEASE READ (6/10/2023)
-                                    There is a compatibility issue with this Environment component and the new version of three.js, I think it should be resolved soon though.
-                                    For now, I have inlcuded an ambientLight component instead. When this issue is resolved, feel free to add the Environment component back in.
-                                - Jacob Amin */}
-
-                                {/* <Environment /> */}
-                                <ambientLight />
-                                <OrbitControls />
-                            </Suspense>
-                        </Canvas>
+    
+                    <Grid container spacing={0} className="">
+                        <div className="grid-margins-experiences">
+    
+                            <Grid xs={12} className="right-align-experiences">
+                                <h1 className="sub-header-experiences">The VR Archives</h1>
+                            </Grid>
+    
+    
+                            <Grid xs={12}>
+                                <p className="paragraph-experiences paragraph-indent-experiences-left">Empathy Bytes is developing a 
+                                Virtual Reality Museum where anyone can experience and learn about artifacts in the Georgia Tech Archives.
+                                Our team is able digitally preserve items such as an official 1996 Atlanta Olympics Torch, Buzz’s Converses 
+                                from 1988, and a 1937 rat cap through the use of photogrammetry and hand-modeling techniques. We hope this VR experience 
+                                allows the Georgia Tech Community to strengthen its connection to the school’s past and safely preserve these memories.
+                                </p>
+                                <p className="paragraph-experiences paragraph-indent-experiences-left">Please click and drag the 3D models below to see
+                                    in 360 degree view.
+                                </p>
+                            </Grid>
+                        </div>
+    
                     </Grid>
-
-                        <Grid xs={6} className="vr-container-2 b-2">
+    
+                    <Grid container spacing={2} className="bg-1">
+                        
+                        <Grid xs={6} container className="" alignItems="center" justifyContent="center" direction="column">
+                            <h1>Buzz's Plaque</h1>
+                        </Grid>
+    
+                        <Grid xs={6} container className="" alignItems="center" justifyContent="center" direction="column">
+                            <h1>Buzz's Right Converse</h1>
+                        </Grid>
+    
+                        {/* Loading 3D Models */}
+                        <Grid xs={6} className="vr-container-1 b-1">
+                            {/* I would recommend following this structure for importing future models - Jacob */}
                             <Canvas>
                                 <Suspense>
-                                    <Converse scale={6} />
-
+                                    <BuzzPlaque scale={3.5} />
+    
                                     {/*PLEASE READ (6/10/2023)
                                         There is a compatibility issue with this Environment component and the new version of three.js, I think it should be resolved soon though.
                                         For now, I have inlcuded an ambientLight component instead. When this issue is resolved, feel free to add the Environment component back in.
                                     - Jacob Amin */}
-
+    
                                     {/* <Environment /> */}
                                     <ambientLight />
                                     <OrbitControls />
                                 </Suspense>
                             </Canvas>
                         </Grid>
-
-                </Grid>
-
-                <Grid container spacing={2} className="" style={{padding: "2% 0 2% 0"}}>
-                    <Grid xs={6} container className="right-align-experiences" alignItems="center" justifyContent="center" direction="column">
-                        <h1 className="sub-header-experiences">Spring 2023 Progress</h1>
+    
+                            <Grid xs={6} className="vr-container-2 b-2">
+                                <Canvas>
+                                    <Suspense>
+                                        <Converse scale={6} />
+    
+                                        {/*PLEASE READ (6/10/2023)
+                                            There is a compatibility issue with this Environment component and the new version of three.js, I think it should be resolved soon though.
+                                            For now, I have inlcuded an ambientLight component instead. When this issue is resolved, feel free to add the Environment component back in.
+                                        - Jacob Amin */}
+    
+                                        {/* <Environment /> */}
+                                        <ambientLight />
+                                        <OrbitControls />
+                                    </Suspense>
+                                </Canvas>
+                            </Grid>
+    
+                    </Grid>
+    
+                    <Grid container spacing={2} className="" style={{padding: "2% 0 2% 0"}}>
+                        <Grid xs={6} container className="right-align-experiences" alignItems="center" justifyContent="center" direction="column">
+                            <h1 className="sub-header-experiences">Spring 2023 Progress</h1>
+                        </Grid>
+    
+    
+                        <Grid container xs={6} alignItems="center" justifyContent="center" direction="column">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/yJHL_D9JobI" 
+                                title="YouTube video player" frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                                allowfullscreen>
+                            </iframe>
+                        </Grid>
+                    </Grid>
+                </div>
+            </Layout>
+        );
+    } else {
+        return(
+            <Layout>
+                <p>aljdkfjlaksj ur team develops Virtual and Augmented Reality experiences with the goal of fostering empathy and understanding. 
+                            Through the use of 3D technologies, we aim to preserve communities and their artifacts, giving others the chance 
+                            to see and learn more about them.</p>
+                <div className="full-container-experiences">
+                    <Grid container spacing={2} className="">
+                        <div className="grid-margins-experiences">
+                            <br/>
+                            <br/>
+                            <br/>
+                            <h1 className="header-experiences">The Emerging Technologies Team</h1>
+                        </div>
                     </Grid>
 
+                    <Grid container spacing={0} className="bg-1">
+                        <div className="grid-margins-experiences">
+                            <h1 className="sub-header-experiences">What We Do</h1>
+                            <p className="paragraph-experiences paragraph-indent-experiences-left">
+                            Our team develops Virtual and Augmented Reality experiences with the goal of fostering empathy and understanding. 
+                            Through the use of 3D technologies, we aim to preserve communities and their artifacts, giving others the chance 
+                            to see and learn more about them.
+                            </p>
+                        </div>
+                    </Grid>
+    
+                    <Grid container spacing={0} className="">
+                        <div className="grid-margins-experiences">
+    
+                            <Grid xs={12} className="right-align-experiences">
+                                <h1 className="sub-header-experiences">The VR Archives</h1>
+                            </Grid>
+    
+    
+                            <Grid xs={12}>
+                                <p className="paragraph-experiences paragraph-indent-experiences-left">Empathy Bytes is developing a 
+                                Virtual Reality Museum where anyone can experience and learn about artifacts in the Georgia Tech Archives.
+                                Our team is able digitally preserve items such as an official 1996 Atlanta Olympics Torch, Buzz’s Converses 
+                                from 1988, and a 1937 rat cap through the use of photogrammetry and hand-modeling techniques. We hope this VR experience 
+                                allows the Georgia Tech Community to strengthen its connection to the school’s past and safely preserve these memories.
+                                </p>
+                                <p className="paragraph-experiences paragraph-indent-experiences-left">Please click and drag the 3D models below to see
+                                    in 360 degree view.
+                                </p>
+                            </Grid>
+                        </div>
+    
+                    </Grid>
+    
+                    <Grid container spacing={2} className="bg-1">
+                        
+                        <Grid xs={12} container className="" alignItems="center" justifyContent="center" direction="column">
+                            <h1>Buzz's Plaque</h1>
+                        </Grid>
 
-                    <Grid container xs={6} alignItems="center" justifyContent="center" direction="column">
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/yJHL_D9JobI" 
-                            title="YouTube video player" frameborder="0" 
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                            allowfullscreen>
+                        <Grid xs={12} className="vr-container-1 b-1" style={{width:'80%', margin: 'auto'}}>
+                            {/* I would recommend following this structure for importing future models - Jacob */}
+                            <Canvas>
+                                <Suspense>
+                                    <BuzzPlaque scale={3.5} />
+    
+                                    {/*PLEASE READ (6/10/2023)
+                                        There is a compatibility issue with this Environment component and the new version of three.js, I think it should be resolved soon though.
+                                        For now, I have inlcuded an ambientLight component instead. When this issue is resolved, feel free to add the Environment component back in.
+                                    - Jacob Amin */}
+    
+                                    {/* <Environment /> */}
+                                    <ambientLight />
+                                    <OrbitControls />
+                                </Suspense>
+                            </Canvas>
+                        </Grid>
+    
+                        <Grid xs={12} container alignItems="center" justifyContent="center" direction="column">
+                            <h1>Buzz's Right Converse</h1>
+                        </Grid>
+    
+                        {/* Loading 3D Models */}
+                        
+    
+                            <Grid xs={12} className="vr-container-2 b-2" style={{width:'80%', margin: 'auto'}}>
+                                <Canvas>
+                                    <Suspense>
+                                        <Converse scale={6} />
+    
+                                        {/*PLEASE READ (6/10/2023)
+                                            There is a compatibility issue with this Environment component and the new version of three.js, I think it should be resolved soon though.
+                                            For now, I have inlcuded an ambientLight component instead. When this issue is resolved, feel free to add the Environment component back in.
+                                        - Jacob Amin */}
+    
+                                        {/* <Environment /> */}
+                                        <ambientLight />
+                                        <OrbitControls />
+                                    </Suspense>
+                                </Canvas>
+                            </Grid>
+    
+                    </Grid>
+                    <section>
+                        <br/>
+                        <h1 className="sub-header-experiences" style={{marginLeft:"10%"}}>Spring 2023 Progress</h1>
+                        <iframe width="80%" height="50%" src="https://www.youtube.com/embed/yJHL_D9JobI" 
+                                    title="YouTube video player" frameborder="0" 
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                                    allowfullscreen style={{margin:'auto'}}>
                         </iframe>
-                    </Grid>
-                </Grid>
-            </div>
-        </Layout>
-    );
+                    </section>
+                </div>
+            </Layout>
+        );
+    }
+    
 }
 
 export default EmergingTech;

@@ -4,7 +4,6 @@ import { Link } from "gatsby";
 import useMediaQuery from '@mui/material/useMediaQuery';
 import "../styles/components/interviewcard.css";
 import Grid from "@mui/material/Grid";
-import styles from "../styles/inProgress.css";
 
 
 /**
@@ -18,44 +17,63 @@ import styles from "../styles/inProgress.css";
 
 // TODO: change styling to use css 
 
-const col = {
-    padding: 10,
-};
+// const col = {
+//     padding: 10,
+// };
 
-const row = {
-    ["borderBottom"]: '5px solid #b3a369',
-    padding: 15,
-    ["font-family"]: 'Roboto',
-};
+// const row = {
+//     ["borderBottom"]: '5px solid #b3a369',
+//     padding: 15,
+//     ["font-family"]: 'Roboto',
+// };
 
-const summary = {
-    ['line-clamp']: 3,
-    ['text-overflow']: 'ellipsis',
-    overflow: 'hidden',
-}
+// const summary = {
+//     ['line-clamp']: 3,
+//     ['text-overflow']: 'ellipsis',
+//     overflow: 'hidden',
+// }
 
 export default function InterviewCard(props) {
     const matches = useMediaQuery('(min-width:600px)');
     if (matches) {
         return (
-            <div class="row" style={row}>
-                <div class="col" style={col}>
+            // <div className="row">
+            //     <div className="col">
+            //         <img className="img-style" src={props.img}/>
+            //     </div>
+            //     <div class="col">
+            //         <h2>{props.title}</h2>
+            //         <p>By {props.author}</p>
+            //         <div className = "summary" dangerouslySetInnerHTML={{ __html: props.body}}/>
+            //         <Link to={props.url}>Learn More</Link>
+            //         <p>{props.date}</p>
+            //         <span class="border-bottom"></span>
+            //     </div>
+            // </div>
+            <section className="int_card">
+            <Grid 
+                container spacing = {2}
+                alignItems = "center"
+
+            >
+                <Grid item xs={4}>
                     <img className="img-style" src={props.img}/>
-                </div>
-                <div class="col" style={col}>
+                </Grid>
+                <Grid item xs={8}>
                     <h2>{props.title}</h2>
                     <p>By {props.author}</p>
-                    <div style={summary} dangerouslySetInnerHTML={{ __html: props.body}}/>
+                    <div className = "summary" dangerouslySetInnerHTML={{ __html: props.body}}/>
                     <Link to={props.url}>Learn More</Link>
                     <p>{props.date}</p>
-                    <span class="border-bottom"></span>
-                </div>
-            </div>
+                </Grid>
+
+            </Grid>
+            </section>
         );
     } else {
         return (
             <section className="int_card">
-                <Grid
+                <Grid //component borrowed from MUI
                     container spacing={2}
                     alignItems="center"
                 >

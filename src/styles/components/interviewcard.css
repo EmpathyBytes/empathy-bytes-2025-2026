@@ -1,18 +1,38 @@
 .int_card {
     border-bottom: 5px solid #b3a369;
     margin: 15px;
+    padding: 10px;
 }
-.summary {
-    /* display: -webkit-box;
+/*.summary {
+    display: -webkit-box;
     -webkit-line-clamp: 3;
     line-clamp: 3;
     text-overflow: ellipsis;
-    overflow: hidden; */
-}
+    overflow: hidden; 
+}*/
 
 .img-style {
     border-radius: 10px;
     width: 20vw;
     height: 20vw;
     object-fit: "cover";
+}
+
+.col {
+    padding: 10;
+    background-color: red;
+}
+
+.row {
+    display: flex;
+    border-bottom: 5px solid #b3a369;
+    padding: 15;
+    font-family: 'Roboto';
+    justify-items: space-between;
+}
+
+.summary {
+    line-clamp: 3;
+    text-overflow: ellipsis;
+    overflow: 'hidden';
 }

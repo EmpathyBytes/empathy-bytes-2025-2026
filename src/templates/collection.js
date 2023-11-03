@@ -29,7 +29,7 @@ const collection_name = {
 
 function Collection({ data }) {
     const collection = data.collection;
-    const interview = Array.from(data.interview.relationships.node__article);
+    const interview = data.interview.relationships.node__article;
 
     return (
         <Layout>
@@ -61,7 +61,7 @@ Collection.propTypes = {
 };
 
 /**
- * This query first pulls all collection data by id. Then, the interviews 
+ * This query first pulls all collection data by title. Then, the interviews 
  * with the same collection id are pulled.
  */
 export const query = graphql`

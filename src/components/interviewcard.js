@@ -4,6 +4,7 @@ import { Link } from "gatsby";
 import useMediaQuery from '@mui/material/useMediaQuery';
 import "../styles/components/interviewcard.css";
 import Grid from "@mui/material/Grid";
+import { CardActionArea } from '@mui/material';
 
 
 /**
@@ -51,29 +52,57 @@ export default function InterviewCard(props) {
             //     </div>
             // </div>
             <section className="int_card">
-            <Grid 
-                container spacing = {2}
-                alignItems = "center"
+                <Link to={props.url} style={{textDecoration:"none", color:"inherit"}}>
+                    <CardActionArea>
+                        <Grid 
+                            container spacing = {2}
+                            alignItems = "center"
+                            justifyContent="space-between"
+                        >
+                            <Grid item xs={4}>
+                                <img className="img-style" src={props.img}/>
+                            </Grid>
+                            <Grid item xs={8}>
+                                <h2>{props.title}</h2>
+                                <p>By {props.author}</p>
+                                <div className = "summary" dangerouslySetInnerHTML={{ __html: props.body}}/>
+                                {/* <Link to={props.url}>Learn More</Link> */}
+                                <p>{props.date}</p>
+                            </Grid>
 
-            >
-                <Grid item xs={4}>
-                    <img className="img-style" src={props.img}/>
-                </Grid>
-                <Grid item xs={8}>
-                    <h2>{props.title}</h2>
-                    <p>By {props.author}</p>
-                    <div className = "summary" dangerouslySetInnerHTML={{ __html: props.body}}/>
-                    <Link to={props.url}>Learn More</Link>
-                    <p>{props.date}</p>
-                </Grid>
-
-            </Grid>
+                        </Grid>
+                    </CardActionArea>
+                </Link>
             </section>
         );
     } else {
         return (
             <section className="int_card">
-                <Grid //component borrowed from MUI
+                <Link to={props.url} style={{textDecoration:"none", color:"inherit"}}>
+                    <CardActionArea>
+                        <Grid //component borrowed from MUI
+                            container spacing={2}
+                            alignItems="center"
+                        >
+                            <Grid item xs={4}>
+                                {/* <Link to={props.url} style={{textDecoration:"none", color:"inherit"}}> */}
+                                    <img className="img-style" src={props.img}/>
+                                {/* </Link> */}
+                            </Grid>
+                            <Grid item xs={8}>
+                                <h2>{props.title}</h2>
+                                <p>By {props.author}</p>
+                            </Grid>
+                            <Grid item xs={12}>                
+                                <div className="summary" dangerouslySetInnerHTML={{ __html: props.body}}/>
+                                {/* <Link to={props.url}>Learn More</Link> */}
+                                <p>{props.date}</p>               
+                            </Grid>
+                        </Grid>
+                    </CardActionArea>
+                </Link>
+                
+                {/* <Grid //component borrowed from MUI
                     container spacing={2}
                     alignItems="center"
                 >
@@ -89,7 +118,7 @@ export default function InterviewCard(props) {
                         <Link to={props.url}>Learn More</Link>
                         <p>{props.date}</p>               
                     </Grid>
-                </Grid>
+                </Grid> */}
             </section>
         );
     }

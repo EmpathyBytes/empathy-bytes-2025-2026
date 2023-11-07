@@ -7,13 +7,15 @@ import { useStaticQuery, graphql } from "gatsby";
 import Layout from "../components/layout"
 import ArticlePreview from "../components/articlePreview"
 
-const topPadding = {
-    padding: "10% 5% 10% 5%",
-  };
+import "../styles/articles.css";
 
-const articlePadding = {
-  padding: ".5% 0 .5% 0"
-}
+// const topPadding = {
+//     padding: "10% 5% 10% 5%",
+//   };
+
+// const articlePadding = {
+//   padding: ".5% 0 .5% 0"
+// }
 
 function Articles() {
     const data = useStaticQuery(graphql`
@@ -35,11 +37,11 @@ console.log(data);
 
     return(
         <Layout>
-            <div style={topPadding}>
+            <div className="topPadding">
               <h1>Articles</h1>
               <div>
                   {articles.map(article => (
-                    <div style={articlePadding}>
+                    <div className="articlePadding">
                       <ArticlePreview 
                         key = {article.id}
                         title = {article.title}

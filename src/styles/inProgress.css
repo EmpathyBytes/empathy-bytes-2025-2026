@@ -1,31 +1,6 @@
 /* All stylings not in a css file as of Oct 2023 */
 
-/* peoplecard.js; NEEDS JS REWORKING */
-.card {
-    background: rgba(0, 0, 0, 0);
-    border-radius: 1%;
-    padding: 1%;
-    width: 75%;
-    height: 15%;
-    margin: 1%;
-    float: left;
-}
-
-.role {
-    font-family: Roboto;
-    font-weight: 100;
-    font-size: 1.2vw;
-    color: #fff;
-    margin: 1;
-}
-
-.pfp {
-    height: 100%;
-    width: 100%;
-    padding-bottom: 1%;
-}
-
-/* 404.js; NEEDS JS REWORKING */
+/* 404.js*/
 .pageStyles {
     color: #232129;
     padding: 96px;
@@ -46,15 +21,6 @@
     background-color: #FFF4DB;
     font-size: 1.25rem;
     border-radius: 4,
-}
-
-/* articles.js; NEEDS JS REWORKING */
-.topPadding {
-    padding: 10% 5% 10% 5%;
-}
-
-.articlePadding {
-    padding: .5% 0 .5% 0;
 }
 
 /* pastmembers.js; NEEDS JS REWORKING */

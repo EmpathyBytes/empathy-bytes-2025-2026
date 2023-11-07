@@ -62,3 +62,11 @@
 .articleAudio {
     width:150%;
 }
+
+.topPadding {
+    padding: 10% 5% 10% 5%;
+}
+
+.articlePadding {
+    padding: .5% 0 .5% 0;
+}

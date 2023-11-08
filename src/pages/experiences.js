@@ -9,6 +9,8 @@ import Card from '@mui/material/Card';
 import CardMedia from '@mui/material/CardMedia';
 import { Button, CardActionArea, CardActions } from '@mui/material';
 
+import useMediaQuery from '@mui/material/useMediaQuery';
+
 import "../styles/experiences.css"
 import "../styles/all.css"
 
@@ -19,6 +21,7 @@ import Media from "../images/experiences/mediaBTS.jpg"
 
 
 function ExperiencesPage() {
+  const matches = useMediaQuery('(min-width:600px)');
   return (
     <Layout>
       <div className="container-experiences-homepage">

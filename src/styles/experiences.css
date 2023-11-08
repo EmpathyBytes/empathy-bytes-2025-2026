@@ -1,7 +1,7 @@
 @import "./fonts.css";
 
 .container-experiences-homepage {
-    padding-top: 50%;
+    padding-top: calc(var(--navbar-scrolled-height) + 10vh);
     padding-bottom: 90px;
 }
 .container-half {

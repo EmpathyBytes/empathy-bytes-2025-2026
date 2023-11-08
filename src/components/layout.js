@@ -17,7 +17,7 @@ export default function Layout(props) {
         <div id="content-wrap">
             {props.children}
         </div>
-      <Footer></Footer>
+      <Footer/>
     </div>
     </div>
   );

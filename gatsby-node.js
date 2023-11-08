@@ -41,6 +41,11 @@ exports.createPages = async ({actions, graphql}) => {
             path {
                 alias
             }
+            relationships {
+              field_tags {
+                name
+              }
+            }
           }
         }
       }
@@ -49,7 +54,7 @@ exports.createPages = async ({actions, graphql}) => {
     // Looping through the data gathered, creating a page for each component
     articles.data.allNodeArticle.nodes.map(articleData =>
         createPage({
-            path: articleData.path.alias,
+            path: "/collections/" + articleData.relationships.field_tags.name + "/" + articleData.path.alias,
             component: path.resolve(`src/templates/article.js`),
             context: {
                 ArticleId: articleData.id,

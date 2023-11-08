@@ -35,6 +35,7 @@ const pfp = {
   width: "100%",
   paddingBottom: "1%"
 }
+
 // Default Card Component. Has props to changed the profile picture, name, and role - Jacob
 function PeopleCard(props) {
   return (

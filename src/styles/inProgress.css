@@ -1,106 +1,6 @@
 /* All stylings not in a css file as of Oct 2023 */
 
-/* experiencesComponent.js */
-.experiencesContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    margin-top: 500px;
-}
-
-.card {
-    background: #fff;
-    border-radius: 10px;
-    padding: "5rem";
-    width: calc(50% - 10px);
-    height: 450px;
-    margin: 20px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.imgContainer {
-    width: 100%;
-    height: 60%;
-    overflow: hidden;
-    border-radius: 10px;
-}
-
-.img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.role {
-    font-family: "Roboto";
-    font-weight: 300;
-    font-size: 1rem;
-    color: #666;
-    margin: 0;
-}
-
-.name {
-    font-family: "Roboto";
-    font-weight: "500";
-    font-size: "1.5rem";
-    color: "#000";
-    margin: "1rem 0 0 0";
-};
-
-/* interviewCard.js; NEEDS JS REWORKING */
-.col {
-    padding: 10,
-}
-
-.row {
-    border-bottom: 5px solid #b3a369;
-    padding: 15;
-    font-family: 'Roboto';
-}
-
-.img_style {
-    border-radius: 10px;
-    width: 300px;
-    height: 300px; 
-    object-fit: cover;
-}
-
-.summary {
-    line-clamp: 3;
-    text-overflow: ellipsis;
-    overflow: 'hidden';
-}
-
-/* peoplecard.js; NEEDS JS REWORKING */
-.card {
-    background: rgba(0, 0, 0, 0);
-    border-radius: 1%;
-    padding: 1%;
-    width: 75%;
-    height: 15%;
-    margin: 1%;
-    float: left;
-}
-
-.role {
-    font-family: Roboto;
-    font-weight: 100;
-    font-size: 1.2vw;
-    color: #fff;
-    margin: 1;
-}
-
-.pfp {
-    height: 100%;
-    width: 100%;
-    padding-bottom: 1%;
-}
-
-/* 404.js; NEEDS JS REWORKING */
+/* 404.js*/
 .pageStyles {
     color: #232129;
     padding: 96px;
@@ -121,15 +21,6 @@
     background-color: #FFF4DB;
     font-size: 1.25rem;
     border-radius: 4,
-}
-
-/* articles.js; NEEDS JS REWORKING */
-.topPadding {
-    padding: 10% 5% 10% 5%;
-}
-
-.articlePadding {
-    padding: .5% 0 .5% 0;
 }
 
 /* pastmembers.js; NEEDS JS REWORKING */

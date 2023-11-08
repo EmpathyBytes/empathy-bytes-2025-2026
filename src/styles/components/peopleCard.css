@@ -1,0 +1,24 @@
+/* peoplecard.js; NEEDS JS REWORKING */
+.card {
+    background: rgba(0, 0, 0, 0);
+    border-radius: 1%;
+    padding: 1%;
+    width: 75%;
+    height: 15%;
+    margin: 1%;
+    float: left;
+}
+
+.role {
+    font-family: Roboto;
+    font-weight: 100;
+    font-size: 1.2vw;
+    color: #fff;
+    margin: 1;
+}
+
+.pfp {
+    height: 100%;
+    width: 100%;
+    padding-bottom: 1%;
+}

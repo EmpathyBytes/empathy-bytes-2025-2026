@@ -2,7 +2,8 @@
 
 
 .full-container-experiences {
-    margin-top: 5%;
+    margin-top: var(--logo-top-height);
+    margin-bottom: var(--navbar-top-height);
 }
 .grid-margins-experiences {
     padding: 0 3% 0 3%;

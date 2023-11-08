@@ -11,7 +11,7 @@ import BuzzPlaque from "../components/canvas/buzzplaque";
 // import Sweater from "../components/canvas/tSweater";
 import Converse from "../components/canvas/rightconverse";
 
-import Grid from '@mui/material/Unstable_Grid2';
+import Grid from '@mui/material/Grid';
 import useMediaQuery from '@mui/material/useMediaQuery';
 
 
@@ -127,14 +127,13 @@ function EmergingTech() {
     
                     </Grid>
     
-                    <Grid container spacing={2} className="" style={{padding: "2% 0 2% 0"}}>
-                        <Grid xs={6} container className="right-align-experiences" alignItems="center" justifyContent="center" direction="column">
+                    <Grid container spacing={2} className="" style={{padding: "2% 0 2% 0"}} alignItems={'center'}>
+                        <Grid xs={6} item className="right-align-experiences">
                             <h1 className="sub-header-experiences">Spring 2023 Progress</h1>
                         </Grid>
-    
-    
-                        <Grid container xs={6} alignItems="center" justifyContent="center" direction="column">
-                            <iframe width="560" height="315" src="https://www.youtube.com/embed/yJHL_D9JobI" 
+     
+                        <Grid item xs={6}>
+                            <iframe src="https://www.youtube.com/embed/yJHL_D9JobI" 
                                 title="YouTube video player" frameborder="0" 
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
                                 allowfullscreen>
@@ -147,9 +146,6 @@ function EmergingTech() {
     } else {
         return(
             <Layout>
-                <p>aljdkfjlaksj ur team develops Virtual and Augmented Reality experiences with the goal of fostering empathy and understanding. 
-                            Through the use of 3D technologies, we aim to preserve communities and their artifacts, giving others the chance 
-                            to see and learn more about them.</p>
                 <div className="full-container-experiences">
                     <Grid container spacing={2} className="">
                         <div className="grid-margins-experiences">
@@ -246,11 +242,14 @@ function EmergingTech() {
                     <section>
                         <br/>
                         <h1 className="sub-header-experiences" style={{marginLeft:"10%"}}>Spring 2023 Progress</h1>
-                        <iframe width="80%" height="50%" src="https://www.youtube.com/embed/yJHL_D9JobI" 
-                                    title="YouTube video player" frameborder="0" 
+                        <div style={{display:"flex", justifyContent:"center"}}>
+                        <iframe src="https://www.youtube.com/embed/yJHL_D9JobI" 
+                                    title="YouTube video player" frameborder="0"
                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
                                     allowfullscreen style={{margin:'auto'}}>
                         </iframe>
+                        </div>
+                        
                     </section>
                 </div>
             </Layout>

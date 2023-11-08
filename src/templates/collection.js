@@ -81,7 +81,7 @@ export const query = graphql`
                 }
             }
         }
-        interview: taxonomyTermTags(name: {glob: $CollectionTitle }) {
+        interview: taxonomyTermTags(name: {eq: $CollectionTitle }) {
               relationships {
                 node__article {
                         path {

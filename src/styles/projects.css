@@ -1,12 +1,11 @@
 .projectsContainer {
-    padding: 8% 15% 8% 15%;
+    padding: calc(var(--logo-top-height) + 5%) 15%;
     display: block;
 }
 
 .projectsTitle {
     font-family: 'Roboto Slab', serif;
-    font-size: 2vw;
-    padding: 0% 25% 0% 25%;
+    
     text-align: center;
 }
 

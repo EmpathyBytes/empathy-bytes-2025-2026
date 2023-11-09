@@ -15,7 +15,7 @@
     border-radius: 10px;
     width: 20vw;
     height: 20vw;
-    object-fit: "cover";
+    object-fit: cover;
 }
 
 .col {
@@ -34,5 +34,5 @@
 .summary {
     line-clamp: 3;
     text-overflow: ellipsis;
-    overflow: 'hidden';
+    overflow: hidden;
 }

@@ -10,11 +10,11 @@
 }
 .vr-container-1 {
     height: 50vh;
-    width: 50%;
+    width: 100%;
 }
 .vr-container-2 {
     height: 50vh;
-    width: 50%;
+    width: 100%;
 }
 
 .header-experiences {
@@ -24,7 +24,7 @@
 
 .sub-header-experiences {
     font-family: 'Roboto Slab', serif;
-    font-size: 3rem;
+    font-size: 2rem;
 }
 
 .paragraph-experiences {

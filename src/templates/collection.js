@@ -44,7 +44,7 @@ function Collection({ data }) {
                         author={i.field_author}
                         date={i.field_hg_dateline}
                         body={i.field_blurb}
-                        url={i.path.alias}
+                        url={"/projects" + collection.path.alias + i.path.alias}
                     />
                 ))}
 
@@ -71,6 +71,9 @@ export const query = graphql`
             title
             body {
                 processed
+            }
+            path {
+                alias
             }
             relationships {
                 field_image {

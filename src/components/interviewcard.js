@@ -38,19 +38,6 @@ export default function InterviewCard(props) {
     const matches = useMediaQuery('(min-width:600px)');
     if (matches) {
         return (
-            // <div className="row">
-            //     <div className="col">
-            //         <img className="img-style" src={props.img}/>
-            //     </div>
-            //     <div class="col">
-            //         <h2>{props.title}</h2>
-            //         <p>By {props.author}</p>
-            //         <div className = "summary" dangerouslySetInnerHTML={{ __html: props.body}}/>
-            //         <Link to={props.url}>Learn More</Link>
-            //         <p>{props.date}</p>
-            //         <span class="border-bottom"></span>
-            //     </div>
-            // </div>
             <section className="int_card">
                 <Link to={props.url} style={{textDecoration:"none", color:"inherit"}}>
                     <CardActionArea>

@@ -22,16 +22,15 @@ function Article({data}) {
                         <h1>{post.title}</h1>
                         <h3>By {post.field_author}</h3>
                         <audio className="articleAudio" src = {post.relationships.field_audio != null ? "https://www.empathybytes.library.gatech.edu" + post.relationships.field_audio.path.alias : null} controls>
-                            There is no audio for this article.
                         </audio>
                     </div>
                 </div>
             }
 
-            { post.field_video_url &&
+            { post.field_video_url ?
                 <iframe className="articleVideo" width="887" height="499" 
                     src={post.field_video_url}>
-                </iframe>
+                </iframe> : null
             }
 
 

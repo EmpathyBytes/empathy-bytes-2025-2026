@@ -41,70 +41,30 @@ export default function Navbar({ transparent }) {
     }
   }, []);
 
-  const matches = useMediaQuery('(min-width:600px)');
-
-  if (matches) { //desktop
-    return (
-      <header
-        className={`navbar-outer ${scroll} ${
-          transparent ? "" : "navbar-background"
-        }`}
-      >
-        <div className={`nav-container ${scroll}`}>
-          <div className={`navbar-grid-left ${scroll}`}>
-            <Link to={`/`}>
-              <img
-                className={`logo ${scroll}`}
-                src= {Logo}
-                alt="Empathy Bytes Logo"
-              />
-            </Link>
-          </div>
-          <div className="navbar-grid-right">
-            <ReactiveLink name="Projects" path="/projects" />
-            <ReactiveLink name="Experiences" path="/experiences" />
-            <ReactiveLink name="About" path="/about" />
-            <ReactiveLink name="Contact" path="/contact" />
-          </div>
-        </div>
-        {transparent && <div className={`navbar-gradient ${scroll}`}></div>}
-      </header>
-    );
-  } else {
-    return (
-      <header
-        className={`navbar-outer ${scroll} ${
-          transparent ? "" : "navbar-background"
-        }`}
-      >
+  return (
+    <header
+      className={`navbar-outer ${scroll} ${
+        transparent ? "" : "navbar-background"
+      }`}
+    >
+      <div className={`nav-container ${scroll}`}>
         <div className={`navbar-grid-left ${scroll}`}>
-            <Link to={`/`}>
-              <img
-                className={`logo ${scroll}`}
-                src= {Logo}
-                alt="Empathy Bytes Logo"
-              />
-            </Link>
-          </div>
-          <div
-          className="navigation-menu">
-          <ul>
-            <li>
-            <ReactiveLink name="Projects" path="/projects" />
-            </li>
-            <li>
-            <ReactiveLink name="Experiences" path="/experiences" />
-            </li>
-            <li>
-            <ReactiveLink name="About" path="/about" />
-            </li>
-            <li>
-            <ReactiveLink name="Contact" path="/contact" />
-            </li>
-          </ul>
+          <Link to={`/`}>
+            <img
+              className={`logo ${scroll}`}
+              src= {Logo}
+              alt="Empathy Bytes Logo"
+            />
+          </Link>
         </div>
-        {transparent && <div className={`navbar-gradient ${scroll}`}></div>}
-      </header>
-    );
-  }
+        <div className="navbar-grid-right">
+          <ReactiveLink name="Projects" path="/projects" />
+          <ReactiveLink name="Experiences" path="/experiences" />
+          <ReactiveLink name="About" path="/about" />
+          <ReactiveLink name="Contact" path="/contact" />
+        </div>
+      </div>
+      {transparent && <div className={`navbar-gradient ${scroll}`}></div>}
+    </header>
+  );
 }

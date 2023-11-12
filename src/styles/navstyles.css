@@ -204,21 +204,21 @@
     left: 0;
     bottom: 0;
     width: 100%;
-    height: 4rem;
+    height: min-content;
     background-color: var(--color-navyblue);
     color: white;
     text-align: center;
   }
   #page-container {
-    /* position: relative; */
+    position: relative;
     min-height: 100vh;
-    margin-top: var(var(--navbar-top-height));
+    margin-top: var(--navbar-top-height);
   }
   
   #content-wrap {
-    /* padding-bottom: 2.5rem; */
     color: var(--color-navyblue);
-    margin-top: var(var(--navbar-top-height));
+    margin-top: var(--navbar-top-height);
+    padding-bottom: 15rem;
   }
 
   /* .img-nav {

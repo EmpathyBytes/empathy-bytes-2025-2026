@@ -120,6 +120,9 @@ function EmergingTech() {
                     </Grid>
                 </Grid>
             </div>
+            <div>
+                test
+            </div>
         </Layout>
     );   
 }

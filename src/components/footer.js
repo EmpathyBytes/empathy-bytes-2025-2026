@@ -13,15 +13,15 @@ import "../styles/components/footer.css"
 function Footer(props) {
 
   return (
-    <footer>
+    <footer id="footer">
       <div className="container-footer">
-        <Grid container spacing={0}>
+        <Grid container spacing={0} alignItems="center" justifyContent="center">
           
-          <Grid item xs={4}>
+          <Grid item xs={12} sm={4}>
             <h1 className="text-footer-title">Empathy Bytes</h1>
           </Grid>
 
-          <Grid item xs={2} className="grouping">
+          <Grid item xs={6} sm={2} className="grouping">
             <h1 className="text-heading">About</h1>
 
             <Link className="text-anchor" to="">Home</Link>
@@ -29,7 +29,7 @@ function Footer(props) {
             <Link className="text-anchor" to="/contact">Contact</Link>
           </Grid>
 
-          <Grid item xs={2} className="grouping">
+          <Grid item xs={6} sm={2} className="grouping">
             <h1 className="text-heading">Experiences</h1>
 
             <Link className="text-anchor" to="/appteam">App Experience</Link>
@@ -38,7 +38,7 @@ function Footer(props) {
             <Link className="text-anchor" to="/webteam">Web Experience</Link>
           </Grid>
 
-          <Grid item xs={2} className="grouping">
+          <Grid item xs={6} sm={2} className="grouping">
             <h1 className="text-heading">Communities</h1>
 
             <Link className="text-anchor" to="/collections/distance-math/">Distance Math</Link>
@@ -47,7 +47,7 @@ function Footer(props) {
             <Link className="text-anchor" to="/articles">Misc</Link>
           </Grid>
 
-          <Grid item xs={2} className="grouping">
+          <Grid item xs={6} sm={2} className="grouping">
             <h1 className="text-heading">Social Media</h1>
 
             <a className="text-anchor" href="https://www.youtube.com/@georgiatechempathybytesvip3117">Youtube</a>

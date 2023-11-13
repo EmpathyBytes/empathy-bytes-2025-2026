@@ -8,19 +8,36 @@
     margin-left: auto;
     margin-right: auto;
     width: 100vw;
-    height: 100vh;
+    
     object-fit: cover;
+    /* desktop */
+    @media screen and (min-width: 600px) {
+        height: 100vh;
+    }
+
+    /* mobile */
+    @media screen and (max-width: 600px) {
+        height: 85vh;
+    } 
 }
 
 
 .top {
     width: 100vw;
-    height: 80vh;
     position: absolute;
     top: 0;
     left: 0;
 
-    background-color: rgba(0, 0, 0, 0.8)
+    background-color: rgba(0, 0, 0, 0.8);
+    /* desktop */
+    @media screen and (min-width: 600px) {
+        height: 80vh;
+    }
+
+    /* mobile */
+    @media screen and (max-width: 600px) {
+        height: 65vh;
+    }
 }
 
 .top-text {
@@ -47,30 +64,78 @@
 
 .header {
     font-family: 'Roboto Slab', serif;
-    font-size: 3vw;
+    /* desktop */
+    @media screen and (min-width: 600px) {
+        font-size: 3vw;
+    }
+
+    /* mobile */
+    @media screen and (max-width: 600px) {
+        font-size: 6vw;
+    }
+}
+
+.image {
+    /* desktop; ratio = 0.603 */
+    @media screen and (min-width: 600px) {
+        width: 580px;
+        height: 350px;
+    }
+
+    /* mobile */
+    @media screen and (max-width: 600px) {
+        width: 90vw;
+        height: 55vw;
+    }
 }
 
 .paragraph {
     font-family: 'Roboto', sans-serif;
     font-size: 1.3vw;
-    
+    /* desktop */
+    @media screen and (min-width: 600px) {
+        font-size: 1.3vw;
+    }
+
+    /* mobile */
+    @media screen and (max-width: 600px) {
+        font-size: 1rem;
+    }
 }
 
 .paragraph2 {
     font-family: 'Roboto', sans-serif;
-    font-size: 1.3vw;
     /*position: absolute; /* taken out of the normal flow of the document */
-    top: 50%; /* moved down by 50% of the screen height */
-    transform: translateY(100%); /* moved back up (Y axis) by half of its height to achieve the perfect center */
+    
     /*width: 100%; /* needs to be defined to keep the default block behavior */
     text-align: left;
     margin: 0; /* again, for perfect center */
+    /* desktop */
+    @media screen and (min-width: 800) {
+        font-size: 1.3vw;
+        top: 50%; /* moved down by 50% of the screen height */
+        transform: translateY(100%); /* moved back up (Y axis) by half of its height to achieve the perfect center */
+    }
+
+    /* mobile */
+    @media screen and (max-width: 800) {
+        font-size: 1rem;
+    }
 }
 
 .card-text {
     font-family: 'Roboto', sans-serif;
-    font-size: 1.7vw;
     color: white;
+    text-align: center;
+    /* desktop */
+    @media screen and (min-width: 600px) {
+        font-size: 1.7vw;   
+    }
+
+    /* mobile */
+    @media screen and (max-width: 600px) {
+        font-size: 0.9rem;
+    }
 }
 
 .container-row{
@@ -133,3 +198,5 @@
 	animation-delay:0s;
 	-webkit-animation-delay:0s; /* Safari 和 Chrome */
 }
+
+

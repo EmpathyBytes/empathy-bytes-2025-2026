@@ -7,22 +7,24 @@ function AboutComponent(props) {
     const members = props.members;
 
     return (
+        <div>
+            <Grid container spacing={0} justifyContent="center">
 
-        <Grid container spacing={0} justifyContent="center">
+                <Grid xs={8} style={{ padding: "0% 5% 1% 5%" }}>
+                    <h1 className="header-about">{props.subteam} Team</h1>
+                    <p className="paragraph-about padding-bottom-about">{props.about}</p>
+                </Grid>
 
-            <Grid xs={8} style={{ padding: "0% 5% 1% 5%" }}>
-                <h1 className="header-about">{props.subteam} Team</h1>
-                <p className="paragraph-about padding-bottom-about">{props.about}</p>
+                <Grid xs={4}>
+
+                </Grid>
             </Grid>
 
-            <Grid xs={4}>
-
-            </Grid>
-
-            {members.map((item) => (
-                item.field_current_member &&
-                <Grid container xs={3.5} alignItems="center" justifyContent="center" direction="column">
-                    <Grid xs={7}>
+            <Grid container spacing={3} alignItems="center" justifyContent="center">
+                
+                    {members.map((item) => ( //this is for current members
+                    item.field_current_member &&
+                    <div>
                         <div class="hex">
                             <div class="hex-background">
                                 <img src={"https://empathybytes.library.gatech.edu" + item.relationships.field_pfp.uri.url} alt="person"></img>
@@ -30,22 +32,21 @@ function AboutComponent(props) {
                                 <p className="paragraph-about">{item.title}</p>
                             </div>
                         </div>
-                    </Grid>
-                    <Grid xs={5}>
                         <div className="center-text">
                             <p className="paragraph-about">{item.title}</p>
                         </div>
-                    </Grid>
-                </Grid>
-            ))}
+                    </div>
+                        
+                ))}
+                
+            </Grid>
 
+            <h3 style={{textAlign:"center", color:"white", padding:"1rem 0"}}>Past Members</h3>
 
-                <h3 className="about-nav-text">Past Members</h3>
-
-                {members.map((item) => (
+            <Grid container spacing={3} alignItems="center" justifyContent="center">
+                {members.map((item) => ( //this is for alumni
                     !item.field_current_member &&
-                    <Grid container xs={3.5} alignItems="center" justifyContent="center" direction="column">
-                        <Grid xs={7}>
+                    <div>
                             <div class="hex">
                                 <div class="hex-background">
                                     <img src={"https://empathybytes.library.gatech.edu" + item.relationships.field_pfp.uri.url} alt="person"></img>
@@ -53,16 +54,13 @@ function AboutComponent(props) {
                                     <p className="paragraph-about">{item.title}</p>
                                 </div>
                             </div>
-                        </Grid>
-                        <Grid xs={5}>
                             <div className="center-text">
                                 <p className="paragraph-about">{item.title}</p>
                             </div>
-                        </Grid>
-                    </Grid>
+                        </div>
                 ))}
-                </Grid>
-
+            </Grid>
+        </div>
     );
 }
 

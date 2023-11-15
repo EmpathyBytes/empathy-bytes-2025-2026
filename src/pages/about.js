@@ -6,10 +6,6 @@ import { Link } from "gatsby"
 import { graphql } from "gatsby";
 
 // Importing Data from the Mock Database - Jacob
-import webMembers from "../database/webMembers"
-import appMembers from "../database/appMembers"
-import mediaMembers from "../database/mediaMembers"
-import emergingTechMembers from "../database/emergingTechMembers"
 
 
 import "../styles/about.css"
@@ -18,7 +14,6 @@ import AboutComponent from "../components/aboutComponent"
 
 
 import Grid from '@mui/material/Unstable_Grid2';
-import { Paper } from '@mui/material';
 
 
 
@@ -154,8 +149,8 @@ function AboutPage({ data }) {
         {/* The section that contains media team information */}
         <div id="about-media" className="media-about" style={{ display: visMedia ? 'block' : 'none' }}>
           <AboutComponent
-            subteam={"App"}
-            members={appMembers}
+            subteam={"Media"}
+            members={mediaMembers}
             about={"The Media team is comprised of students from a variety of backgrounds, such as Computer Science and Computational Media. The team creates media content for the site in addition to working across teams to help with design needs."}
           />
         </div>

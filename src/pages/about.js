@@ -1,12 +1,8 @@
 import React, { useState, Component } from "react"
 import Layout from "../components/layout"
-import Logo from "../images/empbytes.jpg"
 import All from "../images/people/fullTeam.jpg"
 import { Link } from "gatsby"
 import { graphql } from "gatsby";
-
-// Importing Data from the Mock Database - Jacob
-
 
 import "../styles/about.css"
 import "../styles/all.css"
@@ -14,14 +10,6 @@ import AboutComponent from "../components/aboutComponent"
 
 
 import Grid from '@mui/material/Unstable_Grid2';
-
-
-
-
-
-
-
-
 
 function AboutPage({ data }) {
 

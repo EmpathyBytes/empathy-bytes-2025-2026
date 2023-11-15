@@ -4,7 +4,6 @@ import All from "../images/people/fullTeam.jpg"
 import { Link } from "gatsby"
 import { graphql } from "gatsby";
 
-
 import "../styles/about.css"
 import "../styles/all.css"
 import AboutComponent from "../components/aboutComponent"

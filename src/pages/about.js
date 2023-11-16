@@ -1,7 +1,7 @@
-import React, { useState, Component } from "react"
+import React, { useState } from "react"
 import Layout from "../components/layout"
 import All from "../images/people/fullTeam.jpg"
-import { Link } from "gatsby"
+// import { Link } from "gatsby"
 import { graphql } from "gatsby";
 
 import "../styles/about.css"

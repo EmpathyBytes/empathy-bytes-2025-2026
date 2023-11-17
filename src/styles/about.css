@@ -8,13 +8,13 @@
 
 .header-about {
     font-family: 'Roboto Slab', serif;
-    font-size: 3vw;
+    font-size: 2rem;
     color: white;
 }
 
 .paragraph-about {
     font-family: 'Roboto', sans-serif;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     color: white;
 }
 
@@ -78,8 +78,8 @@
     display: block;
     margin: 0 auto;
     position: relative;
-    width: 256px;
-    height: 221px; /* width * 0.866 */
+    width: 21vw;
+    height: 18vw; /* width * 0.866 */
     background: white;
     box-sizing: border-box;
     -webkit-clip-path: polygon(0% 50%, 25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%);
@@ -91,8 +91,8 @@
     background-color: white; /*color of the main-background*/
     top: 2px; /* equal to border thickness */
     left: 2px; /* equal to border thickness */
-    width: 256px; /* container height - (border thickness * 2) */
-    height: 221px; /* container height - (border thickness * 2) */
+    width: 21vw; /* container height - (border thickness * 2) */
+    height: 18vw; /* container height - (border thickness * 2) */
     -webkit-clip-path: polygon(0% 50%, 25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%);
     -moz-clip-path: polygon(0% 50%, 25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%);
   }

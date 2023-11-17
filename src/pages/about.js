@@ -129,7 +129,7 @@ function AboutPage() {
 
           <Grid container spacing={0}  justifyContent="center">
 
-          <Grid xs={8} style={{padding: "0% 5% 1% 5%"}}>
+          <Grid xs={12} md={8} style={{padding: "0% 5% 1% 5%"}}>
             <h1 className="header-about">Emerging Tech Team</h1>
             <p className="paragraph-about padding-bottom-about">The emerging tech team is comprised of students from a variety of different backgrounds
             and majors, including Computational Media and Computer Science. The team focuses on exploring cutting edge technologies and their ability
@@ -141,7 +141,7 @@ function AboutPage() {
           </Grid>
 
           {emergingTechMembers.map((item) => (
-          <Grid container xs={3.5} alignItems="center" justifyContent="center" direction="column">
+          <Grid container xs={4} md={3.5} alignItems="center" justifyContent="center" direction="column">
             {/* <Paper elevation={3} className="paper-about b-0"> */}
               <Grid xs={7}>
               <div class="hex">
@@ -152,7 +152,7 @@ function AboutPage() {
                   </div>
                 </div>
               </Grid>
-              <Grid xs={5}>
+              <Grid xs={6}>
                 <div className="center-text">
                   <p className="paragraph-about">{ item.name }</p>
                 </div>
@@ -169,7 +169,7 @@ function AboutPage() {
 
           <Grid container spacing={0} justifyContent="center">
 
-          <Grid xs={8} style={{padding: "0% 5% 1% 5%"}}>
+          <Grid xs={12} md={8} style={{padding: "0% 5% 1% 5%"}}>
             <h1 className="header-about">Web Team</h1>
             <p className="paragraph-about padding-bottom-about">The Web team is comprised of students from a variety of backgrounds, such as Computer Science
             and Computational Media. The team maintains the external facing Empathy Bytes website which uses GatsbyJS, GraphQL, and Drupal. The team also
@@ -208,7 +208,7 @@ function AboutPage() {
         <div id="about-media" className="media-about" style={{ display: visMedia ? 'block' : 'none' }}>
           <Grid container spacing={0} justifyContent="center">
 
-          <Grid xs={8} style={{padding: "0% 5% 1% 5%"}}>
+          <Grid xs={12} md={8} style={{padding: "0% 5% 1% 5%"}}>
             <h1 className="header-about">Media Team</h1>
             <p className="paragraph-about padding-bottom-about">The Media team is comprised of students from a variety of backgrounds, such as Computer Science
             and Computational Media. The team creates media content for the site in addition to working across teams to help with design needs.</p>
@@ -247,7 +247,7 @@ function AboutPage() {
 
           <Grid container spacing={0} justifyContent="center">
 
-          <Grid xs={8} style={{padding: "0% 5% 1% 5%"}}>
+          <Grid xs={12} md={8} style={{padding: "0% 5% 1% 5%"}}>
             <h1 className="header-about">App Team</h1>
             <p className="paragraph-about padding-bottom-about">The App team is comprised of students from a variety of backgrounds, such as Computer Science
             and Computational Media. The team is currently creating a Mobile Application to present the teams research with future hopes of publishing on the

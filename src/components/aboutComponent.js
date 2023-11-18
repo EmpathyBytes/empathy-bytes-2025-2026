@@ -1,7 +1,7 @@
 import React from "react";
 import "../styles/about.css"
 import "../styles/all.css"
-import Grid from '@mui/material/Unstable_Grid2';
+import Grid from '@mui/material/Grid';
 
 function AboutComponent(props) {
     const members = props.members;
@@ -10,7 +10,7 @@ function AboutComponent(props) {
         <div>
             <Grid container spacing={0} justifyContent="center">
 
-                <Grid xs={8} style={{ padding: "0% 5% 1% 5%" }}>
+                <Grid xs={12} sm={6} style={{ padding: "0% 5% 1% 5%" }}>
                     <h1 className="header-about">{props.subteam} Team</h1>
                     <p className="paragraph-about padding-bottom-about">{props.about}</p>
                 </Grid>

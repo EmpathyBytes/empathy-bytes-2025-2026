@@ -8,8 +8,8 @@ import "../styles/about.css"
 import "../styles/all.css"
 import AboutComponent from "../components/aboutComponent"
 
-
-import Grid from '@mui/material/Unstable_Grid2';
+import Grid from '@mui/material/Grid';
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 function AboutPage({ data }) {
 

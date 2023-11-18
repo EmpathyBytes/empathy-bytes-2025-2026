@@ -218,7 +218,7 @@
   #content-wrap {
     color: var(--color-navyblue);
     margin-top: var(--navbar-top-height);
-    padding-bottom: 15rem;
+    padding-bottom: 5rem;
   }
 
   /* .img-nav {

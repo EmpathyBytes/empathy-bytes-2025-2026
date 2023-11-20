@@ -4,7 +4,7 @@ import React from "react";
 import Layout from "../components/layout";
 
 
-import Grid from '@mui/material/Unstable_Grid2';
+import Grid from '@mui/material/Grid';
 
 import MockUp from "../images/experiences/appMockUp.png"
 

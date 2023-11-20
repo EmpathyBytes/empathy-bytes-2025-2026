@@ -16,7 +16,7 @@ import emtechicon from "../images/subteam-icons/emergingtechteambordered.png"
 
 
 import Carousel from 'react-material-ui-carousel'
-import Grid from '@mui/material/Unstable_Grid2';
+import Grid from '@mui/material/Grid';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';

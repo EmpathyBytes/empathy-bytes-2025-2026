@@ -10,7 +10,7 @@ function AboutComponent(props) {
         <div>
             <Grid container spacing={0} justifyContent="center">
 
-                <Grid xs={12} sm={6} style={{ padding: "0% 5% 1% 5%" }}>
+                <Grid sm={12} md={8} style={{ padding: "0% 5% 1% 5%" }}>
                     <h1 className="header-about">{props.subteam} Team</h1>
                     <p className="paragraph-about padding-bottom-about">{props.about}</p>
                 </Grid>
@@ -41,7 +41,7 @@ function AboutComponent(props) {
                 
             </Grid>
 
-            <h3 style={{textAlign:"center", color:"white", padding:"1rem 0"}}>Past Members</h3>
+            <h3 style={{textAlign:"center", color:"white", padding:"1rem 0", fontSize:"3vw"}}>Past Members</h3>
 
             <Grid container spacing={3} alignItems="center" justifyContent="center">
                 {members.map((item) => ( //this is for alumni

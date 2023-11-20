@@ -9,7 +9,6 @@ import "../styles/all.css"
 import AboutComponent from "../components/aboutComponent"
 
 import Grid from '@mui/material/Grid';
-import useMediaQuery from "@mui/material/useMediaQuery";
 
 function AboutPage({ data }) {
 

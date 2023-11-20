@@ -1,7 +1,7 @@
 :root {
     --tr: 0.25s;
     --navbar-top-height: 6rem;
-    --logo-top-height: 7.5rem;
+    --logo-top-height: 6.5rem;
     --navbar-scrolled-height: 4rem;
     --logo-scrolled-height: 4.5rem;
   
@@ -110,8 +110,7 @@
     @media only screen and (min-width: 480px) {
       /* styles for devices with a minimum screen width of 480px */
       transition: var(--tr);
-      margin-left: 2rem;
-      margin-top: 1rem;
+      margin: 1rem 0 .5rem 2rem;
       height: var(--logo-top-height);
       border-radius: 50%;
       }
@@ -119,8 +118,7 @@
       @media only screen and (max-width: 480px) {
       /* styles for devices with a maximum screen width of 480px */
       transition: var(--tr);
-      margin-left: 2rem;
-      margin-top: 1rem;
+      margin: 1rem 0 .5rem 0;
       height: var(--logo-scrolled-height);
       border-radius: 50%;
       }
@@ -204,7 +202,7 @@
     left: 0;
     bottom: 0;
     width: 100%;
-    height: min-content;
+    height: 2%;
     background-color: var(--color-navyblue);
     color: white;
     text-align: center;

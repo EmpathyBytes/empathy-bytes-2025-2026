@@ -8,6 +8,7 @@
     margin-left: auto;
     margin-right: auto;
     width: 100vw;
+    max-width: 100%;
     
     object-fit: cover;
     /* desktop */
@@ -24,6 +25,7 @@
 
 .top {
     width: 100vw;
+    max-width: 100%;
     position: absolute;
     top: 0;
     left: 0;

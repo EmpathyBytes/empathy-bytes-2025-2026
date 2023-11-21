@@ -1,38 +1,28 @@
 import React, { useState } from "react"
 import Layout from "../components/layout"
-import Logo from "../images/empbytes.jpg"
 import All from "../images/people/fullTeam.jpg"
-import { Link } from "gatsby";
-
-// Importing Data from the Mock Database - Jacob
-import webMembers from "../database/webMembers"
-import appMembers from "../database/appMembers"
-import mediaMembers from "../database/mediaMembers"
-import emergingTechMembers from "../database/emergingTechMembers"
-
+// import { Link } from "gatsby"
+import { graphql } from "gatsby";
 
 import "../styles/about.css"
 import "../styles/all.css"
+import AboutComponent from "../components/aboutComponent"
 
+import Grid from '@mui/material/Grid';
 
-import Grid from '@mui/material/Unstable_Grid2';
-import { Paper } from '@mui/material';
-
-
-
-
-
-
-
-
-
-function AboutPage() {
+function AboutPage({ data }) {
 
   // These functions set the visibility of each team
   const [visEmerging, setToggleEmerging] = useState(false);
   const [visWeb, setToggleWeb] = useState(true);
   const [visMedia, setToggleMedia] = useState(false);
   const [visApp, setToggleApp] = useState(false);
+
+  // Extract team member info from each query
+  const webMembers = data.webTeam.relationships.node__team_members;
+  const appMembers = data.appTeam.relationships.node__team_members;
+  const emergingMembers = data.emergingTechTeam.relationships.node__team_members;
+  const mediaMembers = data.mediaTeam.relationships.node__team_members;
 
 
   function toggleEmerging() {
@@ -70,29 +60,29 @@ function AboutPage() {
         <img src={All} className="about-full"></img>
       </div>
       <div className="a-c-full">
-        <div style={{padding: "2% 5% 1% 5%"}}>
+        <div style={{ padding: "2% 5% 1% 5%" }}>
           <h1 className="header-about">About Us</h1>
           <p className="paragraph-about">
-            Empathy Bytes VIP explores how multimedia and emerging technologies can enhance empathy and understanding as we 
-            create digital scholarship. This VIP section looks to document the stories of diverse communities in Georgia and beyond. 
-            The team explores how technology can enhance empathy, as well as improve access to resources. Most importantly, the students on 
-            this team ask themselves how these advanced technologies allow us to understand new perspectives, solve problems, or simply be a 
+            Empathy Bytes VIP explores how multimedia and emerging technologies can enhance empathy and understanding as we
+            create digital scholarship. This VIP section looks to document the stories of diverse communities in Georgia and beyond.
+            The team explores how technology can enhance empathy, as well as improve access to resources. Most importantly, the students on
+            this team ask themselves how these advanced technologies allow us to understand new perspectives, solve problems, or simply be a
             better person in a world full of daily challenges.
           </p>
           <p className="paragraph-about">
-            Empathy Bytes is broken down into sub-groups that specialize in different areas of research to accomplish the overall goals of the project. 
+            Empathy Bytes is broken down into sub-groups that specialize in different areas of research to accomplish the overall goals of the project.
             Within sub teams, students explore areas of personal research interest, while learning project management skills and terminology.
           </p>
           <p className="paragraph-about">
             Current technologies being used include: React, GatsbyJS, Drupal, and GraphQL the web team, the Adobe Creative Suite for the Media team.
             Unity and Blender for the Emerging Tech team, and Swift for the App team.
           </p>
-          
+
         </div>
 
         {/* Div that contains the navbar */}
-        <div className="about-nav" style={{paddingTop: 25, paddingBottom: 25}}>
-        <Grid container spacing={2} className="navBG">
+        <div className="about-nav" style={{ paddingTop: 25, paddingBottom: 25 }}>
+          <Grid container spacing={2} className="navBG">
             <Grid xs={2}>
             </Grid>
             <Grid xs={2}>
@@ -120,175 +110,117 @@ function AboutPage() {
             </Grid>
             <Grid xs={2}>
             </Grid>
-        </Grid>
+          </Grid>
         </div>
 
 
         {/* The section that contains emerging tech information */}
         <div id="about-emerging" className="emerging-tech-about" style={{ display: visEmerging ? 'block' : 'none' }}>
-
-          <Grid container spacing={0}  justifyContent="center">
-
-          <Grid xs={8} style={{padding: "0% 5% 1% 5%"}}>
-            <h1 className="header-about">Emerging Tech Team</h1>
-            <p className="paragraph-about padding-bottom-about">The emerging tech team is comprised of students from a variety of different backgrounds
-            and majors, including Computational Media and Computer Science. The team focuses on exploring cutting edge technologies and their ability
-            to create empathy.</p>
-          </Grid>
-
-          <Grid xs={4}>
-            
-          </Grid>
-
-          {emergingTechMembers.map((item) => (
-          <Grid container xs={3.5} alignItems="center" justifyContent="center" direction="column">
-            {/* <Paper elevation={3} className="paper-about b-0"> */}
-              <Grid xs={7}>
-              <div class="hex">
-                  <div class="hex-background">
-                    <img src= {item.image} alt="person"></img>
-                    <p className="paragraph-about">{ item.name }</p>
-                  <p className="paragraph-about">{ item.role }</p>
-                  </div>
-                </div>
-              </Grid>
-              <Grid xs={5}>
-                <div className="center-text">
-                  <p className="paragraph-about">{ item.name }</p>
-                </div>
-              </Grid>
-            {/* </Paper> */}
-          </Grid>
-          ))}
-          </Grid>
+          <AboutComponent
+            subteam={"Emerging Tech"}
+            members={emergingMembers}
+            about={"The emerging tech team is comprised of students from a variety of different backgrounds and majors, including Computational Media and Computer Science. The team focuses on exploring cutting edge technologies and their ability to create empathy."}
+          />
         </div>
 
         {/* The section that contains web team information */}
         <div id="about-web" className="web-about" style={{ display: visWeb ? 'block' : 'none' }}>
-
-
-          <Grid container spacing={0} justifyContent="center">
-
-          <Grid xs={8} style={{padding: "0% 5% 1% 5%"}}>
-            <h1 className="header-about">Web Team</h1>
-            <p className="paragraph-about padding-bottom-about">The Web team is comprised of students from a variety of backgrounds, such as Computer Science
-            and Computational Media. The team maintains the external facing Empathy Bytes website which uses GatsbyJS, GraphQL, and Drupal. The team also
-            is exploring Web XR and its capabilities to create unique and memorable experiences.</p>
-          </Grid>
-
-          <Grid xs={4}>
-            
-          </Grid>
-
-          {webMembers.map((item) => (
-          <Grid container xs={3.5} alignItems="center" justifyContent="center" direction="column">
-            {/* <Paper elevation={3} className="paper-about b-0"> */}
-              <Grid xs={7}>
-              <div class="hex">
-                  <div class="hex-background">
-                    <img src= {item.image} alt="person"></img>
-                    <p className="paragraph-about">{ item.name }</p>
-                  <p className="paragraph-about">{ item.role }</p>
-                  </div>
-                </div>
-              </Grid>
-              <Grid xs={5}>
-                <div className="center-text">
-                  <p className="paragraph-about">{ item.name }</p>
-                </div>
-              </Grid>
-            {/* </Paper> */}
-          </Grid>
-          ))}
-          </Grid>
+          <AboutComponent
+            subteam={"Web"}
+            members={webMembers}
+            about={"The Web team is comprised of students from a variety of backgrounds, such as Computer Science and Computational Media. The team maintains the external facing Empathy Bytes website which uses GatsbyJS, GraphQL, and Drupal. The team also is exploring Web XR and its capabilities to create unique and memorable experiences."}
+          />
         </div>
 
 
         {/* The section that contains media team information */}
         <div id="about-media" className="media-about" style={{ display: visMedia ? 'block' : 'none' }}>
-          <Grid container spacing={0} justifyContent="center">
-
-          <Grid xs={8} style={{padding: "0% 5% 1% 5%"}}>
-            <h1 className="header-about">Media Team</h1>
-            <p className="paragraph-about padding-bottom-about">The Media team is comprised of students from a variety of backgrounds, such as Computer Science
-            and Computational Media. The team creates media content for the site in addition to working across teams to help with design needs.</p>
-          </Grid>
-
-          <Grid xs={4}>
-            
-          </Grid>
-
-          {mediaMembers.map((item) => (
-          <Grid container xs={3.5} alignItems="center" justifyContent="center" direction="column">
-            {/* <Paper elevation={3} className="paper-about b-0"> */}
-              <Grid xs={7}>
-              <div class="hex">
-                  <div class="hex-background">
-                    <img src= {item.image} alt="person"></img>
-                    <p className="paragraph-about">{ item.name }</p>
-                  <p className="paragraph-about">{ item.role }</p>
-                  </div>
-                </div>
-              </Grid>
-              <Grid xs={5}>
-                <div className="center-text">
-                  <p className="paragraph-about">{ item.name }</p>
-                </div>
-              </Grid>
-            {/* </Paper> */}
-          </Grid>
-          ))}
-          </Grid>
-          
+          <AboutComponent
+            subteam={"Media"}
+            members={mediaMembers}
+            about={"The Media team is comprised of students from a variety of backgrounds, such as Computer Science and Computational Media. The team creates media content for the site in addition to working across teams to help with design needs."}
+          />
         </div>
 
         {/* The section that contains app team information */}
         <div id="about-app" className="app-about" style={{ display: visApp ? 'block' : 'none' }}>
-
-          <Grid container spacing={0} justifyContent="center">
-
-          <Grid xs={8} style={{padding: "0% 5% 1% 5%"}}>
-            <h1 className="header-about">App Team</h1>
-            <p className="paragraph-about padding-bottom-about">The App team is comprised of students from a variety of backgrounds, such as Computer Science
-            and Computational Media. The team is currently creating a Mobile Application to present the teams research with future hopes of publishing on the
-            Apple Store.</p>
-          </Grid>
-
-          <Grid xs={4}>
-            
-          </Grid>
-
-          {/* The section contains the button to past member information */}
-          {appMembers.map((item) => (
-          <Grid container xs={3.5} alignItems="center" justifyContent="center" direction="column">
-            {/* <Paper elevation={3} className="paper-about b-0"> */}
-              <Grid xs={7}>
-              <div class="hex">
-                  <div class="hex-background">
-                    <img src= {item.image} alt="person"></img>
-                    <p className="paragraph-about">{ item.name }</p>
-                  <p className="paragraph-about">{ item.role }</p>
-                  </div>
-                </div>
-              </Grid>
-              <Grid xs={5}>
-                <div className="center-text">
-                  <p className="paragraph-about">{ item.name }</p>
-                </div>
-              </Grid>
-            {/* </Paper> */}
-          </Grid>
-          ))}
-          </Grid>
+          <AboutComponent
+            subteam={"App"}
+            members={appMembers}
+            about={"The App team is comprised of students from a variety of backgrounds, such as Computer Science and Computational Media. The team is currently creating a Mobile Application to present the teams research with future hopes of publishing on the Apple Store."}
+          />
         </div>
-          <div className="about-nav-past" style={{paddingTop: 25, paddingBottom: 25}}>
-              <Link to="/pastmembers" className="noUnderline">
-                <h3 className="about-nav-text">Past Members</h3>
-              </Link>
-          </div>
       </div>
     </Layout>
   );
 }
+
+export const query = graphql`
+    query {
+      webTeam : taxonomyTermTeam (name: {eq : "Web"}) {
+            relationships {
+              node__team_members {
+                title
+                field_current_member
+                relationships {
+                  field_pfp {
+                    uri {
+                      url
+                    }
+                  }
+                }
+              }
+            }
+          }
+      appTeam : taxonomyTermTeam (name: {eq : "App"}) {
+        relationships {
+          node__team_members {
+            title
+            field_current_member
+            relationships {
+              field_pfp {
+                uri {
+                  url
+                }
+              }
+            }
+          }
+        }
+      }
+
+      emergingTechTeam : taxonomyTermTeam (name: {eq : "Emerging Tech"}) {
+        relationships {
+          node__team_members {
+            title
+            field_current_member
+            relationships {
+              field_pfp {
+                uri {
+                  url
+                }
+              }
+            }
+          }
+        }
+      }
+
+      mediaTeam : taxonomyTermTeam (name: {eq : "Media"}) {
+        relationships {
+          node__team_members {
+            title
+            field_current_member
+            relationships {
+              field_pfp {
+                uri {
+                  url
+                }
+              }
+            }
+          }
+        }
+      }
+        
+}
+`;
 
 export default AboutPage;

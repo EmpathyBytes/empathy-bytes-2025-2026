@@ -2,18 +2,19 @@
 
 
 .full-container-experiences {
-    margin-top: 5%;
+    margin-top: var(--logo-top-height);
+    margin-bottom: var(--navbar-top-height);
 }
 .grid-margins-experiences {
     padding: 0 3% 0 3%;
 }
 .vr-container-1 {
     height: 50vh;
-    width: 50%;
+    width: 100%;
 }
 .vr-container-2 {
     height: 50vh;
-    width: 50%;
+    width: 100%;
 }
 
 .header-experiences {
@@ -23,7 +24,7 @@
 
 .sub-header-experiences {
     font-family: 'Roboto Slab', serif;
-    font-size: 3rem;
+    font-size: 2rem;
 }
 
 .paragraph-experiences {

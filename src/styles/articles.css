@@ -70,3 +70,12 @@
 .articlePadding {
     padding: .5% 0 .5% 0;
 }
+
+.articleVideo {
+    border-radius: 10px;
+    position: relative;
+    justify-content: center;
+    margin: 0% 20% 0% 30%;
+    width: 40%;
+    /* min-height: 70%; */
+}

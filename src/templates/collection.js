@@ -9,7 +9,7 @@ import "../styles/fonts.css"
  * Functional Collection Component
  * This function will find all the collection components on the drupal site and create a page
  * on the gatsby site for each component. This is the page accessed when
- * the Learn More button is clicked on a card.
+ * the card component in clicked.
  */
 
 // TODO: Move this styling to a separate file 
@@ -29,7 +29,7 @@ const collection_name = {
 
 function Collection({ data }) {
     const collection = data.collection;
-    const interview = Array.from(data.interview.relationships.node__article);
+    const interview = data.interview.relationships.node__article;
 
     return (
         <Layout>
@@ -44,7 +44,7 @@ function Collection({ data }) {
                         author={i.field_author}
                         date={i.field_hg_dateline}
                         body={i.field_blurb}
-                        url={i.path.alias}
+                        url={"/projects" + collection.path.alias + i.path.alias}
                     />
                 ))}
 
@@ -61,7 +61,7 @@ Collection.propTypes = {
 };
 
 /**
- * This query first pulls all collection data by id. Then, the interviews 
+ * This query first pulls all collection data by title. Then, the interviews 
  * with the same collection id are pulled.
  */
 export const query = graphql`
@@ -72,6 +72,9 @@ export const query = graphql`
             body {
                 processed
             }
+            path {
+                alias
+            }
             relationships {
                 field_image {
                     uri {
@@ -81,7 +84,7 @@ export const query = graphql`
                 }
             }
         }
-        interview: taxonomyTermTags(name: {glob: $CollectionTitle }) {
+        interview: taxonomyTermTags(name: {eq: $CollectionTitle }) {
               relationships {
                 node__article {
                         path {

@@ -1,5 +1,5 @@
 .projectsContainer {
-    padding: calc(var(--logo-top-height) + 5%) 15%;
+    padding: 5% 15%;
     display: block;
 }
 
@@ -12,7 +12,7 @@
 .gradient_bg {
     /* styles for devices with a minimum screen width of 480px */
     background: rgb(135,182,255);
-    background: linear-gradient(-45deg, rgba(135,182,255,1), rgba(255,249,202,1), rgba(255,255,255,1));
+    background: linear-gradient(180deg, var(--color-navyblue), var(--color-lightblue), rgba(255,249,202,1));
     background-size: cover;
     animation: gradient 10ms ease infinite;
 

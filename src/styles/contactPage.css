@@ -70,7 +70,7 @@
 #info {
   padding: 50px;
   background-color: #003057;
-  padding-bottom: 400px;
+  /* padding-bottom: 400px; */
   text-align: center;
 }
 
@@ -108,7 +108,7 @@ body{
   display: flex;
   align-items: top;
   justify-content: center;
-  min-height: 100vh;
+  /* min-height: 100vh; */
 }
 .container section{
   width: 600px;

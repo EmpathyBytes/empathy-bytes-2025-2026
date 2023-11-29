@@ -15,8 +15,8 @@ import "../styles/fonts.css"
 // TODO: Move this styling to a separate file 
 
 const container = {
-    padding: "6% 5% 6% 5%",
-    paddingTop: 120,
+    padding: "5% 5%",
+    // paddingTop: "10%",
     ["font-family"]: 'Roboto',
 };
 

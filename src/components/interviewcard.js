@@ -35,7 +35,7 @@ import { CardActionArea } from '@mui/material';
 // }
 
 export default function InterviewCard(props) {
-    const matches = useMediaQuery('(min-width:600px)');
+    const matches = useMediaQuery('(min-width:800px)');
     if (matches) {
         return (
             <section className="int_card">
@@ -74,7 +74,7 @@ export default function InterviewCard(props) {
                                     <img className="img-style" src={props.img}/>
                             </Grid>
                             <Grid item xs={8}>
-                                <h2>{props.title}</h2>
+                                <h2 className="ep_title">{props.title}</h2>
                                 <p>By {props.author}</p>
                             </Grid>
                             <Grid item xs={12}>                

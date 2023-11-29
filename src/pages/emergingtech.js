@@ -26,7 +26,7 @@ function EmergingTech() {
                     </div>
                 </Grid>
 
-                <Grid container spacing={0} className="bg-1">
+                <Grid container spacing={0}>
                     <div className="grid-margins-experiences">
                         <Grid item xs={12} sm={8}>
                             <h1 className="sub-header-experiences">What We Do</h1>
@@ -62,7 +62,7 @@ function EmergingTech() {
                     </Grid>
                 </Grid>
 
-                <Grid container spacing={0} className="bg-1" alignItems="flex-end">
+                <Grid container spacing={0} alignItems="flex-end">
                     {/* Loading 3D Models */}
                     <Grid sm={6} xs={12} item>
                         <h1><center>Buzz's Plaque</center></h1>

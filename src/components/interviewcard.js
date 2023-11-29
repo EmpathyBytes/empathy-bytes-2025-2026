@@ -50,7 +50,7 @@ export default function InterviewCard(props) {
                                 <img className="img-style" src={props.img}/>
                             </Grid>
                             <Grid item xs={8}>
-                                <h2>{props.title}</h2>
+                                <h2 className="ep_title">{props.title}</h2>
                                 <p>By {props.author}</p>
                                 <div className = "summary" dangerouslySetInnerHTML={{ __html: props.body}}/>
                                 <p>{props.date}</p>

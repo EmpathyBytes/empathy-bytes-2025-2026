@@ -35,4 +35,9 @@
     line-clamp: 3;
     text-overflow: ellipsis;
     overflow: hidden;
+    color: #90c7fa;
+}
+
+.ep_title {
+    color: white;
 }

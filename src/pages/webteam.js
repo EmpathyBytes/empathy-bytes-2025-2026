@@ -20,7 +20,7 @@ function web() {
                         </Grid>
                 </Grid>
 
-                <Grid container spacing={0} className="bg-1">
+                <Grid container spacing={0}>
                     <Grid item className="grid-margins-experiences" xs={10}>
                         <h1 className="sub-header-experiences">What We Do</h1>
                     </Grid>
@@ -48,7 +48,7 @@ function web() {
                 <img src={technologies} style={{width:"100%"}}/>
 
 
-                <Grid container spacing={2} className="bg-1" >
+                <Grid container spacing={2}>
                     <Grid xs={12} sm={6} item className="right-align-experiences" alignItems="center" justifyContent="center" direction="column">
                         <h1 className="sub-header-experiences">Spring 2023 Progress</h1>
                     </Grid>

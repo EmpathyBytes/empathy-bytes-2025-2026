@@ -1,12 +1,16 @@
 @import "./fonts.css";
 
 *{scroll-behavior: smooth;}
+html, body {
+    margin: 0px;
+    padding: 0px;
+} 
 
 /* The Fullscreen images on the homepage */
 .splash-image {
     display: block;
-    margin-left: auto;
-    margin-right: auto;
+    /* margin-left: auto;
+    margin-right: auto; */
     width: 100vw;
     max-width: 100%;
     
@@ -58,8 +62,11 @@
 }
 
 .info {
-    padding: 3% 0 2% 5%;
-    width: 90%;
+    /* padding: 3% 0 2% 5%; */
+    padding:0;
+    margin: 0;
+    width: 100vw;
+    max-width: 100%;
     text-align: center;
     vertical-align: middle;
 }
@@ -92,7 +99,9 @@
 }
 
 .paragraph {
+    text-align: center;
     font-family: 'Roboto', sans-serif;
+
     font-size: 1.3vw;
     /* desktop */
     @media screen and (min-width: 600px) {
@@ -107,6 +116,7 @@
 
 .paragraph2 {
     font-family: 'Roboto', sans-serif;
+    padding:0;
     /*position: absolute; /* taken out of the normal flow of the document */
     
     /*width: 100%; /* needs to be defined to keep the default block behavior */
@@ -127,7 +137,7 @@
 
 .card-text {
     font-family: 'Roboto', sans-serif;
-    color: white;
+    color: #003057;
     text-align: center;
     /* desktop */
     @media screen and (min-width: 600px) {
@@ -142,18 +152,17 @@
 
 .container-row{
     display: flex;
-  }
+    padding:0;
+}
   
-  .container-row .image{
+.container-row .image{
     flex: 1;
-  }
+}
   
-  .container-row .parag {
+.container-row .parag {
     flex: 2;
     padding: 0% 3% 0% 4%;
-    
-    
-  }
+}
 
 
 /* Taken from My Portfolio Site */

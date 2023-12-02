@@ -9,18 +9,10 @@ import splash1 from "../images/homepage/splash1.jpg"
 import splash2 from "../images/homepage/splash2.jpg"
 import teampic from "../images/homepage/teampic.jpg"
 
-import webicon from "../images/subteam-icons/webteambordered.png"
-import mediaicon from "../images/subteam-icons/mediateambordered.png"
-import appicon from "../images/subteam-icons/appteambordered.png"
-import emtechicon from "../images/subteam-icons/emergingtechteambordered.png"
-
-
 import Carousel from 'react-material-ui-carousel'
 import Grid from '@mui/material/Grid';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import { DesktopAccessDisabled } from "@mui/icons-material";
 
 import useMediaQuery from '@mui/material/useMediaQuery';
 

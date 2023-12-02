@@ -7,6 +7,7 @@
   
     --color-techgold: #b3a369;
     --color-navyblue: #003057;
+    --color-lightblue: #90c7fa;
     --color-greymatter: #54585a;
     --color-pimile: #d6dbd4;
     --color-diploma: #f9f6e5;
@@ -202,7 +203,7 @@
     left: 0;
     bottom: 0;
     width: 100%;
-    height: 2%;
+    height: 5rem;
     background-color: var(--color-navyblue);
     color: white;
     text-align: center;
@@ -210,12 +211,12 @@
   #page-container {
     position: relative;
     min-height: 100vh;
-    margin-top: var(--navbar-top-height);
+    margin-top: var(--navbar-scrolled-height);
   }
   
   #content-wrap {
     color: var(--color-navyblue);
-    margin-top: var(--navbar-top-height);
+    margin-top: var(--navbar-scrolled-height);
     padding-bottom: 5rem;
   }
 

@@ -1,38 +1,140 @@
 @import "./fonts.css";
 
-*{scroll-behavior: smooth;}
+* {
+  scroll-behavior: smooth;
+}
+
+:root {
+  --primary-color: #0779d7;
+  --secondary-color: #789beb;
+  --text-color: #ffffff;
+}
 
 .container-contact {
   width: 100vw;
   height: 100vh;
+  margin-top: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: linear-gradient(to bottom, #003057,
-  #264e86,
-  #457fb3,
-  /* #8ab4d9, */
-  #B3A380,
-  #b3a369);
+  background-image: linear-gradient(
+    to bottom,
+    var(--primary-color),
+    #4878bc,
+    #457fb3,
+    var(--secondary-color),
+    #2f55ff
+  );
 }
 
 .heading-styles {
-    font-family: 'Roboto Slab', serif;
-    font-size: 4vw;
-    text-align: center;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
+  font-family: 'Roboto Slab', serif;
+  font-size: 4vw;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 
-  .centerStyles {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 10px; /* adjust this value to set the desired spacing */
-  }
-  
-  
+.centerStyles {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
 
-  
+.button {
+  background-color: var(--secondary-color);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  color: var(--text-color);
+}
+
+.button:hover {
+  background-color: #003057;
+  transform: scale(1.05);
+}
+
+.arrows {
+  margin-top: 50px;
+}
+
+#info .info-section {
+  background-color: #ff9999; /* Change to your desired background color */
+  padding: 100px; /* Add padding or other styling as needed */
+  /* Center-align the text */
+}
+
+#info {
+  padding: 50px;
+  background-color: #003057;
+  /* padding-bottom: 400px; */
+  text-align: center;
+}
+
+h1 {
+  color: var(--text-color);
+}
+
+p {
+  color: var(--text-color);
+  text-align: left;
+}
+
+#two {
+  margin-top: 50px;
+  font-weight: 1000;
+}
+
+#one {
+  font-weight: 100;
+}
+
+a:link,
+a:visited,
+a:hover,
+a:active {
+  color: rgb(144, 199, 250);
+}
+
+
+body{
+  background: #22232e;
+}
+.container{
+  padding-bottom: 70px;
+  display: flex;
+  align-items: top;
+  justify-content: center;
+  /* min-height: 100vh; */
+}
+.container section{
+  width: 600px;
+  margin-top: -100px;
+}
+.container section details summary{
+  padding: 15px;
+  background: #e0ffff;
+  color: #22232e;
+  position: relative;
+  list-style: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 20px;
+}
+.container section details{
+  margin: 15px;
+}
+.container section details p{
+  font-size: 15px;
+  padding: 10px;
+  color: #333;
+  background: #e0ffff;
+}
+.container section details summary span{
+  font-size: 22px;
+  color: #333;
+  float: right;
+}

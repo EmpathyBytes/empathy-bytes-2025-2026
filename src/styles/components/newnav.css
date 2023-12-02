@@ -3,7 +3,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: var(--top-nav-height);
+    height: var(--navbar-scrolled-height);
     padding: 0 2rem;
     background-color: var(--color-navyblue);
     color: white;
@@ -23,7 +23,7 @@ nav a {
 }
 
 nav a:hover {
-    color: var(--color-buzzgold);
+    color: white;
     
 }
 

@@ -5,6 +5,7 @@ import CollectionCard from "../components/collectioncard";
 import Grid from "@mui/material/Grid";
 import "../styles/projects.css"
 import useMediaQuery from '@mui/material/useMediaQuery';
+import {useDevicePixelRatio} from 'use-device-pixel-ratio';
 
 /**
  * This is the projects homepage. It displays all of the
@@ -16,7 +17,7 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 const ProjectsPage = ({data}) => {
 
     //const matches takes in the width of the device
-    const matches = useMediaQuery('only screen and (max-width:700px) and (-webkit-device-pixel-ratio: 2)');
+    const matches = useMediaQuery('only screen and (max-width:700px) and (-webkit-max-device-pixel-ratio: 3)');
 
     //const arr takes in data from drupal
     const arr = data.collections.nodes;

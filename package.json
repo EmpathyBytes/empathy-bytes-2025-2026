@@ -33,7 +33,8 @@
     "react-material-ui-carousel": "^3.4.2",
     "react-multi-carousel": "^2.8.2",
     "styled-components": "^6.1.1",
-    "three": "^0.150.1"
+    "three": "^0.150.1",
+    "use-device-pixel-ratio": "^1.1.2"
   },
   "devDependencies": {
     "gh-pages": "^5.0.0"

@@ -17,7 +17,8 @@ import {useDevicePixelRatio} from 'use-device-pixel-ratio';
 const ProjectsPage = ({data}) => {
 
     //const matches takes in the width of the device
-    const matches = useMediaQuery('only screen and (max-width:700px) and (-webkit-max-device-pixel-ratio: 3)');
+
+    const matches = useMediaQuery('only screen and (max-width:700px)');
 
     //const arr takes in data from drupal
     const arr = data.collections.nodes;

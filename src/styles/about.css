@@ -66,7 +66,7 @@
 }
 
 .about-nav-text {
-    font-size: 1.5vw;
+    font-size: 1rem;
     font-family: 'Roboto Slab', sans-serif;
     color: white;
     padding: 10%;
@@ -83,7 +83,7 @@
     display: flex;
     background-color: #1B3F66;
     border-radius: 150px;
-    width: 70%;
+    width: 90%;
     height: 50%;
     top: 50px;
     margin: auto;

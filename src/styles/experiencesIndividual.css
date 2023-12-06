@@ -1,30 +1,39 @@
 @import "./fonts.css";
-
-
 .full-container-experiences {
     margin-top: var(--logo-top-height);
     margin-bottom: var(--navbar-top-height);
+    background-color:   #22232e;
 }
-.grid-margins-experiences {
+.grid-margins-experiences { /* THIS IS THE PADDING FOR THE PHONE */
     padding: 0 3% 0 3%;
 }
+@media screen and (max-width: 600px) {
+    .grid-margins-experiences {
+        padding: 0; /* Adjust the padding for screens 600px or less */
+    }
 .vr-container-1 {
     height: 50vh;
     width: 100%;
+    background-color:   #22232e;
 }
 .vr-container-2 {
     height: 50vh;
     width: 100%;
+    background-color:   #22232e;
 }
 
 .header-experiences {
     font-family: 'Roboto Slab', serif;
     font-size: 2rem;
+    padding-left: 20px
 }
 
 .sub-header-experiences {
     font-family: 'Roboto Slab', serif;
     font-size: 2rem;
+    background-color:   #22232e;
+    padding-left: 20px
+    
 }
 
 .paragraph-experiences {
@@ -34,13 +43,25 @@
 
 .paragraph-indent-experiences-left {
     padding-left: 5%;
+    color: white;
+    background-color:   #22232e;
 }
+@media screen and (max-width: 600px) {
+    .paragraph-indent-experiences-left {
+        padding-left: 0; 
+        padding-right: 80px;
+    }
 
 .paragraph-indent-experiences-right {
     padding-right: 5%;
+    color: white;
+    background-color:   #22232e;
 }
 
 
 .left-align-experiences {
     text-align: right;
+}
+
+}
 }

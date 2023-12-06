@@ -2,17 +2,30 @@
 
 .articleContainer {
     padding: 8% 2% 8% 2%;
-    display: block;
+    display: inline-block; 
 }
 
 .articleTitle {
+    top: 200px;
+    right: 300px;
     font-family: 'Roboto Slab', serif;
-    font-size: 1vw;
+    font-size: 1.5rem;
     padding: 0% 25% 0% 25%;
 }
+    @media screen and (max-width: 600px) {
+        .articleTitle {
+            padding: 0;
+            font-size: 1rem;
+        }
+    }
+/* break point when you want it smaller at one size 
+ make the paragraph the same size 
+ scale the slider */
 
 .articleImageContainer {
     position: relative;
+    display: flex;
+    align-items: center;
     justify-content: center;
     text-align: center;
     color: white;
@@ -20,7 +33,7 @@
 
 .articleImage {
     border-radius: 10px;
-    justify-content: center;
+   /* justify-content: center; */
     width: 40%;
     height: 40%;
     object-fit: 'cover';
@@ -28,7 +41,7 @@
 
 .articleText {
     font-family: 'Roboto', sans-serif;
-    font-size: 1vw;
+    font-size: .8rem;
     padding: 0% 25% 0% 25%;
 }
 
@@ -38,7 +51,7 @@
     color: white;
     bottom: 1%;
     left: 31%;
-    inline-size: 350px;
+    inline-size: 500px;
     overflow-wrap: break-word;
     text-shadow: 2px 2px 2px rgba(63,107,169, 0.6);
 }
@@ -60,8 +73,13 @@
 }
 
 .articleAudio {
-    width:150%;
+    width: 100%; 
+    margin-top: 40px;
 }
+@media screen and (max-width: 600px) {
+    .articleAudio {
+        width: 40%; 
+    }
 
 .topPadding {
     padding: 10% 5% 10% 5%;
@@ -78,4 +96,14 @@
     margin: 0% 20% 0% 30%;
     width: 40%;
     /* min-height: 70%; */
+}
+.authorInfo {
+    font-family: 'Roboto Slab', serif; 
+    font-size: 1rem;
+    color: white;
+    text-align: center;
+    position: relative;
+    top: 40px; 
+    right: 170px;
+}
 }

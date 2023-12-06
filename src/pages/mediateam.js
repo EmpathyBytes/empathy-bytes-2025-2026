@@ -62,7 +62,7 @@ function Media() {
                         </Grid>
 
                         <Grid xs={12} container alignItems="center" justifyContent="center" direction="column" style={{padding: "2% 0 2% 0"}}>
-                            <iframe width="840" height="472" src="https://www.youtube.com/embed/caa4VsEymFU" 
+                            <iframe width="600" height="300" src="https://www.youtube.com/embed/caa4VsEymFU" 
                                 title="YouTube video player" frameborder="0" 
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
                                 allowfullscreen>
@@ -80,7 +80,7 @@ function Media() {
 
 
                     <Grid container xs={6} alignItems="center" justifyContent="center" direction="column">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/6_1n8RMNrjM" 
+                    <iframe width="300" height="200" src="https://www.youtube.com/embed/6_1n8RMNrjM" 
                         title="YouTube video player" frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
                         allowfullscreen>

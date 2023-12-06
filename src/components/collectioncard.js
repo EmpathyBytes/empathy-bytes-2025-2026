@@ -43,7 +43,7 @@ export default function CollectionCard(props) {
 
   } else {
     return ( //mobile
-      <Card sx={{ width: '80vw',  margin: 2}}>
+      <Card sx={{ width: '80vw',  margin: '5% auto'}}>
         <Link style={{textDecoration:"none"}} to={"/projects" + props.url}>
           <CardActionArea>
             <CardMedia

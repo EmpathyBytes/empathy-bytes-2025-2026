@@ -18,21 +18,21 @@ const ProjectsPage = ({data}) => {
 
     //const matches takes in the width of the device
 
-    const matches = useMediaQuery('only screen and (max-width:700px)');
+    const matches = useMediaQuery('(min-width:600px)');
 
     //const arr takes in data from drupal
     const arr = data.collections.nodes;
 
     //use if statement to make the dif layouts
     //might change to switch statement if we're feeling ambitious about a tablet view lol
-    if (!matches) { //desktop view rendered
+    if (matches) { //desktop view rendered
         return (
             <div className="gradient_bg">
                 <Layout>
                     <div className="projectsContainer">
                         <h1 className="projectsTitle">Interview Collections</h1>
 
-                        <Grid container spacing={4}>
+                        <Grid container spacing={3}>
                         {arr.map((item) => ( // Mapping collection data to card component
                             <Grid item xs={6}>
                             <CollectionCard 
@@ -54,7 +54,7 @@ const ProjectsPage = ({data}) => {
                 <Layout>
                     <div className="projectsContainer">
                         <h1 className="projectsTitle">Interview Collections</h1>
-                        <Grid container spacing={2}>
+                        
                         {arr.map((item) => ( // Mapping collection data to card component
                             
                             <CollectionCard 
@@ -64,7 +64,7 @@ const ProjectsPage = ({data}) => {
                             />
                             
                         ))}
-                        </Grid>
+            
                     </div>
                 </Layout>
             </div>

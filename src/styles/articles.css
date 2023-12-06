@@ -98,12 +98,12 @@
     /* min-height: 70%; */
 }
 .authorInfo {
-    font-family: 'Roboto Slab', serif; /* Use the same font-family as article titles */
-    font-size: 1rem; /* Adjust the font size as needed */
+    font-family: 'Roboto Slab', serif; 
+    font-size: 1rem;
     color: white;
     text-align: center;
     position: relative;
-    top: 40px; /* Adjust the margin as needed */
+    top: 40px; 
     right: 170px;
 }
 }

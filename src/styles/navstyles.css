@@ -1,8 +1,8 @@
 :root {
     --tr: 0.25s;
     --navbar-top-height: 6rem;
-    --logo-top-height: 6.5rem;
-    --navbar-scrolled-height: 4rem;
+    --logo-top-height: 6.25rem;
+    --navbar-scrolled-height: 7rem;
     --logo-scrolled-height: 4.5rem;
   
     --color-techgold: #b3a369;
@@ -218,6 +218,23 @@
     color: var(--color-navyblue);
     margin-top: var(--navbar-scrolled-height);
     padding-bottom: 5rem;
+  }
+
+  .nav-logo {
+    display: flex;
+    height: 71px;
+    justify-content: center;
+    align-items: center;
+    gap: 22px;
+  }
+
+  .nav-title {
+    color: #FFF;
+    font-family: "Roboto Slab";
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
   }
 
   /* .img-nav {

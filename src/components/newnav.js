@@ -47,7 +47,8 @@ function Newnav({ transparent }) {
     }, []);
 
     return (
-        <header>
+        <header className="nav-content">
+          <div className="nav-logo">
             <Link to={"/"}>
             <img
               className= "logo"
@@ -55,6 +56,9 @@ function Newnav({ transparent }) {
               alt="Empathy Bytes Logo"
             />
             </Link>
+            <h1 className="nav-title"> Empathy Bytes</h1>
+          </div>
+            
             <nav ref={navRef}>
                 <Link to={"/projects"}>Projects</Link>
                 <Link to={"/experiences"}>Experiences</Link>

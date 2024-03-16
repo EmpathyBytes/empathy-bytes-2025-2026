@@ -58,8 +58,7 @@ function Newnav({ transparent }) {
             </Link>
             <h1 className="nav-title"> Empathy Bytes</h1>
           </div>
-            
-            <nav ref={navRef}>
+          <nav className="nav-links" ref={navRef}>
                 <Link to={"/projects"}>Projects</Link>
                 <Link to={"/experiences"}>Experiences</Link>
                 <Link to={"/about"}>About</Link>

@@ -4,6 +4,7 @@ import { Link } from "gatsby";
 import Grid from '@mui/material/Unstable_Grid2';
 
 import "../styles/components/footer.css"
+import Logo from "../images/empbytes.jpg";
 
 
 // Here is a footer component for the website. This component is used in the "layout" component that is included in every page.
@@ -18,6 +19,13 @@ function Footer(props) {
         <Grid container spacing={0} alignItems="center" justifyContent="center">
           
           <Grid item xs={12} sm={4}>
+            <Link to={"/"}>
+              <img
+                className= "logo"
+                src= {Logo}
+                alt="Empathy Bytes Logo"
+              />
+              </Link>
             <h1 className="text-footer-title">Empathy Bytes</h1>
           </Grid>
 

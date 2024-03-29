@@ -40,3 +40,12 @@
     cursor: pointer;
     opacity: 0.8;
 }
+
+.nav-logo {
+    display: flex;
+    height: 100px;
+    width: 500px;
+    justify-content: center;
+    align-items: center;
+    gap: 22px;
+  }

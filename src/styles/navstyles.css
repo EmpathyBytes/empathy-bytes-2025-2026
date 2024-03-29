@@ -250,4 +250,12 @@
     justify-content: center;
   }
 
+  .nav-content {
+    display: flex;
+    height: 118px;
+    padding: 0px 49px 0px 49px;
+    gap: 250px;
+    flex-shrink: 0;
+  }
+
   

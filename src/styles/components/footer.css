@@ -22,8 +22,11 @@
 
 .text-heading {
     font-family: 'Roboto', sans-serif;
-    font-size: 1rem;
+    font-size: 1.5rem;
     color: white;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
 }
 
 .text-anchor {

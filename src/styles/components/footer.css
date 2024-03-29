@@ -12,10 +12,12 @@
 }
 
 .text-footer-title {
-    font-family: 'Roboto', sans-serif;
-    font-size: 1.5rem;
+    font-family: 'Roboto Slab', sans-serif;
+    font-size: 2rem;
     color: white;
-    text-align: center;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
 }
 
 .text-heading {

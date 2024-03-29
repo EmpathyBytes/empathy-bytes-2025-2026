@@ -58,18 +58,21 @@ function Newnav({ transparent }) {
             </Link>
             <h1 className="nav-title"> Empathy Bytes</h1>
           </div>
-          <nav className="nav-links" ref={navRef}>
-                <Link to={"/projects"}>Projects</Link>
-                <Link to={"/experiences"}>Experiences</Link>
-                <Link to={"/about"}>About</Link>
-                <Link to={"/contact"}>Contact</Link>
-                <button className="nav-btn nav-close-btn" onClick={showNavbar}>
-                    <FaTimes/>
-                </button>
+          <div className="nav-links">
+            <nav ref={navRef}>
+                  <Link to={"/projects"}>Projects</Link>
+                  <Link to={"/experiences"}>Experiences</Link>
+                  <Link to={"/about"}>About</Link>
+                  <Link to={"/contact"}>Contact</Link>
+                  <button className="nav-btn nav-close-btn" onClick={showNavbar}>
+                      <FaTimes/>
+                  </button>
             </nav>
-            <button className="nav-btn" onClick={showNavbar}>
-                <FaBars/>
-            </button>
+              <button className="nav-btn" onClick={showNavbar}>
+                  <FaBars/>
+              </button>
+          </div>
+          
         </header>
     )
 }

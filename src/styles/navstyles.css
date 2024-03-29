@@ -1,8 +1,8 @@
 :root {
     --tr: 0.25s;
     --navbar-top-height: 6rem;
-    --logo-top-height: 6.25rem;
-    --navbar-scrolled-height: 7rem;
+    --logo-top-height: 5.25rem;
+    --navbar-scrolled-height: 6rem;
     --logo-scrolled-height: 4.5rem;
   
     --color-techgold: #b3a369;
@@ -100,11 +100,11 @@
     height: var(--navbar-scrolled-height)
   }
   
-  .navbar-grid-right {
+  /*.navbar-grid-right {
     grid-column: 2;
     display: flex;
     justify-content: space-evenly;
-  }
+  }*/
   
   .logo {
 
@@ -222,7 +222,8 @@
 
   .nav-logo {
     display: flex;
-    height: 71px;
+    height: 100px;
+    width: 500px;
     justify-content: center;
     align-items: center;
     gap: 22px;
@@ -240,3 +241,13 @@
   /* .img-nav {
     border-radius: 50%;
   } */
+
+  .nav-links {
+    display: flex;
+    width: 681px;
+    height: 100px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  

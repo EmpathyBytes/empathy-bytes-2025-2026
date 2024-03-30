@@ -12,6 +12,7 @@
 
 .container-contact {
   width: 100vw;
+  max-width: 100%;
   height: 100vh;
   margin-top: 50px;
   display: flex;

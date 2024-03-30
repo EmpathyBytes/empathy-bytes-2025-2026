@@ -9,8 +9,8 @@ html, body {
 /* The Fullscreen images on the homepage */
 .splash-image {
     display: block;
-    /* margin-left: auto;
-    margin-right: auto; */
+    margin-left: auto;
+    margin-right: auto;
     width: 100vw;
     max-width: 100%;
     
@@ -62,10 +62,7 @@ html, body {
 }
 
 .info {
-    /* padding: 3% 0 2% 5%; */
-    padding:0;
-    margin: 0;
-    width: 100vw;
+    padding: 3% 0 2% 5%;
     max-width: 100%;
     text-align: center;
     vertical-align: middle;

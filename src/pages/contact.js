@@ -28,7 +28,7 @@ function ContactPage() {
           </div>
           <div className="headerStyles">
             <h1>
-              <span className="centerStyles">Interested in Empathy Bytes?</span>
+              <span className="centerStyles">Interested in Learning More About Empathy Bytes?</span>
             </h1>
           </div>
           <div className="button-container">

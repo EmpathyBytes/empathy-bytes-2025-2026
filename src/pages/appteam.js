@@ -8,17 +8,18 @@ import Grid from '@mui/material/Grid';
 
 import MockUp from "../images/experiences/appMockUp.png"
 
+
 import "../styles/experiencesIndividual.css"
 import "../styles/all.css"
 
 function App() {
     return(
         <Layout>
-            <div className="full-container-experiences">
+            <div className="full-container-experiences-app ">
                 <Grid container spacing={2} className="">
                     <div className="grid-margins-experiences">
                         <Grid xs={12}>
-                            <h1 className="header-experiences">The App Development Team</h1>
+                            <h1 className="header-experiences"style={{ height: '450px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>The App Development Team</h1>
                         </Grid>
                     </div>
                 </Grid>
@@ -27,7 +28,7 @@ function App() {
                 <Grid container spacing={0} className="bg-1">
                     <div className="grid-margins-experiences">
                         <Grid xs={10}>
-                            <h1 className="sub-header-experiences">What We Do</h1>
+                            {/* <h1 className="sub-header-experiences">What We Do</h1> */}
                         </Grid>
 
                         <Grid xs={2}>
@@ -35,7 +36,7 @@ function App() {
                         </Grid>
 
                         <Grid xs={7}>
-                            <p className="paragraph-experiences paragraph-indent-experiences-left">
+                            <p className="paragraph-experiences">
                                 Our team is currently developing a mobile application compatible with iOS devices using Swift and Xcode to showcase 
                                 our research and interactions with communities. We hope to explore a variety of ways to use multimedia and Mixed Reality 
                                 technologies as a means to cultivate empathy within users.
@@ -48,7 +49,7 @@ function App() {
                     </div>
                 </Grid>
 
-                <Grid container spacing={2} className="">
+                {/* <Grid container spacing={2} className="">
 
                         <Grid xs={12} className="right-align-experiences">
                             <div className="grid-margins-experiences">
@@ -57,11 +58,12 @@ function App() {
                         </Grid>
 
 
-                </Grid>
+                </Grid> */}
 
                 <Grid container spacing={2} className="bg-1">
                     <Grid xs={6} container className="" alignItems="center" justifyContent="center">
                         <div className="grid-margins-experiences">
+                        <h1 className="sub-header-experiences" style={{marginLeft: 150, fontSize: '2.5rem'}} >The Empathy Bytes App</h1>
                             <p className="paragraph-experiences paragraph-indent-experiences-left" style={{marginLeft: 150}}>
                                 The Empathy Bytes mobile application acts as a portal showcasing our research on communities within 
                                 Georgia Tech through interactive content such as video/audio interviews and augmented reality 

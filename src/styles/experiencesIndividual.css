@@ -1,11 +1,40 @@
 @import "./fonts.css";
-.full-container-experiences {
-    margin-top: var(--logo-top-height);
-    margin-bottom: var(--navbar-top-height);
-    background-color:   #22232e;
+
+.full-container-experiences-app { /*This for the title of the page & the subtitle*/
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0)), url("../images/experiences/AppTeamHeader.png");
+    background-position: center; 
+    background-size: contain;
+    font-size: 30px;
+
+    /* margin-top: var(--logo-top-height);
+    margin-bottom: var(--navbar-top-height); */
+
+    /* font-family: "IBM Plex Sans"; */
+    /*font-style: normal;*/
+    /* font-weight: 100; */
+    /*line-height: normal;*/
+    
 }
+.full-container-experiences-media { /*This for the title of the page & the subtitle*/
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0)), url("../images/experiences/mediaTeamHeader.png");
+    background-position: center; 
+    background-size: contain;
+    font-size: 30px;
+
+    /* margin-top: var(--logo-top-height);
+    margin-bottom: var(--navbar-top-height); */
+
+    /* font-family: "IBM Plex Sans"; */
+    /*font-style: normal;*/
+    /* font-weight: 100; */
+    /*line-height: normal;*/
+    
+}
+
 .grid-margins-experiences { /* THIS IS THE PADDING FOR THE PHONE */
     padding: 0 3% 0 3%;
+
+
 }
 @media screen and (max-width: 600px) {
     .grid-margins-experiences {
@@ -14,37 +43,42 @@
 .vr-container-1 {
     height: 50vh;
     width: 100%;
-    background-color:   #22232e;
+    background-color:   #000;
 }
 .vr-container-2 {
     height: 50vh;
     width: 100%;
-    background-color:   #22232e;
+    background-color:   #000;
 }
 
-.header-experiences {
+.header-experiences { /*font of title page?*/
     font-family: 'Roboto Slab', serif;
-    font-size: 2rem;
-    padding-left: 20px
+    /*font-family: "IBM Plex Sans";*/
+    /*font-size: 300px;*/
+    font-style: normal;
+    text-align: center;
+    font-size: 3rem;
+    /*padding-left: 20px*/
 }
 
 .sub-header-experiences {
     font-family: 'Roboto Slab', serif;
     font-size: 2rem;
-    background-color:   #22232e;
-    padding-left: 20px
+    background-color: #004B87;
+    /*padding-left: 20px*/
     
 }
 
 .paragraph-experiences {
     font-family: 'Roboto', serif;
     font-size: 1rem;
+    background-color: #004B87;
 }
 
 .paragraph-indent-experiences-left {
     padding-left: 5%;
     color: white;
-    background-color:   #22232e;
+    background-color: #004B87;
 }
 @media screen and (max-width: 600px) {
     .paragraph-indent-experiences-left {
@@ -55,7 +89,7 @@
 .paragraph-indent-experiences-right {
     padding-right: 5%;
     color: white;
-    background-color:   #22232e;
+    background-color: #004B87;
 }
 
 

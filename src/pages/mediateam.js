@@ -11,11 +11,11 @@ import "../styles/all.css"
 function Media() {
     return(
         <Layout>
-            <div className="full-container-experiences">
+            <div className="full-container-experiences-media">
                 <Grid container spacing={2} className="">
                     <div className="grid-margins-experiences">
                         <Grid xs={12}>
-                            <h1 className="header-experiences">The Media Team</h1>
+                            <h1 className="header-experiences"style={{ height: '450px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>The Media Team</h1>
                         </Grid>
                     </div>
                 </Grid>
@@ -24,7 +24,7 @@ function Media() {
                 <Grid container spacing={0} className="bg-1">
                     <div className="grid-margins-experiences">
                         <Grid xs={10}>
-                            <h1 className="sub-header-experiences">What We Do</h1>
+                            {/* <h1 className="sub-header-experiences">What We Do</h1> */}
                         </Grid>
 
                         <Grid xs={2}>
@@ -46,31 +46,49 @@ function Media() {
                     </div>
                 </Grid>
 
-                <Grid container spacing={0} className="">
-                    <div className="grid-margins-experiences">
+                {/* <Grid container spacing={0} className="">
+                    <div className="grid-margins-experiences"> */}
 
-                        <Grid xs={12} className="right-align-experiences">
-                            <h1 className="sub-header-experiences">Behind the Scenes Interviews</h1>
-                        </Grid>
+                        {/* <Grid xs={12} className="right-align-experiences"> */}
+                            {/* <h1 className="sub-header-experiences">Behind the Scenes Interviews</h1> */}
+                        {/* </Grid> */}
 
 
-                        <Grid xs={12}>
+                        {/* <Grid xs={12}>
                             <p className="paragraph-experiences paragraph-indent-experiences-left">
                                 Empathy Bytes conducted behind the scenes interviews with team members to learn more about the "Why" behind our
                                 projects. Watch the videos below to learn more!
                             </p>
-                        </Grid>
+                        </Grid> */}
 
-                        <Grid xs={12} container alignItems="center" justifyContent="center" direction="column" style={{padding: "2% 0 2% 0"}}>
+                <Grid container spacing={2} className="bg-1">
+                    <Grid xs={6} container className="" alignItems="center" justifyContent="center">
+                        <div className="grid-margins-experiences">
+                        <h1 className="sub-header-experiences" style={{marginLeft: 150, fontSize: '2rem'}} >Behind the Scenes Interviews</h1>
+                            <p className="paragraph-experiences paragraph-indent-experiences-left" style={{marginLeft: 150}}>
+                            Empathy Bytes conducted behind the scenes interviews with team members to learn more about the "Why" behind our
+                            projects. Watch the videos below to learn more!</p>
+                        </div>
+                    </Grid>
+                    <Grid xs={12} container alignItems="center" justifyContent="center" direction="column" style={{padding: "2% 0 2% 0"}}>
                             <iframe width="600" height="300" src="https://www.youtube.com/embed/caa4VsEymFU" 
                                 title="YouTube video player" frameborder="0" 
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
                                 allowfullscreen>
                             </iframe>
                         </Grid>
-                    </div>
-
                 </Grid>
+
+                        {/* <Grid xs={12} container alignItems="center" justifyContent="center" direction="column" style={{padding: "2% 0 2% 0"}}>
+                            <iframe width="600" height="300" src="https://www.youtube.com/embed/caa4VsEymFU" 
+                                title="YouTube video player" frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                                allowfullscreen>
+                            </iframe>
+                        </Grid> */}
+                    {/* </div>
+
+                </Grid> */}
 
                 
                 <Grid container spacing={2} className="bg-1" style={{padding: "2% 0 2% 0"}}>

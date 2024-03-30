@@ -1,6 +1,6 @@
 @import "./fonts.css";
 .full-container-experiences {
-    margin-top: var(--logo-top-height);
+    padding: 50px;
     margin-bottom: var(--navbar-top-height);
     background-color: #004B87;
 }

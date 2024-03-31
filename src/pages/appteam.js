@@ -27,13 +27,7 @@ function App() {
 
                 <Grid container spacing={0} className="bg-1">
                     <div className="grid-margins-experiences">
-                        <Grid xs={10}>
-                            {/* <h1 className="sub-header-experiences">What We Do</h1> */}
-                        </Grid>
 
-                        <Grid xs={2}>
-                            
-                        </Grid>
 
                         <Grid xs={7}>
                             <p className="paragraph-experiences">
@@ -43,9 +37,6 @@ function App() {
                             </p>
                         </Grid>
 
-                        <Grid xs={5}>
-                            
-                        </Grid>
                     </div>
                 </Grid>
 

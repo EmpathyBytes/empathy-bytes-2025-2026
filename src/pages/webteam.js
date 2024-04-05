@@ -63,9 +63,6 @@ function web() {
                     </Grid>
                 </Grid>
             </div>
-            <div>
-                tezt
-            </div>
         </Layout>
     );
 }

@@ -3,8 +3,11 @@ import { Link } from "gatsby";
 
 import Grid from '@mui/material/Unstable_Grid2';
 
-import "../styles/components/footer.css"
+import "../styles/components/footer.css";
 import Logo from "../images/empbytes.jpg";
+import YoutubeLogo from "../images/socialmedia-icons/youtube_icon.png";
+import LinkedinLogo from "../images/socialmedia-icons/linkedin_icon.png";
+import GithubLogo from "../images/socialmedia-icons/github_icon.png";
 
 
 // Here is a footer component for the website. This component is used in the "layout" component that is included in every page.

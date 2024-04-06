@@ -8,6 +8,18 @@
     gap: 90px;
 }
 
+footer a:link{
+    color: white;
+}
+
+  footer a:visited {
+    color:white;
+}
+
+footer a:hover{
+    color:#90c7fa;
+}
+
 .grouping {
     display: flex;
     flex-direction: column;

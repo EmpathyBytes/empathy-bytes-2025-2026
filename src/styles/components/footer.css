@@ -2,7 +2,10 @@
 
 .container-footer {
     background-color: #003057;
-    padding: 2.5% 5%;
+    height: 244px;
+    justify-content: center;
+    align-items: center;
+    gap: 90px;
 }
 
 .grouping {

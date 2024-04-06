@@ -69,6 +69,27 @@ header .nav-btn {
     font-size: 1.8rem;
 }
 
+.nav-logo {
+    display: flex;
+    height: 100px;
+    width: 500px;
+    justify-content: center;
+    align-items: center;
+    gap: 22px;
+  }
+
+  .nav-title {
+    color: #FFF;
+    font-family: 'Roboto Slab', sans-serif;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    width:381px;
+    justify-content: flex-start;
+  }
+
+
 @media only screen and (max-width: 1024px) {
     header .nav-btn {
         visibility: visible;

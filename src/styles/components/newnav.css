@@ -53,7 +53,7 @@ nav a:visited {
 }
 
 nav a:hover {
-    color: white;
+    color: var(--color-lightblue);
     
 }
 

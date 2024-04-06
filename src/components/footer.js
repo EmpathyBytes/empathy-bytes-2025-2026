@@ -59,9 +59,18 @@ function Footer(props) {
           </Grid> }
 
           <Grid item xs={6} sm={2} className="grouping">
-            <h1 className="text-heading">Social Media</h1>
 
-            <a className="text-anchor" href="https://www.youtube.com/@georgiatechempathybytesvip3117">Youtube</a>
+            <a className="text-anchor" href="https://www.youtube.com/@georgiatechempathybytesvip3117">
+              <img className="icon" src={YoutubeLogo} alt="Youtube"/>
+            </a>
+
+            <a className="text-anchor" href="https://www.vip.gatech.edu/teams/vwc">
+              <img className="icon" src={LinkedinLogo} alt="LinkedIn"/>
+            </a>
+
+            <a className="text-anchor" href="https://github.com/EmpathyBytes/empathy-bytes-2024">
+              <img className="icon" src={GithubLogo} alt="Github"/>
+            </a>
           </Grid>
           
         </Grid>

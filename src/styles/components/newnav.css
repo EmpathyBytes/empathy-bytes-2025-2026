@@ -1,3 +1,19 @@
+:root {
+    --tr: 0.25s;
+    --navbar-top-height: 6rem;
+    --logo-top-height: 5.25rem;
+    --navbar-scrolled-height: 6rem;
+    --logo-scrolled-height: 4.5rem;
+  
+    --color-techgold: #b3a369;
+    --color-navyblue: #003057;
+    --color-lightblue: #90c7fa;
+    --color-greymatter: #54585a;
+    --color-pimile: #d6dbd4;
+    --color-diploma: #f9f6e5;
+    --color-buzzgold: #eaaa00;
+  }
+
 header {
     z-index: 10;
     display: flex;

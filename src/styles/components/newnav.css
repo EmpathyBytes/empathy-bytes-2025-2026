@@ -34,9 +34,22 @@ header {
 }
 
 nav a {
-    margin: 0 2rem;
     color: white;
     text-decoration: none;
+}
+
+nav {
+    display: flex;
+    height: 100px;
+    margin-left: auto;
+    justify-content: right;
+    align-items: center;
+    gap: 60px;
+    flex-shrink: 0;
+}
+
+nav a:visited {
+    color:white;
 }
 
 nav a:hover {

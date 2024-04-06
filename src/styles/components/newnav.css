@@ -20,12 +20,13 @@ header {
     align-items: center;
     justify-content: space-between;
     height: var(--navbar-scrolled-height);
-    padding: 0 2rem;
+    padding: 0px 0px 0px 40px;
     background-color: var(--color-navyblue);
     color: white;
     position: fixed;
     top: 0;
     left: 0;
+    right: 0;
     width: 100%;
     box-sizing: border-box;
 

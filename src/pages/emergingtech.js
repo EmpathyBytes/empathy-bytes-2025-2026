@@ -8,6 +8,8 @@ import { Environment, OrbitControls } from '@react-three/drei'
 
 import BuzzPlaque from "../components/canvas/buzzplaque";
 import Converse from "../components/canvas/rightconverse";
+import Banner from "../images/experiences/EmergingTechTeamBanner.png";
+
 
 import Grid from '@mui/material/Grid';
 
@@ -19,12 +21,15 @@ import "../styles/all.css"
 function EmergingTech() {
     return(
         <Layout>
+            <div className="top-banner" style={{backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.5)), url(${Banner})`}}>
+                <h1 className="header-experiences">Web Team</h1>
+            </div>
             <div className="full-container-experiences">
-                <Grid container spacing={2} className="">
+                {/* <Grid container spacing={2} className="">
                     <div className="grid-margins-experiences">
                             <h1 className="header-experiences">The Emerging Technologies Team</h1>
                     </div>
-                </Grid>
+                </Grid> */}
 
                 <Grid container spacing={0}>
                     <div className="grid-margins-experiences">

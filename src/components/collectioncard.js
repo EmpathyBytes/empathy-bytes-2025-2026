@@ -9,7 +9,6 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 import { Link } from "gatsby";
 
 /**
- * hi audrey here! this is how you can start making changes!
  * This component is used in projects.js to display categories
  * of interviews. It uses the MUI card component and contains 
  * an image, title, blurb, and link pulled from Drupal.

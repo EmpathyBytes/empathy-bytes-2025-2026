@@ -104,14 +104,11 @@ iframe {
         padding-left: 0; 
         padding-right: 80px;
     } */
-
     .paragraph-indent-experiences-right {
         padding-right: 5%;
         color: white;
         background-color: #004B87;
     }
-
-
     .left-align-experiences {
         text-align: right;
     }

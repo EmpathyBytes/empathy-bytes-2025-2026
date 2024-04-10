@@ -48,6 +48,7 @@ function Newnav({ transparent }) {
 
     return (
         <header>
+          <div className="nav-logo">
             <Link to={"/"}>
             <img
               className= "logo"
@@ -55,18 +56,21 @@ function Newnav({ transparent }) {
               alt="Empathy Bytes Logo"
             />
             </Link>
+            <h1 className="nav-title"> Empathy Bytes</h1>
+          </div>
             <nav ref={navRef}>
-                <Link to={"/projects"}>Projects</Link>
-                <Link to={"/experiences"}>Experiences</Link>
-                <Link to={"/about"}>About</Link>
-                <Link to={"/contact"}>Contact</Link>
-                <button className="nav-btn nav-close-btn" onClick={showNavbar}>
-                    <FaTimes/>
-                </button>
+                  <Link to={"/projects"}>Projects</Link>
+                  <Link to={"/experiences"}>Experiences</Link>
+                  <Link to={"/about"}>About</Link>
+                  <Link to={"/contact"}>Contact</Link>
+                  <button className="nav-btn nav-close-btn" onClick={showNavbar}>
+                      <FaTimes/>
+                  </button>
             </nav>
-            <button className="nav-btn" onClick={showNavbar}>
-                <FaBars/>
-            </button>
+              <button className="nav-btn" onClick={showNavbar}>
+                  <FaBars/>
+              </button>
+          
         </header>
     )
 }

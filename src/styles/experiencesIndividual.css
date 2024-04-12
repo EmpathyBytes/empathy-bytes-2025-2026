@@ -1,72 +1,92 @@
 @import "./fonts.css";
 
-.full-container-experiences-app { /*This for the title of the page*/
-    background-image: linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0)), url("../images/experiences/AppTeamHeader.png");
-    background-position: center; 
-    background-size: contain;
-    font-size: 30px;
-
-    /* margin-top: var(--logo-top-height);
-    margin-bottom: var(--navbar-top-height); */
-
-    /* font-family: "IBM Plex Sans"; */
-    /*font-style: normal;*/
-    /* font-weight: 100; */
-    /*line-height: normal;*/
-    
+.top-banner {
+    height: 450px;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-position: center;
 }
-.full-container-experiences-media { /*This for the title of the page*/
-    background-image: linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0)), url("../images/experiences/mediaTeamHeader.png");
-    background-position: center; 
-    background-size: contain;
-    font-size: 30px;
 
-    /* margin-top: var(--logo-top-height);
-    margin-bottom: var(--navbar-top-height); */
+.header-experiences {
+    font-family: 'Roboto Slab', serif;
+    font-size: 6rem;
+    width: max-content;
+}
 
-    /* font-family: "IBM Plex Sans"; */
-    /*font-style: normal;*/
-    /* font-weight: 100; */
-    /*line-height: normal;*/
-    
+.blue-box {
+    background-color: #003057;
+    padding: 25px 50px;
+    border-radius: 20px;
+    width: 1200px;
+    max-width: calc(100% - 100px); /* to maintain .full-container-experience's 50px padding on each side */
+    margin: auto;
+}
+
+.divider {
+    margin: 50px auto;
+    background-color: #9CC6F5;
+    border-radius: 20px;
+    height: 3px;
+    width: 550px;
+    max-width: 50%;
+}
+
+.sub-header-experiences {
+    text-align: center;
+    font-weight: 500;
+}
+
+.paragraph-experiences-body {
+    font-family: 'Roboto', serif;
+    font-size: 1rem;
+    width: 800px;
+    max-width: calc(100% - 100px);
+    margin: auto;
+}
+
+ h2 {
+    color: white;
+    font-weight: 400;
+ }
+
+iframe {
+    width: 100%;
+    height: 50vw;
+}
+
+
+
+.full-container-experiences {
+    padding: 50px;
+    margin-bottom: var(--navbar-top-height);
+    background-color: #004B87;
 }
 
 .grid-margins-experiences { /* THIS IS THE PADDING FOR THE PHONE */
-    padding: 0 3% 0 3%;
-
-
+    padding: 0 3% 0 3%; /* no longer used in webteam.js due to banner */
 }
 @media screen and (max-width: 600px) {
     .grid-margins-experiences {
         padding: 0; /* Adjust the padding for screens 600px or less */
-    }
+    } 
 .vr-container-1 {
     height: 50vh;
     width: 100%;
-    background-color:   #000;
+    background-color: #004B87;
 }
 .vr-container-2 {
     height: 50vh;
     width: 100%;
-    background-color:   #000;
-}
-
-.header-experiences { /*font of title page?*/
-    font-family: 'Roboto Slab', serif;
-    /*font-family: "IBM Plex Sans";*/
-    /*font-size: 300px;*/
-    font-style: normal;
-    text-align: center;
-    font-size: 3rem;
-    /*padding-left: 20px*/
+    background-color: #004B87;
 }
 
 .sub-header-experiences {
     font-family: 'Roboto Slab', serif;
     font-size: 2rem;
     background-color: #004B87;
-    /*padding-left: 20px*/
-    
+    padding-left: 20px;
 }
 
 .paragraph-experiences {
@@ -75,27 +95,24 @@
     background-color: #004B87;
 }
 
-.paragraph-indent-experiences-left {
+/* .paragraph-indent-experiences-left {
     padding-left: 5%;
     color: white;
     background-color: #004B87;
-}
+} */
 @media screen and (max-width: 600px) {
-    .paragraph-indent-experiences-left {
+    /* .paragraph-indent-experiences-left {
         padding-left: 0; 
         padding-right: 80px;
+    } */
+    .paragraph-indent-experiences-right {
+        padding-right: 5%;
+        color: white;
+        background-color: #004B87;
     }
-
-.paragraph-indent-experiences-right {
-    padding-right: 5%;
-    color: white;
-    background-color: #004B87;
-}
-
-
-.left-align-experiences {
-    text-align: right;
-}
+    .left-align-experiences {
+        text-align: right;
+    }
 
 }
 }

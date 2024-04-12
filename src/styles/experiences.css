@@ -3,6 +3,7 @@
 .container-experiences-homepage {
     padding-top: calc(var(--navbar-scrolled-height) + 10vh);
     padding-bottom: 90px;
+    background-color: #004B87;
 }
 .container-half {
     position: relative;

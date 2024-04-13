@@ -82,11 +82,19 @@ html, body {
 }
 
 .image {
-    /* desktop; ratio = 0.603 */
+    /* desktop; ratio = 0.603 
+    this is the div for the image
+    */
     @media screen and (min-width: 600px) {
         width: 580px;
-        height: 350px;
-    }
+        height: 350px;   
+}
+/* atrributes for the team pic image */
+.teampic { 
+    border-radius: 15px;
+    width: 580px;
+    height: 350px;
+}
 
     /* mobile */
     @media screen and (max-width: 600px) {

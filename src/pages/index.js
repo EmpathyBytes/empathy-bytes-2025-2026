@@ -59,7 +59,7 @@ function IndexPage() {
               <h1 className="header">What is Empathy Bytes?</h1>
                 <div className="container-row">
                   <div className="image">
-                    <img src={teampic} alt="" width="580" height="350"></img>
+                    <img src={teampic} className="teampic"></img>
                   </div>
                   <div class="parag">
                     <p className="paragraph2">

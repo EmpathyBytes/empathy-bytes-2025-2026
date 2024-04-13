@@ -64,7 +64,7 @@ function Footer(props) {
               <img className="icon" src={YoutubeLogo} alt="Youtube"/>
             </a>
 
-            <a className="text-anchor" href="https://www.vip.gatech.edu/teams/vwc">
+            <a className="text-anchor" href="https://www.linkedin.com/company/georgiatech-vip/">
               <img className="icon" src={LinkedinLogo} alt="LinkedIn"/>
             </a>
 

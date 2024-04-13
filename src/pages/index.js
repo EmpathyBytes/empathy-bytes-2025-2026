@@ -24,6 +24,8 @@ import CardContent from '@mui/material/CardContent';
 
 import useMediaQuery from '@mui/material/useMediaQuery';
 
+import LandingInfoCard from "../components/landingInfo";
+
 
 function IndexPage() {
   const matches = useMediaQuery('(min-width:700px)'); 
@@ -54,13 +56,19 @@ function IndexPage() {
         </div>
 
         <div id="info" className="info">
-          <Grid container spacing={2}>
-            <Grid xs={12}>
-              <h1 className="header">What is Empathy Bytes?</h1>
+          <Grid container spacing={2}> 
+            <Grid xs={12} className="main-content">
+              
+              <div className="image">
+                  <img src={teampic} className="teampic"></img>
+              </div>
+              <LandingInfoCard />
+                  
+              
+          
+              {/* <h1 className="header">What is Empathy Bytes?</h1>
                 <div className="container-row">
-                  <div className="image">
-                    <img src={teampic} className="teampic"></img>
-                  </div>
+                  
                   <div class="parag">
                     <p className="paragraph2">
                     Empathy Bytes is a student run research project focused on creating immersive technology and media centered around empathy. 
@@ -68,10 +76,10 @@ function IndexPage() {
                     currently focuses on identifying and presenting distinct communities connected to Georgia Tech.
                     </p>
                   </div>
-                </div>
+    </div>*/} 
             </Grid>
 
-          <Grid xs={12}>
+          {/*<Grid xs={12}>
             <hr></hr>
           </Grid>
 
@@ -101,8 +109,9 @@ function IndexPage() {
             </Card>
             </Link>
           </Grid>
-          <Grid xs={2}></Grid>
-          </Grid>
+          <Grid xs={2}></Grid>*/}
+        </Grid>
+         
         </div>
       </Layout>
     )

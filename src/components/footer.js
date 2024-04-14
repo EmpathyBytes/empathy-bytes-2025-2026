@@ -65,6 +65,7 @@ function Footer(props) {
             </a>
 
             <a className="text-anchor" href="https://www.linkedin.com/company/empathybytes/">
+ 
               <img className="icon" src={LinkedinLogo} alt="LinkedIn"/>
             </a>
 

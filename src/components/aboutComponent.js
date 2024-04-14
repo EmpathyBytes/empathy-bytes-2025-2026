@@ -15,7 +15,7 @@ function AboutComponent(props) {
                     <p className="paragraph-about padding-bottom-about">{props.about}</p>
                 </Grid>
 
-                <Grid xs={4}>
+                <Grid item xs={4}>
 
                 </Grid>
             </Grid>

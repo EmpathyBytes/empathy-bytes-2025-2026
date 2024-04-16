@@ -1,15 +1,32 @@
+:root {
+    --tr: 0.25s;
+    --navbar-top-height: 6rem;
+    --logo-top-height: 5.25rem;
+    --navbar-scrolled-height: 6rem;
+    --logo-scrolled-height: 4.5rem;
+  
+    --color-techgold: #b3a369;
+    --color-navyblue: #003057;
+    --color-lightblue: #90c7fa;
+    --color-greymatter: #54585a;
+    --color-pimile: #d6dbd4;
+    --color-diploma: #f9f6e5;
+    --color-buzzgold: #eaaa00;
+  }
+
 header {
     z-index: 10;
     display: flex;
     align-items: center;
     justify-content: space-between;
     height: var(--navbar-scrolled-height);
-    padding: 0 2rem;
+    padding: 0px 0px 0px 40px;
     background-color: var(--color-navyblue);
     color: white;
     position: fixed;
     top: 0;
     left: 0;
+    right: 0;
     width: 100%;
     box-sizing: border-box;
 
@@ -17,13 +34,26 @@ header {
 }
 
 nav a {
-    margin: 0 2rem;
     color: white;
     text-decoration: none;
 }
 
+nav {
+    display: flex;
+    height: 100px;
+    margin-left: auto;
+    justify-content: right;
+    align-items: center;
+    gap: 60px;
+    flex-shrink: 0;
+}
+
+nav a:visited {
+    color:white;
+}
+
 nav a:hover {
-    color: white;
+    color: var(--color-lightblue);
     
 }
 
@@ -38,6 +68,27 @@ header .nav-btn {
     opacity: 0;
     font-size: 1.8rem;
 }
+
+.nav-logo {
+    display: flex;
+    height: 100px;
+    width: 500px;
+    justify-content: center;
+    align-items: center;
+    gap: 22px;
+  }
+
+  .nav-title {
+    color: #FFF;
+    font-family: 'Roboto Slab', sans-serif;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    width:381px;
+    justify-content: flex-start;
+  }
+
 
 @media only screen and (max-width: 1024px) {
     header .nav-btn {

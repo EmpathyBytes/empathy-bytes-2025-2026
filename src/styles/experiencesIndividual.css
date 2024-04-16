@@ -63,6 +63,7 @@ iframe {
     margin-bottom: var(--navbar-top-height);
     background-color: #004B87;
 }
+
 .grid-margins-experiences { /* THIS IS THE PADDING FOR THE PHONE */
     padding: 0 3% 0 3%; /* no longer used in webteam.js due to banner */
 }

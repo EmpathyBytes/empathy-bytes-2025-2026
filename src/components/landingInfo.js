@@ -13,28 +13,33 @@ import Icon from "../images/homepage/next-page-icon.png"
    
 export default function LandingCardInfo() {
     return (
-      <Box sx={{ minWidth: '20vw' }}>
-        <React.Fragment>
-            <CardContent className="card">
-                <Typography variant="h1" component="div" className="header">
-                    What Is Empathy Bytes?
-                </Typography>
-                <Typography variant="body1" className="content">
-                <p>
-                Empathy Bytes is a student run research project focused on creating immersive technology and media centered around empathy. 
-                We think outside traditional modes of communication and documentation to create radical and unique experiences. 
-                Our research currently focuses on identifying and presenting distinct communities connected to Georgia Tech.</p>
-                </Typography>
-    
-                <CardActions>
-                    <Button className="button">Learn More<img src={ Icon}></img></Button>
-                    
-                </CardActions>
-                
-            </CardContent>
-        </React.Fragment>
-        
-    
-      </Box>
+      <div className="card-wrapper">
+        <Box sx={{ minWidth: '20vw' }}>
+          <React.Fragment>
+            <Card className="card">
+              <CardContent className="card-content">
+                  <Typography variant="h1" component="div" className="header">
+                      {props.title}
+                  </Typography>
+                  <Typography variant="body1" className="content">
+                      {props.body}
+                  </Typography>
+      
+                  <CardActions>
+                  
+                    <Button className="button" onClick={() => btnLink(props.link)}>{props.btnTitle}<img src={Icon}>
+                      </img>
+                    </Button>
+                  
+                      
+                      
+                  </CardActions>
+                  
+              </CardContent>
+            </Card>
+          </React.Fragment>
+        </Box>
+      </div>
     );
   }
+  export default LandingCardInfo

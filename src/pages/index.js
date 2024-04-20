@@ -57,25 +57,19 @@ function IndexPage() {
 
         <div id="info" className="info">
           <div className="info-wrapper">
-            <Grid container spacing={2}className="main-content"> 
-              <Grid item xs={4}>
-                  <div className="image">
-                    <img src={teampic} className="teampic"></img>
-                  </div>
-              </Grid>
-              <Grid item xs={4}>
-                <div className="infoCard">
-                  <LandingInfoCard 
-                    title="What Is Empathy Bytes?"
-                    body="Empathy Bytes is a student run research project focused on creating immersive technology and media centered around empathy. 
-                    We think outside traditional modes of communication and documentation to create radical and unique experiences. Our research 
-                    currently focuses on identifying and presenting distinct communities connected to Georgia Tech."
-                    link="/contact"
-                    btnTitle="Learn More"
-                  />
-                </div>
-              </Grid>
-            </Grid>
+              <div className="image">
+                <img src={teampic} className="teampic"></img>
+              </div>
+              <div className="infoCard">
+                <LandingInfoCard 
+                  title="What Is Empathy Bytes?"
+                  body="Empathy Bytes is a student run research project focused on creating immersive technology and media centered around empathy. 
+                  We think outside traditional modes of communication and documentation to create radical and unique experiences. Our research 
+                  currently focuses on identifying and presenting distinct communities connected to Georgia Tech."
+                  link="/contact"
+                  btnTitle="Learn More"
+                />
+              </div>
             </div>
           </div>
       </Layout>
@@ -110,51 +104,22 @@ function IndexPage() {
         </div>
 
         <div id="info" className="info">
-          <Grid container spacing={2}>
-            <Grid xs={12}>  
-              <h1 className="header">What is Empathy Bytes?</h1>
-              <div>
-                <img src={teampic} className = "image"></img>
+          <div className="info-wrapper">
+              <div className="image">
+                <img src={teampic} className="teampic"></img>
               </div>
-            </Grid>
-            <Grid xs={12}>
-              <p className="paragraph2">
-                  Empathy Bytes is a student run research project focused on creating immersive technology and media centered around empathy. 
+              <div className="infoCard">
+                <LandingInfoCard 
+                  title="What Is Empathy Bytes?"
+                  body="Empathy Bytes is a student run research project focused on creating immersive technology and media centered around empathy. 
                   We think outside traditional modes of communication and documentation to create radical and unique experiences. Our research 
-                  currently focuses on identifying and presenting distinct communities connected to Georgia Tech.
-              </p>
-            </Grid>
-            <Grid xs={12}>
-              <hr></hr>
-            </Grid>
-            <Grid xs={12}>
-              <h1 className="header">Want to Learn More?</h1>
-              <p className="paragraph">
-                Check out or Experiences and Project Pages to learn more about the type of work we do!
-              </p>
-            </Grid>
-            <Grid xs={3}></Grid>
-            <Grid xs={3}>
-              <Link to="/experiences" className="noUnderline">
-              <Card  sx={{ maxWidth: 360 }}>
-              <CardContent style={{backgroundColor: "#003057"}}>
-                <h1 className="card-text">Experiences</h1>
-              </CardContent>
-              </Card>
-              </Link>
-            </Grid>
-            <Grid xs={3}>
-              <Link to="/projects" className="noUnderline">
-              <Card sx={{ maxWidth: 360 }}>
-                <CardContent style={{backgroundColor: "#003057"}}>
-                  <h1 className="card-text">Projects</h1>
-                </CardContent>
-              </Card>
-              </Link>
-            </Grid>
-            <Grid xs={3}></Grid>
-          </Grid>
-        </div>
+                  currently focuses on identifying and presenting distinct communities connected to Georgia Tech."
+                  link="/contact/"
+                  btnTitle="Learn More"
+                />
+              </div>
+            </div>
+          </div>
       </Layout>
     )
   }

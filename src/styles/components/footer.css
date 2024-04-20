@@ -5,7 +5,7 @@
     height: 200px;
     justify-content: center;
     align-items: center;
-    gap: 90px;
+    padding: 0px 20px 20px 20px;
 }
 
 footer a:link{
@@ -30,6 +30,7 @@ footer a:hover{
     flex-direction: column;
     text-align: left;
     height:110px;
+    width: 220px;
 }
 
 .text-footer-title {

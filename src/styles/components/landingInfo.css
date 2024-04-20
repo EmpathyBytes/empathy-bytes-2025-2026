@@ -1,13 +1,24 @@
 .card {
     background-color: #003057;
     display: flex;
-    max-width: 800px;
-    padding: 28px 28px;
+    max-width: 400vw;
+    max-height:400vh;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-end;
+    align-items:center;
     border-radius: 15px;
+    padding:0px 10px 0px 10px;
+    height: 400px;
 }
+
+.card-content {
+    display:flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap:10px;
+    overflow-wrap: inherit;
+}
+
 
 
 .header {
@@ -29,16 +40,18 @@
     line-height: normal;
 }
 
+
 .button {
     display: flex;
-    width: 249px;
-    height: 77px;
+    width: 200px;
+    height: 50px;
     justify-content: center;
     align-items: center;
     gap: 20px;
     border-radius: 50px;
     background: #004B87;
     flex-direction: row;
+    align-self: flex-end;
     
 }
 

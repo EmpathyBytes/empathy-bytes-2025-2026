@@ -9,12 +9,15 @@ import CardMedia from '@mui/material/CardMedia';
 import teampic from "../images/homepage/teampic.jpg";
 import "../styles/components/landingInfo.css"
 import Icon from "../images/homepage/next-page-icon.png"
+import { Navigate } from "react-router-dom"
 
-   
-export default function LandingCardInfo() {
+function LandingCardInfo(props) {
+  function btnLink() {
+    window.location.href= "https://empathybytes.library.gatech.edu" + props.link
+  }
     return (
       <div className="card-wrapper">
-        <Box sx={{ minWidth: '20vw' }}>
+        <Box>
           <React.Fragment>
             <Card className="card">
               <CardContent className="card-content">
@@ -27,7 +30,7 @@ export default function LandingCardInfo() {
       
                   <CardActions>
                   
-                    <Button className="button" onClick={() => btnLink(props.link)}>{props.btnTitle}<img src={Icon}>
+                    <Button className="button" onClick= {() => btnLink(props.link)}>{props.btnTitle}<img src={Icon}>
                       </img>
                     </Button>
                   

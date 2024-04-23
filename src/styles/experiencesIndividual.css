@@ -13,6 +13,7 @@
     font-family: 'Roboto Slab', serif;
     font-size: 6rem;
     width: max-content;
+    text-align: center;
 }
 
 .blue-box {
@@ -72,14 +73,14 @@ iframe {
         padding: 0; /* Adjust the padding for screens 600px or less */
     } 
 .vr-container-1 {
-    height: 50vh;
+    height: 500px;
     width: 100%;
-    background-color: #004B87;
+    background-color: #abbfd0;
 }
 .vr-container-2 {
-    height: 50vh;
+    height: 500vh;
     width: 100%;
-    background-color: #004B87;
+    /* background-color: #004B87; */
 }
 
 .sub-header-experiences {

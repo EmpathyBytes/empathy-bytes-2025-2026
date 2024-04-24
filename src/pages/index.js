@@ -166,8 +166,8 @@ function IndexPage() {
               <CardContent style={{backgroundColor: "#003057"}}>
                 <h1 className="card-text">Experiences</h1>
               </CardContent>
-             </Card>
-             </Link>
+              </Card>
+              </Link>
             </Grid>
             <Grid xs={3}>
               <Link to="/projects" className="noUnderline">

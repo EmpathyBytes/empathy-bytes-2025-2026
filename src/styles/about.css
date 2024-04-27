@@ -66,22 +66,28 @@
 }
 
 .about-nav-text {
-    font-size: 1rem;
-    font-family: 'Roboto Slab', sans-serif;
-    color: white;
-    padding: 10%;
-    border-radius: 150px;
+  display: inline-block;
+  font-size: 18px;
+  font-family: 'Roboto Slab', sans-serif;
+  color: #003057;
+  padding: 17px 40px;
+  background-color: white;
+  border-radius: 150px;
+  text-align: center;
+  cursor: pointer;
+  text-decoration: none;
+  min-width: 100px;
 }
 
 .about-nav-text:hover {
-    background-color: #003057;
+    background-color: #E0BB56;
     cursor: pointer;
     transition: background-color 200ms linear;
 }
 
 .navBG {
     display: flex;
-    background-color: #1B3F66;
+    /* background-color: #1B3F66; */
     border-radius: 150px;
     width: 90%;
     height: 50%;
@@ -183,4 +189,16 @@
     height: 150px;
     width: 300px;
     margin: auto;
-}
+  }
+
+  .learn-more {
+    color: #E0BB56;
+    text-align: center;
+    font-family: "Roboto Slab";
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-decoration-line: underline;
+  }
+  

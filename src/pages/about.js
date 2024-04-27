@@ -1,14 +1,14 @@
 import React, { useState } from "react"
-import Layout from "../components/layout"
-import All from "../images/people/fullTeam.jpg"
+import Layout from "../components/layout" // importing the navbar and footer
+import All from "../images/people/fullTeam.jpg" // importing the full team picture
 // import { Link } from "gatsby"
 import { graphql } from "gatsby";
-
 import "../styles/about.css"
 import "../styles/all.css"
-import AboutComponent from "../components/aboutComponent"
+import AboutComponent from "../components/aboutComponent" // everything relating to the images
 
 import Grid from '@mui/material/Grid';
+import { Divider } from "@mui/material";
 
 function AboutPage({ data }) {
 
@@ -52,7 +52,6 @@ function AboutPage({ data }) {
 
   return (
     <Layout>
-
       <div className="top-about dim">
         {/* <h1>About Us</h1> */}
       </div>
@@ -61,23 +60,24 @@ function AboutPage({ data }) {
       </div>
       <div className="a-c-full">
         <div style={{ padding: "2% 5% 1% 5%" }}>
-          <h1 className="header-about">About Us</h1>
-          <p className="paragraph-about">
-            Empathy Bytes VIP explores how multimedia and emerging technologies can enhance empathy and understanding as we
-            create digital scholarship. This VIP section looks to document the stories of diverse communities in Georgia and beyond.
-            The team explores how technology can enhance empathy, as well as improve access to resources. Most importantly, the students on
-            this team ask themselves how these advanced technologies allow us to understand new perspectives, solve problems, or simply be a
-            better person in a world full of daily challenges.
-          </p>
-          <p className="paragraph-about">
-            Empathy Bytes is broken down into sub-groups that specialize in different areas of research to accomplish the overall goals of the project.
-            Within sub teams, students explore areas of personal research interest, while learning project management skills and terminology.
-          </p>
-          <p className="paragraph-about">
-            Current technologies being used include: React, GatsbyJS, Drupal, and GraphQL the web team, the Adobe Creative Suite for the Media team.
-            Unity and Blender for the Emerging Tech team, and Swift for the App team.
-          </p>
-
+          <div className="about-card">
+            <h1 className="header-about">About Us</h1>
+            <p className="paragraph-about">
+              Empathy Bytes VIP explores how multimedia and emerging technologies can enhance empathy and understanding as we
+              create digital scholarship. This VIP section looks to document the stories of diverse communities in Georgia and beyond.
+              The team explores how technology can enhance empathy, as well as improve access to resources. Most importantly, the students on
+              this team ask themselves how these advanced technologies allow us to understand new perspectives, solve problems, or simply be a
+              better person in a world full of daily challenges.
+            </p>
+            <p className="paragraph-about">
+              Empathy Bytes is broken down into sub-groups that specialize in different areas of research to accomplish the overall goals of the project.
+              Within sub teams, students explore areas of personal research interest, while learning project management skills and terminology.
+            </p>
+            <p className="paragraph-about">
+              Current technologies being used include: React, GatsbyJS, Drupal, and GraphQL the web team, the Adobe Creative Suite for the Media team.
+              Unity and Blender for the Emerging Tech team, and Swift for the App team.
+            </p>
+          </div>
         </div>
 
         {/* Div that contains the navbar */}

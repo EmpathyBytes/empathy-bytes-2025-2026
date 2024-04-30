@@ -63,6 +63,7 @@ iframe {
     margin-bottom: var(--navbar-top-height);
     background-color: #004B87;
 }
+
 .grid-margins-experiences { /* THIS IS THE PADDING FOR THE PHONE */
     padding: 0 3% 0 3%; /* no longer used in webteam.js due to banner */
 }
@@ -79,13 +80,16 @@ iframe {
     height: 50vh;
     width: 100%;
     background-color: #004B87;
+
 }
 
 .sub-header-experiences {
     font-family: 'Roboto Slab', serif;
     font-size: 2rem;
     background-color: #004B87;
+
     padding-left: 20px;
+
 }
 
 .paragraph-experiences {
@@ -98,7 +102,9 @@ iframe {
     padding-left: 5%;
     color: white;
     background-color: #004B87;
+
 } */
+
 @media screen and (max-width: 600px) {
     /* .paragraph-indent-experiences-left {
         padding-left: 0; 
@@ -112,6 +118,7 @@ iframe {
     .left-align-experiences {
         text-align: right;
     }
+
 
 }
 }

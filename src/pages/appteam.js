@@ -70,7 +70,7 @@ function App() {
                     </Grid>
                     <Grid xs={6} container className="" alignItems="center" justifyContent="center">
                         <div className="grid-margins-experiences">
-                            <img src={MockUp}></img>
+                            <img src={MockUp} alt="Mockup"></img>
                         </div>
                     </Grid>
                 </Grid>

@@ -1,6 +1,5 @@
 import * as React from "react"
 import Layout from "../components/layout"
-import { Link } from "gatsby";
 
 import "../styles/homepage.css"
 import "../styles/all.css"
@@ -16,16 +15,12 @@ import teampic from "../images/homepage/teampic.jpg"
 
 
 import Carousel from 'react-material-ui-carousel'
-import Grid from '@mui/material/Grid';
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
 // import CardMedia from '@mui/material/CardMedia';
 // import { DesktopAccessDisabled } from "@mui/icons-material";
 
 import useMediaQuery from '@mui/material/useMediaQuery';
 
 import LandingInfoCard from "../components/landingInfo";
-import PropTypes from 'prop-types';
 
 function IndexPage() {
   const matches = useMediaQuery('(min-width:700px)'); 
@@ -36,7 +31,7 @@ function IndexPage() {
         <div className="top top-text dim">
           <h1>Empathy Bytes</h1>
 
-          <a href="#info">
+          <a href="#info" alt="arrows">
             <svg className="arrows">
                 <path className="a1" d="M0 0 L30 32 L60 0"></path>
                 <path className="a2" d="M0 20 L30 52 L60 20"></path>
@@ -50,15 +45,15 @@ function IndexPage() {
             animation={"slide"}
             duration={2000}
             indicators={false}>
-            <img className="splash-image" src={splash1}></img>
-            <img className="splash-image" src={splash2}></img>
+            <img className="splash-image" src={splash1} alt="Hive"></img>
+            <img className="splash-image" src={splash2} alt="Gatech Tower"></img>
           </Carousel>
         </div>
 
         <div id="info" className="info">
           <div className="info-wrapper">
               <div className="image">
-                <img src={teampic} className="teampic"></img>
+                <img src={teampic} className="teampic" alt="EB Team"></img>
               </div>
               <div className="infoCard">
                 <LandingInfoCard 
@@ -83,7 +78,7 @@ function IndexPage() {
         <div className="top top-text dim">
           <h1>Empathy Bytes</h1>
 
-          <a href="#info">
+          <a href="#info" alt="arrows">
             <svg className="arrows">
                 <path className="a1" d="M0 0 L30 32 L60 0"></path>
                 <path className="a2" d="M0 20 L30 52 L60 20"></path>
@@ -98,15 +93,15 @@ function IndexPage() {
             animation={"slide"}
             duration={2000}
             indicators={false}>
-            <img className="splash-image" src={splash1}></img>
-            <img className="splash-image" src={splash2}></img>
+            <img className="splash-image" src={splash1} alt="Hive"></img>
+            <img className="splash-image" src={splash2} alt="Gatech Tower"></img>
           </Carousel>
         </div>
 
         <div id="info" className="info">
           <div className="info-wrapper">
               <div className="image">
-                <img src={teampic} className="teampic"></img>
+                <img src={teampic} className="teampic" alt="EB Team"></img>
               </div>
               <div className="infoCard">
                 <LandingInfoCard 

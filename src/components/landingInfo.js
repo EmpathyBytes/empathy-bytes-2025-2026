@@ -27,7 +27,7 @@ function LandingCardInfo(props) {
                   <Link style={{ textDecoration: 'none' }} to={props.link}>
                     <Button className="button">
                       {props.btnTitle}
-                      <img src={Icon}></img>
+                      <img src={Icon} alt="View Page"></img>
                     </Button>
                     </Link>
                       

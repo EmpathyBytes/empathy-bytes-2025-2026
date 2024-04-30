@@ -1,6 +1,6 @@
 import React from "react";
 import Grid from '@mui/material/Unstable_Grid2';
-
+import { Link } from "gatsby";
 import "../styles/components/footer.css"
 
 

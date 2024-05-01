@@ -61,7 +61,16 @@ function AboutComponent(props) {
                         </div>
                 ))}
             </Grid>
-        </div>
+
+            <Grid container spacing={3} alignItems="center" justifyContent="center">
+            <p>
+                <a href={props.learnMore} target="_blank" rel="noopener noreferrer" className="learn-more">
+                    Learn More
+                </a>
+            </p>
+            </Grid>
+
+        </div>  
     );
 }
 

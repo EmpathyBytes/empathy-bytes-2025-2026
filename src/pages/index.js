@@ -27,11 +27,13 @@ function IndexPage() {
 
   if (matches){ //desktop
     return (
+      
       <Layout>
+        {/**Content for the Carousel */}
         <div className="top top-text dim">
           <h1>Empathy Bytes</h1>
-
-          <a href="#info" alt="arrows">
+          {/**This is the animated arrows that scroll down the page when clicked */}
+          <a href="#info" alt="arrows"> 
             <svg className="arrows">
                 <path className="a1" d="M0 0 L30 32 L60 0"></path>
                 <path className="a2" d="M0 20 L30 52 L60 20"></path>
@@ -49,7 +51,7 @@ function IndexPage() {
             <img className="splash-image" src={splash2} alt="Gatech Tower"></img>
           </Carousel>
         </div>
-
+        {/** This is the main part of the landing page containing the picture and info card*/}
         <div id="info" className="info">
           <div className="info-wrapper">
               <div className="image">
@@ -72,7 +74,8 @@ function IndexPage() {
 
 
 
-  } else { //mobile
+  } else { //mobile layout
+    // TODO: create a better layout for mobile
     return (
       <Layout>
         <div className="top top-text dim">

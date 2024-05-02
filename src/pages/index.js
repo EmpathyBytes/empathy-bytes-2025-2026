@@ -57,7 +57,7 @@ function IndexPage() {
               <div className="image">
                 <img src={teampic} className="teampic" alt="EB Team"></img>
               </div>
-              <div className="infoCard">
+              <div className="info-card">
                 <InfoCard 
                   title="What Is Empathy Bytes?"
                   body="Empathy Bytes is a student run research project focused on creating immersive technology and media centered around empathy. 
@@ -106,7 +106,7 @@ function IndexPage() {
               <div className="image">
                 <img src={teampic} className="teampic" alt="EB Team"></img>
               </div>
-              <div className="infoCard">
+              <div className="info-card">
                 <InfoCard 
                   title="What Is Empathy Bytes?"
                   body="Empathy Bytes is a student run research project focused on creating immersive technology and media centered around empathy. 

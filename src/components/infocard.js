@@ -5,11 +5,11 @@ import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import "../styles/components/landingInfo.css"
+import "../styles/components/infocard.css"
 import Icon from "../images/homepage/next-page-icon.png"
 import { Link } from "gatsby"
 
-function LandingCardInfo(props) {
+function InfoCard(props) {
     return (
       <div className="card-wrapper">
         <Box>
@@ -41,4 +41,4 @@ function LandingCardInfo(props) {
       </div>
     );
   }
-  export default LandingCardInfo
+  export default InfoCard

@@ -20,7 +20,7 @@ import Carousel from 'react-material-ui-carousel'
 
 import useMediaQuery from '@mui/material/useMediaQuery';
 
-import LandingInfoCard from "../components/landingInfo";
+import InfoCard from "../components/infocard";
 
 function IndexPage() {
   const matches = useMediaQuery('(min-width:700px)'); 
@@ -56,7 +56,7 @@ function IndexPage() {
                 <img src={teampic} className="teampic" alt="EB Team"></img>
               </div>
               <div className="infoCard">
-                <LandingInfoCard 
+                <InfoCard 
                   title="What Is Empathy Bytes?"
                   body="Empathy Bytes is a student run research project focused on creating immersive technology and media centered around empathy. 
                   We think outside traditional modes of communication and documentation to create radical and unique experiences. Our research 
@@ -104,7 +104,7 @@ function IndexPage() {
                 <img src={teampic} className="teampic" alt="EB Team"></img>
               </div>
               <div className="infoCard">
-                <LandingInfoCard 
+                <InfoCard 
                   title="What Is Empathy Bytes?"
                   body="Empathy Bytes is a student run research project focused on creating immersive technology and media centered around empathy. 
                   We think outside traditional modes of communication and documentation to create radical and unique experiences. Our research 

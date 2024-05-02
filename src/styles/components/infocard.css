@@ -1,3 +1,4 @@
+/* The mui card component containing the card-content */
 .card {
     background-color: #003057;
     display: flex;
@@ -10,7 +11,7 @@
     padding:0px 10px 0px 10px;
     height: 400px;
 }
-
+/* The inner part of the card containing all the objects like the title, body, and button*/
 .card-content {
     display:flex;
     flex-direction: column;
@@ -20,7 +21,7 @@
 }
 
 
-
+/*The title of the card*/
 .header {
     font-family: 'Roboto Slab', serif;
     color:white;
@@ -30,7 +31,7 @@
     line-height: normal;
     align-self: center;
 }
-
+/*The body text of the card*/
 .content {
     color: #FFF;
     font-family: Roboto;
@@ -40,7 +41,7 @@
     line-height: normal;
 }
 
-
+/*The button for the card that links to another page*/
 .button {
     display: flex;
     width: 200px;

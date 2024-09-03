@@ -87,7 +87,9 @@ iframe {
     font-family: 'Roboto Slab', serif;
     font-size: 2rem;
     background-color: #004B87;
+
     padding-left: 20px;
+
 }
 
 .paragraph-experiences {
@@ -100,7 +102,9 @@ iframe {
     padding-left: 5%;
     color: white;
     background-color: #004B87;
+
 } */
+
 @media screen and (max-width: 600px) {
     /* .paragraph-indent-experiences-left {
         padding-left: 0; 
@@ -114,6 +118,7 @@ iframe {
     .left-align-experiences {
         text-align: right;
     }
+
 
 }
 }

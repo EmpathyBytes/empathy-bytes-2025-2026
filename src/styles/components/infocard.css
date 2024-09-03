@@ -1,0 +1,66 @@
+/*This is the card wrapper containing the card */
+.card-wrapper {
+    max-height:400px;
+}
+/* The mui card component containing the card-content */
+.card {
+    background-color: #003057;
+    display: flex;
+    max-width: 50vw;
+    height:400px;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items:center;
+    border-radius: 15px;
+    padding:0px 10px 0px 10px;
+}
+
+/* The inner part of the card containing all the objects like the title, body, and button*/
+.card-content {
+    display:flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap:10px;
+}
+
+
+/*The title of the card*/
+.header {
+    font-family: 'Roboto Slab', serif;
+    color:white;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    align-self:center;
+}
+/*The body text of the card*/
+.content {
+    color: #FFF;
+    font-family: Roboto;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+/*The button for the card that links to another page*/
+.button {
+    display: flex;
+    width: 200px;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    border-radius: 50px;
+    background: #004B87;
+    flex-direction: row;
+    align-self: flex-end;
+    
+}
+
+.button:hover {
+    transition:  0.3s;
+    transform:0.3s;
+    background-color: #E0BB56;
+}

@@ -66,6 +66,45 @@ html, body {
     max-width: 100%;
     text-align: center;
     vertical-align: middle;
+    max-height: 100%;
+    justify-content: space-evenly;
+    align-items: center;
+    align-content: center;
+    height: 500px;
+    overflow: inherit;
+
+    /* mobile */
+    @media screen and (max-width: 600px) {
+        
+        flex-direction: column;
+    }
+}
+
+.main-content {
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    gap:200px;
+}
+
+
+.info-wrapper {
+    gap:30px;
+    font-family: 'Roboto Slab', serif;
+    display: flex;
+    justify-content: space-evenly;
+    overflow:inherit;
+    /* desktop */
+    @media screen and (min-width: 600vw) {
+        flex-direction: row;
+    }
+
+    /* mobile */
+    @media screen and (max-width: 600px) {
+        flex-direction: column;
+    }
+    
+    
 }
 
 .header {
@@ -82,18 +121,34 @@ html, body {
 }
 
 .image {
-    /* desktop; ratio = 0.603 */
-    @media screen and (min-width: 600px) {
-        width: 580px;
-        height: 350px;
-    }
-
+    /* desktop; ratio = 0.603 
+    this is the div for the image
+    */
+   
     /* mobile */
     @media screen and (max-width: 600px) {
         width: 90vw;
         height: 55vw;
     }
+}   
+/* atrributes for the team pic image */
+.teampic { 
+    border-radius: 15px;
+    height:400px;
+    max-width: 100%;
+
+    /* mobile */
+    @media screen and (max-width: 600px) {
+        width: 100%;
+        height: 100%;
+    }
+    
 }
+
+.info-card {
+    height: 400px;
+}
+
 
 .paragraph {
     text-align: center;

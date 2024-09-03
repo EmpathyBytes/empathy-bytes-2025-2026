@@ -50,7 +50,7 @@ function App() {
                     </Grid>
                     <Grid xs={4} container className="" alignItems="center" justifyContent="center">
                         <div style={{ transform: 'scale(0.8)'}}>    
-                            <img src={MockUp}></img>
+                            <img src={MockUp} alt="Mockup"></img>
                         </div>
                     </Grid>
                     <Grid xs={4} container className="" alignItems="center" justifyContent="center">

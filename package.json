@@ -26,14 +26,14 @@
     "@splidejs/splide": "^4.1.4",
     "@splidejs/splide-extension-grid": "^0.4.1",
     "gatsby": "^5.6.0",
-    "gatsby-source-drupal": "^6.6.0",
+    "gatsby-source-drupal": "^6.13.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.11.0",
     "react-material-ui-carousel": "^3.4.2",
     "react-multi-carousel": "^2.8.2",
     "styled-components": "^6.1.1",
-    "three": "^0.150.1",
+    "three": "^0.169.0",
     "use-device-pixel-ratio": "^1.1.2"
   },
   "devDependencies": {

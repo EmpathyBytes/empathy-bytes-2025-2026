@@ -3,7 +3,7 @@
  */
 module.exports = {
   flags: {
-    DEV_SSR : true
+    DEV_SSR : false
   },
   siteMetadata: {
     siteUrl: `https://www.yourdomain.tld`,
@@ -13,7 +13,7 @@ module.exports = {
     {
       resolve: `gatsby-source-drupal`,
       options: {
-        baseUrl: `https://www.empathybytes.library.gatech.edu`,
+        baseUrl: `https://empathybytes.library.gatech.edu/`
       },
     },
   ],

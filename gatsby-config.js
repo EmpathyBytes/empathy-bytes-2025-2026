@@ -13,7 +13,7 @@ module.exports = {
     {
       resolve: `gatsby-source-drupal`,
       options: {
-        baseUrl: `https://www.empathybytes.library.gatech.edu`,
+        baseUrl: `https://empathybytes.library.gatech.edu/`
       },
     },
   ],

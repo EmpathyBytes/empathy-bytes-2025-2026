@@ -61,6 +61,20 @@ html, body {
     z-index: -10;
 }
 
+#learn-more {
+    padding: 50px;
+    background-color: #004B87;
+    /* padding-bottom: 400px; */
+    text-align: center;
+}
+
+#learn-more .learn-more-section {
+    background-color: #003057; /* Change to your desired background color */
+    margin: 0px 150px 0px 150px;
+    padding: 25px; /* Add padding or other styling as needed */
+    /* Center-align the text */
+  }
+
 .info {
     padding: 3% 0 2% 5%;
     max-width: 100%;
@@ -107,6 +121,8 @@ html, body {
     
 }
 
+
+
 .header {
     font-family: 'Roboto Slab', serif;
     /* desktop */
@@ -148,6 +164,7 @@ html, body {
 .info-card {
     height: 400px;
 }
+
 
 
 .paragraph {

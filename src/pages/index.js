@@ -21,6 +21,8 @@ import Carousel from 'react-material-ui-carousel'
 import useMediaQuery from '@mui/material/useMediaQuery';
 
 import InfoCard from "../components/infocard";
+import LearnCard from "../components/learncard";
+
 
 function IndexPage() {
   const matches = useMediaQuery('(min-width:700px)'); 
@@ -68,6 +70,21 @@ function IndexPage() {
                 />
               </div>
             </div>
+          </div>
+
+          <div id="learn-more" className="learn-more">
+          <div className="info-wrapper">
+          <div className="info-card">
+                <LearnCard 
+                  title="Want to Learn More?"
+                  body="Check out our Experience and Project Pages to learn more about our work!"
+                  link="/experiences"
+                  btnTitle="Experiences"
+                  link2="/projects"
+                  btnTitle2="Projects"
+                />
+            </div>
+            </div>  
           </div>
       </Layout>
     )

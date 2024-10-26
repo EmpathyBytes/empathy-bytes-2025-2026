@@ -1,6 +1,7 @@
 .projectsContainer {
     padding: 5% 15%;
     display: block;
+    
 }
 
 .projectsTitle {
@@ -51,16 +52,17 @@
 }
 
 .project-nav-text:hover {
-    background-color: #003057;
+    background-color: #E0BB56;
+    color: #003057;
     cursor: pointer;
     transition: background-color 200ms linear;
 }
 
 .project-navBG {
     display: flex;
-    background-color: #1B3F66;
+    background-color: #004B87;
     border-radius: 150px;
-    width: 90%;
+    width: 100%;
     height: 50%;
     top: 50px;
     margin: auto;

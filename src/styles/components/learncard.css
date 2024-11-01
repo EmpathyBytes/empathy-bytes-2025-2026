@@ -1,6 +1,6 @@
 /*This is the card wrapper containing the card */
-.card-wrapper {
-    max-height:400px;
+.card2-wrapper {
+    max-height:200px;
 }
 /* The mui card component containing the card-content */
 .card2 {
@@ -16,10 +16,10 @@
 }
 
 /* The inner part of the card containing all the objects like the title, body, and button*/
-.card-content {
+.card2-content {
     display:flex;
     flex-direction: column;
-    align-items: flex-end;
+    align-items: center;
     gap:10px;
 }
 
@@ -45,7 +45,7 @@
 }
 
 /*The button for the card that links to another page*/
-.button2 {
+.button {
     display: flex;
     width: 200px;
     height: 50px;
@@ -53,13 +53,17 @@
     align-items: center;
     gap: 20px;
     border-radius: 50px;
-    background: #004B87;
+    background: #FFF;
+    color: #004B87;
+    font-weight: bolder;
     flex-direction: row;
-    align-self: flex-end;
+    align-self: center;
+    margin-left: 20px;
+    margin-right: 20px;
     
 }
 
-.button2:hover {
+.button:hover {
     transition:  0.3s;
     transform:0.3s;
     background-color: #E0BB56;

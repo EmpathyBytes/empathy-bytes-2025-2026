@@ -15,11 +15,11 @@ import { Link } from "gatsby"
  */
 function LearnCard(props) {
     return (
-      <div className="card-wrapper">
+      <div className="card2-wrapper">
         <Box>
           <React.Fragment>
             <Card className="card2">
-              <CardContent className="card-content">
+              <CardContent className="card2-content">
                   <Typography variant="h1" component="div" className="header">
                       {props.title}
                   </Typography>

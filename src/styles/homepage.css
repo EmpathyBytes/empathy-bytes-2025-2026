@@ -61,22 +61,23 @@ html, body {
     z-index: -10;
 }
 
-#learn-more {
-    padding: 50px;
+#learn-more-home {
+    
     background-color: #004B87;
-    /* padding-bottom: 400px; */
+    padding-bottom: 12vh;
+    height: 100%;
     text-align: center;
 }
 
-#learn-more .learn-more-section {
+#learn-more-home .learn-more-home-section {
     background-color: #003057; /* Change to your desired background color */
-    margin: 0px 150px 0px 150px;
+    /* margin: 0px 150px 0px 150px; */
     padding: 25px; /* Add padding or other styling as needed */
     /* Center-align the text */
   }
 
 .info {
-    padding: 3% 0 2% 5%;
+    /* padding: 3% 0 2% 5%; */
     max-width: 100%;
     text-align: center;
     vertical-align: middle;
@@ -108,6 +109,8 @@ html, body {
     display: flex;
     justify-content: space-evenly;
     overflow:inherit;
+
+    
     /* desktop */
     @media screen and (min-width: 600vw) {
         flex-direction: row;

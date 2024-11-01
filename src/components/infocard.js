@@ -27,17 +27,6 @@ function InfoCard(props) {
                   <Typography variant="body1" className="content">
                       {props.body}
                   </Typography>
-      
-                  <CardActions>
-                  <Link style={{ textDecoration: 'none' }} to={props.link}>
-                    <Button className="button">
-                      {props.btnTitle}
-                      <img src={Icon} alt="View Page"></img>
-                    </Button>
-                    </Link>
-                      
-                      
-                  </CardActions>
                   
               </CardContent>
             </Card>

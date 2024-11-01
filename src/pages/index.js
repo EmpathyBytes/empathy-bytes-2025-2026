@@ -65,16 +65,16 @@ function IndexPage() {
                   body="Empathy Bytes is a student run research project focused on creating immersive technology and media centered around empathy. 
                   We think outside traditional modes of communication and documentation to create radical and unique experiences. Our research 
                   currently focuses on identifying and presenting distinct communities connected to Georgia Tech."
-                  link="/contact"
-                  btnTitle="Learn More"
+                  // link="/contact"
+                  // btnTitle="Learn More"
                 />
               </div>
             </div>
           </div>
 
-          <div id="learn-more" className="learn-more">
+          <div id="learn-more-home" className="learn-more-home"> 
           <div className="info-wrapper">
-          <div className="info-card">
+          <div className="learn-card">
                 <LearnCard 
                   title="Want to Learn More?"
                   body="Check out our Experience and Project Pages to learn more about our work!"

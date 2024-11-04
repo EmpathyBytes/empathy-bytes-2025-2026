@@ -56,13 +56,21 @@ function Newnav({ transparent }) {
               alt="Empathy Bytes Logo"
             />
             </Link>
-            <h1 className="nav-title"> Empathy Bytes</h1>
+            <h2 className="body"> Empathy Bytes</h2>
           </div>
             <nav ref={navRef}>
-                  <Link to={"/projects"}>Projects</Link>
-                  <Link to={"/experiences"}>Experiences</Link>
-                  <Link to={"/about"}>About</Link>
-                  <Link to={"/contact"}>Contact</Link>
+                  <Link to={"/projects"}>
+                    <h3 className="pages">Projects</h3>
+                  </Link>
+                  <Link to={"/experiences"}>
+                    <h3 className="pages">Experiences</h3>
+                  </Link>
+                  <Link to={"/experiences"}>
+                    <h3 className="pages">About</h3>
+                  </Link>
+                  <Link to={"/experiences"}>
+                    <h3 className="pages">Contact</h3>
+                  </Link>
                   <button className="nav-btn nav-close-btn" onClick={showNavbar}>
                       <FaTimes/>
                   </button>

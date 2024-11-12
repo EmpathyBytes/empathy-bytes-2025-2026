@@ -10,10 +10,12 @@ import Grid from '@mui/material/Grid';
 
 import "../styles/experiencesIndividual.css";
 import "../styles/all.css";
+import { Title } from "@mui/icons-material";
 
 function web() {
     return(
         <Layout>
+            <title>Web Team</title>
             <div className="top-banner" style={{backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.5)), url(${Banner})`}}>
                 <h1 className="header-experiences">Web Team</h1>
             </div>

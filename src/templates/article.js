@@ -14,6 +14,7 @@ function Article({data}) {
 
     return (
         <Layout>
+            <title>{[post.title]}</title>
             <div className="articleContainer">
             {post.relationships.field_audio && 
                 <div className="articleImageContainer">

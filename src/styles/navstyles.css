@@ -28,6 +28,7 @@
     justify-content: space-between;
     padding: 1rem 2rem;
     background-color: #002a45;
+    z-index: 15;
     
   }
 
@@ -51,10 +52,7 @@
     align-items: center;
   }
 
-  .nav-btn {
-    display: none;
-  }
-
+  
 
   h1, h2 {
     font-family: "Roboto Slab", serif;
@@ -145,6 +143,37 @@
     height: var(--navbar-scrolled-height)
   }
   
+
+/*For a more user friendly mobile navigatio bar*/
+  nav.responsive_nav {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: auto;
+    height: auto;
+    background-color: var(--color-navyblue);
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 2ren 1rem;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+    z-index: 10;
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  nav.responsive_nav a {
+    text-align: center;
+  }
+
+  .nav-close-btn {
+    align-self: flex-end;
+    font-size: 1.5rem;
+    color: white;
+  }
+
+
   /*.navbar-grid-right {
     grid-column: 2;
     display: flex;

@@ -32,7 +32,13 @@ function Newnav({ transparent }) {
     const navRef = useRef();
 
     const showNavbar = () => {
-        navRef.current.classList.toggle("responsive_nav");
+        const nav = navRef.current;
+        if (nav.classList.contains("responsive_nav")) {
+          nav.classList.remove("responsive_nav")
+        } else {
+          nav.classList.add("responsive_nav")
+        }
+        //navRef.current.classList.toggle("responsive_nav");
     }
 
     useEffect(() => {

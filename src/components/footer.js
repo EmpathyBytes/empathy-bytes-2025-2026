@@ -30,7 +30,7 @@ function Footer(props) {
           <h1 className="text-heading">General</h1>
           <div className="text-anchor-container">
 
-          <Link className="text-anchor" to="">Home</Link>
+          <Link className="text-anchor" to="/">Home</Link>
           <Link className="text-anchor" to="/about">About Us</Link>
           <Link className="text-anchor" to="/contact">Contact</Link>
           </div>

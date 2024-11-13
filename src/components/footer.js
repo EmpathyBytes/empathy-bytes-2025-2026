@@ -51,10 +51,10 @@ function Footer(props) {
           <h1 className="text-heading">Communities</h1>
           
           <div className="text-anchor-container">
-          <Link className="text-anchor" to="/collections/distance-math/">Distance Math</Link>
-          <Link className="text-anchor" to="/collections/covid-freshman/">Covid Freshman</Link>
-          <Link className="text-anchor" to="/collections/makerspaces/">Makerspace</Link>
-          <Link className="text-anchor" to="/articles">Miscellaneous</Link>
+          <Link className="text-anchor" to="/projects/distance-math/">Distance Math</Link>
+          <Link className="text-anchor" to="/projects/covid-freshman/">Covid Freshman</Link>
+          <Link className="text-anchor" to="/projects/makerspaces/">Makerspace</Link>
+          <Link className="text-anchor" to="/projects/miscellaneous">Miscellaneous</Link>
           </div>
         </Grid> }
 

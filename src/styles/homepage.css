@@ -124,8 +124,6 @@ html, body {
     
 }
 
-
-
 .header {
     font-family: 'Roboto Slab', serif;
     /* desktop */
@@ -167,7 +165,6 @@ html, body {
 .info-card {
     height: 400px;
 }
-
 
 
 .paragraph {

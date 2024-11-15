@@ -21,7 +21,7 @@ function Article({data}) {
                     <div className="articleTitleInfo">
                         <h1 className="articleTitle">{post.title}</h1>
                         <h3 className="authorInfo"> By {post.field_author}</h3>
-                        <audio className="articleAudio" src = {post.relationships.field_audio != null ? "https://www.empathybytes.library.gatech.edu" + post.relationships.field_audio.path.alias : null} controls>
+                        <audio className="articleAudio" src = {post.relationships.field_audio != null ? "https://empathybytes.library.gatech.edu" + post.relationships.field_audio.path.alias : null} controls>
                         </audio>
                     </div>
                 </div>

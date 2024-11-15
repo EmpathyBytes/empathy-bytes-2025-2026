@@ -10,7 +10,6 @@ import Grid from '@mui/material/Grid';
 
 import "../styles/experiencesIndividual.css";
 import "../styles/all.css";
-import { Title } from "@mui/icons-material";
 
 function web() {
     return(

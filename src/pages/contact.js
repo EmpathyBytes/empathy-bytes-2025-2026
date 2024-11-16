@@ -93,3 +93,10 @@ function ContactPage() {
 }
 
 export default ContactPage;
+
+export const Head = () => (
+  <>
+  <link rel="icon" type="image/png" href="https://educast.library.gatech.edu/static/empbytes-8c9db7ee75f110e619f7d85cb8b170c5.jpg" />
+  <title>Contact</title>
+  </>
+  )

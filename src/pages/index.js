@@ -125,4 +125,9 @@ function IndexPage() {
 
 export default IndexPage;
 
-export const Head = () => <title>Home Page</title>
+export const Head = () => (
+<>
+<link rel="icon" type="image/png" href="https://educast.library.gatech.edu/static/empbytes-8c9db7ee75f110e619f7d85cb8b170c5.jpg" />
+<title>Home</title>
+</>
+)

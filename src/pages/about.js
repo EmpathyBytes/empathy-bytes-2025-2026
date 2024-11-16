@@ -8,7 +8,6 @@ import "../styles/all.css"
 import AboutComponent from "../components/aboutComponent" // everything relating to the images
 
 import Grid from '@mui/material/Grid';
-import { Divider } from "@mui/material";
 
 function AboutPage({ data }) {
 
@@ -228,3 +227,10 @@ export const query = graphql`
 `;
 
 export default AboutPage;
+
+export const Head = () => (
+  <>
+  <link rel="icon" type="image/png" href="https://educast.library.gatech.edu/static/empbytes-8c9db7ee75f110e619f7d85cb8b170c5.jpg" />
+  <title>About</title>
+  </>
+  )

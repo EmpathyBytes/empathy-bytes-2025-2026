@@ -39,7 +39,7 @@ function Newnav({ transparent }) {
           nav.classList.add("responsive_nav")
         }
         //navRef.current.classList.toggle("responsive_nav");
-    }
+    };
 
     useEffect(() => {
         // console.log(withPrefix("/test"));
@@ -65,16 +65,20 @@ function Newnav({ transparent }) {
             <h2 className="body"> Empathy Bytes</h2>
           </div>
             <nav ref={navRef}>
+                  {/* Projects Page */}
                   <Link to={"/projects"}>
                     <h3 className="pages">Projects</h3>
                   </Link>
+                  {/* Experiences page */}
                   <Link to={"/experiences"}>
                     <h3 className="pages">Experiences</h3>
                   </Link>
-                  <Link to={"/experiences"}>
+                  {/* About page */}
+                  <Link to={"/about"}>
                     <h3 className="pages">About</h3>
                   </Link>
-                  <Link to={"/experiences"}>
+                  {/* Contact page */}
+                  <Link to={"/contact"}>
                     <h3 className="pages">Contact</h3>
                   </Link>
                   <button className="nav-btn nav-close-btn" onClick={showNavbar}>
@@ -86,7 +90,7 @@ function Newnav({ transparent }) {
               </button>
           
         </header>
-    )
+    );
 }
 
 export default Newnav;

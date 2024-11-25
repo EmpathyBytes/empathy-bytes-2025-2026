@@ -18,7 +18,9 @@
   body {
     font-family: "Roboto Slab", serif;
     margin: 0;
-    font-weight: bold;
+    font-weight: normal;
+    /*The below line was causing changes in footer*/
+    /*font-weight: bold; */
     /* overflow-x: hidden; */
   }
 
@@ -42,10 +44,6 @@
 
   }
 
-  h2 {
-    font-weight: 500;
-    font-size: xx-large;
-  }
 
   nav {
     display: flex;
@@ -54,10 +52,15 @@
 
   
 
-  h1, h2 {
+  h2 {
     font-family: "Roboto Slab", serif;
     margin: 0;
+    font-weight: 500;
+    font-size: xx-large;
+    padding: 0;
   }
+
+
 
   
   /* Desktop classes will disappear at breakpoint
@@ -76,6 +79,14 @@
       display: none;
     }
     .mobile {
+      display: block;
+    }
+
+    nav {
+      display: none;
+    }
+
+    .nav-btn {
       display: block;
     }
   }
@@ -104,28 +115,16 @@
     background: var(--color-navyblue);
   }
   
-  .navbar-link, .pages {
-    /*text-decoration: none; */
-    color: white; /* Change this to proper color in the future */
-    /*font-size: 1.25rem;*/
-    font-family: "Roboto Slab", serif;
-    margin: 0;
-    font-weight: 500;
-    font-size: 25px;
-    margin-right: 2rem;
-  }
-  
-  .navbar-selected {
-    font-weight: bold;
+  .navbar-link:hover, .navbar-link:focus {
+    color: #ffa500;
+    outline: none;
   }
   
   .nav-container {
-    display: grid;
-    width: 100%;
-    transition: var(--tr);
-    height: var(--navbar-top-height);
-    grid-template-columns: 1fr 1fr;
+    display: flex;
     align-items: center;
+    width: 100%;
+    padding: 0 1rem;
   }
   
   .scrolled.nav-container {
@@ -155,7 +154,7 @@
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
-    padding: 2ren 1rem;
+    padding: 2rem 1rem;
     box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease-in-out;
     z-index: 10;
@@ -244,11 +243,29 @@
     opacity: 50%;
   }
   
-  .navbar-link:hover .navbar-link-bar {
+
+  .pages {
+    font-family: "Roboto Slab", serif;
+    font-weight: 500;
+    font-size: x-large;
+    margin-right: 30px;
+  }
+  .navbar-link:hover .pages-hover {
     transform: scale3d(1, 1, 1);
     opacity: 100%;
+    color: var(--color-navyblue);
   }
   
+
+  .nav-btn {
+    color: white;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    margin-left: 3rem;
+    display: none;
+  }
+
   .row {
     display: flex;
   }
@@ -304,3 +321,8 @@
     padding-bottom: 5rem;
   }
 
+
+  img {
+    margin: 0;
+    padding: 0;
+  }

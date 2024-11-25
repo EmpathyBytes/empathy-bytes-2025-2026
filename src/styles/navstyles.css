@@ -19,9 +19,6 @@
     font-family: "Roboto Slab", serif;
     margin: 0;
     font-weight: normal;
-    /*The below line was causing changes in footer*/
-    /*font-weight: bold; */
-    /* overflow-x: hidden; */
   }
 
   header {
@@ -51,7 +48,7 @@
   }
 
   
-
+  /* h2 components will have the following font, font weight, and font size */
   h2 {
     font-family: "Roboto Slab", serif;
     margin: 0;
@@ -235,12 +232,17 @@
   }
   
 
+  /* This css rule for pages sets the font to Roboto Slab with serif as backup. */
+  /* The font weight is made 500 to give the page links a medium bold look and its font size is x-large */
+  /* The pages also have a 40px margin to the right to ensure the last page isn't directly next to the end of the screen */
   .pages {
     font-family: "Roboto Slab", serif;
     font-weight: 500;
     font-size: x-large;
     margin-right: 40px;
   }
+
+  /* When you hover over any of the pages in the navbar-link, they turn navyblue*/
   .navbar-link:hover .pages-hover {
     transform: scale3d(1, 1, 1);
     opacity: 100%;

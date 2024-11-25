@@ -172,12 +172,6 @@
     color: white;
   }
 
-
-  /*.navbar-grid-right {
-    grid-column: 2;
-    display: flex;
-    justify-content: space-evenly;
-  }*/
   
   .logo {
 
@@ -201,10 +195,7 @@
         .nav-btn {
           display: block;
         }
-      /*transition: var(--tr);
-      margin: 1rem 0 .5rem 0;
-      height: var(--logo-scrolled-height);
-      border-radius: 50%; */
+
       }
 
   }
@@ -248,7 +239,7 @@
     font-family: "Roboto Slab", serif;
     font-weight: 500;
     font-size: x-large;
-    margin-right: 30px;
+    margin-right: 40px;
   }
   .navbar-link:hover .pages-hover {
     transform: scale3d(1, 1, 1);

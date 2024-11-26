@@ -12,6 +12,7 @@ import "../styles/all.css"
 function Media() {
     return(
         <Layout>
+            <title>Media Team</title>
             <div className="top-banner" style={{backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.5)), url(${Banner})`}}>
                 <h1 className="header-experiences">Media Team</h1>
             </div>

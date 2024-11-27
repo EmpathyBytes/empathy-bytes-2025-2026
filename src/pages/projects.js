@@ -7,6 +7,7 @@ import Grid from "@mui/material/Grid";
 import "../styles/projects.css"
 import "../styles/all.css"
 import useMediaQuery from '@mui/material/useMediaQuery';
+import ScrollToTop from "../components/scrollToTop";
 
 /**
  * This is the projects homepage. It displays all of the
@@ -59,6 +60,7 @@ const ProjectsPage = ({data}) => {
         return (
             <div className="bg">
                 <Layout>
+                <ScrollToTop/>
                     <div className="projectsContainer">
                         <h1 className="projectsTitle">Interview Collections</h1>
 

@@ -21,6 +21,8 @@ import Carousel from 'react-material-ui-carousel'
 import useMediaQuery from '@mui/material/useMediaQuery';
 
 import InfoCard from "../components/infocard";
+import LearnCard from "../components/learncard";
+
 
 function IndexPage() {
   const matches = useMediaQuery('(min-width:700px)'); 
@@ -63,11 +65,31 @@ function IndexPage() {
                   body="Empathy Bytes is a student run research project focused on creating immersive technology and media centered around empathy. 
                   We think outside traditional modes of communication and documentation to create radical and unique experiences. Our research 
                   currently focuses on identifying and presenting distinct communities connected to Georgia Tech."
-                  link="/contact"
-                  btnTitle="Learn More"
+                  // link="/contact"
+                  // btnTitle="Learn More"
                 />
               </div>
             </div>
+          </div>
+
+        {/* This is the learn more section */}
+        <div id="learn-more-home" className="learn-more-home"> 
+          {/* Had to use info-wrapper instead of a custom since 
+          it made the text have a weird yellow underline */}
+          <div className="info-wrapper">
+          <div className="learn-card">
+                <LearnCard 
+                  title="Want to Learn More?"
+                  body="Check out our Experience and Project Pages to learn more about our work!"
+
+                  // Currently the links don't go to the top of the pages
+                  link="/experiences"
+                  btnTitle="Experiences"
+                  link2="/projects"
+                  btnTitle2="Projects"
+                />
+            </div>
+            </div>  
           </div>
       </Layout>
     )
@@ -117,6 +139,26 @@ function IndexPage() {
                 />
               </div>
             </div>
+          </div>
+
+          {/* This is the learn more section */}
+          <div id="learn-more-home" className="learn-more-home"> 
+          {/* Had to use info-wrapper instead of a custom since 
+          it made the text have a weird yellow underline */}
+          <div className="info-wrapper">
+          <div className="learn-card">
+                <LearnCard 
+                  title="Want to Learn More?"
+                  body="Check out our Experience and Project Pages to learn more about our work!"
+
+                  // Currently the links don't go to the top of the pages
+                  link="/experiences"
+                  btnTitle="Experiences"
+                  link2="/projects"
+                  btnTitle2="Projects"
+                />
+            </div>
+            </div>  
           </div>
       </Layout>
     )

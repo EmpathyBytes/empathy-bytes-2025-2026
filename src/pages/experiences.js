@@ -20,12 +20,14 @@ import App from "../images/experiences/app.png"
 import Web from "../images/experiences/web.png"
 import Media from "../images/experiences/mediaBTS.jpg"
 
+import ScrollToTop from "../components/scrollToTop";
 
 function ExperiencesPage() {
   const matches = useMediaQuery('(min-width:600px)');
   if (matches) {
     return (
       <Layout>
+        <ScrollToTop/>
         <div className="container-experiences-homepage">
           <Grid container spacing={4}
                 alignItems="center"
@@ -97,6 +99,7 @@ function ExperiencesPage() {
             </Grid>
           </Grid>
         </div>
+        
       </Layout>
     );
   } else {

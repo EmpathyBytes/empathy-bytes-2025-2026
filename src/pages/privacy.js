@@ -1,11 +1,13 @@
 import React from "react";
 import Layout from "../components/layout";
 import "../styles/contactPage.css";
+import PrivacyPolicy from "../components/privacyPolicy";
 
 function PrivacyPolicyPage() {
 
   return (
     <Layout>
+      <PrivacyPolicy/>
     </Layout>
   );
 }

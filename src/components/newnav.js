@@ -19,7 +19,6 @@ function Newnav({ transparent }) {
     const breakpoint = 80;
     const [scroll, setScroll] = useState("");
     // console.log(withPrefix("/test"));
-    console.log("This is a test hi");
     const onScroll = () => {
         let scroll = 0;
         if (typeof window !== undefined) {

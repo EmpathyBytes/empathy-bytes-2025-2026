@@ -33,6 +33,7 @@ function Footer(props) {
           <Link className="text-anchor" to="/">Home</Link>
           <Link className="text-anchor" to="/about">About Us</Link>
           <Link className="text-anchor" to="/contact">Contact</Link>
+          <Link className="text-anchor" to="/privacy">Privacy Policy</Link>
           </div>
         </Grid> }
 

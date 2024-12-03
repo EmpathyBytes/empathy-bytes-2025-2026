@@ -55,14 +55,14 @@ function Newnav({ transparent }) {
     return (
         <header>
           <div className="nav-logo">
-            <Link to={"/"}>
+            <Link to={"/"} className="logo-link">
             <img
               className= "logo"
               src= {Logo}
               alt="Empathy Bytes Logo"
             />
-            </Link>
             <h2 className="body"> Empathy Bytes</h2>
+            </Link>
           </div>
             <nav ref={navRef}>
                   {/* Projects Page */}

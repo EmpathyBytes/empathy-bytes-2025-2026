@@ -14,6 +14,9 @@
     --color-buzzgold: #eaaa00;
   }
   
+  /* Sets the default font for the entire page to Roboto Slab w/serif as a fallback font */
+  /* no margin in html/body elements */
+  /* Font weight defaulted to normal - around 400 weight value */
   html,
   body {
     font-family: "Roboto Slab", serif;
@@ -21,6 +24,13 @@
     font-weight: normal;
   }
 
+  /* Header element has the following properties: */
+  /* Header is a flex container, so child elements will be arranged using flexbox */
+  /* Align-items: center vertically centers the children in the center */
+  /* Justify-content leaves equal space between elements*/
+  /* Padding adds internal spacing 1rem on top & bottom, 2rem on left & right */
+  /* Background Color is set */
+  /* Z-index places the header above other elements on the page, ensuring it remains visibile if overlap */
   header {
     display: flex;
     align-items: center;
@@ -28,10 +38,13 @@
     padding: 1rem 2rem;
     background-color: #002a45;
     z-index: 15;
-    
   }
 
-
+  /* Makes nav-logo a flex container */
+  /* Aligns elements inside the container in the middle */
+  /* Aligns child elements to the start of the main axis*/
+  /* Removes default margins */
+  /* Adds 0.5 spacing between flex items */
   .nav-logo {
     display: flex;
     align-items: center;
@@ -42,6 +55,9 @@
   }
 
 
+  /* applies to all nav elements in html */
+  /* makes nav a flex container */
+  /* all the items inside nav are centered vertically */
   nav {
     display: flex;
     align-items: center;
@@ -318,4 +334,14 @@
   img {
     margin: 0;
     padding: 0;
+  }
+
+  /* Enables users to click on Empathy Bytes text next to logo to get to the home page */
+  .logo-link {
+    /* turns logo-link into flex container */
+    display: flex;
+    /* Items in logo-link are vertically centered */
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none; /*removes underline under text*/
   }

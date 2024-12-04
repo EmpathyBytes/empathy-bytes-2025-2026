@@ -14,6 +14,7 @@ import "../styles/all.css";
 function web() {
     return(
         <Layout>
+            <title>Web Team</title>
             <div className="top-banner" style={{backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.5)), url(${Banner})`}}>
                 <h1 className="header-experiences">Web Team</h1>
             </div>
@@ -52,7 +53,7 @@ function web() {
 
                     <Grid item xs={12}>
                         <div className="blue-box" style={{width: "920px", display: "flex", justifyContent: "center"}}>
-                            <img src={technologies} style={{width:"50%"}}/>
+                            <img src={technologies} style={{width:"50%"}} alt="Gatsby and Drupal Logo"/>
                         </div>
                     </Grid>
                 </Grid>
@@ -79,3 +80,10 @@ function web() {
 }
 
 export default web;
+
+export const Head = () => (
+    <>
+    <link rel="icon" type="image/png" href="https://educast.library.gatech.edu/static/empbytes-8c9db7ee75f110e619f7d85cb8b170c5.jpg" />
+    <title>Web Team</title>
+    </>
+    )

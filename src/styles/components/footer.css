@@ -103,8 +103,8 @@ footer a:hover{
     flex-direction: column;
     text-align: left;
     align-items: center;
-    
-  }
+    gap: 22px;
+}
 
 .footer-logo {
     @media only screen and (min-width: 480px) {

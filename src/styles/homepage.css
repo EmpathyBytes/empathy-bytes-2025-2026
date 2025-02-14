@@ -62,7 +62,6 @@ html, body {
 }
 
 #learn-more-home {
-    
     background-color: #004B87;
     padding-bottom: 7vh;
     height: 50vh;
@@ -99,7 +98,7 @@ html, body {
     justify-content: center;
     align-items: center;
     align-content: center;
-    gap:200px;
+    /*gap:200px;*/
 }
 
 
@@ -147,10 +146,11 @@ html, body {
         width: 90vw;
         height: 55vw;
     }
-}   
-/* atrributes for the team pic image */
+}
+
+/* Attributes for the team pic image */
 .teampic { 
-    border-radius: 15px;
+    border-radius: 3%;
     height: 52vh;
     max-width: 100%;
 
@@ -235,16 +235,17 @@ html, body {
 }
 
 
-/* Taken from My Portfolio Site */
+/* Arrows on Header*/
 .arrows {
-	width: 60px;
-	height: 72px;
+	width: 7%;
+	height: 80%;
+	/*Need changes for mobile screen*/
 }
 
 .arrows path {
 	stroke: #FFFFFF;
 	fill: transparent;
-	stroke-width: 2px;	
+	stroke-width: .5%;	
 	animation: arrow 4s infinite;
 	-webkit-animation: arrow 4s infinite; 
 }

@@ -78,11 +78,10 @@ jobs:
         with:
           path: |
             ~/.npm
-            ~/.yarn
             node_modules
             public
             .cache
-          key: ${{ runner.os }}-gatsby-build-${{ hashFiles('**/package-lock.json', '**/yarn.lock') }}
+          key: ${{ runner.os }}-gatsby-build-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-gatsy-build-
       - name: Install dependencies

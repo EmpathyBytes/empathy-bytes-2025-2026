@@ -52,7 +52,6 @@ function web() {
 
                     <Grid item xs={12}>
                         <div className="blue-box" style={{width: "920px", display: "flex", justifyContent: "center"}}>
-                            <img src={technologies} style={{width:"50%"}} alt="Gatsby and Drupal Logo"/>
                         </div>
                     </Grid>
                 </Grid>

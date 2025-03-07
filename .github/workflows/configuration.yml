@@ -11,7 +11,7 @@ on:
 
   # Runs on pull requests to generate the deployment preview
   pull_request:
-    types: [opened, synchronize, reopened, closed]
+    types: [opened, synchronize, reopened]
 
   # Allows you to run the workflow manually from Actions
   workflow_dispatch:
@@ -77,11 +77,14 @@ jobs:
         uses: actions/cache@v4
         with:
           path: |
+            ~/.npm
+            ~/.yarn
+            node_modules
             public
             .cache
-          key: ${{ runner.os }}-gatsby-build-${{ hashFiles('public') }}
+          key: ${{ runner.os }}-gatsby-build-${{ hashFiles('**/package-lock.json', '**/yarn.lock') }}
           restore-keys: |
-            ${{ runner.os }}-gatsby-build-
+            ${{ runner.os }}-gatsy-build-
       - name: Install dependencies
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
       - name: Build with Gatsby
@@ -91,16 +94,23 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
+          name: gatsby-build
           path: ./public
 
   # Deployment job
   deploy:
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+      url: "https://EmpathyBytes.github.io/Empathy-Bytes-2024-2025"
     runs-on: ubuntu-latest
     needs: build
     steps:
+      - name: Download artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: gatsby-build
+          path: ./public
+          
       - name: Deploy PR Preview
         if: github.event_name == 'pull_request'
         uses: actions/deploy-pages@v4
@@ -108,18 +118,34 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
           target_branch: gh-pages
+          destination_dir: previews/pr-${{ github.event.pull_request.number }}
           
       - name: Deploy Main Site
-        id: deployment
         if: github.event_name == 'push' && github.ref == 'refs/heads/master'
         uses: actions/deploy-pages@v4
+        with: 
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
 
-      - name: Close Preview
-        if: github.event_name == 'pull_request' && github.event.action == 'closed'
+  cleanup-preview:
+    runs-on: ubuntu-latest
+    needs: deploy
+    if: github.event_name == 'pull_request' && github.event.action == 'closed'
+    steps: 
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: gh-pages
+          fetch-depth: 0
+      - name: Remove PR Preview
         run: |
-          git fetch origin gh-pages
-          git checkout gh-pages
           git pull origin gh-pages
-          git rm -r --ignore-unmatch ${{ github.head_ref }}
-          git commit -m "Cleaned preview for ${{ github.head_ref }}"
-          git push origin gh-pages
+          rm -rf "./previews/pr-${{ github.event.pull_request.number }}"
+          git add -A
+          if git diff --quiet --cached; then 
+            echo "No changes to commit."
+          else
+            git commit -m "Removed Preview for ${{ github.event.pull_request.number }}"
+            git push origin gh-pages
+          fi
+        

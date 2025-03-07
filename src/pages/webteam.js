@@ -25,9 +25,8 @@ function web() {
                     <Grid item xs={12}>
                         <div className="blue-box">
                         <p>
-                            Our team develops website utilized to showcase our research. Our team is split into
-                            two subteams for Web Development and Design. We created the site using GatsbyJS and Decoupled Drupal.
-                            We also are experimenting with Web 3D using Three.js.
+                            Our team develops this website that showcases our research and our projects building towards utilizing empathy in technology. We are split into
+                            two teams: Frontend and Backend. We design in Figma and implement using GatsybyJS, GraphQL, and Drupal.
                         </p>
                         </div>
                     </Grid>

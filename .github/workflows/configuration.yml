@@ -86,6 +86,10 @@ jobs:
             ${{ runner.os }}-gatsy-build-
       - name: Install dependencies
         run: npm ci
+      - name: Rebuild dependencies
+        run: npm rebuild
+      - name: Clear Gatsby cache
+        run: gatsby clean
       - name: Build with Gatsby
         env:
           PREFIX_PATHS: 'true'

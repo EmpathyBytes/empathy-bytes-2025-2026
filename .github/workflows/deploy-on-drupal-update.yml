@@ -10,6 +10,11 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Install dependencies
+        run: |
+          npm install -g gatsby-cli  # Install Gatsby globally
+          npm ci  # Clean install of package.json
+      
       - name: Build
         run: |
           echo "Drupal content was updated! Rebuilding static site..."

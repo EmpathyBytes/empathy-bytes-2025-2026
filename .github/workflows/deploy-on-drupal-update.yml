@@ -7,22 +7,16 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
+      - name: Checkout repository
         uses: actions/checkout@v4
 
       - name: Set up Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
-          node-version: '18.x'
+          node-version: '18'  # Use a compatible Node.js version for Gatsby
 
       - name: Install dependencies
-        run: |
-          npm install -g gatsby-cli
-          npm ci  # Regular install
-          npm rebuild lmdb --update-binary  # Force rebuild LMDB
-          npm rebuild @parcel/watcher --update-binary  # Also rebuild Parcel watcher
-      
-      - name: Build
-        run: |
-          echo "Drupal content was updated! Rebuilding static site..."
-          npm run deploy
+        run: npm install
+
+      - name: Deploy
+        run: npm run deploy  # Assumes `gatsby build` is defined in package.json scripts

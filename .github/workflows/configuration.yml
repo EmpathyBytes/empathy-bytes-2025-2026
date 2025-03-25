@@ -89,7 +89,7 @@ jobs:
       - name: Rebuild dependencies
         run: npm rebuild
       - name: Clear Gatsby cache
-        run: gatsby clean
+        run: npx gatsby clean
       - name: Build with Gatsby
         env:
           PREFIX_PATHS: 'true'

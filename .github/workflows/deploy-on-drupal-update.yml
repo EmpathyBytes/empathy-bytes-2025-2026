@@ -1,0 +1,16 @@
+name: Deploy on Drupal Content Update
+
+on:
+  repository_dispatch
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Build
+        run: |
+          echo "Drupal content was updated! Rebuilding static site..."
+          npm run deploy

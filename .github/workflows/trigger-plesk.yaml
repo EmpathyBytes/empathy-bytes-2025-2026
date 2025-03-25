@@ -1,0 +1,14 @@
+name: Trigger Plesk on Push to Main
+
+on:
+  push:
+    branches:
+      - gh-pages
+
+jobs:
+  notify-plesk:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Call Plesk Webhook
+        run: |
+          curl -X POST "https://web-plesk57.oit.gatech.edu:8443/modules/git/public/web-hook.php?uuid=d71883be-a513-6f80-308d-86c9c8fb5fec"

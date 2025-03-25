@@ -16,7 +16,10 @@ jobs:
           node-version: '18'  # Use a compatible Node.js version for Gatsby
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci
+
+      - name: Install Gatsby CLI
+        run: npm install -g gatsby-cli@2.12.34
 
       - name: Deploy
         run: npm run deploy  # Assumes `gatsby build` is defined in package.json scripts

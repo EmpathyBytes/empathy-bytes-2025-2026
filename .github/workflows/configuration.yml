@@ -83,7 +83,7 @@ jobs:
             .cache
           key: ${{ runner.os }}-gatsby-build-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
-            ${{ runner.os }}-gatsy-build-
+            ${{ runner.os }}-gatsby-build-
       - name: Install dependencies
         run: npm ci
       - name: Rebuild dependencies

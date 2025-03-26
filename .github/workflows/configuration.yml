@@ -82,7 +82,7 @@ jobs:
           PREFIX_PATHS: 'true'
         run: npm run build
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-artifact@v3
         with:
           name: gatsby-build
           path: ./public

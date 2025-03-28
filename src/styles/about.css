@@ -1,6 +1,6 @@
 @import "./fonts.css";
 .container {
-    padding-top: 180px;
+    padding-top: 11.25rem;
 }
 .people-container {
     padding: 1% 5% 1% 5%;
@@ -8,13 +8,13 @@
 
 .header-about {
     font-family: 'Roboto Slab', serif;
-    @media screen and (min-width: 600px) {
+    @media screen and (min-width: 34.7vw) {
       font-size: 2rem;
     }
-    @media screen and (min-width: 1200px) {
+    @media screen and (min-width: 69.4vw) {
       font-size: 2.5rem;
     }
-    @media screen and (max-width: 800px) {
+    @media screen and (max-width: 46.3vw) {
       font-size: 1.75rem;
     }
     color: white;
@@ -23,13 +23,13 @@
 
 .paragraph-about {
     font-family: 'Roboto', sans-serif;
-    @media screen and (min-width: 600px) {
+    @media screen and (min-width: 34.7vw) {
       font-size: 1.25rem;
     }
-    @media screen and (min-width: 1200px) {
+    @media screen and (min-width: 69.4vw) {
       font-size: 1.5rem;
     }
-    @media screen and (max-width: 800px) {
+    @media screen and (max-width: 46.3vw) {
       font-size: 1rem;
     }
     color: white;
@@ -69,16 +69,16 @@
 
 .about-nav-text {
   display: inline-block;
-  font-size: 18px;
+  font-size: 1.125rem;
   font-family: 'Roboto Slab', sans-serif;
   color: #003057;
-  padding: 17px 40px;
+  padding: 1.063rem 2.5rem;
   background-color: white;
-  border-radius: 150px;
+  border-radius: 9.375rem;
   text-align: center;
   cursor: pointer;
   text-decoration: none;
-  min-width: 100px;
+  min-width: 5.7vw;
 }
 
 .about-nav-text:hover {
@@ -90,10 +90,10 @@
 .navBG {
     display: flex;
     /* background-color: #1B3F66; */
-    border-radius: 150px;
+    border-radius: 8.7vw;
     width: 90%;
     height: 50%;
-    top: 50px;
+    top: 5vh;
     margin: auto;
     justify-content: center;
 }
@@ -184,13 +184,13 @@
 
   .a-c-full {
     background-color: #004B87;
-    top: 120px;
+    top: 7.5rem;
   }
 
   .about-nav-past {
     text-align: center;
-    height: 150px;
-    width: 300px;
+    height: 15vh;
+    width: 17.4vw;
     margin: auto;
   }
 
@@ -198,7 +198,7 @@
     color: #E0BB56;
     text-align: center;
     font-family: "Roboto Slab";
-    font-size: 25px;
+    font-size: 1.563rem;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
@@ -207,17 +207,17 @@
   
   .about-card {
     display: flex;
-    padding: 20px 95px 33px 130px;
+    padding: 2vh 5.5vw 3.3vh 7.5vw;
     flex-direction: column;
     align-items: center;
-    gap: 5px;
-    border-radius: 86px;
+    gap: 0.313rem;
+    border-radius: 5.375rem;
     background: var(--Primary-Blue, #003057);
   }
 
   .horizontal-line {
     width: 70%;
-    height: 2px;
+    height: 0.2vh;
     margin: 0 auto;
     background: #FFF;
   }

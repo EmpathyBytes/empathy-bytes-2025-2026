@@ -20,7 +20,7 @@ header {
     align-items: center;
     justify-content: space-between;
     height: var(--navbar-scrolled-height);
-    padding: 0px 0px 0px 40px;
+    padding: 0vh 0vw 0vh 2.3vw;
     background-color: var(--color-navyblue);
     color: white;
     position: fixed;
@@ -40,11 +40,11 @@ nav a {
 
 nav {
     display: flex;
-    height: 100px;
+    height: 10vh;
     margin-left: auto;
     justify-content: right;
     align-items: center;
-    gap: 60px;
+    gap: 3.5vw;
     flex-shrink: 0;
 }
 
@@ -58,7 +58,7 @@ nav a:hover {
 }
 
 header .nav-btn {
-    padding: 5px;
+    padding: 0.3vw;
     cursor: pointer;
     background: transparent;
     border: none;
@@ -71,26 +71,26 @@ header .nav-btn {
 
 .nav-logo {
     display: flex;
-    height: 100px;
-    width: 500px;
+    height: 10vh;
+    width: 29vw;
     justify-content: center;
     align-items: center;
-    gap: 22px;
+    gap: 1.375rem;
   }
 
   .nav-title {
     color: #FFF;
     font-family: 'Roboto Slab', sans-serif;
-    font-size: 32px;
+    font-size: 2rem;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
-    width:381px;
+    width:22rem;
     justify-content: flex-start;
   }
 
 
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 59.3vw) {
     header .nav-btn {
         visibility: visible;
         opacity: 1;

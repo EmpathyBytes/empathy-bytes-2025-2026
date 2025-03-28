@@ -62,7 +62,6 @@ html, body {
 }
 
 #learn-more-home {
-    
     background-color: #004B87;
     padding-bottom: 7vh;
     height: 50vh;
@@ -72,7 +71,7 @@ html, body {
 #learn-more-home .learn-more-home-section {
     background-color: #003057; /* Change to your desired background color */
     /* margin: 0px 150px 0px 150px; */
-    padding: 25px; /* Add padding or other styling as needed */
+    padding: 5vh; /* Add padding or other styling as needed */
     /* Center-align the text */
   }
 
@@ -85,7 +84,7 @@ html, body {
     justify-content: space-evenly;
     align-items: center;
     align-content: center;
-    height: 500px;
+    height: 65vh; /* CHANGED */
     overflow: inherit;
 
     /* mobile */
@@ -99,12 +98,12 @@ html, body {
     justify-content: center;
     align-items: center;
     align-content: center;
-    gap:200px;
+    /*gap:200px;*/
 }
 
 
 .info-wrapper {
-    gap:30px;
+    gap: 5%;
     font-family: 'Roboto Slab', serif;
     display: flex;
     justify-content: space-evenly;
@@ -147,11 +146,12 @@ html, body {
         width: 90vw;
         height: 55vw;
     }
-}   
-/* atrributes for the team pic image */
+}
+
+/* Attributes for the team pic image */
 .teampic { 
-    border-radius: 15px;
-    height:400px;
+    border-radius: 3%;
+    height: 52vh;
     max-width: 100%;
 
     /* mobile */
@@ -163,7 +163,7 @@ html, body {
 }
 
 .info-card {
-    height: 400px;
+    height: 40vh;
 }
 
 
@@ -171,7 +171,7 @@ html, body {
     text-align: center;
     font-family: 'Roboto', sans-serif;
 
-    font-size: 1.3vw;
+    font-size: 3vw;
     /* desktop */
     @media screen and (min-width: 600px) {
         font-size: 1.3vw;
@@ -235,16 +235,17 @@ html, body {
 }
 
 
-/* Taken from My Portfolio Site */
+/* Arrows on Header*/
 .arrows {
-	width: 60px;
-	height: 72px;
+	width: 7%;
+	height: 80%;
+	/*Need changes for mobile screen*/
 }
 
 .arrows path {
 	stroke: #FFFFFF;
 	fill: transparent;
-	stroke-width: 2px;	
+	stroke-width: .5%;	
 	animation: arrow 4s infinite;
 	-webkit-animation: arrow 4s infinite; 
 }

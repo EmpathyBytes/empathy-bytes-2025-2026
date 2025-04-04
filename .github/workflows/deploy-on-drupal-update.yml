@@ -3,7 +3,8 @@ env:
     GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 on:
-  repository_dispatch
+  repository_dispatch:
+    types: [drupal-update]
 
 jobs:
   build-and-deploy:

@@ -10,4 +10,4 @@ jobs:
     steps:
       - name: Call Plesk Webhook
         run: |
-          curl -X POST "https://web-plesk57.oit.gatech.edu:8443/modules/git/public/web-hook.php?uuid=d71883be-a513-6f80-308d-86c9c8fb5fec"
+          curl -X POST "http://web-plesk57.oit.gatech.edu:8443/modules/git/public/web-hook.php?uuid=d71883be-a513-6f80-308d-86c9c8fb5fec"

@@ -8,13 +8,14 @@ jobs:
   notify-plesk:
     runs-on: ubuntu-latest
     steps:
-      - name: Call Plesk Webhook
-        run: |
-          curl -X POST \
-          "https://web-plesk57.oit.gatech.edu:8443/modules/git/public/web-hook.php?uuid=d71883be-a513-6f80-308d-86c9c8fb5fec" \
-          -H "Content-Type: application/json" \
-          -d '{
-            "event": "${{ github.event_name }}",
-            "repo": "${{ github.repository }}",
-            "commit": "${{ github.sha }}"
-          }'
+      - name: Trigger Plesk Webhook via Dedicated Action
+        uses: distributhor/workflow-webhook@v2
+        with:
+          webhook_url: "https://web-plesk57.oit.gatech.edu:8443/modules/git/public/web-hook.php?uuid=d71883be-a513-6f80-308d-86c9c8fb5fec"
+          data: |
+            {
+              "event": "${{ github.event_name }}",
+              "repo": "${{ github.repository }}",
+              "commit": "${{ github.sha }}"
+            }
+          headers: '{"Content-Type": "application/json"}'

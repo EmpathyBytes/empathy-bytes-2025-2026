@@ -38,7 +38,7 @@
   },
   "devDependencies": {
     "gh-pages": "^5.0.0"
-  }
+  },
   "optionalDependencies": {
     "@parcel/watcher-linux-x64-glibc": "2.2.0"
   }

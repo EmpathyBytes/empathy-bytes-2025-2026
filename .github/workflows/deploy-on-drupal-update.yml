@@ -29,3 +29,11 @@ jobs:
           git config --global user.email "actions@github.com"
           git remote set-url origin https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
           npm run deploy
+
+      - name: Trigger notification
+        run: |
+          curl -X POST \
+          -H "Authorization: token ${GH_TOKEN}" \
+          -H "Accept: application/vnd.github.v3+json" \
+          https://api.github.com/repos/${{ github.repository }}/dispatches \
+          -d '{"event_type":"gh-pages-updated"}'

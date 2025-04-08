@@ -8,15 +8,23 @@ jobs:
   call-webhook:
     runs-on: ubuntu-latest
     steps:
-      - name: Send POST to Plesk Webhook
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Add Plesk SSH Key
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.PLESK_SSH_KEY }}  # Private key stored in GitHub Secrets
         run: |
-          curl -X POST \
-            "https://web-plesk57.oit.gatech.edu:8443/modules/git/public/web-hook.php?uuid=d71883be-a513-6f80-308d-86c9c8fb5fec" \
-            -H "Content-Type: application/json" \
-            -d '{
-              "event": "${{ github.event_name }}",
-              "repository": "${{ github.repository }}",
-              "commit": "${{ github.sha }}",
-              "ref": "${{ github.ref }}",
-              "sender": "${{ github.actor }}"
-            }'
+          mkdir -p ~/.ssh
+          echo "$SSH_PRIVATE_KEY" > ~/.ssh/github-actions-key
+          chmod 600 ~/.ssh/github-actions-key
+          echo "${{ secrets.PLESK_SSH_HOST }} ecdsa-sha2-nistp256 AAAAB3NzaC1yc2EAAA... (etc.)" >> ~/.ssh/known_hosts
+
+      - name: Execute POST Request via SSH
+        run: |
+          ssh -i ~/.ssh/github-actions-key \
+              -o StrictHostKeyChecking=no \
+              ${{ secrets.PLESK_SSH_USER }}@${{ secrets.PLESK_SSH_HOST }} \
+              "curl -k -X POST 'https://localhost:8443/modules/git/public/web-hook.php?uuid=d71883be-a513-6f80-308d-86c9c8fb5fec' \
+              -H 'Content-Type: application/json' \
+              -d '{\"event\":\"triggered_from_github\"}'"

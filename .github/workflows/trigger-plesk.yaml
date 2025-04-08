@@ -5,10 +5,18 @@ on:
     types: [gh-pages-updated]
 
 jobs:
-  notify-plesk:
+  call-webhook:
     runs-on: ubuntu-latest
     steps:
-      - name: Trigger Plesk Webhook via Dedicated Action
-        uses: distributhor/workflow-webhook@v3.0.8
-        with:
-          webhook_url: "https://web-plesk57.oit.gatech.edu:8443/modules/git/public/web-hook.php?uuid=d71883be-a513-6f80-308d-86c9c8fb5fec"
+      - name: Send POST to Plesk Webhook
+        run: |
+          curl -X POST \
+            "https://web-plesk57.oit.gatech.edu:8443/modules/git/public/web-hook.php?uuid=d71883be-a513-6f80-308d-86c9c8fb5fec" \
+            -H "Content-Type: application/json" \
+            -d '{
+              "event": "${{ github.event_name }}",
+              "repository": "${{ github.repository }}",
+              "commit": "${{ github.sha }}",
+              "ref": "${{ github.ref }}",
+              "sender": "${{ github.actor }}"
+            }'

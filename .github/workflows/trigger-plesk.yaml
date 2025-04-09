@@ -9,15 +9,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Execute POST Request via SSH
-        uses: appleboy/ssh-action@v1.0.0
-        with:
-          host: ${{ secrets.PLESK_SSH_HOST }}       # e.g., web-plesk57.oit.gatech.edu
-          username: ${{ secrets.PLESK_SSH_USER }}    # e.g., plesk-user
-          key: ${{ secrets.PLESK_SSH_KEY }}          # Private key stored in GitHub Secrets
-          port: 22                                   # Default SSH port
-          script: |
-            curl -k -X POST \
-              https://web-plesk57.oit.gatech.edu:8443/modules/git/public/web-hook.php?uuid=d71883be-a513-6f80-308d-86c9c8fb5fec \
-              -H "Content-Type: application/json" \
-              -d '{"event":"triggered_from_github"}'
-          script_stop: true  # Ensures connection closes after command completes
+        run: |
+          echo "Signaled Plesk Webhook"

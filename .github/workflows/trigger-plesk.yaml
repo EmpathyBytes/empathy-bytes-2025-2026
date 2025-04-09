@@ -8,28 +8,16 @@ jobs:
   call-webhook:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repo
-        uses: actions/checkout@v4
-
-      - name: SSH into Plesk and run POST request
-        env:
-          SSH_HOST: ${{ secrets.PLESK_SSH_HOST }}
-          SSH_USER: ${{ secrets.PLESK_SSH_USER }}
-          SSH_KEY: ${{ secrets.PLESK_SSH_KEY }}
-        run: |
-          # Write private key to file
-          mkdir -p ~/.ssh
-          echo "$SSH_KEY" > ~/.ssh/id_rsa
-          chmod 600 ~/.ssh/id_rsa
-
-          # SSH into Plesk and execute CURL
-          ssh -o StrictHostKeyChecking=no -p 22 $SSH_USER@$SSH_HOST << 'EOF'
+      - name: Execute POST Request via SSH
+        uses: appleboy/ssh-action@v1.0.0
+        with:
+          host: ${{ secrets.PLESK_SSH_HOST }}       # e.g., web-plesk57.oit.gatech.edu
+          username: ${{ secrets.PLESK_SSH_USER }}    # e.g., plesk-user
+          key: ${{ secrets.PLESK_SSH_KEY }}          # Private key stored in GitHub Secrets
+          port: 22                                   # Default SSH port
+          script: |
             curl -k -X POST \
               "https://localhost:8443/modules/git/public/web-hook.php?uuid=d71883be-a513-6f80-308d-86c9c8fb5fec" \
               -H "Content-Type: application/json" \
-              -d '{"event":"triggered_from_github_actions"}'
-          EOF
-              ${{ secrets.PLESK_SSH_USER }}@${{ secrets.PLESK_SSH_HOST }} \
-              "curl -k -X POST 'https://localhost:8443/modules/git/public/web-hook.php?uuid=d71883be-a513-6f80-308d-86c9c8fb5fec' \
-              -H 'Content-Type: application/json' \
-              -d '{\"event\":\"triggered_from_github\"}'"
+              -d '{"event":"triggered_from_github"}'
+          script_stop: true  # Ensures connection closes after command completes

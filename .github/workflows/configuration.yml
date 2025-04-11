@@ -96,7 +96,7 @@ jobs:
     needs: build
     steps:
       - name: Download artifact
-        uses: actions/download-pages-artifact@v3
+        uses: actions/download-pages-artifact@v1
         with:
           name: gatsby-build
           path: ./public

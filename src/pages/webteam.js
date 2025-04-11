@@ -54,9 +54,11 @@ function web() {
                 padding: "30px 20px",
                 color: "white",
                 textAlign: "center",
-                margin: "20px auto",
+                margin: "70px auto 20px auto", /* Increased top margin to prevent overlap */
                 borderRadius: "50px",
-                maxWidth: "90%"
+                maxWidth: "90%",
+                position: "relative",
+                zIndex: "2"
             }}>
                 <h2 style={{color: "#FFD700", marginBottom: "20px"}}>About Us</h2>
                 <p style={{maxWidth: "80%", margin: "0 auto", lineHeight: "1.6"}}>

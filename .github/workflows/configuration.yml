@@ -41,7 +41,7 @@ defaults:
 jobs:
   # Build job
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -92,11 +92,11 @@ jobs:
     environment:
       name: github-pages
       url: "https://EmpathyBytes.github.io/Empathy-Bytes-2024-2025"
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     needs: build
     steps:
       - name: Download artifact
-        uses: actions/download-pages-artifact@v2
+        uses: actions/download-pages-artifact@v3
         with:
           name: gatsby-build
           path: ./public

@@ -89,50 +89,56 @@ jobs:
 
   # Deployment job
   deploy:
-    name: Deploy PR Preview
-    if: github.event_name == 'pull_request' && github.event.action != 'closed'
-    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request'
     needs: build
+    runs-on: ubuntu-latest
+    permissions: 
+      contents: write
+      pages: write
+      id-token: write 
     steps: 
-      - name: Set PR Number
-        id: pr
-        run: echo "PR_NUMBER=${{ github.event.pull_request.number }}" >> $GITHUB_ENV
+      - name: Checkout
+        uses: actions/checkout@v4
 
-      - name: Download Build site
-        uses: actions/download-pages-artifact@v3
+      - name: Download artifact
+        uses: actions/download-artifact@v4
         with: 
-          name: gatsby-build
-          path: ./public
+          name: gatsby
+          path: public
 
-      - name: Deploy to fork's gh-pages
+      - name: Set up Git user
         run: | 
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git clone --depth 1 --branch gh-pages https://github.com/${{ github.repository }}.git preview-deploy
-          cd preview-deploy
-          mkdir -p previews/pr-${{ env.PR_NUMBER }}
-          rm -rf previews/pr-${{ env.PR_NUMBER }}/*
-          cp -r ../public/* previews/pr-${{ env.PR_NUMBER }}/
-          git add . 
-          git commit -m "PR #${{ env.PR_NUMBER }} preview deployment from Github Actions"
-          git push origin gh-pages
+      
+      - name: Deploy preview to gh-pages/pr-<PR number>
+        env: 
+          PR_NUMBER: ${{ github.event.number }}"
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: | 
+          PREVIEW_PATH=pr-${PR_NUMBER}
+          git clone --depth=1 --branch gh-pages https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git gh-pages
+          cd gh-pages
+          rm -rf ${PREVIEW_PATH}
+          mkdir -p ${PREVIEW_PATH}
+          cp -r ../public/* ${PREVIEW_PATH}
+          touch .nojekyll
+          git add ${PREVIEW_PATH}
+          git commit -m "Deploy Preview for PR #${PR_NUMBER}"
+          git push
 
   cleanup-preview:
-    name: Cleanup PR Preview
-    if: github.event_name == 'pull_request' && github.event.action == 'closed'
+    if: github.event.action == 'closed'
     runs-on: ubuntu-latest
-    needs: deploy
+    permissions: 
+      contents: write
     steps:
-      - name: Set PR number
-        run: echo "PR_NUMBER=${{ github.event.pull_request.number }}" >> $GITHUB_ENV
-
-      - name: Remove preview from fork's gh-pages
+      - name: Checkout gh-pages
         run : | 
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git clone --depth 1 --branch gh-pages https://github.com/${{ github.repository }}.git preview-deploy
-          cd preview-deploy
-          rm -r previews/pr-${{ env.PR_NUMBER }}
-          git add .
-          git commit -m "Remove PR #${{ env.PR_NUMBER }} preview on PR close"
-          git push origin gh-pages
+          git clone --depth=1 --branch gh-pages https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git gh-pages
+          cd gh-pages
+          rm -rf pr-${{ github.event.pull_request.number }}
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git config -am "Clean up preview for PR #${{ github.event.pull_request.number }}"
+          git push

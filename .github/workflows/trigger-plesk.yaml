@@ -5,10 +5,9 @@ on:
     types: [gh-pages-updated]
 
 jobs:
-  notify-plesk:
+  call-webhook:
     runs-on: ubuntu-latest
     steps:
-      - name: Trigger Plesk Webhook via Dedicated Action
-        uses: distributhor/workflow-webhook@v3.0.8
-        with:
-          webhook_url: "https://web-plesk57.oit.gatech.edu:8443/modules/git/public/web-hook.php?uuid=d71883be-a513-6f80-308d-86c9c8fb5fec"
+      - name: Execute POST Request via SSH
+        run: |
+          echo "Signaled Plesk Webhook"

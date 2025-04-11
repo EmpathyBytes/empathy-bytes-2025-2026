@@ -89,56 +89,52 @@ jobs:
 
   # Deployment job
   deploy:
-    if: github.event_name == 'pull_request'
-    needs: build
+    environment:
+      name: github-pages
+      url: "https://EmpathyBytes.github.io/Empathy-Bytes-2024-2025"
     runs-on: ubuntu-latest
-    permissions: 
-      contents: write
-      pages: write
-      id-token: write 
-    steps: 
-      - name: Checkout
-        uses: actions/checkout@v4
-
+    needs: build
+    steps:
       - name: Download artifact
-        uses: actions/download-artifact@v4
+        uses: actions/download-pages-artifact@v2
+        with:
+          name: gatsby-build
+          path: ./public
+          
+      - name: Deploy PR Preview
+        if: github.event_name == 'pull_request'
+        uses: actions/deploy-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
+          target_branch: gh-pages
+          destination_dir: previews/pr-${{ github.event.pull_request.number }}
+          
+      - name: Deploy Main Site
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+        uses: actions/deploy-pages@v4
         with: 
-          name: gatsby
-          path: public
-
-      - name: Set up Git user
-        run: | 
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-      
-      - name: Deploy preview to gh-pages/pr-<PR number>
-        env: 
-          PR_NUMBER: ${{ github.event.number }}"
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: | 
-          PREVIEW_PATH=pr-${PR_NUMBER}
-          git clone --depth=1 --branch gh-pages https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git gh-pages
-          cd gh-pages
-          rm -rf ${PREVIEW_PATH}
-          mkdir -p ${PREVIEW_PATH}
-          cp -r ../public/* ${PREVIEW_PATH}
-          touch .nojekyll
-          git add ${PREVIEW_PATH}
-          git commit -m "Deploy Preview for PR #${PR_NUMBER}"
-          git push
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
 
   cleanup-preview:
-    if: github.event.action == 'closed'
     runs-on: ubuntu-latest
-    permissions: 
-      contents: write
-    steps:
-      - name: Checkout gh-pages
-        run : | 
-          git clone --depth=1 --branch gh-pages https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git gh-pages
-          cd gh-pages
-          rm -rf pr-${{ github.event.pull_request.number }}
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git config -am "Clean up preview for PR #${{ github.event.pull_request.number }}"
-          git push
+    needs: deploy
+    if: github.event_name == 'pull_request' && github.event.action == 'closed'
+    steps: 
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: gh-pages
+          fetch-depth: 0
+      - name: Remove PR Preview
+        run: |
+          git pull origin gh-pages
+          rm -rf "./previews/pr-${{ github.event.pull_request.number }}"
+          git add -A
+          if git diff --quiet --cached; then 
+            echo "No changes to commit."
+          else
+            git commit -m "Removed Preview for ${{ github.event.pull_request.number }}"
+            git push origin gh-pages
+          fi

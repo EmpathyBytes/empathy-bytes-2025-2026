@@ -93,7 +93,7 @@ jobs:
     runs-on: ubuntu-latest
     if: github.event_name == 'push' || github.event_name == 'pull_request' || github.event_name == 'workflow_dispatch'
     environment: 
-      name: gh-pages
+      name: gatsby-build
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Deploy to gh pages

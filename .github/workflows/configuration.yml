@@ -99,8 +99,8 @@ jobs:
         if: github.event_name == 'pull_request'
         uses: actions/deploy-pages@v4
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public
+          token: ${{ secrets.GITHUB_TOKEN }}
+          artifact_name: gatsby-build
           target_branch: gh-pages
           destination_dir: previews/pr-${{ github.event.pull_request.number }}
           
@@ -108,8 +108,8 @@ jobs:
         if: github.event_name == 'push' && github.ref == 'refs/heads/master'
         uses: actions/deploy-pages@v4
         with: 
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public
+          token: ${{ secrets.GITHUB_TOKEN }}
+          artifact_name: gatsby-build
 
   cleanup-preview:
     runs-on: ubuntu-latest

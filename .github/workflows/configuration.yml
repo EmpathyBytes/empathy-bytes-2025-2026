@@ -94,13 +94,7 @@ jobs:
     environment:
       name: github-pages
       url: "https://EmpathyBytes.github.io/Empathy-Bytes-2024-2025"
-    steps:
-      - name: Download artifact
-        uses: actions/download-pages-artifact@v3
-        with:
-          name: gatsby-build
-          path: ./public
-          
+    steps:          
       - name: Deploy PR Preview
         if: github.event_name == 'pull_request'
         uses: actions/deploy-pages@v4

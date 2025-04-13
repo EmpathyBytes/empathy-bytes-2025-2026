@@ -98,36 +98,31 @@ jobs:
 
   # Deployment job
   deploy:
+    if: github.ref == 'refs/heads/master'
     needs: build
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/master'
     environment: 
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
 
-    permissions:
-      pages: write
-      id-token: write
-
     steps:
       - name: Deploy main branch
+        id: deployment
         uses: actions/deploy-pages@v4
         with: 
           artifact_name: main-site
 
   deploy-preview:
+    if: github.event_name == 'pull_request'
     needs: build
     runs-on: ubuntu-latest
-    if: github.event_name == 'pull_request'
     environment:
-      name: pr-${{ github.event.pull_request.number }}
-
-    permissions:
-      pages: write
-      id-token: write
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
-      - name: Deploy PR Preview
+      - name: Deploy Preview to Github Pages
+        id: deployment
         uses: actions/deploy-pages@v4
         with: 
           artifact_name: pr-preview-${{ github.event.pull_request.number }}

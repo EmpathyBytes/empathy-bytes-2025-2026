@@ -78,47 +78,58 @@ jobs:
         run: npm rebuild
       - name: Clear Gatsby cache
         run: npx gatsby clean
-      - name: Build with Gatsby
-        env:
-          PREFIX_PATHS: 'true'
+      - name: Build Gatsby
         run: npm run build
-      - name: Upload artifact
+
+      - name: Set artifact name
+        id: set-artifact
+        run: | 
+          if [[ "${{ github.event_name }}" == "pull_request" ]]; then
+            echo "name=pr-preview-${{ github.event.pull_request.number }}" >> $GITHUB_OUTPUT
+          else
+            echo "name=main-site" >> $GITHUB_OUTPUT
+          fi
+      
+      - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./public
+          name: ${{ steps.set-artifact.outputs.name }}
 
   # Deployment job
   deploy:
     needs: build
     runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/master'
+    environment: 
+      name: github-pages
+
+    permissions:
+      pages: write
+      id-token: write
 
     steps:
       - name: Deploy main branch
-        if: github.ref == 'refs/heads/master'
-        id: deploy
         uses: actions/deploy-pages@v4
         with: 
-          publish_dir: ./public
-          target_branch: gh-pages
-          destination_dir: main
-        env:
-          GITHUB_ENV: github_pages
+          artifact_name: main-site
 
   deploy-preview:
     needs: build
     runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request'
+    environment:
+      name: pr-${{ github.event.pull_request.number }}
+
+    permissions:
+      pages: write
+      id-token: write
 
     steps:
       - name: Deploy PR Preview
-        if: github.event_name == 'pull_request'
-        id: deploy
         uses: actions/deploy-pages@v4
         with: 
-          publish_dir: ./public
-          target_branch: gh-pages
-          destination_dir: previews/pr-${{ github.event.pull_request.number }}
-        env:
-          GITHUB_ENV: github_pages
+          artifact_name: pr-preview-${{ github.event.pull_request.number }}
 
   cleanup-preview:
     runs-on: ubuntu-latest

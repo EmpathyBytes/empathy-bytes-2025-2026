@@ -103,7 +103,7 @@ jobs:
     runs-on: ubuntu-latest
     environment: 
       name: github-pages
-      url: "https://EmpathyBytes.github.io/Empathy-Bytes-2024-2025"
+      url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
       - name: Deploy main branch

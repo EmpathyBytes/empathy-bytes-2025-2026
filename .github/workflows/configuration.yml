@@ -92,24 +92,25 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
 
+    steps:
+      - name: Deploy main branch
+        if: github.ref == 'refs/heads/main'
+        id: deploy
+        uses: actions/deploy-pages@v4
+
+      - name: Deploy PR Preview
+        if: github.event_name == 'pull_request'
+        id: deploy
+        uses: actions/deploy-pages@v4
+        with: 
+          publish_dir: ./public
+          target_branch: gh-pages
+          destination_dir: previews/pr-${{ github.event.pull_request.number }}
+          
     environment:
       name: ${{ github.ref == 'refs/heads/main' && 'github-pages' || format('preview-pr-{0}', github.event.pull_request.number) )}}
       url: ${{ steps.deploy.outputs.page_url }}
-
-      steps:
-        - name: Deploy main branch
-          if: github.ref == 'refs/heads/main'
-          id: deploy
-          uses: actions/deploy-pages@v4
-
-        - name: Deploy PR Preview
-          if: github.event_name == 'pull_request'
-          id: deploy
-          uses: actions/deploy-pages@v4
-          with: 
-            publish_dir: ./public
-            target_branch: gh-pages
-            destination_dir: previews/pr-${{ github.event.pull_request.number }}
+    
 
   cleanup-preview:
     runs-on: ubuntu-latest

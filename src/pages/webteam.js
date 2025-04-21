@@ -1,52 +1,91 @@
 import React from "react";
 import Layout from "../components/layout";
-import Banner from "../images/experiences/WebTeamBanner.png";
+import Banner from "../images/experiences/webSubteamBanner.jpg";
 import "../styles/experiencesIndividual.css";
 import "../styles/all.css";
 
+// Tech stack icons import
 import gatsbyIcon from "../images/subteam-icons/webteam-icons/gatsby-logo.avif";
 import figmaIcon from "../images/subteam-icons/webteam-icons/figma-logo.png";
 import jsIcon from "../images/subteam-icons/webteam-icons/js-logo.webp";
 import cssIcon from "../images/subteam-icons/webteam-icons/css-logo.png";
+// Import placeholder images for work examples
 import designPlaceholder from "../images/subteam-icons/webteam-icons/image-placeholder.jpeg";
 import projectPlaceholder from "../images/subteam-icons/webteam-icons/image-placeholder.jpeg";
 
 function web() {
-    return(
+    return (
         <Layout>
             <title>Web Team | Empathy Bytes</title>
             
             <div style={{
-                background: "var(--Secondary-Blue, #004B87)",
+                background: "#004B87",
                 minHeight: "100vh",
                 width: "100%",
                 position: "relative",
                 paddingBottom: "40px"
             }}>
             
-            {/* Banner Section with gradient overlay */}
+            {/* Banner Section with gradient overlay that fades into blue */}
             <div style={{
-                background: `linear-gradient(0deg, rgba(0, 0, 0, 0.44) 0%, rgba(0, 0, 0, 0.44) 100%), url(${Banner}) lightgray 0px 116.61px / 100% 25.4% no-repeat`,
-                height: "300px",
+                position: "relative",
+                height: "500px", /* Increased height even more */
                 display: "flex",
                 flexDirection: "column",
-                justifyContent: "center",
+                justifyContent: "center", /* Changed from flex-end to center to move content up */
                 alignItems: "center",
                 textAlign: "center",
-                color: "white"
+                color: "white",
+                paddingBottom: "0px" /* Removed padding at the bottom for text */
             }}>
-                <h3 style={{margin: "0", fontSize: "1.5rem", fontWeight: "normal"}}>The</h3>
-                <h1 style={{fontSize: "3.5rem", margin: "10px 0", fontWeight: "bold"}}>Web</h1>
-                <h2 style={{margin: "0", fontSize: "1.8rem", fontWeight: "normal"}}>Development Team</h2>
+                {/* Background image */}
+                <div style={{
+                    position: "absolute",
+                    top: 0,
+                    left: 0,
+                    right: 0,
+                    bottom: 0,
+                    backgroundImage: `url(${Banner})`,
+                    backgroundSize: "cover",
+                    backgroundPosition: "center top",
+                    backgroundRepeat: "no-repeat",
+                    zIndex: 0
+                }}></div>
+                
+                {/* Dark overlay */}
+                <div style={{
+                    position: "absolute",
+                    top: 0,
+                    left: 0,
+                    right: 0,
+                    bottom: 0,
+                    backgroundColor: "rgba(0, 0, 0, 0.4)",
+                    zIndex: 1
+                }}></div>
+                
+                {/* Blue gradient fade at bottom - moved lower to not overlap with text */}
+                <div style={{
+                    position: "absolute",
+                    bottom: "0px", /* Ensure it's at the very bottom */
+                    left: 0,
+                    right: 0,
+                    height: "150px", /* Reduced height to make gradient more concentrated at bottom */
+                    background: "linear-gradient(to top, #004B87 20%, rgba(0, 75, 135, 0.1) 80%, rgba(0, 75, 135, 0) 100%)",
+                    zIndex: 2
+                }}></div>
+                
+                <h3 style={{margin: "0", fontSize: "1.5rem", fontWeight: "normal", zIndex: 3, position: "relative"}}>The</h3>
+                <h1 style={{fontSize: "3.5rem", margin: "10px 0", fontWeight: "bold", zIndex: 3, position: "relative"}}>Web</h1>
+                <h2 style={{margin: "0", fontSize: "1.8rem", fontWeight: "normal", zIndex: 3, position: "relative"}}>Development Team</h2>
             </div>
             
             {/* About Us Section */}
             <div style={{
-                backgroundColor: "#003057",
+                backgroundColor: "#003057", 
                 padding: "30px 20px",
                 color: "white",
                 textAlign: "center",
-                margin: "40px auto 20px auto",
+                margin: "60px auto 20px auto", /* Increased top margin */
                 borderRadius: "15px",
                 maxWidth: "90%",
                 boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)"
@@ -88,7 +127,7 @@ function web() {
             
             {/* Frontend Section */}
             <div style={{
-                backgroundColor: "#003057", 
+                backgroundColor: "#004B87", 
                 padding: "30px 20px",
                 color: "white",
                 textAlign: "center",
@@ -171,7 +210,7 @@ function web() {
                 
                 {/* Designs Section */}
                 <div style={{
-                    backgroundColor: "var(--Secondary-Blue, #004B87)",
+                    backgroundColor: "#004B87",
                     padding: "30px 20px",
                     borderRadius: "15px",
                     marginBottom: "30px",

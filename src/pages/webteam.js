@@ -4,7 +4,7 @@ import Banner from "../images/experiences/webSubteamBanner.jpg";
 import "../styles/experiencesIndividual.css";
 import "../styles/all.css";
 
-// Tech stack icons import
+//icons
 import gatsbyIcon from "../images/subteam-icons/webteam-icons/gatsby-logo.avif";
 import figmaIcon from "../images/subteam-icons/webteam-icons/figma-logo.png";
 import jsIcon from "../images/subteam-icons/webteam-icons/js-logo.webp";
@@ -12,9 +12,12 @@ import cssIcon from "../images/subteam-icons/webteam-icons/css-logo.png";
 import drupalIcon from "../images/subteam-icons/webteam-icons/drupal-logo.png";
 import graphqlIcon from "../images/subteam-icons/webteam-icons/graphql-logo.png";
 
-// Import placeholder images for work examples
 import designPlaceholder from "../images/subteam-icons/webteam-icons/image-placeholder.jpeg";
 import projectPlaceholder from "../images/subteam-icons/webteam-icons/image-placeholder.jpeg";
+import redesignTemplate from "../images/subteam-icons/webteam-icons/webteam-assets/redesignTemplate.png";
+import kellyRedesign from "../images/subteam-icons/webteam-icons/webteam-assets/kellyRedesign.png";
+import mishaRedesign from "../images/subteam-icons/webteam-icons/webteam-assets/mishaRedesign.png";
+import tiffanyRedesign from "../images/subteam-icons/webteam-icons/webteam-assets/tiffanyRedesign.png";
 
 function Web() {
     // State to track which tab is active (frontend or backend)
@@ -25,20 +28,20 @@ function Web() {
     
     const slides = [
         {
-            image: designPlaceholder,
-            description: "Description of design #1"
+            image: redesignTemplate,
+            description: "Redesign of general template for subteam pages"
         },
         {
-            image: designPlaceholder,
-            description: "Description of design #2"
+            image: mishaRedesign,
+            description: "Redesign of interviews page by Misha"
         },
         {
-            image: projectPlaceholder,
-            description: "Description of design #3"
+            image: tiffanyRedesign,
+            description: "Redesign of landing page by Tiffany"
         },
         {
-            image: projectPlaceholder,
-            description: "Description of design #4"
+            image: kellyRedesign,
+            description: "Redesign of web team subteam page by Kelly"
         }
     ];
     
@@ -266,7 +269,7 @@ function Web() {
                     
                     {/* Tech Stack */}
                     <h3 style={{color: "#E0BB56", marginTop: "30px", marginBottom: "15px", fontSize: "1.2rem"}}>Tech Stack</h3>
-                    <div style={{display: "flex", justifyContent: "center", gap: "35px", marginTop: "15px"}}>
+                    <div style={{display: "flex", justifyContent: "center", gap: "120px", marginTop: "15px"}}>
                         <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
                             <div style={{ 
                                 width: "60px", 
@@ -275,18 +278,18 @@ function Web() {
                                 justifyContent: "center",
                                 alignItems: "center"
                             }}>
-                                <img src={drupalIcon} alt="Drupal" style={{width: "200px", height: "80px"}} />
+                                <img src={drupalIcon} alt="Drupal" style={{width: "300px", height: "150px"}} />
                             </div>
                         </div>
                         <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
                             <div style={{ 
-                                width: "60px", 
+                                width: "80px", 
                                 height: "60px", 
-                                display: "flex", 
+                                display: "flex",
                                 justifyContent: "center", 
                                 alignItems: "center"
                             }}>
-                                <img src={graphqlIcon} alt="GraphQL" style={{width: "150px", height: "80px"}} />
+                                <img src={graphqlIcon} alt="GraphQL" style={{width: "200px", height: "100px"}} />
                             </div>
                         </div>
                     </div>
@@ -409,7 +412,8 @@ function Web() {
                                 display: "flex",
                                 alignItems: "center",
                                 justifyContent: "center",
-                                cursor: "pointer"
+                                cursor: "pointer",
+                                margin: "0 15px"
                             }}
                         >
                             ←
@@ -427,7 +431,10 @@ function Web() {
                                 display: "flex",
                                 alignItems: "center",
                                 justifyContent: "center",
-                                cursor: "pointer"
+                                cursor: "pointer",
+                                margin: "0 15px",
+                                position: "relative",
+                                right: "15px"
                             }}
                         >
                             →

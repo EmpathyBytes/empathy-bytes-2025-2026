@@ -9,6 +9,9 @@ import gatsbyIcon from "../images/subteam-icons/webteam-icons/gatsby-logo.avif";
 import figmaIcon from "../images/subteam-icons/webteam-icons/figma-logo.png";
 import jsIcon from "../images/subteam-icons/webteam-icons/js-logo.webp";
 import cssIcon from "../images/subteam-icons/webteam-icons/css-logo.png";
+import drupalIcon from "../images/subteam-icons/webteam-icons/drupal-logo.png";
+import graphqlIcon from "../images/subteam-icons/webteam-icons/graphql-logo.png";
+
 // Import placeholder images for work examples
 import designPlaceholder from "../images/subteam-icons/webteam-icons/image-placeholder.jpeg";
 import projectPlaceholder from "../images/subteam-icons/webteam-icons/image-placeholder.jpeg";
@@ -16,10 +19,46 @@ import projectPlaceholder from "../images/subteam-icons/webteam-icons/image-plac
 function Web() {
     // State to track which tab is active (frontend or backend)
     const [activeTab, setActiveTab] = useState("frontend");
-
+    
+    // State to track current slide in the slideshow
+    const [currentSlide, setCurrentSlide] = useState(0);
+    
+    const slides = [
+        {
+            image: designPlaceholder,
+            description: "Description of design #1"
+        },
+        {
+            image: designPlaceholder,
+            description: "Description of design #2"
+        },
+        {
+            image: projectPlaceholder,
+            description: "Description of design #3"
+        },
+        {
+            image: projectPlaceholder,
+            description: "Description of design #4"
+        }
+    ];
+    
     // Function to handle tab switching
     const handleTabChange = (tab) => {
         setActiveTab(tab);
+    };
+    
+    // Functions to navigate slides
+    const nextSlide = () => {
+        setCurrentSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
+    };
+    
+    const prevSlide = () => {
+        setCurrentSlide((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
+    };
+    
+    // Function to go to a specific slide
+    const goToSlide = (index) => {
+        setCurrentSlide(index);
     };
 
     return (
@@ -108,12 +147,12 @@ function Web() {
             </div>
             
             {/* Team buttons */}
-            <div style={{display: "flex", justifyContent: "center", gap: "20px", marginTop: "10px"}}>
+            <div style={{display: "flex", justifyContent: "center", gap: "40px", marginTop: "60px", marginBottom: "60px"}}>
                 <button 
                     style={{
                         borderRadius: "100px",
                         backgroundColor: activeTab === "frontend" ? "#857437" : "#fff",
-                        color: "#000",
+                        color: activeTab == "frontend" ? "#FFFF": "#003057",
                         padding: "8px 30px",
                         border: "none",
                         fontWeight: "bold",
@@ -127,7 +166,7 @@ function Web() {
                 <button 
                     style={{
                         backgroundColor: activeTab === "backend" ? "#857437" : "#fff",
-                        color: "#000",
+                        color: activeTab == "backend" ? "#FFFF": "#003057",
                         padding: "8px 30px",
                         borderRadius: "20px",
                         border: "none",
@@ -154,13 +193,13 @@ function Web() {
                     maxWidth: "90%",
                     boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)"
                 }}>
-                    <h2 style={{color: "#FFD700", marginBottom: "20px", fontSize: "2rem"}}>Frontend</h2>
+                    <h2 style={{color: "#E0BB56", marginBottom: "20px", fontSize: "2rem"}}>Frontend</h2>
                     <p style={{maxWidth: "90%", margin: "0 auto", lineHeight: "1.6", fontSize: "1rem"}}>
                         The frontend team focuses on creating responsive, accessible, and engaging user interfaces that bring our research into life.
                     </p>
                     
                     {/* Tech Stack */}
-                    <h3 style={{color: "#FFD700", marginTop: "30px", marginBottom: "15px", fontSize: "1.5rem"}}>Tech Stack</h3>
+                    <h3 style={{color: "#E0BB56", marginTop: "30px", marginBottom: "15px", fontSize: "1.2rem"}}>Tech Stack</h3>
                     <div style={{display: "flex", justifyContent: "center", gap: "35px", marginTop: "15px"}}>
                         <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
                             <div style={{ 
@@ -170,7 +209,7 @@ function Web() {
                                 justifyContent: "center", 
                                 alignItems: "center"
                             }}>
-                                <img src={gatsbyIcon} alt="Gatsby" style={{width: "40px", height: "40px"}} />
+                                <img src={gatsbyIcon} alt="Gatsby" style={{width: "150px", height: "60px"}} />
                             </div>
                         </div>
                         <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
@@ -181,7 +220,7 @@ function Web() {
                                 justifyContent: "center", 
                                 alignItems: "center"
                             }}>
-                                <img src={figmaIcon} alt="Figma" style={{width: "40px", height: "40px"}} />
+                                <img src={figmaIcon} alt="Figma" style={{width: "80px", height: "80px"}} />
                             </div>
                         </div>
                         <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
@@ -192,7 +231,7 @@ function Web() {
                                 justifyContent: "center", 
                                 alignItems: "center"
                             }}>
-                                <img src={jsIcon} alt="JavaScript" style={{width: "40px", height: "40px"}} />
+                                <img src={jsIcon} alt="JavaScript" style={{width: "60px", height: "60px"}} />
                             </div>
                         </div>
                         <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
@@ -203,7 +242,7 @@ function Web() {
                                 justifyContent: "center", 
                                 alignItems: "center"
                             }}>
-                                <img src={cssIcon} alt="CSS" style={{width: "40px", height: "40px"}} />
+                                <img src={cssIcon} alt="CSS" style={{width: "60px", height: "60px"}} />
                             </div>
                         </div>
                     </div>
@@ -220,23 +259,23 @@ function Web() {
                     maxWidth: "90%",
                     boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)"
                 }}>
-                    <h2 style={{color: "#FFD700", marginBottom: "20px", fontSize: "2rem"}}>Backend</h2>
+                    <h2 style={{color: "#E0BB56", marginBottom: "20px", fontSize: "2rem"}}>Backend</h2>
                     <p style={{maxWidth: "90%", margin: "0 auto", lineHeight: "1.6", fontSize: "1rem"}}>
-                        The backend team develops the server-side architecture, databases, and APIs that power our applications and enable seamless data management.
+                        The backend team builds robust systems that power our content management and data delivery.
                     </p>
                     
                     {/* Tech Stack */}
-                    <h3 style={{color: "#FFD700", marginTop: "30px", marginBottom: "15px", fontSize: "1.5rem"}}>Tech Stack</h3>
+                    <h3 style={{color: "#E0BB56", marginTop: "30px", marginBottom: "15px", fontSize: "1.2rem"}}>Tech Stack</h3>
                     <div style={{display: "flex", justifyContent: "center", gap: "35px", marginTop: "15px"}}>
                         <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
                             <div style={{ 
                                 width: "60px", 
                                 height: "60px", 
                                 display: "flex", 
-                                justifyContent: "center", 
+                                justifyContent: "center",
                                 alignItems: "center"
                             }}>
-                                <img src={jsIcon} alt="JavaScript" style={{width: "40px", height: "40px"}} />
+                                <img src={drupalIcon} alt="Drupal" style={{width: "200px", height: "80px"}} />
                             </div>
                         </div>
                         <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
@@ -247,113 +286,173 @@ function Web() {
                                 justifyContent: "center", 
                                 alignItems: "center"
                             }}>
-                                <img src={jsIcon} alt="GraphQL" style={{width: "40px", height: "40px"}} />
-                            </div>
-                        </div>
-                        <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-                            <div style={{ 
-                                width: "60px", 
-                                height: "60px", 
-                                display: "flex", 
-                                justifyContent: "center", 
-                                alignItems: "center"
-                            }}>
-                                <img src={jsIcon} alt="Drupal" style={{width: "40px", height: "40px"}} />
+                                <img src={graphqlIcon} alt="GraphQL" style={{width: "150px", height: "80px"}} />
                             </div>
                         </div>
                     </div>
                 </div>
             )}
             
-            {/* Our Work Section */}
+            {/* Our Work Section - Slideshow with fixed opacity */}
             <div style={{
-                maxWidth: "90%",
-                margin: "30px auto",
+                padding: "30px 20px",
+                color: "white",
                 textAlign: "center",
-                color: "white"
+                margin: "30px auto",
+                borderRadius: "15px",
+                maxWidth: "90%",
             }}>
-                <h2 style={{color: "#FFD700", marginBottom: "30px", fontSize: "2rem"}}>Our work</h2>
+                <h2 style={{color: "#FFD700", marginBottom: "30px", fontSize: "2rem"}}>Our Work</h2>
                 
-                {/* Designs Section */}
+                {/* Slideshow container with background opacity */}
                 <div style={{
-                    backgroundColor: "#004B87",
-                    padding: "30px 20px",
-                    borderRadius: "15px",
-                    marginBottom: "30px",
-                    boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)"
+                    position: "relative",
+                    maxWidth: "600px",
+                    margin: "0 auto",
                 }}>
-                    <h3 style={{color: "white", marginBottom: "15px", fontSize: "1.5rem"}}>Designs</h3>
+                    {/* Semi-transparent background */}
                     <div style={{
-                        display: "flex", 
-                        justifyContent: "center", 
-                        marginBottom: "20px"
+                        position: "absolute",
+                        top: 0,
+                        left: 0,
+                        right: 0,
+                        bottom: 0,
+                        backgroundColor: "#003057",
+                        opacity: 0.4,
+                        borderRadius: "10px",
+                        zIndex: 1
+                    }}></div>
+                    
+                    {/* Content container - this will be fully opaque */}
+                    <div style={{
+                        position: "relative",
+                        zIndex: 2,
+                        padding: "20px",
+                        display: "flex",
+                        flexDirection: "column",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        minHeight: "350px",
                     }}>
+                        <h3 style={{color: "white", marginBottom: "20px", fontSize: "1.5rem"}}>Designs</h3>
+                        
+                        {/* Indicator dots */}
                         <div style={{
-                            width: "15px", 
-                            height: "15px", 
-                            backgroundColor: "#FFD700", 
-                            borderRadius: "50%", 
-                            margin: "0 5px"
-                        }}></div>
+                            display: "flex",
+                            justifyContent: "center",
+                        }}>
+                            {slides.map((_, index) => (
+                                <div 
+                                    key={index}
+                                    onClick={() => goToSlide(index)}
+                                    style={{
+                                        width: "10px",
+                                        height: "10px",
+                                        backgroundColor: currentSlide === index ? "#004B87" : "#022541",
+                                        opacity: currentSlide === index ? 1 : 0.5,
+                                        borderRadius: "50%",
+                                        margin: "0 5px",
+                                        cursor: "pointer"
+                                    }}
+                                ></div>
+                            ))}
+                        </div>
+                        
+                        {/* Image */}
                         <div style={{
-                            width: "15px", 
-                            height: "15px", 
-                            backgroundColor: "#fff", 
-                            borderRadius: "50%", 
-                            margin: "0 5px",
-                            opacity: "0.5"
-                        }}></div>
-                        <div style={{
-                            width: "15px", 
-                            height: "15px", 
-                            backgroundColor: "#fff", 
-                            borderRadius: "50%", 
-                            margin: "0 5px",
-                            opacity: "0.5"
-                        }}></div>
+                            display: "flex",
+                            justifyContent: "center",
+                            marginBottom: "15px",
+                            maxWidth: "100%",
+                            height: "200px",
+                            marginTop: "20px"
+                        }}>
+                            <img 
+                                src={slides[currentSlide].image} 
+                                alt={slides[currentSlide].title} 
+                                style={{
+                                    maxWidth: "100%",
+                                    maxHeight: "100%",
+                                    objectFit: "contain",
+                                    borderRadius: "8px"
+                                }} 
+                            />
+                        </div>
+                        
+                        {/* Description */}
+                        <p style={{color: "white", fontSize: "0.9rem", marginTop: "10px"}}>
+                            {slides[currentSlide].description}
+                        </p>
                     </div>
+                    
+                    {/* Navigation arrows - placing them above both background and content with even higher z-index */}
                     <div style={{
                         display: "flex",
-                        justifyContent: "center",
-                        marginBottom: "15px"
+                        justifyContent: "space-between",
+                        width: "100%",
+                        position: "absolute",
+                        top: "50%",
+                        transform: "translateY(-50%)",
+                        padding: "0 10px",
+                        zIndex: 3
                     }}>
-                        <img 
-                            src={designPlaceholder} 
-                            alt="Design Example" 
+                        <button 
+                            onClick={prevSlide}
                             style={{
-                                width: "100%", 
-                                maxWidth: "300px", 
-                                height: "auto", 
-                                backgroundColor: "#ccc"
-                            }} 
-                        />
+                                width: "40px",
+                                height: "60px",
+                                backgroundColor: "rgba(0, 0, 0, 0.3)",
+                                border: "none",
+                                borderRadius: "50%",
+                                color: "white",
+                                fontSize: "20px",
+                                display: "flex",
+                                alignItems: "center",
+                                justifyContent: "center",
+                                cursor: "pointer"
+                            }}
+                        >
+                            ←
+                        </button>
+                        <button 
+                            onClick={nextSlide}
+                            style={{
+                                width: "40px",
+                                height: "60px",
+                                backgroundColor: "rgba(0, 0, 0, 0.3)",
+                                border: "none",
+                                borderRadius: "50%",
+                                color: "white",
+                                fontSize: "20px",
+                                display: "flex",
+                                alignItems: "center",
+                                justifyContent: "center",
+                                cursor: "pointer"
+                            }}
+                        >
+                            →
+                        </button>
                     </div>
-                    <p style={{color: "white", fontSize: "0.9rem"}}>Description of design #1</p>
                 </div>
-                
-                {/* Past Project Section */}
-                <div style={{
-                    textAlign: "center",
-                    marginTop: "25px"
-                }}>
-                    <p style={{textAlign: "center", marginBottom: "15px"}}>past project #1</p>
+                <h4 style={{color: "white", marginTop: "40px", marginBottom: "15px", fontSize: "1rem"}}>Project #1</h4>
+                {/* Image */}
                     <div style={{
                         display: "flex",
                         justifyContent: "center",
-                        marginBottom: "15px"
+                        marginBottom: "15px",
+                        maxWidth: "100%",
+                        height: "200px",
+                        marginTop: "20px"
                     }}>
-                        <img 
-                            src={projectPlaceholder} 
-                            alt="Past Project Example" 
-                            style={{
-                                width: "100%", 
-                                maxWidth: "300px", 
-                                height: "auto", 
-                                backgroundColor: "#ccc"
-                            }} 
-                        />
-                    </div>
-                    <p style={{color: "white", fontSize: "0.9rem", textAlign: "center"}}>Description of past project #1</p>
+                    <img 
+                        src={designPlaceholder} 
+                        style={{
+                            maxWidth: "100%",
+                            maxHeight: "100%",
+                            objectFit: "contain",
+                            borderRadius: "8px"
+                        }} 
+                    />
                 </div>
             </div>
             

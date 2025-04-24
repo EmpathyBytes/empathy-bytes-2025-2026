@@ -4,7 +4,7 @@ import Banner from "../images/experiences/webSubteamBanner.jpg";
 import "../styles/experiencesIndividual.css";
 import "../styles/all.css";
 
-//icons
+//icons for tech stack
 import gatsbyIcon from "../images/subteam-icons/webteam-icons/gatsby-logo.avif";
 import figmaIcon from "../images/subteam-icons/webteam-icons/figma-logo.png";
 import jsIcon from "../images/subteam-icons/webteam-icons/js-logo.webp";
@@ -12,6 +12,7 @@ import cssIcon from "../images/subteam-icons/webteam-icons/css-logo.png";
 import drupalIcon from "../images/subteam-icons/webteam-icons/drupal-logo.png";
 import graphqlIcon from "../images/subteam-icons/webteam-icons/graphql-logo.png";
 
+//assets for design and project section
 import designPlaceholder from "../images/subteam-icons/webteam-icons/image-placeholder.jpeg";
 import projectPlaceholder from "../images/subteam-icons/webteam-icons/image-placeholder.jpeg";
 import redesignTemplate from "../images/subteam-icons/webteam-icons/webteam-assets/redesignTemplate.png";
@@ -50,7 +51,7 @@ function Web() {
         setActiveTab(tab);
     };
     
-    // Functions to navigate slides
+    // Functions to navigating slide
     const nextSlide = () => {
         setCurrentSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
     };
@@ -59,7 +60,7 @@ function Web() {
         setCurrentSlide((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
     };
     
-    // Function to go to a specific slide
+    // Function for set slide
     const goToSlide = (index) => {
         setCurrentSlide(index);
     };
@@ -76,7 +77,7 @@ function Web() {
                 paddingBottom: "40px"
             }}>
             
-            {/* Banner Section with gradient overlay that fades into blue */}
+            {/* Banner Section*/}
             <div style={{
                 position: "relative",
                 height: "500px",
@@ -113,7 +114,7 @@ function Web() {
                     zIndex: 1
                 }}></div>
                 
-                {/* Blue gradient fade at bottom - moved lower to not overlap with text */}
+                {/* Blue gradient fade at bottom*/}
                 <div style={{
                     position: "absolute",
                     bottom: "0px",
@@ -296,7 +297,7 @@ function Web() {
                 </div>
             )}
             
-            {/* Our Work Section - Slideshow with fixed opacity */}
+            {/* Our Work Section - Slideshow*/}
             <div style={{
                 padding: "30px 20px",
                 color: "white",
@@ -307,7 +308,7 @@ function Web() {
             }}>
                 <h2 style={{color: "#FFD700", marginBottom: "30px", fontSize: "2rem"}}>Our Work</h2>
                 
-                {/* Slideshow container with background opacity */}
+                {/* Slideshow container*/}
                 <div style={{
                     position: "relative",
                     maxWidth: "600px",
@@ -388,7 +389,7 @@ function Web() {
                         </p>
                     </div>
                     
-                    {/* Navigation arrows - placing them above both background and content with even higher z-index */}
+                    {/* Navigation arrows*/}
                     <div style={{
                         display: "flex",
                         justifyContent: "space-between",
@@ -441,8 +442,9 @@ function Web() {
                         </button>
                     </div>
                 </div>
+                {/*Placeholder for Projects Section*/}
                 <h4 style={{color: "white", marginTop: "40px", marginBottom: "15px", fontSize: "1rem"}}>Project #1</h4>
-                {/* Image */}
+                    {/* Placeholder Image */}
                     <div style={{
                         display: "flex",
                         justifyContent: "center",
@@ -458,9 +460,10 @@ function Web() {
                             maxHeight: "100%",
                             objectFit: "contain",
                             borderRadius: "8px"
-                        }} 
+                        }}
                     />
-                </div>
+                </div>                
+                <p1>Description of Project #1</p1>
             </div>
             
             </div>

@@ -3,45 +3,45 @@
 /* 404.js*/
 .pageStyles {
     color: #232129;
-    padding: 96px;
+    padding: 6vh;
     font-family: "-apple-system, Roboto, sans-serif, serif";
 }
 .headingStyles {
     margin-top: 0;
-    margin-bottom: 64;
-    max-width: 320;
+    margin-bottom: 4rem;
+    max-width: 20rem;
 }
 
 .paragraphStyles {
-    margin-bottom: 48;
+    margin-bottom: 3vh;
 }
 .codeStyles {
     color: #8A6534;
-    padding: 4;
+    padding: 0.25rem;
     background-color: #FFF4DB;
     font-size: 1.25rem;
-    border-radius: 4,
+    border-radius: 0.25rem,
 }
 
 /* pastmembers.js; NEEDS JS REWORKING */
 .topPadding {
-    padding: 10% 5% 10% 5%;
+    padding: 10vh 5vw;
 }
 
 .articlePadding {
-    padding: .5% .5% .5% .5%;
+    padding: 0.5vh 0.5vw;
 }
 
 /* collection.js; NEEDS JS REWORKING */
 .container {
-    padding: 6% 5% 6% 5%;
-    padding-top: 120;
+    padding: 6vh 5vw;
+    padding-top: 10vh;
     font-family: 'Roboto';
 };
 
 .collection_name {
     text-align: center;
-    padding-top: 10;
+    padding-top: 2vh;
     font-family: 'Roboto Slab, serif';
     color: #b3a369;
 }

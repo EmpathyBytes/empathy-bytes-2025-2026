@@ -1,7 +1,8 @@
 .int_card {
-    border-bottom: 5px solid #b3a369;
-    margin: 15px;
-    padding: 10px;
+    border-bottom: 0.3vw solid #b3a369;
+    margin: 1vw;
+    padding: 0.5vw;
+    box-sizing: border-box;
 }
 /*.summary {
     display: -webkit-box;
@@ -12,21 +13,21 @@
 }*/
 
 .img-style {
-    border-radius: 10px;
+    border-radius: 0.3vh;
     width: 20vw;
     height: 20vw;
     object-fit: cover;
 }
 
 .col {
-    padding: 10;
+    padding: 0.5vw;
     background-color: red;
 }
 
 .row {
     display: flex;
-    border-bottom: 5px solid #b3a369;
-    padding: 15;
+    border-bottom: 0.3vw solid #b3a369;
+    padding: 1vw;
     font-family: 'Roboto';
     justify-items: space-between;
 }

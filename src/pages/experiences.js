@@ -110,7 +110,7 @@ function ExperiencesPage() {
                 alignItems="center"
                 justifyContent="center">
   
-            <Grid xs={5} item>
+            <Grid xs={10} item>
               <Link to="/appteam" className="noUnderline">
                 <Card>
                   <CardActionArea style={{backgroundColor: "#1B3F66"}}>
@@ -118,7 +118,7 @@ function ExperiencesPage() {
                       component="img"
                       image={App}
                       alt="App"
-                      height = '100'
+                      height = '200'
                     />
                       <h1 className="text-experience">App</h1>
                   </CardActionArea>
@@ -126,15 +126,15 @@ function ExperiencesPage() {
               </Link>
             </Grid>
   
-            <Grid xs={5} item>
+            <Grid xs={10} item>
               <Link to="/emergingtech" className="noUnderline">
                 <Card>
                   <CardActionArea style={{backgroundColor: "#1B3F66"}}>
                     <CardMedia
                       component="img"
-                      height="100"
                       image={EmergingTech}
                       alt="Emerging Tech"
+                      height="200"
                     />
                     <h1 className="text-experience">Emerging Tech</h1>
                   </CardActionArea>
@@ -142,16 +142,16 @@ function ExperiencesPage() {
               </Link>
             </Grid>
   
-            <Grid xs={5} item>
+            <Grid xs={10} item>
               <Link to="/mediateam" className="noUnderline">
               <Card>
                   <CardActionArea style={{backgroundColor: "#1B3F66"}}>
                     <CardMedia
                       component="img"
-                      height="100"
                       image={Media}
                       alt="Media"
                       className="rotate"
+                      height="200"
                     />
                     <h1 className="text-experience">Media</h1>
                   </CardActionArea>
@@ -159,15 +159,15 @@ function ExperiencesPage() {
               </Link>
             </Grid>
   
-            <Grid xs={5} item>
+            <Grid xs={10} item>
               <Link to="/webteam" className="noUnderline">
                 <Card>
                   <CardActionArea style={{backgroundColor: "#1B3F66"}}>
                     <CardMedia
                       component="img"
-                      height="100"
                       image={Web}
                       alt="Web"
+                      height="200"
                     />
                     <h1 className="text-experience">Web</h1>
                   </CardActionArea>

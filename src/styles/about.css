@@ -17,6 +17,9 @@
     @media screen and (max-width: 46.3vw) {
       font-size: 1.75rem;
     }
+    @media screen and (min-width: 46.3vw) {
+      font-size: 1.875rem;
+    }
     color: white;
     text-align: center;
 }
@@ -31,6 +34,9 @@
     }
     @media screen and (max-width: 46.3vw) {
       font-size: 1rem;
+    }
+    @media screen and (min-width: 46.3vw) {
+      font-size: 0.875rem;
     }
     color: white;
     text-align: center;
@@ -123,8 +129,8 @@
 
   .hex img {
     position: absolute;
-    width: 100%; 
-    height: 100%; 
+    width: 100%;
+    height: 100%;
     object-fit: cover;
     -webkit-clip-path: polygon(0% 50%, 25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%);
     -moz-clip-path: polygon(0% 50%, 25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%);

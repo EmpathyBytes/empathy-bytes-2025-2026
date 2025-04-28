@@ -81,33 +81,33 @@ function AboutPage({ data }) {
 
         {/* Div that contains the navbar */}
         <div className="about-nav" style={{ paddingTop: 25, paddingBottom: 25 }}>
-          <Grid container spacing={2} className="navBG">
-            <Grid xs={2}>
+          <Grid container spacing={2} className="navBG" justifyContent="center">
+            <Grid xs={12} sm={1} md={2}>
             </Grid>
-            <Grid xs={2}>
+            <Grid xs={12} sm={3} md={2}>
               <a href="#about-emerging" className="noUnderline">
                 <h3 className="about-nav-text" onClick={toggleEmerging}>Emerging</h3>
               </a>
             </Grid>
 
-            <Grid xs={2}>
+            <Grid xs={12} sm={5} md={2}>
               <a href="#about-web" className="noUnderline">
                 <h3 className="about-nav-text" onClick={toggleWeb}>Web</h3>
               </a>
             </Grid>
 
-            <Grid xs={2}>
+            <Grid xs={12} sm={5} md={2}>
               <a href="#about-media" className="noUnderline">
                 <h3 className="about-nav-text" onClick={toggleMedia}>Media</h3>
               </a>
             </Grid>
 
-            <Grid xs={2}>
+            <Grid xs={12} sm={3} md={2}>
               <a href="#about-app" className="noUnderline">
                 <h3 className="about-nav-text" onClick={toggleApp}>App</h3>
               </a>
             </Grid>
-            <Grid xs={2}>
+            <Grid xs={12} sm={1} md={2}>
             </Grid>
           </Grid>
         </div>

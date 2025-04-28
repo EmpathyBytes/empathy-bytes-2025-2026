@@ -33,11 +33,6 @@ header {
     
 }
 
-nav a {
-    color: white;
-    text-decoration: none;
-}
-
 nav {
     display: flex;
     height: 10vh;
@@ -48,13 +43,19 @@ nav {
     flex-shrink: 0;
 }
 
-nav a:visited {
-    color:white;
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+nav a:link,
+nav a:visited,
+nav a:active {
+    color: white;
 }
 
 nav a:hover {
     color: var(--color-lightblue);
-    
 }
 
 header .nav-btn {
@@ -90,7 +91,8 @@ header .nav-btn {
   }
 
 
-@media only screen and (max-width: 59.3vw) {
+@media only screen and (max-width: 768px) {
+
     header .nav-btn {
         visibility: visible;
         opacity: 1;
@@ -114,12 +116,6 @@ header .nav-btn {
 
     header .responsive_nav {
         transform: none;
-    }
-
-    nav .nav-close-btn{
-        position: absolute;
-        top: 2rem;
-        right: 2rem;
     }
 
     nav a {

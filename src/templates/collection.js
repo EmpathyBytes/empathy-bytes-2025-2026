@@ -4,6 +4,7 @@ import { graphql } from 'gatsby';
 import Layout from "../components/layout";
 import InterviewCard from '../components/interviewcard';
 import "../styles/fonts.css"
+import "../styles/projects.css"
 
 /**
  * Functional Collection Component
@@ -24,6 +25,7 @@ const collection_name = {
     ["text-align"]: 'center',
     ['padding-top']: 10,
     ['font-family']: 'Roboto Slab, serif',
+    ['font-weight']: 'bold',
     color: '#b3a369',
 }
 
@@ -32,9 +34,10 @@ function Collection({ data }) {
     const interview = data.interview.relationships.node__article;
 
     return (
-        <Layout>
-            <title>{collection.title}</title>
-            <div style={container}>
+        <div className="bg">
+            <Layout>
+                <title>{collection.title}</title>
+                <div style={container}>
                 <h1 style={collection_name}>{collection.title}</h1>
                 <div dangerouslySetInnerHTML={{ __html: collection.body.processed }} />
                 <p></p>
@@ -49,8 +52,9 @@ function Collection({ data }) {
                     />
                 ))}
 
-            </div>
-        </Layout>
+                </div>
+            </Layout>
+        </div>
     );
 }
 

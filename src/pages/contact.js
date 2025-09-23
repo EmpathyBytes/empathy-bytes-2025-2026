@@ -1,5 +1,6 @@
 import React from "react";
 import Layout from "../components/layout";
+import All from "../images/people/fullTeam.jpg"
 import "../styles/contactPage.css";
 
 function ContactPage() {
@@ -21,9 +22,13 @@ function ContactPage() {
     <Layout>
       <div className="container-contact">
         <main>
+          <div className="top-contact dim"></div>
+          <div className="bottom-contact">
+            <img src={All} className="contact-full"></img>
+          </div>
           <div className="headerStyles">
             <h1>
-              <span className="centerStyles">Interested in Empathy Bytes?</span>
+              <span className="centerStyles">Interested in Learning More About Empathy Bytes?</span>
             </h1>
           </div>
           <div className="button-container">
@@ -43,7 +48,7 @@ function ContactPage() {
               </div>
             ))}
           </div>
-          <div className="centerStyles">
+          {/* <div className="centerStyles">
             <label className="labelStyle">
               <a href="#info">
                 <svg className="arrows">
@@ -53,13 +58,13 @@ function ContactPage() {
                 </svg>
               </a>
             </label>
-          </div>
+          </div> */}
         </main>
       </div>
       <div id="info">
-        <div className="info-section-1">
+        <div className="info-section">
           <h1>Frequently Asked Questions</h1>
-           <div class="container">
+          <div class="container">
             <section>
               <details>
                 <summary>How do I apply?<span><i class="fa-solid fa-caret-down"></i></span></summary>
@@ -88,3 +93,10 @@ function ContactPage() {
 }
 
 export default ContactPage;
+
+export const Head = () => (
+  <>
+  <link rel="icon" type="image/png" href="https://educast.library.gatech.edu/static/empbytes-8c9db7ee75f110e619f7d85cb8b170c5.jpg" />
+  <title>Contact</title>
+  </>
+  )

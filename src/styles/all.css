@@ -2,7 +2,7 @@
 
 
 .bg-1 {
-    background-color:  #22232e;;
+    background-color: #004B87;
 }
 .bg-2 {
     background-color: #F2F0F0;
@@ -24,4 +24,5 @@
 
 .noUnderline {
     text-decoration: none;
+    
 }

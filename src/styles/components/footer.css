@@ -2,36 +2,134 @@
 
 .container-footer {
     background-color: #003057;
-    padding: 2.5% 5%;
+    justify-content: space-evenly;
+    display: flex;
+    width: 100%; 
+    height: 40vh;
+    flex-direction: row;
+    padding: 4rem 1rem 0 1rem;
 }
+
+.bytes {
+    display: block;       /* Makes 'Bytes' appear on a new line */  
+    margin-top: 0.5rem;
+    text-align: left; 
+}
+
+footer a:link{
+    color: white;
+}
+
+  footer a:visited {
+    color:white;
+}
+
+footer a:hover{
+    color:#90c7fa;
+}
+
+/*right icon*/
+.icon {
+    width:2.5rem;
+    height:2.5rem;
+}
+
+.icon-group {
+    display: flex;           
+    flex-direction: row;
+    gap: 1rem;               
+    align-items: center;
+}
+
+/* group for general/teams/community */
 
 .grouping {
     display: flex;
     flex-direction: column;
     text-align: left;
+    align-items: flex-start; 
+    /* fixed alignment issue */
+    
+    margin-top: 5vh;
+   
 }
 
 .text-footer-title {
-    font-family: 'Roboto', sans-serif;
-    font-size: 1.5rem;
+    font-family: 'Roboto Slab', sans-serif;
+    font-size: 3.25rem;
     color: white;
-    text-align: center;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
 }
 
 .text-heading {
-    font-family: 'Roboto', sans-serif;
-    font-size: 1rem;
-    color: white;
+    color: #FFF;
+    font-family: Roboto;
+    font-size: 1.75rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-align: left;
+}
+
+.centered-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center; 
+  }
+
+.text-anchor-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.7vh;
+    align-self: stretch; 
+
+    min-width: 50%;
+    max-width: 100%;
+    
 }
 
 .text-anchor {
-    font-family: 'Roboto', sans-serif;
-    font-size: 0.75rem;
-    color: whitesmoke;
+    color: #FFF;
+    font-family: Roboto;
+    font-size: 1.125rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
     text-decoration: none;
 }
 
 .text-anchor:hover {
     cursor: pointer;
     opacity: 0.8;
+}
+/*for social media logos */
+
+.logo-container {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    align-items: center;
+    gap: 1.5vh;
+}
+
+.footer-logo {
+    @media only screen and (min-width: 480px) {
+        /* styles for devices with a minimum screen width of 480px */
+        transition: var(--tr);
+        margin: 1rem 0 .5rem;
+        height: var(--logo-top-height);
+        border-radius: 50%;
+        }
+        
+        @media only screen and (max-width: 480px) {
+        /* styles for devices with a maximum screen width of 480px */
+        transition: var(--tr);
+        margin: 1rem 0 .5rem 0;
+        height: var(--logo-scrolled-height);
+        border-radius: 50%;
+        }
 }

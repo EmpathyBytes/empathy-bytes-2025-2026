@@ -9,7 +9,6 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 import { Link } from "gatsby";
 
 /**
- * hi audrey here! this is how you can start making changes!
  * This component is used in projects.js to display categories
  * of interviews. It uses the MUI card component and contains 
  * an image, title, blurb, and link pulled from Drupal.
@@ -20,7 +19,7 @@ export default function CollectionCard(props) {
 
   if (matches) { //desktop
     return (
-      <Card sx={{ maxWidth: '40vw' }}>
+      <Card sx={{ maxWidth: '40vw', borderRadius: "40px"}}>
         <Link style={{ textDecoration: 'none' }} to={"/projects" + props.url}>
             <CardActionArea>
               <CardMedia

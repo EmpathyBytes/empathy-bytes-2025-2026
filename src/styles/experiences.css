@@ -1,22 +1,28 @@
+/* NEEDS Dynamic sizing: mostly everything (fall 2024) */
+/* all mobile sizing changes in experiences.js */
+
 @import "./fonts.css";
 
+/* container for experience cards */
 .container-experiences-homepage {
-    padding-top: calc(var(--navbar-scrolled-height) + 10vh);
-    padding-bottom: 90px;
+    padding-top: 20vh;
+    padding-bottom: 28vh;
+    background-color: #004B87;
 }
+
 .container-half {
     position: relative;
     height: 95vh;
     text-align: center;
 }
 
+/* text for experience cards */
 .text-experience {
     text-align: center;
     font-family: 'Roboto Slab', serif;
-    font-size: 2.7vw;
+    font-size: 2rem;
     color: white;
 }
-
 
 .text-overlay {
     width: 100%;
@@ -24,9 +30,10 @@
     background-color: rgba(0, 0, 0, 0.8)
 }
 
+/* images for experience cards */
 .image-overlay {
-    width: 700px;
-    height: 500px;
+    width: 100%;
+    height: 100%;
     position: absolute;
     z-index: -10;
 }

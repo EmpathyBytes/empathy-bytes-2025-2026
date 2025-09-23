@@ -1,6 +1,5 @@
 import * as React from "react"
 import Layout from "../components/layout"
-import { Link } from "gatsby";
 
 import "../styles/homepage.css"
 import "../styles/all.css"
@@ -16,13 +15,13 @@ import teampic from "../images/homepage/teampic.jpg"
 
 
 import Carousel from 'react-material-ui-carousel'
-import Grid from '@mui/material/Grid';
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
 // import CardMedia from '@mui/material/CardMedia';
 // import { DesktopAccessDisabled } from "@mui/icons-material";
 
 import useMediaQuery from '@mui/material/useMediaQuery';
+
+import InfoCard from "../components/infocard";
+import LearnCard from "../components/learncard";
 
 
 function IndexPage() {
@@ -30,11 +29,13 @@ function IndexPage() {
 
   if (matches){ //desktop
     return (
+      
       <Layout>
+        {/**Content for the Carousel */}
         <div className="top top-text dim">
           <h1>Empathy Bytes</h1>
-
-          <a href="#info">
+          {/**This is the animated arrows that scroll down the page when clicked */}
+          <a href="#info" alt="arrows"> 
             <svg className="arrows">
                 <path className="a1" d="M0 0 L30 32 L60 0"></path>
                 <path className="a2" d="M0 20 L30 52 L60 20"></path>
@@ -48,74 +49,61 @@ function IndexPage() {
             animation={"slide"}
             duration={2000}
             indicators={false}>
-            <img className="splash-image" src={splash1}></img>
-            <img className="splash-image" src={splash2}></img>
+            <img className="splash-image" src={splash1} alt="Hive"></img>
+            <img className="splash-image" src={splash2} alt="Gatech Tower"></img>
           </Carousel>
         </div>
-
+        {/** This is the main part of the landing page containing the picture and info card*/}
         <div id="info" className="info">
-          <Grid container spacing={2}>
-            <Grid xs={12}>
-              <h1 className="header">What is Empathy Bytes?</h1>
-                <div className="container-row">
-                  <div className="image">
-                    <img src={teampic} alt="" width="580" height="350"></img>
-                  </div>
-                  <div class="parag">
-                    <p className="paragraph2">
-                    Empathy Bytes is a student run research project focused on creating immersive technology and media centered around empathy. 
-                    We think outside traditional modes of communication and documentation to create radical and unique experiences. Our research 
-                    currently focuses on identifying and presenting distinct communities connected to Georgia Tech.
-                    </p>
-                  </div>
-                </div>
-            </Grid>
+          <div className="info-wrapper">
+              <div className="image">
+                <img src={teampic} className="teampic" alt="EB Team"></img>
+              </div>
+              <div className="info-card">
+                <InfoCard 
+                  title="What Is Empathy Bytes?"
+                  body="Empathy Bytes is a student run research project focused on creating immersive technology and media centered around empathy. 
+                  We think outside traditional modes of communication and documentation to create radical and unique experiences. Our research 
+                  currently focuses on identifying and presenting distinct communities connected to Georgia Tech."
+                  // link="/contact"
+                  // btnTitle="Learn More"
+                />
+              </div>
+            </div>
+          </div>
 
-          <Grid xs={12}>
-            <hr></hr>
-          </Grid>
+        {/* This is the learn more section */}
+        <div id="learn-more-home" className="learn-more-home"> 
+          {/* Had to use info-wrapper instead of a custom since 
+          it made the text have a weird yellow underline */}
+          <div className="info-wrapper">
+          <div className="learn-card">
+                <LearnCard 
+                  title="Want to Learn More?"
+                  body="Check out our Experience and Project Pages to learn more about our work!"
 
-          <Grid xs={12}>
-            <h1 className="header">Want to Learn More?</h1>
-            <p className="paragraph">
-              Check out or Experiences and Project Pages to learn more about the type of work we do!
-            </p>
-          </Grid>
-          <Grid xs={2}></Grid>
-          <Grid xs={3}>
-          <Link to="/experiences" className="noUnderline">
-            <Card sx={{ maxWidth: 360 }}>
-              <CardContent style={{backgroundColor: "#FFFFFF"}}>
-                <h1 className="card-text">Experiences</h1>
-              </CardContent>
-            </Card>
-            </Link>
-          </Grid>
-          <Grid xs={2}></Grid>
-          <Grid xs={3}>
-            <Link to="/projects" className="noUnderline">
-            <Card sx={{ maxWidth: 360 }}>
-              <CardContent style={{backgroundColor: "#FFFFFF"}}>
-                <h1 className="card-text">Projects</h1>
-              </CardContent>
-            </Card>
-            </Link>
-          </Grid>
-          <Grid xs={2}></Grid>
-          </Grid>
-        </div>
+                  // Currently the links don't go to the top of the pages
+                  link="/experiences"
+                  btnTitle="Experiences"
+                  link2="/projects"
+                  btnTitle2="Projects"
+                />
+            </div>
+            </div>  
+          </div>
       </Layout>
     )
 
 
 
-  } else { //mobile
+  } else { //mobile layout
+    // TODO: create a better layout for mobile
     return (
       <Layout>
         <div className="top top-text dim">
           <h1>Empathy Bytes</h1>
 
-          <a href="#info">
+          <a href="#info" alt="arrows">
             <svg className="arrows">
                 <path className="a1" d="M0 0 L30 32 L60 0"></path>
                 <path className="a2" d="M0 20 L30 52 L60 20"></path>
@@ -130,57 +118,48 @@ function IndexPage() {
             animation={"slide"}
             duration={2000}
             indicators={false}>
-            <img className="splash-image" src={splash1}></img>
-            <img className="splash-image" src={splash2}></img>
+            <img className="splash-image" src={splash1} alt="Hive"></img>
+            <img className="splash-image" src={splash2} alt="Gatech Tower"></img>
           </Carousel>
         </div>
 
         <div id="info" className="info">
-          <Grid container spacing={2}>
-            <Grid xs={12}>  
-              <h1 className="header">What is Empathy Bytes?</h1>
-              <div>
-                <img src={teampic} className = "image"></img>
+          <div className="info-wrapper">
+              <div className="image">
+                <img src={teampic} className="teampic" alt="EB Team"></img>
               </div>
-            </Grid>
-            <Grid xs={12}>
-              <p className="paragraph2">
-                  Empathy Bytes is a student run research project focused on creating immersive technology and media centered around empathy. 
+              <div className="info-card">
+                <InfoCard 
+                  title="What Is Empathy Bytes?"
+                  body="Empathy Bytes is a student run research project focused on creating immersive technology and media centered around empathy. 
                   We think outside traditional modes of communication and documentation to create radical and unique experiences. Our research 
-                  currently focuses on identifying and presenting distinct communities connected to Georgia Tech.
-              </p>
-            </Grid>
-            <Grid xs={12}>
-              <hr></hr>
-            </Grid>
-            <Grid xs={12}>
-              <h1 className="header">Want to Learn More?</h1>
-              <p className="paragraph">
-                Check out or Experiences and Project Pages to learn more about the type of work we do!
-              </p>
-            </Grid>
-            <Grid xs={3}></Grid>
-            <Grid xs={3}>
-              <Link to="/experiences" className="noUnderline">
-              <Card  sx={{ maxWidth: 360 }}>
-              <CardContent style={{backgroundColor: "#003057"}}>
-                <h1 className="card-text">Experiences</h1>
-              </CardContent>
-             </Card>
-             </Link>
-            </Grid>
-            <Grid xs={3}>
-              <Link to="/projects" className="noUnderline">
-              <Card sx={{ maxWidth: 360 }}>
-                <CardContent style={{backgroundColor: "#003057"}}>
-                  <h1 className="card-text">Projects</h1>
-                </CardContent>
-              </Card>
-              </Link>
-            </Grid>
-            <Grid xs={3}></Grid>
-          </Grid>
-        </div>
+                  currently focuses on identifying and presenting distinct communities connected to Georgia Tech."
+                  link="/contact/"
+                  btnTitle="Learn More"
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* This is the learn more section */}
+          <div id="learn-more-home" className="learn-more-home"> 
+          {/* Had to use info-wrapper instead of a custom since 
+          it made the text have a weird yellow underline */}
+          <div className="info-wrapper">
+          <div className="learn-card">
+                <LearnCard 
+                  title="Want to Learn More?"
+                  body="Check out our Experience and Project Pages to learn more about our work!"
+
+                  // Currently the links don't go to the top of the pages
+                  link="/experiences"
+                  btnTitle="Experiences"
+                  link2="/projects"
+                  btnTitle2="Projects"
+                />
+            </div>
+            </div>  
+          </div>
       </Layout>
     )
   }
@@ -188,4 +167,9 @@ function IndexPage() {
 
 export default IndexPage;
 
-export const Head = () => <title>Home Page</title>
+export const Head = () => (
+<>
+<link rel="icon" type="image/png" href="https://educast.library.gatech.edu/static/empbytes-8c9db7ee75f110e619f7d85cb8b170c5.jpg" />
+<title>Home</title>
+</>
+)

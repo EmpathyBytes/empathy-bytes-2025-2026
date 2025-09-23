@@ -8,14 +8,15 @@ function AboutComponent(props) {
 
     return (
         <div>
-            <Grid container spacing={0} justifyContent="center">
+            <Grid container spacing={0} alignItems="center" justifyContent="center">
 
-                <Grid sm={12} md={8} style={{ padding: "0% 5% 1% 5%" }}>
+                <Grid item sm={12} md={8} style={{ padding: "0% 0% 1% 3%" }}>
                     <h1 className="header-about">{props.subteam} Team</h1>
+                    <div className="horizontal-line" ></div>
                     <p className="paragraph-about padding-bottom-about">{props.about}</p>
                 </Grid>
 
-                <Grid xs={4}>
+                <Grid xs={6}>
 
                 </Grid>
             </Grid>
@@ -60,7 +61,16 @@ function AboutComponent(props) {
                         </div>
                 ))}
             </Grid>
-        </div>
+
+            <Grid container spacing={3} alignItems="center" justifyContent="center">
+            <p>
+                <a href={props.learnMore} target="_blank" rel="noopener noreferrer" className="learn-more">
+                    Learn More
+                </a>
+            </p>
+            </Grid>
+
+        </div>  
     );
 }
 

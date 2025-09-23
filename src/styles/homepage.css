@@ -9,8 +9,8 @@ html, body {
 /* The Fullscreen images on the homepage */
 .splash-image {
     display: block;
-    /* margin-left: auto;
-    margin-right: auto; */
+    margin-left: auto;
+    margin-right: auto;
     width: 100vw;
     max-width: 100%;
     
@@ -61,14 +61,66 @@ html, body {
     z-index: -10;
 }
 
+#learn-more-home {
+    background-color: #004B87;
+    padding-bottom: 7vh;
+    height: 50vh;
+    text-align: center;
+}
+
+#learn-more-home .learn-more-home-section {
+    background-color: #003057; /* Change to your desired background color */
+    /* margin: 0px 150px 0px 150px; */
+    padding: 5vh; /* Add padding or other styling as needed */
+    /* Center-align the text */
+  }
+
 .info {
     /* padding: 3% 0 2% 5%; */
-    padding:0;
-    margin: 0;
-    width: 100vw;
     max-width: 100%;
     text-align: center;
     vertical-align: middle;
+    max-height: 100%;
+    justify-content: space-evenly;
+    align-items: center;
+    align-content: center;
+    height: 65vh; /* CHANGED */
+    overflow: inherit;
+
+    /* mobile */
+    @media screen and (max-width: 600px) {
+        
+        flex-direction: column;
+    }
+}
+
+.main-content {
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    /*gap:200px;*/
+}
+
+
+.info-wrapper {
+    gap: 5%;
+    font-family: 'Roboto Slab', serif;
+    display: flex;
+    justify-content: space-evenly;
+    overflow:inherit;
+
+    
+    /* desktop */
+    @media screen and (min-width: 600vw) {
+        flex-direction: row;
+    }
+
+    /* mobile */
+    @media screen and (max-width: 600px) {
+        flex-direction: column;
+    }
+    
+    
 }
 
 .header {
@@ -85,12 +137,10 @@ html, body {
 }
 
 .image {
-    /* desktop; ratio = 0.603 */
-    @media screen and (min-width: 600px) {
-        width: 580px;
-        height: 350px;
-    }
-
+    /* desktop; ratio = 0.603 
+    this is the div for the image
+    */
+   
     /* mobile */
     @media screen and (max-width: 600px) {
         width: 90vw;
@@ -98,11 +148,30 @@ html, body {
     }
 }
 
+/* Attributes for the team pic image */
+.teampic { 
+    border-radius: 3%;
+    height: 52vh;
+    max-width: 100%;
+
+    /* mobile */
+    @media screen and (max-width: 600px) {
+        width: 100%;
+        height: 100%;
+    }
+    
+}
+
+.info-card {
+    height: 40vh;
+}
+
+
 .paragraph {
     text-align: center;
     font-family: 'Roboto', sans-serif;
 
-    font-size: 1.3vw;
+    font-size: 3vw;
     /* desktop */
     @media screen and (min-width: 600px) {
         font-size: 1.3vw;
@@ -166,16 +235,17 @@ html, body {
 }
 
 
-/* Taken from My Portfolio Site */
+/* Arrows on Header*/
 .arrows {
-	width: 60px;
-	height: 72px;
+	width: 7%;
+	height: 80%;
+	/*Need changes for mobile screen*/
 }
 
 .arrows path {
 	stroke: #FFFFFF;
 	fill: transparent;
-	stroke-width: 2px;	
+	stroke-width: .5%;	
 	animation: arrow 4s infinite;
 	-webkit-animation: arrow 4s infinite; 
 }

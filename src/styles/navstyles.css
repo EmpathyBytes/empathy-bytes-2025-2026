@@ -1,225 +1,282 @@
 :root {
-    --tr: 0.25s;
-    --navbar-top-height: 6rem;
-    --logo-top-height: 6.5rem;
-    --navbar-scrolled-height: 4rem;
-    --logo-scrolled-height: 4.5rem;
-  
-    --color-techgold: #b3a369;
-    --color-navyblue: #003057;
-    --color-lightblue: #90c7fa;
-    --color-greymatter: #54585a;
-    --color-pimile: #d6dbd4;
-    --color-diploma: #f9f6e5;
-    --color-buzzgold: #eaaa00;
-  }
-  
-  html,
-  body {
-    font-family: "Segoe UI Variable Display", "Segoe UI", -apple-system, Roboto,
-      sans-serif, serif;
-    margin: 0;
-    /* overflow-x: hidden; */
-  }
-  
-  /* Desktop classes will disappear at breakpoint
-     and vice versa for mobile
-  
-     Currently set at 750px, but can change in the future
-     */
+  --tr: 0.25s;
+  --navbar-top-height: 6rem;
+  --logo-top-height: 5.25rem;
+  --navbar-scrolled-height: 6rem;
+  --logo-scrolled-height: 4.5rem;
+
+  --color-techgold: #b3a369;
+  --color-navyblue: #003057;
+  --color-lightblue: #90c7fa;
+  --color-greymatter: #54585a;
+  --color-pimile: #d6dbd4;
+  --color-diploma: #f9f6e5;
+  --color-buzzgold: #eaaa00;
+}
+
+html,
+body {
+  font-family: "Roboto Slab", serif;
+  margin: 0;
+  font-weight: normal;
+  overflow-x: hidden;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background-color: #002a45;
+  z-index: 15;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-left: 0;
+  gap: 0.5rem;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+}
+
+h2 {
+  font-family: "Roboto Slab", serif;
+  margin: 0;
+  font-weight: 500;
+  font-size: clamp(1.2rem, 2.5vw, 2rem);
+  padding: 0;
+}
+
+.desktop {
+  display: flex;
+}
+.mobile {
+  display: none;
+}
+@media (max-width: 750px) {
   .desktop {
-    display: block;
-  }
-  .mobile {
     display: none;
   }
-  @media (max-width: 750px) {
-    .desktop {
-      display: none;
-    }
-    .mobile {
-      display: block;
-    }
-  }
-  
-  /* navbar stuff */
-  .navbar-outer {
-    z-index: 10;
-    width: 100%;
-    display: flex;
+
+  /* Full-screen mobile navigation overlay */
+  .mobile-nav-overlay {
     position: fixed;
     top: 0;
-  
-    transition: var(--tr);
-    height: var(--navbar-top-height);
-  
-    -webkit-transform-style: preserve-3d;
-    transform-style: preserve-3d;
-  }
-  
-  .navbar-background {
-    background: var(--color-navyblue);
-  }
-  
-  .scrolled.navbar-outer {
-    height: var(--navbar-scrolled-height);
-    background: var(--color-navyblue);
-  }
-  
-  .navbar-link {
-    text-decoration: none;
-    color: white; /* Change this to proper color in the future */
-    font-size: 1.25rem;
-  }
-  
-  .navbar-selected {
-    font-weight: bold;
-  }
-  
-  .nav-container {
-    display: grid;
-    width: 100%;
-    transition: var(--tr);
-    height: var(--navbar-top-height);
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
-  }
-  
-  .scrolled.nav-container {
-    height: var(--navbar-scrolled-height);
-  }
-  
-  .navbar-grid-left {
-    grid-column: 1;
-    transition: var(--tr);
-    height: var(--navbar-top-height)
-  }
-  
-  /* This style needs to exist so that the text buttons stay vertically centered */
-  .scrolled.navbar-grid-left{
-    height: var(--navbar-scrolled-height)
-  }
-  
-  .navbar-grid-right {
-    grid-column: 2;
-    display: flex;
-    justify-content: space-evenly;
-  }
-  
-  .logo {
-
-    @media only screen and (min-width: 480px) {
-      /* styles for devices with a minimum screen width of 480px */
-      transition: var(--tr);
-      margin: 1rem 0 .5rem 2rem;
-      height: var(--logo-top-height);
-      border-radius: 50%;
-      }
-      
-      @media only screen and (max-width: 480px) {
-      /* styles for devices with a maximum screen width of 480px */
-      transition: var(--tr);
-      margin: 1rem 0 .5rem 0;
-      height: var(--logo-scrolled-height);
-      border-radius: 50%;
-      }
-
-  }
-  
-  .scrolled.logo {
-    height: var(--logo-scrolled-height);
-    margin-top: 0.5rem;
-  }
-  
-  .navbar-gradient {
-    position: absolute;
-    z-index: -1;
-    top: 0;
     left: 0;
     width: 100%;
-    height: calc(var(--navbar-top-height) * 1.25);
-  
-    background: linear-gradient( #000000aa 0%, transparent 100%);
-    transition: var(--tr);
-    opacity: 100%;
-  }
-  
-  .scrolled.navbar-gradient {
-    height: var(--navbar-scrolled-height); /* remove this if it doesn't do anything */
-    opacity: 0;
-  }
-  
-  .navbar-link-bar {
-    margin-top: 1px;
-    background: white;
-    border-radius: 1px;
-    width: 100%;
-    height:2px;
-    transition: var(--tr);
-    transform: scale3d(0, 1, 1);
-    opacity: 50%;
-  }
-  
-  .navbar-link:hover .navbar-link-bar {
-    transform: scale3d(1, 1, 1);
-    opacity: 100%;
-  }
-  
-  .row {
-    display: flex;
-  }
-  
-  .column {
-    flex: 50%;
-  }
-  
-  textarea {
-    width: 100%;
-    height: 150px;
-    padding: 12px 20px;
-    box-sizing: border-box;
-    border: 2px solid #ccc;
-    border-radius: 4px;
-    background-color: #f8f8f8;
-    font-size: 16px;
-    resize: none;
-  }
-  
-  button {
-    background-color: #003057;
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    border-radius: 50px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin-right: 16px;
-  }
-  
-  #footer {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 5rem;
+    height: 100vh;
     background-color: var(--color-navyblue);
-    color: white;
-    text-align: center;
-  }
-  #page-container {
-    position: relative;
-    min-height: 100vh;
-    margin-top: var(--navbar-scrolled-height);
-  }
-  
-  #content-wrap {
-    color: var(--color-navyblue);
-    margin-top: var(--navbar-scrolled-height);
-    padding-bottom: 5rem;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    box-sizing: border-box;
   }
 
-  /* .img-nav {
-    border-radius: 50%;
-  } */
+  /* Container for mobile navigation content */
+  .mobile-nav-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  /* Styling for mobile logo section */
+  .mobile-nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+    text-decoration: none;
+  }
+
+  /* Adjust logo size for mobile */
+  .mobile-nav-logo .logo {
+    max-height: 60px;
+    width: auto;
+  }
+
+  /* Style for mobile logo text */
+  .mobile-nav-logo h2 {
+    color: white;
+    font-size: 1.5rem;
+  }
+
+  /* Mobile navigation links container */
+  .mobile-nav-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    width: 100%;
+  }
+
+  .mobile-nav-links a:hover{
+    color: var(--color-lightblue)
+  }
+
+  /* Remove default link styling */
+  .mobile-nav-links a {
+    text-decoration: none;
+  }
+
+  /* Styling for individual mobile navigation pages */
+  .mobile-nav-page {
+    color: white;
+    font-family: "Roboto Slab", serif;
+    font-size: 2rem;
+    font-weight: 500;
+    text-align: center;
+    /* Add smooth color transition on hover */
+    transition: color 0.3s ease;
+  }
+  
+
+  /* Add hover effect for mobile navigation links */
+  .mobile-nav-page:hover {
+    color: var(--color-lightblue);
+  }
+
+  /* Styling for mobile navigation close button */
+  .mobile-nav-close {
+    /* Positioning at top right of overlay */
+    position: absolute;
+    top: 1.75rem;
+    right: 1.75rem;
+    /* Remove default button styling */
+    background: none;
+    color: white;
+    font-size: 2rem;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+  }
+
+  /* Ensure mobile menu toggle is visible */
+  .nav-btn {
+    display: block !important;
+    background: none;
+    color: white;
+    font-size: 1.5rem;
+    /* Position fixed to be always visible */
+    position: fixed;
+    top: 1.75rem;
+    right: 2rem;
+    /* Ensure it's above the mobile overlay */
+    z-index: 1100;
+  }
+}
+
+.navbar-outer {
+  z-index: 10;
+  width: 100%;
+  display: flex;
+  position: fixed;
+  top: 0;
+  transition: var(--tr);
+  height: var(--navbar-top-height);
+}
+
+.navbar-background {
+  background: var(--color-navyblue);
+}
+
+.scrolled.navbar-outer {
+  height: var(--navbar-scrolled-height);
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
+  padding: 0 2rem;
+}
+
+.scrolled.nav-container {
+  height: var(--navbar-scrolled-height);
+}
+
+.nav-btn {
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin-left: 3rem;
+  display: none;
+}
+
+.logo {
+  max-height: 50px;
+  width: auto;
+}
+
+.scrolled.logo {
+  height: var(--logo-scrolled-height);
+  margin-top: 0.5rem;
+}
+
+.navbar-gradient {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: calc(var(--navbar-top-height) * 1.25);
+  background: linear-gradient(#000000aa 0%, transparent 100%);
+  transition: var(--tr);
+  opacity: 100%;
+}
+
+.scrolled.navbar-gradient {
+  height: var(--navbar-scrolled-height);
+  opacity: 0;
+}
+
+.pages {
+  font-family: "Roboto Slab", serif;
+  font-weight: 500;
+  font-size: 1.5rem;
+  margin-right: 4vw;
+}
+
+#footer {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 5rem;
+  background-color: var(--color-navyblue);
+  color: white;
+  text-align: center;
+}
+
+#page-container {
+  position: relative;
+  min-height: 100vh;
+  margin-top: var(--navbar-scrolled-height);
+}
+
+#content-wrap {
+  color: var(--color-navyblue);
+  margin-top: var(--navbar-scrolled-height);
+  padding-bottom: 5rem;
+}
+
+img {
+  margin: 0;
+  padding: 0;
+}
+
+.logo-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+}

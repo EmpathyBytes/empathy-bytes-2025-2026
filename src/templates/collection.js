@@ -33,6 +33,7 @@ function Collection({ data }) {
 
     return (
         <Layout>
+            <title>{collection.title}</title>
             <div style={container}>
                 <h1 style={collection_name}>{collection.title}</h1>
                 <div dangerouslySetInnerHTML={{ __html: collection.body.processed }} />

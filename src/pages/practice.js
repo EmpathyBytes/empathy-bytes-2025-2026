@@ -15,7 +15,11 @@ import MackenzieCard from "../components/mackenzieCard";
 import tiffanyCard from "../components/tiffanyCard";
 import DamodarCard from "../components/damodarCard"
 import MishaCard from "../components/mishaCard";
+<<<<<<< HEAD
 import BihanCard from "../components/bihanCard";
+=======
+import KatyCard from "../components/katyCard";
+>>>>>>> 392cbcc3ba4586c24ceb8951a2d6a397291c7548
 
 
 function PracticePage() {
@@ -31,10 +35,16 @@ function PracticePage() {
             <JoshCard />
             <AmaraCard />
             <KellyCard />
+<<<<<<< HEAD
             <DamodarCard />
             <MishaCard />
             <BihanCard />
             <tiffanyCard />   
+=======
+            <DamodarCard/>
+            <MishaCard/>
+            <KatyCard/>
+>>>>>>> 392cbcc3ba4586c24ceb8951a2d6a397291c7548
 
           </div>
         </main>

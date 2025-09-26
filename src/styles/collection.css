@@ -1,0 +1,116 @@
+/* css for the collection page */
+.collection-page-container {
+    background-color: #004B87;
+    padding: 4rem 2rem;
+    min-height: 100vh;
+    font-family: 'Roboto Slab', sans-serif;
+}
+
+.collection-header {
+    text-align: center;
+    color: #FFFFFF;
+    max-width: 800px;
+    margin: 0 auto 4rem auto;
+}
+
+.collection-header h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+
+.collection-header p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.interviews-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.5rem;
+}
+
+
+.redesigned-interview-card {
+    background-color: #003057;
+    border-radius: 20px;
+    max-width: 900px;
+    width: 100%;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    overflow: hidden;
+}
+
+.redesigned-interview-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(70, 150, 233, 0.2);
+}
+
+.redesigned-interview-card .MuiCardActionArea-root {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.card-image-container {
+    flex-shrink: 0;
+}
+
+.card-image {
+    width: 150px;
+    height: 150px;
+    background-color: #d9d9d9;
+    border-radius: 15px;
+    object-fit: cover;
+
+    border: 3px solid #E0BB56;
+}
+
+.card-text-container {
+    color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.card-title {
+    color: #E0BB56;
+    font-size: 1.75rem;
+    font-weight: 600;
+    margin: 0 0 0.5rem 0;
+}
+
+.card-author, .card-date {
+    font-size: 0.9rem;
+    color: #bdc7d4;
+    margin: 0 0 1rem 0;
+}
+
+.card-summary {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #EFEFEF;
+    flex-grow: 1;
+}
+
+.card-date {
+    margin-top: 1rem;
+    margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+    .collection-header h1 {
+        font-size: 2.5rem;
+    }
+
+    .redesigned-interview-card .MuiCardActionArea-root {
+        flex-direction: column;
+        padding: 1.5rem;
+        gap: 1.5rem;
+    }
+
+    .card-text-container {
+        text-align: center;
+    }
+}

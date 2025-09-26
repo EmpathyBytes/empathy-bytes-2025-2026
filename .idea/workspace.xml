@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="de170d2e-5b97-4c08-a657-72110b64e564" name="Changes" comment="" />
+    <list default="true" id="de170d2e-5b97-4c08-a657-72110b64e564" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,6 +22,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "kellyzhou277"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/EmpathyBytes/empathy-bytes-2025-2026.git",
+    "accountId": "7f6b5671-1fff-45cf-8261-cd2643d19a6e"
+  }
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
 }</component>
@@ -34,8 +48,8 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "article__page__redesign",
-    "last_opened_file_path": "/Users/kellyzhou/vip/empathy-bytes-2025-2026-master",
+    "git-widget-placeholder": "#77 on article__page__redesign",
+    "last_opened_file_path": "/Users/kellyzhou/Library/Mobile Documents/com~apple~CloudDocs/vip/empathy-bytes-2025-2026-master",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -62,6 +76,7 @@
       <updated>1758229639336</updated>
       <workItem from="1758229640442" duration="3907000" />
       <workItem from="1758240503017" duration="5784000" />
+      <workItem from="1758827457389" duration="6386000" />
     </task>
     <servers />
   </component>

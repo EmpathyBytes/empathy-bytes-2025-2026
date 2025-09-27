@@ -19,8 +19,31 @@ export default function CollectionCard(props) {
 
   if (matches) { //desktop
     return (
+<<<<<<< HEAD
       <Card sx={{ maxWidth: '40vw', borderRadius: "40px"}}>
         <Link style={{ textDecoration: 'none' }} to={"/projects" + props.url}>
+=======
+      <Card sx={{ 
+        maxWidth: '40vw', 
+        borderRadius: "40px",
+        transition: 'transform 0.2s ease',
+        '&:hover': {
+          transform: 'scale(1.02)'
+        },
+        '&:active': {
+          transform: 'scale(0.98)'
+        }
+      }}>
+        <Link 
+          style={{ textDecoration: 'none' }} 
+          to={"/projects" + props.url}
+          onClick={() => {
+            setTimeout(() => {
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }, 100);
+          }}
+        >
+>>>>>>> 40c6fdab838584c415b86df66c9d0271155ac1ca
             <CardActionArea>
               <CardMedia
                 component="img"
@@ -43,8 +66,27 @@ export default function CollectionCard(props) {
 
   } else {
     return ( //mobile
-      <Card sx={{ width: '80vw',  margin: '5% auto'}}>
-        <Link style={{textDecoration:"none"}} to={"/projects" + props.url}>
+      <Card sx={{ 
+        width: '80vw',  
+        margin: '5% auto', 
+        borderRadius: "30px",
+        transition: 'transform 0.2s ease',
+        '&:hover': {
+          transform: 'scale(1.02)'
+        },
+        '&:active': {
+          transform: 'scale(0.98)'
+        }
+      }}>
+        <Link 
+          style={{textDecoration:"none"}} 
+          to={"/projects" + props.url}
+          onClick={() => {
+            setTimeout(() => {
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }, 100);
+          }}
+        >
           <CardActionArea>
             <CardMedia
               component="img"
@@ -55,7 +97,7 @@ export default function CollectionCard(props) {
               src={"https://empathybytes.library.gatech.edu" + props.image}
               alt="img"
             />
-            <CardContent className="collectionCard">
+            <CardContent className="collectionCard" sx={{ textAlign: 'center' }}>
               <h5 className="collectionTitle">{props.title}</h5>
               <div className="collectionText" dangerouslySetInnerHTML={{ __html: props.body }} />
             </CardContent>

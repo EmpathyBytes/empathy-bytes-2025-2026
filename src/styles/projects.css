@@ -57,18 +57,25 @@ html {
 }
 
 .project-nav-text:hover {
+<<<<<<< HEAD
+    background-color: #E0BB56;
+=======
     background-color: white;
+>>>>>>> 40c6fdab838584c415b86df66c9d0271155ac1ca
     color: #003057;
     cursor: pointer;
     transition: background-color 200ms linear;
 }
 
+<<<<<<< HEAD
+=======
 .project-nav-text.active {
     background-color: white;
     color: #003057;
     font-weight: bold;
 }
 
+>>>>>>> 40c6fdab838584c415b86df66c9d0271155ac1ca
 .project-navBG {
     display: flex;
     background-color: #003057;
@@ -78,6 +85,8 @@ html {
     top: 5vh;
     margin: auto;
     justify-content: center;
+<<<<<<< HEAD
+=======
     align-items: center;
 }
 
@@ -129,6 +138,7 @@ html {
     background-color: white !important;
     color: #003057 !important;
     font-weight: bold;
+>>>>>>> 40c6fdab838584c415b86df66c9d0271155ac1ca
 }
 
 @media (max-width: 768px) {

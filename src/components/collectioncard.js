@@ -19,6 +19,10 @@ export default function CollectionCard(props) {
 
   if (matches) { //desktop
     return (
+<<<<<<< HEAD
+      <Card sx={{ maxWidth: '40vw', borderRadius: "40px"}}>
+        <Link style={{ textDecoration: 'none' }} to={"/projects" + props.url}>
+=======
       <Card sx={{ 
         maxWidth: '40vw', 
         borderRadius: "40px",
@@ -39,6 +43,7 @@ export default function CollectionCard(props) {
             }, 100);
           }}
         >
+>>>>>>> 40c6fdab838584c415b86df66c9d0271155ac1ca
             <CardActionArea>
               <CardMedia
                 component="img"

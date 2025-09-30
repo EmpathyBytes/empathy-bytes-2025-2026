@@ -11,6 +11,22 @@ function Collection({ data }) {
     return (
         <Layout>
             <title>{collection.title}</title>
+<<<<<<< HEAD
+            <div style={container}>
+                <h1 style={collection_name}>{collection.title}</h1>
+                <div dangerouslySetInnerHTML={{ __html: collection.body.processed }} />
+                <p></p>
+                {interview.map((i) => (
+                    <InterviewCard
+                        img={"https://empathybytes.library.gatech.edu" + i.relationships.field_image.uri.url}
+                        title={i.title}
+                        author={i.field_author}
+                        date={i.field_hg_dateline}
+                        body={i.field_blurb}
+                        url={"/projects" + collection.path.alias + i.path.alias}
+                    />
+                ))}
+=======
             <div className="collection-page-container">
                 <div className="collection-header">
                     <h1>{collection.title}</h1>
@@ -30,6 +46,7 @@ function Collection({ data }) {
                         />
                     ))}
                 </div>
+>>>>>>> 40c6fdab838584c415b86df66c9d0271155ac1ca
 
             </div>
         </Layout>

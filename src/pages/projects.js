@@ -24,6 +24,38 @@ const ProjectsPage = ({data}) => {
     //const arr takes in data from drupal
     const arr = data.collections.nodes;
 
+<<<<<<< HEAD
+    // These functions set the visibility of each collection (from about.js)
+    const [visEmerging, setToggleMaker] = useState(false);
+    const [visWeb, setToggleWeb] = useState(false);
+    const [visMedia, setToggleMedia] = useState(false);
+    const [visApp, setToggleApp] = useState(false);
+
+    function toggleMaker() {
+        setToggleMaker(true);
+        setToggleWeb(false);
+        setToggleMedia(false);
+        setToggleApp(false);
+    }
+    function toggleWeb() {
+        setToggleMaker(false);
+        setToggleWeb(true);
+        setToggleMedia(false);
+        setToggleApp(false);
+    }
+    function toggleMedia() {
+        setToggleMaker(false);
+        setToggleWeb(false);
+        setToggleMedia(true);
+        setToggleApp(false);
+    }
+    function toggleApp() {
+        setToggleMaker(false);
+        setToggleWeb(false);
+        setToggleMedia(false);
+        setToggleApp(true);
+    }
+=======
     // State management for filtering collections
     const [selectedCategory, setSelectedCategory] = useState('all');
 
@@ -64,6 +96,7 @@ const ProjectsPage = ({data}) => {
             setSelectedCategory(category);
         }
     };
+>>>>>>> 40c6fdab838584c415b86df66c9d0271155ac1ca
 
     //use if statement to make the dif layouts
     if (matches) { //desktop view rendered
@@ -76,6 +109,44 @@ const ProjectsPage = ({data}) => {
 
                             {/* Div that contains the navbar */}
                             <div className="project-nav" style={{ paddingTop: 25, paddingBottom: 25 }}>
+<<<<<<< HEAD
+                            <Grid container spacing={2} className="project-navBG">
+
+                                <Grid xs={1}>
+                                </Grid>
+
+                                <Grid xs={2}>
+                                <a href="#project-maker" className="noUnderline">
+                                    <h3 className="project-nav-text" onClick={toggleMaker}>Makerspaces</h3>
+                                </a>
+                                </Grid>
+
+                                <Grid xs={2}>
+                                <a href="#project-math" className="noUnderline">
+                                    <h3 className="project-nav-text" onClick={toggleWeb}>Distance Math</h3>
+                                </a>
+                                </Grid>
+
+                                <Grid xs={2}>
+                                <a href="#project-BTS" className="noUnderline">
+                                    <h3 className="project-nav-text" onClick={toggleMedia}>Behind the Scenes</h3>
+                                </a>
+                                </Grid>
+
+                                <Grid xs={2}>
+                                <a href="#project-covid" className="noUnderline">
+                                    <h3 className="project-nav-text" onClick={toggleApp}>COVID-19</h3>
+                                </a>
+                                </Grid>
+
+                                <Grid xs={2}>
+                                <a href="#project-misc" className="noUnderline">
+                                    <h3 className="project-nav-text" onClick={toggleApp}>Miscellaneous</h3>
+                                </a>
+                                </Grid>
+
+                                <Grid xs={1}>
+=======
                             <Grid container spacing={10} className="project-navBG" justifyContent="center">
 
                                 <Grid xs={2}>
@@ -121,14 +192,20 @@ const ProjectsPage = ({data}) => {
                                     >
                                         Miscellaneous
                                     </h3>
+>>>>>>> 40c6fdab838584c415b86df66c9d0271155ac1ca
                                 </Grid>
 
                             </Grid>
                             </div>
                             {/* Div that contains the navbar */}
 
+<<<<<<< HEAD
+                        <Grid container spacing={3}>
+                        {arr.map((item) => ( // Mapping collection data to card component
+=======
                         <Grid container spacing={3} className="content-transition">
                         {getFilteredCollections().map((item) => ( // Mapping filtered collection data to card component
+>>>>>>> 40c6fdab838584c415b86df66c9d0271155ac1ca
                             <Grid item xs={6}>
                             <CollectionCard 
                             title = {item.title}

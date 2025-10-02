@@ -2,7 +2,7 @@
 
 /* 404.js*/
 .pageStyles {
-    color: #232129;
+    color: var(--color-darkgray);
     padding: 96px;
     font-family: "-apple-system, Roboto, sans-serif, serif";
 }
@@ -16,9 +16,9 @@
     margin-bottom: 48;
 }
 .codeStyles {
-    color: #8A6534;
+    color: var(--color-dark-gold);
     padding: 4;
-    background-color: #FFF4DB;
+    background-color: var(--color-lightyellow);
     font-size: 1.25rem;
     border-radius: 4,
 }
@@ -43,6 +43,6 @@
     text-align: center;
     padding-top: 10;
     font-family: 'Roboto Slab, serif';
-    color: #b3a369;
+    color: var(--color-techgold);
 }
 

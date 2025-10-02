@@ -6,7 +6,7 @@ header {
     height: var(--navbar-scrolled-height);
     padding: 0 2rem;
     background-color: var(--color-navyblue);
-    color: white;
+    color: var(--color-offwhite);
     position: fixed;
     top: 0;
     left: 0;
@@ -18,12 +18,12 @@ header {
 
 nav a {
     margin: 0 2rem;
-    color: white;
+    color:var(--color-offwhite);
     text-decoration: none;
 }
 
 nav a:hover {
-    color: white;
+    color: var(--color-offwhite);
     
 }
 
@@ -33,7 +33,7 @@ header .nav-btn {
     background: transparent;
     border: none;
     outline: none;
-    color: white;
+    color: var(--color-offwhite);
     visibility: hidden;
     opacity: 0;
     font-size: 1.8rem;

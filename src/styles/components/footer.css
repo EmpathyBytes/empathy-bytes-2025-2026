@@ -1,7 +1,7 @@
 @import "../fonts.css";
 
 .container-footer {
-    background-color: #003057;
+    background-color: var(--color-navyblue);
     padding: 2.5% 5%;
 }
 
@@ -14,20 +14,20 @@
 .text-footer-title {
     font-family: 'Roboto', sans-serif;
     font-size: 1.5rem;
-    color: white;
+    color: var(--color-offwhite);
     text-align: center;
 }
 
 .text-heading {
     font-family: 'Roboto', sans-serif;
     font-size: 1rem;
-    color: white;
+    color: var(--color-offwhite);
 }
 
 .text-anchor {
     font-family: 'Roboto', sans-serif;
     font-size: 0.75rem;
-    color: whitesmoke;
+    color: var(--color-offwhite);
     text-decoration: none;
 }
 

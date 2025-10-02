@@ -1,5 +1,5 @@
 /* This stylesheet contains basic styling components that will be used in all pages */
-
+@import './colors.css';
 
 .bg-1 {
     background-color:  #22232e;;

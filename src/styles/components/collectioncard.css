@@ -1,14 +1,14 @@
 .collectionCard {
-    background-color: #1B3F66;
+    background-color: var(--color-navyblue);
 }
 
 .collectionTitle {
     font-family: 'Roboto Slab', serif;
     font-size: 1.25rem;
-    color: white;
+    color: var(--color-white);
 }
 
 .collectionText {
     font-family: 'Roboto', sans-serif;
-    color: white;
+    color: var(--color-white);
 }

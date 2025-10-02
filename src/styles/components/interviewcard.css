@@ -1,5 +1,5 @@
 .int_card {
-    border-bottom: 5px solid #b3a369;
+    border-bottom: 5px solid var(--color-techgold);
     margin: 15px;
     padding: 10px;
 }
@@ -25,7 +25,7 @@
 
 .row {
     display: flex;
-    border-bottom: 5px solid #b3a369;
+    border-bottom: 5px solid var(--color-techgold);
     padding: 15;
     font-family: 'Roboto';
     justify-items: space-between;
@@ -35,9 +35,9 @@
     line-clamp: 3;
     text-overflow: ellipsis;
     overflow: hidden;
-    color: #90c7fa;
+    color: var(--color-lightblue);
 }
 
 .ep_title {
-    color: white;
+    color: var(--color-offwhite);
 }

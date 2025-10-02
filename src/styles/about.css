@@ -17,7 +17,7 @@
     @media screen and (max-width: 800px) {
       font-size: 1.75rem;
     };
-    color: white;
+    color: var(--color-offwhite);
 }
 
 .paragraph-about {
@@ -31,7 +31,7 @@
     @media screen and (max-width: 800px) {
       font-size: 1rem;
     };
-    color: white;
+    color: var(--color-offwhite);
 }
 
 .emerging-tech-about {
@@ -57,7 +57,7 @@
 .text-controls {
     font-family: 'Roboto', sans-serif;
     font-size: 1.3vw;
-    color: white;
+    color: var(--color-offwhite);
 }
 
 .text-controls:hover {
@@ -68,20 +68,20 @@
 .about-nav-text {
     font-size: 1rem;
     font-family: 'Roboto Slab', sans-serif;
-    color: white;
+    color: var(--color-offwhite);
     padding: 10%;
     border-radius: 150px;
 }
 
 .about-nav-text:hover {
-    background-color: #003057;
+    background-color: var(--color-hoverblue);
     cursor: pointer;
     transition: background-color 200ms linear;
 }
 
 .navBG {
     display: flex;
-    background-color: #1B3F66;
+    background-color: var(--color-navyblue);
     border-radius: 150px;
     width: 90%;
     height: 50%;
@@ -96,7 +96,7 @@
     position: relative;
     width: 256px;
     height: 221px; /* width * 0.866 */
-    background: white;
+    background: var(--color-offwhite);
     box-sizing: border-box;
     -webkit-clip-path: polygon(0% 50%, 25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%);
     -moz-clip-path: polygon(0% 50%, 25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%);
@@ -104,7 +104,7 @@
 
   .hex-background {
     position: absolute;
-    background-color: white; /*color of the main-background*/
+    background-color: var(--color-offwhite); /*color of the main-background*/
     top: 2px; /* equal to border thickness */
     left: 2px; /* equal to border thickness */
     width: 256px; /* container height - (border thickness * 2) */
@@ -170,11 +170,11 @@
     left: 0;
     
 
-    background-color: rgba(0, 0, 0, 0.3)
+    background-color: var(--color-black);
   }
 
   .a-c-full {
-    background-color: #003663;
+    background-color: var(--color-navyblue);
     top: 120px;
   }
 

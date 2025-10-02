@@ -1,15 +1,8 @@
 @import "./fonts.css";
-
+@import './colors.css';
 * {
   scroll-behavior: smooth;
 }
-
-:root {
-  --primary-color: #0779d7;
-  --secondary-color: #789beb;
-  --text-color: #ffffff;
-}
-
 .container-contact {
   width: 100vw;
   height: 100vh;
@@ -20,10 +13,10 @@
   background-image: linear-gradient(
     to bottom,
     var(--primary-color),
-    #4878bc,
-    #457fb3,
+    var(--color-gradientblue1),
+    var(--color-gradientblue2),
     var(--secondary-color),
-    #2f55ff
+    var(--color-gradientblue3)
   );
 }
 
@@ -53,7 +46,7 @@
 }
 
 .button:hover {
-  background-color: #003057;
+  background-color: var(--color-navyblue);
   transform: scale(1.05);
 }
 
@@ -62,14 +55,14 @@
 }
 
 #info .info-section {
-  background-color: #ff9999; /* Change to your desired background color */
+  background-color: var(--color-contactbackground); /* Change to your desired background color */
   padding: 100px; /* Add padding or other styling as needed */
   /* Center-align the text */
 }
 
 #info {
   padding: 50px;
-  background-color: #003057;
+  background-color: var(--color-navyblue);
   /* padding-bottom: 400px; */
   text-align: center;
 }
@@ -96,12 +89,12 @@ a:link,
 a:visited,
 a:hover,
 a:active {
-  color: rgb(144, 199, 250);
+  color: var(--color-lightblue);
 }
 
 
 body{
-  background: #22232e;
+  background: var(--color-darkgray);
 }
 .container{
   padding-bottom: 70px;
@@ -116,8 +109,8 @@ body{
 }
 .container section details summary{
   padding: 15px;
-  background: #e0ffff;
-  color: #22232e;
+  background: var(--color-lightteal);
+  color: var(--color-darkgray);
   position: relative;
   list-style: none;
   outline: none;
@@ -130,11 +123,11 @@ body{
 .container section details p{
   font-size: 15px;
   padding: 10px;
-  color: #333;
-  background: #e0ffff;
+  color: var(--color-darkbrown);
+  background:var(--color-lightteal);
 }
 .container section details summary span{
   font-size: 22px;
-  color: #333;
+  color: var(--color-darkbrown);
   float: right;
 }

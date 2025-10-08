@@ -1,6 +1,7 @@
 import React from "react";
 import Layout from "../components/layout";
 import "../styles/contactPage.css";
+import Button from "../components/button";
 
 function ContactPage() {
   // Define email handlers as an object
@@ -31,7 +32,8 @@ function ContactPage() {
               <div className="centerStyles" key={key}>
                 <label className="labelStyle">
                   <button
-                    className="button"
+                    variant = "primary"
+                    size = "md"
                     type="button"
                     onClick={() => handleEmailButtonClick(key)}
                   >

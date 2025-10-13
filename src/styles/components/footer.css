@@ -16,6 +16,14 @@
     text-align: left; 
 }
 
+/* Fix for mobile: keep "Empathy Bytes" on same line */
+@media screen and (max-width: 768px) {
+    .bytes {
+        display: inline !important;
+        margin-top: 0 !important;
+    }
+}
+
 footer a:link{
     color: white;
 }
@@ -132,4 +140,59 @@ footer a:hover{
         height: var(--logo-scrolled-height);
         border-radius: 50%;
         }
+}
+
+/* Mobile-only responsiveness - only affects screens 768px and below */
+@media screen and (max-width: 768px) {
+    .container-footer {
+        flex-direction: column !important;
+        height: auto !important;
+        padding: 2rem 1rem !important;
+        justify-content: flex-start !important;
+    }
+    
+    .grouping {
+        margin-top: 0 !important;
+        width: 100% !important;
+        text-align: center !important;
+        align-items: center !important;
+    }
+    
+    .text-anchor-container {
+        align-items: center !important;
+        width: 100% !important;
+    }
+    
+    .icon-group {
+        justify-content: center !important;
+        flex-wrap: wrap !important;
+    }
+    
+    .icon {
+        width: 3rem !important;
+        height: 3rem !important;
+    }
+    
+    .centered-content {
+        align-items: center !important;
+        width: 100% !important;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .text-footer-title {
+        font-size: 2rem !important;
+    }
+    
+    .text-heading {
+        font-size: 1.25rem !important;
+    }
+    
+    .container-footer {
+        padding: 1.5rem 0.5rem !important;
+    }
+    
+    .text-anchor {
+        font-size: 1rem !important;
+    }
 }

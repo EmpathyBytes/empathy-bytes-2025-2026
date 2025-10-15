@@ -41,3 +41,15 @@
 .rotate {
     transform: rotate(30);
 }
+
+/* card enlarges when user hovers */
+.MuiCardActionArea-root {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.MuiCardActionArea-root:hover,
+.MuiCardActionArea-root:active {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.2);
+  z-index: 2;
+}

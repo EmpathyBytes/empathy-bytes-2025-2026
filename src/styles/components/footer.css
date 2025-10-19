@@ -98,6 +98,19 @@ footer a:hover{
     text-align: left;
 }
 
+/* Underline only the section headings inside the content columns */
+.grouping .text-heading {
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid rgba(144, 199, 250, 0.3);
+    padding-bottom: 0.5rem;
+}
+
+/* Do not show underline for the Follow Us heading */
+.logo-container .text-heading {
+    border-bottom: 0 !important;
+    margin-bottom: 0.75rem;
+}
+
 
 .centered-content {
     display: flex;
@@ -249,15 +262,6 @@ footer a:hover{
         align-items: center !important;
         width: 100% !important;
     }
-
-    /* Makes Follow Us column full-width on mobile */
-    .container-footer > .logo-container {
-        width: 100% !important;
-        align-items: center !important;
-        text-align: center !important;
-        margin-bottom: 1rem !important;
-    }
-
     /* Makes Follow Us heading itself centered on mobile */
     .logo-container .text-heading {
         text-align: center !important;

@@ -105,12 +105,11 @@ footer a:hover{
     padding-bottom: 0.5rem;
 }
 
-/* Do not show underline for the Follow Us heading */
+/* Doesn't show underline for the Follow Us heading */
 .logo-container .text-heading {
     border-bottom: 0 !important;
     margin-bottom: 0.75rem;
 }
-
 
 .centered-content {
     display: flex;
@@ -132,7 +131,7 @@ footer a:hover{
 
 /* Navigation link hover effect:
    - The ::before pseudo-element is a tiny accent bar positioned to the left (width: 0 by default).
-   - On :hover, the link slides 4px to the right and the bar expands to 4px*/
+   - On :hover, the text for the link 4px to the right and the bar expands to 4px*/
 .text-anchor {
     color: #FFF;
     font-family: Roboto;
@@ -229,57 +228,58 @@ footer a:hover{
 /* Mobile-only responsiveness - only affects screens 768px and below */
 @media screen and (max-width: 768px) {
     .container-footer {
-        flex-direction: column !important;
-        height: auto !important;
-        padding: 2rem 1rem !important;
-        justify-content: flex-start !important;
+        flex-direction: column;
+        height: auto;
+        padding: 2rem 1rem;
+        justify-content: flex-start;
     }
     
     .grouping {
-        margin-top: 0 !important;
-        width: 100% !important;
-        text-align: center !important;
-        align-items: center !important;
-        margin-bottom: 1rem !important;
+        margin-top: 0;
+        width: 100%;
+        text-align: center;
+        align-items: center;
+        margin-bottom: 1rem;
     }
     
     .text-anchor-container {
-        align-items: center !important;
-        width: 100% !important;
+        align-items: center;
+        width: 100%;
     }
     
     .icon-group {
-        justify-content: center !important;
-        flex-wrap: wrap !important;
+        justify-content: center;
+        flex-wrap: wrap;
     }
     
     .icon {
-        width: 3rem !important;
-        height: 3rem !important;
+        width: 3rem;
+        height: 3rem;
     }
     
     .centered-content {
-        align-items: center !important;
-        width: 100% !important;
+        align-items: center;
+        width: 100%;
     }
+
     /* Makes Follow Us heading itself centered on mobile */
     .logo-container .text-heading {
-        text-align: center !important;
-        width: 100% !important;
-        margin-left: 0 !important;
-        margin-right: 0 !important;
+        text-align: center;
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
     }
 
     /* Centers the inner paragraph, some browsers keep default margins */
     .logo-container .text-heading p {
-        text-align: center !important;
-        margin: 0.25rem auto !important;
-        width: 100% !important;
+        text-align: center;
+        margin: 0.25rem auto;
+        width: 100%;
     }
 
     /* Centers the icon row in the Follow Us column on mobile */
     .container-footer > .logo-container .icon-group {
-        justify-content: center !important;
+        justify-content: center;
     }
 }
 

@@ -16,7 +16,7 @@
     text-align: left; 
 }
 
-/* Fix for mobile: keep "Empathy Bytes" on same line */
+/* mobile: keep "Empathy Bytes" on same line */
 @media screen and (max-width: 768px) {
     .bytes {
         display: inline !important;
@@ -24,6 +24,8 @@
     }
 }
 
+/* Link states: default + visited stay white; on hover we lighten to indicate interactivity.
+   Note: On mobile, :hover may not trigger reliably */
 footer a:link{
     color: white;
 }
@@ -32,11 +34,15 @@ footer a:link{
     color:white;
 }
 
+/* Hover color change only */
 footer a:hover{
     color:#90c7fa;
 }
 
-/* Social media icons */
+/* Social media icons:
+   - Base .icon defines size and enables smooth animation with transition.
+   - Hover scales up slightly and increase brightness */
+
 .icon {
     width: 2.5rem;
     height: 2.5rem;
@@ -55,7 +61,7 @@ footer a:hover{
     gap: 1.25rem;               
     align-items: center;
     margin-top: 1rem;
-    /* Left-align on desktop; we center only on mobile below */
+    /* Left-align on desktop; centered on mobile below */
     justify-content: flex-start;
 }
 
@@ -111,6 +117,9 @@ footer a:hover{
     max-width: 100%;
 }
 
+/* Navigation link hover effect:
+   - The ::before pseudo-element is a tiny accent bar positioned to the left (width: 0 by default).
+   - On :hover, the link slides 4px to the right and the bar expands to 4px*/
 .text-anchor {
     color: #FFF;
     font-family: Roboto;
@@ -145,7 +154,21 @@ footer a:hover{
 .text-anchor:hover:before {
     width: 4px;
 }
-/* Distinguish the Grid item vs. the inner logo container without renaming classes */
+
+/* Prevent hover shift for social icon links (keep icons from moving on hover) (delete if you want them to be shifted right aswell) */
+.icon-group .text-anchor,
+.icon-group .text-anchor:hover {
+    transform: none !important;
+}
+
+/* Disable the left accent bar for social media icon links only (delete if you want accent bar) */
+.icon-group .text-anchor::before,
+.icon-group .text-anchor:hover::before {
+    content: none !important;
+    width: 0 !important;
+}
+
+/* Distinguish the Grid item vs. the inner logo container*/
 /* Grid item: .container-footer > .logo-container */
 .container-footer > .logo-container {
     display: flex;
@@ -166,6 +189,8 @@ footer a:hover{
     gap: 1.5vh;
 }
 
+/* Logo hover:
+   - Slight scale + stronger shadow but w/o shifting the layout */
 .footer-logo {
     width: 4rem;
     height: 4rem;
@@ -225,7 +250,7 @@ footer a:hover{
         width: 100% !important;
     }
 
-    /* Make the Follow Us column full-width on mobile */
+    /* Makes Follow Us column full-width on mobile */
     .container-footer > .logo-container {
         width: 100% !important;
         align-items: center !important;
@@ -233,7 +258,7 @@ footer a:hover{
         margin-bottom: 1rem !important;
     }
 
-    /* Ensure the Follow Us heading itself is centered on mobile */
+    /* Makes Follow Us heading itself centered on mobile */
     .logo-container .text-heading {
         text-align: center !important;
         width: 100% !important;
@@ -241,14 +266,14 @@ footer a:hover{
         margin-right: 0 !important;
     }
 
-    /* Also center the inner paragraph, some browsers keep default margins */
+    /* Centers the inner paragraph, some browsers keep default margins */
     .logo-container .text-heading p {
         text-align: center !important;
         margin: 0.25rem auto !important;
         width: 100% !important;
     }
 
-    /* And center the icon row in the Follow Us column on mobile */
+    /* Centers the icon row in the Follow Us column on mobile */
     .container-footer > .logo-container .icon-group {
         justify-content: center !important;
     }

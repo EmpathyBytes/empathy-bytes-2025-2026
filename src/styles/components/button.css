@@ -1,0 +1,104 @@
+:root{
+  /* Palette */
+  --eb-navy-900: #003057;   /* deep */
+  --eb-blue-800: #004B87;   /* primary */
+  --eb-neutral-50: #F6F8F9; /* light bg */
+  --eb-olive-600: #857437;  /* alt/dark accent */
+  --eb-gold-500: #E0BB56;   /* accent */
+  --eb-gray-400: #D9D9D9;   /* border/disabled */
+
+  /* Typography 
+  --eb-font-body: "Roboto", system-ui, -apple-system, Segoe UI, Arial, sans-serif;
+  --eb-font-head: "Roboto Slab", Georgia, serif;
+
+  /* Dynamic sizing  */ 
+  --btn-pad-y: clamp(0.5rem, 0.6vw, 0.9rem);
+  --btn-pad-x: clamp(0.9rem, 1.2vw, 1.4rem);
+
+  /* Font sizes */
+  --btn-font-sm: 0.875rem;
+  --btn-font-md: 1rem;
+  --btn-font-lg: 1.125rem;
+
+  /* Radius */
+  --btn-radius: clamp(8px, 1vw, 16px);
+
+  --btn-transition: 150ms ease-in-out;
+
+  /* Theme choices for buttons */
+  --btn-primary-bg: var(--eb-blue-800);
+  --btn-primary-fg: #ffffff;
+  --btn-primary-hover: #003d73;        /* slightly darker than #004B87 */
+
+  --btn-secondary-bg: var(--eb-neutral-50);
+  --btn-secondary-fg: var(--eb-navy-900);
+  --btn-secondary-hover: #e8ecef;
+
+  --btn-outline-fg: var(--eb-navy-900);
+  --btn-outline-border: var(--eb-navy-900);
+  --btn-outline-hover-bg: var(--eb-neutral-50);
+
+  /* Optional accent variant if wanted a gold CTA later
+  --btn-accent-bg: var(--eb-gold-500);
+  --btn-accent-fg: #000;
+  --btn-accent-hover: #d2a744;
+  */
+}
+
+/* Base */
+.eb-btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:.5rem;
+
+  padding: var(--btn-pad-y) var(--btn-pad-x);
+  font-family: var(--eb-font-body);
+  border:none;
+  border-radius: var(--btn-radius);
+  text-decoration:none;
+  user-select:none;
+  cursor:pointer;
+
+  transition:
+    background-color var(--btn-transition),
+    color var(--btn-transition),
+    border-color var(--btn-transition),
+    transform var(--btn-transition);
+}
+
+/* Sizes */
+.eb-btn--sm{ font-size:var(--btn-font-sm); }
+.eb-btn--md{ font-size:var(--btn-font-md); }
+.eb-btn--lg{ font-size:var(--btn-font-lg); }
+
+/* Variants */
+.eb-btn--primary{
+  background: var(--btn-primary-bg);
+  color: var(--btn-primary-fg);
+}
+.eb-btn--primary:hover{ background: var(--btn-primary-hover); }
+.eb-btn--primary:active{ transform: translateY(1px); }
+
+.eb-btn--secondary{
+  background: var(--btn-secondary-bg);
+  color: var(--btn-secondary-fg);
+}
+.eb-btn--secondary:hover{ background: var(--btn-secondary-hover); }
+.eb-btn--secondary:active{ transform: translateY(1px); }
+
+.eb-btn--outline{
+  background: transparent;
+  color: var(--btn-outline-fg);
+  border: 2px solid var(--btn-outline-border);
+}
+.eb-btn--outline:hover{ background: var(--btn-outline-hover-bg); }
+.eb-btn--outline:active{ transform: translateY(1px); }
+
+/* Disabled */
+.eb-btn[disabled],
+.eb-btn:disabled{
+  opacity:.6;
+  cursor:not-allowed;
+  transform:none;
+}

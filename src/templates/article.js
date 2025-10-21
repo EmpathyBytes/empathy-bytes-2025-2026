@@ -69,7 +69,6 @@ export const query = graphql`
         nodeArticle(id: { eq: $ArticleId }) {
         field_author
         field_video_url
-        field_hg_dateline
         id
         title
         body {
@@ -87,9 +86,6 @@ export const query = graphql`
             field_audio {
                 path {
                     alias
-                }
-                internal {
-                    contentFilePath
                 }
             }
         }

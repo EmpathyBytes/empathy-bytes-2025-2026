@@ -1,6 +1,6 @@
 /* css for the collection page */
 .collection-page-container {
-    background-color: #004B87;
+    background-color: var(--color-peacockblue);
     padding: 4rem 2rem;
     min-height: 100vh;
     font-family: 'Roboto Slab', sans-serif;
@@ -8,7 +8,7 @@
 
 .collection-header {
     text-align: center;
-    color: #FFFFFF;
+    color: var(--color-offwhite);
     max-width: 800px;
     margin: 0 auto 4rem auto;
 }
@@ -33,7 +33,7 @@
 
 
 .redesigned-interview-card {
-    background-color: #003057;
+    background-color: var(--color-navyblue);
     border-radius: 20px;
     max-width: 900px;
     width: 100%;
@@ -64,18 +64,18 @@
     border-radius: 15px;
     object-fit: cover;
 
-    border: 3px solid #E0BB56;
+    border: 3px solid var(--color-brightgold);
 }
 
 .card-text-container {
-    color: #FFFFFF;
+    color: var(--color-offwhite);
     display: flex;
     flex-direction: column;
     text-align: left;
 }
 
 .card-title {
-    color: #E0BB56;
+    color: var(--color-brightgold);
     font-size: 1.75rem;
     font-weight: 600;
     margin: 0 0 0.5rem 0;
@@ -83,14 +83,14 @@
 
 .card-author, .card-date {
     font-size: 0.9rem;
-    color: #bdc7d4;
+    color: var(--color-lightgray);
     margin: 0 0 1rem 0;
 }
 
 .card-summary {
     font-size: 1rem;
     line-height: 1.5;
-    color: #EFEFEF;
+    color: var(--color-offwhite);
     flex-grow: 1;
 }
 

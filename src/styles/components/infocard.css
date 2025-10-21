@@ -5,7 +5,7 @@
 }
 /* The mui card component containing the card-content */
 .card {
-    background-color: #003057;
+    background-color: var(--color-navyblue);
     display: flex;
     max-width: 50vw;
     height: 52vh;
@@ -30,7 +30,7 @@
 /*The title of the card*/
 .header {
     font-family: 'Roboto Slab', serif;
-    color:white;
+    color: var(--color-offwhite);
     font-size: 1.875rem;
     font-style: normal;
     font-weight: 700;
@@ -39,7 +39,7 @@
 }
 /*The body text of the card*/
 .content {
-    color: #FFF;
+    color: var(--color-offwhite);
     font-family: Roboto;
     font-size: 1.5rem;
     font-style: normal;
@@ -55,7 +55,7 @@
     align-items: center;
     gap: 1.25rem;
     border-radius: 3.125rem;
-    background: #004B87;
+    background: var(--color-peacockblue);
     flex-direction: row;
     align-self: flex-end;
     /*doesn't look like its being used but replaced px with rem*/
@@ -65,5 +65,5 @@
 .button:hover {
     transition:  0.3s;
     transform:0.3s;
-    background-color: #E0BB56;
+    background-color: var(--color-brightgold);
 }

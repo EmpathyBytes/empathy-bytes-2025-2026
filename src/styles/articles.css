@@ -28,7 +28,7 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    color: white;
+    color: var(--color-offwhite);
 }
 
 .articleImage {
@@ -48,7 +48,7 @@
 .articleTitleInfo {
     position: absolute;
     text-align: left;
-    color: white;
+    color: var(--color-offwhite);
     bottom: 1%;
     left: 31%;
     inline-size: 31.25rem;
@@ -61,7 +61,7 @@
     outline:none;
     cursor:pointer;
     text-decoration: underline dotted;
-    color:rgba(63,107,169);
+    color:var(--color-clicker);
 }
     
 .hiddendiv{
@@ -100,7 +100,7 @@
 .authorInfo {
     font-family: 'Roboto Slab', serif; 
     font-size: 1rem;
-    color: white;
+    color: var(--color-offwhite);
     text-align: center;
     position: relative;
     top: 2.5rem; 

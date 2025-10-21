@@ -7,7 +7,7 @@
 .container-experiences-homepage {
     padding-top: 20vh;
     padding-bottom: 28vh;
-    background-color: #004B87;
+    background-color: var(--color-peacockblue);
 }
 
 .container-half {

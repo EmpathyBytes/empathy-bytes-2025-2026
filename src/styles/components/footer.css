@@ -1,7 +1,7 @@
 @import "../fonts.css";
 
 .container-footer {
-    background-color: #003057;
+    background-color: var(--color-navyblue);
     justify-content: space-evenly;
     display: flex;
     width: 100%; 
@@ -17,15 +17,15 @@
 }
 
 footer a:link{
-    color: white;
+    color: var(--color-white);
 }
 
   footer a:visited {
-    color:white;
+    color:var(--color-offwhite);
 }
 
 footer a:hover{
-    color:#90c7fa;
+    color:var(--color-lightblue);
 }
 
 /*right icon*/
@@ -57,14 +57,14 @@ footer a:hover{
 .text-footer-title {
     font-family: 'Roboto Slab', sans-serif;
     font-size: 3.25rem;
-    color: white;
+    color: var(--color-offwhite);
     font-style: normal;
     font-weight: 700;
     line-height: normal;
 }
 
 .text-heading {
-    color: #FFF;
+    color: var(--color-offwhite);
     font-family: Roboto;
     font-size: 1.75rem;
     font-style: normal;
@@ -93,7 +93,7 @@ footer a:hover{
 }
 
 .text-anchor {
-    color: #FFF;
+    color: var(--color-offwhite);
     font-family: Roboto;
     font-size: 1.125rem;
     font-style: normal;

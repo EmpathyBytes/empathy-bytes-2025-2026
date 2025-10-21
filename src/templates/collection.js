@@ -47,14 +47,6 @@ export const query = graphql`
             path {
                 alias
             }
-            relationships {
-                field_image {
-                    uri {
-                        url
-                        value
-                    }
-                }
-            }
         }
         interview: taxonomyTermTags(name: {eq: $CollectionTitle }) {
             relationships {
@@ -67,9 +59,6 @@ export const query = graphql`
                     field_author
                     field_hg_dateline
                     field_blurb
-                    body {
-                        processed
-                    }
                     relationships {
                         field_image {
                             uri {

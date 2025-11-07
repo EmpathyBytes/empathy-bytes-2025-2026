@@ -99,6 +99,7 @@
     height: fit-content;
     background-color: #003057;
     border-radius: 2rem;
+    border: none;
 }
     
 .hiddendiv {

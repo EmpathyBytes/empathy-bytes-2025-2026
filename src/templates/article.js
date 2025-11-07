@@ -21,6 +21,7 @@ function Article({ data }) {
     <Layout>
       <title>{[post.title]}</title>
       <div className="articleContainer">
+        {/* Top Component */}
         <div className="articleTitleInfo">
           <h1 className="articleTitle">{post.title}</h1>
           <h3 className="authorInfo"> By {post.field_author}</h3>
@@ -29,16 +30,12 @@ function Article({ data }) {
             dangerouslySetInnerHTML={{ __html: post.body.processed }}
           ></div>
         </div>
+
+        {/* Interview vid + pic and placeholder for interviewee info */}
         <div className="interviewInfo">
             
           {post.relationships.field_audio && (
             <div className="articleImageContainer interviewInfoChild">
-              {/* <div className="articleTitleInfo">
-                        <h1 className="articleTitle">{post.title}</h1>
-                        <h3 className="authorInfo"> By {post.field_author}</h3>
-                        <audio className="articleAudio" src = {post.relationships.field_audio != null ? "https://empathybytes.library.gatech.edu" + post.relationships.field_audio.path.alias : null} controls>
-                        </audio>
-                    </div> */}
               <audio
                 className="articleAudio"
                 src={
@@ -55,6 +52,7 @@ function Article({ data }) {
               ></img>
             </div>
           )}
+          {/* TO DO: implement interviewee info field in drupal (move interviewee info out of general article info) */}
           <div className="interviewInfoChild intervieweeDesc">This is a placeholder for when we can separate the interviewee info from the general info.</div>
         </div>
 

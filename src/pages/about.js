@@ -55,7 +55,7 @@ function AboutPage({ data }) {
         {/* <h1>About Us</h1> */}
       </div>
       <div className="bottom-about">
-        <img src={All} className="about-full"></img>
+        <img src={All} className="about-full" alt="Empathy Bytes VIP full team group photo" />
       </div>
       <div className="a-c-full">
         <div style={{ padding: "2% 5% 1% 5%" }}>

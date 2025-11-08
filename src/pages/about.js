@@ -62,19 +62,17 @@ function AboutPage({ data }) {
           <div className="about-card">
             <h1 className="header-about">About Us</h1>
             <p className="paragraph-about">
-              Empathy Bytes VIP explores how multimedia and emerging technologies can enhance empathy and understanding as we
-              create digital scholarship. This VIP section looks to document the stories of diverse communities in Georgia and beyond.
-              The team explores how technology can enhance empathy, as well as improve access to resources. Most importantly, the students on
-              this team ask themselves how these advanced technologies allow us to understand new perspectives, solve problems, or simply be a
-              better person in a world full of daily challenges.
+              Empathy Bytes VIP explores how multimedia and emerging technologies can enhance empathy and understanding as we create digital scholarship.
+              Our work documents the stories of diverse communities in Georgia and beyond. We examine how technology can deepen empathy,
+              expand access to resources,and help us understand new perspectives, solve problems, and be better people in a world full of daily challenges.
             </p>
             <p className="paragraph-about">
-              Empathy Bytes is broken down into sub-groups that specialize in different areas of research to accomplish the overall goals of the project.
-              Within sub teams, students explore areas of personal research interest, while learning project management skills and terminology.
+              Empathy Bytes is organized into sub-teams that specialize in different areas of research while contributing to shared project goals.
+              Within these groups, students pursue personal research interests and practice project-management skills and terminology.
             </p>
             <p className="paragraph-about">
-              Current technologies being used include: React, GatsbyJS, Drupal, and GraphQL the web team, the Adobe Creative Suite for the Media team.
-              Unity and Blender for the Emerging Tech team, and Swift for the App team.
+              Current technologies include React, GatsbyJS, Drupal, and GraphQL for the Web team;
+              Adobe Creative Cloud for the Media team; Unity and Blender for the Emerging Tech team; and Swift for the App team.
             </p>
           </div>
         </div>
@@ -86,7 +84,7 @@ function AboutPage({ data }) {
             </Grid>
             <Grid xs={12} sm={3} md={2}>
               <a href="#about-emerging" className="noUnderline">
-                <h3 className="about-nav-text" onClick={toggleEmerging}>Emerging</h3>
+                <h3 className="about-nav-text" onClick={toggleEmerging}>Emerging Tech</h3>
               </a>
             </Grid>
 

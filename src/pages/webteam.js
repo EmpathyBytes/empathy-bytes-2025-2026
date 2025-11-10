@@ -57,18 +57,18 @@ function Web() {
             {/* Banner Section*/}
             <div className="banner">
                 {/* Background image */}
-                <div
-                  className="banner__bg"
+                                <div
+                                    className="banner-bg"
                   style={{ backgroundImage: `url(${Banner})` }}
                   aria-hidden="true"
                 />
                 {/* Dark overlay */}
-                <div className="banner__overlay" aria-hidden="true" />
+                                <div className="banner-overlay" aria-hidden="true" />
                 {/* Blue gradient fade at bottom*/}
-                <div className="banner__fade" aria-hidden="true" />
-                <h3 className="banner__h3">The</h3>
-                <h1 className="banner__h1">Web</h1>
-                <h2 className="banner__h2">Development Team</h2>
+                                <div className="banner-fade" aria-hidden="true" />
+                                <h3 className="banner-h3">The</h3>
+                                <h1 className="banner-h1">Web</h1>
+                                <h2 className="banner-h2">Development Team</h2>
             </div>
             
             {/* About Us Section */}
@@ -109,7 +109,7 @@ function Web() {
                         The frontend team focuses on creating responsive, accessible, and engaging user interfaces that bring our research into life.
                     </p>
                     {/* Tech Stack */}
-                    <h3 className="section__subhead">Tech Stack</h3>
+                    <h3 className="section-subhead">Tech Stack</h3>
                     <div className="techstack-row">
                         <div className="techstack-item">
                             <div className="techstack-icon">
@@ -141,7 +141,7 @@ function Web() {
                         The backend team builds robust systems that power our content management and data delivery.
                     </p>
                     {/* Tech Stack */}
-                    <h3 className="section__subhead">Tech Stack</h3>
+                    <h3 className="section-subhead">Tech Stack</h3>
                     <div className="backend-row">
                         <div className="techstack-item">
                             <div className="techstack-icon">
@@ -159,20 +159,20 @@ function Web() {
             
             {/* Our Work Section - Slideshow*/}
             <section className="ourwork" aria-labelledby="ourwork-title">
-                <h2 id="ourwork-title" className="ourwork__title">Our Work</h2>
+                <h2 id="ourwork-title" className="ourwork-title">Our Work</h2>
 
                 <Slideshow slides={slides} title="Designs" />
 
                 {/*Placeholder for Projects Section*/}
-                <h4 className="project__title">Project #1</h4>
-                <div className="project__imageWrap">
+                <h4 className="project-title">Project #1</h4>
+                <div className="project-image-wrap">
                     <img 
                         src={designPlaceholder}
                         alt="Project #1 placeholder"
-                        className="project__image"
+                        className="project-image"
                     />
                 </div>
-                <p className="project__desc">Description of Project #1</p>
+                <p className="project-desc">Description of Project #1</p>
             </section>
             
             </div>

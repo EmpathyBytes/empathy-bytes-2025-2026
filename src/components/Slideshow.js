@@ -2,7 +2,6 @@ import React, { useEffect, useState, useCallback } from "react";
 
 /**
  * Reusable Slideshow
- * Props:
  * - slides: Array<{ image: string, alt?: string, description?: string }>
  * - initialIndex?: number
  * - title?: string
@@ -43,20 +42,20 @@ const Slideshow = ({ slides = [], initialIndex = 0, title = "Slideshow", classNa
 
   return (
     <section className={`slideshow ${className}`} role="region" aria-label={title}>
-      <h3 className="slideshow__title">{title}</h3>
+      <h3 className="slideshow-title">{title}</h3>
 
-      <div className="slideshow__viewport">
+      <div className="slideshow-viewport">
         <img
-          className="slideshow__image"
+          className="slideshow-image"
           src={slide.image}
           alt={slide.alt || slide.description || `Slide ${index + 1}`}
         />
       </div>
 
-      <div className="slideshow__nav" aria-label="Slideshow navigation">
+      <div className="slideshow-nav" aria-label="Slideshow navigation">
         <button
           type="button"
-          className="slideshow__navButton"
+          className="slideshow-nav-button"
           onClick={prev}
           aria-label="Previous slide"
         >
@@ -64,7 +63,7 @@ const Slideshow = ({ slides = [], initialIndex = 0, title = "Slideshow", classNa
         </button>
         <button
           type="button"
-          className="slideshow__navButton"
+          className="slideshow-nav-button"
           onClick={next}
           aria-label="Next slide"
         >
@@ -72,12 +71,12 @@ const Slideshow = ({ slides = [], initialIndex = 0, title = "Slideshow", classNa
         </button>
       </div>
 
-      <div className="slideshow__dots" role="tablist" aria-label="Slide selector">
+      <div className="slideshow-dots" role="tablist" aria-label="Slide selector">
         {slides.map((_, i) => (
           <button
             key={i}
             type="button"
-            className={`slideshow__dot ${i === index ? "is-active" : ""}`}
+            className={`slideshow-dot ${i === index ? "is-active" : ""}`}
             onClick={() => goTo(i)}
             role="tab"
             aria-selected={i === index}
@@ -87,7 +86,7 @@ const Slideshow = ({ slides = [], initialIndex = 0, title = "Slideshow", classNa
       </div>
 
       {slide.description && (
-        <p className="slideshow__caption">{slide.description}</p>
+        <p className="slideshow-caption">{slide.description}</p>
       )}
     </section>
   );

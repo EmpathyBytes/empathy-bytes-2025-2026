@@ -92,7 +92,7 @@ const Slideshow = ({ slides = [], initialIndex = 0, title = "Slideshow", classNa
           />
         ))}
       </div>
-
+      {/* optional caption */}
       {slide.description && (
         <p className="slideshow-caption">{slide.description}</p>
       )}

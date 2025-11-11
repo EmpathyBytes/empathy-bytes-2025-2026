@@ -27,6 +27,11 @@ const Slideshow = ({ slides = [], initialIndex = 0, title = "Slideshow", classNa
     setIndex(i);
   };
 
+  /**
+   * global keyboard nav for the slideshow: left/right arrow keys
+   * note: could remove global window listeners with a container to focus the slideshow instead
+   * because it could mess with other keyboard shortcuts later on
+   */
   useEffect(() => {
     const onKey = (e) => {
       if (e.key === "ArrowRight") next();
@@ -71,6 +76,9 @@ const Slideshow = ({ slides = [], initialIndex = 0, title = "Slideshow", classNa
         </button>
       </div>
 
+      {/*
+      Dots for slide selection       
+      */}
       <div className="slideshow-dots" role="tablist" aria-label="Slide selector">
         {slides.map((_, i) => (
           <button

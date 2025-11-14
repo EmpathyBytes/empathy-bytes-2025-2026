@@ -203,48 +203,96 @@
   }
   
   /* Mobile Nav Header */
-  .mobile-nav-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 4rem;
-    padding-bottom: 1rem;
-    border-bottom: 1px solid rgba(144, 199, 250, 0.3);
-    gap: 5rem
-  }
-  
-  .mobile-nav-logo {
-    display: flex;
-    align-items: center;
-    gap: .4rem;
-    text-decoration: none;
-    transition: opacity 0.3s ease;
-    flex: 0 1 auto;
-    
+.mobile-nav-header {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  margin-bottom: 4rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(144, 199, 250, 0.3);
+  padding-right: 3rem; 
+}
 
-  }
+.mobile-nav-logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+  max-width: calc(100% - 60px); 
+}
+
+.mobile-nav-logo img {
+  max-width: clamp(80px, 30vw, 160px);
+  height: auto;
+}
+
+.mobile-nav-logo .body {
+  font-size: clamp(0.9rem, 3.5vw, 1.5rem);
+  white-space: nowrap;
+}
+
+.mobile-nav-close {
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  color: white;
+  transition: color 0.3s ease, transform 0.3s ease;
+  flex-shrink: 0;
+  font-size: 1.5rem;
+  margin-left: auto; 
+}
   .mobile-nav-logo:hover {
     opacity: 0.9;
   }
-  
+
+
   .mobile-nav-logo:focus-visible {
     outline: 2px solid var(--color-lightblue);
     outline-offset: 4px;
     border-radius: 4px;
   }
-  
+  /* Very small screens (< 375px) */
+@media (max-width: 374px) {
   .mobile-nav-close {
-    cursor: pointer;
-    background: transparent;
-    border: none;
-    color: white;
-    transition: color 0.3s ease, transform 0.3s ease;
-    flex-shrink: 0;
-    margin-left: auto;
-    font-size: 2rem;
-    margin-right: auto;   
+      font-size: 1.25rem;
   }
   
+  .mobile-nav-logo img {
+      max-width: 70px;
+  }
+  
+  .mobile-nav-logo .body {
+      font-size: 0.8rem;
+  }
+  
+  .mobile-nav-header {
+      padding-right: 0;
+      gap: 0.5rem;
+  }
+}
+
+/* Small mobile (375px - 480px) */
+@media (min-width: 375px) and (max-width: 480px) {
+  .mobile-nav-close {
+      font-size: 1.5rem;
+  }
+  
+  .mobile-nav-logo img {
+      max-width: 100px;
+  }
+}
+
+/* Larger mobile (480px+) */
+@media (min-width: 480px) {
+  .mobile-nav-close {
+      font-size: 2rem;
+  }
+  
+  .mobile-nav-logo img {
+      max-width: 140px;
+  }
+}
+
   .mobile-nav-close:hover {
     color: var(--color-lightblue);
     transform: rotate(90deg);

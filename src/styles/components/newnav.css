@@ -224,6 +224,7 @@
 .mobile-nav-logo img {
   max-width: clamp(80px, 30vw, 160px);
   height: auto;
+  padding-right: 1rem;
 }
 
 .mobile-nav-logo .body {

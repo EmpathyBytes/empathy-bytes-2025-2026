@@ -21,7 +21,6 @@ import "../styles/all.css"
 function EmergingTech() {
     return(
         <Layout>
-            <title>Emerging Tech Team</title>
             <div className="top-banner" style={{backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.5)), url(${Banner})`}}>
                 <h1 className="header-experiences">Emerging Technologies Team</h1>
             </div>
@@ -35,11 +34,11 @@ function EmergingTech() {
                 <Grid container spacing={0}>
                     <Grid item xs={12}>
                         <div className="blue-box">
-                        <p>
-                            Our team develops Virtual and Augmented Reality experiences with the goal of fostering empathy and understanding. 
-                            Through the use of 3D technologies, we aim to preserve communities and their artifacts, giving others the chance 
-                            to see and learn more about them.
+                        <p className="intro-text">
+                        Our team develops virtual and augmented reality experiences with the goal of fostering empathy and understanding.
+                        Through 3D technologies, we aim to preserve communities and their artifacts, giving others the chance to see and learn more about them.
                         </p>
+
                         </div>
                     </Grid>
 
@@ -60,15 +59,15 @@ function EmergingTech() {
                         <h1 className="sub-header-experiences">The VR Archives</h1>
                     </Grid>
                     <Grid item xs={12}>
-                        <p className="paragraph-experiences-body">Empathy Bytes is developing a 
-                        Virtual Reality Museum where anyone can experience and learn about artifacts in the Georgia Tech Archives.
-                        Our team is able digitally preserve items such as an official 1996 Atlanta Olympics Torch, Buzz’s Converses 
-                        from 1988, and a 1937 rat cap through the use of photogrammetry and hand-modeling techniques. We hope this VR experience 
-                        allows the Georgia Tech Community to strengthen its connection to the school’s past and safely preserve these memories.
+                        <p className="paragraph-experiences-body text-body">
+                            Empathy Bytes is developing a virtual reality museum where anyone can explore and learn about artifacts in the Georgia Tech Archives.
+                            Our team is able to digitally preserve items such as an official 1996 Olympic Torch, Buzz’s Converse from 1988, and a 1937 rat cap
+                            using photogrammetry and hand-modeling techniques. We hope this VR experience helps the Georgia Tech community strengthen
+                            its connection to the school’s past and safely preserve these memories.
                         </p>
                         <br/>
-                        <p className="paragraph-experiences-body">Please click and drag the 3D models below to see
-                            in 360 degree view.
+                        <p className="paragraph-experiences-body models-intro">Please click and drag the 3D models below to see
+                            in 360-degree view.
                         </p>
                     </Grid>
                 </Grid>
@@ -76,7 +75,7 @@ function EmergingTech() {
                 <Grid container spacing={0} alignItems="flex-end">
                     {/* Loading 3D Models */}
                     <Grid sm={6} xs={12} item>
-                        <h1><center>Buzz's Plaque</center></h1>
+                        <h2><center>Buzz's Plaque</center></h2>
                         {/* I would recommend following this structure for importing future models - Jacob */}
                         <div className="vr-container-1 b-1" style={{height: "300px"}}>
                             <Canvas >
@@ -101,7 +100,7 @@ function EmergingTech() {
                     </Grid>
 
                     <Grid item sm={6} xs={12}>
-                        <h1><center>Buzz's Right Converse</center></h1>
+                        <h2><center>Buzz's Right Converse</center></h2>
                         <div className="vr-container-2 b-2" style={{height: "300px"}}>
                             <Canvas>
                                 <Suspense>
@@ -129,7 +128,7 @@ function EmergingTech() {
 
                 <Grid container spacing={2} className="" style={{padding: "2% 0 2% 0"}} alignItems={'center'}>
                     <Grid xs={12} item className="right-align-experiences">
-                        <h1 className="sub-header-experiences">Spring 2023 Progress</h1>
+                        <h2 className="sub-header-experiences">Progress Archive: Spring 2023</h2>
                     </Grid>
     
                     <Grid item xs={12}>
@@ -146,3 +145,15 @@ function EmergingTech() {
 }
 
 export default EmergingTech;
+
+
+export const Head = () => (
+    <>
+        <title>Emerging Technologies Team | Empathy Bytes VIP</title>
+        <meta
+            name = "description"
+            content = "Explore the Emerging Technologies Team at Empathy Bytes VIP—using VR/AR, photogrammetry, and 3D modeling to preserve artifacts and foster empathy."
+        
+        />
+    </>
+);

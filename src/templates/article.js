@@ -19,7 +19,7 @@ function Article({data}) {
                 {post.relationships.field_audio &&
                     <div className="articleImageContainer">
                         <div className="imageFrame">
-                            <img className="articleImage" src={post.relationships.field_image.localFile.url} alt={post.title} />
+                            <img className="articleImage" src={"https://empathybytes.library.gatech.edu" + post.relationships.field_image.uri.url} alt={post.title} />
                             <div className="articleTitleInfo">
                                 <h1 className="articleTitle">{post.title}</h1>
                                 <h3 className="authorInfo"> By {post.field_author}</h3>
@@ -79,7 +79,7 @@ export const query = graphql`
         }
         relationships {
             field_image {
-                localFile {
+                uri {
                     url
                 }
             }

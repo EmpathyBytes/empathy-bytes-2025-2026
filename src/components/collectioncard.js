@@ -42,10 +42,9 @@ export default function CollectionCard(props) {
             <CardActionArea>
               <CardMedia
                 component="img"
-                img
                 height="240"
                 width="350"
-                objectFit='cover'
+                style={{ objectFit: 'cover' }}
                 src={"https://empathybytes.library.gatech.edu" + props.image}
                 alt="img"
               />
@@ -85,10 +84,9 @@ export default function CollectionCard(props) {
           <CardActionArea>
             <CardMedia
               component="img"
-              img
               height="240"
               width="350"
-              objectFit='cover'
+              style={{ objectFit: 'cover' }}
               src={"https://empathybytes.library.gatech.edu" + props.image}
               alt="img"
             />

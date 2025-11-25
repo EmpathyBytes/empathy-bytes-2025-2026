@@ -34,7 +34,6 @@ exports.createPages = async ({actions, graphql}) => {
     {
         allNodeCollection {
           nodes {
-            id
             title
             path {
                 alias
@@ -44,15 +43,21 @@ exports.createPages = async ({actions, graphql}) => {
       }
     `);
 
-    collections.data.allNodeCollection.nodes.map(collectionData =>
-        createPage({
-            path: "/projects" + collectionData.path.alias,
-            component: path.resolve(`src/templates/collection.js`),
-            context: {
-                CollectionTitle: collectionData.title,
-            },
-        })
-    );
+    if (collections.errors) {
+        throw collections.errors;
+    }
+
+    collections.data.allNodeCollection.nodes.forEach(collectionData => {
+        if (collectionData.path && collectionData.path.alias) {
+            createPage({
+                path: "/projects" + collectionData.path.alias,
+                component: path.resolve(`src/templates/collection.js`),
+                context: {
+                    CollectionTitle: collectionData.title,
+                },
+            });
+        }
+    });
 
         /**
      * GENERATING ARTICLE PAGES
@@ -63,7 +68,6 @@ exports.createPages = async ({actions, graphql}) => {
         allNodeArticle {
           nodes {
             id
-            title
             path {
                 alias
             }
@@ -83,17 +87,34 @@ exports.createPages = async ({actions, graphql}) => {
       }
     `);
 
+    if (articles.errors) {
+        throw articles.errors;
+    }
+
     // Looping through the data gathered, creating a page for each component
-    articles.data.allNodeArticle.nodes.map(articleData =>
-        createPage({
-            path: "/projects" 
-            + articleData.relationships.field_tags[0].relationships.node__collection[0].path.alias            
-            + articleData.path.alias,
-            
-            component: path.resolve(`src/templates/article.js`),
-            context: {
-                ArticleId: articleData.id,
-            },
-        })
-    );
+    articles.data.allNodeArticle.nodes.forEach(articleData => {
+        // Validate all required fields exist before creating page
+        if (
+            articleData.path &&
+            articleData.path.alias &&
+            articleData.relationships &&
+            articleData.relationships.field_tags &&
+            articleData.relationships.field_tags.length > 0 &&
+            articleData.relationships.field_tags[0].relationships &&
+            articleData.relationships.field_tags[0].relationships.node__collection &&
+            articleData.relationships.field_tags[0].relationships.node__collection.length > 0 &&
+            articleData.relationships.field_tags[0].relationships.node__collection[0].path &&
+            articleData.relationships.field_tags[0].relationships.node__collection[0].path.alias
+        ) {
+            createPage({
+                path: "/projects" 
+                    + articleData.relationships.field_tags[0].relationships.node__collection[0].path.alias            
+                    + articleData.path.alias,
+                component: path.resolve(`src/templates/article.js`),
+                context: {
+                    ArticleId: articleData.id,
+                },
+            });
+        }
+    });
 }

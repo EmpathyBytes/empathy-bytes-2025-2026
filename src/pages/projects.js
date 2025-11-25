@@ -129,7 +129,7 @@ const ProjectsPage = ({data}) => {
 
                         <Grid container spacing={3} className="content-transition">
                         {getFilteredCollections().map((item) => ( // Mapping filtered collection data to card component
-                            <Grid item xs={6}>
+                            <Grid item xs={6} key={item.id}>
                             <CollectionCard 
                             title = {item.title}
                             image = {item.relationships.field_image.uri.url}
@@ -190,6 +190,7 @@ const ProjectsPage = ({data}) => {
                         {getFilteredCollections().map((item) => ( // Mapping filtered collection data to card component
                             
                             <CollectionCard 
+                            key={item.id}
                             title = {item.title}
                             image = {item.relationships.field_image.uri.url}
                             url = {item.path.alias}

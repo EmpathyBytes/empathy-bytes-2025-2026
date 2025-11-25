@@ -1,16 +1,21 @@
 @import "./fonts.css";
 
 .articleContainer {
-    padding: 8% 2% 8% 2%;
-    display: inline-block; 
+    padding: 5% 2% 5% 2%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5vh;
 }
 
 .articleTitle {
-    top: 12.5rem;
-    right: 18.75rem;
+    /* top: 12.5rem;
+    right: 18.75rem; */
     font-family: 'Roboto Slab', serif;
-    font-size: 1.5rem;
-    padding: 0% 25% 0% 25%;
+    font-size: 2.5rem;
+    color: #E0BB56;
+    /* padding: 0% 25% 0% 25%; */
 }
     @media screen and (max-width: 37.5rem) {
         .articleTitle {
@@ -18,9 +23,6 @@
             font-size: 1rem;
         }
     }
-/* break point when you want it smaller at one size 
- make the paragraph the same size 
- scale the slider */
 
 .articleImageContainer {
     position: relative;
@@ -32,17 +34,18 @@
 }
 
 .articleImage {
-    border-radius: .625rem;
+    border-radius: 2rem;
    /* justify-content: center; */
-    width: 40%;
-    height: 40%;
+   border: #003057 .25rem solid;
+    width: 100%;
+    height: 100%;
     object-fit: 'cover';
 }
 
 .articleText {
     font-family: 'Roboto', sans-serif;
-    font-size: .8rem;
-    padding: 0% 25% 0% 25%;
+    font-size: 1rem;
+    /* padding: 0% 25% 0% 25%; */
 }
 
 .articleTitleInfo {
@@ -56,54 +59,112 @@
     text-shadow: 0.125rem 0.125rem 0.125rem rgba(63,107,169, 0.6);
 }
 
+.interviewInfo {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    align-items: center;
+    justify-content: center;
+    /* gap: 2vh; */
+    width: 75%;
+
+}
+
+.interviewInfoChild {
+    width: 50%;
+    color: white;
+}
+
+.intervieweeDesc {
+    margin-left: 3vw;
+    padding: 2% 3% 2% 3%;
+    height: fit-content;
+    background-color: #003057;
+    border-radius: 2rem;
+    /* border-color: #E0BB56; */
+    border: #E0BB56 .25rem solid;
+}
+
 .clicker {
-    padding: 0% 25% 0% 25%;
     outline:none;
     cursor:pointer;
     text-decoration: underline dotted;
     color:var(--color-clicker);
 }
     
-.hiddendiv{
-    display:none;
+.hiddendiv {
+    display: none;
+    background-color: #003057;
+    border-radius: 2rem;
+    padding: 1% 2% 1% 2%;
 }
-    
-.clicker:focus + .hiddendiv{
-    display:block;
+
+.hiddendiv.show {
+    display: flex;
+    width: 75%;
+    align-self: first baseline;
 }
 
 .articleAudio {
-    width: 100%; 
-    margin-top: 2.5rem;
+    width: 80%; 
+    /* margin-top: 2.5rem; */
+    position: absolute;
+    vertical-align: bottom;
+    bottom: 1%;
 }
-@media screen and (max-width: 37.5rem) {
+@media screen and (max-width: 800px) {
     .articleAudio {
-        width: 40%; 
+        width: 100%; 
     }
 
 .topPadding {
     padding: 10% 5% 10% 5%;
 }
 
-.articlePadding {
+/* .articlePadding {
     padding: .5% 0 .5% 0;
-}
+} */
 
 .articleVideo {
     border-radius: 0.625rem;
     position: relative;
     justify-content: center;
     margin: 0% 20% 0% 30%;
-    width: 40%;
+    width: 100%;
     /* min-height: 70%; */
+}
+.articleImage {
+    width: 100%;
+    height: fit-content;
 }
 .authorInfo {
     font-family: 'Roboto Slab', serif; 
     font-size: 1rem;
     color: var(--color-offwhite);
     text-align: center;
-    position: relative;
     top: 2.5rem; 
     right: 10.625rem;
 }
+
+.interviewInfo {
+    flex-direction: column;
+    gap: 3vh;
+    align-content: center;
+    height: fit-content;
+
+}
+.interviewInfoChild {
+    margin: 0;
+    width: 100%;
+}
+}
+
+@media screen and (max-width: 600px) {
+  .articleTitle {
+    font-size: 1rem;
+    padding: 0;
+  }
+  .articleAudio {
+    width: 100%;
+  }
 }

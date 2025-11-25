@@ -109,7 +109,11 @@
     margin: 0 auto;
     position: relative;
     width: 256px;
-    height: 221px; /* width * 0.866 */
+    max-width: 80vw;
+
+    height: auto; /* width * 0.866 */
+    aspect-ratio: 256 / 221;
+
     background: white;
     box-sizing: border-box;
     -webkit-clip-path: polygon(0% 50%, 25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%);
@@ -121,8 +125,8 @@
     background-color: white; /*color of the main-background*/
     top: 2px; /* equal to border thickness */
     left: 2px; /* equal to border thickness */
-    width: 256px; /* container height - (border thickness * 2) */
-    height: 221px; /* container height - (border thickness * 2) */
+    width: 100%; /* container height - (border thickness * 2) */
+    height: 100%; /* container height - (border thickness * 2) */
     -webkit-clip-path: polygon(0% 50%, 25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%);
     -moz-clip-path: polygon(0% 50%, 25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%);
   }

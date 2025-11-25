@@ -19,6 +19,30 @@
     var(--color-gradientblue3)
   );
 }
+.top-contact {
+  width: 100vw;
+  height: 80vw;
+  max-width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--color-blackshadow);
+} 
+
+.contact-full {
+  width: 100vw;
+  height: 80vh;
+  max-width: 100%;
+  object-fit: cover;
+}
+
+.padding-bottom-contact {
+  padding-bottom: 5%;
+}
+.bottom-contact {
+  /* position: relative; */
+  z-index: -10;
+}
 
 .heading-styles {
   font-family: 'Roboto Slab', serif;

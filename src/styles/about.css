@@ -22,15 +22,7 @@
 
 .paragraph-about {
     font-family: 'Roboto', sans-serif;
-    @media screen and (min-width: 600px) {
-      font-size: 1.25rem;
-    };
-    @media screen and (min-width: 1200px) {
-      font-size: 1.5rem;
-    };
-    @media screen and (max-width: 800px) {
-      font-size: 1rem;
-    };
+    text-align: center;
     color: var(--color-offwhite);
 }
 
@@ -66,6 +58,7 @@
 }
 
 .about-nav-text {
+    display: inline-block;
     font-size: 1rem;
     font-family: 'Roboto Slab', sans-serif;
     color: var(--color-offwhite);
@@ -183,4 +176,32 @@
     height: 150px;
     width: 300px;
     margin: auto;
+}
+
+.learn-more {
+  color: #E0BB56;
+  text-align: center;
+  font-family: "Roboto Slab";
+  font-size: 1.563rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-decoration-line: underline;
+}
+
+.about-card {
+  display: flex;
+  padding: 2vh 5.5vw 3.3vh 7.5vw;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.313rem;
+  border-radius: 5.375rem;
+  background: var(--Primary-Blue, var(--color-navyblue));
+}
+
+.horizontal-line {
+  width: 70%;
+  height: 0.2vh;
+  margin: 0 auto;
+  background: var(--color-offwhite);
 }

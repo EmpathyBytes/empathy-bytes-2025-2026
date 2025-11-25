@@ -16,6 +16,16 @@
     text-align: left; 
 }
 
+/* mobile: keep "Empathy Bytes" on same line */
+@media screen and (max-width: 768px) {
+    .bytes {
+        display: inline !important;
+        margin-top: 0 !important;
+    }
+}
+
+/* Link states: default + visited stay white; on hover we lighten to indicate interactivity.
+   Note: On mobile, :hover may not trigger reliably */
 footer a:link{
     color: white;
 }
@@ -24,21 +34,35 @@ footer a:link{
     color:white;
 }
 
+/* Hover color change only */
 footer a:hover{
     color:#90c7fa;
 }
 
-/*right icon*/
+/* Social media icons:
+   - Base .icon defines size and enables smooth animation with transition.
+   - Hover scales up slightly and increase brightness */
+
 .icon {
-    width:2.5rem;
-    height:2.5rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    transition: all 0.3s ease;
+    border-radius: 4px;
+}
+
+.icon:hover {
+    transform: scale(1.1);
+    filter: brightness(1.2);
 }
 
 .icon-group {
     display: flex;           
     flex-direction: row;
-    gap: 1rem;               
+    gap: 1.25rem;               
     align-items: center;
+    margin-top: 1rem;
+    /* Left-align on desktop; centered on mobile below */
+    justify-content: flex-start;
 }
 
 /* group for general/teams/community */
@@ -48,10 +72,9 @@ footer a:hover{
     flex-direction: column;
     text-align: left;
     align-items: flex-start; 
-    /* fixed alignment issue */
-    
     margin-top: 5vh;
-   
+    padding: 1rem 0.5rem;
+    min-height: 200px;
 }
 
 .text-footer-title {
@@ -60,7 +83,9 @@ footer a:hover{
     color: white;
     font-style: normal;
     font-weight: 700;
-    line-height: normal;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
 }
 
 .text-heading {
@@ -69,67 +94,209 @@ footer a:hover{
     font-size: 1.75rem;
     font-style: normal;
     font-weight: 700;
-    line-height: normal;
+    line-height: 1.3;
     text-align: left;
+}
+
+/* Underline only the section headings inside the content columns */
+.grouping .text-heading {
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid rgba(144, 199, 250, 0.3);
+    padding-bottom: 0.5rem;
+}
+
+/* Doesn't show underline for the Follow Us heading */
+.logo-container .text-heading {
+    border-bottom: 0 !important;
+    margin-bottom: 0.75rem;
 }
 
 .centered-content {
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center; 
-  }
+    text-align: center;
+    margin-bottom: 0.75rem;
+}
 
 .text-anchor-container {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 1.7vh;
+    gap: 0.75rem;
     align-self: stretch; 
-
     min-width: 50%;
     max-width: 100%;
-    
 }
 
+/* Navigation link hover effect:
+   - The ::before pseudo-element is a tiny accent bar positioned to the left (width: 0 by default).
+   - On :hover, the text for the link 4px to the right and the bar expands to 4px*/
 .text-anchor {
     color: #FFF;
     font-family: Roboto;
     font-size: 1.125rem;
     font-style: normal;
     font-weight: 400;
-    line-height: normal;
+    line-height: 1.4;
     text-decoration: none;
+    padding: 0.25rem 0;
+    transition: all 0.3s ease;
+    position: relative;
 }
 
 .text-anchor:hover {
     cursor: pointer;
-    opacity: 0.8;
+    color: #90c7fa;
+    transform: translateX(4px);
 }
-/*for social media logos */
 
-.logo-container {
+.text-anchor:before {
+    content: '';
+    position: absolute;
+    left: -8px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 2px;
+    background-color: #90c7fa;
+    transition: width 0.3s ease;
+}
+
+.text-anchor:hover:before {
+    width: 4px;
+}
+
+/* Prevent hover shift for social icon links (keep icons from moving on hover) (delete if you want them to be shifted right aswell) */
+.icon-group .text-anchor,
+.icon-group .text-anchor:hover {
+    transform: none !important;
+}
+
+/* Disable the left accent bar for social media icon links only (delete if you want accent bar) */
+.icon-group .text-anchor::before,
+.icon-group .text-anchor:hover::before {
+    content: none !important;
+    width: 0 !important;
+}
+
+/* Distinguish the Grid item vs. the inner logo container*/
+/* Grid item: .container-footer > .logo-container */
+.container-footer > .logo-container {
     display: flex;
     flex-direction: column;
-    text-align: left;
+    text-align: center; /* center heading + icons on desktop */
+    align-items: center;
+    gap: 1.5vh;
+    padding: 0;
+    min-height: auto;
+}
+
+/* Inner wrapper that actually contains the logo image */
+.centered-content > .logo-container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
     align-items: center;
     gap: 1.5vh;
 }
 
+/* Logo hover:
+   - Slight scale + stronger shadow but w/o shifting the layout */
 .footer-logo {
-    @media only screen and (min-width: 480px) {
-        /* styles for devices with a minimum screen width of 480px */
-        transition: var(--tr);
-        margin: 1rem 0 .5rem;
-        height: var(--logo-top-height);
-        border-radius: 50%;
-        }
-        
-        @media only screen and (max-width: 480px) {
-        /* styles for devices with a maximum screen width of 480px */
-        transition: var(--tr);
-        margin: 1rem 0 .5rem 0;
-        height: var(--logo-scrolled-height);
-        border-radius: 50%;
-        }
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    margin: 1rem 0 0.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.footer-logo:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+@media only screen and (max-width: 480px) {
+    .footer-logo {
+        width: 3rem;
+        height: 3rem;
+        margin: 0.5rem 0;
+    }
+}
+
+/* Mobile-only responsiveness - only affects screens 768px and below */
+@media screen and (max-width: 768px) {
+    .container-footer {
+        flex-direction: column;
+        height: auto;
+        padding: 2rem 1rem;
+        justify-content: flex-start;
+    }
+    
+    .grouping {
+        margin-top: 0;
+        width: 100%;
+        text-align: center;
+        align-items: center;
+        margin-bottom: 1rem;
+    }
+    
+    .text-anchor-container {
+        align-items: center;
+        width: 100%;
+    }
+    
+    .icon-group {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    .icon {
+        width: 3rem;
+        height: 3rem;
+    }
+    
+    .centered-content {
+        align-items: center;
+        width: 100%;
+    }
+
+    /* Makes Follow Us heading itself centered on mobile */
+    .logo-container .text-heading {
+        text-align: center;
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    /* Centers the inner paragraph, some browsers keep default margins */
+    .logo-container .text-heading p {
+        text-align: center;
+        margin: 0.25rem auto;
+        width: 100%;
+    }
+
+    /* Centers the icon row in the Follow Us column on mobile */
+    .container-footer > .logo-container .icon-group {
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .text-footer-title {
+        font-size: 2rem !important;
+    }
+    
+    .text-heading {
+        font-size: 1.25rem !important;
+    }
+    
+    .container-footer {
+        padding: 1.5rem 0.5rem !important;
+    }
+    
+    .text-anchor {
+        font-size: 1rem !important;
+    }
 }

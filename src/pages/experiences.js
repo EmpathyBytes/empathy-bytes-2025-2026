@@ -23,7 +23,7 @@ import Media from "../images/experiences/mediaBTS.jpg"
 import ScrollToTop from "../components/scrollToTop";
 
 function ExperiencesPage() {
-  const matches = useMediaQuery('(min-width:600px)');
+  const matches = useMediaQuery('(min-width:801px)');
   if (matches) {
     return (
       <Layout>

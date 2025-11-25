@@ -23,9 +23,6 @@
             font-size: 1rem;
         }
     }
-/* break point when you want it smaller at one size 
- make the paragraph the same size 
- scale the slider */
 
 .articleImageContainer {
     position: relative;
@@ -167,4 +164,14 @@
     margin: 0;
     width: 100%;
 }
+}
+
+@media screen and (max-width: 600px) {
+  .articleTitle {
+    font-size: 1rem;
+    padding: 0;
+  }
+  .articleAudio {
+    width: 100%;
+  }
 }

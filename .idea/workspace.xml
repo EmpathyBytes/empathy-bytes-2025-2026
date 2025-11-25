@@ -5,12 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="de170d2e-5b97-4c08-a657-72110b64e564" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/FlexibleCard.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/collectioncard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/collectioncard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/infocard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/infocard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/interviewcard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/interviewcard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/learncard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/learncard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/homepage.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/homepage.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,24 +44,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "standarized__card",
-    "last_opened_file_path": "/Users/kellyzhou/Library/Mobile Documents/com~apple~CloudDocs/vip/empathy-bytes-2025-2026-master",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "ts.external.directory.path": "/Applications/WebStorm.app/Contents/plugins/javascript-plugin/jsLanguageServicesImpl/external",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;misc__mobile__page__fix&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/kellyzhou/Library/Mobile Documents/com~apple~CloudDocs/vip/empathy-bytes-2025-2026-master&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Applications/WebStorm.app/Contents/plugins/javascript-plugin/jsLanguageServicesImpl/external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -83,7 +79,7 @@
       <workItem from="1758229640442" duration="3907000" />
       <workItem from="1758240503017" duration="5784000" />
       <workItem from="1758827457389" duration="6386000" />
-      <workItem from="1764037444668" duration="2711000" />
+      <workItem from="1764037444668" duration="8615000" />
     </task>
     <servers />
   </component>

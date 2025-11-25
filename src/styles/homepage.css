@@ -84,13 +84,19 @@ html, body {
     justify-content: space-evenly;
     align-items: center;
     align-content: center;
-    height: 65vh; /* CHANGED */
+    min-height: 65vh;
+    height: auto;
     overflow: inherit;
 
     /* mobile */
     @media screen and (max-width: 600px) {
-        
         flex-direction: column;
+        height: auto;
+        padding-bottom: 3rem;
+    }
+
+    @media screen and (max-width: 600px) {
+        height: auto;
     }
 }
 

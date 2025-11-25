@@ -126,7 +126,7 @@ function AboutPage({ data }) {
           <AboutComponent
             subteam={"Web"}
             members={webMembers}
-            about={"The Web team is comprised of students from a variety of backgrounds, such as Computer Science and Computational Media. The team GraphQL, and Drupal. The team maintains the public-facing site (GatsbyJS, GraphQL, Drupal) and explores WebXR and its capabilities to create unique and memorable experiences."}
+            about={"The Web team is comprised of students from a variety of backgrounds, such as Computer Science and Computational Media. The team maintains the public-facing site (GatsbyJS, GraphQL, Drupal) and explores WebXR and its capabilities to create unique and memorable experiences."}
             learnMore={"https://educast.library.gatech.edu/webteam/"}
           />
         </div>
@@ -228,7 +228,11 @@ export default AboutPage;
 
 export const Head = () => (
   <>
-  <link rel="icon" type="image/png" href="https://educast.library.gatech.edu/static/empbytes-8c9db7ee75f110e619f7d85cb8b170c5.jpg" />
-  <title>About</title>
+    <link rel="icon" type="image/png" href="https://educast.library.gatech.edu/static/empbytes-8c9db7ee75f110e619f7d85cb8b170c5.jpg" />
+    <title>About | Empathy Bytes VIP</title>
+    <meta
+      name="description"
+      content="Learn about Empathy Bytes VIP—our mission, sub-teams, and how we use web, media, emerging tech, and apps to build empathy through digital scholarship."
+    />
   </>
-  )
+);

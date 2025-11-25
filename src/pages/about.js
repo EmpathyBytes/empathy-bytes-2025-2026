@@ -116,7 +116,7 @@ function AboutPage({ data }) {
           <AboutComponent
             subteam={"Emerging Tech"}
             members={emergingMembers}
-            about={"The emerging tech team is comprised of students from a variety of different backgrounds and majors, including Computational Media and Computer Science. The team focuses on exploring cutting edge technologies and their ability to create empathy."}
+            about={"The emerging tech team is comprised of students from a variety of different backgrounds and majors, including Computational Media and Computer Science. The team explores cutting-edge technologies and how they can create empathy."}
             learnMore={"https://educast.library.gatech.edu/emergingtech/"}
           />
         </div>
@@ -126,7 +126,7 @@ function AboutPage({ data }) {
           <AboutComponent
             subteam={"Web"}
             members={webMembers}
-            about={"The Web team is comprised of students from a variety of backgrounds, such as Computer Science and Computational Media. The team maintains the external facing Empathy Bytes website which uses GatsbyJS, GraphQL, and Drupal. The team also is exploring Web XR and its capabilities to create unique and memorable experiences."}
+            about={"The Web team is comprised of students from a variety of backgrounds, such as Computer Science and Computational Media. The team GraphQL, and Drupal. The team maintains the public-facing site (GatsbyJS, GraphQL, Drupal) and explores WebXR and its capabilities to create unique and memorable experiences."}
             learnMore={"https://educast.library.gatech.edu/webteam/"}
           />
         </div>
@@ -137,7 +137,7 @@ function AboutPage({ data }) {
           <AboutComponent
             subteam={"Media"}
             members={mediaMembers}
-            about={"The Media team is comprised of students from a variety of backgrounds, such as Computer Science and Computational Media. The team creates media content for the site in addition to working across teams to help with design needs."}
+            about={"The Media team is comprised of students from a variety of backgrounds, such as Computer Science and Computational Media. The team creates site content and supports cross-team design needs."}
             learnMore={"https://educast.library.gatech.edu/mediateam/"}
           />
         </div>
@@ -147,7 +147,7 @@ function AboutPage({ data }) {
           <AboutComponent
             subteam={"App"}
             members={appMembers}
-            about={"The App team is comprised of students from a variety of backgrounds, such as Computer Science and Computational Media. The team is currently creating a Mobile Application to present the teams research with future hopes of publishing on the Apple Store."}
+            about={"The App team is comprised of students from a variety of backgrounds, such as Computer Science and Computational Media. The team is currently developing a mobile application to present the team’s research; future plans to publish on the App Store."}
             learnMore={"https://educast.library.gatech.edu/appteam/"}
           />
         </div>

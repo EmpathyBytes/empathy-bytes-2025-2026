@@ -1,25 +1,15 @@
 import { Link } from "gatsby"
-import React, { useRef, useState } from "react"
-// import styled from "styled-components"
-import {FaBars, FaTimes } from "react-icons/fa";
-import Logo from "../images/empbytes.jpg";
+import React, { useRef, useState, useEffect } from "react"
+import { FaBars, FaTimes } from "react-icons/fa"
+import Logo from "../images/empbytes.jpg"
 import "../styles/components/newnav.css"
-import { useEffect } from "react";
-
-const ReactiveLink = ({ name, path }) => {
-    return (
-      <Link className={`navbar-link`} to={path} activeClassName="navbar-selected">
-        {name}
-        <div className={`navbar-link-bar`}></div>
-      </Link>
-    );
-  };
 
 function Newnav({ transparent }) {
     const breakpoint = 80;
     const [scroll, setScroll] = useState("");
     const [isNavOpen, setIsNavOpen] = useState(false);
-    // console.log(withPrefix("/test"));
+    const mobileNavRef = useRef(null);
+    
     const onScroll = () => {
         let scroll = 0;
         if (typeof window !== undefined) {
@@ -29,15 +19,38 @@ function Newnav({ transparent }) {
         else setScroll("");
     };
 
-    const navRef = useRef();
-
     const showNavbar = () => {
         setIsNavOpen(!isNavOpen);
     };
 
+    const closeNavbar = () => {
+        setIsNavOpen(false);
+    };
+
+    // Handle escape key to close menu
     useEffect(() => {
-        // console.log(withPrefix("/test"));
-        // console.log("This is a test hi");
+        const handleEscape = (e) => {
+            if (e.key === 'Escape' && isNavOpen) {
+                closeNavbar();
+            }
+        };
+
+        if (isNavOpen) {
+            document.addEventListener('keydown', handleEscape);
+            // Prevent body scroll when menu is open
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'unset';
+        }
+
+        return () => {
+            document.removeEventListener('keydown', handleEscape);
+            document.body.style.overflow = 'unset';
+        };
+    }, [isNavOpen]);
+
+    // Handle scroll event
+    useEffect(() => {
         if (typeof window !== undefined) {
           window.addEventListener("scroll", onScroll, { passive: true });
           return () => {
@@ -46,84 +59,142 @@ function Newnav({ transparent }) {
         }
     }, []);
 
+    // Focus trap for mobile menu
+    useEffect(() => {
+        if (isNavOpen && mobileNavRef.current) {
+            const focusableElements = mobileNavRef.current.querySelectorAll(
+                'a, button, [tabindex]:not([tabindex="-1"])'
+            );
+            const firstElement = focusableElements[0];
+            const lastElement = focusableElements[focusableElements.length - 1];
+
+            const handleTab = (e) => {
+                if (e.key === 'Tab') {
+                    if (e.shiftKey) {
+                        if (document.activeElement === firstElement) {
+                            e.preventDefault();
+                            lastElement.focus();
+                        }
+                    } else {
+                        if (document.activeElement === lastElement) {
+                            e.preventDefault();
+                            firstElement.focus();
+                        }
+                    }
+                }
+            };
+
+            document.addEventListener('keydown', handleTab);
+            firstElement?.focus();
+
+            return () => {
+                document.removeEventListener('keydown', handleTab);
+            };
+        }
+    }, [isNavOpen]);
+
     return (
       <>
-        <header>
+        <header className={scroll}>
           <div className="nav-logo">
             <Link to={"/"} className="logo-link">
-            <img
-              className= "logo"
-              src= {Logo}
-              alt="Empathy Bytes Logo"
-            />
-            <h2 className="body"> Empathy Bytes</h2>
+              <img
+                className="logo"
+                src={Logo}
+                alt="Empathy Bytes Logo"
+              />
+              <h2 className="body">Empathy Bytes</h2>
             </Link>
           </div>
-            <nav ref={navRef}>
-              <nav className = "desktop">
-                {/* Projects Page */}
-                <Link to={"/projects"}>
-                    <h3 className="pages">Projects</h3>
-                    </Link>
-                    {/* Experiences page */}
-                    <Link to={"/experiences"}>
-                      <h3 className="pages">Experiences</h3>
-                    </Link>
-                    {/* About page */}
-                    <Link to={"/about"}>
-                      <h3 className="pages">About</h3>
-                    </Link>
-                    {/* Contact page */}
-                    <Link to={"/contact"}>
-                      <h3 className="pages">Contact</h3>
-                  </Link>
-              </nav>
-            </nav>
-            <button 
-                    className="nav-btn mobile-menu-toggle" 
-                    onClick={showNavbar}
-                >
-                    {isNavOpen ? <FaTimes /> : <FaBars />}
-            </button>
-          
+
+          {/* Desktop Navigation */}
+          <nav className="desktop-nav" aria-label="Main navigation">
+            <Link to={"/projects"} activeClassName="active-link">
+              <h3 className="pages">Projects</h3>
+            </Link>
+            <Link to={"/experiences"} activeClassName="active-link">
+              <h3 className="pages">Experiences</h3>
+            </Link>
+            <Link to={"/about"} activeClassName="active-link">
+              <h3 className="pages">About</h3>
+            </Link>
+            <Link to={"/contact"} activeClassName="active-link">
+              <h3 className="pages">Contact</h3>
+            </Link>
+          </nav>
+
+          {/* Mobile Menu Toggle */}
+          <button 
+            className="nav-btn mobile-menu-toggle" 
+            onClick={showNavbar}
+            aria-label={isNavOpen ? "Close menu" : "Open menu"}
+            aria-expanded={isNavOpen}
+            aria-controls="mobile-navigation"
+          >
+            {isNavOpen ? <FaTimes /> : <FaBars />}
+          </button>
         </header>
 
-      {isNavOpen && (
-        <div className="mobile-nav-overlay">
-            <div className="mobile-nav-content">
-                <Link to={"/"} className="mobile-nav-logo" onClick={showNavbar}>
-                    <img
-                        className="logo"
-                        src={Logo}
-                        alt="Empathy Bytes Logo"
-                    />
-                    <h2 className="body"> Empathy Bytes</h2>
-                </Link>
-                <div className="mobile-nav-links">
-                    <Link to={"/projects"} onClick={showNavbar}>
-                        <h3 className="mobile-nav-page">Projects</h3>
-                    </Link>
-                    <Link to={"/experiences"} onClick={showNavbar}>
-                        <h3 className="mobile-nav-page">Experiences</h3>
-                    </Link>
-                    <Link to={"/about"} onClick={showNavbar}>
-                        <h3 className="mobile-nav-page">About</h3>
-                    </Link>
-                    <Link to={"/contact"} onClick={showNavbar}>
-                        <h3 className="mobile-nav-page">Contact</h3>
-                    </Link>
-                </div>
-                <button 
-                    className="mobile-nav-close" 
-                    onClick={showNavbar}
-                >
-                    <FaTimes />
-                </button>
+        {/* Mobile Navigation Overlay */}
+        <div 
+          className={`mobile-nav-overlay ${isNavOpen ? 'open' : ''}`}
+          id="mobile-navigation"
+          ref={mobileNavRef}
+          aria-hidden={!isNavOpen}
+        >
+          <div className="mobile-nav-content">
+            <div className="mobile-nav-header">
+              <Link to={"/"} className="mobile-nav-logo" onClick={closeNavbar}>
+                <img
+                  className="logo"
+                  src={Logo}
+                  alt="Empathy Bytes Logo"
+                />
+                <h2 className="body">Empathy Bytes</h2>
+              </Link>
+              <button 
+                className="mobile-nav-close" 
+                onClick={closeNavbar}
+                aria-label="Close menu"
+              >
+                <FaTimes />
+              </button>
             </div>
+
+            <nav className="mobile-nav-links" aria-label="Mobile navigation">
+              <Link 
+                to={"/projects"} 
+                onClick={closeNavbar}
+                activeClassName="mobile-active-link"
+              >
+                <h3 className="mobile-nav-page">Projects</h3>
+              </Link>
+              <Link 
+                to={"/experiences"} 
+                onClick={closeNavbar}
+                activeClassName="mobile-active-link"
+              >
+                <h3 className="mobile-nav-page">Experiences</h3>
+              </Link>
+              <Link 
+                to={"/about"} 
+                onClick={closeNavbar}
+                activeClassName="mobile-active-link"
+              >
+                <h3 className="mobile-nav-page">About</h3>
+              </Link>
+              <Link 
+                to={"/contact"} 
+                onClick={closeNavbar}
+                activeClassName="mobile-active-link"
+              >
+                <h3 className="mobile-nav-page">Contact</h3>
+              </Link>
+            </nav>
+          </div>
         </div>
-      )}
-    </>
-  );
+      </>
+    );
 }
 
 export default Newnav;

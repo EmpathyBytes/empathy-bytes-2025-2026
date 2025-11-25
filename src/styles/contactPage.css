@@ -1,33 +1,14 @@
 @import "./fonts.css";
-@import './colors.css';
+
 * {
   scroll-behavior: smooth;
 }
-.container-contact {
-  width: 100vw;
-  height: 100vh;
-  margin-top: 50px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-image: linear-gradient(
-    to bottom,
-    var(--primary-color),
-    var(--color-gradientblue1),
-    var(--color-gradientblue2),
-    var(--secondary-color),
-    var(--color-gradientblue3)
-  );
+
+:root {
+  --primary-color: #0779d7;
+  --secondary-color: #789beb;
+  --text-color: #ffffff;
 }
-.top-contact {
-  width: 100vw;
-  height: 80vw;
-  max-width: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-color: var(--color-blackshadow);
-} 
 
 .contact-full {
   width: 100vw;
@@ -44,6 +25,17 @@
   z-index: -10;
 }
 
+.container-contact {
+  width: 100vw;
+  max-width: 100%;
+  height: 100vh;
+  margin-top: 3.125rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-peacockblue);
+}
+
 .heading-styles {
   font-family: 'Roboto Slab', serif;
   font-size: 4vw;
@@ -58,7 +50,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 10px;
+  margin-bottom: 0.625rem;
 }
 
 .button {
@@ -74,19 +66,23 @@
   transform: scale(1.05);
 }
 
+.button-container {
+  height: 31.25rem;
+}
 .arrows {
-  margin-top: 50px;
+  margin-top: 3.125rem;
 }
 
 #info .info-section {
-  background-color: var(--color-contactbackground); /* Change to your desired background color */
-  padding: 100px; /* Add padding or other styling as needed */
+  background-color: var(--color-navyblue); /* Change to your desired background color */
+  margin: 0vh 8.7vw 0vh 8.7vw;
+  padding: 1.563rem; /* Add padding or other styling as needed */
   /* Center-align the text */
 }
 
 #info {
-  padding: 50px;
-  background-color: var(--color-navyblue);
+  padding: 3.125rem;
+  background-color: var(--color-peacockblue);
   /* padding-bottom: 400px; */
   text-align: center;
 }
@@ -101,7 +97,7 @@ p {
 }
 
 #two {
-  margin-top: 50px;
+  margin-top: 5.04vh;
   font-weight: 1000;
 }
 
@@ -121,37 +117,37 @@ body{
   background: var(--color-darkgray);
 }
 .container{
-  padding-bottom: 70px;
+  padding-bottom: 7.05vh;
   display: flex;
   align-items: top;
   justify-content: center;
   /* min-height: 100vh; */
 }
 .container section{
-  width: 600px;
-  margin-top: -100px;
+  width: 37.5rem;
+  margin-top: -6.25rem;
 }
 .container section details summary{
-  padding: 15px;
+  padding: 0.938rem;
   background: var(--color-lightteal);
   color: var(--color-darkgray);
   position: relative;
   list-style: none;
   outline: none;
   cursor: pointer;
-  font-size: 20px;
+  font-size: 1.25rem;
 }
 .container section details{
-  margin: 15px;
+  margin: 0.938rem;
 }
 .container section details p{
-  font-size: 15px;
-  padding: 10px;
-  color: var(--color-darkbrown);
-  background:var(--color-lightteal);
+  font-size: 0.938rem;
+  padding: 0.625rem;
+  color: var( --color-darkbrown);
+  background: var(--color-lightteal);
 }
 .container section details summary span{
-  font-size: 22px;
-  color: var(--color-darkbrown);
+  font-size: 1.375rem;
+  color: var( --color-darkbrown);
   float: right;
 }

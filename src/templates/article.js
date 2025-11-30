@@ -93,30 +93,6 @@ Article.propTypes = {
 };
 
 export const query = graphql`
-    query($ArticleId: String!) {
-        nodeArticle(id: { eq: $ArticleId }) {
-        field_author
-        field_video_url
-        id
-        title
-        body {
-            processed
-        }
-        field_transcript {
-            processed
-        }
-        relationships {
-            field_image {
-                localFile {
-                    url
-                }
-            }
-            field_audio {
-                path {
-                    alias
-                }
-            }
-
   query ($ArticleId: String!) {
     nodeArticle(id: { eq: $ArticleId }) {
       field_author

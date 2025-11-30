@@ -48,7 +48,8 @@ function Article({ data }) {
               ></audio>
               <img
                 className="articleImage"
-                src={post.relationships.field_image.localFile.url}
+                src={post.relationships.field_image?.url || ""}
+                alt={post.title}
               ></img>
             </div>
           )}

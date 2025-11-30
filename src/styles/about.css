@@ -38,7 +38,7 @@
     @media screen and (min-width: 46.3vw) {
       font-size: 0.875rem;
     }
-    color: white;
+    color: var(--color-offwhite);
     text-align: center;
 }
 
@@ -65,7 +65,7 @@
 .text-controls {
     font-family: 'Roboto', sans-serif;
     font-size: 1.3vw;
-    color: white;
+    color: var(--color-offwhite);
 }
 
 .text-controls:hover {
@@ -77,9 +77,9 @@
   display: inline-block;
   font-size: 1.125rem;
   font-family: 'Roboto Slab', sans-serif;
-  color: #003057;
+  color: var(--color-navyblue);
   padding: 1.063rem 2.5rem;
-  background-color: white;
+  background-color: var(--color-offwhite);
   border-radius: 9.375rem;
   text-align: center;
   cursor: pointer;
@@ -88,7 +88,7 @@
 }
 
 .about-nav-text:hover {
-    background-color: #E0BB56;
+    background-color: var(--color-brightgold);
     cursor: pointer;
     transition: background-color 200ms linear;
 }
@@ -110,7 +110,7 @@
     position: relative;
     width: 256px;
     height: 221px; /* width * 0.866 */
-    background: white;
+    background: var(--color-offwhite);
     box-sizing: border-box;
     -webkit-clip-path: polygon(0% 50%, 25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%);
     -moz-clip-path: polygon(0% 50%, 25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%);
@@ -118,7 +118,7 @@
 
   .hex-background {
     position: absolute;
-    background-color: white; /*color of the main-background*/
+    background-color: var(--color-offwhite); /*color of the main-background*/
     top: 2px; /* equal to border thickness */
     left: 2px; /* equal to border thickness */
     width: 256px; /* container height - (border thickness * 2) */
@@ -183,13 +183,11 @@
     position: absolute;
     top: 0;
     left: 0;
-    
-
-    background-color: rgba(0, 0, 0, 0.3)
+    background-color: var( --color-blackshadow);
   }
 
   .a-c-full {
-    background-color: #004B87;
+    background-color: var(--color-peacockblue);
     top: 7.5rem;
   }
 
@@ -201,7 +199,7 @@
   }
 
   .learn-more {
-    color: #E0BB56;
+    color: var(--color-brightgold);
     text-align: center;
     font-family: "Roboto Slab";
     font-size: 1.563rem;
@@ -218,12 +216,12 @@
     align-items: center;
     gap: 0.313rem;
     border-radius: 5.375rem;
-    background: var(--Primary-Blue, #003057);
+    background: var(--Primary-Blue, var(--color-navyblue));
   }
 
   .horizontal-line {
     width: 70%;
     height: 0.2vh;
     margin: 0 auto;
-    background: #FFF;
+    background: var(--color-offwhite);
   }

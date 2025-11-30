@@ -2,7 +2,7 @@
 
 /* 404.js*/
 .pageStyles {
-    color: #232129;
+    color: var(--color-darkgray);
     padding: 6vh;
     font-family: "-apple-system, Roboto, sans-serif, serif";
 }

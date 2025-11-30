@@ -48,7 +48,8 @@ function Article({ data }) {
               ></audio>
               <img
                 className="articleImage"
-                src={post.relationships.field_image.localFile.url}
+                src={post.relationships.field_image?.url || ""}
+                alt={post.title}
               ></img>
             </div>
           )}
@@ -108,9 +109,7 @@ export const query = graphql`
       }
       relationships {
         field_image {
-          localFile {
-            url
-          }
+          url
         }
         field_audio {
           path {

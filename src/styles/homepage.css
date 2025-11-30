@@ -34,7 +34,10 @@ html, body {
     top: 0;
     left: 0;
 
-    background-color: var(--color-black);
+    background-color: rgba(0,0,0,0.8);
+    background-image: url('../images/homepage/splash1.jpg');
+    background-size: cover;
+    background-position: center;
     /* desktop */
     @media screen and (min-width: 600px) {
         height: 80vh;

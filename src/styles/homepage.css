@@ -8,22 +8,18 @@ html, body {
 
 /* The Fullscreen images on the homepage */
 .splash-image {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
     width: 100vw;
     max-width: 100%;
     
     object-fit: cover;
+    height: 80vh;
     /* desktop */
-    @media screen and (min-width: 600px) {
-        height: 100vh;
-    }
+}
 
-    /* mobile */
-    @media screen and (max-width: 600px) {
-        height: 85vh;
-    } 
+@media screen and (max-width: 600px) {
+    .splash-image {
+        height: 65vh;
+    }
 }
 
 
@@ -33,20 +29,27 @@ html, body {
     position: absolute;
     top: 0;
     left: 0;
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-    background-color: rgba(0,0,0,0.8);
-    background-image: url('../images/homepage/splash1.jpg');
-    background-size: cover;
-    background-position: center;
-    /* desktop */
-    @media screen and (min-width: 600px) {
-        height: 80vh;
-    }
+}
 
-    /* mobile */
-    @media screen and (max-width: 600px) {
-        height: 65vh;
-    }
+.top.dim::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top:0;
+    left:0;
+    background-color: rgba(0,0,0,0.7);
+    z-index: 1;
+}
+
+.top.top-text > h1 {
+    position: relative;
+    z-index: 2;
 }
 
 .top-text {
@@ -61,7 +64,7 @@ html, body {
 
 .bottom {
     position: relative;
-    z-index: -10;
+    z-index: 0;
 }
 
 #learn-more-home {
@@ -90,9 +93,11 @@ html, body {
     height: 65vh; /* CHANGED */
     overflow: inherit;
 
-    /* mobile */
-    @media screen and (max-width: 600px) {
-        
+}
+
+/* mobile */
+@media screen and (max-width: 600px) {
+    .info {
         flex-direction: column;
     }
 }
@@ -111,30 +116,24 @@ html, body {
     display: flex;
     justify-content: space-evenly;
     overflow:inherit;
-
+    flex-direction: row;
     
-    /* desktop */
-    @media screen and (min-width: 600vw) {
-        flex-direction: row;
-    }
+}
 
-    /* mobile */
-    @media screen and (max-width: 600px) {
+@media screen and (max-width: 600px) {
+    .info-wrapper{
         flex-direction: column;
     }
-    
-    
 }
 
 .header {
     font-family: 'Roboto Slab', serif;
-    /* desktop */
-    @media screen and (min-width: 600px) {
-        font-size: 3vw;
-    }
+    font-size: 3vw;
+    
+}
 
-    /* mobile */
-    @media screen and (max-width: 600px) {
+@media screen and (max-width: 600px) {
+    .header {
         font-size: 6vw;
     }
 }
@@ -143,12 +142,13 @@ html, body {
     /* desktop; ratio = 0.603 
     this is the div for the image
     */
-   
-    /* mobile */
-    @media screen and (max-width: 600px) {
+}
+
+@media screen and (max-width: 600px) {
+    .image {
         width: 90vw;
         height: 55vw;
-    }
+    }        
 }
 
 /* Attributes for the team pic image */
@@ -156,13 +156,15 @@ html, body {
     border-radius: 3%;
     height: 52vh;
     max-width: 100%;
+    
+}
 
-    /* mobile */
-    @media screen and (max-width: 600px) {
+/* mobile */
+@media screen and (max-width: 600px) {
+    .teampic {
         width: 100%;
         height: 100%;
     }
-    
 }
 
 .info-card {
@@ -175,13 +177,18 @@ html, body {
     font-family: 'Roboto', sans-serif;
 
     font-size: 3vw;
-    /* desktop */
-    @media screen and (min-width: 600px) {
+}
+
+/* desktop */
+@media screen and (min-width: 600px) {
+    .paragraph {
         font-size: 1.3vw;
     }
+}
 
-    /* mobile */
-    @media screen and (max-width: 600px) {
+/* mobile */
+@media screen and (max-width: 600px) {
+    .paragraph {
         font-size: 1rem;
     }
 }
@@ -194,15 +201,12 @@ html, body {
     /*width: 100%; /* needs to be defined to keep the default block behavior */
     text-align: left;
     margin: 0; /* again, for perfect center */
-    /* desktop */
-    @media screen and (min-width: 800) {
-        font-size: 1.3vw;
-        top: 50%; /* moved down by 50% of the screen height */
-        transform: translateY(100%); /* moved back up (Y axis) by half of its height to achieve the perfect center */
-    }
+    font-size: 1.3vw;
+}
 
-    /* mobile */
-    @media screen and (max-width: 800) {
+/* mobile */
+@media screen and (max-width: 800) {
+    .paragraph2 {
         font-size: 1rem;
     }
 }
@@ -211,13 +215,12 @@ html, body {
     font-family: 'Roboto', sans-serif;
     text-align: center;
     /* desktop */
-    @media screen and (min-width: 600px) {
-        font-size: 1.7vw;   
-        color: var(--color-navyblue);
-    }
+    font-size: 1.7vw;   
+    color: var(--color-navyblue);
+}
 
-    /* mobile */
-    @media screen and (max-width: 600px) {
+@media screen and (max-width: 600px) {
+    .card-text {
         font-size: 0.9rem;
         color: var(--color-offwhite);
     }
@@ -241,7 +244,11 @@ html, body {
 /* Arrows on Header*/
 .arrows {
 	width: 7%;
-	height: 80%;
+    position: absolute;
+    bottom: 0.5vh;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
 	/*Need changes for mobile screen*/
 }
 

@@ -116,7 +116,7 @@ export const query = graphql`
                     alias
                 }
             }
-=======
+
   query ($ArticleId: String!) {
     nodeArticle(id: { eq: $ArticleId }) {
       field_author

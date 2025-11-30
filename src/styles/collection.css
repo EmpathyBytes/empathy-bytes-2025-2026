@@ -72,6 +72,8 @@
     display: flex;
     flex-direction: column;
     text-align: left;
+    align-items: flex-start;
+    flex: 1;
 }
 
 .card-title {
@@ -79,12 +81,16 @@
     font-size: 1.75rem;
     font-weight: 600;
     margin: 0 0 0.5rem 0;
+    text-align: left !important;
+    width: 100%;
 }
 
 .card-author, .card-date {
     font-size: 0.9rem;
     color: var(--color-lightgray);
     margin: 0 0 1rem 0;
+    text-align: left !important;
+    width: 100%;
 }
 
 .card-summary {
@@ -92,6 +98,28 @@
     line-height: 1.5;
     color: var(--color-offwhite);
     flex-grow: 1;
+    text-align: left !important;
+    width: 100%;
+}
+
+/* Force left alignment for all nested HTML elements from CMS */
+.card-summary *,
+.card-summary p,
+.card-summary div,
+.card-summary span,
+.card-summary h1,
+.card-summary h2,
+.card-summary h3,
+.card-summary h4,
+.card-summary h5,
+.card-summary h6,
+.card-summary ul,
+.card-summary ol,
+.card-summary li,
+.card-summary a {
+    text-align: left !important;
+    margin-left: 0 !important;
+    margin-right: auto !important;
 }
 
 .card-date {
@@ -111,6 +139,33 @@
     }
 
     .card-text-container {
-        text-align: center;
+        text-align: left !important;
+        align-items: flex-start;
+    }
+    
+    .card-title,
+    .card-author,
+    .card-date,
+    .card-summary {
+        text-align: left !important;
+    }
+    
+    .card-summary *,
+    .card-summary p,
+    .card-summary div,
+    .card-summary span,
+    .card-summary h1,
+    .card-summary h2,
+    .card-summary h3,
+    .card-summary h4,
+    .card-summary h5,
+    .card-summary h6,
+    .card-summary ul,
+    .card-summary ol,
+    .card-summary li,
+    .card-summary a {
+        text-align: left !important;
+        margin-left: 0 !important;
+        margin-right: auto !important;
     }
 }

@@ -7,7 +7,7 @@
 .container-experiences-homepage {
     padding-top: 20vh;
     padding-bottom: 28vh;
-    background-color: #004B87;
+    background-color: var(--color-peacockblue);
 }
 
 .container-half {
@@ -40,4 +40,81 @@
 
 .rotate {
     transform: rotate(30);
+}
+
+/* card enlarges when user hovers */
+.MuiCardActionArea-root {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.MuiCardActionArea-root:hover,
+.MuiCardActionArea-root:active {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.2);
+  z-index: 2;
+}
+
+@media (max-width: 800px) {
+  .container-experiences-homepage {
+    padding-top: 8vh;
+    padding-bottom: 12vh;
+    padding-left: 0;
+    padding-right: 0;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* centers each item */
+  .MuiGrid-container {
+    margin: 0 !important;
+    width: 100%;
+    justify-content: center !important;
+  }
+
+  .MuiGrid-item {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 0 !important;
+  }
+
+  .MuiCard-root {
+    width: 90%;
+    max-width: 550px;
+    margin: 1.5rem auto;
+    transform: scale(1.03);
+    transition: all 0.3s ease-in-out;
+  }
+
+  .MuiCardMedia-root,
+  .card-media-img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .text-experience {
+    font-size: 2.2rem;
+    padding: 1.25rem 0;
+  }
+}
+
+@media (max-width: 500px) {
+  .MuiCard-root {
+    max-width: 90%;
+    transform: scale(0.95);
+  }
+
+  .text-experience {
+    font-size: 1.8rem;
+  }
 }

@@ -51,27 +51,27 @@ html {
 .project-nav-text {
     font-size: 1rem;
     font-family: 'Roboto Slab', sans-serif;
-    color: white;
+    color: var(--color-offwhite);
     padding: 3vh;
     border-radius: 4vh;
 }
 
 .project-nav-text:hover {
-    background-color: white;
-    color: #003057;
+    background-color: var(--color-offwhite);
+    color: var(--color-navyblue);
     cursor: pointer;
     transition: background-color 200ms linear;
 }
 
 .project-nav-text.active {
-    background-color: white;
-    color: #003057;
+    background-color: var(--color-offwhite);
+    color: var(--color-navyblue);
     font-weight: bold;
 }
 
 .project-navBG {
     display: flex;
-    background-color: #003057;
+    background-color: var(--color-navyblue);
     border-radius: 10vw;
     width: 100%;
     height: 50%;
@@ -108,8 +108,8 @@ html {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #003057 !important;
-    color: white !important;
+    background-color: var(--color-navyblue) !important;
+    color: var(--color-offwhite) !important;
     border-radius: 22px;
     font-family: 'Roboto Slab', sans-serif;
     font-size: 0.9rem;
@@ -121,13 +121,13 @@ html {
 }
 
 .mobile-nav-item:hover {
-    background-color: white;
-    color: #003057;
+    background-color: var(--color-offwhite);
+    color: var(--color-navyblue);
 }
 
 .mobile-nav-item.active {
-    background-color: white !important;
-    color: #003057 !important;
+    background-color: var(--color-offwhite) !important;
+    color: var(--color-navyblue) !important;
     font-weight: bold;
 }
 

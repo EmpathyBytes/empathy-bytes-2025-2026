@@ -1,19 +1,21 @@
 @import "./fonts.css";
 
 .articleContainer {
-    padding: 8% 2%;
-    display: block;
-    max-width: 1200px;
-    margin: 0 auto;
+    padding: 5% 2% 5% 2%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5vh;
 }
 
 .articleTitle {
-    top: 12.5rem;
-    right: 18.75rem;
-    text-align: center;
+    /* top: 12.5rem;
+    right: 18.75rem; */
     font-family: 'Roboto Slab', serif;
-    font-size: 2rem;
-    padding: 0% 25% 0% 25%;
+    font-size: 2.5rem;
+    color: #E0BB56;
+    /* padding: 0% 25% 0% 25%; */
 }
     @media screen and (max-width: 37.5rem) {
         .articleTitle {
@@ -27,117 +29,133 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: hidden; 
+    text-align: center;
+    color: var(--color-offwhite);
 }
 
 .articleImage {
+    border-radius: 2rem;
+   /* justify-content: center; */
+   border: #003057 .25rem solid;
     width: 100%;
-    max-width: 80%;
-    height: auto;
-    border-radius: 0.625rem;
-    object-fit: cover;
-    display: block;
-    margin: 0 auto;
-}
-
-.videoWrapper {
-  position: relative;
-  padding-bottom: 56.25%;
-  height: 0;
-  overflow: hidden;
-  max-width: 100%;
-  margin: 2rem auto;
-}
-
-.videoWrapper iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border: none;
+    height: 100%;
+    object-fit: 'cover';
 }
 
 .articleText {
     font-family: 'Roboto', sans-serif;
-    text-align: center;
-    font-size: 1.25rem;
-    padding: 0% 5% 0% 10%;
+    font-size: 1rem;
+    /* padding: 0% 25% 0% 25%; */
 }
 
 .articleTitleInfo {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    color: white;
-    padding: 0.5rem;
-    width: 90%;
-    max-width: 90%;
-    box-sizing: border-box;
-    word-wrap: break-word;
+    text-align: left;
+    color: var(--color-offwhite);
+    bottom: 1%;
+    left: 31%;
+    inline-size: 31.25rem;
     overflow-wrap: break-word;
-    text-shadow: 0.125rem 0.125rem 0.125rem rgba(63, 107, 169, 1);
+    text-shadow: 0.125rem 0.125rem 0.125rem rgba(63,107,169, 0.6);
 }
 
-@media screen and (max-width: 37.5rem) {
-  .articleTitleInfo {
-    font-size: 0.9rem;
-    width: 95%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-  }
+.interviewInfo {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    align-items: center;
+    justify-content: center;
+    /* gap: 2vh; */
+    width: 75%;
+
 }
 
-.articleAudio {
-  position: absolute;
-  bottom: 0.5rem;
-  left: 50%;
-  transform: translateX(-50%);
-  max-width: 70%;
+.interviewInfoChild {
+    width: 50%;
+    color: white;
+}
+
+.intervieweeDesc {
+    margin-left: 3vw;
+    padding: 2% 3% 2% 3%;
+    height: fit-content;
+    background-color: #003057;
+    border-radius: 2rem;
+    /* border-color: #E0BB56; */
+    border: #E0BB56 .25rem solid;
 }
 
 .clicker {
-    padding: 0% 25% 0% 25%;
     outline:none;
     cursor:pointer;
     text-decoration: underline dotted;
-    color:rgba(63,107,169);
+    color:var(--color-clicker);
 }
     
-.hiddendiv{
-    display:none;
+.hiddendiv {
+    display: none;
+    background-color: #003057;
+    border-radius: 2rem;
+    padding: 1% 2% 1% 2%;
 }
-    
-.clicker:focus + .hiddendiv{
-    display:block;
+
+.hiddendiv.show {
+    display: flex;
+    width: 75%;
+    align-self: first baseline;
 }
 
 .articleAudio {
-    width: 100%; 
-    margin-top: 2.5rem;
+    width: 80%; 
+    /* margin-top: 2.5rem; */
+    position: absolute;
+    vertical-align: bottom;
+    bottom: 1%;
 }
-@media screen and (max-width: 37.5rem) {
+@media screen and (max-width: 800px) {
     .articleAudio {
-        width: 40%; 
+        width: 100%; 
     }
 
 .topPadding {
     padding: 10% 5% 10% 5%;
 }
 
-.articlePadding {
+/* .articlePadding {
     padding: .5% 0 .5% 0;
-}
+} */
 
+.articleVideo {
+    border-radius: 0.625rem;
+    position: relative;
+    justify-content: center;
+    margin: 0% 20% 0% 30%;
+    width: 100%;
+    /* min-height: 70%; */
+}
+.articleImage {
+    width: 100%;
+    height: fit-content;
+}
 .authorInfo {
     font-family: 'Roboto Slab', serif; 
     font-size: 1rem;
-    color: white;
+    color: var(--color-offwhite);
     text-align: center;
-    margin-top: 0.5rem;
+    top: 2.5rem; 
+    right: 10.625rem;
+}
+
+.interviewInfo {
+    flex-direction: column;
+    gap: 3vh;
+    align-content: center;
+    height: fit-content;
+
+}
+.interviewInfoChild {
+    margin: 0;
+    width: 100%;
 }
 }
 

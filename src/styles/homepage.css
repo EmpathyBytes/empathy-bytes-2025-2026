@@ -34,7 +34,7 @@ html, body {
     top: 0;
     left: 0;
 
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: var(--color-black);
     /* desktop */
     @media screen and (min-width: 600px) {
         height: 80vh;
@@ -53,7 +53,7 @@ html, body {
 
     font-family: 'Roboto Slab', serif;
     font-size: 4vw;
-    color: white;
+    color: var(--color-offwhite);
 }
 
 .bottom {
@@ -62,14 +62,14 @@ html, body {
 }
 
 #learn-more-home {
-    background-color: #004B87;
+    background-color: var(--color-peacockblue);
     padding-bottom: 7vh;
     height: 50vh;
     text-align: center;
 }
 
 #learn-more-home .learn-more-home-section {
-    background-color: #003057; /* Change to your desired background color */
+    background-color: var(--color-navyblue); /* Change to your desired background color */
     /* margin: 0px 150px 0px 150px; */
     padding: 5vh; /* Add padding or other styling as needed */
     /* Center-align the text */
@@ -210,13 +210,13 @@ html, body {
     /* desktop */
     @media screen and (min-width: 600px) {
         font-size: 1.7vw;   
-        color: #003057;
+        color: var(--color-navyblue);
     }
 
     /* mobile */
     @media screen and (max-width: 600px) {
         font-size: 0.9rem;
-        color: #FFFFFF;
+        color: var(--color-offwhite);
     }
 }
 
@@ -243,7 +243,7 @@ html, body {
 }
 
 .arrows path {
-	stroke: #FFFFFF;
+	stroke: var(--color-offwhite);
 	fill: transparent;
 	stroke-width: .5%;	
 	animation: arrow 4s infinite;

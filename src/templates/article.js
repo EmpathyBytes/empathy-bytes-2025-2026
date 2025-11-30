@@ -13,6 +13,7 @@ function Article({ data }) {
   const post = data.nodeArticle;
   const [isTranscriptVisible, setIsTranscriptVisible] = useState(false);
 
+                    
   const toggleTranscript = () => {
     setIsTranscriptVisible(!isTranscriptVisible);
   };
@@ -57,15 +58,18 @@ function Article({ data }) {
           <div className="interviewInfoChild intervieweeDesc">This is a placeholder for when we can separate the interviewee info from the general info.</div>
         </div>
 
-        {post.field_video_url ? (
+        {/* Video */}
+        {post.field_video_url && (
           <iframe
             className="articleVideo"
             width="887"
             height="499"
             src={post.field_video_url}
           ></iframe>
-        ) : null}
+        )}
 
+
+        {/* Transcript Toggle */}
         <button 
           className="clicker" 
           onClick={toggleTranscript}

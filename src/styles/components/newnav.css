@@ -92,8 +92,9 @@
   /* Desktop Navigation */
   .desktop-nav {
     display: flex;
+    justify-content: right;
     align-items: center;
-    gap: 2rem;
+    gap: 4.5rem;
     margin-left: auto;
     flex-shrink: 0;
   }
@@ -104,7 +105,7 @@
     position: relative;
     transition: color 0.3s ease;
     font-weight:760;
-    font-size: 1.8rem;
+    font-size: 1.6rem;
   }
   
   .desktop-nav a:hover {
@@ -135,7 +136,7 @@
   
   .desktop-nav .pages {
     margin: 0;
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     font-weight: 500;
     color: white;
   }

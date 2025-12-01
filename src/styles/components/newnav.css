@@ -68,7 +68,7 @@
   }
   
   .logo-link:focus-visible {
-    outline: 2px solid var(--color-lightblue);
+    outline: 2px solid var(--color-offwhite);
     outline-offset: 4px;
     border-radius: 4px;
   }
@@ -103,6 +103,8 @@
     text-decoration: none;
     position: relative;
     transition: color 0.3s ease;
+    font-weight:760;
+    font-size: 1.1rem;
   }
   
   .desktop-nav a:hover {
@@ -110,7 +112,7 @@
   }
   
   .desktop-nav a:focus-visible {
-    outline: 2px solid var(--color-lightblue);
+    outline: 2px solid var(--color-offwhite);
     outline-offset: 4px;
     border-radius: 4px;
   }
@@ -135,6 +137,7 @@
     margin: 0;
     font-size: 1.1rem;
     font-weight: 500;
+    color: white;
   }
   
   /* Mobile Menu Toggle Button */

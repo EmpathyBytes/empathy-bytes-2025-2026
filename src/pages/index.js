@@ -79,7 +79,7 @@ export default function IndexPage() {
               achieve our vision: making the world more accessible with apps and
               emerging tech.
             </p>
-            <a className="card-cta" href="/vision">Our Vision</a>
+            <a className="card-cta" href="/projects">Our Vision</a>
           </article>
           </div>
         </section>
@@ -111,7 +111,7 @@ export default function IndexPage() {
                   An archive app showcasing the stories and research of diverse communities
                   at Georgia Tech.
                 </p>
-                <a href="/app-team" className="creation-btn">App Team</a>
+                <a href="/appteam" className="creation-btn">App Team</a>
               </article>
 
               {/* Card 2 – Interactive Scavenger Hunt App */}
@@ -131,7 +131,7 @@ export default function IndexPage() {
                 <p className="creation-body">
                   A scavenger hunt app to help new Tech students explore campus.
                 </p>
-                <a href="/app-team" className="creation-btn">App Team</a>
+                <a href="/appteam" className="creation-btn">App Team</a>
               </article>
 
               {/* Card 3 – VR Museum */}
@@ -146,7 +146,7 @@ export default function IndexPage() {
                   We have created a Virtual Museum immersive app so anyone can experience
                   and learn about artifacts in the Georgia Tech Archives.
                 </p>
-                <a href="/vr-team" className="creation-btn">VR Team</a>
+                <a href="/emergingtech" className="creation-btn">VR Team</a>
               </article>
 
               {/* Card 4 – Interviews */}
@@ -161,7 +161,7 @@ export default function IndexPage() {
                   We have collected our members’ experiences into documentaries and
                   interviews, allowing our creations to be known to the world.
                 </p>
-                <a href="/media-team" className="creation-btn">Media Team</a>
+                <a href="/mediateam" className="creation-btn">Media Team</a>
               </article>
             </div>
           </div>

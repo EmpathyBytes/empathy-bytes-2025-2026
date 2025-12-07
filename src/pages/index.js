@@ -1,175 +1,185 @@
-import * as React from "react"
+import * as React from "react";
+import "../styles/homepage.css";
+import splash1 from "../images/homepage/splash1.jpg";
+import VRTeam from "../images/homepage/VRTeam.png";
+import VRMuseum from "../images/homepage/VRMuseum.jpg";
+import Iphone from "../images/homepage/Iphone.png"
+import Screenshot from "../images/homepage/Screenshot.png"
+import BuzzQuest from "../images/homepage/BuzzQuest.png"
+import empathyHome from "../images/homepage/empathyHome.png"
+import projectScreen from "../images/homepage/projectScreen.png"
 import Layout from "../components/layout"
 
-import "../styles/homepage.css"
-import "../styles/all.css"
-
-import splash1 from "../images/homepage/splash1.jpg"
-import splash2 from "../images/homepage/splash2.jpg"
-import teampic from "../images/homepage/teampic.jpg"
-
-// import webicon from "../images/subteam-icons/webteambordered.png"
-// import mediaicon from "../images/subteam-icons/mediateambordered.png"
-// import appicon from "../images/subteam-icons/appteambordered.png"
-// import emtechicon from "../images/subteam-icons/emergingtechteambordered.png"
-
-
-import Carousel from 'react-material-ui-carousel'
-// import CardMedia from '@mui/material/CardMedia';
-// import { DesktopAccessDisabled } from "@mui/icons-material";
-
-import useMediaQuery from '@mui/material/useMediaQuery';
-
-import InfoCard from "../components/infocard";
-import LearnCard from "../components/learncard";
-
-
-function IndexPage() {
-  const matches = useMediaQuery('(min-width:700px)'); 
-
-  if (matches){ //desktop
-    return (
-      
-      <Layout>
-        {/**Content for the Carousel */}
-        <div className="top top-text dim">
-          <h1>Empathy Bytes</h1>
-          {/**This is the animated arrows that scroll down the page when clicked */}
-          <a href="#info" alt="arrows"> 
-            <svg className="arrows">
-                <path className="a1" d="M0 0 L30 32 L60 0"></path>
-                <path className="a2" d="M0 20 L30 52 L60 20"></path>
-                <path className="a3" d="M0 40 L30 72 L60 40"></path>
-            </svg>
-          </a>
+export default function IndexPage() {
+  return (
+    <Layout>
+    <main className="landing">
+      {/* Hero section */}
+      <section
+        className="hero-section"
+        style={{
+          backgroundImage: `linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url(${splash1})`,
+          backgroundSize: "cover, cover",
+          backgroundPosition: "50% 85% 50% 85%",
+          backgroundRepeat: "no-repeat,  no-repeat"
+        }}
+      >
+        <div className="hero-overlay">
+          <h2 className="hero-title">Empathy Bytes</h2>
         </div>
-        <div className="bottom">
-          <Carousel
-            interval={10000}
-            animation={"slide"}
-            duration={2000}
-            indicators={false}>
-            <img className="splash-image" src={splash1} alt="Hive"></img>
-            <img className="splash-image" src={splash2} alt="Gatech Tower"></img>
-          </Carousel>
+
+        {/* Scroll arrow */}
+        <a href="#info" className="scroll-down" aria-label="Scroll to info">
+          <svg viewBox="0 0 60 72" className="arrows">
+            <path className="a1" d="M0 0 L30 32 L60 0" />
+            <path className="a2" d="M0 20 L30 52 L60 20" />
+            <path className="a3" d="M0 40 L30 72 L60 40" />
+          </svg>
+        </a>
+      </section>
+
+      {/* Info Section */}
+      <section id="info" className="info-section">
+        <h2 className="info-text">
+          We are bringing <span className="highlight">empathy</span> to technology.
+        </h2>
+      </section>
+
+      {/* === Team Section === */}
+      <section id="team" className="team-section">
+        <div className="team-wrapper">
+          <img
+            src={require("../images/homepage/teampic2.0.jpg").default}
+            alt="Empathy Bytes Team"
+            className="team-photo"
+          />
         </div>
-        {/** This is the main part of the landing page containing the picture and info card*/}
-        <div id="info" className="info">
-          <div className="info-wrapper">
-              <div className="image">
-                <img src={teampic} className="teampic" alt="EB Team"></img>
-              </div>
-              <div className="info-card">
-                <InfoCard 
-                  title="What Is Empathy Bytes?"
-                  body="Empathy Bytes is a student run research project focused on creating immersive technology and media centered around empathy. 
-                  We think outside traditional modes of communication and documentation to create radical and unique experiences. Our research 
-                  currently focuses on identifying and presenting distinct communities connected to Georgia Tech."
-                  // link="/contact"
-                  // btnTitle="Learn More"
+      </section>
+
+      {/* === Story / Vision  === */}
+      <section className="cards-section">
+        <div className="cards-grid">
+          {/* Card 1 */}
+          <article className="info-card-box">
+            <h3 className="card-title">Our Story</h3>
+            <p className="card-body">
+              We are a student run research project focused on creating immersive
+              technology and media centered around empathy. We think outside
+              traditional modes of communication and documentation to create
+              radical and unique experiences.
+            </p>
+            <a className="card-cta" href="/about">About Us</a>
+          </article>
+
+          {/* Card 2 */}
+          <article className="info-card-box">
+            <h3 className="card-title">Our Vision</h3>
+            <p className="card-body">
+              Through our subteams, we are using different types of technology to
+              achieve our vision: making the world more accessible with apps and
+              emerging tech.
+            </p>
+            <a className="card-cta" href="/vision">Our Vision</a>
+          </article>
+          </div>
+        </section>
+
+        {/* === Our Creations === */}
+        <section className="creations-strip">
+          <div className="creations-box">
+            <h2 className="creations-title">Our Creations</h2>
+            <p className="creations-subtitle">
+              Starting from <span className="artifacts">artifacts</span> and <span className="museums">museums</span>, we’re bringing Georgia’s rich history to our technology.
+            </p>
+
+            <div className="creations-grid">
+              {/* Card 1 – Archive App */}
+              <article className="creation-card">
+                <div className="phone-row">
+                  <div className="phone-mockup">
+                    <img src={Iphone} className="phone-frame" />
+                    <img src={empathyHome} className="phone-screen" />
+                  </div>
+
+                  <div className="phone-mockup">
+                    <img src={Iphone} className="phone-frame" />
+                    <img src={projectScreen} className="phone-screen" />
+                  </div>
+                </div>
+                <h3 className="creation-heading">Archive App</h3>
+                <p className="creation-body">
+                  An archive app showcasing the stories and research of diverse communities
+                  at Georgia Tech.
+                </p>
+                <a href="/app-team" className="creation-btn">App Team</a>
+              </article>
+
+              {/* Card 2 – Interactive Scavenger Hunt App */}
+              <article className="creation-card">
+                <div className="phone-row">
+                  <div className="phone-mockup">
+                    <img src={Iphone} className="phone-frame" />
+                    <img src={BuzzQuest} className="phone-screen" />
+                  </div>
+
+                  <div className="phone-mockup">
+                    <img src={Iphone} className="phone-frame" />
+                    <img src={Screenshot} className="phone-screen" />
+                  </div>
+                </div>
+                <h3 className="creation-heading">Interactive Scavenger Hunt App</h3>
+                <p className="creation-body">
+                  A scavenger hunt app to help new Tech students explore campus.
+                </p>
+                <a href="/app-team" className="creation-btn">App Team</a>
+              </article>
+
+              {/* Card 3 – VR Museum */}
+              <article className="creation-card creation-card--wide">
+                <img
+                  src={VRMuseum}
+                  alt="VR Museum"
+                  className="creation-img"
                 />
-              </div>
+                <h3 className="creation-heading">VR Museum</h3>
+                <p className="creation-body">
+                  We have created a Virtual Museum immersive app so anyone can experience
+                  and learn about artifacts in the Georgia Tech Archives.
+                </p>
+                <a href="/vr-team" className="creation-btn">VR Team</a>
+              </article>
+
+              {/* Card 4 – Interviews */}
+              <article className="creation-card creation-card--wide">
+                <img
+                  src={VRTeam}
+                  alt="Interviews"
+                  className="creation-img"
+                />
+                <h3 className="creation-heading">Interviews</h3>
+                <p className="creation-body">
+                  We have collected our members’ experiences into documentaries and
+                  interviews, allowing our creations to be known to the world.
+                </p>
+                <a href="/media-team" className="creation-btn">Media Team</a>
+              </article>
             </div>
           </div>
-
-        {/* This is the learn more section */}
-        <div id="learn-more-home" className="learn-more-home"> 
-          {/* Had to use info-wrapper instead of a custom since 
-          it made the text have a weird yellow underline */}
-          <div className="info-wrapper">
-          <div className="learn-card">
-                <LearnCard 
-                  title="Want to Learn More?"
-                  body="Check out our Experience and Project Pages to learn more about our work!"
-
-                  // Currently the links don't go to the top of the pages
-                  link="/experiences"
-                  btnTitle="Experiences"
-                  link2="/projects"
-                  btnTitle2="Projects"
-                />
-            </div>
-            </div>  
-          </div>
+        </section>
+      </main>
       </Layout>
-    )
-
-
-
-  } else { //mobile layout
-    // TODO: create a better layout for mobile
-    return (
-      <Layout>
-        <div className="top top-text dim">
-          <h1>Empathy Bytes</h1>
-
-          <a href="#info" alt="arrows">
-            <svg className="arrows">
-                <path className="a1" d="M0 0 L30 32 L60 0"></path>
-                <path className="a2" d="M0 20 L30 52 L60 20"></path>
-                <path className="a3" d="M0 40 L30 72 L60 40"></path>
-            </svg>
-          </a>
-          
-        </div>
-        <div className="bottom">
-          <Carousel
-            interval={10000}
-            animation={"slide"}
-            duration={2000}
-            indicators={false}>
-            <img className="splash-image" src={splash1} alt="Hive"></img>
-            <img className="splash-image" src={splash2} alt="Gatech Tower"></img>
-          </Carousel>
-        </div>
-
-        <div id="info" className="info">
-          <div className="info-wrapper">
-              <div className="image">
-                <img src={teampic} className="teampic" alt="EB Team"></img>
-              </div>
-              <div className="info-card">
-                <InfoCard 
-                  title="What Is Empathy Bytes?"
-                  body="Empathy Bytes is a student run research project focused on creating immersive technology and media centered around empathy. 
-                  We think outside traditional modes of communication and documentation to create radical and unique experiences. Our research 
-                  currently focuses on identifying and presenting distinct communities connected to Georgia Tech."
-                  link="/contact/"
-                  btnTitle="Learn More"
-                />
-              </div>
-            </div>
-          </div>
-
-          {/* This is the learn more section */}
-          <div id="learn-more-home" className="learn-more-home"> 
-          {/* Had to use info-wrapper instead of a custom since 
-          it made the text have a weird yellow underline */}
-          <div className="info-wrapper">
-          <div className="learn-card">
-                <LearnCard 
-                  title="Want to Learn More?"
-                  body="Check out our Experience and Project Pages to learn more about our work!"
-
-                  // Currently the links don't go to the top of the pages
-                  link="/experiences"
-                  btnTitle="Experiences"
-                  link2="/projects"
-                  btnTitle2="Projects"
-                />
-            </div>
-            </div>  
-          </div>
-      </Layout>
-    )
-  }
+  );
 }
 
-export default IndexPage;
 
 export const Head = () => (
-<>
-<link rel="icon" type="image/png" href="https://educast.library.gatech.edu/static/empbytes-8c9db7ee75f110e619f7d85cb8b170c5.jpg" />
-<title>Home</title>
-</>
-)
+  <>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Home</title>
+  </>
+);

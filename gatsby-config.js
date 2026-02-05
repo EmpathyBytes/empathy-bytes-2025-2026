@@ -22,11 +22,6 @@ module.exports = {
         skipFileDownloads: true, // Skip downloading files during build
         concurrentRequests: 10, // Increase concurrent requests
         requestTimeout: 30000, // Increase timeout for slow responses
-        // Only fetch what you need
-        filters: {
-          "node--article": "status=1", // Only published articles
-          "node--collection": "status=1", // Only published collections
-        },
         // Enable caching
         cache: true,
         // Reduce data transfer

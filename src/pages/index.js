@@ -145,7 +145,7 @@ function IndexPage() {
           <div id="learn-more-home" className="learn-more-home"> 
           {/* Had to use info-wrapper instead of a custom since 
           it made the text have a weird yellow underline */}
-          <div className="info-wrapper">
+          <div className="learn-more-container">
           <div className="learn-card">
                 <LearnCard 
                   title="Want to Learn More?"

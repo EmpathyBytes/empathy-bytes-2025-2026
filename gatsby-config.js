@@ -33,11 +33,13 @@ module.exports = {
         params: {
           "node--article": {
             "include": "field_image,field_audio,field_tags",
-            "fields[node--article]": "title,field_author,field_video_url,field_hg_dateline,field_blurb,body,field_transcript,path,relationships"
+            "fields[node--article]": "title,field_author,field_video_url,field_hg_dateline,field_blurb,body,field_transcript,path,relationships",
+            "filter[status]": "1"
           },
           "node--collection": {
             "include": "field_image",
-            "fields[node--collection]": "title,body,path,relationships"
+            "fields[node--collection]": "title,body,path,relationships",
+            "filter[status]": "1"
           }
         }
       },

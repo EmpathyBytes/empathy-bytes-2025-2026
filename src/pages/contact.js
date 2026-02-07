@@ -40,7 +40,7 @@ function ContactPage() {
                     type="button"
                     onClick={() => handleEmailButtonClick(key)}
                   >
-                    {`Contact our ${key}`}
+                    {`Contact our ${key} lead`}
                   </button>
                 </label>
               </div>

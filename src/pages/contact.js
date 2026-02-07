@@ -7,10 +7,10 @@ function ContactPage() {
   // Define email handlers as an object
   const emailHandlers = {
     Alison: "alison.valk@library.gatech.edu",
-    App: "mempel3@gatech.edu",
-    VR: "troth7@gatech.edu",
-    Media: "jacqueline7@gatech.edu",
-    Website: "ecraven6@gatech.edu",
+    App: "vchoi3@gatech.edu",
+    VR: "vtran22@gatech.edu",
+    Media: "aroemer3@gatech.edu",
+    Website: "msharma343@gatech.edu",
   };
 
   // Handle email button click
@@ -40,9 +40,7 @@ function ContactPage() {
                     type="button"
                     onClick={() => handleEmailButtonClick(key)}
                   >
-                    {`Contact our ${
-                      key === "Alison" ? "VIP coordinator" : `Team Lead for ${key}`
-                    }`}
+                    {`Contact our ${key}`}
                   </button>
                 </label>
               </div>

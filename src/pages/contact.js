@@ -24,7 +24,7 @@ function ContactPage() {
         <main>
           <div className="top-contact dim"></div>
           <div className="bottom-contact">
-            <img src={All} className="contact-full"></img>
+            <img src={All} className="contact-full" alt="Empathy Bytes full team photo"></img>
           </div>
           <div className="headerStyles">
             <h1>

@@ -62,28 +62,46 @@ function ContactPage() {
       <div id="info">
         <div className="info-section">
           <h1>Frequently Asked Questions</h1>
-          <div class="container">
-            <section>
-              <details>
-                <summary>How do I apply?<span><i class="fa-solid fa-caret-down"></i></span></summary>
-                <p>To register for a VIP at Georgia Tech as an undergraduate, please follow this link{" "} <a href="https://www.vip.gatech.edu/apply-undergraduate-students">
-              https://www.vip.gatech.edu/apply-undergraduate-students
-            </a></p>
-              </details>
-              <details>
-                <summary>Can I be on many teams?<span><i class="fa-solid fa-caret-down"></i></span></summary>
-                <p>Yes! If you want to be on more than one team per semester, make sure to pick the 2-3 credit option.</p>
-              </details>
-              <details>
-                <summary>Is this for Georgia Tech students only?<span><i class="fa-solid fa-caret-down"></i></span></summary>
-                <p>Yes. Masters and undergrads.</p>
-              </details>
-              <details>
-                <summary>Can I join as a freshman?<span><i class="fa-solid fa-caret-down"></i></span></summary>
-                <p>Please wait until your Sophomore year.</p>
-              </details>
-            </section>
-          </div>
+            <div class="container">
+                <section>
+                    <details>
+                        <summary>How do I apply?<span><i className="fa-solid fa-caret-down"></i></span></summary>
+                        <p>
+                            To register for a VIP at Georgia Tech as an undergraduate, please follow the
+                            instructions on the <a href="https://www.vip.gatech.edu/apply-undergraduate-students"
+                                                   target="_blank" rel="noopener noreferrer">
+                            official VIP application page</a>. We welcome students from all backgrounds!
+                        </p>
+                    </details>
+
+                    <details>
+                        <summary>Can I be on many teams?<span><i className="fa-solid fa-caret-down"></i></span>
+                        </summary>
+                        <p>
+                            Yes! If you want to be on more than one sub-team per semester, make sure to
+                            register for the 2-3 credit hour option to account for the additional project work.
+                        </p>
+                    </details>
+
+                    <details>
+                        <summary>Is this for Georgia Tech students only?<span><i className="fa-solid fa-caret-down"></i></span>
+                        </summary>
+                        <p>
+                            Yes, Empathy Bytes is currently open to both undergraduate and graduate
+                            students enrolled at Georgia Tech.
+                        </p>
+                    </details>
+
+                    <details>
+                        <summary>Can I join as a freshman?<span><i className="fa-solid fa-caret-down"></i></span>
+                        </summary>
+                        <p>
+                            While we appreciate the early interest, we recommend students wait until
+                            their sophomore year to join the VIP.
+                        </p>
+                    </details>
+                </section>
+            </div>
         </div>
       </div>
     </Layout>
@@ -93,8 +111,9 @@ function ContactPage() {
 export default ContactPage;
 
 export const Head = () => (
-  <>
-  <link rel="icon" type="image/png" href="https://educast.library.gatech.edu/static/empbytes-8c9db7ee75f110e619f7d85cb8b170c5.jpg" />
-  <title>Contact</title>
-  </>
-  )
+    <>
+        <link rel="icon" type="image/png" href="https://educast.library.gatech.edu/static/empbytes-8c9db7ee75f110e619f7d85cb8b170c5.jpg" />
+        <title>Contact Us | Empathy Bytes VIP</title>
+        <meta name="description" content="Have questions about Empathy Bytes? Contact our VIP coordinator or sub-team leads to learn how you can join our research at Georgia Tech." />
+    </>
+)

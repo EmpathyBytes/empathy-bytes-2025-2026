@@ -22,22 +22,19 @@ module.exports = {
         skipFileDownloads: true, // Skip downloading files during build
         concurrentRequests: 10, // Increase concurrent requests
         requestTimeout: 30000, // Increase timeout for slow responses
-        // Only fetch what you need
-        filters: {
-          "node--article": "status=1", // Only published articles
-          "node--collection": "status=1", // Only published collections
-        },
         // Enable caching
         cache: true,
         // Reduce data transfer
         params: {
           "node--article": {
             "include": "field_image,field_audio,field_tags",
-            "fields[node--article]": "title,field_author,field_video_url,field_hg_dateline,field_blurb,body,field_transcript,path,relationships"
+            "fields[node--article]": "title,field_author,field_video_url,field_hg_dateline,field_blurb,body,field_transcript,path,relationships",
+            "filter[status]": "1"
           },
           "node--collection": {
             "include": "field_image",
-            "fields[node--collection]": "title,body,path,relationships"
+            "fields[node--collection]": "title,body,path,relationships",
+            "filter[status]": "1"
           }
         }
       },

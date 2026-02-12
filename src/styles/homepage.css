@@ -65,7 +65,7 @@ html, body {
 #learn-more-home {
     background-color: var(--color-peacockblue);
     padding-bottom: 7vh;
-    height: 50vh;
+    min-height: 50vh;
     text-align: center;
 }
 
@@ -85,7 +85,7 @@ html, body {
     justify-content: space-evenly;
     align-items: center;
     align-content: center;
-    height: 65vh; /* CHANGED */
+    min-height: 65vh; /* CHANGED */
     overflow: inherit;
 
 }
@@ -196,6 +196,8 @@ html, body {
         align-items: center;
         gap: 20px;
         height: auto;
+        min-height: auto;
+        margin-top: 15vh; /*gives space between top image and arrows down */
     }
     .info-wrapper{
         display: flex;
@@ -203,12 +205,12 @@ html, body {
         width: 100%;
     }
     .info-card{
-        padding-bottom: 3vh;
+        height: auto;
     }
-    .learn-more-container{
+    .learn-more-home{
         display: flex;
         height: auto;
-        padding-top: 3vh;
+        padding-top: auto;
     }
     .header {
         font-size: 6vw;
@@ -235,8 +237,6 @@ html, body {
         height: 65vh;
     }
 }
-
-
 
 /* Arrows on Header*/
 .arrows {

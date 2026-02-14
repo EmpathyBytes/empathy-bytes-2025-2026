@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="de170d2e-5b97-4c08-a657-72110b64e564" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/aboutComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/aboutComponent.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,7 +56,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "accessibility__fixes",
+    "git-widget-placeholder": "#98 on accessibility__fixes",
     "last_opened_file_path": "/Users/kellyzhou/Library/Mobile Documents/com~apple~CloudDocs/vip/empathy-bytes-2025-2026-master",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
@@ -86,6 +87,8 @@
       <workItem from="1758827457389" duration="6386000" />
       <workItem from="1769657534136" duration="18984000" />
       <workItem from="1769825745625" duration="3806000" />
+      <workItem from="1770433054447" duration="3114000" />
+      <workItem from="1771029851198" duration="823000" />
     </task>
     <servers />
   </component>

@@ -1,229 +1,145 @@
 @import "./fonts.css";
+
 .container {
     padding-top: 11.25rem;
 }
-.people-container {
-    padding: 1% 5% 1% 5%;
+
+/* Centering container for subteam descriptions */
+.subteam-description-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 2rem 0;
+    margin: 0 auto;
 }
 
 .header-about {
     font-family: 'Roboto Slab', serif;
-    @media screen and (min-width: 34.7vw) {
-      font-size: 2rem;
-    }
-    @media screen and (min-width: 69.4vw) {
-      font-size: 2.5rem;
-    }
-    @media screen and (max-width: 46.3vw) {
-      font-size: 1.75rem;
-    }
-    @media screen and (min-width: 46.3vw) {
-      font-size: 1.875rem;
-    }
+    font-size: clamp(1.75rem, 5vw, 2.5rem); /* Responsive sizing */
     color: white;
     text-align: center;
+    margin-bottom: 1rem;
 }
 
 .paragraph-about {
     font-family: 'Roboto', sans-serif;
-    @media screen and (min-width: 34.7vw) {
-      font-size: 1.25rem;
-    }
-    @media screen and (min-width: 69.4vw) {
-      font-size: 1.5rem;
-    }
-    @media screen and (max-width: 46.3vw) {
-      font-size: 1rem;
-    }
-    @media screen and (min-width: 46.3vw) {
-      font-size: 0.875rem;
-    }
+    font-size: clamp(1rem, 2.5vw, 1.25rem); /* Responsive sizing */
     color: white;
     text-align: center;
+    line-height: 1.6;
+    max-width: 900px;
+    margin: 0 auto;
 }
 
-.emerging-tech-about {
-    visibility: visible;
+.member-name {
+    margin-top: 1rem;
+    font-weight: 500;
 }
 
-.web-about {
-    visibility: visible;
-}
-
-.media-about {
-    visibility: visible;
-}
-
-.app-about {
-    visibility: visible;
+.member-grid-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem !important;
 }
 
 .about-nav {
     text-align: center;
-}
-
-.text-controls {
-    font-family: 'Roboto', sans-serif;
-    font-size: 1.3vw;
-    color: white;
-}
-
-.text-controls:hover {
-    cursor: pointer;
-    opacity: 0.8;
+    width: 100%;
+    padding: 2rem 0;
 }
 
 .about-nav-text {
-  display: inline-block;
-  font-size: 1.125rem;
-  font-family: 'Roboto Slab', sans-serif;
-  color: #003057;
-  padding: 1.063rem 2.5rem;
-  background-color: white;
-  border-radius: 9.375rem;
-  text-align: center;
-  cursor: pointer;
-  text-decoration: none;
-  min-width: 5.7vw;
+    display: inline-block;
+    font-size: 1.125rem;
+    font-family: 'Roboto Slab', sans-serif;
+    color: #003057;
+    padding: 0.75rem 2rem;
+    background-color: white;
+    border-radius: 5rem;
+    text-align: center;
+    cursor: pointer;
+    text-decoration: none;
+    margin: 0.5rem;
+    transition: all 0.2s ease-in-out;
 }
 
 .about-nav-text:hover {
     background-color: #E0BB56;
-    cursor: pointer;
-    transition: background-color 200ms linear;
+    transform: translateY(-2px);
 }
 
 .navBG {
     display: flex;
-    /* background-color: #1B3F66; */
-    border-radius: 8.7vw;
+    flex-wrap: wrap; /* Allows buttons to wrap on mobile */
+    border-radius: 2rem;
     width: 90%;
-    height: 50%;
-    top: 5vh;
     margin: auto;
     justify-content: center;
+    padding: 1rem;
 }
 
+/* Hexagon Styling */
 .hex {
     display: block;
     margin: 0 auto;
     position: relative;
-    width: 256px;
-    height: 221px; /* width * 0.866 */
+    width: 200px; /* Reduced fixed size for better mobile fit */
+    height: 173px; /* width * 0.866 */
     background: white;
     box-sizing: border-box;
-    -webkit-clip-path: polygon(0% 50%, 25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%);
-    -moz-clip-path: polygon(0% 50%, 25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%);
-  }
+    clip-path: polygon(0% 50%, 25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%);
+}
 
-  .hex-background {
+.hex-background {
     position: absolute;
-    background-color: white; /*color of the main-background*/
-    top: 2px; /* equal to border thickness */
-    left: 2px; /* equal to border thickness */
-    width: 256px; /* container height - (border thickness * 2) */
-    height: 221px; /* container height - (border thickness * 2) */
-    -webkit-clip-path: polygon(0% 50%, 25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%);
-    -moz-clip-path: polygon(0% 50%, 25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%);
-  }
+    background-color: white;
+    top: 2px;
+    left: 2px;
+    width: 196px;
+    height: 169px;
+    clip-path: polygon(0% 50%, 25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%);
+}
 
-  .hex img {
+.hex img {
     position: absolute;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    -webkit-clip-path: polygon(0% 50%, 25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%);
-    -moz-clip-path: polygon(0% 50%, 25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%);
-  }
+    clip-path: polygon(0% 50%, 25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%);
+}
 
-  .full-image {
-    width: 60vw; 
-    height: 60vh;
-  }
-
-  .grid-inner-about {
-    padding: 0 2% 0 2%;
-  }
-
-  .center-text {
+.past-members-header {
     text-align: center;
-    justify-content: center;
-  }
+    color: white;
+    padding: 3rem 0;
+    font-size: clamp(1.5rem, 4vw, 2.25rem);
+    font-family: 'Roboto Slab', serif;
+}
 
-  .paper-about {
-    justify-content: center;
-    width: 95%;
-    height: 95%;
-  }
-
-  .padding-bottom-about {
-    padding-bottom: 5%;
-  }
-
-  .bottom-about {
-    /* position: relative; */
-    z-index: -10;
-  }
-
-  .about-full {
-    width: 100vw;
-    height: 80vh;
-    max-width: 100%;
-    object-fit: cover;
-  }
-
-  .padding-about {
-    padding: 0% 5% 6% 5%;
-  }
-
-  .top-about {
-    width: 100vw;
-    height: 80vh;
-    max-width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    
-
-    background-color: rgba(0, 0, 0, 0.3)
-  }
-
-  .a-c-full {
-    background-color: #004B87;
-    top: 7.5rem;
-  }
-
-  .about-nav-past {
-    text-align: center;
-    height: 15vh;
-    width: 17.4vw;
-    margin: auto;
-  }
-
-  .learn-more {
-    color: #E0BB56;
-    text-align: center;
-    font-family: "Roboto Slab";
-    font-size: 1.563rem;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    text-decoration-line: underline;
-  }
-  
-  .about-card {
-    display: flex;
-    padding: 2vh 5.5vw 3.3vh 7.5vw;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.313rem;
-    border-radius: 5.375rem;
-    background: var(--Primary-Blue, #003057);
-  }
-
-  .horizontal-line {
-    width: 70%;
-    height: 0.2vh;
-    margin: 0 auto;
+.horizontal-line {
+    width: 60%;
+    height: 2px;
+    margin: 1rem auto;
     background: #FFF;
-  }
+}
+
+.a-c-full {
+    background-color: #004B87;
+    padding-bottom: 5rem;
+}
+
+/* Mobile adjustments */
+@media screen and (max-width: 800px) {
+    .navBG {
+        width: 100%;
+        border-radius: 0;
+    }
+
+    .about-nav-text {
+        width: 40%; /* Two buttons per row on mobile */
+        min-width: 140px;
+    }
+}

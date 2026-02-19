@@ -18,6 +18,7 @@ import MishaCard from "../components/mishaCard";
 import BihanCard from "../components/bihanCard";
 import KatyCard from "../components/katyCard";
 import NaCard from "../components/naCard";
+import StephanieCard from "../components/stephanieCard";
 
 function PracticePage() {
 
@@ -40,6 +41,7 @@ function PracticePage() {
             <MishaCard/>
             <KatyCard/>
             <NaCard/>
+            <StephanieCard/>
 
           </div>
         </main>

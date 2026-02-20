@@ -64,8 +64,8 @@ function ContactPage() {
             <section>
               <details>
                 <summary>How do I apply?<span><i class="fa-solid fa-caret-down"></i></span></summary>
-                <p>To register for a VIP at Georgia Tech as an undergraduate, please follow this link{" "} <a href="https://www.vip.gatech.edu/apply-undergraduate-students">
-              https://www.vip.gatech.edu/apply-undergraduate-students
+                <p>To register for a VIP at Georgia Tech as an undergraduate, please follow this link{" "} <a href="https://vip.gatech.edu/application/">
+              https://vip.gatech.edu/application/
             </a></p>
               </details>
               <details>

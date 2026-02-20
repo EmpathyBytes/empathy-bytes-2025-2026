@@ -62,8 +62,8 @@ function ContactPage() {
           </summary>
           <div id="faq-1" role="region" aria-labelledby="faq-1-summary">
             <p>To register for a VIP at Georgia Tech as an undergraduate, please follow this link{" "}
-              <a href="https://www.vip.gatech.edu/apply-undergraduate-students">
-                https://www.vip.gatech.edu/apply-undergraduate-students
+              <a href="https://vip.gatech.edu/application/">
+                https://vip.gatech.edu/application/
               </a>
             </p>
           </div>

@@ -7,10 +7,11 @@ function ContactPage() {
   // Define email handlers as an object
   const emailHandlers = {
     Alison: "alison.valk@library.gatech.edu",
-    App: "mempel3@gatech.edu",
-    VR: "troth7@gatech.edu",
-    Media: "jacqueline7@gatech.edu",
-    Website: "ecraven6@gatech.edu",
+    App: "vchoi3@gatech.edu",
+    VR: "vtran22@gatech.edu",
+    Media: "aroemer3@gatech.edu",
+    Frontend: "msharma343@gatech.edu",
+    Backend: "dezhilmuthu3@gatech.edu",
   };
 
   // Handle email button click
@@ -61,8 +62,8 @@ function ContactPage() {
           </summary>
           <div id="faq-1" role="region" aria-labelledby="faq-1-summary">
             <p>To register for a VIP at Georgia Tech as an undergraduate, please follow this link{" "}
-              <a href="https://www.vip.gatech.edu/apply-undergraduate-students">
-                https://www.vip.gatech.edu/apply-undergraduate-students
+              <a href="https://vip.gatech.edu/application/">
+                https://vip.gatech.edu/application/
               </a>
             </p>
           </div>
@@ -70,7 +71,7 @@ function ContactPage() {
         
         <details>
           <summary aria-expanded="false" aria-controls="faq-2">
-            Can I be on many teams?
+            Can I be on multiple teams?
             <span aria-hidden="true"><i className="fa-solid fa-caret-down"></i></span>
           </summary>
           <div id="faq-2" role="region">
@@ -84,7 +85,7 @@ function ContactPage() {
             <span aria-hidden="true"><i className="fa-solid fa-caret-down"></i></span>
           </summary>
           <div id="faq-3" role="region">
-            <p>Yes. Both master's and undergraduate students may apply.</p>
+            <p>Yes. Both masters and undergraduate students may apply.</p>
           </div>
         </details>
         
@@ -94,7 +95,7 @@ function ContactPage() {
             <span aria-hidden="true"><i className="fa-solid fa-caret-down"></i></span>
           </summary>
           <div id="faq-4" role="region">
-            <p>Students are eligible to apply beginning in their sophomore year.</p>
+            <p>Students are eligible to apply beginning in their academic sophomore year.</p>
           </div>
         </details>
       </section>

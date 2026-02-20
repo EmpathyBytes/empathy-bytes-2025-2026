@@ -55,26 +55,24 @@ function AboutPage({ data }) {
         {/* <h1>About Us</h1> */}
       </div>
       <div className="bottom-about">
-        <img src={All} className="about-full"></img>
+        <img src={All} className="about-full" alt="Empathy Bytes VIP full team group photo" />
       </div>
       <div className="a-c-full">
         <div style={{ padding: "2% 5% 1% 5%" }}>
           <div className="about-card">
             <h1 className="header-about">About Us</h1>
             <p className="paragraph-about">
-              Empathy Bytes VIP explores how multimedia and emerging technologies can enhance empathy and understanding as we
-              create digital scholarship. This VIP section looks to document the stories of diverse communities in Georgia and beyond.
-              The team explores how technology can enhance empathy, as well as improve access to resources. Most importantly, the students on
-              this team ask themselves how these advanced technologies allow us to understand new perspectives, solve problems, or simply be a
-              better person in a world full of daily challenges.
+              Empathy Bytes VIP explores how multimedia and emerging technologies can enhance empathy and understanding as we create digital scholarship.
+              Our work documents the stories of diverse communities in Georgia and beyond. We examine how technology can deepen empathy,
+              expand access to resources,and help us understand new perspectives, solve problems, and be better people in a world full of daily challenges.
             </p>
             <p className="paragraph-about">
-              Empathy Bytes is broken down into sub-groups that specialize in different areas of research to accomplish the overall goals of the project.
-              Within sub teams, students explore areas of personal research interest, while learning project management skills and terminology.
+              Empathy Bytes is organized into sub-teams that specialize in different areas of research while contributing to shared project goals.
+              Within these groups, students pursue personal research interests and practice project-management skills and terminology.
             </p>
             <p className="paragraph-about">
-              Current technologies being used include: React, GatsbyJS, Drupal, and GraphQL the web team, the Adobe Creative Suite for the Media team.
-              Unity and Blender for the Emerging Tech team, and Swift for the App team.
+              Current technologies include React, GatsbyJS, Drupal, and GraphQL for the Web team;
+              Adobe Creative Cloud for the Media team; Unity and Blender for the Emerging Tech team; and Swift for the App team.
             </p>
           </div>
         </div>
@@ -86,7 +84,7 @@ function AboutPage({ data }) {
             </Grid>
             <Grid xs={12} sm={3} md={2}>
               <a href="#about-emerging" className="noUnderline">
-                <h3 className="about-nav-text" onClick={toggleEmerging}>Emerging</h3>
+                <h3 className="about-nav-text" onClick={toggleEmerging}>Emerging Tech</h3>
               </a>
             </Grid>
 
@@ -118,7 +116,7 @@ function AboutPage({ data }) {
           <AboutComponent
             subteam={"Emerging Tech"}
             members={emergingMembers}
-            about={"The emerging tech team is comprised of students from a variety of different backgrounds and majors, including Computational Media and Computer Science. The team focuses on exploring cutting edge technologies and their ability to create empathy."}
+            about={"The emerging tech team is comprised of students from a variety of different backgrounds and majors, including Computational Media and Computer Science. The team explores cutting-edge technologies and how they can create empathy."}
             learnMore={"https://educast.library.gatech.edu/emergingtech/"}
           />
         </div>
@@ -128,7 +126,7 @@ function AboutPage({ data }) {
           <AboutComponent
             subteam={"Web"}
             members={webMembers}
-            about={"The Web team is comprised of students from a variety of backgrounds, such as Computer Science and Computational Media. The team maintains the external facing Empathy Bytes website which uses GatsbyJS, GraphQL, and Drupal. The team also is exploring Web XR and its capabilities to create unique and memorable experiences."}
+            about={"The Web team is comprised of students from a variety of backgrounds, such as Computer Science and Computational Media. The team maintains the public-facing site (GatsbyJS, GraphQL, Drupal) and explores WebXR and its capabilities to create unique and memorable experiences."}
             learnMore={"https://educast.library.gatech.edu/webteam/"}
           />
         </div>
@@ -139,7 +137,7 @@ function AboutPage({ data }) {
           <AboutComponent
             subteam={"Media"}
             members={mediaMembers}
-            about={"The Media team is comprised of students from a variety of backgrounds, such as Computer Science and Computational Media. The team creates media content for the site in addition to working across teams to help with design needs."}
+            about={"The Media team is comprised of students from a variety of backgrounds, such as Computer Science and Computational Media. The team creates site content and supports cross-team design needs."}
             learnMore={"https://educast.library.gatech.edu/mediateam/"}
           />
         </div>
@@ -149,7 +147,7 @@ function AboutPage({ data }) {
           <AboutComponent
             subteam={"App"}
             members={appMembers}
-            about={"The App team is comprised of students from a variety of backgrounds, such as Computer Science and Computational Media. The team is currently creating a Mobile Application to present the teams research with future hopes of publishing on the Apple Store."}
+            about={"The App team is comprised of students from a variety of backgrounds, such as Computer Science and Computational Media. The team is currently developing a mobile application to present the team’s research; future plans to publish on the App Store."}
             learnMore={"https://educast.library.gatech.edu/appteam/"}
           />
         </div>
@@ -230,7 +228,11 @@ export default AboutPage;
 
 export const Head = () => (
   <>
-  <link rel="icon" type="image/png" href="https://educast.library.gatech.edu/static/empbytes-8c9db7ee75f110e619f7d85cb8b170c5.jpg" />
-  <title>About</title>
+    <link rel="icon" type="image/png" href="https://educast.library.gatech.edu/static/empbytes-8c9db7ee75f110e619f7d85cb8b170c5.jpg" />
+    <title>About | Empathy Bytes VIP</title>
+    <meta
+      name="description"
+      content="Learn about Empathy Bytes VIP—our mission, sub-teams, and how we use web, media, emerging tech, and apps to build empathy through digital scholarship."
+    />
   </>
-  )
+);

@@ -22,7 +22,7 @@ header {
     height: var(--navbar-scrolled-height);
     padding: 0vh 0vw 0vh 2.3vw;
     background-color: var(--color-navyblue);
-    color: white;
+    color: var(--color-offwhite);
     position: fixed;
     top: 0;
     left: 0;
@@ -44,14 +44,14 @@ nav {
 }
 
 nav a {
-    color: white;
+    color: var(--color-offwhite);
     text-decoration: none;
 }
 
 nav a:link,
 nav a:visited,
 nav a:active {
-    color: white;
+    color: var(--color-offwhite);
 }
 
 nav a:hover {
@@ -64,7 +64,7 @@ header .nav-btn {
     background: transparent;
     border: none;
     outline: none;
-    color: white;
+    color: var(--color-offwhite);
     visibility: hidden;
     opacity: 0;
     font-size: 1.8rem;
@@ -80,7 +80,7 @@ header .nav-btn {
   }
 
   .nav-title {
-    color: #FFF;
+    color: var(--color-offwhite);
     font-family: 'Roboto Slab', sans-serif;
     font-size: 2rem;
     font-style: normal;

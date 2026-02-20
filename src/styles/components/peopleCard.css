@@ -13,7 +13,7 @@
     font-family: Roboto;
     font-weight: 100;
     font-size: 1.2vw;
-    color: #fff;
+    color: var(--color-offwhite);
     margin: 1;
 }
 

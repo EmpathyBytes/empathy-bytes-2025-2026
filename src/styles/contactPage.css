@@ -9,17 +9,6 @@
   --secondary-color: #789beb;
   --text-color: #ffffff;
 }
-/* .top-contact {
-  width: 100vw;
-  height: 80vw;
-  max-width: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  
-
-  background-color: rgba(0, 0, 0, 0.3)
-} */
 
 .contact-full {
   width: 100vw;
@@ -44,7 +33,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #004B87;
+  background-color: var(--color-peacockblue);
 }
 
 .heading-styles {
@@ -73,7 +62,7 @@
 }
 
 .button:hover {
-  background-color: #003057;
+  background-color: var(--color-navyblue);
   transform: scale(1.05);
 }
 
@@ -85,7 +74,7 @@
 }
 
 #info .info-section {
-  background-color: #003057; /* Change to your desired background color */
+  background-color: var(--color-navyblue); /* Change to your desired background color */
   margin: 0vh 8.7vw 0vh 8.7vw;
   padding: 1.563rem; /* Add padding or other styling as needed */
   /* Center-align the text */
@@ -93,7 +82,7 @@
 
 #info {
   padding: 3.125rem;
-  background-color: #004B87;
+  background-color: var(--color-peacockblue);
   /* padding-bottom: 400px; */
   text-align: center;
 }
@@ -120,12 +109,12 @@ a:link,
 a:visited,
 a:hover,
 a:active {
-  color: rgb(144, 199, 250);
+  color: var(--color-lightblue);
 }
 
 
 body{
-  background: #22232e;
+  background: var(--color-darkgray);
 }
 .container{
   padding-bottom: 7.05vh;
@@ -140,8 +129,8 @@ body{
 }
 .container section details summary{
   padding: 0.938rem;
-  background: #e0ffff;
-  color: #22232e;
+  background: var(--color-lightteal);
+  color: var(--color-darkgray);
   position: relative;
   list-style: none;
   outline: none;
@@ -154,11 +143,11 @@ body{
 .container section details p{
   font-size: 0.938rem;
   padding: 0.625rem;
-  color: #333;
-  background: #e0ffff;
+  color: var( --color-darkbrown);
+  background: var(--color-lightteal);
 }
 .container section details summary span{
   font-size: 1.375rem;
-  color: #333;
+  color: var( --color-darkbrown);
   float: right;
 }

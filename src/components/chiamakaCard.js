@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, CardContent, Typography, CardMedia } from '@mui/material';
+import { Card, CardContent, Typography, CardMedia, CardActionArea } from '@mui/material';
 
 
 export default function ChiamakaCard() {
@@ -19,13 +19,23 @@ export default function ChiamakaCard() {
                 overflow: 'hidden', 
             }}
         >
-            <CardMedia 
-                component="img"
-                height="160"
-                image="https://i.pinimg.com/474x/3a/f3/87/3af3873e475bd184d20c99bf0fdc5f1a.jpg"
-                alt="poly bunny with headset"
-            >    
-            </CardMedia>
+            <CardActionArea href="https://www.crunchyroll.com/series/GP5HJ84P7/gachiakuta?srsltid=AfmBOoqEVZ-ugZF324lsNdzXUU6AVzEKaxyn2smRwXuorLmh_UycFzLz">
+                <CardMedia 
+                    component="img"
+                    height="160"
+                    image="https://i.pinimg.com/474x/3a/f3/87/3af3873e475bd184d20c99bf0fdc5f1a.jpg"
+                    alt="poly bunny with headset"
+
+                    sx={{
+                        transition: '0.3s',
+                        '&:hover': {
+                            transform: 'scale(1.1)',
+                        },
+                    }}
+                >    
+                </CardMedia>
+            </CardActionArea>
+            
             <CardContent className ="cardContentStyle" style={{ backgroundColor: "#b0adfa" }}>
                 <Typography gutterBottom id="cardText" style={{ fontSize: 'large', fontWeight: 'bold', color: "#000000", textAlign: "center"}}>
                     Chiamaka Okoro

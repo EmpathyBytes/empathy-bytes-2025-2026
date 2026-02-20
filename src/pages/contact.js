@@ -6,10 +6,11 @@ function ContactPage() {
   // Define email handlers as an object
   const emailHandlers = {
     Alison: "alison.valk@library.gatech.edu",
-    App: "mempel3@gatech.edu",
-    VR: "troth7@gatech.edu",
-    Media: "jacqueline7@gatech.edu",
-    Website: "ecraven6@gatech.edu",
+    App: "vchoi3@gatech.edu",
+    VR: "vtran22@gatech.edu",
+    Media: "aroemer3@gatech.edu",
+    Frontend: "msharma343@gatech.edu",
+    Backend: "dezhilmuthu3@gatech.edu",
   };
 
   // Handle email button click

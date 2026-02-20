@@ -5,7 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="de170d2e-5b97-4c08-a657-72110b64e564" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/FlexibleCard.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/collectioncard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/collectioncard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/infocard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/infocard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/interviewcard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/interviewcard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/learncard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/learncard.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,6 +21,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>

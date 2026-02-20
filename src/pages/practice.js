@@ -19,6 +19,7 @@ import BihanCard from "../components/bihanCard";
 import KatyCard from "../components/katyCard";
 import NaCard from "../components/naCard";
 import StephanieCard from "../components/stephanieCard";
+import ChiamakaCard from "../components/chiamakaCard";
 
 function PracticePage() {
 
@@ -42,6 +43,7 @@ function PracticePage() {
             <KatyCard/>
             <NaCard/>
             <StephanieCard/>
+            <ChiamakaCard />
 
           </div>
         </main>

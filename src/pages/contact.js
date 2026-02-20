@@ -71,7 +71,7 @@ function ContactPage() {
         
         <details>
           <summary aria-expanded="false" aria-controls="faq-2">
-            Can I be on many teams?
+            Can I be on multiple teams?
             <span aria-hidden="true"><i className="fa-solid fa-caret-down"></i></span>
           </summary>
           <div id="faq-2" role="region">
@@ -85,7 +85,7 @@ function ContactPage() {
             <span aria-hidden="true"><i className="fa-solid fa-caret-down"></i></span>
           </summary>
           <div id="faq-3" role="region">
-            <p>Yes. Both master's and undergraduate students may apply.</p>
+            <p>Yes. Both masters and undergraduate students may apply.</p>
           </div>
         </details>
         
@@ -95,7 +95,7 @@ function ContactPage() {
             <span aria-hidden="true"><i className="fa-solid fa-caret-down"></i></span>
           </summary>
           <div id="faq-4" role="region">
-            <p>Students are eligible to apply beginning in their sophomore year.</p>
+            <p>Students are eligible to apply beginning in their academic sophomore year.</p>
           </div>
         </details>
       </section>

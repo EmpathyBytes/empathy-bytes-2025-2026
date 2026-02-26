@@ -7,10 +7,10 @@ function ContactPage() {
   // Define email handlers as an object
   const emailHandlers = {
     Alison: "alison.valk@library.gatech.edu",
-    App: "mempel3@gatech.edu",
-    VR: "troth7@gatech.edu",
-    Media: "jacqueline7@gatech.edu",
-    Website: "ecraven6@gatech.edu",
+    App: "vchoi3@gatech.edu",
+    VR: "vtran22@gatech.edu",
+    Media: "aroemer3@gatech.edu",
+    Website: "msharma343@gatech.edu",
   };
 
   // Handle email button click
@@ -50,57 +50,50 @@ function ContactPage() {
         </main>
       </div>
       <div id="info">
-  <div className="info-section">
-    <h1>Frequently Asked Questions</h1>
-    <div className="container">
-      <section aria-labelledby="faq-heading">
-        <details>
-          <summary aria-expanded="false" aria-controls="faq-1">
-            How do I apply?
-            <span aria-hidden="true"><i className="fa-solid fa-caret-down"></i></span>
-          </summary>
-          <div id="faq-1" role="region" aria-labelledby="faq-1-summary">
-            <p>To register for a VIP at Georgia Tech as an undergraduate, please follow this link{" "}
-              <a href="https://www.vip.gatech.edu/apply-undergraduate-students">
-                https://www.vip.gatech.edu/apply-undergraduate-students
-              </a>
-            </p>
-          </div>
-        </details>
-        
-        <details>
-          <summary aria-expanded="false" aria-controls="faq-2">
-            Can I be on many teams?
-            <span aria-hidden="true"><i className="fa-solid fa-caret-down"></i></span>
-          </summary>
-          <div id="faq-2" role="region">
-            <p>Yes! If you want to be on more than one team per semester, make sure to pick the 2-3 credit option.</p>
-          </div>
-        </details>
-        
-        <details>
-          <summary aria-expanded="false" aria-controls="faq-3">
-            Is this for Georgia Tech students only?
-            <span aria-hidden="true"><i className="fa-solid fa-caret-down"></i></span>
-          </summary>
-          <div id="faq-3" role="region">
-            <p>Yes. Both master's and undergraduate students may apply.</p>
-          </div>
-        </details>
-        
-        <details>
-          <summary aria-expanded="false" aria-controls="faq-4">
-            Can I join as a freshman?
-            <span aria-hidden="true"><i className="fa-solid fa-caret-down"></i></span>
-          </summary>
-          <div id="faq-4" role="region">
-            <p>Students are eligible to apply beginning in their sophomore year.</p>
-          </div>
-        </details>
-      </section>
-    </div>
-  </div>
-</div>
+        <div className="info-section">
+          <h1>Frequently Asked Questions</h1>
+            <div class="container">
+                <section>
+                    <details>
+                        <summary>How do I apply?<span><i className="fa-solid fa-caret-down"></i></span></summary>
+                        <p>
+                            To register for a VIP at Georgia Tech as an undergraduate, please follow the
+                            instructions on the <a href="https://www.vip.gatech.edu/apply-undergraduate-students"
+                                                   target="_blank" rel="noopener noreferrer">
+                            official VIP application page</a>. We welcome students from all backgrounds!
+                        </p>
+                    </details>
+
+                    <details>
+                        <summary>Can I be on many teams?<span><i className="fa-solid fa-caret-down"></i></span>
+                        </summary>
+                        <p>
+                            Yes! If you want to be on more than one sub-team per semester, make sure to
+                            register for the 2-3 credit hour option to account for the additional project work.
+                        </p>
+                    </details>
+
+                    <details>
+                        <summary>Is this for Georgia Tech students only?<span><i className="fa-solid fa-caret-down"></i></span>
+                        </summary>
+                        <p>
+                            Yes, Empathy Bytes is currently open to both undergraduate and graduate
+                            students enrolled at Georgia Tech.
+                        </p>
+                    </details>
+
+                    <details>
+                        <summary>Can I join as a freshman?<span><i className="fa-solid fa-caret-down"></i></span>
+                        </summary>
+                        <p>
+                            While we appreciate the early interest, we recommend students wait until
+                            their sophomore year to join the VIP.
+                        </p>
+                    </details>
+                </section>
+            </div>
+        </div>
+      </div>
     </Layout>
   );
 }
@@ -108,13 +101,9 @@ function ContactPage() {
 export default ContactPage;
 
 export const Head = () => (
-  <>
-  <link rel="icon" type="image/png" href="https://educast.library.gatech.edu/static/empbytes-8c9db7ee75f110e619f7d85cb8b170c5.jpg" />
-  <title>Contact | Empathy Bytes VIP</title>
-  <meta
-      name="description"
-      content="Get in touch with Empathy Bytes VIP team leads and coordinator. Find answers to frequently asked questions about applying to Georgia Tech's VIP program."
-    />
-
-  </>
-  )
+    <>
+        <link rel="icon" type="image/png" href="https://educast.library.gatech.edu/static/empbytes-8c9db7ee75f110e619f7d85cb8b170c5.jpg" />
+        <title>Contact Us | Empathy Bytes VIP</title>
+        <meta name="description" content="Have questions about Empathy Bytes? Contact our VIP coordinator or sub-team leads to learn how you can join our research at Georgia Tech." />
+    </>
+)

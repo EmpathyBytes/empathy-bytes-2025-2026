@@ -34,6 +34,13 @@
     &quot;assignee&quot;: &quot;kellyzhou277&quot;
   }
 }</component>
+  <component name="GithubProjectSettings">
+    <option name="branchProtectionPatterns">
+      <list>
+        <option value="master" />
+      </list>
+    </option>
+  </component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/EmpathyBytes/empathy-bytes-2025-2026.git&quot;,
@@ -54,7 +61,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "standarized__card",
+    "git-widget-placeholder": "accessibility__fixes",
     "last_opened_file_path": "/Users/kellyzhou/Library/Mobile Documents/com~apple~CloudDocs/vip/empathy-bytes-2025-2026-master",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
@@ -83,7 +90,8 @@
       <workItem from="1758229640442" duration="3907000" />
       <workItem from="1758240503017" duration="5784000" />
       <workItem from="1758827457389" duration="6386000" />
-      <workItem from="1764037444668" duration="2711000" />
+      <workItem from="1769657534136" duration="18984000" />
+      <workItem from="1769825745625" duration="3806000" />
     </task>
     <servers />
   </component>

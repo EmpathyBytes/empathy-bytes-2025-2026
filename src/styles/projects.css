@@ -51,20 +51,20 @@ html {
 .project-nav-text {
     font-size: 1rem;
     font-family: 'Roboto Slab', sans-serif;
-    color: var(--color-diploma);
+    color: var(--color-offwhite);
     padding: 3vh;
     border-radius: 4vh;
 }
 
 .project-nav-text:hover {
-    background-color: var(--color-diploma);
+    background-color: var(--color-offwhite);
     color: var(--color-navyblue);
     cursor: pointer;
     transition: background-color 200ms linear;
 }
 
 .project-nav-text.active {
-    background-color: var(--color-diploma);
+    background-color: var(--color-offwhite);
     color: var(--color-navyblue);
     font-weight: bold;
 }
@@ -109,7 +109,7 @@ html {
     align-items: center;
     justify-content: center;
     background-color: var(--color-navyblue) !important;
-    color: var(--color-diploma) !important;
+    color: var(--color-offwhite) !important;
     border-radius: 22px;
     font-family: 'Roboto Slab', sans-serif;
     font-size: 0.9rem;
@@ -121,12 +121,12 @@ html {
 }
 
 .mobile-nav-item:hover {
-    background-color: var(--color-diploma);
+    background-color: var(--color-offwhite);
     color: var(--color-navyblue);
 }
 
 .mobile-nav-item.active {
-    background-color: var(--color-diploma) !important;
+    background-color: var(--color-offwhite) !important;
     color: var(--color-navyblue) !important;
     font-weight: bold;
 }

@@ -57,15 +57,24 @@ const ProjectsPage = ({data}) => {
     const selectCategory = (category) => {
         // If clicking the currently active category, deselect it (show all)
         if (selectedCategory === category) {
-            console.log('Deselecting category:', category, '-> all');
             setSelectedCategory('all');
         } else {
-            console.log('Selecting category:', category);
             setSelectedCategory(category);
         }
     };
 
-    //use if statement to make the dif layouts
+    // Helper to determine the summary text, providing a fallback for Behind the Scenes
+    const getSummary = (item) => {
+        if (item.body && item.body.summary) return item.body.summary;
+        if (item.title.toLowerCase().includes('behind the scenes')) {
+            return "Behind the Scenes: Interviews with members of Empathy Bytes and an inside peek at a recent tour of the body scan lab.";
+        }
+        if (item.title.toLowerCase().includes('interviews')) {
+            return "Interviews of Subteams.";
+        }
+        return "";
+    };
+
     if (matches) { //desktop view rendered
         return (
             <div className="bg">
@@ -129,12 +138,12 @@ const ProjectsPage = ({data}) => {
 
                         <Grid container spacing={3} className="content-transition">
                             {getFilteredCollections().map((item) => ( // Mapping filtered collection data to card component
-                                <Grid item xs={6}>
+                                <Grid item xs={6} key={item.id}>
                                     <CollectionCard
                                         title = {item.title}
                                         image = {item.relationships.field_image.uri.url}
                                         url = {item.path.alias}
-                                        body = {item.body.summary}
+                                        body = {getSummary(item)}
                                     />
                                 </Grid> // This is a MUI grid.
                             ))}
@@ -188,15 +197,13 @@ const ProjectsPage = ({data}) => {
 
                         <div className="content-transition">
                             {getFilteredCollections().map((item) => ( // Mapping filtered collection data to card component
-
                                 <CollectionCard
                                     key={item.id}
-                                    title={item.title}
-                                    image={item.relationships.field_image.uri.url}
-                                    url={item.path.alias}
-                                    body={item.body.summary}
+                                    title = {item.title}
+                                    image = {item.relationships.field_image.uri.url}
+                                    url = {item.path.alias}
+                                    body = {getSummary(item)}
                                 />
-
                             ))}
                         </div>
 

@@ -33,7 +33,7 @@ function Footer(props) {
               maxHeight: "none",
               overflow: "visible",
             },
-
+            // Use grid layout for mid-sized screens to avoid overlap
             "#footer .container-footer": {
               display: "grid",
               gridTemplateColumns: "1fr 1fr 1fr",
@@ -42,14 +42,14 @@ function Footer(props) {
               columnGap: "40px",
               alignItems: "start",
             },
-
+            // Center brand title on first row
             "#footer .footer-brand": {
               gridColumn: "1 / 4",
               gridRow: "1",
               justifySelf: "center",
               textAlign: "center",
             },
-
+            // Align sections so Teams is centered visually
             "#footer .footer-general": {
               gridColumn: "1",
               gridRow: "2",
@@ -68,7 +68,7 @@ function Footer(props) {
               justifySelf: "start",
               textAlign: "left",
             },
-
+            // Center social section on final row
             "#footer .footer-social": {
               gridColumn: "1 / 4",
               gridRow: "3",

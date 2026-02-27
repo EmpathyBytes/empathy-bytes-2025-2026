@@ -11,38 +11,12 @@ html {
 
 .projectsTitle {
     font-family: 'Roboto Slab', serif;
-
     text-align: center;
 }
 
 .bg {
-    /* styles for devices with a minimum screen width of 480px */
     background: #004B87;
-    /* background: linear-gradient(180deg, var(--color-navyblue), var(--color-lightblue), rgba(255,249,202,1));
-    background-size: cover;
-    animation: gradient 10ms ease infinite; */
-
-    /*this is for media query in css
-    */
-    /* @media screen and (min-width: 600px) {
-        background-color: antiquewhite;
-      }
-      @media screen and (max-width: 600px) {
-        background-color: black;
-      } */
 }
-
-/* @keyframes gradient {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
-} */
 
 .project-nav {
     text-align: center;
@@ -81,43 +55,40 @@ html {
     align-items: center;
 }
 
-/* Mobile Navigation Styles */
+/* Mobile Navigation Styles - Updated for full-width wrapping */
 .mobile-nav-container {
     margin: 20px 0;
-    padding: 0 8vw;
+    padding: 0; /* Spans full width */
+    width: 100%;
 }
 
 .mobile-nav-scroll {
     display: flex;
+    flex-wrap: wrap; /* Allows tabs to wrap instead of hiding in a scroll */
+    justify-content: center;
     gap: 12px;
-    overflow-x: auto;
-    padding: 8px 0;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none; /* Internet Explorer 10+ */
-}
-
-.mobile-nav-scroll::-webkit-scrollbar {
-    display: none; /* WebKit */
+    padding: 10px;
 }
 
 .mobile-nav-item {
-    flex-shrink: 0;
-    min-width: 120px;
-    height: 44px; /* Minimum touch target size */
+    flex: 1 1 calc(50% - 24px); /* Two-column grid layout */
+    min-width: 140px;
+    height: 48px; /* Standard mobile touch target */
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: var(--color-navyblue) !important;
     color: var(--color-offwhite) !important;
-    border-radius: 22px;
+    border-radius: 24px;
     font-family: 'Roboto Slab', sans-serif;
     font-size: 0.9rem;
     font-weight: 500;
     cursor: pointer;
     transition: all 200ms linear;
     padding: 0 16px;
-    white-space: nowrap;
+    text-align: center;
+    white-space: normal; /* Prevents text cutoff */
+    line-height: 1.2;
 }
 
 .mobile-nav-item:hover {
@@ -133,7 +104,7 @@ html {
 
 @media (max-width: 768px) {
     .projectsContainer {
-        padding: 5vh 8vw;
+        padding: 5vh 5vw; /* Slightly more edge space on tablet */
     }
 
     .project-nav-text {

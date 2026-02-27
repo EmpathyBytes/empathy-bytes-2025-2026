@@ -190,9 +190,11 @@ const ProjectsPage = ({data}) => {
                             {getFilteredCollections().map((item) => ( // Mapping filtered collection data to card component
 
                                 <CollectionCard
-                                    title = {item.title}
-                                    image = {item.relationships.field_image.uri.url}
-                                    url = {item.path.alias}
+                                    key={item.id}
+                                    title={item.title}
+                                    image={item.relationships.field_image.uri.url}
+                                    url={item.path.alias}
+                                    body={item.body.summary}
                                 />
 
                             ))}

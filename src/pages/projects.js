@@ -12,8 +12,8 @@ import ScrollToTop from "../components/scrollToTop";
 /**
  * This is the projects homepage. It displays all of the
  * interview collections.
- * 
- * @param {*} param0 - graphql query 
+ *
+ * @param {*} param0 - graphql query
  * @returns projectsPage
  */
 
@@ -32,7 +32,7 @@ const ProjectsPage = ({data}) => {
         if (selectedCategory === 'all') {
             return arr;
         }
-        
+
         // Filter collections based on title keywords
         return arr.filter(item => {
             const title = item.title.toLowerCase();
@@ -70,16 +70,16 @@ const ProjectsPage = ({data}) => {
         return (
             <div className="bg">
                 <Layout>
-                <ScrollToTop/>
+                    <ScrollToTop/>
                     <div className="projectsContainer">
                         <h1 className="projectsTitle">Interview Collections</h1>
 
-                            {/* Div that contains the navbar */}
-                            <div className="project-nav" style={{ paddingTop: 25, paddingBottom: 25 }}>
+                        {/* Div that contains the navbar */}
+                        <div className="project-nav" style={{ paddingTop: 25, paddingBottom: 25 }}>
                             <Grid container spacing={10} className="project-navBG" justifyContent="center">
 
                                 <Grid xs={2}>
-                                    <h3 
+                                    <h3
                                         className={`project-nav-text ${selectedCategory === 'makerspaces' ? 'active' : ''}`}
                                         onClick={() => selectCategory('makerspaces')}
                                     >
@@ -88,7 +88,7 @@ const ProjectsPage = ({data}) => {
                                 </Grid>
 
                                 <Grid xs={2}>
-                                    <h3 
+                                    <h3
                                         className={`project-nav-text ${selectedCategory === 'web' ? 'active' : ''}`}
                                         onClick={() => selectCategory('web')}
                                     >
@@ -97,7 +97,7 @@ const ProjectsPage = ({data}) => {
                                 </Grid>
 
                                 <Grid xs={2}>
-                                    <h3 
+                                    <h3
                                         className={`project-nav-text ${selectedCategory === 'media' ? 'active' : ''}`}
                                         onClick={() => selectCategory('media')}
                                     >
@@ -106,7 +106,7 @@ const ProjectsPage = ({data}) => {
                                 </Grid>
 
                                 <Grid xs={2}>
-                                    <h3 
+                                    <h3
                                         className={`project-nav-text ${selectedCategory === 'app' ? 'active' : ''}`}
                                         onClick={() => selectCategory('app')}
                                     >
@@ -115,7 +115,7 @@ const ProjectsPage = ({data}) => {
                                 </Grid>
 
                                 <Grid xs={2}>
-                                    <h3 
+                                    <h3
                                         className={`project-nav-text ${selectedCategory === 'misc' ? 'active' : ''}`}
                                         onClick={() => selectCategory('misc')}
                                     >
@@ -124,20 +124,20 @@ const ProjectsPage = ({data}) => {
                                 </Grid>
 
                             </Grid>
-                            </div>
-                            {/* Div that contains the navbar */}
+                        </div>
+                        {/* Div that contains the navbar */}
 
                         <Grid container spacing={3} className="content-transition">
-                        {getFilteredCollections().map((item) => ( // Mapping filtered collection data to card component
-                            <Grid item xs={6}>
-                            <CollectionCard 
-                            title = {item.title}
-                            image = {item.relationships.field_image.uri.url}
-                            url = {item.path.alias}
-                            body = {item.body.summary}
-                            />
-                            </Grid> // This is a MUI grid.
-                        ))}
+                            {getFilteredCollections().map((item) => ( // Mapping filtered collection data to card component
+                                <Grid item xs={6}>
+                                    <CollectionCard
+                                        title = {item.title}
+                                        image = {item.relationships.field_image.uri.url}
+                                        url = {item.path.alias}
+                                        body = {item.body.summary}
+                                    />
+                                </Grid> // This is a MUI grid.
+                            ))}
                         </Grid>
                     </div>
                 </Layout>
@@ -149,35 +149,35 @@ const ProjectsPage = ({data}) => {
                 <Layout>
                     <div className="projectsContainer">
                         <h1 className="projectsTitle">Interview Collections</h1>
-                        
+
                         {/* Mobile Navigation */}
                         <div className="mobile-nav-container">
                             <div className="mobile-nav-scroll">
-                                <div 
+                                <div
                                     className={`mobile-nav-item ${selectedCategory === 'makerspaces' ? 'active' : ''}`}
                                     onClick={() => selectCategory('makerspaces')}
                                 >
                                     Makerspaces
                                 </div>
-                                <div 
+                                <div
                                     className={`mobile-nav-item ${selectedCategory === 'web' ? 'active' : ''}`}
                                     onClick={() => selectCategory('web')}
                                 >
                                     Distance Math
                                 </div>
-                                <div 
+                                <div
                                     className={`mobile-nav-item ${selectedCategory === 'media' ? 'active' : ''}`}
                                     onClick={() => selectCategory('media')}
                                 >
                                     Behind the Scenes
                                 </div>
-                                <div 
+                                <div
                                     className={`mobile-nav-item ${selectedCategory === 'app' ? 'active' : ''}`}
                                     onClick={() => selectCategory('app')}
                                 >
                                     COVID-19
                                 </div>
-                                <div 
+                                <div
                                     className={`mobile-nav-item ${selectedCategory === 'misc' ? 'active' : ''}`}
                                     onClick={() => selectCategory('misc')}
                                 >
@@ -185,35 +185,35 @@ const ProjectsPage = ({data}) => {
                                 </div>
                             </div>
                         </div>
-                        
+
                         <div className="content-transition">
-                        {getFilteredCollections().map((item) => ( // Mapping filtered collection data to card component
-                            
-                            <CollectionCard 
-                            title = {item.title}
-                            image = {item.relationships.field_image.uri.url}
-                            url = {item.path.alias}
-                            />
-                            
-                        ))}
+                            {getFilteredCollections().map((item) => ( // Mapping filtered collection data to card component
+
+                                <CollectionCard
+                                    title = {item.title}
+                                    image = {item.relationships.field_image.uri.url}
+                                    url = {item.path.alias}
+                                />
+
+                            ))}
                         </div>
-            
+
                     </div>
                 </Layout>
             </div>
         );
     }
-    
+
 }
 
 export default ProjectsPage;
 
 export const Head = () => (
     <>
-    <link rel="icon" type="image/png" href="https://educast.library.gatech.edu/static/empbytes-8c9db7ee75f110e619f7d85cb8b170c5.jpg" />
-    <title>Projects</title>
+        <link rel="icon" type="image/png" href="https://educast.library.gatech.edu/static/empbytes-8c9db7ee75f110e619f7d85cb8b170c5.jpg" />
+        <title>Projects</title>
     </>
-    )
+)
 
 // Query all collections
 export const query = graphql`

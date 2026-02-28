@@ -1,5 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
+import { getImage } from 'gatsby-plugin-image';
 import Layout from "../components/layout";
 import InterviewCard from '../components/interviewcard';
 import "../styles/collection.css";
@@ -18,17 +19,20 @@ function Collection({ data }) {
                 </div>
 
                 <div className="interviews-list">
-                    {interviews.map((interview) => (
-                        <InterviewCard
-                            key={interview.id}
-                            img={"https://empathybytes.library.gatech.edu" + interview.relationships.field_image.uri.url}
-                            title={interview.title}
-                            author={interview.field_author}
-                            date={interview.field_hg_dateline}
-                            body={interview.field_blurb}
-                            url={"/projects" + collection.path.alias + interview.path.alias}
-                        />
-                    ))}
+                    {interviews.map((interview) => {
+                        const image = getImage(interview.relationships.field_image?.localFile);
+                        return (
+                            <InterviewCard
+                                key={interview.id}
+                                img={image}
+                                title={interview.title}
+                                author={interview.field_author}
+                                date={interview.field_hg_dateline}
+                                body={interview.field_blurb}
+                                url={"/projects" + collection.path.alias + interview.path.alias}
+                            />
+                        );
+                    })}
                 </div>
 
             </div>
@@ -61,8 +65,10 @@ export const query = graphql`
                     field_blurb
                     relationships {
                         field_image {
-                            uri {
-                                url
+                            localFile {
+                                childImageSharp {
+                                    gatsbyImageData
+                                }
                             }
                         }
                     }

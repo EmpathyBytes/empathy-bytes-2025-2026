@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import { graphql } from "gatsby";
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import Layout from "../components/layout";
 
 import "../styles/articles.css";
@@ -12,6 +13,7 @@ import "../styles/articles.css";
 function Article({ data }) {
   const post = data.nodeArticle;
   const [isTranscriptVisible, setIsTranscriptVisible] = useState(false);
+  const image = getImage(post.relationships.field_image?.localFile);
 
   const toggleTranscript = () => {
     setIsTranscriptVisible(!isTranscriptVisible);
@@ -46,11 +48,13 @@ function Article({ data }) {
                 }
                 controls
               ></audio>
-              <img
-                className="articleImage"
-                src={post.relationships.field_image?.url || ""}
-                alt={post.title}
-              ></img>
+              {image && (
+                <GatsbyImage
+                  className="articleImage"
+                  image={image}
+                  alt={post.title}
+                />
+              )}
             </div>
           )}
           {/* TO DO: implement interviewee info field in drupal (move interviewee info out of general article info) */}
@@ -109,7 +113,11 @@ export const query = graphql`
       }
       relationships {
         field_image {
-          url
+          localFile {
+            childImageSharp {
+              gatsbyImageData
+            }
+          }
         }
         field_audio {
           path {

@@ -1,3 +1,5 @@
+const { format } = require('@splidejs/splide/src/js/utils');
+
 /**
  * @type {import('gatsby').GatsbyConfig}
  */
@@ -19,7 +21,7 @@ module.exports = {
         baseUrl: `https://empathybytes.library.gatech.edu/`,
         // Performance optimizations
         apiBase: `jsonapi`, // Use JSON:API instead of REST
-        skipFileDownloads: true, // Skip downloading files during build
+        skipFileDownloads: false, // False to enable image processing
         concurrentRequests: 10, // Increase concurrent requests
         requestTimeout: 30000, // Increase timeout for slow responses
         // Only fetch what you need
@@ -40,6 +42,17 @@ module.exports = {
             "fields[node--collection]": "title,body,path,relationships"
           }
         }
+      },
+
+      resolve: `gatsby-plugin-sharp`,
+      options: {
+        defaults: {
+          // Defines default options for generated images
+          formats: ['auto', 'webp', 'avif'], 
+          placeholder: 'blurred', // Type of image placeholder
+          quality: 100, // Percentage of image quality
+          // breakpoints: [], // Image widths to be generated, specify custom breakpoints if auto is not working
+        },
       },
     },
   ],

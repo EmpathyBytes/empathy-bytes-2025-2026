@@ -165,8 +165,10 @@ export const query = graphql`
                 field_current_member
                 relationships {
                   field_pfp {
-                    uri {
-                      url
+                    localFile {
+                      childImageSharp {
+                        gatsbyImageData
+                      }
                     }
                   }
                 }
@@ -180,8 +182,10 @@ export const query = graphql`
             field_current_member
             relationships {
               field_pfp {
-                uri {
-                  url
+                localFile {
+                  childImageSharp {
+                    gatsbyImageData
+                  }
                 }
               }
             }
@@ -196,8 +200,10 @@ export const query = graphql`
             field_current_member
             relationships {
               field_pfp {
-                uri {
-                  url
+                localFile {
+                  childImageSharp {
+                    gatsbyImageData
+                  }
                 }
               }
             }
@@ -212,8 +218,10 @@ export const query = graphql`
             field_current_member
             relationships {
               field_pfp {
-                uri {
-                  url
+                localFile {
+                  childImageSharp {
+                    gatsbyImageData
+                  }
                 }
               }
             }

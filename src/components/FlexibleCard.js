@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
+import { GatsbyImage } from 'gatsby-plugin-image';
 import {
     Card,
     CardActionArea,
@@ -136,17 +137,32 @@ const FlexibleCard = ({
         </CardContent>
     );
 
+    // Old mediaJSX, unsure if Box + GatsbyImage will mess with formatting. In Testing
+    // const mediaJSX = image && (
+    //     <CardMedia
+    //         component="img"
+    //         image={image}
+    //         alt={title}
+    //         sx={preset.imageStyle || {
+    //             height: preset.imageHeight || 240,
+    //             width: '100%',
+    //             objectFit: 'cover'
+    //         }}
+    //     />
+    // );
+
     const mediaJSX = image && (
-        <CardMedia
-            component="img"
-            image={image}
-            alt={title}
-            sx={preset.imageStyle || {
-                height: preset.imageHeight || 240,
-                width: '100%',
-                objectFit: 'cover'
-            }}
-        />
+        <Box sx={preset.imageStyle || {
+            height: preset.imageHeight || 240,
+            width: '100%'
+        }}>
+            <GatsbyImage
+                image={image}
+                alt={title}
+                style={{ height: '100%', width: '100%' }}
+                imgStyle={{ objectFit: 'cover' }}
+            />
+        </Box>
     );
 
     return (
@@ -216,7 +232,7 @@ FlexibleCard.propTypes = {
     variant: PropTypes.oneOf(['collection', 'interview', 'info', 'learn']),
     title: PropTypes.string.isRequired,
     subtitle: PropTypes.string,
-    image: PropTypes.string,
+    image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]), // object for GatsbyImage, string for CardMedia URL
     body: PropTypes.string,
     isHtmlBody: PropTypes.bool,
     link: PropTypes.string,

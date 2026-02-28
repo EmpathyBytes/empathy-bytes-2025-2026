@@ -2,6 +2,7 @@ import * as React from "react";
 import { useState } from "react"
 import Layout from "../components/layout";
 import { graphql } from "gatsby"
+import { getImage } from "gatsby-plugin-image";
 import CollectionCard from "../components/collectioncard";
 import Grid from "@mui/material/Grid";
 import "../styles/projects.css"
@@ -128,16 +129,19 @@ const ProjectsPage = ({data}) => {
                             {/* Div that contains the navbar */}
 
                         <Grid container spacing={3} className="content-transition">
-                        {getFilteredCollections().map((item) => ( // Mapping filtered collection data to card component
-                            <Grid item xs={6}>
-                            <CollectionCard 
-                            title = {item.title}
-                            image = {item.relationships.field_image.uri.url}
-                            url = {item.path.alias}
-                            body = {item.body.summary}
-                            />
-                            </Grid> // This is a MUI grid.
-                        ))}
+                        {getFilteredCollections().map((item) => { // Mapping filtered collection data to card component
+                            const image = getImage(item.relationships.field_image?.localFile);
+                            return (
+                                <Grid item xs={6}>
+                                <CollectionCard 
+                                title = {item.title}
+                                image = {image}
+                                url = {item.path.alias}
+                                body = {item.body.summary}
+                                />
+                                </Grid> // This is a MUI grid.
+                            );
+                        })}
                         </Grid>
                     </div>
                 </Layout>
@@ -187,15 +191,16 @@ const ProjectsPage = ({data}) => {
                         </div>
                         
                         <div className="content-transition">
-                        {getFilteredCollections().map((item) => ( // Mapping filtered collection data to card component
-                            
-                            <CollectionCard 
-                            title = {item.title}
-                            image = {item.relationships.field_image.uri.url}
-                            url = {item.path.alias}
-                            />
-                            
-                        ))}
+                        {getFilteredCollections().map((item) => { // Mapping filtered collection data to card component
+                            const image = getImage(item.relationships.field_image?.localFile);
+                            return (
+                                <CollectionCard 
+                                title = {item.title}
+                                image = {image}
+                                url = {item.path.alias}
+                                />
+                            );
+                        })}
                         </div>
             
                     </div>
@@ -230,8 +235,10 @@ export const query = graphql`
                   }
                   relationships {
                     field_image {
-                        uri {
-                            url
+                        localFile {
+                            childImageSharp {
+                                gatsbyImageData
+                            }
                         }
                     }
                   }

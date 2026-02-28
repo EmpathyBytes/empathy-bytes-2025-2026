@@ -1,4 +1,5 @@
 import React from "react";
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import "../styles/about.css"
 import "../styles/all.css"
 import Grid from '@mui/material/Grid';
@@ -23,12 +24,14 @@ function AboutComponent(props) {
 
             <Grid container spacing={3} alignItems="center" justifyContent="center">
                 
-                    {members.map((item) => ( //this is for current members
-                    item.field_current_member &&
+                    {members.map((item) => { //this is for current members
+                    const profileImage = getImage(item.relationships.field_pfp?.localFile);
+                    return (
+                    item.field_current_member && profileImage &&
                     <div>
                         <div class="hex">
                             <div class="hex-background">
-                                <img src={"https://empathybytes.library.gatech.edu" + item.relationships.field_pfp.uri.url} alt="person"></img>
+                                <GatsbyImage image={profileImage} alt={item.title} />
                                 <p className="paragraph-about">{item.title}</p>
                                 <p className="paragraph-about">{item.title}</p>
                             </div>
@@ -37,20 +40,22 @@ function AboutComponent(props) {
                             <p className="paragraph-about">{item.title}</p>
                         </div>
                     </div>
-                        
-                ))}
+                    );
+                })}
                 
             </Grid>
 
             <h3 style={{textAlign:"center", color:"white", padding:"1rem 0", fontSize:"3vw"}}>Past Members</h3>
 
             <Grid container spacing={3} alignItems="center" justifyContent="center">
-                {members.map((item) => ( //this is for alumni
-                    !item.field_current_member &&
+                {members.map((item) => { //this is for alumni
+                    const profileImage = getImage(item.relationships.field_pfp?.localFile);
+                    return (
+                    !item.field_current_member && profileImage &&
                     <div>
                             <div class="hex">
                                 <div class="hex-background">
-                                    <img src={"https://empathybytes.library.gatech.edu" + item.relationships.field_pfp.uri.url} alt="person"></img>
+                                    <GatsbyImage image={profileImage} alt={item.title} />
                                     <p className="paragraph-about">{item.title}</p>
                                     <p className="paragraph-about">{item.title}</p>
                                 </div>
@@ -59,7 +64,8 @@ function AboutComponent(props) {
                                 <p className="paragraph-about">{item.title}</p>
                             </div>
                         </div>
-                ))}
+                    );
+                })}
             </Grid>
 
             <Grid container spacing={3} alignItems="center" justifyContent="center">

@@ -42,8 +42,9 @@ module.exports = {
             "fields[node--collection]": "title,body,path,relationships"
           }
         }
-      },
-
+      }
+    },
+    {
       resolve: `gatsby-plugin-sharp`,
       options: {
         defaults: {
@@ -55,5 +56,7 @@ module.exports = {
         },
       },
     },
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-image`,
   ],
 }

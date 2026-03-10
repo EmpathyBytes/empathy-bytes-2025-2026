@@ -23,7 +23,7 @@ function EmergingTech() {
         <Layout>
             <title>Emerging Tech Team</title>
             <div className="top-banner" style={{backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.5)), url(${Banner})`}}>
-                <h1 className="header-experiences">Emerging Technologies Team</h1>
+                <h1 className="header-experiences header-experiences-mobile">Emerging Tech Team</h1>
             </div>
             <div className="full-container-experiences">
                 {/* <Grid container spacing={2} className="">
@@ -62,13 +62,9 @@ function EmergingTech() {
                     <Grid item xs={12}>
                         <p className="paragraph-experiences-body">Empathy Bytes is developing a 
                         Virtual Reality Museum where anyone can experience and learn about artifacts in the Georgia Tech Archives.
-                        Our team is able digitally preserve items such as an official 1996 Atlanta Olympics Torch, Buzz’s Converses 
-                        from 1988, and a 1937 rat cap through the use of photogrammetry and hand-modeling techniques. We hope this VR experience 
-                        allows the Georgia Tech Community to strengthen its connection to the school’s past and safely preserve these memories.
-                        </p>
-                        <br/>
-                        <p className="paragraph-experiences-body">Please click and drag the 3D models below to see
-                            in 360 degree view.
+                        Our team is able digitally preserve items such as an official 1996 Atlanta Olympics Torch, Buzz's Converses
+                        from 1988, and a 1937 rat cap through the use of photogrammetry and hand-modeling techniques. We hope this VR experience
+                        allows the Georgia Tech Community to strengthen its connection to the school's past and safely preserve these memories.
                         </p>
                     </Grid>
                 </Grid>
@@ -121,6 +117,14 @@ function EmergingTech() {
                                 </Suspense>
                             </Canvas>
                         </div> 
+                    </Grid>
+                </Grid>
+
+                <Grid container spacing={0} alignItems="center" justifyContent="center">
+                    <Grid item xs={12}>
+                        <p className="paragraph-experiences-body" style={{textAlign: 'center'}}>Please click and drag the 3D models above to see
+                            in 360 degree view.
+                        </p>
                     </Grid>
                 </Grid>
 

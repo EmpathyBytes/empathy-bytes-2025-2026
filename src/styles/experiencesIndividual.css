@@ -16,6 +16,29 @@
     text-align: center;
 }
 
+.header-experiences-mobile {
+    width: 90vw !important;
+    max-width: 100% !important;
+    font-size: clamp(4.5rem, 10vw, 6rem) !important;
+    padding-left: 0.5rem !important;
+    padding-right: 0.5rem !important;
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+    word-break: break-word !important;
+    line-height: 1.1 !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+}
+
+@media screen and (min-width: 601px) {
+    .header-experiences-mobile {
+        width: max-content !important;
+        font-size: 6rem !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+}
+
 .blue-box {
     background-color: var(--color-navyblue);
     padding: 4vh 5vw;

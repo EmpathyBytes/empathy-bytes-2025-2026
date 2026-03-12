@@ -1,22 +1,46 @@
 import React from "react";
+import { graphql } from "gatsby";
 import Layout from "../components/layout";
 import All from "../images/people/fullTeam.jpg"
 import "../styles/contactPage.css";
 
-function ContactPage() {
-  // Define email handlers as an object
-  const emailHandlers = {
-    Alison: "alison.valk@library.gatech.edu",
-    App: "vchoi3@gatech.edu",
-    VR: "vtran22@gatech.edu",
-    Media: "aroemer3@gatech.edu",
-    Website: "msharma343@gatech.edu",
-  };
+function ContactPage({data}) {
+   const contacts = data.nodeContactPage.field_contact_items
+  .map(item => {
+    const clean = item.processed
+      .replace(/<[^>]*>/g, "")   // remove HTML tags
+      .replace(/&nbsp;/g, " ")   // remove html spaces
+      .trim();
 
-  // Handle email button click
-  const handleEmailButtonClick = (emailKey) => {
-    window.location.href = `mailto:${emailHandlers[emailKey]}`;
-  };
+    const parts = clean.split("|");
+
+    if (parts.length < 2) return null;
+
+    return {
+      role: parts[0].trim(),
+      email: parts[1].trim()
+    };
+  })
+  .filter(Boolean);
+
+  const faqs = data.nodeContactPage.field_faq_items.map(item => {
+    const html = item.processed;
+
+    const cleanText = html.replace(/<[^>]*>/g, "").trim();
+    const parts = cleanText.split("?");
+
+    if (parts.length < 2) return null;
+
+    const answerHtml = html
+      .substring(html.indexOf("?") + 1)
+      .replace(/^<\/p>/, "") // remove leftover closing p
+      .replace(/<a /g, '<a target="_blank" rel="noopener noreferrer" ');
+
+    return {
+      question: parts[0].trim() + "?",
+      answer: answerHtml
+    };
+  }).filter(Boolean);
 
   return (
     <Layout>
@@ -31,17 +55,15 @@ function ContactPage() {
             </h1>
           </div>
           <div className="button-container">
-            {Object.keys(emailHandlers).map((key) => (
-              <div className="centerStyles" key={key}>
+            {contacts.map((contact, index) => (
+              <div className="centerStyles" key={index}>
                 <label className="labelStyle">
                   <button
                     className="button"
                     type="button"
-                    onClick={() => handleEmailButtonClick(key)}
+                    onClick={() => window.location.href = `mailto:${contact.email}`}
                   >
-                    {`Contact our ${
-                      key === "Alison" ? "VIP coordinator" : `${key} Team Lead`
-                    }`}
+                    {`Contact our ${contact.role}`}
                   </button>
                 </label>
               </div>
@@ -52,44 +74,20 @@ function ContactPage() {
       <div id="info">
         <div className="info-section">
           <h1>Frequently Asked Questions</h1>
-            <div class="container">
+            <div className="container">
                 <section>
-                    <details>
-                        <summary>How do I apply?<span><i className="fa-solid fa-caret-down"></i></span></summary>
-                        <p>
-                            To register for a VIP at Georgia Tech as an undergraduate, please follow the
-                            instructions on the <a href="https://www.vip.gatech.edu/apply-undergraduate-students"
-                                                   target="_blank" rel="noopener noreferrer">
-                            official VIP application page</a>. We welcome students from all backgrounds!
-                        </p>
-                    </details>
+                  {faqs.map((faq, index) => (
+                    <details key={index}>
+                      <summary>
+                        {faq.question}
+                        <span>
+                          <i className="fa-solid fa-caret-down"></i>
+                        </span>
+                      </summary>
 
-                    <details>
-                        <summary>Can I be on many teams?<span><i className="fa-solid fa-caret-down"></i></span>
-                        </summary>
-                        <p>
-                            Yes! If you want to be on more than one sub-team per semester, make sure to
-                            register for the 2-3 credit hour option to account for the additional project work.
-                        </p>
+                      <div dangerouslySetInnerHTML={{ __html: faq.answer }} /> 
                     </details>
-
-                    <details>
-                        <summary>Is this for Georgia Tech students only?<span><i className="fa-solid fa-caret-down"></i></span>
-                        </summary>
-                        <p>
-                            Yes, Empathy Bytes is currently open to both undergraduate and graduate
-                            students enrolled at Georgia Tech.
-                        </p>
-                    </details>
-
-                    <details>
-                        <summary>Can I join as a freshman?<span><i className="fa-solid fa-caret-down"></i></span>
-                        </summary>
-                        <p>
-                            While we appreciate the early interest, we recommend students wait until
-                            their sophomore year to join the VIP.
-                        </p>
-                    </details>
+                  ))}
                 </section>
             </div>
         </div>
@@ -107,3 +105,16 @@ export const Head = () => (
         <meta name="description" content="Have questions about Empathy Bytes? Contact our VIP coordinator or sub-team leads to learn how you can join our research at Georgia Tech." />
     </>
 )
+
+export const query = graphql`
+query ContactPageQuery {
+  nodeContactPage {
+    field_contact_items {
+      processed
+    }
+    field_faq_items {
+      processed
+    }
+  }
+}
+`;

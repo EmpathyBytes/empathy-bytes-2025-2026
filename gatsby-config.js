@@ -24,8 +24,9 @@ module.exports = {
         requestTimeout: 30000, // Increase timeout for slow responses
         // Only fetch what you need
         filters: {
-          "node--article": "filter[status][value]=1", // Only published articles
-          "node--collection": "filter[status][value]=1", // Only published collections
+          "node--article": "filter[status][value]=1",
+          "node--collection": "filter[status][value]=1",
+          "node--contact_page": "filter[status][value]=1",
         },
         // Enable caching
         cache: true,
@@ -39,6 +40,10 @@ module.exports = {
           "node--collection": {
             "include": "field_image",
             "fields[node--collection]": "title,body,path,relationships",
+            "filter[status]": "1"
+          },
+          "node--contact_page": {
+            "fields[node--contact_page]": "title,field_contact_items,field_faq_items",
             "filter[status]": "1"
           }
         }

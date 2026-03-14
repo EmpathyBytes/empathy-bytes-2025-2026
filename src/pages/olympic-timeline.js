@@ -8,6 +8,7 @@ import {
 import "react-vertical-timeline-component/style.min.css";
 import Layout from "../components/layout";
 
+// Timeline content is kept in one array so each event card can be rendered consistently.
 const timelineEvents = [
   {
     eventKey: "virtual-reality-gamble",
@@ -147,6 +148,7 @@ const pageStyles = {
 function OlympicTimelinePage({ data }) {
   const imageMap = {};
 
+  // Match queried image filenames to event keys so each card can grab its image directly.
   data.timelineImages.nodes.forEach((node) => {
     imageMap[node.name] = getImage(node.childImageSharp?.gatsbyImageData);
   });

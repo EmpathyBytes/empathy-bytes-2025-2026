@@ -36,11 +36,16 @@ function Footer(props) {
             // Use grid layout for mid-sized screens to avoid overlap
             "#footer .container-footer": {
               display: "grid",
-              gridTemplateColumns: "1fr 1fr 1fr",
+              gridTemplateColumns: "220px 180px 220px",
               gridTemplateRows: "auto auto auto",
               rowGap: "40px",
               columnGap: "40px",
               alignItems: "start",
+              justifyContent: "center",
+              width: "100%",
+              paddingLeft: "2rem",
+              paddingRight: "2rem",
+              boxSizing: "border-box",
             },
             // Center brand title on first row
             "#footer .footer-brand": {
@@ -53,7 +58,7 @@ function Footer(props) {
             "#footer .footer-general": {
               gridColumn: "1",
               gridRow: "2",
-              justifySelf: "end",
+              justifySelf: "start",
               textAlign: "left",
             },
             "#footer .footer-teams": {
@@ -65,7 +70,7 @@ function Footer(props) {
             "#footer .footer-communities": {
               gridColumn: "3",
               gridRow: "2",
-              justifySelf: "start",
+              justifySelf: "end",
               textAlign: "left",
             },
             // Center social section on final row
@@ -178,11 +183,6 @@ function Footer(props) {
 }
 
 export default Footer;
-
-
-
-
-
 
 
 

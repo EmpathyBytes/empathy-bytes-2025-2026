@@ -4,6 +4,7 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 const OlympicTestPage = ({ data }) => {
 
+    // Grab the first image found inside the folder
   const image = getImage(data.file.childImageSharp.gatsbyImageData)
 
   return (

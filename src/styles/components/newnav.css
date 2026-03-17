@@ -1,3 +1,5 @@
+/*Navigational bar at top of website*/
+/*color and size variables*/
 :root {
     --tr: 0.25s;
     --navbar-top-height: 6rem;
@@ -14,6 +16,7 @@
     --color-buzzgold: #eaaa00;
   }
 
+/* Main Header Container */
 header {
     z-index: 10;
     display: flex;
@@ -23,7 +26,7 @@ header {
     padding: 0vh 0vw 0vh 2.3vw;
     background-color: var(--color-navyblue);
     color: var(--color-offwhite);
-    position: fixed;
+    position: fixed; /* Keeps the header at the top of the page */
     top: 0;
     left: 0;
     right: 0;
@@ -31,6 +34,7 @@ header {
     box-sizing: border-box;
 }
 
+/* --- Navigation Links Container --- */
 nav {
     display: flex;
     height: 10vh;
@@ -41,6 +45,7 @@ nav {
     flex-shrink: 0;
 }
 
+/* Link Styling & States */
 nav a {
     color: var(--color-offwhite);
     text-decoration: none;
@@ -56,6 +61,7 @@ nav a:hover {
     color: var(--color-lightblue);
 }
 
+/* Mobile Toggle Button */
 header .nav-btn {
     padding: 0.3vw;
     cursor: pointer;
@@ -67,7 +73,7 @@ header .nav-btn {
     opacity: 0;
     font-size: 1.8rem;
 }
-
+/*empathy bytes logo*/
 .nav-logo {
     display: flex;
     height: 10vh;
@@ -76,7 +82,7 @@ header .nav-btn {
     align-items: center;
     gap: 1.375rem;
   }
-
+/*empathy bytes title*/
   .nav-title {
     color: var(--color-offwhite);
     font-family: 'Roboto Slab', sans-serif;
@@ -88,7 +94,7 @@ header .nav-btn {
     justify-content: flex-start;
   }
 
-
+/* Mobile Navigation Styles */
 @media only screen and (max-width: 768px) {
 
     header .nav-btn {

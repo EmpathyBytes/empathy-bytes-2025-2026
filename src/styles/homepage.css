@@ -1,5 +1,6 @@
 @import "./fonts.css";
 
+/* helps with smooth scrolling */
 *{scroll-behavior: smooth;}
 html, body {
     margin: 0px;
@@ -17,9 +18,7 @@ html, body {
 }
 
 @media screen and (max-width: 600px) {
-    .splash-image {
-        height: 65vh;
-    }
+ 
 }
 
 
@@ -100,6 +99,9 @@ html, body {
     .info {
         flex-direction: column;
     }
+       .splash-image {
+        height: 65vh;
+    }
 }
 
 .main-content {
@@ -136,12 +138,6 @@ html, body {
     .header {
         font-size: 6vw;
     }
-}
-
-.image {
-    /* desktop; ratio = 0.603 
-    this is the div for the image
-    */
 }
 
 @media screen and (max-width: 600px) {
@@ -196,9 +192,6 @@ html, body {
 .paragraph2 {
     font-family: 'Roboto', sans-serif;
     padding:0;
-    /*position: absolute; /* taken out of the normal flow of the document */
-    
-    /*width: 100%; /* needs to be defined to keep the default block behavior */
     text-align: left;
     margin: 0; /* again, for perfect center */
     font-size: 1.3vw;

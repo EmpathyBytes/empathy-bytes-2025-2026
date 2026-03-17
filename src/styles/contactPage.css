@@ -1,15 +1,18 @@
 @import "./fonts.css";
 
+/* css for the contact page */
+
+/*so page can scroll*/
 * {
   scroll-behavior: smooth;
 }
-
+/*color variables*/
 :root {
   --primary-color: #0779d7;
   --secondary-color: #789beb;
   --text-color: #ffffff;
 }
-
+/*team image at the top*/
 .contact-full {
   width: 100vw;
   height: 80vh;
@@ -21,10 +24,10 @@
   padding-bottom: 5%;
 }
 .bottom-contact {
-  /* position: relative; */
-  z-index: -10;
+  z-index: -10; /* Sends element to the background layer */
 }
 
+/* Main wrapper for the contact view */
 .container-contact {
   width: 100vw;
   max-width: 100%;
@@ -45,14 +48,14 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
-
+/*title: Interested in Learning More About Empathy Bytes?*/
 .centerStyles {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-bottom: 0.625rem;
 }
-
+/*buttons for contact info and application form*/
 .button {
   background-color: var(--secondary-color);
   font-size: 1rem;
@@ -73,17 +76,16 @@
   margin-top: 3.125rem;
 }
 
+/* Frequently asked questions Section  */
 #info .info-section {
-  background-color: var(--color-navyblue); /* Change to your desired background color */
+  background-color: var(--color-navyblue); 
   margin: 0vh 8.7vw 0vh 8.7vw;
-  padding: 1.563rem; /* Add padding or other styling as needed */
-  /* Center-align the text */
+  padding: 1.563rem; 
 }
 
 #info {
   padding: 3.125rem;
   background-color: var(--color-peacockblue);
-  /* padding-bottom: 400px; */
   text-align: center;
 }
 
@@ -96,6 +98,7 @@ p {
   text-align: left;
 }
 
+/* Typography Weight Helpers */
 #two {
   margin-top: 5.04vh;
   font-weight: 1000;
@@ -105,6 +108,7 @@ p {
   font-weight: 100;
 }
 
+/* Navigation & Link States */
 a:link,
 a:visited,
 a:hover,
@@ -116,12 +120,13 @@ a:active {
 body{
   background: var(--color-darkgray);
 }
+
+/* Frequently asked questions Section-- more specifically each question container  */
 .container{
   padding-bottom: 7.05vh;
   display: flex;
   align-items: top;
   justify-content: center;
-  /* min-height: 100vh; */
 }
 .container section{
   width: 37.5rem;

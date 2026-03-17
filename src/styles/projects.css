@@ -1,3 +1,5 @@
+/*Projects Page*/
+
 /* Smooth scroll for page transitions */
 html {
     scroll-behavior: smooth;
@@ -22,7 +24,7 @@ html {
 .project-nav {
     text-align: center;
 }
-
+/*Navigation bar attributes*/
 .project-nav-text {
     font-size: 1rem;
     font-family: 'Roboto Slab', sans-serif;
@@ -105,6 +107,7 @@ html {
     color: var(--color-navyblue) !important;
     font-weight: bold;
 }
+/*Adjusts for screen sizes*/
 
 @media (max-width: 768px) {
     .projectsContainer {

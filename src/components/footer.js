@@ -14,6 +14,18 @@ import InstagramLogo from "../images/socialmedia-icons/instagram_icon.png";
 // Here is a footer component for the website. This component is used in the "layout" component that is included in every page.
 // The links in the footer navigate to various other pages on the site. - Jacob
 
+/**
+ * The global Footer component.
+ * * Renders a multi-column layout containing:
+ * - Brand Title (Empathy Bytes)
+ * - General site navigation (Gatsby Links)
+ * - Subteam-specific links
+ * - Featured community project links
+ * - Social media icons with external links
+ * * @component
+ * @param {Object} props - Component props (currently unused but reserved for future extensions).
+ * @returns {JSX.Element} The rendered footer section.
+ */
 
 function Footer(props) {
 

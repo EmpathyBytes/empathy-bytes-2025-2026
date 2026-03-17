@@ -6,6 +6,15 @@ import Logo from "../images/empbytes.jpg";
 import "../styles/components/newnav.css"
 import { useEffect } from "react";
 
+/**
+ * Helper component for desktop navigation links.
+ * * @private
+ * @param {Object} props - Component props.
+ * @param {string} props.name - Display text.
+ * @param {string} props.path - Destination URL.
+ * @returns {JSX.Element}
+ */
+
 const ReactiveLink = ({ name, path }) => {
     return (
       <Link className={`navbar-link`} to={path} activeClassName="navbar-selected">
@@ -36,8 +45,6 @@ function Newnav({ transparent }) {
     };
 
     useEffect(() => {
-        // console.log(withPrefix("/test"));
-        // console.log("This is a test hi");
         if (typeof window !== undefined) {
           window.addEventListener("scroll", onScroll, { passive: true });
           return () => {

@@ -5,6 +5,15 @@ import Logo from "../images/empbytes.jpg";
 import useMediaQuery from '@mui/material/useMediaQuery';
 
 // Here is the Navbar component made by Joseph in Fall 2022 - Jacob
+/**
+ * A helper component to render navigation links with an active state 
+ * and an animated bottom bar.
+ * * @private
+ * @param {Object} props - Component props.
+ * @param {string} props.name - The display text for the link.
+ * @param {string} props.path - The internal destination path.
+ * @returns {JSX.Element} A Gatsby Link with custom styling.
+ */
 
 const ReactiveLink = ({ name, path }) => {
   return (
@@ -18,8 +27,6 @@ const ReactiveLink = ({ name, path }) => {
 export default function Navbar({ transparent }) {
   const breakpoint = 80;
   const [scroll, setScroll] = useState("");
-  // console.log(withPrefix("/test"));
-  // console.log("This is a test hi");
 
   const onScroll = () => {
     let scroll = 0;
@@ -31,8 +38,6 @@ export default function Navbar({ transparent }) {
   };
 
   useEffect(() => {
-    // console.log(withPrefix("/test"));
-    // console.log("This is a test hi");
     if (typeof window !== undefined) {
       window.addEventListener("scroll", onScroll, { passive: true });
       return () => {

@@ -17,11 +17,6 @@ html, body {
     /* desktop */
 }
 
-@media screen and (max-width: 600px) {
- 
-}
-
-
 .top {
     width: 100vw;
     max-width: 100%;
@@ -74,14 +69,11 @@ html, body {
 }
 
 #learn-more-home .learn-more-home-section {
-    background-color: var(--color-navyblue); /* Change to your desired background color */
-    /* margin: 0px 150px 0px 150px; */
-    padding: 5vh; /* Add padding or other styling as needed */
-    /* Center-align the text */
+    background-color: var(--color-navyblue); 
+    padding: 5vh; /
   }
 
 .info {
-    /* padding: 3% 0 2% 5%; */
     max-width: 100%;
     text-align: center;
     vertical-align: middle;
@@ -89,7 +81,7 @@ html, body {
     justify-content: space-evenly;
     align-items: center;
     align-content: center;
-    height: 65vh; /* CHANGED */
+    height: 65vh; 
     overflow: inherit;
 
 }
@@ -108,7 +100,6 @@ html, body {
     justify-content: center;
     align-items: center;
     align-content: center;
-    /*gap:200px;*/
 }
 
 

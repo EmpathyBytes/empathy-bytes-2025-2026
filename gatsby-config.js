@@ -44,5 +44,16 @@ module.exports = {
         }
       },
     },
+    // new plugins
+    `gatsby-plugin-image`,
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `olympic-images`,
+        path: `${__dirname}/src/images/olympic_village_photo_gallery`,
+      },
+    },
   ],
 }

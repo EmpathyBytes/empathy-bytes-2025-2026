@@ -145,12 +145,16 @@ const pageStyles = {
   },
 };
 
+const normalizeImageKey = (value) => value?.trim().toLowerCase();
+
 function OlympicTimelinePage({ data }) {
   const imageMap = {};
 
-  // Match queried image filenames to event keys so each card can grab its image directly.
+  // Normalize both filenames and event keys so small casing differences do not break image lookups.
   data.timelineImages.nodes.forEach((node) => {
-    imageMap[node.name] = getImage(node.childImageSharp?.gatsbyImageData);
+    imageMap[normalizeImageKey(node.name)] = getImage(
+      node.childImageSharp?.gatsbyImageData
+    );
   });
 
   return (
@@ -185,9 +189,9 @@ function OlympicTimelinePage({ data }) {
               <p style={pageStyles.subtitle}>{event.subtitle}</p>
               <p style={pageStyles.description}>{event.description}</p>
 
-              {imageMap[event.eventKey] && (
+              {imageMap[normalizeImageKey(event.eventKey)] && (
                 <GatsbyImage
-                  image={imageMap[event.eventKey]}
+                  image={imageMap[normalizeImageKey(event.eventKey)]}
                   alt={event.title}
                   style={pageStyles.image}
                 />

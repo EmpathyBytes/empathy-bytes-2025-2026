@@ -100,6 +100,7 @@ const pageStyles = {
   },
 };
 
+// Helper for processing event images from Drupal, converts img relationships to array format
 const getEventImage = (relationships) => {
   const rawImages = relationships?.field_field_event_images;
 
@@ -120,12 +121,15 @@ function OlympicTimelinePage({ data }) {
 
   return (
     <Layout>
+      {/* Event body style override, avoids text white on white issue*/}
       <style>{`
         .timeline-event-body,
         .timeline-event-body * {
           color: #000 !important;
         }
       `}</style>
+
+      {/* Page header */}
       <section style={pageStyles.wrapper}>
         <h1 style={pageStyles.pageTitle}>Olympic Timeline Page</h1>
         <div style={pageStyles.intro}>
@@ -143,6 +147,7 @@ function OlympicTimelinePage({ data }) {
         </div>
 
         <VerticalTimeline>
+          {/* Pull data from query fields and perform basic checks */}
           {timelineEvents.map((eventNode, index) => {
             const eventTitle = eventNode?.field_field_event_title?.value || "Untitled Event";
             const eventSubtitle = eventNode?.field_field_event_subtitle?.value || "";
@@ -152,6 +157,7 @@ function OlympicTimelinePage({ data }) {
             const eventUrl = eventNode?.field_field_event_url?.value || "";
             const eventIcon = eventNode?.field_icon;
 
+            // Render each timeline event
             return (
               <VerticalTimelineElement
               key={eventNode?.id || `${eventTitle}-${index}`}

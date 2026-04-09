@@ -120,6 +120,7 @@ html, body {
 
 
 .image {
+
     /* desktop; ratio = 0.603 
     this is the div for the image
     */
@@ -189,28 +190,60 @@ html, body {
     padding: 0% 3% 0% 4%;
 }
 /* mobile */
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 900px) {
     .info {
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 20px;
+        gap: 0;
         height: auto;
         min-height: auto;
-        margin-top: 15vh; /*gives space between top image and arrows down */
+        padding-top: 15vh; /*gives space between top image and arrows down */
     }
     .info-wrapper{
         display: flex;
         flex-direction: column;
         width: 100%;
+        align-items: center;
+        row-gap: 24px;
     }
     .info-card{
         height: auto;
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        align-self: center;
+        margin: 0 auto;
+        text-align: center;
     }
+
     .learn-more-home{
         display: flex;
         height: auto;
-        padding-top: auto;
+        padding-top: 2vh;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .learn-more-container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        text-align: center;
+    }
+    
+    .learn-card {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        width: 100%;
     }
     .header {
         font-size: 6vw;
@@ -218,6 +251,8 @@ html, body {
     .image {
         width: 100%;
         height: auto;
+        display: flex;
+        justify-content: center;
     } 
     .teampic {
         width: 100%;

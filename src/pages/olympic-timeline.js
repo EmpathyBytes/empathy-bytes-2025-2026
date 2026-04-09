@@ -51,7 +51,7 @@ const pageStyles = {
     textAlign: "center",
   },
   subtitle: {
-    margin: "0.4rem 0 0.9rem",
+    margin: 0,
     color: "#555",
     fontWeight: 600,
   },
@@ -59,13 +59,29 @@ const pageStyles = {
     color: "#1f1f1f",
     fontSize: "1rem",
     lineHeight: 1.7,
-    margin: "0",
+    margin: 0,
     textAlign: "left",
   },
-  image: {
+  cardTitle: {
+    margin: "0 0 0.9rem",
+  },
+  textStack: {
+    display: "flex",
+    flexDirection: "column",
+    gap: "0.4rem",
+  },
+  imageContainer: {
     marginTop: "1rem",
     borderRadius: "12px",
     overflow: "hidden",
+    width: "100%",
+    background: "#f6f7f9",
+  },
+  image: {
+    display: "block",
+    width: "100%",
+    height: "auto",
+    maxWidth: "100%",
   },
   icon: {
     alignItems: "center",
@@ -94,8 +110,8 @@ const getEventImage = (relationships) => {
   const images = Array.isArray(rawImages) ? rawImages : [rawImages];
 
   return images.map((img) => ({
-    src: img?.uri?.url || img?.url || "",
-    alt: img?.alt || "",
+    src: img?.relationships?.field_media_hg_image?.url || "",
+    alt: img?.field_media_hg_image?.alt || img?.name || "",
   }));
 };
 
@@ -104,6 +120,12 @@ function OlympicTimelinePage({ data }) {
 
   return (
     <Layout>
+      <style>{`
+        .timeline-event-body,
+        .timeline-event-body * {
+          color: #000 !important;
+        }
+      `}</style>
       <section style={pageStyles.wrapper}>
         <h1 style={pageStyles.pageTitle}>Olympic Timeline Page</h1>
         <div style={pageStyles.intro}>
@@ -127,7 +149,8 @@ function OlympicTimelinePage({ data }) {
             const eventDate = eventNode?.field_field_display_date?.value || eventNode?.field_field_event_date || "";
             const eventDescriptionHtml = eventNode?.field_field_event_body?.processed || "";
             const eventImages = getEventImage(eventNode?.relationships);
-            const eventUrl = eventNode?.field_field_event_url?.uri || eventNode?.field_field_event_url?.url || "";
+            const eventUrl = eventNode?.field_field_event_url?.value || "";
+            const eventIcon = eventNode?.field_icon;
 
             return (
               <VerticalTimelineElement
@@ -136,28 +159,32 @@ function OlympicTimelinePage({ data }) {
               contentStyle={{ background: "#fff", color: "#000" }}
               contentArrowStyle={{ borderRight: "7px solid #fff" }}
               iconStyle={{ background: "#003057", color: "#fff" }}
-              icon={<span style={pageStyles.icon}>🏅</span>}
+              icon={<span style={pageStyles.icon}>{eventIcon}</span>}
             >
-              <h3>{eventTitle}</h3>
-              {eventSubtitle && <p style={pageStyles.subtitle}>{eventSubtitle}</p>}
+              <div style={pageStyles.textStack}>
+                <h3 style={pageStyles.cardTitle}>{eventTitle}</h3>
+                {eventSubtitle && <p style={pageStyles.subtitle}>{eventSubtitle}</p>}
 
-              {eventDescriptionHtml ? (
-                <div
-                  style={pageStyles.description}
-                  dangerouslySetInnerHTML={{ __html: eventDescriptionHtml }}
-                />
-              ) : (
-                <p style={pageStyles.description}>No event description available.</p>
-              )}
+                {eventDescriptionHtml ? (
+                  <div
+                    className="timeline-event-body"
+                    style={pageStyles.description}
+                    dangerouslySetInnerHTML={{ __html: eventDescriptionHtml }}
+                  />
+                ) : (
+                  <p style={pageStyles.description}>No event description available.</p>
+                )}
+              </div>
 
               {eventImages.map((image, idx) => (
                 image.src && (
-                  <img
-                    key={idx}
-                    src={image.src}
-                    alt={image.alt || eventTitle}
-                    style={pageStyles.image}
-                  />
+                  <div key={idx} style={pageStyles.imageContainer}>
+                    <img
+                      src={image.src}
+                      alt={image.alt || eventTitle}
+                      style={pageStyles.image}
+                    />
+                  </div>
                 )
               ))}
 
@@ -211,15 +238,19 @@ export const query = graphql`
           value
         }
         field_field_event_url {
-          uri
-          url
+          value
         }
+        field_icon
         relationships {
           field_field_event_images {
-            alt
-            url
-            uri {
-              url
+            name
+            field_media_hg_image {
+              alt
+            }
+            relationships {
+              field_media_hg_image {
+                url
+              }
             }
           }
         }

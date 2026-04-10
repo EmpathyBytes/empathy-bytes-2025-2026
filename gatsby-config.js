@@ -66,7 +66,7 @@ module.exports = {
         name: `olympic-images`,
         path: `${__dirname}/src/images/olympic_village_photo_gallery`,
       },
-      reslove: 'gatsby-plugin-react-leaflet', // leaflet plugin for map
+      resolve: 'gatsby-plugin-react-leaflet', // leaflet plugin for map
       options: {
         linkStyles: true
       }

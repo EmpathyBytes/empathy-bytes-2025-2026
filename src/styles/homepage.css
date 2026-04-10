@@ -71,13 +71,10 @@ html, body {
 
 #learn-more-home .learn-more-home-section {
     background-color: var(--color-navyblue); /* Change to your desired background color */
-    /* margin: 0px 150px 0px 150px; */
     padding: 5vh; /* Add padding or other styling as needed */
-    /* Center-align the text */
   }
 
 .info {
-    /* padding: 3% 0 2% 5%; */
     max-width: 100%;
     text-align: center;
     vertical-align: middle;
@@ -95,7 +92,6 @@ html, body {
     justify-content: center;
     align-items: center;
     align-content: center;
-    /*gap:200px;*/
 }
 
 
@@ -116,17 +112,6 @@ html, body {
     font-size: 3vw;
     
 }
-
-
-
-.image {
-
-    /* desktop; ratio = 0.603 
-    this is the div for the image
-    */
-}
-
-
 
 /* Attributes for the team pic image */
 .teampic { 
@@ -160,9 +145,6 @@ html, body {
 .paragraph2 {
     font-family: 'Roboto', sans-serif;
     padding:0;
-    /*position: absolute; /* taken out of the normal flow of the document */
-    
-    /*width: 100%; /* needs to be defined to keep the default block behavior */
     text-align: left;
     margin: 0; /* again, for perfect center */
     font-size: 1.3vw;
@@ -310,17 +292,17 @@ html, body {
 
 .arrows path.a1 {
 	animation-delay:-1s;
-	-webkit-animation-delay:-1s; /* Safari 和 Chrome */
+	-webkit-animation-delay:-1s; /* Safari & Chrome */
 }
 
 .arrows path.a2 {
 	animation-delay:-0.5s;
-	-webkit-animation-delay:-0.5s; /* Safari 和 Chrome */
+	-webkit-animation-delay:-0.5s; /* Safari & Chrome */
 }
 
 .arrows path.a3 {	
 	animation-delay:0s;
-	-webkit-animation-delay:0s; /* Safari 和 Chrome */
+	-webkit-animation-delay:0s; /* Safari & Chrome */
 }
 
 

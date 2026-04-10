@@ -39,12 +39,12 @@
     "react-icons": "^4.11.0",
     "react-material-ui-carousel": "^3.4.2",
     "react-multi-carousel": "^2.8.2",
-    "react-photo-album": "^3.5.1",
     "react-vertical-timeline-component": "^4.0.0",
+    "react-photo-album": "^3.5.1",
     "styled-components": "^6.1.1",
     "three": "^0.169.0",
     "use-device-pixel-ratio": "^1.1.2",
-    "yet-another-react-lightbox": "^3.31.0"
+    "yet-another-react-lightbox": "^3.29.1"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.21",

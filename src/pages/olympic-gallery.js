@@ -1,7 +1,6 @@
 import "react-photo-album/styles.css";
 import React, { useState } from "react";
 import { graphql } from "gatsby";
-import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import PhotoAlbum from "react-photo-album";
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
@@ -9,44 +8,68 @@ import "yet-another-react-lightbox/styles.css";
 const OlympicGallery = ({ data }) => {
   const [index, setIndex] = useState(-1);
 
-  // map the nodes from Gatsby into a format the Photo Album understands 
-  const photos = data.allFile.nodes.map((node) => ({
-    src: node.childImageSharp.gatsbyImageData.images.fallback.src,
-    width: node.childImageSharp.gatsbyImageData.width,
-    height: node.childImageSharp.gatsbyImageData.height,
-    key: node.id,
-    // allows the Lightbox to show the high-res version 
-    fullRes: node.childImageSharp.gatsbyImageData, 
-  }));
+  // Convert Drupal nodes → PhotoAlbum format
+  const photos = data.allNodeOlympicsGalleryImage.nodes
+    .map((node) => {
+      const imageUrl =
+        node.relationships?.field_olympic_gallery_image?.uri?.url;
+
+      // Safety check for missing images
+      if (!imageUrl) return null;
+
+      return {
+        src: imageUrl,
+
+        // fallback dimensions (needed for masonry layout stability)
+        width: 4,
+        height: 3,
+
+        key: node.id,
+
+        alt: node.field_caption || "Olympic gallery image",
+
+        // metadata
+        caption: node.field_caption,
+        photographer: node.field_photographer_source,
+        date: node.field_date,
+      };
+    })
+    .filter(Boolean);
 
   return (
-    <div style={{ 
-      padding: "2vw", 
-      backgroundColor: "#F6F8F9", 
-      minHeight: "100vh",
-      textAlign: "center" 
-    }}>
-      <h1 style={{ 
-        fontFamily: "Roboto Slab, serif", 
-        fontWeight: "bold", 
-        fontSize: "2rem", 
-        color: "#003057",
-        marginBottom: "1rem"
-      }}>
+    <div
+      style={{
+        padding: "2vw",
+        backgroundColor: "#F6F8F9",
+        minHeight: "100vh",
+        textAlign: "center",
+      }}
+    >
+      <h1
+        style={{
+          fontFamily: "Roboto Slab, serif",
+          fontWeight: "bold",
+          fontSize: "2rem",
+          color: "#003057",
+          marginBottom: "1rem",
+        }}
+      >
         Olympic History at Georgia Tech
       </h1>
-      
-      <p style={{ 
-        fontFamily: "Roboto Slab, serif", 
-        fontSize: "1rem", 
-        margin: "0 auto 5vw auto", 
-        maxWidth: "800px",
-        color: "#000000"
-      }}>
-        Explore our collection of Olympic Village photos. Click any photo to view it in full size. 
+
+      <p
+        style={{
+          fontFamily: "Roboto Slab, serif",
+          fontSize: "1rem",
+          margin: "0 auto 5vw auto",
+          maxWidth: "800px",
+          color: "#000000",
+        }}
+      >
+        Explore our collection of Olympic Village photos. Click any photo to view it in full size.
       </p>
 
-      {/* The grid layout (Pinterest style) */}
+      {/* Photo grid */}
       <div style={{ margin: "0 auto", maxWidth: "90vw" }}>
         <PhotoAlbum
           layout="masonry"
@@ -54,46 +77,52 @@ const OlympicGallery = ({ data }) => {
           onClick={({ index }) => setIndex(index)}
           renderPhoto={({ photo, wrapperStyle }) => (
             <div style={wrapperStyle}>
-              <GatsbyImage
-                image={photo.fullRes}
-                alt={photo.key}
-                style={{ width: "100%", height: "100%" }}
+              <img
+                src={photo.src}
+                alt={photo.alt}
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "cover",
+                }}
               />
             </div>
           )}
         />
       </div>
 
-      {/* the popup (lightbox) */}
+      {/* Lightbox */}
       <Lightbox
         index={index}
         open={index >= 0}
         close={() => setIndex(-1)}
-        slides={photos.map((p) => ({ src: p.src }))}
+        slides={photos.map((p) => ({
+          src: p.src,
+          description: `${p.caption || ""}${
+            p.photographer ? ` — © ${p.photographer}` : ""
+          }`,
+        }))}
       />
     </div>
   );
 };
 
-// the GraphQL Query (asks Gatsby for optimized images)
+// GraphQL Query (Drupal JSON:API style)
 export const query = graphql`
   query OlympicGalleryQuery {
-    allFile(
-      filter: {
-        sourceInstanceName: { eq: "olympic-images" }
-        extension: { regex: "/(jpg|jpeg|png)/" }
-      }
-      sort: { name: ASC }
-    ) {
+    allNodeOlympicsGalleryImage(sort: { field_date: DESC }) {
       nodes {
         id
-        name
-        childImageSharp {
-          gatsbyImageData(
-            width: 2000
-            placeholder: BLURRED
-            formats: [AUTO, WEBP]
-          )
+        field_caption
+        field_date(formatString: "YYYY-MM-DD")
+        field_photographer_source
+
+        relationships {
+          field_olympic_gallery_image {
+            uri {
+              url
+            }
+          }
         }
       }
     }

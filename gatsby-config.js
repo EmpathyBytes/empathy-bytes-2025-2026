@@ -26,6 +26,7 @@ module.exports = {
         filters: {
           "node--article": "filter[status][value]=1", // Only published articles
           "node--collection": "filter[status][value]=1", // Only published collections
+          "node--olympics_timeline_event": "filter[status][value]=1", // Only published timeline events
         },
         // Enable caching
         cache: true,
@@ -39,6 +40,11 @@ module.exports = {
           "node--collection": {
             "include": "field_image",
             "fields[node--collection]": "title,body,path,relationships",
+            "filter[status]": "1"
+          },
+          "node--olympics_timeline_event": {
+            "include": "field_field_event_images",
+            "fields[node--olympics_timeline_event]": "title,field_field_display_date,field_field_event_body,field_field_event_date,field_field_event_order,field_field_event_subtitle,field_field_event_title,field_field_event_url,path,relationships",
             "filter[status]": "1"
           }
         }
@@ -56,10 +62,6 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-image`,
-    // new plugins
-    `gatsby-plugin-image`,
-    `gatsby-plugin-sharp`,
-    `gatsby-transformer-sharp`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {

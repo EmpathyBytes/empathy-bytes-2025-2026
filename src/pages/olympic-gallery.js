@@ -5,6 +5,7 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import PhotoAlbum from "react-photo-album";
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
+import Layout from "../components/layout";
 
 const OlympicGallery = ({ data }) => {
   const [index, setIndex] = useState(-1);
@@ -20,58 +21,60 @@ const OlympicGallery = ({ data }) => {
   }));
 
   return (
-    <div style={{ 
-      padding: "2vw", 
-      backgroundColor: "#F6F8F9", 
-      minHeight: "100vh",
-      textAlign: "center" 
-    }}>
-      <h1 style={{ 
-        fontFamily: "Roboto Slab, serif", 
-        fontWeight: "bold", 
-        fontSize: "2rem", 
-        color: "#003057",
-        marginBottom: "1rem"
+    <Layout>
+      <div style={{ 
+        padding: "2vw", 
+        backgroundColor: "#F6F8F9", 
+        minHeight: "100vh",
+        textAlign: "center" 
       }}>
-        Olympic History at Georgia Tech
-      </h1>
-      
-      <p style={{ 
-        fontFamily: "Roboto Slab, serif", 
-        fontSize: "1rem", 
-        margin: "0 auto 5vw auto", 
-        maxWidth: "800px",
-        color: "#000000"
-      }}>
-        Explore our collection of Olympic Village photos. Click any photo to view it in full size. 
-      </p>
+        <h1 style={{ 
+          fontFamily: "Roboto Slab, serif", 
+          fontWeight: "bold", 
+          fontSize: "2rem", 
+          color: "#003057",
+          marginBottom: "1rem"
+        }}>
+          Olympic History at Georgia Tech
+        </h1>
+        
+        <p style={{ 
+          fontFamily: "Roboto Slab, serif", 
+          fontSize: "1rem", 
+          margin: "0 auto 5vw auto", 
+          maxWidth: "800px",
+          color: "#000000"
+        }}>
+          Explore our collection of Olympic Village photos. Click any photo to view it in full size. 
+        </p>
 
-      {/* The grid layout (Pinterest style) */}
-      <div style={{ margin: "0 auto", maxWidth: "90vw" }}>
-        <PhotoAlbum
-          layout="masonry"
-          photos={photos}
-          onClick={({ index }) => setIndex(index)}
-          renderPhoto={({ photo, wrapperStyle }) => (
-            <div style={wrapperStyle}>
-              <GatsbyImage
-                image={photo.fullRes}
-                alt={photo.key}
-                style={{ width: "100%", height: "100%" }}
-              />
-            </div>
-          )}
+        {/* The grid layout (Pinterest style) */}
+        <div style={{ margin: "0 auto", maxWidth: "90vw" }}>
+          <PhotoAlbum
+            layout="masonry"
+            photos={photos}
+            onClick={({ index }) => setIndex(index)}
+            renderPhoto={({ photo, wrapperStyle }) => (
+              <div style={wrapperStyle}>
+                <GatsbyImage
+                  image={photo.fullRes}
+                  alt={photo.key}
+                  style={{ width: "100%", height: "100%" }}
+                />
+              </div>
+            )}
+          />
+        </div>
+
+        {/* the popup (lightbox) */}
+        <Lightbox
+          index={index}
+          open={index >= 0}
+          close={() => setIndex(-1)}
+          slides={photos.map((p) => ({ src: p.src }))}
         />
       </div>
-
-      {/* the popup (lightbox) */}
-      <Lightbox
-        index={index}
-        open={index >= 0}
-        close={() => setIndex(-1)}
-        slides={photos.map((p) => ({ src: p.src }))}
-      />
-    </div>
+    </Layout>
   );
 };
 

@@ -4,7 +4,7 @@ import "../styles/all.css";
 import "../styles/emotions-page.css";
 import loadable from '@loadable/component';
 
-const Map = loadable(() => import('../components/map'), {
+const Map = loadable(() => import('../components/Map'), {
   ssr: false,
 });
 

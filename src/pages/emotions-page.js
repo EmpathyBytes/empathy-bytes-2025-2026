@@ -2,6 +2,11 @@ import React from 'react';
 import Layout from '../components/layout';
 import "../styles/all.css";
 import "../styles/emotions-page.css";
+import loadable from '@loadable/component';
+
+const Map = loadable(() => import('../components/map'), {
+  ssr: false,
+});
 
 const EmotionsPage = () => {
     return (

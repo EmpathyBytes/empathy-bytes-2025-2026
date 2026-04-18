@@ -28,6 +28,7 @@ module.exports = {
           "node--article": "filter[status][value]=1",
           "node--collection": "filter[status][value]=1",
           "node--olympics_gallery_image": "filter[status][value]=1",
+          "node--olympics_timeline_event": "filter[status][value]=1", // Only published timeline events
         },
 
         cache: true,
@@ -43,17 +44,33 @@ module.exports = {
           "node--collection": {
             include: "field_image",
             "fields[node--collection]": "title,body,path,relationships",
-            "filter[status]": "1",
+            "filter[status]": "1"
           },
-
-          // Olympic gallery content type
-          "node--olympics_gallery_image": {
-            include: "field_olympic_gallery_image",
-            "fields[node--olympics_gallery_image]":
-              "field_caption,field_date,field_photographer_source,field_olympic_gallery_image,path,relationships",
-            "filter[status]": "1",
-          },
-        },
+          "node--olympics_timeline_event": {
+            "include": "field_field_event_images",
+            "fields[node--olympics_timeline_event]": "title,field_field_display_date,field_field_event_body,field_field_event_date,field_field_event_order,field_field_event_subtitle,field_field_event_title,field_field_event_url,path,relationships",
+            "filter[status]": "1"
+          }
+        }
+      },
+    },
+    // Olympic timeline photos
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `olympic-timeline-images`,
+        path: `${__dirname}/src/images/olympic_timeline_photos`,
+      },
+    },
+    // Gatsby image plugins
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-image`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `olympic-images`,
+        path: `${__dirname}/src/images/olympic_village_photo_gallery`,
       },
     },
   ],

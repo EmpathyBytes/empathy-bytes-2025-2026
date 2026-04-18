@@ -1,4 +1,5 @@
 import "react-photo-album/styles.css";
+import Layout from "../components/layout"
 import React, { useState } from "react";
 import { graphql } from "gatsby";
 import PhotoAlbum from "react-photo-album";
@@ -12,7 +13,7 @@ const OlympicGallery = ({ data }) => {
   const photos = data.allNodeOlympicsGalleryImage.nodes
     .map((node) => {
       const imageUrl =
-        node.relationships?.field_olympic_gallery_image?.uri?.url;
+        "https://empathybytes.library.gatech.edu" + node.relationships?.field_olympic_gallery_image?.uri?.url;
 
       // Safety check for missing images
       if (!imageUrl) return null;
@@ -37,6 +38,7 @@ const OlympicGallery = ({ data }) => {
     .filter(Boolean);
 
   return (
+    <Layout>
     <div
       style={{
         padding: "2vw",
@@ -104,6 +106,7 @@ const OlympicGallery = ({ data }) => {
         }))}
       />
     </div>
+    </Layout>
   );
 };
 

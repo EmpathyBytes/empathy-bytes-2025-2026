@@ -77,6 +77,10 @@ function Newnav({ transparent }) {
                     <Link to={"/contact"}>
                       <h3 className="pages">Contact</h3>
                   </Link>
+                    {/* Olympic Gallery page */}
+                    <Link to={"/olympic-gallery"}>
+                      <h3 className="pages">Olympic Gallery</h3>
+                  </Link>
               </nav>
             </nav>
             <button 

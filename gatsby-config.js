@@ -52,6 +52,15 @@ module.exports = {
         path: `${__dirname}/src/images/olympic_timeline_photos`,
       },
     },
+
+    // Audio - Webpage postcard images
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `postcard-images`,               // ← this is what your query will reference
+        path: `${__dirname}/src/images/audio_content/postcards`, // ← create this folder and put your images here
+      },
+    },
     // Gatsby image plugins
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,

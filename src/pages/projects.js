@@ -133,7 +133,7 @@ const ProjectsPage = ({data}) => {
                             <CollectionCard 
                             title = {item.title}
                             image = {item.relationships.field_image.uri.url}
-                            url = {item.path.alias}
+                            url = {(item?.title || "").trim().toLowerCase() === "olympics at georgia tech" ? "/olympics" : item.path.alias}
                             body = {item.body.summary}
                             />
                             </Grid> // This is a MUI grid.
@@ -192,7 +192,7 @@ const ProjectsPage = ({data}) => {
                             <CollectionCard 
                             title = {item.title}
                             image = {item.relationships.field_image.uri.url}
-                            url = {item.path.alias}
+                            url = {(item?.title || "").trim().toLowerCase() === "olympics at georgia tech" ? "/olympics" : item.path.alias}
                             />
                             
                         ))}

@@ -1,15 +1,25 @@
 import React from "react";
-import { graphql } from "gatsby";
+import { graphql, Link } from "gatsby";
 import {
   VerticalTimeline,
   VerticalTimelineElement,
 } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
-import Layout from "../components/layout";
+import Layout from "../../../components/layout";
 
 const pageStyles = {
   wrapper: {
     padding: "0 0 5rem",
+  },
+  backLinkWrap: {
+    maxWidth: "1000px",
+    margin: "0 auto",
+    padding: "1rem 1rem 0",
+  },
+  backLink: {
+    color: "#00548f",
+    fontWeight: 700,
+    textDecoration: "underline",
   },
   pageTitle: {
     color: "#000",
@@ -100,7 +110,6 @@ const pageStyles = {
   },
 };
 
-// Helper for processing event images from Drupal, converts img relationships to array format
 const getEventImage = (relationships) => {
   const rawImages = relationships?.field_field_event_images;
 
@@ -116,12 +125,11 @@ const getEventImage = (relationships) => {
   }));
 };
 
-function OlympicTimelinePage({ data }) {
+function OlympicsTimelinePage({ data }) {
   const timelineEvents = data?.timelineEvents?.nodes || [];
 
   return (
     <Layout>
-      {/* Event body style override, avoids text white on white issue*/}
       <style>{`
         .timeline-event-body,
         .timeline-event-body * {
@@ -129,25 +137,27 @@ function OlympicTimelinePage({ data }) {
         }
       `}</style>
 
-      {/* Page header */}
       <section style={pageStyles.wrapper}>
-        <h1 style={pageStyles.pageTitle}>Olympic Timeline Page</h1>
+        <div style={pageStyles.backLinkWrap}>
+          <Link to="/projects/olympics" style={pageStyles.backLink}>
+            Back to Olympics Hub
+          </Link>
+        </div>
+
+        <h1 style={pageStyles.pageTitle}>Olympics Timeline</h1>
         <div style={pageStyles.intro}>
           <div style={pageStyles.introInner}>
-            <h2 style={pageStyles.title}>🏅 1996 Olympics at Georgia Tech</h2>
+            <h2 style={pageStyles.title}>1996 Olympics at Georgia Tech</h2>
             <div style={pageStyles.summaryCard}>
               <p style={pageStyles.summary}>
                 Explore the historic journey of how Georgia Tech transformed into
-                the Olympic Village for the 1996 Centennial Games. From
-                cutting-edge virtual reality to defusing a nuclear reactor,
-                discover the remarkable story behind Atlanta&apos;s Olympic legacy.
+                the Olympic Village for the 1996 Centennial Games.
               </p>
             </div>
           </div>
         </div>
 
         <VerticalTimeline>
-          {/* Pull data from query fields and perform basic checks */}
           {timelineEvents.map((eventNode, index) => {
             const eventTitle = eventNode?.field_field_event_title?.value || "Untitled Event";
             const eventSubtitle = eventNode?.field_field_event_subtitle?.value || "";
@@ -157,54 +167,53 @@ function OlympicTimelinePage({ data }) {
             const eventUrl = eventNode?.field_field_event_url?.value || "";
             const eventIcon = eventNode?.field_icon;
 
-            // Render each timeline event
             return (
               <VerticalTimelineElement
-              key={eventNode?.id || `${eventTitle}-${index}`}
-              date={eventDate}
-              contentStyle={{ background: "#fff", color: "#000" }}
-              contentArrowStyle={{ borderRight: "7px solid #fff" }}
-              iconStyle={{ background: "#003057", color: "#fff" }}
-              icon={<span style={pageStyles.icon}>{eventIcon}</span>}
-            >
-              <div style={pageStyles.textStack}>
-                <h3 style={pageStyles.cardTitle}>{eventTitle}</h3>
-                {eventSubtitle && <p style={pageStyles.subtitle}>{eventSubtitle}</p>}
+                key={eventNode?.id || `${eventTitle}-${index}`}
+                date={eventDate}
+                contentStyle={{ background: "#fff", color: "#000" }}
+                contentArrowStyle={{ borderRight: "7px solid #fff" }}
+                iconStyle={{ background: "#003057", color: "#fff" }}
+                icon={<span style={pageStyles.icon}>{eventIcon}</span>}
+              >
+                <div style={pageStyles.textStack}>
+                  <h3 style={pageStyles.cardTitle}>{eventTitle}</h3>
+                  {eventSubtitle && <p style={pageStyles.subtitle}>{eventSubtitle}</p>}
 
-                {eventDescriptionHtml ? (
-                  <div
-                    className="timeline-event-body"
-                    style={pageStyles.description}
-                    dangerouslySetInnerHTML={{ __html: eventDescriptionHtml }}
-                  />
-                ) : (
-                  <p style={pageStyles.description}>No event description available.</p>
-                )}
-              </div>
-
-              {eventImages.map((image, idx) => (
-                image.src && (
-                  <div key={idx} style={pageStyles.imageContainer}>
-                    <img
-                      src={image.src}
-                      alt={image.alt || eventTitle}
-                      style={pageStyles.image}
+                  {eventDescriptionHtml ? (
+                    <div
+                      className="timeline-event-body"
+                      style={pageStyles.description}
+                      dangerouslySetInnerHTML={{ __html: eventDescriptionHtml }}
                     />
-                  </div>
-                )
-              ))}
+                  ) : (
+                    <p style={pageStyles.description}>No event description available.</p>
+                  )}
+                </div>
 
-              {eventUrl && (
-                <a
-                  href={eventUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={pageStyles.eventLink}
-                >
-                  Learn more
-                </a>
-              )}
-            </VerticalTimelineElement>
+                {eventImages.map((image, idx) =>
+                  image.src ? (
+                    <div key={idx} style={pageStyles.imageContainer}>
+                      <img
+                        src={image.src}
+                        alt={image.alt || eventTitle}
+                        style={pageStyles.image}
+                      />
+                    </div>
+                  ) : null
+                )}
+
+                {eventUrl && (
+                  <a
+                    href={eventUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={pageStyles.eventLink}
+                  >
+                    Learn more
+                  </a>
+                )}
+              </VerticalTimelineElement>
             );
           })}
         </VerticalTimeline>
@@ -213,16 +222,16 @@ function OlympicTimelinePage({ data }) {
   );
 }
 
-export default OlympicTimelinePage;
+export default OlympicsTimelinePage;
 
 export const Head = () => (
   <>
-    <title>Olympic Timeline | Empathy Bytes</title>
+    <title>Olympics Timeline | Empathy Bytes</title>
   </>
 );
 
 export const query = graphql`
-  query OlympicTimelineQuery {
+  query OlympicsTimelineNestedQuery {
     timelineEvents: allNodeOlympicsTimelineEvent(
       sort: { field_field_event_order: ASC }
     ) {

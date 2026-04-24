@@ -25,7 +25,21 @@ exports.onCreateWebpackConfig = ({
 
 // Runs a GraphQL Call
 exports.createPages = async ({actions, graphql}) => {
-    const { createPage } = actions;
+    const { createPage, createRedirect } = actions;
+
+    createRedirect({
+      fromPath: "/olympic-timeline",
+      toPath: "/projects/olympics/timeline",
+      isPermanent: true,
+      redirectInBrowser: true,
+    });
+
+    createRedirect({
+      fromPath: "/olympic-gallery",
+      toPath: "/projects/olympics/gallery",
+      isPermanent: true,
+      redirectInBrowser: true,
+    });
 
     /**
      * GENERATING COLLECTION PAGES
@@ -44,15 +58,22 @@ exports.createPages = async ({actions, graphql}) => {
       }
     `);
 
-    collections.data.allNodeCollection.nodes.map(collectionData =>
-        createPage({
-            path: "/projects" + collectionData.path.alias,
-            component: path.resolve(`src/templates/collection.js`),
-            context: {
-                CollectionTitle: collectionData.title,
-            },
-        })
-    );
+    collections.data.allNodeCollection.nodes.forEach((collectionData) => {
+      const isOlympicsCollection =
+        (collectionData.title || "").trim().toLowerCase() === "olympics at georgia tech";
+
+      if (isOlympicsCollection) {
+        return;
+      }
+
+      createPage({
+        path: "/projects" + collectionData.path.alias,
+        component: path.resolve(`src/templates/collection.js`),
+        context: {
+          CollectionTitle: collectionData.title,
+        },
+      });
+    });
 
         /**
      * GENERATING ARTICLE PAGES

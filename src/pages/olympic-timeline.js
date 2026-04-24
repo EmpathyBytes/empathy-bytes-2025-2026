@@ -140,7 +140,7 @@ function OlympicTimelinePage({ data }) {
                 Explore the historic journey of how Georgia Tech transformed into
                 the Olympic Village for the 1996 Centennial Games. From
                 cutting-edge virtual reality to defusing a nuclear reactor,
-                discover the remarkable story behind Atlanta&apos;s Olympic legacy.
+                discover the remarkable story behind Atlanta&apos;s Olympic legacy!
               </p>
             </div>
           </div>

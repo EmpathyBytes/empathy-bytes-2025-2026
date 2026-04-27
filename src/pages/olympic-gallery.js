@@ -12,7 +12,24 @@ import Layout from "../components/layout";
 const OlympicGallery = ({ data }) => {
   const [index, setIndex] = useState(-1);
 
-  const photos = data.allFile.nodes.map((node) => ({
+  // 1. Get the nodes safely
+  const nodes = data?.allFile?.nodes || [];
+
+  // 2. If no nodes are found, show a giant warning on the screen
+  if (nodes.length === 0) {
+    return (
+      <Layout>
+        <div style={{ padding: "100px", textAlign: "center", background: "red", color: "white" }}>
+          <h1>DEBUG: NO IMAGES FOUND</h1>
+          <p>Gatsby is not seeing any files in the 'olympic_village_photo_gallery' folder.</p>
+        </div>
+      </Layout>
+    );
+  }
+
+  // ... (rest of your existing mapping and return code)
+
+  const photos = nodes.map((node) => ({
     src: node.childImageSharp.gatsbyImageData.images.fallback.src,
     width: node.childImageSharp.gatsbyImageData.width,
     height: node.childImageSharp.gatsbyImageData.height,
@@ -21,46 +38,52 @@ const OlympicGallery = ({ data }) => {
   }));
 
   return (
-    // Wrap the page in layout
     <Layout>
       <div style={{ 
-        padding: "2vw", 
-        backgroundColor: "#F6F8F9", 
-        minHeight: "100vh",
-        textAlign: "center" 
+        position: "relative", // Keeps it in document flow
+        zIndex: 10,           // Ensures it's above any background layers
+        width: "100%", 
+        minHeight: "800px",   // Force a minimum height so it doesn't collapse
+        padding: "50px 20px",
+        backgroundColor: "#F6F8F9",
+        display: "block"      // Ensure it's not being hidden by a parent flexbox
       }}>
-        <h1 style={{ 
-          fontFamily: "Roboto Slab, serif", 
-          fontWeight: "bold", 
-          fontSize: "2rem", 
-          color: "#003057",
-          marginBottom: "1rem"
-        }}>
+        <h1 style={{ color: "#003057", textAlign: "center" }}>
           Olympic History at Georgia Tech
         </h1>
         
-        <p style={{ 
-          fontFamily: "Roboto Slab, serif", 
-          fontSize: "1rem", 
-          margin: "0 auto 5vw auto", 
-          maxWidth: "800px",
-          color: "#000000"
+        {/* The Grid */}
+        <div style={{ 
+          margin: "40px auto", 
+          maxWidth: "1200px", 
+          opacity: 1, 
+          visibility: "visible" 
         }}>
-          Explore our collection of Olympic Village photos. Click any photo to view it in full size. 
-        </p>
-
-        <div style={{ margin: "0 auto", maxWidth: "90vw" }}>
           <PhotoAlbum
             layout="masonry"
             photos={photos}
             onClick={({ index }) => setIndex(index)}
             renderPhoto={({ photo, wrapperStyle }) => (
-              <div style={wrapperStyle}>
-                <GatsbyImage
-                  image={photo.fullRes}
-                  alt={photo.key}
-                  style={{ width: "100%", height: "100%" }}
-                />
+              <div style={{ ...wrapperStyle, position: "relative" }}>
+                {photo.fullRes ? (
+                  <GatsbyImage
+                    image={photo.fullRes}
+                    alt="Olympic Gallery Image"
+                    style={{ 
+                      width: "100%", 
+                      height: "100%",
+                      display: "block" 
+                    }}
+                    loading="eager" // Force it to load immediately
+                  />
+                ) : (
+                  /* Fallback if GatsbyImage fails */
+                  <img 
+                    src={photo.src} 
+                    alt="Fallback" 
+                    style={{ width: "100%" }} 
+                  />
+                )}
               </div>
             )}
           />

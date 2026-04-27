@@ -12,9 +12,11 @@ import Layout from "../components/layout";
 const OlympicGallery = ({ data }) => {
   const [index, setIndex] = useState(-1);
 
+  // Debug
   // 1. Get the nodes safely
   const nodes = data?.allFile?.nodes || [];
-
+  
+  // Edge case
   // 2. If no nodes are found, show a giant warning on the screen
   if (nodes.length === 0) {
     return (
@@ -26,8 +28,6 @@ const OlympicGallery = ({ data }) => {
       </Layout>
     );
   }
-
-  // ... (rest of your existing mapping and return code)
 
   const photos = nodes.map((node) => ({
     src: node.childImageSharp.gatsbyImageData.images.fallback.src,

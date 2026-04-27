@@ -23,6 +23,14 @@ const ProjectsPage = ({data}) => {
 
     //const arr takes in data from drupal
     const arr = data.collections.nodes;
+    // FUTURE TICKET IDEA: remove this local sort and add a real ordering system in Drupal, then remove this block.
+    const orderedCollections = [...arr].sort((a, b) => {
+        const aIsOlympics = (a?.title || "").trim().toLowerCase() === "olympics at georgia tech";
+        const bIsOlympics = (b?.title || "").trim().toLowerCase() === "olympics at georgia tech";
+
+        if (aIsOlympics === bIsOlympics) return 0;
+        return aIsOlympics ? -1 : 1;
+    });
 
     // State management for filtering collections
     const [selectedCategory, setSelectedCategory] = useState('all');
@@ -30,11 +38,11 @@ const ProjectsPage = ({data}) => {
     // Function to filter collections based on selected category
     const getFilteredCollections = () => {
         if (selectedCategory === 'all') {
-            return arr;
+            return orderedCollections;
         }
         
         // Filter collections based on title keywords
-        return arr.filter(item => {
+        return orderedCollections.filter(item => {
             const title = item.title.toLowerCase();
             switch (selectedCategory) {
                 case 'makerspaces':

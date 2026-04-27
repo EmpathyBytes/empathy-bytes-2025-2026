@@ -66,6 +66,7 @@ const OlympicGallery = ({ data }) => {
           margin: "0 auto 5vw auto",
           maxWidth: "800px",
           color: "#000000",
+          textAlign: "center",
         }}
       >
         Explore our collection of Olympic Village photos. Click any photo to view it in full size.

@@ -8,15 +8,8 @@ import splash1 from "../images/homepage/splash1.jpg"
 import splash2 from "../images/homepage/splash2.jpg"
 import teampic from "../images/homepage/teampic.jpg"
 
-// import webicon from "../images/subteam-icons/webteambordered.png"
-// import mediaicon from "../images/subteam-icons/mediateambordered.png"
-// import appicon from "../images/subteam-icons/appteambordered.png"
-// import emtechicon from "../images/subteam-icons/emergingtechteambordered.png"
-
 
 import Carousel from 'react-material-ui-carousel'
-// import CardMedia from '@mui/material/CardMedia';
-// import { DesktopAccessDisabled } from "@mui/icons-material";
 
 import useMediaQuery from '@mui/material/useMediaQuery';
 
@@ -65,8 +58,6 @@ function IndexPage() {
                   body="Empathy Bytes is a student run research project focused on creating immersive technology and media centered around empathy. 
                   We think outside traditional modes of communication and documentation to create radical and unique experiences. Our research 
                   currently focuses on identifying and presenting distinct communities connected to Georgia Tech."
-                  // link="/contact"
-                  // btnTitle="Learn More"
                 />
               </div>
             </div>

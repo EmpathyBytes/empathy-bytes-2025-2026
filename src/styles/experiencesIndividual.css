@@ -57,17 +57,12 @@ iframe {
     height: 50vw;
 }
 
-
-
 .full-container-experiences {
     padding: 6vh;
     margin-bottom: var(--navbar-top-height);
     background-color: var(--color-peacockblue);
 }
 
-.grid-margins-experiences { /* THIS IS THE PADDING FOR THE PHONE */
-    padding: 0 3% 0 3%; /* no longer used in webteam.js due to banner */
-}
 @media screen and (max-width: 600px) {
     .grid-margins-experiences {
         padding: 0; /* Adjust the padding for screens 600px or less */
@@ -80,15 +75,11 @@ iframe {
 .vr-container-2 {
     height: 500vh;
     width: 100%;
-    /* background-color: #004B87; */
 }
-
 .sub-header-experiences {
     font-family: 'Roboto Slab', serif;
     font-size: 2rem;
     background-color: var(--color-peacockblue);
-
-    /*padding-left: 20px;*/
 
 }
 
@@ -98,18 +89,7 @@ iframe {
     background-color: var(--color-peacockblue);
 }
 
-/* .paragraph-indent-experiences-left {
-    padding-left: 5%;
-    color: white;
-    background-color: #004B87;
-
-} */
-
 @media screen and (max-width: 600px) {
-    /* .paragraph-indent-experiences-left {
-        padding-left: 0; 
-        padding-right: 80px;
-    } */
     .paragraph-indent-experiences-right {
         padding-right: 5%;
         color: var(--color-offwhite);
@@ -118,7 +98,5 @@ iframe {
     .left-align-experiences {
         text-align: right;
     }
-
-
 }
 }

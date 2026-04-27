@@ -4,13 +4,6 @@
     padding: 0.5vw;
     box-sizing: border-box;
 }
-/*.summary {
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    line-clamp: 3;
-    text-overflow: ellipsis;
-    overflow: hidden; 
-}*/
 
 .img-style {
     border-radius: 0.3vh;

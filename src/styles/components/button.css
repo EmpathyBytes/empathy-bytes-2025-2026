@@ -7,7 +7,7 @@
   --eb-gold-500: #E0BB56;   /* accent */
   --eb-gray-400: #D9D9D9;   /* border/disabled */
 
-  /* Typography 
+  /* Typography */
   --eb-font-body: "Roboto", system-ui, -apple-system, Segoe UI, Arial, sans-serif;
   --eb-font-head: "Roboto Slab", Georgia, serif;
 
@@ -38,11 +38,6 @@
   --btn-outline-border: var(--eb-navy-900);
   --btn-outline-hover-bg: var(--eb-neutral-50);
 
-  /* Optional accent variant if wanted a gold CTA later
-  --btn-accent-bg: var(--eb-gold-500);
-  --btn-accent-fg: #000;
-  --btn-accent-hover: #d2a744;
-  */
 }
 
 /* Base */

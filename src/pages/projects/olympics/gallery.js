@@ -56,7 +56,7 @@ const OlympicGallery = ({ data }) => {
           marginBottom: "1rem",
         }}
       >
-        Olympic History at Georgia Tech
+        Perspectives on Georgia Tech's Campus
       </h1>
 
       <p
@@ -69,7 +69,7 @@ const OlympicGallery = ({ data }) => {
           textAlign: "center",
         }}
       >
-        Explore our collection of Olympic Village photos. Click any photo to view it in full size.
+        A project that spotlights the perspectives of Georgia Tech students looking out different windows across campus.
       </p>
 
       {/* Photo grid */}

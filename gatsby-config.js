@@ -57,8 +57,16 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `postcard-images`,               // ← this is what your query will reference
-        path: `${__dirname}/src/images/audio_content/postcards`, // ← create this folder and put your images here
+        name: `postcard-images`,              
+        path: `${__dirname}/src/images/audio_content/postcards`, 
+      },
+    },
+    // Audio - Cards images 
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `card-images`,
+        path: `${__dirname}/src/images/audio_content/cards`,
       },
     },
     // Gatsby image plugins

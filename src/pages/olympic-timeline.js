@@ -6,6 +6,8 @@ import {
 } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
 import Layout from "../components/layout";
+import Loading from "../components/loading";
+import ErrorMessage from "../components/errormessage";
 
 const pageStyles = {
   wrapper: {
@@ -116,7 +118,15 @@ const getEventImage = (relationships) => {
   }));
 };
 
-function OlympicTimelinePage({ data }) {
+function OlympicTimelinePage({ data, errors }) {
+  if (errors) {
+    return (<ErrorMessage message='Failed to load Olympic Timeline Page.'
+      onRetry={() => window.location.reload()}/>
+    );
+  }
+  if (!data) {
+    return <Loading message='Loading Olympic Timeline Page...'/>;
+  }
   const timelineEvents = data?.timelineEvents?.nodes || [];
 
   return (

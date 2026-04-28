@@ -3,6 +3,7 @@ import * as React from "react";
 import Footer from "./footer"
 import Newnav from "./newnav";
 import "../styles/navstyles.css";
+import ErrorBoundary from "./errorboundary";
 
 var year = new Date().getFullYear;
 
@@ -11,15 +12,17 @@ var year = new Date().getFullYear;
 
 export default function Layout(props) {
   return (
-    <div>
-      {/* <Navbar transparent={!!props.transparent}/> */}
-      <Newnav/>
-      <div id="page-container">
-        <div id="content-wrap">
-            {props.children}
+    <ErrorBoundary>
+      <div>
+        {/* <Navbar transparent={!!props.transparent}/> */}
+        <Newnav/>
+        <div id="page-container">
+          <div id="content-wrap">
+              {props.children}
+          </div>
+          <Footer/>
         </div>
-      <Footer/>
-    </div>
-    </div>
-  );
-}
+      </div>
+    </ErrorBoundary>
+    );
+  }

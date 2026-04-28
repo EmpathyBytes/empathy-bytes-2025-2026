@@ -5,9 +5,20 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import PhotoAlbum from "react-photo-album";
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
+import Loading from "../components/loading";
+import ErrorMessage from "../components/errormessage";
 
-const OlympicGallery = ({ data }) => {
+const OlympicGallery = ({ data, errors }) => {
   const [index, setIndex] = useState(-1);
+
+  if (errors) {
+    return (<ErrorMessage message='Failed to load Olympic Gallery Page.'
+      onRetry={() => window.location.reload()}/>
+    );
+  }
+  if (!data) {
+    return <Loading message='Loading Olympic Gallery Page...'/>;
+  }
 
   // map the nodes from Gatsby into a format the Photo Album understands 
   const photos = data.allFile.nodes.map((node) => ({

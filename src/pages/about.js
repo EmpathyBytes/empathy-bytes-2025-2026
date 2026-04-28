@@ -6,16 +6,26 @@ import { graphql } from "gatsby";
 import "../styles/about.css"
 import "../styles/all.css"
 import AboutComponent from "../components/aboutComponent" // everything relating to the images
+import Loading from "../components/loading";
+import ErrorMessage from "../components/errormessage";
 
 import Grid from '@mui/material/Grid';
 
-function AboutPage({ data }) {
-
+function AboutPage({ data, errors }) {
   // These functions set the visibility of each team
   const [visEmerging, setToggleEmerging] = useState(false);
   const [visWeb, setToggleWeb] = useState(true);
   const [visMedia, setToggleMedia] = useState(false);
   const [visApp, setToggleApp] = useState(false);
+
+  if (errors) {
+    return (<ErrorMessage message='Failed to load About Page.'
+      onRetry={() => window.location.reload()} />
+    );
+  }
+  if (!data) {
+    return <Loading message='Loading About Page...'/>;
+  }
 
   // Extract team member info from each query
   const webMembers = data.webTeam.relationships.node__team_members;

@@ -8,6 +8,8 @@ import "../styles/projects.css"
 import "../styles/all.css"
 import useMediaQuery from '@mui/material/useMediaQuery';
 import ScrollToTop from "../components/scrollToTop";
+import Loading from "../components/loading";
+import ErrorMessage from "../components/errormessage";
 
 /**
  * This is the projects homepage. It displays all of the
@@ -17,7 +19,7 @@ import ScrollToTop from "../components/scrollToTop";
  * @returns projectsPage
  */
 
-const ProjectsPage = ({data}) => {
+const ProjectsPage = ({data, errors}) => {
     //const matches takes in the width of the device
     const matches = useMediaQuery('(min-width:600px)');
 
@@ -26,6 +28,15 @@ const ProjectsPage = ({data}) => {
 
     // State management for filtering collections
     const [selectedCategory, setSelectedCategory] = useState('all');
+
+    if (errors) {
+        return (<ErrorMessage message='Failed to load Projects Page.'
+            onRetry={() => window.location.reload()}/>
+        );
+    }
+    if (!data) {
+        return <Loading message='Loading Projects Page...'/>;
+    }
 
     // Function to filter collections based on selected category
     const getFilteredCollections = () => {

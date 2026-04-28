@@ -144,16 +144,17 @@ function OlympicsTimelinePage({ data }) {
           </Link>
         </div>
 
-        <h1 style={pageStyles.pageTitle}>Olympics Timeline</h1>
+        <h1 style={pageStyles.pageTitle}>Olympics @ Tech</h1>
         <div style={pageStyles.intro}>
           <div style={pageStyles.introInner}>
-            <h2 style={pageStyles.title}>1996 Olympics at Georgia Tech</h2>
+            <h2 style={pageStyles.title}>1996 Olympics @ Georgia Tech</h2>
             <div style={pageStyles.summaryCard}>
               <p style={pageStyles.summary}>
-                Explore the historic journey of how Georgia Tech transformed into
-                the Olympic Village for the 1996 Centennial Games. From
-                cutting-edge virtual reality to defusing a nuclear reactor,
-                discover the remarkable story behind Atlanta&apos;s Olympic legacy!
+                Explore how Georgia Tech and the greater Atlanta 
+  area was transformed by the hosting of the 1996 Centennial Olympic Games. 
+    From inception to the closing ceremony, scroll down to read stories from 
+    campus and find out how GT alumni helped to make it all happen!
+
               </p>
             </div>
           </div>

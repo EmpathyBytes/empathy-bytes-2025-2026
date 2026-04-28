@@ -228,13 +228,13 @@ function ItemModal({ item, onClose }) {
               <strong>Why do you carry these items?</strong>
               <p>{item.why}</p>
             </div>
-          </div>
-        </div>
-        <div className="ec-modal-details">
-          <div className="ec-modal-detail-item">
+            <div className="ec-modal-detail-item">
             <strong>What's one item you can't leave without? Why?</strong>
             <p>{item.cantLeaveWithout}</p>
           </div>
+          </div>
+        </div>
+        <div className="ec-modal-details">
           <div className="ec-modal-detail-item">
             <strong>What's the most unexpected thing in your bag?</strong>
             <p>{item.unexpected}</p>

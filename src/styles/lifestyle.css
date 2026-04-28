@@ -74,7 +74,7 @@
   font-weight: 700;
   letter-spacing: 0.02em;
   margin: 0;
-  color: var(--color-offwhite);
+  color: var(--color-navyblue);
 }
 
 .ec-submit-btn {
@@ -172,7 +172,9 @@
   aspect-ratio: 1 / 1;
   background: #c8c8c8;
   border-radius: 4px;
-  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.2s, filter 0.2s, border-color 0.2s;
+  border: 2px solid transparent;
 }
 
 .ec-grid-cell img {
@@ -180,6 +182,89 @@
   height: 100%;
   object-fit: cover;
   display: block;
+}
+/* ── Grid Hover Interaction ── */
+
+.ec-grid-cell:hover {
+  transform: translateY(-4px);
+  filter: brightness(1.05);
+  border-color: var(--color-navyblue);
+}
+
+
+/* ── Modal Popup Styles ── */
+.ec-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(28, 53, 87, 0.6);
+  backdrop-filter: blur(4px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.ec-modal-content {
+  background: var(--color-offwhite);
+  width: 100%;
+  max-width: 800px;
+  border-radius: 12px;
+  padding: 40px;
+  position: relative;
+  overflow-y: auto;
+  max-height: 90vh;
+  color: var(--color-black);
+}
+
+.ec-modal-close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.ec-modal-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin-bottom: 24px;
+}
+
+.ec-modal-image-box {
+  background: #c8c8c8;
+  aspect-ratio: 1/1;
+  border-radius: 8px;
+}
+
+.ec-modal-details {
+  border-top: 1px solid #ddd;
+  padding-top: 20px;
+}
+
+.ec-modal-detail-item {
+  margin-bottom: 16px;
+}
+
+.ec-modal-detail-item strong {
+  display: block;
+  font-family: 'Roboto Slab', serif;
+  margin-bottom: 4px;
+}
+
+/* Target all paragraphs and labels inside the modal info area to override white styles */
+.ec-modal-info p, 
+.ec-modal-info p strong,
+.ec-modal-section strong,
+.ec-modal-section p {
+  color: var(--color-black) !important; 
+}
+.ec-modal-detail-item strong,
+.ec-modal-detail-item p {
+  color: var(--color-black) !important;
 }
 
 /* ── Accordion ─────────────────────────────────────────────────────────────── */
@@ -237,6 +322,33 @@
 .ec-plus-icon.open {
   transform: rotate(45deg);
 }
+
+/* ── Accordion Sub-Item Row ── */
+.ec-sub-item-row {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+  padding: 10px 0 24px;
+}
+
+.ec-sub-item-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.ec-sub-item-label {
+  font-size: 0.75rem;
+  color: #333;
+  font-weight: 500;
+}
+
+.ec-sub-item-placeholder {
+  background: #c8c8c8;
+  aspect-ratio: 1 / 1;
+  border-radius: 4px;
+}
+
 
 /* ── About ──────────────────────────────────────────────────────────────────── */
 .ec-about-section {

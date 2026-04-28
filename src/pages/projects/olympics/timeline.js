@@ -180,7 +180,7 @@ function OlympicsTimelinePage({ data }) {
         <VerticalTimeline>
           {timelineEvents.map((eventNode, index) => {
             const eventTitle = eventNode?.field_field_event_title?.value || "Untitled Event";
-            const eventSubtitle = eventNode?.field_field_event_subtitle?.value || "";
+            // const eventSubtitle = eventNode?.field_field_event_subtitle || "";
             const eventDate = eventNode?.field_field_display_date?.value || eventNode?.field_field_event_date || "";
             const eventDescriptionHtml = eventNode?.field_field_event_body?.processed || "";
             const eventImages = getEventImage(eventNode?.relationships);
@@ -198,7 +198,7 @@ function OlympicsTimelinePage({ data }) {
               >
                 <div style={pageStyles.textStack}>
                   <h3 style={pageStyles.cardTitle}>{eventTitle}</h3>
-                  {eventSubtitle && <p style={pageStyles.subtitle}>{eventSubtitle}</p>}
+                  {/* {eventSubtitle && <p style={pageStyles.subtitle}>{eventSubtitle}</p>} */}
 
                   {eventDescriptionHtml ? (
                     <div
@@ -254,7 +254,6 @@ function OlympicsTimelinePage({ data }) {
                 <li style={pageStyles.summaryListItem}>
                   Bryan Jacob, CivE ‘93 alumni and 2-time Olympian, who competed in the 1996 games as a bantam- and featherweight weightlifter.
                 </li>
-                </li>
                 <li style={pageStyles.summaryListItem}>
                   Jacob Elsas, historical preservationist at The Patch Works Art & History Center and friend of GT.
                 </li>
@@ -298,9 +297,6 @@ export const query = graphql`
         }
         field_field_event_date
         field_field_event_order
-        field_field_event_subtitle {
-          value
-        }
         field_field_event_title {
           value
         }

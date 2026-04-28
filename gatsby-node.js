@@ -23,6 +23,26 @@ exports.onCreateWebpackConfig = ({
   })
 }
 
+exports.createSchemaCustomization = ({ actions }) => {
+  const { createTypes } = actions;
+
+  createTypes(`
+    type node__olympics_timeline_event implements Node {
+      field_field_event_subtitle: String
+    }
+  `);
+};
+
+exports.createSchemaCustomization = ({ actions }) => {
+  const { createTypes } = actions;
+
+  createTypes(`
+    type node__olympics_gallery_image implements Node {
+      field_caption: String
+    }
+  `);
+};
+
 // Runs a GraphQL Call
 exports.createPages = async ({actions, graphql}) => {
     const { createPage, createRedirect } = actions;

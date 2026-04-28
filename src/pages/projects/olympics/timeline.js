@@ -33,6 +33,11 @@ const pageStyles = {
     padding: "2rem 1.5rem 3rem",
     marginBottom: "3rem",
   },
+  outro: {
+    background: "#00548f",
+    padding: "2rem 1.5rem 3rem",
+    marginTop: "3rem",
+  },
   introInner: {
     maxWidth: "900px",
     margin: "0 auto",
@@ -52,6 +57,18 @@ const pageStyles = {
     margin: "0 auto",
     maxWidth: "800px",
     padding: "1.25rem 1.5rem",
+  },
+  summaryList: {
+    color: "#4b5563",
+    fontSize: "1.15rem",
+    lineHeight: 1.5,
+    margin: "1rem auto 0",
+    maxWidth: "500px",
+    textAlign: "left",
+    paddingLeft: "2rem",
+  },
+  summaryListItem: {
+    marginBottom: "0.5rem",
   },
   summary: {
     color: "#4b5563",
@@ -220,6 +237,38 @@ function OlympicsTimelinePage({ data }) {
             );
           })}
         </VerticalTimeline>
+        <div style={pageStyles.outro}>
+          <div style={pageStyles.introInner}>
+            <h2 style={pageStyles.title}>Acknowledgements and Notes</h2>
+            <div style={pageStyles.summaryCard}>
+              <p style={pageStyles.summary}>
+                Thank you to the following alumni and friends of GT, who lent their stories and voices to this project:
+              </p>
+              <ul style={pageStyles.summaryList}>
+                <li style={pageStyles.summaryListItem}>
+                  Grace Rembert, IE ‘83 alumni and participant in the Atlanta HOST program, where a coalition of local Atlanta churches and volunteers provided free housing for Olympic athletes.
+                </li>
+                <li style={pageStyles.summaryListItem}>
+                  Jeff Floyd, Arch ‘70 alumni and founder of Sizemore Floyd Architects, a leading architecture firm that helped to make the 1996 Olympics possible.
+                </li>
+                <li style={pageStyles.summaryListItem}>
+                  Bryan Jacob, CivE ‘93 alumni and 2-time Olympian, who competed in the 1996 games as a bantam- and featherweight weightlifter.
+                </li>
+                </li>
+                <li style={pageStyles.summaryListItem}>
+                  Jacob Elsas, historical preservationist at The Patch Works Art & History Center and friend of GT.
+                </li>
+              </ul>
+              <p style={pageStyles.summary}>
+                Please note as well that this is not a complete, nor entirely comprehensive, timeline of the 1996 Olympics at GT. It is a work in progress, which we will continue to improve in further semesters. We encourage you to research further if interested!
+              </p>
+              <p style={pageStyles.summary}>
+                Want to contribute to this project? Contact aroemer3@gatech.edu for details!
+              </p>
+
+            </div>
+          </div>
+        </div>
       </section>
     </Layout>
   );

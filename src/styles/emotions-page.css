@@ -39,3 +39,144 @@ div:has(> #page-container:has(.emotions-map-container)) {
     height: 100vh;
     overflow: hidden;
 }
+
+.zoomUI {
+    position: absolute;
+    top: 20%;
+    right: 1%;
+    z-index: 2000;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.zoomIcon {
+    width: 40px;
+    cursor: pointer;
+}
+
+.zoomSlider {
+    position: relative;
+    width: 8px;
+    height: 200;
+}
+
+.sliderBar {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.sliderButton {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    width: 20px;
+}
+
+.sliderClickArea {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+.mapWrapper {
+    position: relative;
+    height: 800px;
+    width: 100%;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 75, 135, 0.8); /* #004B87 */
+    backdrop-filter: blur(2px);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.buzzingThoughtsGold {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    pointer-events: none;
+}
+
+.buzzingThoughtsBlue {
+    position: absolute;
+    top: 8%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    z-Index: 900;
+    pointer-events: none;
+}
+
+.addStory {
+    position: absolute;
+    top: 47%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 350px;
+    pointer-events: none;
+}
+
+.mapContainer {
+    height: 100%;
+    width: 100%;
+}
+
+.popupBox {
+    width: 220px;
+}
+
+.popup {
+    width: 100%;
+    height: 80px;
+    border: none;
+    outline: none;
+    resize: none;
+    color: #000;
+    background: white;
+}
+
+.pinText {
+    margin: 0;
+    color: #000;
+}
+
+.buttonRow {
+    display: flex;
+    gap: 6px;
+    margin-top: 8px;
+}
+
+.saveButton {
+    flex: 1;
+    background: #004B87;
+    color: white;
+    border-radius: 6px;
+    padding: 6px;
+}
+
+.deleteButton {
+    flex: 1;
+    background: #d9534f;
+    color: white;
+    border-radius: 6px;
+    padding: 6px;
+}

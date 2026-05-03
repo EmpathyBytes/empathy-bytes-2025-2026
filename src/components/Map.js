@@ -3,10 +3,11 @@ import { MapContainer, TileLayer, useMap, Marker, Popup, useMapEvents } from 're
 import 'leaflet/dist/leaflet.css';
 
 import L from 'leaflet';
-import icon from '../images/emotions_page_ui/map_pin.png';
+import goldPin from '../images/emotions_page_ui/map_pin_gold.png';
+import bluePin from '../images/emotions_page_ui/map_pin_blue.png';
 
 // all image imports from emotions_page_ui
-import buzzingThoughts from '../images/emotions_page_ui/buzzing_thoughts_logo_gold.png';
+import buzzingThoughtsGold from '../images/emotions_page_ui/buzzing_thoughts_logo_gold.png';
 import buzzingThoughtsBlue from '../images/emotions_page_ui/buzzing_thoughts_logo_blue.png';
 import addStory from '../images/emotions_page_ui/add_your_story.png';
 
@@ -33,52 +34,31 @@ const CustomZoomControls = ({ showOverlay }) => {
     const percent = (zoom - minZoom) / (maxZoom - minZoom)
 
     return (
-        <div style={{
-            position: 'absolute',
-            top: '20%',
-            right: '1%',
-            zIndex: 2000,
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            gap: '10px'
-        }}>
+        <div className="zoomUI">
 
             <img
                 src={zoomInIcon}
                 onClick={() => map.zoomIn()}
-                style={{ width: 40, cursor: 'pointer' }}
+                className="zoomIcon"
             />
 
-            <div style={{
-                position: 'relative',
-                width: '8px',
-                height: 'auto'
-            }}>
+            <div className="zoomSlider">
 
                 <img
                     src={sliderBar}
-                    style={{
-                        width: '100%',
-                        height: '100%',
-                        display: 'block'
-                    }}
+                    className="sliderBar"
                 />
 
                 <img
                     src={sliderButton}
+                    className="sliderButton"
                     style={{
-                        position: 'absolute',
-                        left: '50%',
-                        transform: `translate(-50%, -50%)`,
-                        top: `${(1 - percent) * 100}%`,
-                        cursor: 'pointer',
-                        width: '20px'
-                        
+                        top: `${(1 - percent) * 100}%`
                     }}
                 />
 
                 <div
+                    className="sliderClickArea"
                     onClick={(e) => {
                         const rect = e.currentTarget.getBoundingClientRect()
                         const y = e.clientY - rect.top
@@ -88,36 +68,28 @@ const CustomZoomControls = ({ showOverlay }) => {
                         setZoom(newZoom)
                         map.setZoom(newZoom)
                     }}
-                    style={{
-                        position: 'absolute',
-                        top: 0,
-                        left: 0,
-                        width: '100%',
-                        height: '100%',
-                        cursor: 'pointer'
-                    }}
                 />
             </div>
 
             <img
                 src={zoomOutIcon}
                 onClick={() => map.zoomOut()}
-                style={{ width: 40, cursor: 'pointer' }}
+                className="zoomIcon"
             />
         </div>
     )
 }
 
-// icons
+// icons - defaults to gold icon
 let DefaultIcon = L.icon({
-    iconUrl: icon,
-    iconSize: [40, 40],
-    iconAnchor: [20, 40],
+    iconUrl: goldPin,
+    iconSize: [30, 35],
+    iconAnchor: [15, 30],
 });
 
 L.Marker.prototype.options.icon = DefaultIcon;
 
-// click handler
+// click handler that sets the icons
 const ClickHandler = ({ setMarkers, setActiveMarkerId }) => {
     useMapEvents({
         click(e) {
@@ -136,7 +108,6 @@ const ClickHandler = ({ setMarkers, setActiveMarkerId }) => {
                     hasChanged: true
                 }
             ])
-
             setActiveMarkerId(id)
         },
     })
@@ -147,16 +118,29 @@ const Map = () => {
     const [markers, setMarkers] = useState([])
     const [showOverlay, setShowOverlay] = useState(true)
     const [activeMarkerId, setActiveMarkerId] = useState(null)
+    const [canAddPins, setCanAddPins] = useState(false)
     const markerRefs = useRef({})
     const center = [33.7735, -84.3963] // gatech coordinates
 
-    // starting pin with Sneha's story
+    // starting pin with placeholder stories
     const fixedMarkers = [
         {
-            id: 'starter-pin',
+            id: 'sneha-pin',
             lat: 33.7747,
             lng: -84.3963,
             text: "failed my first midterm here - Sneha" // :(
+        },
+        {
+            id: 'placeholder-pin',
+            lat: 33.7723,
+            lng: -84.3928,
+            text: "Bruno Mars concert was AMAZING!!! - Anon"
+        },
+        {
+            id: 'placeholder-pin2',
+            lat: 33.7695,
+            lng: -84.3909,
+            text: "roommate almost started a fire from microwaving burnt brownies - Anon"
         }
     ]
 
@@ -191,74 +175,63 @@ const Map = () => {
         }
     }, [activeMarkerId])
 
+    // passcode to activate clicker event: type 'admin' using keyboard
+    useEffect(() => {
+        const secret = ['a', 'd', 'm', 'i', 'n']
+        let buffer = []
+        const handleKey = (e) => {
+            buffer.push(e.key.toLowerCase())
+            if (buffer.length > secret.length) {
+                buffer.shift()
+            }
+            if (JSON.stringify(buffer) === JSON.stringify(secret)) {
+                setCanAddPins((prev) => !prev)
+                buffer = []
+            }
+        }
+        window.addEventListener('keydown', handleKey)
+        return () => window.removeEventListener('keydown', handleKey)
+    }, [])
+
     return (
-        <div style={{ position: 'relative', height: '800px', width: '100%' }}>
+         <div className="mapWrapper">
 
             {showOverlay && (
                 <div
+                    className="overlay"
                     onClick={() => setShowOverlay(false)}
-                    style={{
-                        position: 'absolute',
-                        top: 0,
-                        left: 0,
-                        width: '100%',
-                        height: '100%',
-                        backgroundColor: 'rgba(0, 75, 135, 0.8)', // #004B87 in rgba
-                        backdropFilter: 'blur(2px)',
-                        zIndex: 1000,
-                        display: 'flex',
-                        justifyContent: 'center',
-                        alignItems: 'center',
-                        cursor: 'pointer'
-                    }}
                 >
                     <img
-                        src={buzzingThoughts}
-                        style={{
-                            position: 'absolute',
-                            top: '40%',
-                            left: '50%',
-                            transform: 'translate(-50%, -50%)',
-                            width: '600px',
-                            pointerEvents: 'none'
-                        }}
+                        className="buzzingThoughtsGold"
+                        src={buzzingThoughtsGold}
                     />
 
                     <img
+                        className="addStory"
                         src={addStory}
-                        style={{
-                            position: 'absolute',
-                            top: '47%',
-                            left: '50%',
-                            transform: 'translate(-50%, -50%)',
-                            width: '350px',
-                            pointerEvents: 'none'
-                        }}
                     />
                 </div>
             )}
 
             {!showOverlay && (
                 <img
+                    className="buzzingThoughtsBlue"
                     src={buzzingThoughtsBlue}
-                    style={{
-                        position: 'absolute',
-                        top: '10%',
-                        left: '50%',
-                        transform: 'translate(-50%, -50%)',
-                        width: '600px',
-                        zIndex: 900,
-                        pointerEvents: 'none'
-                    }}
                 />
             )}
 
             {/* map */}
             <MapContainer
+                className="mapContainer"
                 center={center}
                 zoom={16}
                 zoomControl={false}
-                style={{ height: '100%', width: '100%' }}
+                maxZoom={18} // change max zoom
+                maxBounds={[
+                    [33.76, -84.41],
+                    [33.79, -84.38]
+                ]}
+                maxBoundsViscosity={1.0}
             >
                 <TileLayer
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -266,10 +239,13 @@ const Map = () => {
 
                 <CustomZoomControls showOverlay={showOverlay} />
 
-                <ClickHandler
-                    setMarkers={setMarkers}
-                    setActiveMarkerId={setActiveMarkerId}
-                />
+                {/* can only add pins after typing 'admin' using keyboard */}
+                {canAddPins && (
+                    <ClickHandler
+                        setMarkers={setMarkers}
+                        setActiveMarkerId={setActiveMarkerId}
+                    />
+                )}
 
                 {/* Sneha's pin (and future placeholder pins)*/}
                 {fixedMarkers.map((position) => (
@@ -278,7 +254,7 @@ const Map = () => {
                         position={[position.lat, position.lng]}
                     >
                         <Popup offset={[0, -40]}>
-                            <p style={{ margin: 0, color: '#000' }}>
+                            <p className="pinText">
                                 {position.text}
                             </p>
                         </Popup>
@@ -320,7 +296,7 @@ const Map = () => {
                         }}
                     >
                         <Popup offset={[0, -40]} autoPan={false}>
-                            <div style={{ width: '220px' }}>
+                            <div className="popupBox">
 
                                 {position.isEditing ? (
                                     <textarea
@@ -346,63 +322,41 @@ const Map = () => {
                                             }
                                         }}
                                         placeholder="Write your buzzing thoughts..."
-                                        style={{
-                                            width: '100%',
-                                            height: '80px',
-                                            border: 'none',
-                                            outline: 'none',
-                                            resize: 'none',
-                                            color: '#000',
-                                            background: 'white'
-                                        }}
+                                        className="popup"
                                     />
                                 ) : (
-                                    <p style={{ margin: 0, color: '#000' }}>
+                                    <p className="pinText">
                                         {position.text}
                                     </p>
                                 )}
 
-                                {/* buttons */}
-                                <div style={{ display: 'flex', gap: '6px', marginTop: '8px' }}>
+                                {/* save and delete buttons */}
+                                    <div className="buttonRow">
 
-                                    {position.isEditing && position.hasChanged && (
+                                        {position.isEditing && position.hasChanged && (
+                                            <button
+                                                onClick={() => saveMarker(position.id)}
+                                                className="saveButton"
+                                            >
+                                                Save
+                                            </button>
+                                        )}
+
                                         <button
-                                            onClick={() => saveMarker(position.id)}
-                                            style={{
-                                                flex: 1,
-                                                background: '#004B87',
-                                                color: 'white',
-                                                border: 'none',
-                                                borderRadius: '6px',
-                                                padding: '6px'
+                                            onClick={(e) => {
+                                                e.stopPropagation()
+                                                setMarkers((prev) =>
+                                                    prev.filter((m) => m.id !== position.id)
+                                                )
                                             }}
+                                            className="deleteButton"
                                         >
-                                            Save
+                                            Delete
                                         </button>
-                                    )}
 
-                                    <button
-                                        onClick={(e) => {
-                                            e.stopPropagation()
-                                            setMarkers((prev) =>
-                                                prev.filter((m) => m.id !== position.id)
-                                            )
-                                        }}
-                                        style={{
-                                            flex: 1,
-                                            background: '#d9534f',
-                                            color: 'white',
-                                            borderRadius: '6px',
-                                            padding: '6px'
-                                        }}
-                                    >
-                                        Delete
-                                    </button>
-
-                                </div>
+                                    </div>
 
                             </div>
-
                         </Popup>
                     </Marker>
                 ))}

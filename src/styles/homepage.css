@@ -16,11 +16,6 @@ html, body {
     /* desktop */
 }
 
-@media screen and (max-width: 600px) {
-    .splash-image {
-        height: 65vh;
-    }
-}
 
 
 .top {
@@ -70,19 +65,16 @@ html, body {
 #learn-more-home {
     background-color: var(--color-peacockblue);
     padding-bottom: 7vh;
-    height: 50vh;
+    min-height: 50vh;
     text-align: center;
 }
 
 #learn-more-home .learn-more-home-section {
     background-color: var(--color-navyblue); /* Change to your desired background color */
-    /* margin: 0px 150px 0px 150px; */
     padding: 5vh; /* Add padding or other styling as needed */
-    /* Center-align the text */
   }
 
 .info {
-    /* padding: 3% 0 2% 5%; */
     max-width: 100%;
     text-align: center;
     vertical-align: middle;
@@ -90,23 +82,16 @@ html, body {
     justify-content: space-evenly;
     align-items: center;
     align-content: center;
-    height: 65vh; /* CHANGED */
+    min-height: 65vh; /* CHANGED */
     overflow: inherit;
 
 }
 
-/* mobile */
-@media screen and (max-width: 600px) {
-    .info {
-        flex-direction: column;
-    }
-}
 
 .main-content {
     justify-content: center;
     align-items: center;
     align-content: center;
-    /*gap:200px;*/
 }
 
 
@@ -120,35 +105,12 @@ html, body {
     
 }
 
-@media screen and (max-width: 600px) {
-    .info-wrapper{
-        flex-direction: column;
-    }
-}
+
 
 .header {
     font-family: 'Roboto Slab', serif;
     font-size: 3vw;
     
-}
-
-@media screen and (max-width: 600px) {
-    .header {
-        font-size: 6vw;
-    }
-}
-
-.image {
-    /* desktop; ratio = 0.603 
-    this is the div for the image
-    */
-}
-
-@media screen and (max-width: 600px) {
-    .image {
-        width: 90vw;
-        height: 55vw;
-    }        
 }
 
 /* Attributes for the team pic image */
@@ -159,13 +121,7 @@ html, body {
     
 }
 
-/* mobile */
-@media screen and (max-width: 600px) {
-    .teampic {
-        width: 100%;
-        height: 100%;
-    }
-}
+
 
 .info-card {
     height: 40vh;
@@ -186,29 +142,12 @@ html, body {
     }
 }
 
-/* mobile */
-@media screen and (max-width: 600px) {
-    .paragraph {
-        font-size: 1rem;
-    }
-}
-
 .paragraph2 {
     font-family: 'Roboto', sans-serif;
     padding:0;
-    /*position: absolute; /* taken out of the normal flow of the document */
-    
-    /*width: 100%; /* needs to be defined to keep the default block behavior */
     text-align: left;
     margin: 0; /* again, for perfect center */
     font-size: 1.3vw;
-}
-
-/* mobile */
-@media screen and (max-width: 800) {
-    .paragraph2 {
-        font-size: 1rem;
-    }
 }
 
 .card-text {
@@ -217,13 +156,6 @@ html, body {
     /* desktop */
     font-size: 1.7vw;   
     color: var(--color-navyblue);
-}
-
-@media screen and (max-width: 600px) {
-    .card-text {
-        font-size: 0.9rem;
-        color: var(--color-offwhite);
-    }
 }
 
 .container-row{
@@ -239,7 +171,89 @@ html, body {
     flex: 2;
     padding: 0% 3% 0% 4%;
 }
+/* mobile */
+@media screen and (max-width: 900px) {
+    .info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+        height: auto;
+        min-height: auto;
+        padding-top: 15vh; /*gives space between top image and arrows down */
+    }
+    .info-wrapper{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+        row-gap: 24px;
+    }
+    .info-card{
+        height: auto;
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        align-self: center;
+        margin: 0 auto;
+        text-align: center;
+    }
 
+    .learn-more-home{
+        display: flex;
+        height: auto;
+        padding-top: 2vh;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .learn-more-container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        text-align: center;
+    }
+    
+    .learn-card {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        width: 100%;
+    }
+    .header {
+        font-size: 6vw;
+    }
+    .image {
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: center;
+    } 
+    .teampic {
+        width: 100%;
+        height: auto;
+    }
+    .paragraph {
+        font-size: 1rem;
+    }
+    .paragraph2 {
+        font-size: 1rem;
+    }
+    .card-text {
+        font-size: 0.9rem;
+        color: var(--color-offwhite);
+    }
+    .splash-image {
+        height: 65vh;
+    }
+}
 
 /* Arrows on Header*/
 .arrows {
@@ -278,17 +292,17 @@ html, body {
 
 .arrows path.a1 {
 	animation-delay:-1s;
-	-webkit-animation-delay:-1s; /* Safari 和 Chrome */
+	-webkit-animation-delay:-1s; /* Safari & Chrome */
 }
 
 .arrows path.a2 {
 	animation-delay:-0.5s;
-	-webkit-animation-delay:-0.5s; /* Safari 和 Chrome */
+	-webkit-animation-delay:-0.5s; /* Safari & Chrome */
 }
 
 .arrows path.a3 {	
 	animation-delay:0s;
-	-webkit-animation-delay:0s; /* Safari 和 Chrome */
+	-webkit-animation-delay:0s; /* Safari & Chrome */
 }
 
 

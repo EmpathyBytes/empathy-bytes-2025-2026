@@ -145,21 +145,21 @@ function IndexPage() {
           <div id="learn-more-home" className="learn-more-home"> 
           {/* Had to use info-wrapper instead of a custom since 
           it made the text have a weird yellow underline */}
-          <div className="info-wrapper">
-          <div className="learn-card">
-                <LearnCard 
-                  title="Want to Learn More?"
-                  body="Check out our Experience and Project Pages to learn more about our work!"
+            <div className="learn-more-container">
+              <div className="learn-card">
+                    <LearnCard 
+                      title="Want to Learn More?"
+                      body="Check out our Experience and Project Pages to learn more about our work!"
 
-                  // Currently the links don't go to the top of the pages
-                  link="/experiences"
-                  btnTitle="Experiences"
-                  link2="/projects"
-                  btnTitle2="Projects"
-                />
-            </div>
-            </div>  
-          </div>
+                      // Currently the links don't go to the top of the pages
+                      link="/experiences"
+                      btnTitle="Experiences"
+                      link2="/projects"
+                      btnTitle2="Projects"
+                    />
+                </div>
+              </div>
+          </div>  
       </Layout>
     )
   }

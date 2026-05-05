@@ -8,22 +8,7 @@ import { useState } from "react";
 import Grid from '@mui/material/Grid';
 
 
-const postcards = [
-  { image: "tech-green", label: "Tech Green", rotate: -8, top: "10%", left: "5%" },
-  { image: "tech-tower", label: "Tech Tower", rotate: 5, top: "5%", left: "30%" },
-  { image: "bobby-dodd", label: "Bobby Dodd Stadium", rotate: -3, top: "8%", right: "5%" },
-  { image: "campanile", label: "Campanile", rotate: 7, bottom: "10%", left: "10%" },
-];
-
-
-function Header() {
-    return (
-        <div style={{ position: "relative", height: "420px", overflow: "hidden", background: "#fffdf8" }}></div>
-
-    );
-}
-
-// add webpage cards for carousel
+// add webpage cards for carousel and header
 const exploreItems = [
   { key: "bobby-dodd", label: "Stadium" },
   { key: "tech-green", label: "Tech Green" },
@@ -37,6 +22,73 @@ const exploreItems = [
   { key: "crc", label: "CRC" },
   { key: "peters-parking", label: "Peters" },
 ];
+
+
+function Header({ imageMap }) {
+  const scatteredPostcards = [
+    { key: "bobby-dodd",     label: "Bobby Dodd Stadium", rotate: -3,  top: "8%",    right: "18%" },
+    { key: "tech-green",     label: "Tech Green",         rotate: -8,  top: "5%",    left: "2%"   },
+    { key: "tech-tower",     label: "Tech Tower",         rotate: 6,   top: "2%",    left: "28%"  },
+    { key: "campanile",      label: "Campanile",          rotate: 5,   bottom: "5%", left: "8%"   },
+    { key: "culc",           label: "CULC",               rotate: -5,  top: "35%",   left: "42%"  },
+    { key: "peters-parking", label: "Peters",             rotate: 4,   bottom: "2%", right: "5%"  },
+  ];
+
+  return (
+    <div style={{
+      position: "relative",
+      height: "520px",
+      overflow: "hidden",
+      background: "#f5f5f3",
+    }}>
+
+      {/* scattered postcard images */}
+      {scatteredPostcards.map((card) => (
+      <div
+        key={card.key}
+        style={{
+          position: "absolute",
+          top: card.top,
+          left: card.left,
+          right: card.right,
+          bottom: card.bottom,
+          transform: `rotate(${card.rotate}deg)`,
+          width: "200px",   // ← controls photo size
+          zIndex: 1,
+        }}
+      >
+        {imageMap[card.key] ? (
+          <GatsbyImage image={imageMap[card.key]} alt={card.label} style={{ width: "100%", height: "100%" }} />
+        ) : (
+          <div style={{ width: "100%", height: "120px", background: "#ccc" }} />
+        )}
+      </div>
+    ))} 
+
+
+    {/* title */}
+      <div style={{
+        position: "absolute",
+        bottom: "8%",
+        left: "3%",
+        zIndex: 2,         
+      }}>
+        <h1 style={{
+          fontSize: "Abel",
+          fontWeight: 900,
+          lineHeight: 0.95,
+          margin: 0,
+          color: "#000",
+          textTransform: "uppercase",
+        }}>
+          POSTCARDS FROM
+          <br />
+          <span style={{ fontStyle: "italic" }}>GEORGIA TECH</span>
+        </h1>
+      </div>
+    </div>
+  );
+}
 
 function ExploreCarousel({ imageMap }) {
     
@@ -187,7 +239,7 @@ const collectionItems = [
   },
 ];
 
-// filter options matching the tab breakdown sheet
+// filter options 
 const FILTERS = {
   timeOfDay: ["Morning", "Midday", "Evening", "Late Night"],
   mood: ["Stillness", "Motion", "Focus", "Celebration", "Routine"],
@@ -197,7 +249,7 @@ const FILTERS = {
     
 
 function Collections({ cardMap }) {
-    // Shows all options
+    // shows all options
     const [timeFilter, setTimeFilter]         = useState("All");
     const [moodFilter, setMoodFilter]         = useState("All");
     const [activityFilter, setActivityFilter] = useState("All");
@@ -214,7 +266,7 @@ function Collections({ cardMap }) {
 
     // reusable filter row component
     const FilterRow = ({ label, options, active, setActive }) => (
-    <div style={{ flex: 1 }}>  {/* ← flex: 1 makes each take equal width */}
+    <div style={{ flex: 1 }}>  
         <select
         value={active}
         onChange={(e) => setActive(e.target.value)}
@@ -243,7 +295,7 @@ function Collections({ cardMap }) {
       <div style={{ 
         display: "flex", 
         gap: "1rem", 
-        justifyContent: "center",  // ← centers them
+        justifyContent: "center", 
         flexWrap: "wrap", 
         marginBottom: "2rem" }}>
         <FilterRow label="TIME OF DAY"  options={FILTERS.timeOfDay}      active={timeFilter}     setActive={setTimeFilter} />
@@ -256,51 +308,39 @@ function Collections({ cardMap }) {
       <div style={{
         display: "grid",
         gridTemplateColumns: "repeat(auto-fill, minmax(220px, 1fr))",
-        gap: "1.5rem",
+        gap: "2.5rem",
       }}>
         {filtered.map((item) => (
           <div key={item.key} style={{
-            borderRadius: "8px",
-            overflow: "hidden",
-            boxShadow: "2px 4px 12px rgba(0,0,0,0.12)",
-            position: "relative",
+            background: "#e8e8e8",
+            borderRadius: "4px",
+            boxShadow: "4px 4px 4px rgba(0,0,0,0.25)",
+            padding: "0",    
             cursor: "pointer",
+            position: "relative",
+            overflow: "visible",
           }}>
             {/* image */}
             {cardMap[item.key] ? (
-              <GatsbyImage image={cardMap[item.key]} alt={item.title} style={{ height: "220px" }} />
+              <GatsbyImage image={cardMap[item.key]} alt={item.title} />
             ) : (
               <div style={{ height: "220px", background: "#ccc" }} />
             )}
 
-            {/* title overlay at bottom */}
-            <div style={{
-              position: "absolute", bottom: 0, left: 0, right: 0,
-              background: "linear-gradient(transparent, rgba(0,0,0,0.7))",
-              padding: "2rem 0.75rem 0.75rem",
-            }}>
-              <p style={{ color: "#fff", fontWeight: 900, fontSize: "0.85rem", margin: 0 }}>
-                {item.title}
-              </p>
-              <p style={{ color: "#ccc", fontSize: "0.7rem", margin: "2px 0 0" }}>
-                {item.location}
-              </p>
-            </div>
-
             {/* play button */}
             <div style={{
-              position: "absolute", bottom: "8px", right: "8px",
-              background: "#fff", borderRadius: "50%",
-              width: "32px", height: "32px",
+              position: "absolute", bottom: "-20px", right: "-16px",
+              background: "#003057", borderRadius: "50%",
+              width: "54px", height: "54px",
               display: "flex", alignItems: "center", justifyContent: "center",
+              color: "#fff", 
             }}>
               ▶
             </div>
           </div>
         ))}
       </div>
-
-      {/* empty state */}
+      
       {filtered.length === 0 && (
         <p style={{ textAlign: "center", color: "#888", marginTop: "2rem" }}>
           No postcards match these filters.
@@ -332,7 +372,7 @@ export default function PostcardsPage({ data }) {
     )
 }
 
-// this runs at build time and fetches your images
+// this runs at build time and fetches images
 export const query = graphql`
   query PostcardsQuery {
     postcardImages: allFile(

@@ -108,16 +108,16 @@ export const query = graphql`
         processed
       }
       relationships {
-        field_image {
-          url
-        }
+        #field_image {
+          #url
+        #}
         field_audio {
           path {
             alias
           }
-          internal {
-            contentFilePath
-          }
+          #internal {
+            #contentFilePath
+          #}
         }
       }
     }

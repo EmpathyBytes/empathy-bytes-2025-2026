@@ -1,0 +1,1818 @@
+/* ===============================
+   FONT IMPORTS + GLOBAL PAGE STYLE
+=============================== */
+
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;700&family=Roboto:wght@400;700&family=Roboto+Slab:wght@400;500;700&display=swap");
+
+body {
+  background: #004B87;
+}
+
+
+/* ===============================
+   HERO / WEBPAGE HEADER SECTION
+=============================== */
+
+.media-hero {
+  position: relative;
+
+  height: clamp(420px, 64.9vw, 934px);
+
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #004B87;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+}
+
+.media-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 75, 135, 0.5) 50%,
+    rgba(0, 75, 135, 0.75) 75%,
+    rgba(0, 75, 135, 0.875) 87.5%,
+    #004B87 100%
+  );
+}
+
+.media-hero-content {
+  position: relative;
+  z-index: 2;
+
+  width: min(557px, 90%);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(10px, 1.8vw, 27px);
+
+  text-align: center;
+  color: #FFFFFF;
+
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+
+  transform: translateY(-4%) scale(0.82);
+}
+
+.media-hero-content h3 {
+  margin: 0;
+
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 400;
+  font-size: clamp(1.5rem, 3.3vw, 48px);
+  line-height: 1.25;
+
+  color: #FFFFFF;
+}
+
+.media-hero-content h1 {
+  margin: 0;
+
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 700;
+  font-size: clamp(3rem, 6.7vw, 96px);
+  line-height: 1.3;
+
+  color: #FFFFFF;
+}
+
+.media-hero-content h2 {
+  margin: 0;
+
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 400;
+  font-size: clamp(2rem, 4.4vw, 64px);
+  line-height: 1.3;
+
+  color: #FFFFFF;
+}
+
+
+/* ===============================
+   UNIVERSAL CARD ANIMATION SYSTEM
+   Used by About + Reading Room
+=============================== */
+
+.card-section {
+  display: flex;
+  justify-content: center;
+
+  position: relative;
+
+  opacity: 0;
+  transform: translateY(60px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.card-section.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card {
+  position: relative;
+  z-index: 1;
+
+  background: #003057;
+  border: none !important;
+
+  transition: transform 0.3s ease;
+}
+
+.card-section:hover .card {
+  transform: translateY(-10px);
+}
+
+
+/* ===============================
+   SHARED SECTION TITLE STYLE
+=============================== */
+
+.section-title {
+  font-family: "Roboto Slab", serif;
+  font-weight: 700;
+
+  color: #E0BB56;
+  text-align: center;
+
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+
+/* ===============================
+   ABOUT SECTION
+=============================== */
+
+.about-card-section {
+  margin-top: 80px;
+}
+
+/* Offset backing shadow for About card */
+.about-card-section::before {
+  content: "";
+  position: absolute;
+
+  width: min(84vw, 1228px);
+  height: 100%;
+
+  background: rgba(2, 56, 100, 0.55);
+  border-radius: 42px;
+
+  top: 16px;
+  left: calc(50% + 10px);
+  transform: translateX(-50%);
+
+  z-index: 0;
+}
+
+.about-card {
+  width: min(84vw, 1228px);
+  min-height: 455px;
+
+  padding: 42px 88px 52px;
+  border-radius: 42px;
+
+  box-shadow: 5px 8px 14px rgba(0, 0, 0, 0.12);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  box-sizing: border-box;
+}
+
+.about-card .section-title {
+  font-size: clamp(2.1rem, 3.3vw, 52px);
+  line-height: 1.2;
+
+  margin: 0 0 36px;
+
+  text-shadow: 0px 7px 4px rgba(0, 0, 0, 0.25);
+}
+
+.about-text {
+  width: 100%;
+  max-width: 880px;
+
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: clamp(0.95rem, 1.35vw, 20px);
+  line-height: 1.28;
+
+  color: #F6F8F9;
+  text-align: center;
+
+  margin: 0;
+}
+
+.about-bottom {
+  width: 100%;
+  max-width: 850px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  gap: 120px;
+
+  margin-top: 62px;
+}
+
+.about-bottom > div {
+  width: 360px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 34px;
+}
+
+.about-bottom p {
+  font-family: "Roboto Slab", serif;
+  font-weight: 700;
+  font-size: clamp(1.25rem, 1.8vw, 27px);
+  line-height: 1.25;
+
+  color: #F6F8F9;
+  text-align: center;
+
+  margin: 0;
+
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.4);
+}
+
+.about-bottom .icons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  gap: 48px;
+}
+
+.about-bottom .icons svg {
+  width: 50px;
+  height: 50px;
+
+  color: #F6F8F9 !important;
+
+  transition: transform 0.25s ease, filter 0.25s ease;
+}
+
+.about-bottom .icons img,
+.about-bottom .icons img[alt="davinci"],
+.about-bottom .icons img[alt="figma"] {
+  width: 54px;
+  height: 54px;
+  max-width: 54px;
+  max-height: 54px;
+
+  object-fit: contain;
+  border-radius: 13px;
+
+  transition: transform 0.25s ease, filter 0.25s ease;
+}
+
+.about-bottom .icons img[alt="figma"] {
+  transform: scale(1.13);
+}
+
+.about-bottom .icons svg:hover,
+.about-bottom .icons img:hover {
+  transform: translateY(-6px) scale(1.08);
+  filter: drop-shadow(0px 8px 8px rgba(0, 0, 0, 0.35));
+}
+
+.about-bottom .icons img[alt="figma"]:hover {
+  transform: translateY(-6px) scale(1.2);
+}
+
+
+/* ===============================
+   READING ROOM SECTION
+=============================== */
+
+.reading-room-section {
+  text-align: center;
+
+  /* Bigger space between About and Reading Room */
+  margin-top: clamp(115px, 9vw, 170px);
+
+  padding: 0 20px 55px;
+}
+
+.reading-title {
+  font-size: clamp(2.4rem, 4.2vw, 65px);
+  line-height: 1.25;
+
+  margin: 0 0 clamp(42px, 5vw, 76px);
+}
+
+.reading-card-section {
+  margin-top: 0;
+}
+
+/* Offset backing shadow for Reading Room card */
+/* Matched to About card: down and slightly right */
+.reading-card-section::before {
+  content: "";
+  position: absolute;
+
+  width: min(84vw, 1228px);
+  height: 100%;
+
+  background: rgba(2, 56, 100, 0.55);
+  border-radius: 42px;
+
+  top: 16px;
+  left: calc(50% + 10px);
+  transform: translateX(-50%);
+
+  z-index: 0;
+}
+
+.reading-card {
+  width: min(84vw, 1228px);
+  min-height: clamp(610px, 56vw, 850px);
+
+  padding: clamp(32px, 3.2vw, 44px)
+           clamp(42px, 4.5vw, 70px)
+           clamp(46px, 5vw, 74px);
+
+  border-radius: 42px;
+
+  box-shadow: 5px 8px 14px rgba(0, 0, 0, 0.12);
+
+  display: flex;
+  flex-direction: column;
+
+  box-sizing: border-box;
+}
+
+.reading-subtext {
+  width: 100%;
+
+  font-family: "Roboto Slab", serif;
+  font-weight: 700;
+  font-size: clamp(1rem, 1.65vw, 28px);
+  line-height: 1.3;
+
+  color: #FFFFFF;
+  text-align: center;
+
+  margin: 0 auto clamp(70px, 8vw, 115px);
+}
+
+.books-row {
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+
+  gap: clamp(22px, 3.1vw, 46px);
+
+  /* Equal left and right padding inside card */
+  padding-left: clamp(34px, 3.5vw, 58px);
+  padding-right: clamp(34px, 3.5vw, 58px);
+
+  box-sizing: border-box;
+}
+
+.book {
+  position: relative;
+
+  width: clamp(52px, 5vw, 86px);
+
+  border-radius: 10px;
+  border: 3px solid rgba(255, 255, 255, 0.9);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+
+  font-family: "Roboto Slab", serif;
+  font-weight: 700;
+
+  padding: 10px;
+
+  cursor: pointer;
+  transition: transform 0.3s ease, filter 0.3s ease;
+
+  box-shadow:
+    12px 12px 6px rgba(0, 0, 0, 0.28),
+    inset 0 0 4px rgba(255, 255, 255, 0.45);
+
+  box-sizing: border-box;
+}
+
+.book span {
+  color: #003058;
+  font-size: clamp(0.85rem, 1.45vw, 1.45rem);
+  line-height: 1.15;
+  text-align: center;
+}
+
+/* Book height hierarchy */
+.book-1 {
+  height: clamp(310px, 35vw, 530px);
+  background: #e3cfae;
+}
+
+.book-2 {
+  height: clamp(235px, 25vw, 385px);
+  background: #cdb4b4;
+}
+
+.book-3 {
+  height: clamp(280px, 31vw, 475px);
+  background: #b7c9bb;
+}
+
+.book-4 {
+  height: clamp(350px, 38vw, 570px);
+  background: #d8d3a5;
+}
+
+.book-5 {
+  height: clamp(215px, 23vw, 360px);
+  background: #c6bdd8;
+  z-index: 4;
+}
+
+.book-6 {
+  height: clamp(315px, 35vw, 530px);
+  background: #bfc9d6;
+
+  z-index: 2;
+
+  transform: rotate(-15deg) translateX(70px);
+  transform-origin: bottom center;
+}
+
+/* Book hover lift */
+.book:hover {
+  transform: translateY(-38px) scale(1.12) !important;
+  z-index: 5;
+  filter: brightness(1.04);
+}
+
+/* Preserve leaning book angle on hover */
+.book-6:hover {
+  transform: rotate(-15deg) translateX(70px) translateY(-38px) scale(1.12) !important;
+  z-index: 6;
+}
+
+/* ===============================
+   PAST PROJECTS SECTION
+=============================== */
+
+.past-projects-section {
+  position: relative;
+
+  margin-top: clamp(25px, 3.5vw, 55px);
+  padding: clamp(90px, 10vw, 145px) 20px clamp(90px, 10vw, 140px);
+
+  text-align: center;
+  overflow: hidden;
+
+  /* creates a clean layer stack */
+  isolation: isolate;
+}
+
+/* Title stays above gears */
+.past-projects-title {
+  position: relative;
+  z-index: 3;
+
+  font-size: clamp(2.4rem, 4.2vw, 65px);
+  line-height: 1.25;
+
+  margin: 0 0 clamp(60px, 6vw, 92px);
+}
+
+/* Gears are the background layer */
+.past-gears {
+  position: absolute;
+  inset: 0;
+
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Gear image clusters */
+.gear-cluster {
+  position: absolute;
+
+  width: clamp(430px, 48vw, 700px);
+  height: clamp(430px, 48vw, 700px);
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+
+  opacity: 0.22;
+
+  transform-origin: center;
+
+  /* IMPORTANT: gears do NOT spin by default */
+  animation: none !important;
+}
+
+/* Left gear cluster */
+.gear-cluster-left {
+  left: max(-130px, -7vw);
+  top: clamp(40px, 7vw, 90px);
+
+  background-image: url("../images/experiences/gears-left.png");
+}
+
+/* Right gear cluster */
+.gear-cluster-right {
+  right: max(-150px, -8vw);
+  top: clamp(20px, 5vw, 70px);
+
+  background-image: url("../images/experiences/gears-right.png");
+}
+
+/* Spin ONLY after scroll observer adds .spin-gears */
+.past-projects-section.spin-gears .gear-cluster-left {
+  animation: gearSpinLeft 20s linear infinite !important;
+}
+
+.past-projects-section.spin-gears .gear-cluster-right {
+  animation: gearSpinRight 24s linear infinite !important;
+}
+
+@keyframes gearSpinLeft {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes gearSpinRight {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+/* Content stays clearly above gears */
+.past-projects-content {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: clamp(28px, 4vw, 58px);
+
+  width: 100%;
+}
+
+/* Project cards row */
+.projects-row {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+
+  gap: clamp(34px, 5vw, 79px);
+}
+
+/* Individual project card */
+.past-project-card {
+  width: clamp(130px, 13.8vw, 200px);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Project image square */
+.project-image {
+  width: clamp(130px, 13.8vw, 200px);
+  height: clamp(130px, 13.8vw, 200px);
+
+  border: 7px solid #014074;
+  border-radius: 20px;
+
+  background-color: #D9D9D9;
+  background-size: cover;
+  background-position: center;
+
+  box-sizing: border-box;
+
+  transition: transform 0.25s ease, filter 0.25s ease;
+}
+
+.project-image:hover {
+  transform: translateY(-8px) scale(1.04);
+  filter: drop-shadow(0px 10px 10px rgba(0, 0, 0, 0.25));
+}
+
+/* Project labels */
+.past-project-card p {
+  width: 100%;
+
+  font-family: "Roboto Slab", serif;
+  font-weight: 400;
+  font-size: clamp(1.2rem, 2.2vw, 31.5px);
+  line-height: 1.25;
+
+  color: #FFFFFF;
+  text-align: center;
+
+  margin: 8px 0 0;
+}
+
+/* Placeholder cards with X lines */
+.project-placeholder {
+  position: relative;
+  background: #D9D9D9;
+}
+
+.project-placeholder::before,
+.project-placeholder::after {
+  content: "";
+  position: absolute;
+
+  width: 135%;
+  height: 1px;
+
+  background: #000000;
+
+  top: 50%;
+  left: 50%;
+  transform-origin: center;
+}
+
+.project-placeholder::before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.project-placeholder::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+/* Replace these paths with your actual images if needed */
+.project-image-interviews {
+  background-image: url("../images/experiences/interviews-placeholder.png");
+}
+
+.project-image-events {
+  background-image: url("../images/experiences/events-placeholder.png");
+}
+
+/* Arrows */
+.project-arrow {
+  position: relative;
+  z-index: 3;
+
+  width: 34px;
+  height: 68px;
+
+  border: none;
+  background: transparent;
+
+  font-size: clamp(3rem, 5vw, 5rem);
+  line-height: 1;
+
+  color: #003057;
+
+  cursor: pointer;
+
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.project-arrow:hover {
+  transform: scale(1.12);
+  opacity: 0.85;
+}
+
+
+/* ===============================
+   PAST PROJECTS GEARS
+=============================== */
+
+.past-projects-section {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.past-gears {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.gear-cluster {
+  position: absolute;
+  width: clamp(360px, 34vw, 520px);
+  height: clamp(360px, 34vw, 520px);
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+
+  opacity: 0.55; /* more solid */
+  transform-origin: center;
+}
+
+/* move left gears inward so they sit behind first 2 cards */
+.gear-cluster-left {
+  left: 22%;
+  top: 52%;
+  transform: translateY(-50%);
+  background-image: url("../images/experiences/gears-left.png");
+
+  animation: gearSpinLeft 18s linear infinite;
+}
+
+/* move right gears inward so they sit behind last 2 cards */
+.gear-cluster-right {
+  right: 22%;
+  top: 52%;
+  transform: translateY(-50%);
+  background-image: url("../images/experiences/gears-right.png");
+
+  animation: gearSpinRight 22s linear infinite;
+}
+
+@keyframes gearSpinLeft {
+  from {
+    transform: translateY(-50%) rotate(0deg);
+  }
+  to {
+    transform: translateY(-50%) rotate(360deg);
+  }
+}
+
+@keyframes gearSpinRight {
+  from {
+    transform: translateY(-50%) rotate(0deg);
+  }
+  to {
+    transform: translateY(-50%) rotate(-360deg);
+  }
+}
+
+/* ===============================
+   CURRENT MEDIA TEAM SECTION
+=============================== */
+
+.current-media-team-section {
+  position: relative;
+
+  margin-top: clamp(70px, 7vw, 115px);
+  padding: 0 20px clamp(90px, 9vw, 135px);
+  padding-bottom: clamp(55px, 6vw, 85px);
+
+  text-align: center;
+}
+
+.current-media-team-title {
+  font-size: clamp(2.4rem, 4.2vw, 65px);
+  line-height: 1.25;
+
+  margin: 0 0 clamp(48px, 5vw, 78px);
+}
+
+/* Holds arrows + card */
+.current-team-wrapper {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: clamp(28px, 4vw, 58px);
+}
+
+/* Same offset shadow style as About + Reading Room */
+.current-team-card-section {
+  margin-top: 0;
+}
+
+.current-team-card-section::before {
+  content: "";
+  position: absolute;
+
+  width: min(64vw, 906px);
+  height: 100%;
+
+  background: rgba(2, 56, 100, 0.55);
+  border-radius: 42px;
+
+  top: 16px;
+  left: calc(50% + 10px);
+  transform: translateX(-50%);
+
+  z-index: 0;
+}
+
+.current-team-card {
+  width: min(64vw, 906px);
+  min-height: 472px;
+
+  padding: clamp(34px, 4vw, 50px);
+
+  border-radius: 42px;
+
+  box-shadow: 5px 8px 14px rgba(0, 0, 0, 0.12);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: clamp(52px, 7vw, 120px);
+
+  box-sizing: border-box;
+}
+
+/* Left side: image + major */
+.current-team-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 28px;
+}
+
+.current-team-photo-placeholder {
+  position: relative;
+
+  width: clamp(190px, 20vw, 291px);
+  height: clamp(190px, 20vw, 291px);
+
+  border-radius: 50%;
+  background: #D9D9D9;
+
+  overflow: hidden;
+}
+
+/* Placeholder X lines */
+.current-team-photo-placeholder::before,
+.current-team-photo-placeholder::after {
+  content: "";
+  position: absolute;
+
+  width: 140%;
+  height: 1px;
+
+  background: #000000;
+
+  top: 50%;
+  left: 50%;
+  transform-origin: center;
+}
+
+.current-team-photo-placeholder::before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.current-team-photo-placeholder::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.current-team-major {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: clamp(1rem, 1.75vw, 25px);
+  line-height: 1.2;
+
+  color: #F6F8F9;
+  text-align: center;
+
+  margin: 0;
+}
+
+/* Right side: name + bio */
+.current-team-right {
+  max-width: 388px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.current-team-right h2 {
+  font-family: "Roboto Slab", serif;
+  font-weight: 700;
+  font-size: clamp(2.5rem, 4.2vw, 65px);
+  line-height: 1.25;
+
+  color: #F6F8F9;
+  text-align: center;
+
+  margin: 0 0 36px;
+
+  text-shadow: 0px 8px 4px rgba(0, 0, 0, 0.25);
+}
+
+.current-team-right p {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: clamp(1rem, 1.75vw, 25px);
+  line-height: 1.18;
+
+  color: #F6F8F9;
+  text-align: center;
+
+  margin: 0;
+}
+/* Base arrow button */
+.team-arrow {
+  width: 76px;
+  height: 110px;
+
+  border: none;
+  background: transparent;
+  padding: 0;
+  margin: 0;
+
+  cursor: pointer;
+
+  font-size: 0;
+  line-height: 0;
+  color: transparent;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 3;
+}
+
+/* Left arrow column */
+.team-arrow-left {
+  grid-column: 1;
+  justify-self: center;
+}
+
+/* Right arrow column */
+.team-arrow-right {
+  grid-column: 3;
+  justify-self: center;
+}
+
+/* Triangle shape */
+.team-arrow::before {
+  content: "";
+  display: block;
+
+  width: 76px;
+  height: 110px;
+
+  background: #003561;
+  border-radius: 10px;
+
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+/* Left arrow points left */
+.team-arrow-left::before {
+  clip-path: polygon(100% 0, 0 50%, 100% 100%);
+}
+
+/* Right arrow points right */
+.team-arrow-right::before {
+  clip-path: polygon(0 0, 100% 50%, 0 100%);
+}
+
+.team-arrow:hover::before {
+  transform: scale(1.07);
+  opacity: 0.9;
+}
+
+/* ===============================
+   PAST MEDIA TEAM SECTION
+=============================== */
+
+.past-media-team-section {
+  position: relative;
+
+  /* Keeps spacing even with previous section */
+  margin-top: clamp(55px, 6vw, 85px);
+  padding: 0 20px clamp(90px, 9vw, 140px);
+
+  text-align: center;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.past-media-team-title {
+  position: relative;
+  z-index: 3;
+
+  font-size: clamp(2.4rem, 4.2vw, 65px);
+  line-height: 1.25;
+
+  margin: 0 0 clamp(58px, 6vw, 90px);
+}
+
+/* ===============================
+   PAST MEDIA TEAM GEARS
+   Same placement style as Past Projects
+=============================== */
+
+.past-media-team-section .past-gears {
+  position: absolute;
+  inset: 0;
+
+  z-index: 0;
+  pointer-events: none;
+}
+
+.past-media-team-section .gear-cluster {
+  position: absolute;
+
+  width: clamp(360px, 34vw, 520px);
+  height: clamp(360px, 34vw, 520px);
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+
+  opacity: 0.55;
+  transform-origin: center;
+}
+
+.past-media-team-section.spin-gears .gear-cluster-left {
+  left: 22%;
+  top: 52%;
+  background-image: url("../images/experiences/gears-left.png");
+
+  animation: pastMediaGearSpinLeft 18s linear infinite !important;
+}
+
+.past-media-team-section.spin-gears .gear-cluster-right {
+  right: 22%;
+  top: 52%;
+  background-image: url("../images/experiences/gears-right.png");
+
+  animation: pastMediaGearSpinRight 22s linear infinite !important;
+}
+
+@keyframes pastMediaGearSpinLeft {
+  from {
+    transform: translateY(-50%) rotate(0deg);
+  }
+
+  to {
+    transform: translateY(-50%) rotate(360deg);
+  }
+}
+
+@keyframes pastMediaGearSpinRight {
+  from {
+    transform: translateY(-50%) rotate(0deg);
+  }
+
+  to {
+    transform: translateY(-50%) rotate(-360deg);
+  }
+}
+
+/* ===============================
+   PAST MEDIA TEAM PROFILE GRID
+=============================== */
+
+.past-media-grid {
+  position: relative;
+  z-index: 2;
+
+  width: min(78vw, 1109px);
+
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: repeat(4, 182px);
+  justify-content: center;
+  align-items: start;
+
+  column-gap: 47px;
+  row-gap: 43px;
+}
+
+.past-media-member {
+  width: 182px;
+  min-height: 224px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.past-media-photo {
+  width: 182px;
+  height: 182px;
+
+  border-radius: 50%;
+  background: #D9D9D9;
+}
+
+.past-media-member p {
+  width: 176px;
+
+  font-family: "Roboto Slab", serif;
+  font-weight: 400;
+  font-size: clamp(1.2rem, 2.2vw, 31.5px);
+  line-height: 1.25;
+
+  color: #FFFFFF;
+  text-align: center;
+
+  margin: 10px 0 0;
+}
+
+/* ===============================
+   INTERESTED / CONTACT SECTION
+=============================== */
+
+.interested-section {
+  position: relative;
+
+  margin-top: clamp(55px, 6vw, 85px);
+  padding: 0 20px clamp(90px, 9vw, 140px);
+
+  text-align: center;
+}
+
+.interested-title {
+  font-size: clamp(2.4rem, 4.2vw, 65px);
+  line-height: 1.25;
+
+  margin: 0 0 clamp(48px, 5vw, 78px);
+}
+
+/* Same offset shadow style as the other dark cards */
+.interested-card-section {
+  margin-top: 0;
+}
+
+.interested-card-section::before {
+  content: "";
+  position: absolute;
+
+  width: min(78vw, 1125px);
+  height: 100%;
+
+  background: rgba(2, 56, 100, 0.55);
+  border-radius: 42px;
+
+  top: 16px;
+  left: calc(50% + 10px);
+  transform: translateX(-50%);
+
+  z-index: 0;
+}
+
+.interested-card {
+  width: min(78vw, 1125px);
+  min-height: 458px;
+
+  padding: clamp(42px, 5vw, 74px);
+
+  border-radius: 42px;
+
+  box-shadow: 5px 8px 14px rgba(0, 0, 0, 0.12);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-sizing: border-box;
+}
+
+.interested-content {
+  width: 100%;
+  max-width: 977px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: clamp(42px, 6vw, 90px);
+}
+
+/* Left text block */
+.interested-text {
+  width: min(58vw, 654px);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: clamp(42px, 4.5vw, 70px);
+}
+
+.interested-text h2,
+.interested-text p {
+  font-family: "Roboto Slab", serif;
+  font-weight: 700;
+
+  color: #F6F8F9;
+  text-align: center;
+
+  margin: 0;
+
+  text-shadow: 0px 8px 4px rgba(0, 0, 0, 0.25);
+}
+
+/* “Have a story...” */
+.interested-text h2 {
+  font-size: clamp(2.5rem, 4.4vw, 63px);
+  line-height: 1.28;
+}
+
+/* “Contact our Media Team...” */
+.interested-text p {
+  font-size: clamp(2rem, 3.7vw, 52px);
+  line-height: 1.28;
+}
+
+/* Envelope link */
+.interested-envelope {
+  width: clamp(210px, 20vw, 290px);
+  height: clamp(210px, 11vw, 255px);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-decoration: none;
+
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  transition: transform 0.25s ease, filter 0.25s ease;
+}
+
+.interested-envelope svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.interested-envelope:hover {
+  transform: translateY(-6px) scale(1.04);
+  filter: drop-shadow(0px 8px 8px rgba(0, 0, 0, 0.35));
+}
+
+
+
+/* ===============================
+   MOBILE CLEANUP
+=============================== */
+
+@media (max-width: 768px) {
+  .about-card,
+  .reading-card {
+    width: 92%;
+    min-height: auto;
+
+    padding: 32px 24px 40px;
+    border-radius: 28px;
+  }
+
+  .about-card-section::before,
+  .reading-card-section::before {
+    width: 92%;
+    border-radius: 28px;
+
+    top: 12px;
+    left: calc(50% + 8px);
+  }
+
+  .about-card .section-title,
+  .reading-title {
+    font-size: 2.1rem;
+    margin-bottom: 24px;
+  }
+
+  .about-text {
+    font-size: 0.95rem;
+    line-height: 1.35;
+  }
+
+  .about-bottom {
+    flex-direction: column;
+    gap: 36px;
+    margin-top: 40px;
+  }
+
+  .about-bottom > div {
+    width: 100%;
+    gap: 20px;
+  }
+
+  .about-bottom .icons {
+    gap: 24px;
+  }
+
+  .about-bottom .icons svg {
+    width: 34px;
+    height: 34px;
+  }
+
+  .about-bottom .icons img,
+  .about-bottom .icons img[alt="davinci"],
+  .about-bottom .icons img[alt="figma"] {
+    width: 42px;
+    height: 42px;
+    max-width: 42px;
+    max-height: 42px;
+  }
+
+  .reading-room-section {
+    margin-top: 60px;
+    padding: 0 12px 70px;
+  }
+
+  .reading-subtext {
+    text-align: center;
+    font-size: 0.9rem;
+    margin-bottom: 36px;
+  }
+
+  .books-row {
+    gap: 10px;
+    overflow-x: auto;
+    justify-content: flex-start;
+    padding: 0 8px 8px;
+  }
+
+  .book {
+    flex: 0 0 auto;
+    width: 44px;
+  }
+
+  .book span {
+    font-size: 0.72rem;
+  }
+
+  .book-1 {
+    height: 225px;
+  }
+
+  .book-2 {
+    height: 170px;
+  }
+
+  .book-3 {
+    height: 200px;
+  }
+
+  .book-4 {
+    height: 250px;
+  }
+
+  .book-5 {
+    height: 155px;
+  }
+
+  .book-6 {
+    height: 225px;
+    transform: rotate(-15deg) translateX(35px);
+  }
+
+  .book-6:hover {
+    transform: rotate(-15deg) translateX(22px) translateY(-18px) scale(1.05) !important;
+  }
+
+   /* Past Projects mobile */
+  .past-projects-section {
+    margin-top: 45px;
+    padding: 70px 12px 80px;
+  }
+
+  .past-projects-title {
+    font-size: 2.1rem;
+    margin-bottom: 38px;
+  }
+
+  .past-projects-content {
+    gap: 12px;
+  }
+
+  .projects-row {
+    gap: 18px;
+    overflow-x: auto;
+    justify-content: flex-start;
+
+    width: 100%;
+    padding: 0 8px 12px;
+  }
+
+  .past-project-card {
+    flex: 0 0 auto;
+    width: 120px;
+  }
+
+  .project-image {
+    width: 120px;
+    height: 120px;
+
+    border-width: 5px;
+    border-radius: 14px;
+  }
+
+  .past-project-card p {
+    font-size: 1rem;
+  }
+
+  .project-arrow {
+    display: none;
+  }
+
+  .gear-cluster {
+    width: 320px;
+    height: 320px;
+    opacity: 0.28;
+  }
+
+  .gear-cluster-left {
+    left: -150px;
+    top: 55px;
+  }
+
+  .gear-cluster-right {
+    right: -160px;
+    top: 20px;
+  }
+
+
+    /* Current Media Team mobile */
+  .current-media-team-section {
+    margin-top: 60px;
+    padding: 0 12px 80px;
+  }
+
+  .current-media-team-title {
+    font-size: 2.1rem;
+    margin-bottom: 32px;
+  }
+
+  .current-team-wrapper {
+    gap: 10px;
+  }
+
+  .current-team-card,
+  .current-team-card-section::before {
+    width: 92%;
+    border-radius: 28px;
+  }
+
+  .current-team-card-section::before {
+    top: 12px;
+    left: calc(50% + 8px);
+  }
+
+  .current-team-card {
+    min-height: auto;
+
+    padding: 32px 24px 40px;
+
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .current-team-photo-placeholder {
+    width: 170px;
+    height: 170px;
+  }
+
+  .current-team-major {
+    font-size: 0.95rem;
+  }
+
+  .current-team-right h2 {
+    font-size: 2.2rem;
+    margin-bottom: 18px;
+  }
+
+  .current-team-right p {
+    font-size: 0.95rem;
+    line-height: 1.35;
+  }
+
+  .team-arrow {
+    display: none;
+  }
+
+    /* Past Media Team mobile */
+  .past-media-team-section {
+    margin-top: 50px;
+    padding: 70px 12px 80px;
+  }
+
+  .past-media-team-title {
+    font-size: 2.1rem;
+    margin-bottom: 38px;
+  }
+
+  .past-media-grid {
+    width: 100%;
+
+    grid-template-columns: repeat(2, 120px);
+    column-gap: 28px;
+    row-gap: 32px;
+  }
+
+  .past-media-member {
+    width: 120px;
+    min-height: 160px;
+  }
+
+  .past-media-photo {
+    width: 120px;
+    height: 120px;
+  }
+
+  .past-media-member p {
+    width: 120px;
+    font-size: 1rem;
+  }
+
+  .past-media-team-section .gear-cluster {
+    width: 320px;
+    height: 320px;
+    opacity: 0.35;
+  }
+
+  .past-media-team-section .gear-cluster-left {
+    left: -150px;
+    top: 55px;
+  }
+
+  .past-media-team-section .gear-cluster-right {
+    right: -160px;
+    top: 20px;
+  }
+
+  /* Interested / Contact mobile */
+  .interested-section {
+    margin-top: 50px;
+    padding: 0 12px 80px;
+  }
+
+  .interested-title {
+    font-size: 2.1rem;
+    margin-bottom: 32px;
+  }
+
+  .interested-card,
+  .interested-card-section::before {
+    width: 92%;
+    border-radius: 28px;
+  }
+
+  .interested-card-section::before {
+    top: 12px;
+    left: calc(50% + 8px);
+  }
+
+  .interested-card {
+    min-height: auto;
+    padding: 38px 24px 44px;
+  }
+
+  .interested-content {
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .interested-text {
+    width: 100%;
+    gap: 28px;
+  }
+
+  .interested-text h2 {
+    font-size: 2rem;
+    line-height: 1.3;
+  }
+
+  .interested-text p {
+    font-size: 1.45rem;
+    line-height: 1.3;
+  }
+
+  .interested-envelope {
+    width: 130px;
+    height: 95px;
+  }
+
+  .envelope-badge {
+    width: 34px;
+    height: 34px;
+  }
+}
+
+/* ===============================
+   FINAL FIX: PREVENT FOOTER OVERLAP
+=============================== */
+
+.interested-section {
+  position: relative;
+  z-index: 2;
+
+  /* gives the card enough room before footer starts */
+  padding-bottom: clamp(300px, 22vw, 420px);
+  overflow: visible;
+}
+
+.interested-card-section {
+  position: relative;
+  z-index: 2;
+}
+
+/* Keep footer below the page content instead of visually covering it */
+footer {
+  position: relative;
+  z-index: 1;
+  clear: both;
+}
+
+/* ===============================
+   FINAL POLISH:
+   scroll highlight + card/shadow lift together
+=============================== */
+
+/* Use one shared lift variable for every card section */
+.card-section {
+  --card-lift: 0px;
+
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
+}
+
+/* When card scrolls into view */
+.card-section.show {
+  opacity: 1;
+  transform: translateY(var(--card-lift));
+}
+
+/* Lift the entire card section, including the ::before shadow */
+.card-section.show:hover {
+  --card-lift: -10px;
+}
+
+/* Stop lifting only the card by itself */
+.card-section:hover .card {
+  transform: none;
+}
+
+/* Make offset shadow animate smoothly with the card system */
+.about-card-section::before,
+.reading-card-section::before,
+.current-team-card-section::before,
+.interested-card-section::before {
+  transition:
+    background 0.8s ease,
+    opacity 0.8s ease,
+    transform 0.8s ease;
+}
+
+/* Smooth highlight appears after scroll reveal */
+.about-card,
+.reading-card,
+.current-team-card,
+.interested-card {
+  border: none !important;
+
+  transition:
+    box-shadow 0.8s ease,
+    transform 0.3s ease;
+}
+
+/* Slightly brighten the offset backing when revealed */
+.card-section.show.about-card-section::before,
+.card-section.show.reading-card-section::before,
+.card-section.show.current-team-card-section::before,
+.card-section.show.interested-card-section::before {
+  background: rgba(2, 56, 100, 0.68);
+}
+
+/* ===============================
+   HERO TEXT SCALE FIX
+=============================== */
+
+.media-hero-content {
+  width: min(650px, 92%);
+  transform: translateY(-4%) scale(0.94);
+}
+
+.media-hero-content h3 {
+  font-size: clamp(1.7rem, 3.6vw, 52px);
+}
+
+.media-hero-content h1 {
+  font-size: clamp(3.3rem, 7.2vw, 104px);
+}
+
+.media-hero-content h2 {
+  font-size: clamp(2.2rem, 4.7vw, 68px);
+}
+
+/* ===============================
+   ABOUT SECTION TEXT SCALE FIX
+=============================== */
+
+.about-card {
+  min-height: 520px;
+  padding: clamp(42px, 4.6vw, 62px)
+           clamp(74px, 7vw, 110px)
+           clamp(54px, 5.5vw, 76px);
+}
+
+.about-card .section-title {
+  font-size: clamp(2.4rem, 4.2vw, 65px);
+  line-height: 1.25;
+  margin-bottom: clamp(36px, 4vw, 52px);
+}
+
+.about-text {
+  max-width: 984px;
+  font-size: clamp(1.05rem, 1.65vw, 25px);
+  line-height: 1.25;
+}
+
+.about-bottom p {
+  font-size: clamp(1.45rem, 2.1vw, 30px);
+}
+
+/* ===============================
+   READING ROOM BOOK FINAL POLISH
+=============================== */
+
+.book {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Keep book 6 from jumping sideways on hover */
+.book-6:hover {
+  transform: rotate(-15deg) translateX(70px) translateY(-25px) scale(1.08) !important;
+  z-index: 6;
+}
+
+/* Better keyboard focus for clickable books */
+.book:focus-visible {
+  outline: 4px solid rgba(224, 187, 86, 0.9);
+  outline-offset: 6px;
+}
+
+/* ===============================
+   FINAL HOVER BOOST
+   Stronger card + shadow lift
+=============================== */
+
+.card-section {
+  --card-lift: 0px;
+  --card-scale: 1;
+
+  transform: translateY(var(--card-lift)) scale(var(--card-scale));
+  transform-origin: center;
+}
+
+.card-section.show {
+  opacity: 1;
+  transform: translateY(var(--card-lift)) scale(var(--card-scale));
+}
+
+.card-section.show:hover {
+  --card-lift: -20px;
+  --card-scale: 1.018;
+}
+
+.card-section.show:hover .card {
+  box-shadow: 8px 14px 24px rgba(0, 0, 0, 0.2) !important;
+}

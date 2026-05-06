@@ -76,7 +76,15 @@ function Newnav({ transparent }) {
                     {/* Contact page */}
                     <Link to={"/contact"}>
                       <h3 className="pages">Contact</h3>
-                  </Link>
+                    </Link>
+                    {/* Olympic Gallery page */}
+                    <Link to={"/olympic-gallery"}>
+                      <h3 className="pages">Olympic Gallery</h3>
+                    </Link>
+                    {/* Olympic Timeline page*/}
+                    <Link to={"/olympic-timeline"}>
+                      <h3 className="pages">Olympic Timeline</h3>
+                    </Link>
               </nav>
             </nav>
             <button 
@@ -111,6 +119,12 @@ function Newnav({ transparent }) {
                     </Link>
                     <Link to={"/contact"} onClick={showNavbar}>
                         <h3 className="mobile-nav-page">Contact</h3>
+                    </Link>
+                    <Link to={"/olympic-gallery"} onClick={showNavbar}>
+                        <h3 className="mobile-nav-page">Olympic Gallery</h3>
+                    </Link>
+                    <Link to={"/olympic-timeline"} onClick={showNavbar}>
+                        <h3 className="mobile-nav-page">Olympic Timeline</h3>
                     </Link>
                 </div>
                 <button 

@@ -38,6 +38,7 @@ const cardVariants = {
         orientation: 'horizontal',
         sx: {
             borderRadius: "20px",
+            width: "100%",
             maxWidth: "900px",
             transition: 'transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out',
             '&:hover': {
@@ -46,12 +47,12 @@ const cardVariants = {
             }
         },
         imageStyle: {
-            width: 150,
-            height: 150,
+            width: "clamp(90px, 15vw, 150px)",
+            height: "clamp(90px, 15vw, 150px)",
+            minWidth: 0,
             borderRadius: "15px",
             border: `3px solid ${themeColors.brightGold}`,
-            objectFit: 'cover',
-            flexShrink: 0
+            objectFit: 'cover'
         },
         titleStyle: { color: themeColors.brightGold, fontSize: "1.75rem", fontWeight: 600 },
     },
@@ -85,6 +86,7 @@ const FlexibleCard = ({
                           variant = "info",
                           title,
                           subtitle,
+                          date,
                           image,
                           body,
                           isHtmlBody = false,
@@ -97,7 +99,8 @@ const FlexibleCard = ({
 
     const contentJSX = (
         <CardContent sx={{
-            flex: '1 0 auto',
+            flex: 1,
+            minWidth: 0,
             display: 'flex',
             flexDirection: 'column',
             gap: 1,
@@ -122,6 +125,7 @@ const FlexibleCard = ({
                     variant="body1"
                     component="div"
                     sx={{
+                        flexGrow: 1,
                         color: isHorizontal ? themeColors.textGray : themeColors.white,
                         fontFamily: '"Roboto", sans-serif',
                         lineHeight: 1.6
@@ -133,6 +137,19 @@ const FlexibleCard = ({
                     {body}
                 </Typography>
             )}
+
+            {date && (
+                <Typography
+                variant="subtitle2"
+                sx={{
+                    mt: 'auto',
+                    color: "#bdc7d4",
+                    fontFamily: '"Roboto", sans-serif'
+                }}
+                >
+                    {date}
+                    </Typography>
+                )}
         </CardContent>
     );
 
@@ -156,8 +173,9 @@ const FlexibleCard = ({
                 bgcolor: themeColors.navy,
                 color: themeColors.white,
                 display: 'flex',
-                flexDirection: isHorizontal ? { xs: 'column', md: 'row' } : 'column',
+                flexDirection: isHorizontal ? 'row' : 'column',
                 alignItems: isHorizontal ? 'center' : 'stretch',
+                flexWrap: isHorizontal ? 'wrap' : 'nowrap',
                 ...preset.sx
             }}
         >
@@ -167,8 +185,9 @@ const FlexibleCard = ({
                     to={link}
                     sx={{
                         display: 'flex',
-                        flexDirection: isHorizontal ? { xs: 'column', md: 'row' } : 'column',
+                        flexDirection: isHorizontal ? 'row' : 'column',
                         alignItems: isHorizontal ? 'center' : 'stretch',
+                        flexWrap: isHorizontal ? 'wrap' : 'nowrap',
                         justifyContent: 'flex-start',
                         height: '100%',
                         p: isHorizontal ? 3 : 0

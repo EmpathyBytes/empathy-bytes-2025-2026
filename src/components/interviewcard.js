@@ -6,7 +6,8 @@ export default function InterviewCard(props) {
         <FlexibleCard
             variant="interview"
             title={props.title}
-            subtitle={`By ${props.author} | ${props.date}`}
+            subtitle={`By ${props.author}`}
+            date={props.date}
             body={props.body}
             isHtmlBody={true}
             image={props.img}

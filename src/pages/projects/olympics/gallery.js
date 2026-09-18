@@ -56,7 +56,7 @@ const OlympicGallery = ({ data }) => {
           marginBottom: "1rem",
         }}
       >
-        Olympic History at Georgia Tech
+        Olympic Gallery
       </h1>
 
       <p

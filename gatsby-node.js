@@ -39,6 +39,7 @@ exports.createSchemaCustomization = ({ actions }) => {
 
     type node__olympics_gallery_image implements Node {
       field_caption: String
+      field_date: Date @dateformat
     }
   `);
 };

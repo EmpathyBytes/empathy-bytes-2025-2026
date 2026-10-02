@@ -40,8 +40,8 @@ function App() {
 
             <div className="grid-margins-experiences">
                 <Grid container spacing={2} className="bg-1">
-                    <Grid xs={4} container className="" alignItems="center" justifyContent="center">
-                    <div style={{ marginLeft: 50 }}>
+                    <Grid xs={12} md={4} container className="" alignItems="center" justifyContent="center">
+                    <div className="app-text">
                         <h1 className="sub-header-experiences" style={{ fontSize: '2.0rem'}} >The Empathy Bytes App</h1>
                             <p>
                                 The Empathy Bytes mobile application acts as a portal showcasing our research on communities within 
@@ -49,13 +49,13 @@ function App() {
                                 games and models.</p>
                         </div>
                     </Grid>
-                    <Grid xs={4} container className="" alignItems="center" justifyContent="center">
-                        <div style={{ transform: 'scale(0.8)'}}>    
+                    <Grid xs={12} md={4} container className="" alignItems="center" justifyContent="center">
+                        <div className="app-mockup">
                             <img src={MockUp} alt="Mockup"></img>
                         </div>
                     </Grid>
-                    <Grid xs={4} container className="" alignItems="center" justifyContent="center">
-                    <div style={{ transform: 'scale(0.8)'}}>
+                    <Grid xs={12} md={4} container className="" alignItems="center" justifyContent="center">
+                    <div className="app-video">
                     <h1 className="grid-margins-experiences" style={{ fontSize: '1.8rem'}} >Spring 2023 Progress</h1>
                         <iframe width="60" height="180" src="https://www.youtube.com/embed/zYQYxpvwx8U" 
                             title="App Team Demo Spring 2023" frameborder="0" 

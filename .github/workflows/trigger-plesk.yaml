@@ -1,0 +1,13 @@
+name: Trigger Plesk on Push to Main
+
+on:
+  repository_dispatch:
+    types: [gh-pages-updated]
+
+jobs:
+  call-webhook:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Execute POST Request via SSH
+        run: |
+          echo "Signaled Plesk Webhook"

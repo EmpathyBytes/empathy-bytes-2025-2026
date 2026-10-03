@@ -1,7 +1,7 @@
 @import "./fonts.css";
 
 .top-banner {
-    height: 450px;
+    height: 70vh;
     background-size: cover;
     display: flex;
     align-items: center;
@@ -17,20 +17,20 @@
 }
 
 .blue-box {
-    background-color: #003057;
-    padding: 25px 50px;
-    border-radius: 20px;
-    width: 1200px;
-    max-width: calc(100% - 100px); /* to maintain .full-container-experience's 50px padding on each side */
+    background-color: var(--color-navyblue);
+    padding: 4vh 5vw;
+    border-radius: 2vw;
+    width: 80vw;
+    max-width: calc(100% - 5vw); /* to maintain .full-container-experience's 50px padding on each side */
     margin: auto;
 }
 
 .divider {
-    margin: 50px auto;
-    background-color: #9CC6F5;
-    border-radius: 20px;
-    height: 3px;
-    width: 550px;
+    margin: 10vh auto;
+    background-color: var(--color-lightblue);
+    border-radius: 2vh;
+    height: .5vh;
+    width: 100vw;
     max-width: 50%;
 }
 
@@ -42,13 +42,13 @@
 .paragraph-experiences-body {
     font-family: 'Roboto', serif;
     font-size: 1rem;
-    width: 800px;
-    max-width: calc(100% - 100px);
+    width: 175vw;
+    max-width: calc(100% - 5vw);
     margin: auto;
 }
 
  h2 {
-    color: white;
+    color: var(--color-offwhite);
     font-weight: 400;
  }
 
@@ -60,9 +60,9 @@ iframe {
 
 
 .full-container-experiences {
-    padding: 50px;
+    padding: 6vh;
     margin-bottom: var(--navbar-top-height);
-    background-color: #004B87;
+    background-color: var(--color-peacockblue);
 }
 
 .grid-margins-experiences { /* THIS IS THE PADDING FOR THE PHONE */
@@ -73,9 +73,9 @@ iframe {
         padding: 0; /* Adjust the padding for screens 600px or less */
     } 
 .vr-container-1 {
-    height: 500px;
+    height: 100vh;
     width: 100%;
-    background-color: #abbfd0;
+    background-color: var(--color-lightgray);
 }
 .vr-container-2 {
     height: 500vh;
@@ -86,16 +86,16 @@ iframe {
 .sub-header-experiences {
     font-family: 'Roboto Slab', serif;
     font-size: 2rem;
-    background-color: #004B87;
+    background-color: var(--color-peacockblue);
 
-    padding-left: 20px;
+    /*padding-left: 20px;*/
 
 }
 
 .paragraph-experiences {
     font-family: 'Roboto', serif;
     font-size: 1rem;
-    background-color: #004B87;
+    background-color: var(--color-peacockblue);
 }
 
 /* .paragraph-indent-experiences-left {
@@ -112,8 +112,8 @@ iframe {
     } */
     .paragraph-indent-experiences-right {
         padding-right: 5%;
-        color: white;
-        background-color: #004B87;
+        color: var(--color-offwhite);
+        background-color: var(--color-peacockblue);
     }
     .left-align-experiences {
         text-align: right;

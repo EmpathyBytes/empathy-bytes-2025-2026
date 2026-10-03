@@ -1,6 +1,12 @@
+/* Smooth scroll for page transitions */
+html {
+    scroll-behavior: smooth;
+}
+
 .projectsContainer {
-    padding: 5% 15%;
+    padding: 5vh 15vw;
     display: block;
+    
 }
 
 .projectsTitle {
@@ -11,7 +17,7 @@
 
 .bg {
     /* styles for devices with a minimum screen width of 480px */
-    background: #003057;
+    background: #004B87;
     /* background: linear-gradient(180deg, var(--color-navyblue), var(--color-lightblue), rgba(255,249,202,1));
     background-size: cover;
     animation: gradient 10ms ease infinite; */
@@ -45,24 +51,97 @@
 .project-nav-text {
     font-size: 1rem;
     font-family: 'Roboto Slab', sans-serif;
-    color: white;
-    padding: 10%;
-    border-radius: 150px;
+    color: var(--color-offwhite);
+    padding: 3vh;
+    border-radius: 4vh;
 }
 
 .project-nav-text:hover {
-    background-color: #003057;
+    background-color: var(--color-offwhite);
+    color: var(--color-navyblue);
     cursor: pointer;
     transition: background-color 200ms linear;
 }
 
+.project-nav-text.active {
+    background-color: var(--color-offwhite);
+    color: var(--color-navyblue);
+    font-weight: bold;
+}
+
 .project-navBG {
     display: flex;
-    background-color: #1B3F66;
-    border-radius: 150px;
-    width: 90%;
+    background-color: var(--color-navyblue);
+    border-radius: 10vw;
+    width: 100%;
     height: 50%;
-    top: 50px;
+    top: 5vh;
     margin: auto;
     justify-content: center;
+    align-items: center;
+}
+
+/* Mobile Navigation Styles */
+.mobile-nav-container {
+    margin: 20px 0;
+    padding: 0 8vw;
+}
+
+.mobile-nav-scroll {
+    display: flex;
+    gap: 12px;
+    overflow-x: auto;
+    padding: 8px 0;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* Internet Explorer 10+ */
+}
+
+.mobile-nav-scroll::-webkit-scrollbar {
+    display: none; /* WebKit */
+}
+
+.mobile-nav-item {
+    flex-shrink: 0;
+    min-width: 120px;
+    height: 44px; /* Minimum touch target size */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-navyblue) !important;
+    color: var(--color-offwhite) !important;
+    border-radius: 22px;
+    font-family: 'Roboto Slab', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 200ms linear;
+    padding: 0 16px;
+    white-space: nowrap;
+}
+
+.mobile-nav-item:hover {
+    background-color: var(--color-offwhite);
+    color: var(--color-navyblue);
+}
+
+.mobile-nav-item.active {
+    background-color: var(--color-offwhite) !important;
+    color: var(--color-navyblue) !important;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .projectsContainer {
+        padding: 5vh 8vw;
+    }
+
+    .project-nav-text {
+        padding: 3vh;
+        font-size: 0.9rem;
+    }
+
+    .project-navBG {
+        height: 40vh;
+    }
 }

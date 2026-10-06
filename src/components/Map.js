@@ -13,12 +13,11 @@ import addStory from '../images/emotions_page_ui/add_your_story.png';
 
 import zoomInIcon from '../images/emotions_page_ui/zoom_in.png';
 import zoomOutIcon from '../images/emotions_page_ui/zoom_out.png';
-import sliderBar from '../images/emotions_page_ui/zoom_slider_bar.png'
-import sliderButton from '../images/emotions_page_ui/zoom_slider_button.png'
 
 // zoom controls and UI
 const CustomZoomControls = ({ showOverlay }) => {
     const map = useMap()
+    const controlRef = useRef(null)
     const [zoom, setZoom] = useState(map.getZoom())
 
     useEffect(() => {
@@ -27,55 +26,72 @@ const CustomZoomControls = ({ showOverlay }) => {
         return () => map.off('zoomend', update)
     }, [map])
 
+    useEffect(() => {
+        if (controlRef.current) {
+            L.DomEvent.disableClickPropagation(controlRef.current)
+            L.DomEvent.disableScrollPropagation(controlRef.current)
+        }
+    }, [showOverlay])
+            
     if (showOverlay) return null
     
     const minZoom = map.getMinZoom()
     const maxZoom = map.getMaxZoom()
-    const percent = (zoom - minZoom) / (maxZoom - minZoom)
+
+    const buttonStyle = {
+        background : 'transparent',
+        border : 'none',
+        padding : 0,
+        cursor: 'pointer'
+    }
 
     return (
-        <div className="zoomUI">
+        <div className="zoomUI" ref={controlRef}>
 
-            <img
-                src={zoomInIcon}
+            <button
+                type="button"
+                aria-label="Zoom in"
                 onClick={() => map.zoomIn()}
-                className="zoomIcon"
+                diabled={zoom >= maxZoom}
+                style={buttonStyle}
+
+            >
+                <img src={zoomInIcon} className="zoomIcon" alt="" />
+            </button>
+
+            <input
+                type="range"
+                aria-label="Map zoom"
+                min={minZoom}
+                max={maxZoom}
+                step={1}
+                value={zoom}
+                onChange={(e) => {
+                    const nextZoom = Number(e.target.value)
+                    setZoom(nextZoom)
+                    map.setZoom(nextZoom, { animate: false })
+                }}
+                onKeyDown={(e) => e.stopPropagation()}
+                style={{
+                    writingMode: 'vertical-lr',
+                    direction: 'rtl',
+                    width: '24px',
+                    height: '200px',
+                    margin: 0,
+                    accentColor: '#004B87',
+                    cursor: 'pointer'
+                }}
             />
 
-            <div className="zoomSlider">
-
-                <img
-                    src={sliderBar}
-                    className="sliderBar"
-                />
-
-                <img
-                    src={sliderButton}
-                    className="sliderButton"
-                    style={{
-                        top: `${(1 - percent) * 100}%`
-                    }}
-                />
-
-                <div
-                    className="sliderClickArea"
-                    onClick={(e) => {
-                        const rect = e.currentTarget.getBoundingClientRect()
-                        const y = e.clientY - rect.top
-                        const newPercent = 1 - (y / rect.height)
-                        const newZoom =
-                            minZoom + newPercent * (maxZoom - minZoom)
-                        setZoom(newZoom)
-                        map.setZoom(newZoom)
-                    }}
-                />
-            </div>
-
-            <img
-                src={zoomOutIcon}
+            <button
+                type="button"
+                aria-label="Zoom out"
                 onClick={() => map.zoomOut()}
-                className="zoomIcon"
-            />
+                disabled={zoom <= minZoom}
+                style={buttonStyle}
+            >
+                <img src={zoomOutIcon} className="zoomIcon" alt="" />
+            </button>
         </div>
     )
 }
@@ -226,6 +242,7 @@ const Map = () => {
                 center={center}
                 zoom={16}
                 zoomControl={false}
+                minZoom={14}
                 maxZoom={18} // change max zoom
                 maxBounds={[
                     [33.76, -84.41],

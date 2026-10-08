@@ -52,7 +52,7 @@ const CustomZoomControls = ({ showOverlay }) => {
                 type="button"
                 aria-label="Zoom in"
                 onClick={() => map.zoomIn()}
-                diabled={zoom >= maxZoom}
+                disabled={zoom >= maxZoom}
                 style={buttonStyle}
 
             >
@@ -103,10 +103,16 @@ let DefaultIcon = L.icon({
     iconAnchor: [15, 30],
 });
 
+const BlueIcon = L.icon({
+    iconUrl: bluePin,
+    iconSize: [30, 35],
+    iconAnchor: [15, 30],
+});
+
 L.Marker.prototype.options.icon = DefaultIcon;
 
 // click handler that sets the icons
-const ClickHandler = ({ setMarkers, setActiveMarkerId }) => {
+const ClickHandler = ({ setMarkers, setActiveMarkerId, setCanAddPins }) => {
     useMapEvents({
         click(e) {
             const { lat, lng } = e.latlng
@@ -119,12 +125,14 @@ const ClickHandler = ({ setMarkers, setActiveMarkerId }) => {
                     lat,
                     lng,
                     text: '',
+                    color: 'blue',
                     draftText: '',
                     isEditing: true,
                     hasChanged: true
                 }
             ])
             setActiveMarkerId(id)
+            setCanAddPins(false)
         },
     })
     return null
@@ -191,26 +199,35 @@ const Map = () => {
         }
     }, [activeMarkerId])
 
-    // passcode to activate clicker event: type 'admin' using keyboard
-    useEffect(() => {
-        const secret = ['a', 'd', 'm', 'i', 'n']
-        let buffer = []
-        const handleKey = (e) => {
-            buffer.push(e.key.toLowerCase())
-            if (buffer.length > secret.length) {
-                buffer.shift()
-            }
-            if (JSON.stringify(buffer) === JSON.stringify(secret)) {
-                setCanAddPins((prev) => !prev)
-                buffer = []
-            }
-        }
-        window.addEventListener('keydown', handleKey)
-        return () => window.removeEventListener('keydown', handleKey)
-    }, [])
+    
 
     return (
          <div className="mapWrapper">
+
+<div className="addPinControl">
+        {canAddPins ? (
+            <div className="addPinInstructions">
+                <button
+                    type="button"
+                    className="cancelAddPin"
+                    aria-label="Cancel adding a pin"
+                    onClick={() => setCanAddPins(false)}
+                >
+                    ×
+                </button>
+                <p>Click anywhere on the map to add your story.</p>
+            </div>
+        ) : (
+            <button
+                type="button"
+                className="addPinButton"
+                aria-label="Add your story"
+                onClick={() => setCanAddPins(true)}
+            >
+                +
+            </button>
+        )}
+    </div>
 
             {showOverlay && (
                 <div
@@ -256,11 +273,12 @@ const Map = () => {
 
                 <CustomZoomControls showOverlay={showOverlay} />
 
-                {/* can only add pins after typing 'admin' using keyboard */}
+                {/* Add one pin after clicking the + button */}
                 {canAddPins && (
                     <ClickHandler
                         setMarkers={setMarkers}
                         setActiveMarkerId={setActiveMarkerId}
+                        setCanAddPins={setCanAddPins}
                     />
                 )}
 
@@ -283,6 +301,7 @@ const Map = () => {
                     <Marker
                         key={position.id}
                         position={[position.lat, position.lng]}
+                        icon={position.color == 'blue' ? BlueIcon : DefaultIcon}
                         ref={(el) => {
                             if (el) markerRefs.current[position.id] = el
                         }}
@@ -312,8 +331,42 @@ const Map = () => {
                             }
                         }}
                     >
-                        <Popup offset={[0, -40]} autoPan={false}>
+                        <Popup className="storyPopup" offset={[0, -40]} autoPan={true}>
                             <div className="popupBox">
+                            {position.isEditing && (
+                                <h3 className="storyPopupTitle">
+                                    Pick a color &amp; write your story!
+                                </h3>
+                            )}
+
+                                {position.isEditing && (
+                                    <div className="pinColorChoices">
+                                    {['blue', 'gold'].map((color) => (
+                                        <button
+                                            key={color}
+                                            type="button"
+                                            aria-label={`Choose ${color} pin`}
+                                            aria-pressed={position.color === color}
+                                            onClick={() =>
+                                                setMarkers((prev) =>
+                                                    prev.map((m) =>
+                                                        m.id === position.id
+                                                            ? { ...m, color }
+                                                            : m
+                                                    )
+                                                )
+                                            }
+                                        >
+                                            <img
+                                                src={color === 'blue' ? bluePin : goldPin}
+                                                alt=""
+                                                width={30}
+                                                height={35}
+                                            />
+                                        </button>
+                                    ))}
+                                </div>
+                            )}
 
                                 {position.isEditing ? (
                                     <textarea
@@ -352,11 +405,14 @@ const Map = () => {
 
                                         {position.isEditing && position.hasChanged && (
                                             <button
-                                                onClick={() => saveMarker(position.id)}
-                                                className="saveButton"
-                                            >
-                                                Save
-                                            </button>
+                                            type="button"
+                                            onClick={() => saveMarker(position.id)}
+                                            className="saveButton"
+                                            aria-label="Save your story"
+                                            disabled={!position.draftText.trim()}
+                                        >
+                                            ✓
+                                        </button>
                                         )}
 
                                         <button

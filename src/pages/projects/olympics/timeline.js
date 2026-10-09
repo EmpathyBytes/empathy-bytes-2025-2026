@@ -322,6 +322,9 @@ export const query = graphql`
         field_field_event_title {
           value
         }
+        field_field_event_url {
+          value
+        }
         field_icon
         relationships {
           field_field_event_images {

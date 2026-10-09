@@ -114,10 +114,11 @@ const OlympicGallery = ({ data }) => {
 // GraphQL Query (Drupal JSON:API style)
 export const query = graphql`
   query OlympicGalleryQuery {
-    allNodeOlympicsGalleryImage(sort: { field_caption: DESC }) {
+    allNodeOlympicsGalleryImage(sort: { field_date: DESC }) {
       nodes {
         id
         field_caption
+        field_date(formatString: "YYYY-MM-DD")
         field_photographer_source
 
         relationships {

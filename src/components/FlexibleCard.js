@@ -136,10 +136,14 @@ const FlexibleCard = ({
         </CardContent>
     );
 
-    const mediaJSX = image && (
+    // `image` is a URL, or the props from drupalImageProps() for resized Drupal images
+    const { src: imageSrc, ...imageAttrs } = typeof image === "string" ? { src: image } : image || {};
+
+    const mediaJSX = imageSrc && (
         <CardMedia
             component="img"
-            image={image}
+            image={imageSrc}
+            {...imageAttrs}
             alt={title}
             sx={preset.imageStyle || {
                 height: preset.imageHeight || 240,
@@ -216,7 +220,7 @@ FlexibleCard.propTypes = {
     variant: PropTypes.oneOf(['collection', 'interview', 'info', 'learn']),
     title: PropTypes.string.isRequired,
     subtitle: PropTypes.string,
-    image: PropTypes.string,
+    image: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
     body: PropTypes.string,
     isHtmlBody: PropTypes.bool,
     link: PropTypes.string,

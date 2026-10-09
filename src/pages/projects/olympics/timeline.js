@@ -1,5 +1,6 @@
 import React from "react";
 import { graphql, Link } from "gatsby";
+import { drupalImageProps } from "../../../components/drupalImage";
 import {
   VerticalTimeline,
   VerticalTimelineElement,
@@ -137,7 +138,8 @@ const getEventImage = (relationships) => {
   const images = Array.isArray(rawImages) ? rawImages : [rawImages];
 
   return images.map((img) => ({
-    src: img?.relationships?.field_media_hg_image?.url || "",
+    // the timeline shows two columns (~470px cards) from 1170px, one column below
+    ...drupalImageProps(img?.relationships?.field_media_hg_image, "(min-width: 1170px) 470px, 90vw"),
     alt: img?.field_media_hg_image?.alt || img?.name || "",
   }));
 };
@@ -215,7 +217,7 @@ function OlympicsTimelinePage({ data }) {
                   image.src ? (
                     <div key={idx} style={pageStyles.imageContainer}>
                       <img
-                        src={image.src}
+                        {...image}
                         alt={image.alt || eventTitle}
                         style={pageStyles.image}
                       />
@@ -313,6 +315,11 @@ export const query = graphql`
             relationships {
               field_media_hg_image {
                 url
+                localImage {
+                  childImageSharp {
+                    gatsbyImageData(width: 1200, formats: [AUTO, WEBP])
+                  }
+                }
               }
             }
           }

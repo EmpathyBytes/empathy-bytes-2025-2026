@@ -168,6 +168,17 @@ export const query = graphql`
                     uri {
                       url
                     }
+                    localImage {
+                      childImageSharp {
+                        gatsbyImageData(
+                          width: 768
+                          aspectRatio: 1.16
+                          formats: [AUTO, WEBP]
+                          # crop like object-fit: cover (the default "attention" crop moves people off-center)
+                          transformOptions: { cropFocus: CENTER }
+                        )
+                      }
+                    }
                   }
                 }
               }
@@ -182,6 +193,17 @@ export const query = graphql`
               field_pfp {
                 uri {
                   url
+                }
+                localImage {
+                  childImageSharp {
+                    gatsbyImageData(
+                      width: 768
+                      aspectRatio: 1.16
+                      formats: [AUTO, WEBP]
+                      # crop like object-fit: cover (the default "attention" crop moves people off-center)
+                      transformOptions: { cropFocus: CENTER }
+                    )
+                  }
                 }
               }
             }
@@ -199,6 +221,17 @@ export const query = graphql`
                 uri {
                   url
                 }
+                localImage {
+                  childImageSharp {
+                    gatsbyImageData(
+                      width: 768
+                      aspectRatio: 1.16
+                      formats: [AUTO, WEBP]
+                      # crop like object-fit: cover (the default "attention" crop moves people off-center)
+                      transformOptions: { cropFocus: CENTER }
+                    )
+                  }
+                }
               }
             }
           }
@@ -214,6 +247,17 @@ export const query = graphql`
               field_pfp {
                 uri {
                   url
+                }
+                localImage {
+                  childImageSharp {
+                    gatsbyImageData(
+                      width: 768
+                      aspectRatio: 1.16
+                      formats: [AUTO, WEBP]
+                      # crop like object-fit: cover (the default "attention" crop moves people off-center)
+                      transformOptions: { cropFocus: CENTER }
+                    )
+                  }
                 }
               }
             }

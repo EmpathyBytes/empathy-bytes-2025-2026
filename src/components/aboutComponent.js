@@ -2,6 +2,7 @@ import React from "react";
 import "../styles/about.css"
 import "../styles/all.css"
 import Grid from '@mui/material/Grid';
+import { drupalImageProps } from "./drupalImage";
 
 function AboutComponent(props) {
     const members = props.members;
@@ -28,7 +29,7 @@ function AboutComponent(props) {
                     <div>
                         <div class="hex">
                             <div class="hex-background">
-                                <img src={"https://empathybytes.library.gatech.edu" + item.relationships.field_pfp.uri.url} alt="person"></img>
+                                <img {...drupalImageProps(item.relationships.field_pfp, "256px")} alt="person"></img>
                                 <p className="paragraph-about">{item.title}</p>
                                 <p className="paragraph-about">{item.title}</p>
                             </div>
@@ -50,7 +51,7 @@ function AboutComponent(props) {
                     <div>
                             <div class="hex">
                                 <div class="hex-background">
-                                    <img src={"https://empathybytes.library.gatech.edu" + item.relationships.field_pfp.uri.url} alt="person"></img>
+                                    <img {...drupalImageProps(item.relationships.field_pfp, "256px")} alt="person"></img>
                                     <p className="paragraph-about">{item.title}</p>
                                     <p className="paragraph-about">{item.title}</p>
                                 </div>

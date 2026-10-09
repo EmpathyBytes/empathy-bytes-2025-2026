@@ -1,4 +1,7 @@
 const path = require('path');
+const { createRemoteFileNode } = require('gatsby-source-filesystem');
+
+const DRUPAL_BASE_URL = 'https://empathybytes.library.gatech.edu';
 
 exports.onCreateWebpackConfig = ({
   // rules,
@@ -40,7 +43,69 @@ exports.createSchemaCustomization = ({ actions }) => {
       field_caption: String
       field_date: Date @dateformat
     }
+
+    type file__file implements Node {
+      localImage: File @link(from: "fields.localImage")
+    }
   `);
+};
+
+/**
+ * DRUPAL IMAGES
+ * skipFileDownloads keeps Drupal files remote, so pages used to load every 1-2 MB
+ * original in the browser even where it's shown as a small thumbnail. Download only
+ * the images these content types use, at build time, so gatsby-plugin-image can
+ * generate small WebP versions as static files (works on GitHub Pages, unlike the
+ * Image CDN URLs, which need a server). Pages render them with drupalImageProps().
+ *
+ * With PARALLEL_SOURCING, a content node can be created before or after the file it
+ * references, so both orders are handled here.
+ */
+const IMAGE_FIELDS = {
+  node__olympics_gallery_image: 'field_olympic_gallery_image',
+  node__team_members: 'field_pfp',
+  node__collection: 'field_image',
+  node__article: 'field_image',
+  media__hg_image: 'field_media_hg_image', // Olympic timeline event images
+};
+const imageFileIds = new Set();
+const downloadedFileIds = new Set();
+
+const downloadImage = async (fileNode, { actions, createNodeId, getCache, reporter }) => {
+  if (downloadedFileIds.has(fileNode.id)) return;
+  downloadedFileIds.add(fileNode.id);
+
+  const fileUrl = fileNode.uri?.url;
+  if (!fileUrl || !fileNode.filemime?.startsWith('image/')) return;
+
+  try {
+    const localFile = await createRemoteFileNode({
+      url: fileUrl.startsWith('http') ? fileUrl : DRUPAL_BASE_URL + fileUrl,
+      parentNodeId: fileNode.id,
+      createNode: actions.createNode,
+      createNodeId,
+      getCache,
+    });
+    actions.createNodeField({ node: fileNode, name: 'localImage', value: localFile.id });
+  } catch (error) {
+    reporter.warn(`Could not download Drupal image ${fileUrl}: ${error.message}`);
+  }
+};
+
+exports.onCreateNode = async (args) => {
+  const { node, getNode } = args;
+  const imageField = IMAGE_FIELDS[node.internal.type];
+
+  if (imageField) {
+    const fileId = node.relationships?.[`${imageField}___NODE`];
+    if (!fileId) return;
+
+    imageFileIds.add(fileId);
+    const fileNode = getNode(fileId);
+    if (fileNode) await downloadImage(fileNode, args);
+  } else if (node.internal.type === 'file__file' && imageFileIds.has(node.id)) {
+    await downloadImage(node, args);
+  }
 };
 
 // Runs a GraphQL Call

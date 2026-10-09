@@ -3,6 +3,7 @@ import { useState } from "react"
 import Layout from "../components/layout";
 import { graphql } from "gatsby"
 import CollectionCard from "../components/collectioncard";
+import { drupalImageProps } from "../components/drupalImage";
 import Grid from "@mui/material/Grid";
 import "../styles/projects.css"
 import "../styles/all.css"
@@ -140,7 +141,7 @@ const ProjectsPage = ({data}) => {
                             <Grid item xs={6} key={item.id}>
                             <CollectionCard 
                             title = {item.title}
-                            image = {item.relationships.field_image.uri.url}
+                            image = {drupalImageProps(item.relationships.field_image, "(min-width: 900px) 40vw, 80vw")}
                             url = {(item?.title || "").trim().toLowerCase() === "olympics at georgia tech" ? "/olympics" : item.path.alias}
                             body = {item.body.summary}
                             />
@@ -200,7 +201,7 @@ const ProjectsPage = ({data}) => {
                             <CollectionCard 
                             key={item.id}
                             title = {item.title}
-                            image = {item.relationships.field_image.uri.url}
+                            image = {drupalImageProps(item.relationships.field_image, "(min-width: 900px) 40vw, 80vw")}
                             url = {(item?.title || "").trim().toLowerCase() === "olympics at georgia tech" ? "/olympics" : item.path.alias}
                             />
                             
@@ -241,6 +242,11 @@ export const query = graphql`
                     field_image {
                         uri {
                             url
+                        }
+                        localImage {
+                            childImageSharp {
+                                gatsbyImageData(width: 1200, formats: [AUTO, WEBP])
+                            }
                         }
                     }
                   }

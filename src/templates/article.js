@@ -4,6 +4,7 @@ import { graphql } from "gatsby";
 import Layout from "../components/layout";
 
 import "../styles/articles.css";
+import { drupalImageProps } from "../components/drupalImage";
 
 // Functional Article Component
 // This Function will find all the article components on the drupal site, and create a page
@@ -49,7 +50,7 @@ function Article({ data }) {
               ></audio>
               <img
                 className="articleImage"
-                src={post.relationships.field_image?.url || ""}
+                {...drupalImageProps(post.relationships.field_image, "(max-width: 800px) 90vw, 470px")}
                 alt={post.title}
               ></img>
             </div>
@@ -114,6 +115,11 @@ export const query = graphql`
       relationships {
         field_image {
           url
+          localImage {
+            childImageSharp {
+              gatsbyImageData(width: 1200, formats: [AUTO, WEBP])
+            }
+          }
         }
         field_audio {
           path {

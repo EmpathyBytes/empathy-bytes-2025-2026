@@ -2,9 +2,35 @@ import "react-photo-album/styles.css";
 import Layout from "../../../components/layout";
 import React, { useState } from "react";
 import { graphql } from "gatsby";
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import PhotoAlbum from "react-photo-album";
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
+
+// Use the per-column sizes react-photo-album computes, instead of gatsbyImage's
+// default "600px", so browsers don't fetch 2x larger files than they display
+const withSizes = (image, sizes) =>
+  sizes
+    ? {
+        ...image,
+        images: {
+          fallback: image.images.fallback && { ...image.images.fallback, sizes },
+          sources: image.images.sources?.map((source) => ({ ...source, sizes })),
+        },
+      }
+    : image;
+
+// Lightbox gets every generated size so it can pick one that fits the screen
+// (sizes never exceed the original, so smaller photos aren't upscaled)
+const toSlideSrcSet = (image) => {
+  const source =
+    image.images.sources?.find((s) => s.type === "image/webp") ?? image.images.fallback;
+  return source.srcSet.split(",").map((entry) => {
+    const [src, descriptor] = entry.trim().split(" ");
+    const width = parseInt(descriptor, 10);
+    return { src, width, height: Math.round((width * image.height) / image.width) };
+  });
+};
 
 const OlympicGallery = ({ data }) => {
   const [index, setIndex] = useState(-1);
@@ -12,18 +38,25 @@ const OlympicGallery = ({ data }) => {
   // Convert Drupal nodes → PhotoAlbum format
   const photos = data.allNodeOlympicsGalleryImage.nodes
     .map((node) => {
-      const imageUrl =
-        "https://empathybytes.library.gatech.edu" + node.relationships?.field_olympic_gallery_image?.uri?.url;
+      const file = node.relationships?.field_olympic_gallery_image;
+
+      const sharp = file?.localImage?.childImageSharp;
 
       // Safety check for missing images
-      if (!imageUrl) return null;
+      if (!sharp?.thumbnail) return null;
+
+      const fullSrcSet = toSlideSrcSet(getImage(sharp.full));
 
       return {
-        src: imageUrl,
+        // Resized WebP copies generated at build time (see onCreateNode in
+        // gatsby-node.js), so the page never downloads the 1-2 MB originals
+        src: fullSrcSet[fullSrcSet.length - 1].src,
+        slideSrcSet: fullSrcSet,
+        image: getImage(sharp.thumbnail),
 
-        // fallback dimensions (needed for masonry layout stability)
-        width: 4,
-        height: 3,
+        // real dimensions keep the masonry layout from shifting as images load
+        width: file.width,
+        height: file.height,
 
         key: node.id,
 
@@ -78,19 +111,17 @@ const OlympicGallery = ({ data }) => {
           layout="masonry"
           photos={photos}
           onClick={({ index }) => setIndex(index)}
-          renderPhoto={({ photo, wrapperStyle }) => (
-            <div style={wrapperStyle}>
-              <img
-                src={photo.src}
+          sizes={{ size: "90vw" }}
+          render={{
+            image: ({ className, sizes }, { photo }) => (
+              <GatsbyImage
+                image={withSizes(photo.image, sizes)}
                 alt={photo.alt}
-                style={{
-                  width: "100%",
-                  height: "100%",
-                  objectFit: "cover",
-                }}
+                className={className}
+                style={{ width: "100%" }}
               />
-            </div>
-          )}
+            ),
+          }}
         />
       </div>
 
@@ -101,6 +132,9 @@ const OlympicGallery = ({ data }) => {
         close={() => setIndex(-1)}
         slides={photos.map((p) => ({
           src: p.src,
+          srcSet: p.slideSrcSet,
+          width: p.width,
+          height: p.height,
           description: `${p.caption || ""}${
             p.photographer ? ` — © ${p.photographer}` : ""
           }`,
@@ -123,8 +157,13 @@ export const query = graphql`
 
         relationships {
           field_olympic_gallery_image {
-            uri {
-              url
+            width
+            height
+            localImage {
+              childImageSharp {
+                thumbnail: gatsbyImageData(width: 600, layout: CONSTRAINED, formats: [AUTO, WEBP])
+                full: gatsbyImageData(width: 1600, layout: CONSTRAINED, formats: [AUTO, WEBP])
+              }
             }
           }
         }

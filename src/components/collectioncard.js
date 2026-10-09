@@ -8,7 +8,7 @@ export default function CollectionCard(props) {
             title={props.title}
             body={props.body}
             isHtmlBody={true}
-            image={"https://empathybytes.library.gatech.edu" + props.image}
+            image={props.image}
             link={"/projects" + props.url}
         />
     );

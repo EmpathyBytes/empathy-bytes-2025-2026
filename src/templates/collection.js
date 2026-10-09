@@ -2,6 +2,7 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import Layout from "../components/layout";
 import InterviewCard from '../components/interviewcard';
+import { drupalImageProps, interviewThumbnailSizes } from '../components/drupalImage';
 import "../styles/collection.css";
 
 function Collection({ data }) {
@@ -27,9 +28,8 @@ function Collection({ data }) {
                         <InterviewCard
                             key={interview.id}
                             img={
-                                interview?.relationships?.field_image?.uri?.url
-                                    ? "https://empathybytes.library.gatech.edu" +
-                                      interview.relationships.field_image.uri.url
+                                interview?.relationships?.field_image
+                                    ? drupalImageProps(interview.relationships.field_image, interviewThumbnailSizes)
                                     : ""
                             }
                             title={interview?.title || ""}
@@ -77,6 +77,11 @@ export const query = graphql`
                         field_image {
                             uri {
                                 url
+                            }
+                            localImage {
+                                childImageSharp {
+                                    gatsbyImageData(width: 1000, formats: [AUTO, WEBP])
+                                }
                             }
                         }
                     }

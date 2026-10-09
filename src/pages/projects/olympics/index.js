@@ -3,6 +3,7 @@ import { graphql } from "gatsby";
 import Layout from "../../../components/layout";
 import InterviewCard from "../../../components/interviewcard";
 import FlexibleCard from "../../../components/FlexibleCard";
+import { drupalImageProps, interviewThumbnailSizes } from "../../../components/drupalImage";
 import "../../../styles/collection.css";
 
 function OlympicsHubPage({ data }) {
@@ -45,9 +46,8 @@ function OlympicsHubPage({ data }) {
             <InterviewCard
               key={interview.id}
               img={
-                interview?.relationships?.field_image?.uri?.url
-                  ? "https://empathybytes.library.gatech.edu" +
-                    interview.relationships.field_image.uri.url
+                interview?.relationships?.field_image
+                  ? drupalImageProps(interview.relationships.field_image, interviewThumbnailSizes)
                   : ""
               }
               title={interview?.title || ""}
@@ -102,6 +102,11 @@ export const query = graphql`
             field_image {
               uri {
                 url
+              }
+              localImage {
+                childImageSharp {
+                  gatsbyImageData(width: 1000, formats: [AUTO, WEBP])
+                }
               }
             }
           }

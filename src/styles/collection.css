@@ -6,6 +6,7 @@
     font-family: 'Roboto Slab', sans-serif;
 }
 
+/* Page Title and Description Section */
 .collection-header {
     text-align: center;
     color: var(--color-offwhite);
@@ -24,6 +25,7 @@
     line-height: 1.6;
 }
 
+/* Vertical List for Interview Cards */
 .interviews-list {
     display: flex;
     flex-direction: column;
@@ -62,6 +64,7 @@
     padding: 2rem;
 }
 
+/* Card Media Section  */
 .card-image-container {
     flex-shrink: 0;
 }

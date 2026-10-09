@@ -27,18 +27,18 @@ exports.createSchemaCustomization = ({ actions }) => {
   const { createTypes } = actions;
 
   createTypes(`
+    type OlympicsTimelineEventUrl {
+      value: String
+    }
+
     type node__olympics_timeline_event implements Node {
       field_field_event_subtitle: String
+      field_field_event_url: OlympicsTimelineEventUrl
     }
-  `);
-};
 
-exports.createSchemaCustomization = ({ actions }) => {
-  const { createTypes } = actions;
-
-  createTypes(`
     type node__olympics_gallery_image implements Node {
       field_caption: String
+      field_date: Date @dateformat
     }
   `);
 };

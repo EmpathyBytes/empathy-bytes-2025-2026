@@ -33,7 +33,16 @@
     gap: 2.5rem;
 }
 
-/* Interview card attibrutes  */
+.olympics-route-card {
+    width: 100%;
+    max-width: 1020px !important;
+}
+
+.olympics-route-card .MuiCardActionArea-root {
+    width: 100%;
+}
+
+
 .redesigned-interview-card {
     background-color: var(--color-navyblue);
     border-radius: 20px;
@@ -133,6 +142,10 @@
 @media (max-width: 768px) {
     .collection-header h1 {
         font-size: 2.5rem;
+    }
+
+    .olympics-route-card {
+        max-width: 100% !important;
     }
 
     .redesigned-interview-card .MuiCardActionArea-root {

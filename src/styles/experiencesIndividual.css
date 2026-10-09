@@ -100,3 +100,59 @@ iframe {
     }
 }
 }
+
+/* App Team page (appteam.js): text, phone mockup, and video columns */
+.app-text {
+    margin-left: 50px;
+}
+
+.app-mockup {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.app-mockup img {
+    width: 100%;
+    max-width: 398px; /* the mockup's previous scale(0.8) size */
+    height: auto;
+}
+
+.app-video {
+    transform: scale(0.8);
+}
+
+/* Below MUI's md breakpoint the three columns stack: text, mockup, then video */
+@media screen and (max-width: 899px) {
+    .app-text {
+        margin-left: 0;
+        padding: 0 1rem;
+    }
+
+    .app-mockup {
+        padding: 2rem 0;
+    }
+
+    .app-mockup img {
+        max-width: 280px;
+    }
+
+    .app-video {
+        transform: none;
+        width: 100%;
+        text-align: center;
+    }
+
+    .app-video h1 {
+        padding: 0 1rem;
+    }
+
+    .app-video iframe {
+        display: block;
+        width: 100%;
+        max-width: 315px;
+        height: auto;
+        aspect-ratio: 9 / 16;
+        margin: 0 auto;
+    }
+}

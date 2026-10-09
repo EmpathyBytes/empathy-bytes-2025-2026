@@ -26,12 +26,7 @@ function EmergingTech() {
                 <h1 className="header-experiences">Emerging Technologies Team</h1>
             </div>
             <div className="full-container-experiences">
-                {/* <Grid container spacing={2} className="">
-                    <div className="grid-margins-experiences">
-                            <h1 className="header-experiences">The Emerging Technologies Team</h1>
-                    </div>
-                </Grid> */}
-
+               
                 <Grid container spacing={0}>
                     <Grid item xs={12}>
                         <div className="blue-box">
@@ -44,9 +39,6 @@ function EmergingTech() {
                     </Grid>
 
                     <div className="grid-margins-experiences">
-                        {/* <Grid item xs={12} sm={8}>
-                            <h1 className="sub-header-experiences">What We Do</h1>
-                        </Grid> */}
                         <Grid item sm={4}></Grid>
                         <Grid sm={5}></Grid>
                     </div>

@@ -12,6 +12,30 @@ import {
     Box
 } from '@mui/material';
 
+/**
+ * A flexiblecard component that supports multiple layout variants (Collection, Interview, Info, Learn).
+ * * This component automatically handles:
+ * - Orientation shifts (Horizontal vs Vertical) based on variant.
+ * - Conditional rendering of Gatsby Links vs standard static cards.
+ * - HTML body parsing via dangerouslySetInnerHTML.
+ * - Action button arrays for footer interactions.
+ *
+ * @component
+ * @param {Object} props - The component props.
+ * @param {('collection'|'interview'|'info'|'learn')} [props.variant='info'] - Determines the layout, sizing, and hover animations of the card.
+ * @param {string} props.title - The primary heading text for the card.
+ * @param {string} [props.subtitle] - Secondary text displayed below the title (e.g., date or author).
+ * @param {string} [props.image] - The source URL for the card's media.
+ * @param {string} [props.body] - The main descriptive content. Can be plain text or a string of HTML.
+ * @param {boolean} [props.isHtmlBody=false] - If true, the `body` prop will be rendered as HTML.
+ * @param {string} [props.link] - If provided, the entire card becomes a Gatsby `Link` pointing to this path.
+ * @param {Array<Object>} [props.actions] - An array of objects for footer buttons.
+ * @param {string} props.actions[].label - The text to display on the button.
+ * @param {string} props.actions[].url - The destination path for the button link.
+ * @param {string} [props.className] - Optional CSS class for external styling overrides.
+ * * @returns {JSX.Element} The rendered Material UI Card.
+ */
+
 const themeColors = {
     navy: "#003057",   // Card Background
     blue: "#004B87",   // Page Background / Accents

@@ -1,3 +1,5 @@
+/*Projects Page*/
+
 /* Smooth scroll for page transitions */
 html {
     scroll-behavior: smooth;
@@ -16,38 +18,13 @@ html {
 }
 
 .bg {
-    /* styles for devices with a minimum screen width of 480px */
     background: #004B87;
-    /* background: linear-gradient(180deg, var(--color-navyblue), var(--color-lightblue), rgba(255,249,202,1));
-    background-size: cover;
-    animation: gradient 10ms ease infinite; */
-
-    /*this is for media query in css
-    */
-    /* @media screen and (min-width: 600px) {
-        background-color: antiquewhite;
-      }
-      @media screen and (max-width: 600px) {
-        background-color: black;
-      } */
 }
-
-/* @keyframes gradient {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
-} */
 
 .project-nav {
     text-align: center;
 }
-
+/*Navigation bar attributes*/
 .project-nav-text {
     font-size: 1rem;
     font-family: 'Roboto Slab', sans-serif;
@@ -130,6 +107,7 @@ html {
     color: var(--color-navyblue) !important;
     font-weight: bold;
 }
+/*Adjusts for screen sizes*/
 
 @media (max-width: 768px) {
     .projectsContainer {

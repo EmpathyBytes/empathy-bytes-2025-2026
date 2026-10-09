@@ -151,3 +151,63 @@ body{
   color: var( --color-darkbrown);
   float: right;
 }
+
+/* Mobile / smaller screens: show the full hero photo and center the heading */
+@media (max-width: 768px) {
+  .container-contact {
+    height: auto;
+    align-items: flex-start;
+  }
+
+  .container-contact main {
+    width: 100%;
+  }
+
+  .contact-full {
+    height: auto;
+    object-fit: contain;
+  }
+
+  .headerStyles h1 {
+    font-size: clamp(1.375rem, 6.5vw, 2.25rem);
+    text-align: center;
+    padding: 0 1rem;
+  }
+
+  .headerStyles .centerStyles {
+    display: block;
+  }
+
+  .button-container {
+    height: auto;
+    padding: 0 1rem 2rem;
+  }
+
+  #info {
+    padding: 1.5rem 1rem;
+  }
+
+  #info .info-section {
+    margin: 0;
+    padding: 1.5rem 0.5rem;
+  }
+
+  /* about.css's global .container adds a large padding-top; drop it here */
+  #info .container {
+    padding: 0;
+  }
+
+  .container section {
+    width: 100%;
+    margin-top: 0;
+  }
+
+  .container section details {
+    margin: 0.625rem 0;
+  }
+
+  .container section details summary {
+    font-size: 1.125rem;
+    text-align: left;
+  }
+}

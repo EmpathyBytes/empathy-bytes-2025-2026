@@ -8,7 +8,7 @@ import YoutubeLogo from "../images/socialmedia-icons/youtube_icon.png";
 import LinkedinLogo from "../images/socialmedia-icons/linkedin_icon.png";
 import GithubLogo from "../images/socialmedia-icons/github_icon.png";
 import InstagramLogo from "../images/socialmedia-icons/instagram_icon.png";
-
+import GlobalStyles from "@mui/material/GlobalStyles";
 
 
 // Here is a footer component for the website. This component is used in the "layout" component that is included in every page.
@@ -19,14 +19,96 @@ function Footer(props) {
 
   return (
     <footer id="footer">
-      <div className="container-footer">
-        <Grid item xs={12} sm={4}>
+     <GlobalStyles
+        styles={{
+          "@media (min-width:700px) and (max-width:1200px)": {
+            "#learn-more-home": {
+              height: "auto",
+              minHeight: "50vh",
+              overflow: "visible",
+            },
+
+            "#footer": {
+              height: "auto",
+              maxHeight: "none",
+              overflow: "visible",
+            },
+            // Use grid layout for mid-sized screens to avoid overlap
+            "#footer .container-footer": {
+              display: "grid",
+              gridTemplateColumns: "220px 180px 220px",
+              gridTemplateRows: "auto auto auto",
+              rowGap: "40px",
+              columnGap: "40px",
+              alignItems: "start",
+              justifyContent: "center",
+              width: "100%",
+              paddingLeft: "2rem",
+              paddingRight: "2rem",
+              boxSizing: "border-box",
+            },
+            // Center brand title on first row
+            "#footer .footer-brand": {
+              gridColumn: "1 / 4",
+              gridRow: "1",
+              justifySelf: "center",
+              textAlign: "center",
+            },
+            // Align sections so Teams is centered visually
+            "#footer .footer-general": {
+              gridColumn: "1",
+              gridRow: "2",
+              justifySelf: "start",
+              textAlign: "left",
+            },
+            "#footer .footer-teams": {
+              gridColumn: "2",
+              gridRow: "2",
+              justifySelf: "center",
+              textAlign: "left",
+            },
+            "#footer .footer-communities": {
+              gridColumn: "3",
+              gridRow: "2",
+              justifySelf: "end",
+              textAlign: "left",
+            },
+            // Center social section on final row
+            "#footer .footer-social": {
+              gridColumn: "1 / 4",
+              gridRow: "3",
+              justifySelf: "center",
+              textAlign: "center",
+            },
+
+            "#footer .footer-brand .text-footer-title": {
+              whiteSpace: "nowrap",
+              display: "inline-flex",
+              alignItems: "baseline",
+              gap: "0.35ch",
+            },
+
+            "#footer .footer-brand .bytes": {
+              display: "inline",
+              whiteSpace: "nowrap",
+            },
+          },
+
+          "#footer, #footer .container-footer": {
+            height: "auto",
+            maxHeight: "none",
+            overflow: "visible",
+          },
+        }}
+      />
+      <div container className="container-footer">
+        <Grid item xs={12} sm={4} className="footer-brand">
         <h1 className="text-footer-title">
           Empathy <span className="bytes">Bytes</span>
-          </h1>
+        </h1>
         </Grid>
 
-        { <Grid item xs={6} sm={2} className="grouping">
+        { <Grid item xs={6} sm={2} className="grouping footer-general">
           <h1 className="text-heading">General</h1>
           <div className="text-anchor-container">
 
@@ -37,7 +119,7 @@ function Footer(props) {
           </div>
         </Grid> }
 
-        { <Grid item xs={6} sm={2} className="grouping">
+        { <Grid item xs={6} sm={2} className="grouping footer-teams">
           <h1 className="text-heading">Teams</h1>
 
           <div className="text-anchor-container">
@@ -48,7 +130,7 @@ function Footer(props) {
           </div>
         </Grid> }
 
-        { <Grid item xs={6} sm={2} className="grouping">
+        { <Grid item xs={6} sm={2} className="grouping footer-communities">
           <h1 className="text-heading">Communities</h1>
           
           <div className="text-anchor-container">
@@ -59,7 +141,7 @@ function Footer(props) {
           </div>
         </Grid> }
 
-        <Grid item xs={6} sm={2} className="logo-container">
+        <Grid item xs={6} sm={2} className="logo-container footer-social">
 
         <div className="centered-content">
         <div className="logo-container">
@@ -101,11 +183,6 @@ function Footer(props) {
 }
 
 export default Footer;
-
-
-
-
-
 
 
 

@@ -26,6 +26,7 @@ exports.onCreateWebpackConfig = ({
 exports.createSchemaCustomization = ({ actions }) => {
   const { createTypes } = actions;
 
+  // Explicit types so queries still work when every node leaves these fields empty
   createTypes(`
     type OlympicsTimelineEventUrl {
       value: String

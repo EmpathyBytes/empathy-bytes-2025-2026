@@ -56,7 +56,7 @@ const OlympicGallery = ({ data }) => {
           marginBottom: "1rem",
         }}
       >
-        Perspectives on Georgia Tech's Campus
+        Olympic Gallery
       </h1>
 
       <p
@@ -69,7 +69,7 @@ const OlympicGallery = ({ data }) => {
           textAlign: "center",
         }}
       >
-        A project that spotlights the perspectives of Georgia Tech students looking out different windows across campus.
+        Explore our collection of Olympic Village photos. Click any photo to view it in full size.
       </p>
 
       {/* Photo grid */}

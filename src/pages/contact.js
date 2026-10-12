@@ -10,8 +10,8 @@ function ContactPage() {
     App: "vchoi3@gatech.edu",
     VR: "vtran22@gatech.edu",
     Media: "aroemer3@gatech.edu",
-    Frontend: "msharma343@gatech.edu",
-    Backend: "dezhilmuthu3@gatech.edu",
+    Frontend: "kkim861@gatech.edu",
+    Backend: "bwang649@gatech.edu",
   };
 
   // Handle email button click

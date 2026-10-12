@@ -5,18 +5,32 @@ import { graphql } from "gatsby";
 import PhotoAlbum from "react-photo-album";
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
+import galleryMetadata from "../../../data/olympic-gallery-metadata.json"
 
 const OlympicGallery = ({ data }) => {
   const [index, setIndex] = useState(-1);
 
+// look up metadata by filename for captions
+const metadataByFilename = Object.fromEntries(
+  galleryMetadata.map((item) => [item.filename, item])
+);
+
+// separate file url to get most basic filename
+const getFilename = (url = "") =>
+  decodeURIComponent(url.split("/").pop().split("?")[0]).replace(/\.[^.]+$/, "");
+
   // Convert Drupal nodes → PhotoAlbum format
   const photos = data.allNodeOlympicsGalleryImage.nodes
     .map((node) => {
-      const imageUrl =
-        "https://empathybytes.library.gatech.edu" + node.relationships?.field_olympic_gallery_image?.uri?.url;
+      //check url first
+      const url = node.relationships?.field_olympic_gallery_image?.uri?.url;
 
       // Safety check for missing images
-      if (!imageUrl) return null;
+      if (!url) return null;
+
+      const imageUrl = "https://empathybytes.library.gatech.edu" + url;
+      const filename = getFilename(url);
+      const meta = metadataByFilename[filename];
 
       return {
         src: imageUrl,
@@ -27,11 +41,12 @@ const OlympicGallery = ({ data }) => {
 
         key: node.id,
 
-        alt: node.field_caption || "Olympic gallery image",
+        alt: meta?.caption || node.field_caption || "Olympic gallery image",
 
         // metadata
-        caption: node.field_caption,
+        caption: meta?.caption || node.field_caption,
         photographer: node.field_photographer_source,
+        year: meta?.year,
         date: node.field_date,
       };
     })
@@ -78,19 +93,46 @@ const OlympicGallery = ({ data }) => {
           layout="masonry"
           photos={photos}
           onClick={({ index }) => setIndex(index)}
-          renderPhoto={({ photo, wrapperStyle }) => (
-            <div style={wrapperStyle}>
-              <img
-                src={photo.src}
-                alt={photo.alt}
+          render={{
+            photo: ({ onClick, style }, { photo }) => (
+              <figure
+                onClick={onClick}
                 style={{
-                  width: "100%",
-                  height: "100%",
-                  objectFit: "cover",
+                  ...style,
+                  height: "auto",
+                  aspectRatio: "auto",
+                  margin: 0,
+                  background: "#fff",
+                  borderRadius: "8px",
+                  overflow: "hidden",
+                  boxShadow: "0 1px 4px rgba(0,0,0,0.15)",
                 }}
-              />
-            </div>
-          )}
+              >
+                <img
+                  src={photo.src}
+                  alt={photo.alt}
+                  style={{
+                    width: "100%",
+                    aspectRatio: "4 / 3",
+                    objectFit: "cover",
+                    display: "block",
+                  }}
+                />
+                <figcaption
+                  style={{
+                    padding: "0.5rem 0.75rem",
+                    fontFamily: "Roboto Slab, serif",
+                    fontSize: "0.9rem",
+                    color: "#003057",
+                    textAlign: "left"
+                  }}
+                >
+                  {photo.caption}
+                  {photo.year && <span> ({photo.year})</span>}
+                </figcaption>
+              </figure>
+            ),
+          }}
         />
       </div>
 

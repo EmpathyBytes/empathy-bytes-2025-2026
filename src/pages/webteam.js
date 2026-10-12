@@ -1,89 +1,190 @@
-// This is the Web Team page! - Jacob
-
-import React from "react";
+import React, { useState } from "react";
 import Layout from "../components/layout";
-
-import technologies from "../images/gatsbyanddrupal.png";
-import Banner from "../images/experiences/WebTeamBanner.png";
-
-import Grid from '@mui/material/Grid';
-
+import Banner from "../images/experiences/webSubteamBanner.jpg";
 import "../styles/experiencesIndividual.css";
 import "../styles/all.css";
+import "../styles/webteam.css";
+import Slideshow from "../components/Slideshow";
 
-function web() {
-    return(
+//icons for tech stack
+import gatsbyIcon from "../images/subteam-icons/webteam-icons/gatsby-logo.avif";
+import figmaIcon from "../images/subteam-icons/webteam-icons/figma-logo.png";
+import jsIcon from "../images/subteam-icons/webteam-icons/js-logo.webp";
+import cssIcon from "../images/subteam-icons/webteam-icons/css-logo.png";
+import drupalIcon from "../images/subteam-icons/webteam-icons/drupal-logo.png";
+import graphqlIcon from "../images/subteam-icons/webteam-icons/graphql-logo.png";
+
+//assets for design and project section
+import designPlaceholder from "../images/subteam-icons/webteam-icons/image-placeholder.jpeg";
+import projectPlaceholder from "../images/subteam-icons/webteam-icons/image-placeholder.jpeg";
+import redesignTemplate from "../images/subteam-icons/webteam-icons/webteam-assets/redesignTemplate.png";
+import kellyRedesign from "../images/subteam-icons/webteam-icons/webteam-assets/kellyRedesign.png";
+import mishaRedesign from "../images/subteam-icons/webteam-icons/webteam-assets/mishaRedesign.png";
+import tiffanyRedesign from "../images/subteam-icons/webteam-icons/webteam-assets/tiffanyRedesign.png";
+
+function Web() {
+    // Single state for tabs
+    const [activeTab, setActiveTab] = useState("frontend");
+
+    const slides = [
+        {
+            image: redesignTemplate,
+            description: "Redesign of general template for subteam pages"
+        },
+        {
+            image: mishaRedesign,
+            description: "Redesign of interviews page by Misha"
+        },
+        {
+            image: tiffanyRedesign,
+            description: "Redesign of landing page by Tiffany"
+        },
+        {
+            image: kellyRedesign,
+            description: "Redesign of web team subteam page by Kelly"
+        }
+    ];
+    
+    // Tab change
+    const handleTabChange = (tab) => setActiveTab(tab);
+
+    return (
         <Layout>
-            <title>Web Team</title>
-            <div className="top-banner" style={{backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.5)), url(${Banner})`}}>
-                <h1 className="header-experiences">Web Team</h1>
+            <title>Web Team | Empathy Bytes</title>
+            
+            <div className="webteam-page">
+            
+            {/* Banner Section*/}
+            <div className="banner">
+                {/* Background image */}
+                                <div
+                                    className="banner-bg"
+                  style={{ backgroundImage: `url(${Banner})` }}
+                  aria-hidden="true"
+                />
+                {/* Dark overlay */}
+                                <div className="banner-overlay" aria-hidden="true" />
+                {/* Blue gradient fade at bottom*/}
+                                <div className="banner-fade" aria-hidden="true" />
+                                <h3 className="banner-h3">The</h3>
+                                <h1 className="banner-h1">Web</h1>
+                                <h2 className="banner-h2">Development Team</h2>
             </div>
-            <div className="full-container-experiences">
-
-                <Grid container spacing={0}>
-
-                    <Grid item xs={12}>
-                        <div className="blue-box">
-                        <p>
-                            Our team develops website utilized to showcase our research. Our team is split into
-                            two subteams for Web Development and Design. We created the site using GatsbyJS and Decoupled Drupal.
-                            We also are experimenting with Web 3D using Three.js.
-                        </p>
+            
+            {/* About Us Section */}
+            <section className="section" aria-labelledby="about-title">
+                <h2 id="about-title">About Us</h2>
+                <p>
+                    Our team develops this website that showcases our research and
+                    our projects building towards utilizing empathy in technology. We
+                    are split into two teams: Frontend and Backend. We design in
+                    Figma and implement using GatsbyJS, GraphQL, and Drupal.
+                </p>
+            </section>
+            
+            {/* Team buttons */}
+            <div className="tabs" role="tablist" aria-label="Team sections">
+                <button
+                    className={`tabButton ${activeTab === "frontend" ? "is-active" : ""}`}
+                    aria-pressed={activeTab === "frontend"}
+                    onClick={() => handleTabChange("frontend")}
+                >
+                    Frontend
+                </button>
+                <button
+                    className={`tabButton ${activeTab === "backend" ? "is-active" : ""}`}
+                    aria-pressed={activeTab === "backend"}
+                    onClick={() => handleTabChange("backend")}
+                >
+                    Backend
+                </button>
+            </div>
+            
+            {/* Conditional rendering based on active tab */}
+            {activeTab === "frontend" ? (
+                /* Frontend Section */
+                <section className="section" aria-labelledby="frontend-title">
+                    <h2 id="frontend-title">Frontend</h2>
+                    <p>
+                        The frontend team focuses on creating responsive, accessible, and engaging user interfaces that bring our research into life.
+                    </p>
+                    {/* Tech Stack */}
+                    <h3 className="section-subhead">Tech Stack</h3>
+                    <div className="techstack-row">
+                        <div className="techstack-item">
+                            <div className="techstack-icon">
+                                <img src={gatsbyIcon} alt="Gatsby" className="techstack-img gatsby" />
+                            </div>
                         </div>
-                    </Grid>
-                </Grid>
-
-                <div className="divider"></div>
-
-                <Grid container alignItems="right" spacing={3} className="grid-margins-experiences">
-                    <Grid item xs={12} className="right-align-experiences">
-                        <h1 className="sub-header-experiences">The Website</h1>
-                    </Grid>
-                    <Grid item xs={12}>
-                        <p className="paragraph-experiences-body">Empathy Bytes is developing a 
-                            web application to act as a portal showcasing our research on communities within Georgia Tech.
-                        </p>
-                    </Grid>
-
-                    <Grid item xs={0} sm={5}></Grid>
-
-                    <Grid item xs={12} className="right-align-experiences">
-                        <h2 className="sub-header-experiences">Our Technologies</h2>
-                    </Grid>
-
-                    <Grid item xs={12}>
-                        <div className="blue-box" style={{width: "920px", display: "flex", justifyContent: "center"}}>
-                            <img src={technologies} style={{width:"50%"}} alt="Gatsby and Drupal Logo"/>
+                        <div className="techstack-item">
+                            <div className="techstack-icon">
+                                <img src={figmaIcon} alt="Figma" className="techstack-img figma" />
+                            </div>
                         </div>
-                    </Grid>
-                </Grid>
+                        <div className="techstack-item">
+                            <div className="techstack-icon">
+                                <img src={jsIcon} alt="JavaScript" className="techstack-img js" />
+                            </div>
+                        </div>
+                        <div className="techstack-item">
+                            <div className="techstack-icon">
+                                <img src={cssIcon} alt="CSS" className="techstack-img css" />
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            ) : (
+                /* Backend Section */
+                <section className="section" aria-labelledby="backend-title">
+                    <h2 id="backend-title">Backend</h2>
+                    <p>
+                        The backend team builds robust systems that power our content management and data delivery.
+                    </p>
+                    {/* Tech Stack */}
+                    <h3 className="section-subhead">Tech Stack</h3>
+                    <div className="backend-row">
+                        <div className="techstack-item">
+                            <div className="techstack-icon">
+                                <img src={drupalIcon} alt="Drupal" className="techstack-img drupal" />
+                            </div>
+                        </div>
+                        <div className="techstack-item">
+                            <div className="techstack-icon">
+                                <img src={graphqlIcon} alt="GraphQL" className="techstack-img graphql" />
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            )}
+            
+            {/* Our Work Section - Slideshow*/}
+            <section className="ourwork" aria-labelledby="ourwork-title">
+                <h2 id="ourwork-title" className="ourwork-title">Our Work</h2>
 
-                <div className="divider"></div>
+                <Slideshow slides={slides} title="Designs" />
 
-                <Grid container spacing={2}>
-                    <Grid xs={12} sm={12} item className="right-align-experiences" alignItems="center" justifyContent="center" direction="column">
-                        <h1 className="sub-header-experiences">Spring 2023 Progress</h1>
-                    </Grid>
-
-
-                    <Grid item xs={12} sm={12} alignItems="center" justifyContent="center" direction="column">
-                        <iframe src="https://www.youtube.com/embed/hL6BJbFQqqk" 
-                            title="YouTube video player" frameborder="0" 
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                            allowfullscreen>
-                        </iframe>
-                    </Grid>
-                </Grid>
+                {/*Placeholder for Projects Section*/}
+                <h4 className="project-title">Project #1</h4>
+                <div className="project-image-wrap">
+                    <img 
+                        src={designPlaceholder}
+                        alt="Project #1 placeholder"
+                        className="project-image"
+                    />
+                </div>
+                <p className="project-desc">Description of Project #1</p>
+            </section>
+            
             </div>
         </Layout>
     );
 }
 
-export default web;
+export default Web;
 
 export const Head = () => (
     <>
     <link rel="icon" type="image/png" href="https://educast.library.gatech.edu/static/empbytes-8c9db7ee75f110e619f7d85cb8b170c5.jpg" />
-    <title>Web Team</title>
+    <title>Web Team | Empathy Bytes</title>
     </>
-    )
+)

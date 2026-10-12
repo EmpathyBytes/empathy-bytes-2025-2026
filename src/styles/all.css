@@ -1,8 +1,8 @@
 /* This stylesheet contains basic styling components that will be used in all pages */
-
+@import './colors.css';
 
 .bg-1 {
-    background-color: #004B87;
+    background-color:  #22232e;;
 }
 .bg-2 {
     background-color: #F2F0F0;
@@ -24,5 +24,4 @@
 
 .noUnderline {
     text-decoration: none;
-    
 }

@@ -4,7 +4,7 @@
 }
 /* The mui card component containing the card-content */
 .card2 {
-    background-color: #003057;
+    background-color: var(--color-navyblue);
     display: flex;
     max-width: 100vw;
     width: 92vw;
@@ -29,7 +29,7 @@
 /*The title of the card*/
 .header {
     font-family: 'Roboto Slab', serif;
-    color:white;
+    color: var(--color-offwhite);
     font-size: 30px;
     font-style: normal;
     font-weight: 700;
@@ -38,7 +38,7 @@
 }
 /*The body text of the card*/
 .content {
-    color: #FFF;
+    color: var(--color-offwhite);
     font-family: Roboto;
     font-size: 20px;
     font-style: normal;
@@ -55,8 +55,8 @@
     align-items: center;
     gap: 20px;
     border-radius: 50px;
-    background: #FFF;
-    color: #004B87;
+    background: var(--color-offwhite);
+    color: var(--color-peacockblue);
     font-weight: bolder;
     flex-direction: row;
     align-self: center;
@@ -68,5 +68,5 @@
 .button:hover {
     transition:  0.3s;
     transform:0.3s;
-    background-color: #E0BB56;
+    background-color: var(--color-brightgold);
 }

@@ -18,3 +18,6 @@ npm run develop
 npm run deploy
 ```
 This make take a few minutes
+
+# Color Guide
+### View "colors.css" to see all color variables, it includes the official color guide as well as other accents.

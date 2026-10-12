@@ -1,18 +1,20 @@
-/*This is the card wrapper containing the card */
+/*This is the card wrapper containing the card for "what is empathy bytes" on the landing page*/
+
 .card-wrapper {
-    max-height:400px;
+    max-height:40vh;
 }
 /* The mui card component containing the card-content */
 .card {
-    background-color: #003057;
+    background-color: var(--color-navyblue);
     display: flex;
     max-width: 50vw;
-    height:400px;
+    height: 52vh;
     flex-direction: column;
     justify-content: space-evenly;
     align-items:center;
-    border-radius: 15px;
-    padding:0px 10px 0px 10px;
+    border-radius: 1vw;
+    padding: 2vw;
+    box-sizing: border-box;
 }
 
 /* The inner part of the card containing all the objects like the title, body, and button*/
@@ -20,15 +22,16 @@
     display:flex;
     flex-direction: column;
     align-items: flex-end;
-    gap:10px;
+    gap:2vh;
+    /*slightly increased the gap*/
 }
 
 
 /*The title of the card*/
 .header {
     font-family: 'Roboto Slab', serif;
-    color:white;
-    font-size: 30px;
+    color: var(--color-offwhite);
+    font-size: 1.875rem;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
@@ -36,31 +39,31 @@
 }
 /*The body text of the card*/
 .content {
-    color: #FFF;
+    color: var(--color-offwhite);
     font-family: Roboto;
-    font-size: 24px;
+    font-size: 1.5rem;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
 }
-
 /*The button for the card that links to another page*/
 .button {
     display: flex;
-    width: 200px;
-    height: 50px;
+    width: 12.5rem;
+    height: 3.125rem;
     justify-content: center;
     align-items: center;
-    gap: 20px;
-    border-radius: 50px;
-    background: #004B87;
+    gap: 1.25rem;
+    border-radius: 3.125rem;
+    background: var(--color-peacockblue);
     flex-direction: row;
     align-self: flex-end;
+    /*doesn't look like its being used but replaced px with rem*/
     
 }
 
 .button:hover {
     transition:  0.3s;
     transform:0.3s;
-    background-color: #E0BB56;
+    background-color: var(--color-brightgold);
 }

@@ -1,5 +1,6 @@
 @import "../fonts.css";
 
+/* used for past member page*/
 .paper {
     width: 80vw;
     margin: auto;
@@ -38,9 +39,9 @@
 }
 
 .past-image {
-    width: 125px;
-    height: 125px;
-    border-radius: 100px;
+    width: 10vw;
+    height: 10vw;
+    border-radius: 50%;
 }
 
 .card-past {

@@ -1,52 +1,33 @@
-import * as React from 'react';
-import Box from '@mui/material/Box';
-import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
-import "../styles/components/learncard.css"
-import { Link } from "gatsby"
+import React from 'react';
+import FlexibleCard from "./FlexibleCard";
 
 /**
- * This component is for the learn more section
- * @param {*} props the parameter for setting the title, body, and link
- * @returns the infocard
+ * A specialized wrapper for FlexibleCard for the learn card.
+ * * This component simplifies the creation of call-to-action buttons by 
+ * mapping individual title and link props into the standardized actions 
+ * array required by the 'learn' variant.
+ *
+ * @component
+ * @param {Object} props - The component props.
+ * @param {string} props.title - The headline for the learning card.
+ * @param {string} props.body - The descriptive text or summary of the topic.
+ * @param {string} props.btnTitle - The text label for the first primary button.
+ * @param {string} props.link - The destination URL for the first button.
+ * @param {string} props.btnTitle2 - The text label for the second secondary button.
+ * @param {string} props.link2 - The destination URL for the second button.
+ * * @returns {JSX.Element} A configured FlexibleCard instance with 'learn' styling and action buttons.
  */
-function LearnCard(props) {
+
+export default function LearnCard(props) {
     return (
-      <div className="card2-wrapper">
-        <Box>
-          <React.Fragment>
-            <Card className="card2">
-              <CardContent className="card2-content">
-                  <Typography variant="h1" component="div" className="header">
-                      {props.title}
-                  </Typography>
-                  <Typography variant="body1" className="content" >
-                      {props.body}
-                  </Typography>
-                  
-                  <CardActions >
-                  <Link style={{ textDecoration: 'none'}} to={props.link}>
-                    <Button className="button">
-                      {props.btnTitle}
-                      
-                    </Button>
-                    </Link>
-                    <Link style={{ textDecoration: 'none' }} to={props.link2}>
-                    <Button className="button">
-                      {props.btnTitle2}
-                      
-                    </Button>
-                    </Link>
-                      
-                  </CardActions>
-              </CardContent>
-            </Card>
-          </React.Fragment>
-        </Box>
-      </div>
+        <FlexibleCard
+            variant="learn"
+            title={props.title}
+            body={props.body}
+            actions={[
+                { label: props.btnTitle, url: props.link },
+                { label: props.btnTitle2, url: props.link2 }
+            ]}
+        />
     );
-  }
-  export default LearnCard
+}

@@ -1,23 +1,20 @@
 import React from "react";
-import Card from "@mui/material/Card";
-import CardMedia from "@mui/material/CardMedia";
-import { CardContent } from "@mui/material";
-import { CardActionArea } from '@mui/material';
-import "../styles/components/collectioncard.css";
-import useMediaQuery from '@mui/material/useMediaQuery';
-
-import { Link } from "gatsby";
-
+import FlexibleCard from "./FlexibleCard";
 /**
- * This component is used in projects.js to display categories
- * of interviews. It uses the MUI card component and contains 
- * an image, title, blurb, and link pulled from Drupal.
- * @returns the card
+ * A wrapper component that maps CMS project data to a FlexibleCard format.
+ * * This component specifically handles the concatenation of the base URL for 
+ * images and the routing prefix for project links.
+ *
+ * @component
+ * @param {Object} props - The component props.
+ * @param {string} props.title - The display title for the collection card.
+ * @param {string} props.body - The description text (rendered as HTML).
+ * @param {string} props.image - The relative file path for the image (e.g., '/sites/default/files/...').
+ * @param {string} props.url - The relative project slug (e.g., '/web-history').
+ * * @returns {JSX.Element} A configured FlexibleCard instance with 'collection' variant.
  */
-export default function CollectionCard(props) {
-  const matches = useMediaQuery('(min-width:600px)');
 
-  if (matches) { //desktop
+export default function CollectionCard(props) {
     return (
       <Card sx={{borderRadius: "40px"}}>
         <Link style={{ textDecoration: 'none' }} to={"/projects" + props.url}>
@@ -65,5 +62,4 @@ export default function CollectionCard(props) {
         
       </Card>
     );
-  }
 }

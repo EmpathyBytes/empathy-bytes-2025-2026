@@ -1,38 +1,24 @@
-import * as React from 'react';
-import Box from '@mui/material/Box';
-import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
-import "../styles/components/infocard.css"
-import Icon from "../images/homepage/next-page-icon.png"
-import { Link } from "gatsby"
+import React from 'react';
+import FlexibleCard from "./FlexibleCard";
 
 /**
- * This component is for quick infomation and a link to learn more about the related subject
- * @param {*} props the parameter for setting the title, body, and link
- * @returns the infocard
+ * A simplified wrapper for the FlexibleCard component using the 'info' variant.
+ * * This component is used to display general information blocks throughout the site
+ * without requiring the full prop complexity of the base FlexibleCard.
+ *
+ * @component
+ * @param {Object} props - The component props.
+ * @param {string} props.title - The primary heading for the info card.
+ * @param {string} props.body - The descriptive content or text to be displayed.
+ * * @returns {JSX.Element} A configured FlexibleCard instance with 'info' styling.
  */
-function InfoCard(props) {
+
+export default function InfoCard(props) {
     return (
-      <div className="card-wrapper">
-        <Box>
-          <React.Fragment>
-            <Card className="card">
-              <CardContent className="card-content">
-                  <Typography variant="h1" component="div" className="header">
-                      {props.title}
-                  </Typography>
-                  <Typography variant="body1" className="content">
-                      {props.body}
-                  </Typography>
-                  
-              </CardContent>
-            </Card>
-          </React.Fragment>
-        </Box>
-      </div>
+        <FlexibleCard
+            variant="info"
+            title={props.title}
+            body={props.body}
+        />
     );
-  }
-  export default InfoCard
+}

@@ -1,0 +1,40 @@
+:root{
+  
+    /*official color guide/*/
+    --color-navyblue: #003057;
+    --color-peacockblue: #004B87;
+    --color-offwhite: #F6F8F9;
+    --color-darkgold: #857437;
+    --color-brightgold:#E0BB56;
+    --color-lightgray: #D9D9D9;
+    
+    /*basics/backgrounds/*/
+    --color-black: #000000;
+    --color-darkgray: #22232e;
+    
+    /*other colors, accents/*/
+    --color-techgold: #b3a369;
+    --color-lightblue: #90c7fa;
+    --color-lightyellow: #FFF4DB;
+    --color-lightteal: #e0ffff;
+    
+    /* clicker and shadows/*/
+    --color-clicker: #3f6ba9;
+    --color-hoverblue: #1B3F66;
+    --color-textshadow: #3f6ba999;
+    --color-blackshadow: #0000003e;
+
+    
+    /* contact page colors /*/
+    --primary-color: #0779d7;
+    --secondary-color: #789beb;
+    --text-color: #ffffff;
+    --color-darkbrown:  #333;
+    }
+    
+    
+    
+    
+    
+    
+    

@@ -14,8 +14,8 @@ import Banner from "../images/experiences/EmergingTechTeamBanner.png";
 import Grid from '@mui/material/Grid';
 
 
-import "../styles/experiencesIndividual.css"
 import "../styles/all.css"
+import "../styles/experiencesIndividual.css"
 
 
 function EmergingTech() {
@@ -48,35 +48,36 @@ function EmergingTech() {
                             <h1 className="sub-header-experiences">What We Do</h1>
                         </Grid> */}
                         <Grid item sm={4}></Grid>
-                        <Grid sm={5}></Grid>
+                        <Grid item sm={5}></Grid>
                     </div>
                 </Grid>
 
                 <div className="divider"></div>
 
 
-                <Grid container alignItems="right" spacing={3} className="grid-margins-experiences">
+                <Grid container spacing={3} className="grid-margins-experiences">
                     <Grid item xs={12} className="right-align-experiences">
                         <h1 className="sub-header-experiences">The VR Archives</h1>
                     </Grid>
-                    <Grid item xs={12}>
-                        <p className="paragraph-experiences-body">Empathy Bytes is developing a 
-                        Virtual Reality Museum where anyone can experience and learn about artifacts in the Georgia Tech Archives.
-                        Our team is able digitally preserve items such as an official 1996 Atlanta Olympics Torch, Buzz’s Converses 
-                        from 1988, and a 1937 rat cap through the use of photogrammetry and hand-modeling techniques. We hope this VR experience 
-                        allows the Georgia Tech Community to strengthen its connection to the school’s past and safely preserve these memories.
-                        </p>
-                        <br/>
-                        <p className="paragraph-experiences-body">Please click and drag the 3D models below to see
-                            in 360 degree view.
-                        </p>
+                    <Grid item xs={12} style={{ display: "flex", flexDirection: "column" }}>
+                        <div className="vr-archives-text-container">
+                            <p className="paragraph-experiences-body">Empathy Bytes is developing a 
+                            Virtual Reality Museum where anyone can experience and learn about artifacts in the Georgia Tech Archives.
+                            Our team is able digitally preserve items such as an official 1996 Atlanta Olympics Torch, Buzz’s Converses 
+                            from 1988, and a 1937 rat cap through the use of photogrammetry and hand-modeling techniques. We hope this VR experience 
+                            allows the Georgia Tech Community to strengthen its connection to the school’s past and safely preserve these memories.
+                            </p>
+                            <p className="paragraph-experiences-body">Please click and drag the 3D models below to see
+                                in 360 degree view.
+                            </p>
+                        </div>
                     </Grid>
                 </Grid>
 
-                <Grid container spacing={0} alignItems="flex-end">
+                <Grid container spacing={3} alignItems="flex-end" style={{ marginTop: "1rem" }}>
                     {/* Loading 3D Models */}
                     <Grid sm={6} xs={12} item>
-                        <h1><center>Buzz's Plaque</center></h1>
+                        <h1 className="model-title-experiences">Buzz's Plaque</h1>
                         {/* I would recommend following this structure for importing future models - Jacob */}
                         <div className="vr-container-1 b-1" style={{height: "300px"}}>
                             <Canvas >
@@ -101,7 +102,7 @@ function EmergingTech() {
                     </Grid>
 
                     <Grid item sm={6} xs={12}>
-                        <h1><center>Buzz's Right Converse</center></h1>
+                        <h1 className="model-title-experiences">Buzz's Right Converse</h1>
                         <div className="vr-container-2 b-2" style={{height: "300px"}}>
                             <Canvas>
                                 <Suspense>
@@ -134,9 +135,9 @@ function EmergingTech() {
     
                     <Grid item xs={12}>
                         <iframe src="https://www.youtube.com/embed/yJHL_D9JobI" 
-                            title="YouTube video player" frameborder="0" 
+                            title="YouTube video player" frameBorder="0" 
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                            allowfullscreen>
+                            allowFullScreen>
                         </iframe>
                     </Grid>
                 </Grid>

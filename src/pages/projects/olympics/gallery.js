@@ -39,74 +39,73 @@ const OlympicGallery = ({ data }) => {
 
   return (
     <Layout>
-    <div
-      style={{
-        padding: "2vw",
-        backgroundColor: "#F6F8F9",
-        minHeight: "100vh",
-        textAlign: "center",
-      }}
-    >
-      <h1
+      <div
         style={{
-          fontFamily: "Roboto Slab, serif",
-          fontWeight: "bold",
-          fontSize: "2rem",
-          color: "#003057",
-          marginBottom: "1rem",
-        }}
-      >
-        Olympic Gallery
-      </h1>
-
-      <p
-        style={{
-          fontFamily: "Roboto Slab, serif",
-          fontSize: "1rem",
-          margin: "0 auto 5vw auto",
-          maxWidth: "800px",
-          color: "#000000",
+          padding: "2vw",
+          backgroundColor: "#F6F8F9",
+          minHeight: "100vh",
           textAlign: "center",
         }}
       >
-        Explore our collection of Olympic Village photos. Click any photo to view it in full size.
-      </p>
+        <h1
+          style={{
+            fontFamily: "Roboto Slab, serif",
+            fontWeight: "bold",
+            fontSize: "2rem",
+            color: "#003057",
+            marginBottom: "1rem",
+          }}
+        >
+          Olympic Gallery
+        </h1>
 
-      {/* Photo grid */}
-      <div style={{ margin: "0 auto", maxWidth: "90vw" }}>
-        <PhotoAlbum
-          layout="masonry"
-          photos={photos}
-          onClick={({ index }) => setIndex(index)}
-          renderPhoto={({ photo, wrapperStyle }) => (
-            <div style={wrapperStyle}>
-              <img
-                src={photo.src}
-                alt={photo.alt}
-                style={{
-                  width: "100%",
-                  height: "100%",
-                  objectFit: "cover",
-                }}
-              />
-            </div>
-          )}
+        <p
+          style={{
+            fontFamily: "Roboto Slab, serif",
+            fontSize: "1rem",
+            margin: "0 auto 5vw auto",
+            maxWidth: "800px",
+            color: "#000000",
+            textAlign: "center",
+          }}
+        >
+          Explore our collection of Olympic Village photos. Click any photo to view it in full size.
+        </p>
+
+        {/* Photo grid */}
+        <div style={{ margin: "0 auto", maxWidth: "90vw" }}>
+          <PhotoAlbum
+            layout="masonry"
+            photos={photos}
+            onClick={({ index }) => setIndex(index)}
+            renderPhoto={({ photo, wrapperStyle }) => (
+              <div style={wrapperStyle}>
+                <img
+                  src={photo.src}
+                  alt={photo.alt}
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "cover",
+                  }}
+                />
+              </div>
+            )}
+          />
+        </div>
+
+        {/* Lightbox */}
+        <Lightbox
+          index={index}
+          open={index >= 0}
+          close={() => setIndex(-1)}
+          slides={photos.map((p) => ({
+            src: p.src,
+            description: `${p.caption || ""}${p.photographer ? ` — © ${p.photographer}` : ""
+              }`,
+          }))}
         />
       </div>
-
-      {/* Lightbox */}
-      <Lightbox
-        index={index}
-        open={index >= 0}
-        close={() => setIndex(-1)}
-        slides={photos.map((p) => ({
-          src: p.src,
-          description: `${p.caption || ""}${
-            p.photographer ? ` — © ${p.photographer}` : ""
-          }`,
-        }))}
-      />
-    </div>
     </Layout>
   );
 };
@@ -134,3 +133,5 @@ export const query = graphql`
 `;
 
 export default OlympicGallery;
+
+// I am CJ

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { graphql } from "gatsby";
 import Layout from "../components/layout";
@@ -22,65 +22,77 @@ function Article({ data }) {
       <title>{[post.title]}</title>
       <div className="articleContainer">
         {/* Top Component */}
-        <div className="articleTitleInfo">
+        <header className="articleTitleInfo">
           <h1 className="articleTitle">{post.title}</h1>
-          <h3 className="authorInfo"> By {post.field_author}</h3>
+          {post.field_author && <p className="authorInfo">By {post.field_author}</p>}
+        </header>
+        {post.body?.processed && (
           <div
             className="articleText"
             dangerouslySetInnerHTML={{ __html: post.body.processed }}
           ></div>
-        </div>
+        )}
 
         {/* Interview vid + pic and placeholder for interviewee info */}
         <div className="interviewInfo">
-            
-          {post.relationships.field_audio && (
-            <div className="articleImageContainer interviewInfoChild">
-              <audio
-                className="articleAudio"
-                src={
-                  post.relationships.field_audio != null
-                    ? "https://empathybytes.library.gatech.edu" +
-                      post.relationships.field_audio.path.alias
-                    : null
-                }
-                controls
-              ></audio>
-              <img
-                className="articleImage"
-                src={post.relationships.field_image?.url || ""}
-                alt={post.title}
-              ></img>
-            </div>
-          )}
+          <div className="interviewMedia">
+            {post.field_video_url && (
+              <iframe
+                className="articleVideo"
+                src={post.field_video_url}
+                title={`${post.title} interview video`}
+                allow="fullscreen; picture-in-picture"
+                allowFullScreen
+              ></iframe>
+            )}
+            {post.relationships.field_audio && (
+              <div className="articleImageContainer">
+                <audio
+                  className="articleAudio"
+                  src={
+                    post.relationships.field_audio != null
+                      ? "https://empathybytes.library.gatech.edu" +
+                        post.relationships.field_audio.path.alias
+                      : null
+                  }
+                  controls
+                ></audio>
+                {post.relationships.field_image?.url && (
+                  <img
+                    className="articleImage"
+                    src={post.relationships.field_image.url}
+                    alt={post.title}
+                  />
+                )}
+              </div>
+            )}
+          </div>
           {/* TO DO: implement interviewee info field in drupal (move interviewee info out of general article info) */}
-          <div className="interviewInfoChild intervieweeDesc">This is a placeholder for when we can separate the interviewee info from the general info.</div>
+          <div className="intervieweeDesc">This is a placeholder for when we can separate the interviewee info from the general info.</div>
         </div>
 
-        {post.field_video_url ? (
-          <iframe
-            className="articleVideo"
-            width="887"
-            height="499"
-            src={post.field_video_url}
-          ></iframe>
-        ) : null}
-
-        <button 
-          className="clicker" 
-          onClick={toggleTranscript}
-        >
-          {isTranscriptVisible ? 'Hide Transcript' : 'View Transcript'}
-        </button>
+        {post.field_transcript?.processed && (
+          <>
+            <button 
+              className="clicker" 
+              onClick={toggleTranscript}
+              type="button"
+              aria-expanded={isTranscriptVisible}
+              aria-controls="article-transcript"
+            >
+              {isTranscriptVisible ? 'Hide Transcript' : 'View Transcript'}
+            </button>
         
-        <div className={`hiddendiv ${isTranscriptVisible ? 'show' : ''}`}>
-          <div
-            className="articleText"
-            dangerouslySetInnerHTML={{
-              __html: post.field_transcript.processed,
-            }}
-          ></div>
-        </div>
+            <div id="article-transcript" className={`hiddendiv ${isTranscriptVisible ? 'show' : ''}`}>
+              <div
+                className="articleText"
+                dangerouslySetInnerHTML={{
+                  __html: post.field_transcript.processed,
+                }}
+              ></div>
+            </div>
+          </>
+        )}
       </div>
       
     </Layout>

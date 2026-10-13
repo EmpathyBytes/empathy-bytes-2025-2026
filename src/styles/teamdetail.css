@@ -1,0 +1,11 @@
+.teamdetail-page .teamdetail-title {
+  font-size: 2.5rem;
+  padding: 2rem 0;
+  text-align: center;
+}
+.teamdetail-page .teamdetail-photo {
+  width: 100%;
+  max-width: 100%;
+  border-radius: 12px;
+}
+.teamdetail-head { display: flex; justify-content: space-between; align-items: center; }

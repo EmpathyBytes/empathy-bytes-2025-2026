@@ -17,7 +17,7 @@
   }
 
 /* Main Header Container */
-header {
+.site-header {
     z-index: 10;
     display: flex;
     align-items: center;
@@ -62,7 +62,7 @@ nav a:hover {
 }
 
 /* Mobile Toggle Button */
-header .nav-btn {
+.site-header .nav-btn {
     padding: 0.3vw;
     cursor: pointer;
     background: transparent;
@@ -97,12 +97,12 @@ header .nav-btn {
 /* Mobile Navigation Styles */
 @media only screen and (max-width: 768px) {
 
-    header .nav-btn {
+    .site-header .nav-btn {
         visibility: visible;
         opacity: 1;
     }
 
-    header nav {
+    .site-header nav {
         position: fixed;
         top: 0;
         left: 0;
@@ -118,7 +118,7 @@ header .nav-btn {
         transform: translateY(-100vh);
     }
 
-    header .responsive_nav {
+    .site-header .responsive_nav {
         transform: none;
     }
 

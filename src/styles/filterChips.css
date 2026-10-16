@@ -1,0 +1,39 @@
+/* FilterChips (src/components/FilterChips.js)
+ * Placeholder colors. Set the variables on a parent element to apply the
+ * final colors without editing this file. */
+
+.filter-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px 56px;
+}
+
+.filter-chip {
+    padding: 16px 20px;
+    border: none;
+    border-radius: 20px;
+    background-color: var(--filter-chip-bg, #e8e8e8);
+    color: var(--filter-chip-text-color, #1a1a1a);
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.5rem;
+    line-height: 1.2;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.filter-chip:hover,
+.filter-chip-selected {
+    background-color: var(--filter-chip-selected-bg, #b8b8b8);
+}
+
+@media screen and (max-width: 1024px) {
+    .filter-chips {
+        gap: 16px 24px;
+    }
+
+    .filter-chip {
+        padding: 10px 16px;
+        border-radius: 14px;
+        font-size: 1.125rem;
+    }
+}

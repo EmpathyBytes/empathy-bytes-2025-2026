@@ -342,3 +342,152 @@ div:has(> #page-container:has(.emotions-map-container)) {
 .storyPopup .buttonRow {
     grid-column: 1 / -1;
 }
+
+.storyFooter {
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 5px;
+    color: white;
+    font-size: 11px;
+}
+
+.storyFooter input {
+    width: 90px;
+    min-width: 0;
+    padding: 3px 7px;
+    background: white;
+    color: black;
+    border: 1px solid black;
+    border-radius: 12px;
+    font: inherit;
+}
+
+.storyPopup .popup {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+.storyPopup .pinColorChoices {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+/* Keep the checkmark inside the textbox above the footer. */
+.storyPopup .popupBox:has(textarea) .buttonRow {
+    position: static;
+    grid-column: 2;
+    grid-row: 2;
+    align-self: end;
+    justify-self: end;
+    margin: 0 8px 8px 0;
+}
+
+
+/* FAQ controls */
+.faqControl {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 1100;
+}
+
+.faqButton {
+    background: #004B87;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 20px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.faqPanel {
+    margin-top: 12px;
+    width: 340px;
+    max-width: calc(100vw - 40px);
+    max-height: 70vh;
+    overflow-y: auto;
+    background: white;
+    color: #222;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.faqHeader {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.faqHeader h2 {
+    font-size: 20px;
+    margin: 0;
+}
+
+.faqHeader button {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.faqPanel details {
+    padding: 12px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.faqPanel summary {
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.faqPanel p {
+    margin: 10px 0 0;
+    line-height: 1.5;
+}
+
+@media (max-width: 600px) {
+    .faqControl {
+        top: 12px;
+        left: 12px;
+    }
+
+    .faqPanel {
+        width: 280px;
+        max-height: 60vh;
+    }
+}
+
+/* FAQ text visibility fixes */
+
+.faqPanel {
+    background-color: #ffffff;
+    color: #1a1a1a;
+}
+
+.faqPanel .faqHeader h2 {
+    color: #003b66 !important;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.faqPanel details summary {
+    color: #003b66 !important;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.faqPanel details p {
+    color: #333333 !important;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.faqPanel .faqHeader button {
+    color: #003b66;
+}

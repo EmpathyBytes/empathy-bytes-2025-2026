@@ -112,7 +112,7 @@ const BlueIcon = L.icon({
 L.Marker.prototype.options.icon = DefaultIcon;
 
 // click handler that sets the icons
-const ClickHandler = ({ setMarkers, setActiveMarkerId, setCanAddPins }) => {
+const ClickHandler = ({ setMarkers, setActiveMarkerId }) => {
     useMapEvents({
         click(e) {
             const { lat, lng } = e.latlng
@@ -126,13 +126,15 @@ const ClickHandler = ({ setMarkers, setActiveMarkerId, setCanAddPins }) => {
                     lng,
                     text: '',
                     color: 'blue',
+                    author: '',
+                    createdAt: new Date().toISOString(),
                     draftText: '',
                     isEditing: true,
                     hasChanged: true
                 }
             ])
             setActiveMarkerId(id)
-            setCanAddPins(false)
+            
         },
     })
     return null
@@ -140,9 +142,55 @@ const ClickHandler = ({ setMarkers, setActiveMarkerId, setCanAddPins }) => {
 
 const Map = () => {
     const [markers, setMarkers] = useState([])
+    const [markersLoaded, setMarkersLoaded] = useState(false)
+    useEffect(() => {
+        try {
+            const savedMarkers = localStorage.getItem('emotionsMapPins')
+    
+            if (savedMarkers) {
+                const parsedMarkers = JSON.parse(savedMarkers)
+    
+                if (Array.isArray(parsedMarkers)) {
+                    setMarkers(
+                        parsedMarkers.map((marker) => ({
+                            ...marker,
+                            isEditing: false,
+                            hasChanged: false,
+                            draftText: marker.text || ''
+                        }))
+                    )
+                }
+            }
+        } catch (error) {
+            console.error('Could not load saved pins:', error)
+        } finally {
+            setMarkersLoaded(true)
+        }
+    }, [])
+    useEffect(() => {
+        if (!markersLoaded) return
+    
+        const savedMarkers = markers
+            .filter((marker) => marker.text && marker.text.trim() !== '')
+            .map((marker) => ({
+                id: marker.id,
+                lat: marker.lat,
+                lng: marker.lng,
+                text: marker.text,
+                color: marker.color,
+                author: marker.author,
+                createdAt: marker.createdAt
+            }))
+    
+        try {
+            localStorage.setItem('emotionsMapPins', JSON.stringify(savedMarkers))
+        } catch (error) {
+            console.error('Could not save pins:', error)
+        }
+    }, [markers, markersLoaded])
     const [showOverlay, setShowOverlay] = useState(true)
     const [activeMarkerId, setActiveMarkerId] = useState(null)
-    const [canAddPins, setCanAddPins] = useState(false)
+    const [showFAQ, setShowFAQ] = useState(false)
     const markerRefs = useRef({})
     const center = [33.7735, -84.3963] // gatech coordinates
 
@@ -186,6 +234,7 @@ const Map = () => {
                 return {
                     ...m,
                     text: finalText,
+                    author: (m.author || '').trim() || 'Anon',
                     isEditing: false
                 }
             })
@@ -203,31 +252,66 @@ const Map = () => {
 
     return (
          <div className="mapWrapper">
+<div className="faqControl">
+    <button
+        type="button"
+        className="faqButton"
+        onClick={() => setShowFAQ(!showFAQ)}
+        aria-expanded={showFAQ}
+        aria-controls="emotions-faq"
+    >
+        FAQ
+    </button>
 
-<div className="addPinControl">
-        {canAddPins ? (
-            <div className="addPinInstructions">
+    {showFAQ && (
+        <div className="faqPanel" id="emotions-faq">
+            <div className="faqHeader">
+                <h2>Frequently Asked Questions</h2>
                 <button
                     type="button"
-                    className="cancelAddPin"
-                    aria-label="Cancel adding a pin"
-                    onClick={() => setCanAddPins(false)}
+                    onClick={() => setShowFAQ(false)}
+                    aria-label="Close FAQ"
                 >
-                    ×
-                </button>
-                <p>Click anywhere on the map to add your story.</p>
-            </div>
-        ) : (
-            <button
-                type="button"
-                className="addPinButton"
-                aria-label="Add your story"
-                onClick={() => setCanAddPins(true)}
-            >
-                +
+                x
             </button>
-        )}
+        </div>
+
+
+
+        <details>
+            <summary>What is Buzzing Thoughts?</summary>
+            <p>
+                Buzzing Thoughts is an interactive emotions map
+                where you can share your thoughts, feelings,
+                and experiences through pins.
+            </p>
+        </details>
+
+        <details>
+            <summary>What can I share?</summary>
+            <p>
+                You're welcome to share your experiences,
+                but please be respectful of others.
+                Hate speech, harassment, and threatening
+                content are not allowed.
+            </p>
+        </details>
+
+        <details>
+            <summary>How can I contact Empathy Bytes?</summary>
+            <p>
+                For questions or feedback, please reach out
+                to the Empathy Bytes team through the
+                website's contact page.
+            </p>
+        </details>
     </div>
+
+        
+    )}
+</div>
+
+
 
             {showOverlay && (
                 <div
@@ -273,14 +357,10 @@ const Map = () => {
 
                 <CustomZoomControls showOverlay={showOverlay} />
 
-                {/* Add one pin after clicking the + button */}
-                {canAddPins && (
-                    <ClickHandler
-                        setMarkers={setMarkers}
-                        setActiveMarkerId={setActiveMarkerId}
-                        setCanAddPins={setCanAddPins}
-                    />
-                )}
+                <ClickHandler
+                    setMarkers={setMarkers}
+                    setActiveMarkerId={setActiveMarkerId}
+                />
 
                 {/* Sneha's pin (and future placeholder pins)*/}
                 {fixedMarkers.map((position) => (
@@ -288,10 +368,12 @@ const Map = () => {
                         key={position.id}
                         position={[position.lat, position.lng]}
                     >
-                        <Popup offset={[0, -40]}>
-                            <p className="pinText">
-                                {position.text}
-                            </p>
+                        <Popup className="storyPopup" offset={[0, -40]}>
+                            <div className="popupBox">
+                                <p className="pinText">
+                                    {position.text}
+                                </p>
+                            </div>
                         </Popup>
                     </Marker>
                 ))}
@@ -400,6 +482,36 @@ const Map = () => {
                                     </p>
                                 )}
 
+                                <div className="storyFooter">
+                                    <span>
+                                        Posted {new Date(position.createdAt).toLocaleDateString('en-US')} by
+                                    </span>
+
+                                    {position.isEditing ? (
+                                        <input
+                                            type="text"
+                                            aria-label="Your name (optional)"
+                                            placeholder="Anon"
+                                            maxLength={40}
+                                            value={position.author || ''}
+                                            onChange={(e) =>
+                                                setMarkers((prev) =>
+                                                    prev.map((m) =>
+                                                        m.id === position.id
+                                                            ? { ...m, author: e.target.value }
+                                                            : m
+                                                    )
+                                                )
+                                            }
+                                        />
+                                    ) : (
+                                        <span>{position.author || 'Anon'}</span>
+                                    )}
+                                </div>
+
+                                
+                            
+
                                 {/* save and delete buttons */}
                                     <div className="buttonRow">
 
@@ -415,17 +527,7 @@ const Map = () => {
                                         </button>
                                         )}
 
-                                        <button
-                                            onClick={(e) => {
-                                                e.stopPropagation()
-                                                setMarkers((prev) =>
-                                                    prev.filter((m) => m.id !== position.id)
-                                                )
-                                            }}
-                                            className="deleteButton"
-                                        >
-                                            Delete
-                                        </button>
+            
 
                                     </div>
 

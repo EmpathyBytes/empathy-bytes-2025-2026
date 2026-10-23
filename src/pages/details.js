@@ -1,9 +1,12 @@
-
 import React from "react";
 import "../styles/projectDetails.css";
-import { Link } from "gatsby";
+import { Link, graphql } from "gatsby";
 
-export default function ProjectDetailsPage() {
+export default function ProjectDetailsPage({ data }) {
+  // Get collection data from Drupal through GraphQL.
+  // Use fallback text if the query returns no collection.
+  const project = data?.collections?.nodes?.[0];
+
   return (
     <div className="project-details-page">
       {/* Navigation */}
@@ -21,9 +24,12 @@ export default function ProjectDetailsPage() {
 
       {/* Page body */}
       <main className="project-details-container">
-        <h1 className="project-title">Project Detail</h1>
+        <h1 className="project-title">
+          {project?.title || "Project Detail"}
+        </h1>
 
         <section className="project-content">
+          {/* Keep the image placeholder until project photos are available. */}
           <div
             className="project-image-placeholder"
             aria-label="Project image placeholder"
@@ -32,7 +38,8 @@ export default function ProjectDetailsPage() {
           </div>
 
           <p className="project-description-placeholder">
-            Placeholder text for the project description.
+            {project?.body?.summary ||
+              "Placeholder text for the project description."}
           </p>
         </section>
       </main>
@@ -44,6 +51,31 @@ export default function ProjectDetailsPage() {
     </div>
   );
 }
+
+// Retrieve collection content from Drupal.
+export const query = graphql`
+  query ProjectDetailsQuery {
+    collections: allNodeCollection {
+      nodes {
+        id
+        title
+        body {
+          summary
+        }
+        path {
+          alias
+        }
+        relationships {
+          field_image {
+            uri {
+              url
+            }
+          }
+        }
+      }
+    }
+  }
+`;
 
 export const Head = () => (
   <title>Project Detail | Empathy Bytes</title>

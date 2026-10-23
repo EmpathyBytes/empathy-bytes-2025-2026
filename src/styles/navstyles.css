@@ -23,7 +23,7 @@ body {
   overflow-x: hidden;
 }
 
-header {
+.site-header {
   display: flex;
   align-items: center;
   justify-content: space-between;

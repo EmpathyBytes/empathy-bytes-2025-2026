@@ -1,0 +1,148 @@
+/* Overall page */
+.project-details-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #bababa;
+  color: #222;
+  font-family: inherit;
+}
+
+/* Navigation */
+.project-nav {
+  width: 100%;
+  min-height: 76px;
+  box-sizing: border-box;
+  padding: 16px 4%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #3e3e3e;
+  border-bottom: 1px solid #c8c8c8;
+}
+
+/* Placeholder icon */
+.project-nav-icon {
+  width: 40px;
+  height: 40px;
+  background-color: #b5b5b5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-nav-icon span {
+  width: 18px;
+  height: 18px;
+  border: 2px solid #777;
+}
+
+/* Navigation links */
+.project-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.project-nav-links a {
+  color: #333;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.project-nav-links a:hover {
+  text-decoration: underline;
+}
+
+/* Main body */
+.project-details-container {
+  flex: 1;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 40px 4%;
+}
+
+.project-details-container .project-title.project-title {
+  margin: 0 0 60px;
+  font-size: 48px;
+  font-weight: 400;
+}
+
+.project-content {
+  width: 82%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Image placeholder */
+.project-image-placeholder {
+  width: 100%;
+  aspect-ratio: 1.7 / 1;
+  margin: 0 auto;
+  border-radius: 12px;
+  background-color: #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #666;
+}
+
+/* Placeholder description */
+.project-description-placeholder {
+  width: 100%;
+  margin: 24px auto 0;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #555;
+  text-align: left;
+}
+
+/* Footer */
+.project-footer {
+  width: 100%;
+  min-height: 120px;
+  box-sizing: border-box;
+  padding: 24px 4%;
+  background-color: #3e3e3e;
+  border-top: 1px solid #bcbcbc;
+}
+
+.project-footer h2 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 400;
+}
+
+/* Responsive layout */
+@media (max-width: 768px) {
+  .project-nav {
+    padding: 12px 5%;
+  }
+
+  .project-nav-links {
+    gap: 16px;
+  }
+
+  .project-nav-links a {
+    font-size: 14px;
+  }
+
+  .project-details-container {
+    padding: 28px 5%;
+  }
+
+  .project-title {
+    font-size: 36px;
+    margin-bottom: 36px;
+  }
+
+  .project-content {
+    width: 100%;
+  }
+
+  .project-image-placeholder,
+  .project-description-placeholder {
+    width: 100%;
+    box-sizing: border-box;
+  }
+}

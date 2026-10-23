@@ -21,6 +21,7 @@ import FlexibleCard from "./FlexibleCard";
 export default function InterviewCard(props) {
     return (
         <FlexibleCard
+            className="redesigned-interview-card"
             variant="interview"
             title={props.title}
             subtitle={`By ${props.author}`}

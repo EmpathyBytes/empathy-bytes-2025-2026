@@ -31,6 +31,14 @@
     flex-direction: column;
     align-items: center;
     gap: 2.5rem;
+    width: 100%;
+}
+
+.interviews-list > .redesigned-interview-card {
+    width: 100%;
+    max-width: 900px;
+    box-sizing: border-box;
+    flex-shrink: 0;
 }
 
 .olympics-route-card {
@@ -183,5 +191,35 @@
         text-align: left !important;
         margin-left: 0 !important;
         margin-right: auto !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .collection-page-container {
+        padding: 2rem 1rem;
+    }
+
+    .interviews-list {
+        gap: 1.5rem;
+    }
+
+    .interviews-list > .redesigned-interview-card {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .redesigned-interview-card .MuiCardActionArea-root {
+        padding: 1.25rem;
+        gap: 1rem;
+    }
+
+    .redesigned-interview-card .MuiCardContent-root {
+        padding: 0;
+        width: 100%;
+    }
+
+    .redesigned-interview-card .MuiTypography-h5 {
+        font-size: 1.4rem;
+        line-height: 1.3;
     }
 }

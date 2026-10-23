@@ -1,0 +1,69 @@
+/* ProjectCard (src/components/ProjectCard.js)
+ * Placeholder colors. Set the variables on a parent element to apply the
+ * final colors without editing this file. */
+
+.project-card {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 30px 30px 32px;
+    border-radius: var(--project-card-radius, 30px);
+    background-color: var(--project-card-bg, #e8e8e8);
+    color: var(--project-card-title-color, #1a1a1a);
+    text-decoration: none;
+    transition: transform 0.2s ease;
+}
+
+.project-card:hover,
+.project-card:focus-visible {
+    transform: translateY(-4px);
+}
+
+.project-card-image {
+    aspect-ratio: 478 / 310;
+    overflow: hidden;
+    border-radius: calc(var(--project-card-radius, 30px) * 0.67);
+    background-color: var(--project-card-image-bg, #cccccc);
+}
+
+.project-card-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.project-card-image-placeholder {
+    width: 100%;
+    height: 100%;
+}
+
+/* Beat the site-wide a:link color so the title matches the card */
+a.project-card:link,
+a.project-card:visited {
+    color: var(--project-card-title-color, #1a1a1a);
+}
+
+.project-card-title {
+    margin: 0;
+    color: var(--project-card-title-color, #1a1a1a);
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+@media screen and (max-width: 768px) {
+    .project-card-image {
+        border-radius: 14px;
+    }
+
+    .project-card {
+        border-radius: 20px;
+        gap: 16px;
+        padding: 16px 16px 24px;
+    }
+
+    .project-card-title {
+        font-size: 1.125rem;
+    }
+}

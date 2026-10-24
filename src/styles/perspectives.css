@@ -1,0 +1,176 @@
+/* Main page */
+
+.perspectives-page {
+  width: 100%;
+  min-height: 100vh;
+
+  padding: 60px 6%;
+
+  box-sizing: border-box;
+}
+
+
+/* Page title */
+
+.perspectives-title {
+  margin: 0 0 50px;
+
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: 700;
+}
+
+
+/* Photo collage */
+
+.perspectives-gallery {
+  width: 100%;
+
+  column-count: 4;
+  column-gap: 16px;
+}
+
+
+/* Each clickable image */
+
+.perspective-image-button {
+  display: block;
+
+  width: 100%;
+
+  padding: 0;
+  margin: 0 0 16px;
+
+  border: none;
+  background: none;
+
+  cursor: pointer;
+
+  break-inside: avoid;
+}
+
+
+/* Actual photograph */
+
+.perspective-image {
+  display: block;
+
+  width: 100%;
+  height: auto;
+
+  /* Preserve original image aspect ratio */
+  object-fit: contain;
+
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease;
+}
+
+
+/* Small hover effect */
+
+.perspective-image-button:hover .perspective-image {
+  transform: scale(1.02);
+  opacity: 0.9;
+}
+
+
+/* Fullscreen image viewer */
+
+.perspectives-modal {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 1000;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 40px;
+
+  background: rgba(0, 0, 0, 0.9);
+
+  box-sizing: border-box;
+}
+
+
+/* Enlarged photograph */
+
+.perspectives-modal-image {
+  display: block;
+
+  max-width: 90vw;
+  max-height: 90vh;
+
+  width: auto;
+  height: auto;
+
+  object-fit: contain;
+}
+
+
+/* Close button */
+
+.perspectives-close {
+  position: absolute;
+
+  top: 20px;
+  right: 30px;
+
+  padding: 0;
+
+  border: none;
+  background: none;
+
+  color: white;
+
+  font-size: 3rem;
+  line-height: 1;
+
+  cursor: pointer;
+}
+
+
+/* Smaller desktop / tablet */
+
+@media (max-width: 1100px) {
+  .perspectives-gallery {
+    column-count: 3;
+  }
+}
+
+
+/* Tablet */
+
+@media (max-width: 800px) {
+  .perspectives-gallery {
+    column-count: 2;
+  }
+}
+
+
+/* Mobile */
+
+@media (max-width: 500px) {
+  .perspectives-page {
+    padding: 40px 5%;
+  }
+
+  .perspectives-title {
+    margin-bottom: 30px;
+  }
+
+  .perspectives-gallery {
+    column-count: 1;
+  }
+
+  .perspectives-modal {
+    padding: 20px;
+  }
+
+  .perspectives-close {
+    top: 15px;
+    right: 20px;
+  }
+}

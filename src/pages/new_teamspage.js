@@ -3,12 +3,17 @@ import { graphql, Link } from 'gatsby';
 import Layout from '../components/Layout';
 import '../styles/new_teamspage.css';
 
-const NewTeamsPage = ({ data }) => {
-    const teams = data?.allNodeTeam?.nodes || [
-        { id: '1', title: 'Media Team', path: { alias: '/teams/media' } },
-        { id: '2', title: 'App Team', path: { alias: '/teams/app' } },
-        { id: '3', title: 'Web Team', path: { alias: '/teams/web' } },
-        { id: '4', title: 'VR Team', path: { alias: 'teams/vr' } },
+function NewTeamsPage({ data }) {
+    const webName = data?.webTeam.name || "Web";
+    const appName = data.appTeam.name || "App";
+    const vrName = data?.vrTeam?.name || "VR";
+    const mediaName = data?.mediaTeam?.name || "Media";
+
+    const teams = [
+        { title: mediaName, path: "/teams/media" },
+        { title: appName, path: "/teams/app" },
+        { title: webName, path: "/teams/web" },
+        { title: vrName, path: "/teams/vr" },
     ];
 
     return (
@@ -46,26 +51,32 @@ const NewTeamsPage = ({ data }) => {
     );
 };
 
-export default NewTeamsPage;
-
 export const query = graphql`
     query TeamsPageQuery {
-    allNodeTeam {
-        nodes {
-            id
-            title
-            path {
-                alias
-            }
-            relationships {
-                field_media_image {
-                    localFile {
-                        childImageSharp {
-                            gatsbyImageData(width: 1200, placeholder: BLURRED)
-                        }
-                    }
-                }
-            }
+        webTeam: taxonomyTermTeam(name : { eq: "Web" }) {
+            name
+        }
+        appTeam: taxonomyTermTeam(name : { eq: "App" }) {
+            name
+        }
+        vrTeam: taxonomyTermTeam(name : { eq: "VR" }) {
+            name
+        }
+        mediaTeam: taxonomyTermTeam(name : { eq: "Media" }) {
+            name
         }
     }
 `;
+
+export default NewTeamsPage;
+
+export const Head = () => (
+  <>
+    <link rel="icon" type="image/png" href="https://educast.library.gatech.edu/static/empbytes-8c9db7ee75f110e619f7d85cb8b170c5.jpg" />
+    <title>About | Empathy Bytes VIP</title>
+    <meta
+      name="description"
+      content="Explore Empathy Bytes VIP sub-teams: Web, App, Media, and VR."
+    />
+  </>
+);

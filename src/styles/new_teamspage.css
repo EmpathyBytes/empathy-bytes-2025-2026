@@ -16,7 +16,7 @@
 
 .teams-header p {
     font-size: 1.25rem;
-    color: #555;
+    color: #ffffff;
 }
 
 .teams-list {
@@ -31,7 +31,7 @@
     height: 180px;
     border-radius: 20px;
     overflow: hidden;
-    background-color: #e0e0e0;
+    background-color: #ffffff;
     display: flex;
     align-items: center;
     padding: 0 40px;

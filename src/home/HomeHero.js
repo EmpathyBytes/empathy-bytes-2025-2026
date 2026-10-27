@@ -1,4 +1,3 @@
-
 import * as React from "react";
 
 export default function HomeHero({ image, alt }) {

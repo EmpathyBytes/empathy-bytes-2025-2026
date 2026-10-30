@@ -26,6 +26,7 @@ import {
  * @param {string} props.title - The primary heading text for the card.
  * @param {string} [props.subtitle] - Secondary text displayed below the title (e.g., date or author).
  * @param {string} [props.image] - The source URL for the card's media.
+ * @param {Object} [props.imageSx] - Optional Material UI styles for the card's media.
  * @param {string} [props.body] - The main descriptive content. Can be plain text or a string of HTML.
  * @param {boolean} [props.isHtmlBody=false] - If true, the `body` prop will be rendered as HTML.
  * @param {string} [props.link] - If provided, the entire card becomes a Gatsby `Link` pointing to this path.
@@ -112,6 +113,7 @@ const FlexibleCard = ({
                           subtitle,
                           date,
                           image,
+                          imageSx,
                           body,
                           isHtmlBody = false,
                           link,
@@ -184,10 +186,13 @@ const FlexibleCard = ({
             component="img"
             image={image}
             alt={title}
-            sx={preset.imageStyle || {
-                height: preset.imageHeight || 240,
-                width: '100%',
-                objectFit: 'cover'
+            sx={{
+                ...(preset.imageStyle || {
+                    height: preset.imageHeight || 240,
+                    width: '100%',
+                    objectFit: 'cover'
+                }),
+                ...imageSx
             }}
         />
     );
@@ -262,6 +267,7 @@ FlexibleCard.propTypes = {
     title: PropTypes.string.isRequired,
     subtitle: PropTypes.string,
     image: PropTypes.string,
+    imageSx: PropTypes.object,
     body: PropTypes.string,
     isHtmlBody: PropTypes.bool,
     link: PropTypes.string,

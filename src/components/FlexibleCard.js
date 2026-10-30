@@ -123,12 +123,13 @@ const FlexibleCard = ({
 
     const contentJSX = (
         <CardContent sx={{
-            flex: 1,
+            flex: '1 1 auto',
             minWidth: 0,
             display: 'flex',
             flexDirection: 'column',
             gap: 1,
             padding: isHorizontal ? '0 0 0 2rem' : '16px'
+            
         }}>
             <Typography variant="h5" component="div" sx={{
                 fontFamily: '"Roboto Slab", serif',
@@ -146,6 +147,7 @@ const FlexibleCard = ({
 
             {isHtmlBody ? (
                 <Typography
+                    className={variant === "interview" ? "card-summary" : undefined}
                     variant="body1"
                     component="div"
                     sx={{

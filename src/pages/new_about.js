@@ -17,22 +17,12 @@ function NewAboutPage({ data }) {
   const [visMedia, setToggleMedia] = useState(false);
   const [visApp, setToggleApp] = useState(false);
 
-  // Search input state (placeholder for search component)
-  const [searchQuery, setSearchQuery] = useState("");
-
   // FAQ Exapnd/Collapse state
   const [openFaqIndex, setOpenFaqIndex] = useState(null);
 
   const toggleFaq = (index) => {
     setOpenFaqIndex(openFaqIndex === index ? null : index);
   }
-
-  // Extract team member info from each query
-  const webMembers = data.webTeam.relationships.node__team_members;
-  const appMembers = data.appTeam.relationships.node__team_members;
-  const emergingMembers = data.emergingTechTeam.relationships.node__team_members;
-  const mediaMembers = data.mediaTeam.relationships.node__team_members;
-
 
   function toggleEmerging() {
     setToggleEmerging(true);
@@ -94,16 +84,6 @@ function NewAboutPage({ data }) {
     <Layout>
       <div className="new-about-page-container">
         <h1 className="new-about-title">About</h1>
-        {/* Search Component Placeholder */}
-        <div className="search-component-placeholder">
-            <input
-                type="text"
-                placeholder="Search content, FAQs, or team members"
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                className="search-input-field"
-            />
-        </div>
 
         {/* Main Group Image */}
         <div className="about-main-image-container">
@@ -246,44 +226,31 @@ function NewAboutPage({ data }) {
 
 
         {/* The section that contains emerging tech information */}
-        <div id="about-emerging" className="emerging-tech-about" style={{ display: visEmerging ? 'block' : 'none' }}>
-          <AboutComponent
-            subteam={"Emerging Tech"}
-            members={emergingMembers}
-            about={"The emerging tech team is comprised of students from a variety of different backgrounds and majors, including Computational Media and Computer Science. The team explores cutting-edge technologies and how they can create empathy."}
-            learnMore={"https://educast.library.gatech.edu/emergingtech/"}
-          />
+        <div id="about-emerging" className="emerging-tech-about" style={{ display: visEmerging ? 'block' : 'none', padding: '20px', textAlign: 'center' }}>
+          <h3>Emerging Tech Team</h3>
+          <p> The emerging tech team is comprised of students from a variety of different backgrounds and majors, including Computational Media and Computer Science. The team explores cutting-edge technologies and how they can create empathy. </p>
+          <a href="https://educast.library.gatech.edu/emergingtech/" target="_blank" rel="noopener noreferrer">Learn More</a>
         </div>
 
         {/* The section that contains web team information */}
-        <div id="about-web" className="web-about" style={{ display: visWeb ? 'block' : 'none' }}>
-          <AboutComponent
-            subteam={"Web"}
-            members={webMembers}
-            about={"The Web team is comprised of students from a variety of backgrounds, such as Computer Science and Computational Media. The team maintains the public-facing site (GatsbyJS, GraphQL, Drupal) and explores WebXR and its capabilities to create unique and memorable experiences."}
-            learnMore={"https://educast.library.gatech.edu/webteam/"}
-          />
+        <div id="about-web" className="web-about" style={{ display: visWeb ? 'block' : 'none', padding: '20px', textAlign: 'center' }}>
+          <h3>Web Team</h3>
+          <p>The Web team is comprised of students from a variety of backgrounds, such as Computer Science and Computational Media. The team maintains the public-facing site (GatsbyJS, GraphQL, Drupal) and explores WebXR and its capabilities to create unique and memorable experiences.</p>
+          <a href="https://educast.library.gatech.edu/webteam/" target="_blank" rel="noopener noreferrer">Learn More</a>
         </div>
 
-
         {/* The section that contains media team information */}
-        <div id="about-media" className="media-about" style={{ display: visMedia ? 'block' : 'none' }}>
-          <AboutComponent
-            subteam={"Media"}
-            members={mediaMembers}
-            about={"The Media team is comprised of students from a variety of backgrounds, such as Computer Science and Computational Media. The team creates site content and supports cross-team design needs."}
-            learnMore={"https://educast.library.gatech.edu/mediateam/"}
-          />
+        <div id="about-media" className="media-about" style={{ display: visMedia ? 'block' : 'none', padding: '20px', textAlign: 'center' }}>
+          <h3>Media Team</h3>
+          <p>"The Media team is comprised of students from a variety of backgrounds, such as Computer Science and Computational Media. The team creates site content and supports cross-team design needs.</p>
+          <a href="https://educast.library.gatech.edu/mediateam/" target="_blank" rel="noopener noreferrer">Learn More</a>
         </div>
 
         {/* The section that contains app team information */}
-        <div id="about-app" className="app-about" style={{ display: visApp ? 'block' : 'none' }}>
-          <AboutComponent
-            subteam={"App"}
-            members={appMembers}
-            about={"The App team is comprised of students from a variety of backgrounds, such as Computer Science and Computational Media. The team is currently developing a mobile application to present the team’s research; future plans to publish on the App Store."}
-            learnMore={"https://educast.library.gatech.edu/appteam/"}
-          />
+        <div id="about-app" className="app-about" style={{ display: visApp ? 'block' : 'none', padding: '20px', textAlign: 'center' }}>
+          <h3>App Team</h3>
+          <p> The App team is comprised of students from a variety of backgrounds, such as Computer Science and Computational Media. The team is currently developing a mobile application to present the team’s research; future plans to publish on the App Store.</p>
+          <a href="https://educast.library.gatech.edu/appteam/" target="_blank" rel="noopener noreferrer">Learn More</a>
         </div>
       </div>
     </Layout>
@@ -297,13 +264,6 @@ export const query = graphql`
               node__team_members {
                 title
                 field_current_member
-                relationships {
-                  field_pfp {
-                    uri {
-                      url
-                    }
-                  }
-                }
               }
             }
           }
@@ -312,13 +272,6 @@ export const query = graphql`
           node__team_members {
             title
             field_current_member
-            relationships {
-              field_pfp {
-                uri {
-                  url
-                }
-              }
-            }
           }
         }
       }
@@ -328,13 +281,6 @@ export const query = graphql`
           node__team_members {
             title
             field_current_member
-            relationships {
-              field_pfp {
-                uri {
-                  url
-                }
-              }
-            }
           }
         }
       }
@@ -344,18 +290,10 @@ export const query = graphql`
           node__team_members {
             title
             field_current_member
-            relationships {
-              field_pfp {
-                uri {
-                  url
-                }
-              }
-            }
           }
         }
-      }
-        
-}
+      }     
+    }
 `;
 
 export default NewAboutPage;

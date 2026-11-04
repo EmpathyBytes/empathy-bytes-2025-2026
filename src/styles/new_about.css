@@ -15,23 +15,6 @@
     margin-bottom: 24px;
 }
 
-/* Search Placeholder */
-.search-component-placeholder {
-    margin-bottom: 24px;
-    width: 100%
-}
-
-.search-input-field {
-    width: 100%;
-    padding: 12px 20px;
-    border-radius: 8px;
-    border: 1px solid #d1d5db;
-    background-color: #f9fafb;
-    font-size: 14px;
-    font-family: 'Roboto', sans-serif;
-    box-sizing: border-box;
-}
-
 /* Image Containers & Placeholders */
 .about-main-image-container {
     width: 100%;

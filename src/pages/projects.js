@@ -3,6 +3,8 @@ import { useState } from "react"
 import Layout from "../components/layout";
 import { graphql } from "gatsby"
 import CollectionCard from "../components/collectioncard";
+import FlexibleCard from "../components/FlexibleCard";
+import buzzingThoughtsLogo from "../images/emotions_page_ui/buzzing_thoughts_logo_gold.png";
 import Grid from "@mui/material/Grid";
 import "../styles/projects.css"
 import "../styles/all.css"
@@ -136,6 +138,20 @@ const ProjectsPage = ({data}) => {
                             {/* Div that contains the navbar */}
 
                         <Grid container spacing={3} className="content-transition">
+                        <Grid item xs={6}>
+                            <FlexibleCard
+                                variant="collection"
+                                title="Emotions Map"
+                                image={buzzingThoughtsLogo}
+                                imageSx={{
+                                    backgroundColor: "#fff",
+                                    objectFit: "contain",
+                                    padding: "24px",
+                                    boxSizing: "border-box"
+                                }}
+                                link="/emotions-page"
+                            />
+                        </Grid>
                         {getFilteredCollections().map((item) => ( // Mapping filtered collection data to card component
                             <Grid item xs={6}>
                             <CollectionCard 
@@ -195,6 +211,18 @@ const ProjectsPage = ({data}) => {
                         </div>
                         
                         <div className="content-transition">
+                        <FlexibleCard
+                            variant="collection"
+                            title="Emotions Map"
+                            image={buzzingThoughtsLogo}
+                            imageSx={{
+                                backgroundColor: "#fff",
+                                objectFit: "contain",
+                                padding: "24px",
+                                boxSizing: "border-box"
+                            }}
+                            link="/emotions-page"
+                        />
                         {getFilteredCollections().map((item) => ( // Mapping filtered collection data to card component
                             
                             <CollectionCard 

@@ -6,8 +6,10 @@ import {
 } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
 import Layout from "../../../components/layout";
-import bannerImg from "../../../images/olympic_village_photo_gallery/olympicSymbol.jpg";
 import zIndex from "@mui/material/styles/zIndex";
+
+const bannerGradient =
+  "linear-gradient(to top, #00538fa9 0%, rgba(0, 0, 0, 0.30) 40%, rgba(0,0,0,0.25) 75%, #00548f1a 100%)";
 
 const pageStyles = {
   wrapper: {
@@ -15,8 +17,6 @@ const pageStyles = {
   },
   banner: {
     position: "relative",
-    backgroundImage: `linear-gradient(
-      to top, #00538fa9 0%, rgba(0, 0, 0, 0.30) 40%, rgba(0,0,0,0.25) 75%, #00548f1a 100%), url(${bannerImg})`,
     backgroundSize: "cover",
     backgroundPosition: "center 60%",
     backgroundRepeat: "no-repeat",
@@ -164,6 +164,22 @@ const getEventImage = (relationships) => {
 
 function OlympicsTimelinePage({ data }) {
   const timelineEvents = data?.timelineEvents?.nodes || [];
+  const bannerImagePath = data?.galleryImages?.nodes
+    ?.map((node) => node.relationships?.field_olympic_gallery_image?.uri?.url)
+    .find((url) => {
+      const filename = url
+        ?.split("/")
+        .pop()
+        ?.split("?")[0]
+        .replace(/\.[^.]+$/, "")
+        .replace(/[-_\s]/g, "")
+        .toLowerCase();
+
+      return filename === "olympicsymbol";
+    });
+  const bannerImageUrl = bannerImagePath
+    ? `https://empathybytes.library.gatech.edu${bannerImagePath}`
+    : null;
 
   return (
     <Layout>
@@ -175,7 +191,12 @@ function OlympicsTimelinePage({ data }) {
       `}</style>
 
       <section style={pageStyles.wrapper}>
-        <div style={pageStyles.banner}>
+        <div
+          style={{
+            ...pageStyles.banner,
+            backgroundImage: `${bannerGradient}${bannerImageUrl ? `, url(${bannerImageUrl})` : ""}`,
+          }}
+        >
           <div style={pageStyles.backLinkWrap}>
             <Link to="/projects/olympics" style={pageStyles.backLink}>
               &lt; Back to Olympics Hub
@@ -336,6 +357,17 @@ export const query = graphql`
               field_media_hg_image {
                 url
               }
+            }
+          }
+        }
+      }
+    }
+    galleryImages: allNodeOlympicsGalleryImage {
+      nodes {
+        relationships {
+          field_olympic_gallery_image {
+            uri {
+              url
             }
           }
         }

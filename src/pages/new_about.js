@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import Layout from "../components/layout" // importing the navbar and footer
+import Layout from "../components/Layout" // importing the navbar and footer
 import All from "../images/people/fullTeam.jpg" // importing the full team picture
 // import { Link } from "gatsby"
 import { graphql } from "gatsby";

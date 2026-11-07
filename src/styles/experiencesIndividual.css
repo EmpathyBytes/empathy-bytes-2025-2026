@@ -77,17 +77,12 @@ iframe {
     height: 50vw;
 }
 
-
-
 .full-container-experiences {
     padding: 6vh;
     margin-bottom: var(--navbar-top-height);
     background-color: var(--color-peacockblue);
 }
 
-.grid-margins-experiences { /* THIS IS THE PADDING FOR THE PHONE */
-    padding: 0 3% 0 3%; /* no longer used in webteam.js due to banner */
-}
 @media screen and (max-width: 600px) {
     .top-banner {
         height: 50vh;
@@ -119,7 +114,6 @@ iframe {
     margin-bottom: 2rem;
     /* background-color: #004B87; */
 }
-
 .sub-header-experiences {
     font-family: 'Roboto Slab', serif;
     font-size: 2rem;

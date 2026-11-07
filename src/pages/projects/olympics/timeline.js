@@ -6,27 +6,47 @@ import {
 } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
 import Layout from "../../../components/layout";
+import zIndex from "@mui/material/styles/zIndex";
+
+const bannerGradient =
+  "linear-gradient(to top, #00538fa9 0%, rgba(0, 0, 0, 0.30) 40%, rgba(0,0,0,0.25) 75%, #00548f1a 100%)";
 
 const pageStyles = {
   wrapper: {
     padding: "0 0 5rem",
   },
+  banner: {
+    position: "relative",
+    backgroundSize: "cover",
+    backgroundPosition: "center 60%",
+    backgroundRepeat: "no-repeat",
+    overflow: "hidden",
+    paddingBottom: "4rem",
+  },
   backLinkWrap: {
-    maxWidth: "1000px",
     margin: "0 auto",
-    padding: "1rem 1rem 0",
+    padding: "0.25rem",
+
+    display: "flex",
   },
   backLink: {
-    color: "#00548f",
-    fontWeight: 700,
+    color: "#ffffff",
+    background: "#003057",
+    fontWeight: "bold",
     textDecoration: "underline",
+
+    padding: "20px",
+    margin: "10px",
+    borderRadius: "12px",
   },
   pageTitle: {
-    color: "#000",
+    color: "#ffffff",
     fontSize: "clamp(2.5rem, 5vw, 4rem)",
     lineHeight: 1.05,
-    margin: "0 0 2rem",
-    padding: "0 0 0 0.25rem",
+    margin: "2rem 0 2rem 0",
+    padding: "1rem",
+    display: "flex",
+    justifyContent: "center",
   },
   intro: {
     background: "#00548f",
@@ -144,6 +164,22 @@ const getEventImage = (relationships) => {
 
 function OlympicsTimelinePage({ data }) {
   const timelineEvents = data?.timelineEvents?.nodes || [];
+  const bannerImagePath = data?.galleryImages?.nodes
+    ?.map((node) => node.relationships?.field_olympic_gallery_image?.uri?.url)
+    .find((url) => {
+      const filename = url
+        ?.split("/")
+        .pop()
+        ?.split("?")[0]
+        .replace(/\.[^.]+$/, "")
+        .replace(/[-_\s]/g, "")
+        .toLowerCase();
+
+      return filename === "olympicsymbol";
+    });
+  const bannerImageUrl = bannerImagePath
+    ? `https://empathybytes.library.gatech.edu${bannerImagePath}`
+    : null;
 
   return (
     <Layout>
@@ -155,13 +191,20 @@ function OlympicsTimelinePage({ data }) {
       `}</style>
 
       <section style={pageStyles.wrapper}>
-        <div style={pageStyles.backLinkWrap}>
-          <Link to="/projects/olympics" style={pageStyles.backLink}>
-            Back to Olympics Hub
-          </Link>
+        <div
+          style={{
+            ...pageStyles.banner,
+            backgroundImage: `${bannerGradient}${bannerImageUrl ? `, url(${bannerImageUrl})` : ""}`,
+          }}
+        >
+          <div style={pageStyles.backLinkWrap}>
+            <Link to="/projects/olympics" style={pageStyles.backLink}>
+              &lt; Back to Olympics Hub
+            </Link>
+          </div>
+          <h1 style={pageStyles.pageTitle}>Olympics @ Tech</h1>
         </div>
 
-        <h1 style={pageStyles.pageTitle}>Olympics @ Tech</h1>
         <div style={pageStyles.intro}>
           <div style={pageStyles.introInner}>
             <h2 style={pageStyles.title}>1996 Olympics @ Georgia Tech</h2>
@@ -314,6 +357,17 @@ export const query = graphql`
               field_media_hg_image {
                 url
               }
+            }
+          }
+        }
+      }
+    }
+    galleryImages: allNodeOlympicsGalleryImage {
+      nodes {
+        relationships {
+          field_olympic_gallery_image {
+            uri {
+              url
             }
           }
         }

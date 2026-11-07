@@ -1,3 +1,4 @@
+/* Root variables for the navigation styles */
 :root {
   --tr: 0.25s;
   --navbar-top-height: 6rem;
@@ -265,7 +266,6 @@ h2 {
 }
 
 #content-wrap {
-  /* color: var(--color-navyblue); */
   background-color: #004B87;
   margin-top: var(--navbar-scrolled-height);
   padding-bottom: 5rem;

@@ -1,11 +1,16 @@
 @import "./fonts.css";
+
+/* Main content container */
 .container {
     padding-top: 11.25rem;
 }
+
+/* Wrapper for team member profiles */
 .people-container {
     padding: 1% 5% 1% 5%;
 }
 
+/* About page section heading - responsive font sizes */
 .header-about {
     font-family: 'Roboto Slab', serif;
     @media screen and (min-width: 34.7vw) {
@@ -24,6 +29,7 @@
     text-align: center;
 }
 
+/* About page body text - responsive font sizes */
 .paragraph-about {
     font-family: 'Roboto', sans-serif;
     @media screen and (min-width: 34.7vw) {
@@ -42,6 +48,7 @@
     text-align: center;
 }
 
+/* Section visibility toggles for About page filters */
 .emerging-tech-about {
     visibility: visible;
 }
@@ -58,10 +65,12 @@
     visibility: visible;
 }
 
+/* Centered nav layout for the about section filters */
 .about-nav {
     text-align: center;
 }
 
+/* Clickable filter label text */
 .text-controls {
     font-family: 'Roboto', sans-serif;
     font-size: 1.3vw;
@@ -73,6 +82,7 @@
     opacity: 0.8;
 }
 
+/* Pill-shaped navigation button for about section filters */
 .about-nav-text {
   display: inline-block;
   font-size: 1.125rem;
@@ -93,9 +103,9 @@
     transition: background-color 200ms linear;
 }
 
+/* Flex row container for nav filter buttons */
 .navBG {
     display: flex;
-    /* background-color: #1B3F66; */
     border-radius: 8.7vw;
     width: 90%;
     height: 50%;
@@ -104,6 +114,7 @@
     justify-content: center;
 }
 
+/* Hexagonal image frame using clip-path */
 .hex {
     display: block;
     margin: 0 auto;
@@ -116,6 +127,7 @@
     -moz-clip-path: polygon(0% 50%, 25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%);
   }
 
+  /* Inner hex layer to simulate border effect */
   .hex-background {
     position: absolute;
     background-color: var(--color-offwhite); /*color of the main-background*/
@@ -127,6 +139,7 @@
     -moz-clip-path: polygon(0% 50%, 25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%);
   }
 
+  /* Profile photo clipped to hexagon shape */
   .hex img {
     position: absolute;
     width: 100%;
@@ -136,26 +149,31 @@
     -moz-clip-path: polygon(0% 50%, 25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%);
   }
 
+  /* Full image dimensions */
   .full-image {
     width: 60vw; 
     height: 60vh;
   }
 
+  /* Inner grid cell padding for about layout */
   .grid-inner-about {
     padding: 0 2% 0 2%;
   }
 
+  /* Utility class for centered content */
   .center-text {
     text-align: center;
     justify-content: center;
   }
 
+  /* About section card sizing */
   .paper-about {
     justify-content: center;
     width: 95%;
     height: 95%;
   }
 
+  /* Bottom spacing for about sections */
   .padding-bottom-about {
     padding-bottom: 5%;
   }
@@ -165,6 +183,7 @@
     z-index: -10;
   }
 
+  /* Full-width hero image */
   .about-full {
     width: 100vw;
     height: 80vh;
@@ -172,10 +191,12 @@
     object-fit: cover;
   }
 
+  /* Horizontal padding for about text sections */
   .padding-about {
     padding: 0% 5% 6% 5%;
   }
 
+  /* Dark overlay on hero image */
   .top-about {
     width: 100vw;
     height: 80vh;
@@ -191,6 +212,7 @@
     top: 7.5rem;
   }
 
+  /*past members text*/
   .about-nav-past {
     text-align: center;
     height: 15vh;
@@ -198,6 +220,7 @@
     margin: auto;
   }
 
+  /*past members text*/
   .learn-more {
     color: var(--color-brightgold);
     text-align: center;
@@ -208,7 +231,7 @@
     line-height: normal;
     text-decoration-line: underline;
   }
-  
+    /*about us card under team photo*/
   .about-card {
     display: flex;
     padding: 2vh 5.5vw 3.3vh 7.5vw;
@@ -218,7 +241,7 @@
     border-radius: 5.375rem;
     background: var(--Primary-Blue, var(--color-navyblue));
   }
-
+    /*line under "Web team"*/
   .horizontal-line {
     width: 70%;
     height: 0.2vh;

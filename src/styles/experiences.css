@@ -47,6 +47,7 @@
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
+/* hover effect */
 .MuiCardActionArea-root:hover,
 .MuiCardActionArea-root:active {
   transform: scale(1.05);
@@ -54,6 +55,7 @@
   z-index: 2;
 }
 
+/* mobile screen view */
 @media (max-width: 800px) {
   .container-experiences-homepage {
     padding-top: 8vh;
@@ -77,6 +79,7 @@
     justify-content: center !important;
   }
 
+/* Mobile Card Styling */
   .MuiGrid-item {
     display: flex;
     justify-content: center;
@@ -91,7 +94,7 @@
     transform: scale(1.03);
     transition: all 0.3s ease-in-out;
   }
-
+/* Maintains a consistent 16:10 shape for images regardless of screen width */
   .MuiCardMedia-root,
   .card-media-img {
     width: 100%;
@@ -108,6 +111,7 @@
   }
 }
 
+/* Very small mobile card styling */
 @media (max-width: 500px) {
   .MuiCard-root {
     max-width: 90%;

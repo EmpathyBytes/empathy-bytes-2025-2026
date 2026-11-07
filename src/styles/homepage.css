@@ -1,278 +1,193 @@
 @import "./fonts.css";
 
-/* helps with smooth scrolling */
-*{scroll-behavior: smooth;}
-html, body {
-    margin: 0px;
-    padding: 0px;
-} 
+/* Homepage Theme */
 
-/* The Fullscreen images on the homepage */
-.splash-image {
-    width: 100vw;
-    max-width: 100%;
-    
-    object-fit: cover;
-    height: 80vh;
-    /* desktop */
+/*
+ * Main homepage colors.
+ * Update these variables when the design team changes the color scheme.
+ */
+:root {
+  --home-blue: #084b83;
+  --home-white: #ffffff;
+  --home-light-gray: #eeeeee;
+  --home-dark-text: #222222;
 }
 
-.top {
-    width: 100vw;
-    max-width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 60vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+/* Hero Section */
 
+/*
+ * Styles the homepage banner displayed by HomeHero.js.
+ * The image scales to fit different screen sizes.
+ */
+.home-hero {
+  width: 100%;
+  height: 65vh;
+  min-height: 20rem;
+  overflow: hidden;
+  background-color: var(--home-blue);
 }
 
-.top.dim::before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top:0;
-    left:0;
-    background-color: rgba(0,0,0,0.7);
-    z-index: 1;
+.home-hero img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-.top.top-text > h1 {
-    position: relative;
-    z-index: 2;
+/* About Us Section */
+
+.home-about {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 4rem 8% 2rem;
+  background-color: var(--home-blue);
+  color: var(--home-white);
 }
 
-.top-text {
-    text-align: center;
-    vertical-align: middle;
-    padding-top: 20vh;
-
-    font-family: 'Roboto Slab', serif;
-    font-size: 4vw;
-    color: var(--color-offwhite);
+.home-about h2 {
+  color: var(--home-white);
+  font-size: clamp(1.5rem, 2.5vw, 2.25rem);
+  margin: 0 0 1.5rem;
 }
 
-.bottom {
-    position: relative;
-    z-index: 0;
+.home-about p {
+  color: var(--home-white);
+  font-size: 1rem;
+  line-height: 1.7;
+  max-width: 65rem;
+  margin: 0;
 }
 
-#learn-more-home {
-    background-color: var(--color-peacockblue);
-    padding-bottom: 7vh;
+/* Read More Button */
+
+.home-read-more {
+  display: block;
+  width: fit-content;
+  margin: 1.5rem 0 0 auto;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--home-white);
+  color: var(--home-blue);
+  text-decoration: none;
+  border-radius: 0.4rem;
+  font-size: 1rem;
+}
+
+.home-read-more:hover {
+  background-color: #e0e0e0;
+  color: var(--home-blue);
+}
+
+/* Image Carousel Section */
+
+/*
+ * Homepage-specific container for the shared ImageCarousel component.
+ * The carousel's own layout is defined in imageCarousel.css.
+ */
+.home-gallery {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 2rem 8% 4rem;
+  background-color: var(--home-blue);
+}
+
+/* How to Join Section */
+
+.home-join {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 3rem 8% 6rem;
+  background-color: var(--home-blue);
+  color: var(--home-white);
+}
+
+.home-join h2 {
+  color: var(--home-white);
+  font-size: clamp(1.5rem, 2.5vw, 2.25rem);
+  margin: 0 0 1.5rem;
+}
+
+.home-join-content {
+  width: 100%;
+  box-sizing: border-box;
+  background-color: var(--home-light-gray);
+  padding: 2rem;
+  border-radius: 0.75rem;
+  color: var(--home-dark-text);
+}
+
+.home-join-content p {
+  color: var(--home-dark-text);
+  font-size: 1rem;
+  line-height: 1.7;
+  margin: 0 0 1.5rem;
+}
+
+.home-join-content ul {
+  padding-left: 1.5rem;
+  margin: 0;
+}
+
+.home-join-content li {
+  color: var(--home-dark-text);
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 0.75rem;
+}
+
+.home-join-content li:last-child {
+  margin-bottom: 0;
+}
+
+/* Tablet Layout */
+
+@media screen and (max-width: 900px) {
+  .home-hero {
     height: 50vh;
-    text-align: center;
-}
-
-#learn-more-home .learn-more-home-section {
-    background-color: var(--color-navyblue); 
-    padding: 5vh; 
   }
 
-.info {
-    max-width: 100%;
-    text-align: center;
-    vertical-align: middle;
-    max-height: 100%;
-    justify-content: space-evenly;
-    align-items: center;
-    align-content: center;
-    height: 65vh; 
-    overflow: inherit;
+  .home-about,
+  .home-join {
+    padding-left: 6%;
+    padding-right: 6%;
+  }
 
+  .home-gallery {
+    padding-left: 6%;
+    padding-right: 6%;
+  }
 }
 
-/* mobile */
-@media screen and (max-width: 600px) {
-    .info {
-        flex-direction: column;
-    }
-       .splash-image {
-        height: 65vh;
-    }
-}
-
-.main-content {
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-}
-
-
-.info-wrapper {
-    gap: 5%;
-    font-family: 'Roboto Slab', serif;
-    display: flex;
-    justify-content: space-evenly;
-    overflow:inherit;
-    flex-direction: row;
-    
-}
+/* Mobile Layout */
 
 @media screen and (max-width: 600px) {
-    .info-wrapper{
-        flex-direction: column;
-    }
-}
-
-.header {
-    font-family: 'Roboto Slab', serif;
-    font-size: 3vw;
-    
-}
-
-@media screen and (max-width: 600px) {
-    .header {
-        font-size: 6vw;
-    }
-}
-
-@media screen and (max-width: 600px) {
-    .image {
-        width: 90vw;
-        height: 55vw;
-    }        
-}
-
-/* Attributes for the team pic image */
-.teampic { 
-    border-radius: 3%;
-    height: 52vh;
-    max-width: 100%;
-    
-}
-
-/* mobile */
-@media screen and (max-width: 600px) {
-    .teampic {
-        width: 100%;
-        height: 100%;
-    }
-}
-
-.info-card {
+  .home-hero {
     height: 40vh;
+    min-height: 15rem;
+  }
+
+  .home-about {
+    padding: 3rem 6% 1.5rem;
+  }
+
+  .home-about h2,
+  .home-join h2 {
+    font-size: 1.5rem;
+  }
+
+  .home-gallery {
+    padding: 1.5rem 6% 3rem;
+  }
+
+  .home-join {
+    padding: 2rem 6% 4rem;
+  }
+
+  .home-join-content {
+    padding: 1.5rem;
+  }
+
+  .home-join-content p,
+  .home-join-content li {
+    font-size: 0.95rem;
+  }
 }
-
-
-.paragraph {
-    text-align: center;
-    font-family: 'Roboto', sans-serif;
-
-    font-size: 3vw;
-}
-
-/* desktop */
-@media screen and (min-width: 600px) {
-    .paragraph {
-        font-size: 1.3vw;
-    }
-}
-
-/* mobile */
-@media screen and (max-width: 600px) {
-    .paragraph {
-        font-size: 1rem;
-    }
-}
-
-.paragraph2 {
-    font-family: 'Roboto', sans-serif;
-    padding:0;
-    text-align: left;
-    margin: 0; /* again, for perfect center */
-    font-size: 1.3vw;
-}
-
-/* mobile */
-@media screen and (max-width: 800) {
-    .paragraph2 {
-        font-size: 1rem;
-    }
-}
-
-.card-text {
-    font-family: 'Roboto', sans-serif;
-    text-align: center;
-    /* desktop */
-    font-size: 1.7vw;   
-    color: var(--color-navyblue);
-}
-
-@media screen and (max-width: 600px) {
-    .card-text {
-        font-size: 0.9rem;
-        color: var(--color-offwhite);
-    }
-}
-
-.container-row{
-    display: flex;
-    padding:0;
-}
-  
-.container-row .image{
-    flex: 1;
-}
-  
-.container-row .parag {
-    flex: 2;
-    padding: 0% 3% 0% 4%;
-}
-
-
-/* Arrows on Header*/
-.arrows {
-	width: 7%;
-    position: absolute;
-    bottom: 0.5vh;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 3;
-	/*Need changes for mobile screen*/
-}
-
-.arrows path {
-	stroke: var(--color-offwhite);
-	fill: transparent;
-	stroke-width: .5%;	
-	animation: arrow 4s infinite;
-	-webkit-animation: arrow 4s infinite; 
-}
-
-@keyframes arrow
-{
-0% {opacity:0}
-40% {opacity:1}
-80% {opacity:0}
-100% {opacity:0}
-}
-
-@-webkit-keyframes arrow /*Safari and Chrome*/
-{
-0% {opacity:0}
-40% {opacity:1}
-80% {opacity:0}
-100% {opacity:0}
-}
-
-.arrows path.a1 {
-	animation-delay:-1s;
-	-webkit-animation-delay:-1s; /* Safari 和 Chrome */
-}
-
-.arrows path.a2 {
-	animation-delay:-0.5s;
-	-webkit-animation-delay:-0.5s; /* Safari 和 Chrome */
-}
-
-.arrows path.a3 {	
-	animation-delay:0s;
-	-webkit-animation-delay:0s; /* Safari 和 Chrome */
-}
-
-

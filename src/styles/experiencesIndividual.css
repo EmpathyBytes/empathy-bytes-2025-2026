@@ -7,13 +7,16 @@
     align-items: center;
     justify-content: center;
     background-position: center;
+    padding: 0 4vw;
 }
 
 .header-experiences {
     font-family: 'Roboto Slab', serif;
-    font-size: 6rem;
-    width: max-content;
+    font-size: clamp(2.2rem, 8vw, 6rem);
+    width: 100%;
+    max-width: 100%;
     text-align: center;
+    word-wrap: break-word;
 }
 
 .blue-box {
@@ -39,12 +42,29 @@
     font-weight: 500;
 }
 
+.vr-archives-text-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    width: 100%;
+}
+
 .paragraph-experiences-body {
     font-family: 'Roboto', serif;
     font-size: 1rem;
-    width: 175vw;
+    width: 100%;
     max-width: calc(100% - 5vw);
-    margin: auto;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.model-title-experiences {
+    text-align: center;
+    padding-left: 16px;
+    padding-right: 16px;
+    font-size: clamp(1.5rem, 5vw, 2.25rem);
+    margin-bottom: 12px;
+    word-wrap: break-word;
 }
 
  h2 {
@@ -64,22 +84,42 @@ iframe {
 }
 
 @media screen and (max-width: 600px) {
+    .top-banner {
+        height: 50vh;
+    }
+    .full-container-experiences {
+        padding: 4vh 4vw;
+    }
+    .blue-box {
+        width: 92vw;
+        max-width: 100%;
+        padding: 3vh 6vw;
+        border-radius: 4vw;
+    }
+    .divider {
+        margin: 6vh auto;
+    }
     .grid-margins-experiences {
-        padding: 0; /* Adjust the padding for screens 600px or less */
+        padding: 0 2%; /* Adjust the padding for screens 600px or less */
     } 
 .vr-container-1 {
-    height: 100vh;
+    height: 300px;
     width: 100%;
     background-color: var(--color-lightgray);
+    margin-bottom: 2rem;
 }
 .vr-container-2 {
-    height: 500vh;
+    height: 300px;
     width: 100%;
+    margin-bottom: 2rem;
+    /* background-color: #004B87; */
 }
 .sub-header-experiences {
     font-family: 'Roboto Slab', serif;
     font-size: 2rem;
     background-color: var(--color-peacockblue);
+    margin-bottom: 1rem;
+    /*padding-left: 20px;*/
 
 }
 
@@ -89,7 +129,17 @@ iframe {
     background-color: var(--color-peacockblue);
 }
 
-@media screen and (max-width: 600px) {
+/* .paragraph-indent-experiences-left {
+    padding-left: 5%;
+    color: white;
+    background-color: #004B87;
+
+} */
+
+    /* .paragraph-indent-experiences-left {
+        padding-left: 0; 
+        padding-right: 80px;
+    } */
     .paragraph-indent-experiences-right {
         padding-right: 5%;
         color: var(--color-offwhite);
@@ -98,61 +148,12 @@ iframe {
     .left-align-experiences {
         text-align: right;
     }
-}
-}
-
-/* App Team page (appteam.js): text, phone mockup, and video columns */
-.app-text {
-    margin-left: 50px;
-}
-
-.app-mockup {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-}
-
-.app-mockup img {
-    width: 100%;
-    max-width: 398px; /* the mockup's previous scale(0.8) size */
-    height: auto;
-}
-
-.app-video {
-    transform: scale(0.8);
-}
-
-/* Below MUI's md breakpoint the three columns stack: text, mockup, then video */
-@media screen and (max-width: 899px) {
-    .app-text {
-        margin-left: 0;
-        padding: 0 1rem;
+    .model-title-experiences {
+        padding-left: 24px;
+        padding-right: 12px;
+        font-size: 1.5rem;
     }
-
-    .app-mockup {
-        padding: 2rem 0;
-    }
-
-    .app-mockup img {
-        max-width: 280px;
-    }
-
-    .app-video {
-        transform: none;
-        width: 100%;
-        text-align: center;
-    }
-
-    .app-video h1 {
-        padding: 0 1rem;
-    }
-
-    .app-video iframe {
-        display: block;
-        width: 100%;
-        max-width: 315px;
-        height: auto;
-        aspect-ratio: 9 / 16;
-        margin: 0 auto;
+    iframe {
+        height: 60vw;
     }
 }

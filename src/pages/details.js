@@ -1,58 +1,52 @@
+
 import React from "react";
 import "../styles/projectDetails.css";
-import { Link, graphql } from "gatsby";
+import { graphql } from "gatsby";
+import Layout from "../components/layout";
 
 export default function ProjectDetailsPage({ data }) {
-  // Get collection data from Drupal through GraphQL.
-  // Use fallback text if the query returns no collection.
+  // Get collection data from Drupal
   const project = data?.collections?.nodes?.[0];
 
+  // Get the Drupal image URL
+  const imageUrl = project?.relationships?.field_image?.uri?.url;
+
   return (
-    <div className="project-details-page">
-      {/* Navigation */}
-      <nav className="project-nav">
-        <div className="project-nav-icon">
-          <span />
-        </div>
-
-        <div className="project-nav-links">
-          <Link to="/projects">Projects</Link>
-          <Link to="/teams">Teams</Link>
-          <Link to="/about">About</Link>
-        </div>
-      </nav>
-
-      {/* Page body */}
+    <Layout>
       <main className="project-details-container">
-        <h1 className="project-title">
-          {project?.title || "Project Detail"}
-        </h1>
-
         <section className="project-content">
-          {/* Keep the image placeholder until project photos are available. */}
-          <div
-            className="project-image-placeholder"
-            aria-label="Project image placeholder"
-          >
-            Image placeholder
+
+          {/* Project title */}
+          <h1 className="project-title">
+            {project?.title || "Project Detail"}
+          </h1>
+
+          {/* Project image */}
+          <div className="project-image-placeholder">
+            {imageUrl ? (
+              <img
+                className="project-image"
+                src={imageUrl}
+                alt={project?.title || "Project image"}
+              />
+            ) : (
+              <span>Image placeholder</span>
+            )}
           </div>
 
+          {/* Project description */}
           <p className="project-description-placeholder">
             {project?.body?.summary ||
               "Placeholder text for the project description."}
           </p>
+
         </section>
       </main>
-
-      {/* Footer */}
-      <footer className="project-footer">
-        <h2>Footer</h2>
-      </footer>
-    </div>
+    </Layout>
   );
 }
 
-// Retrieve collection content from Drupal.
+// Retrieve collection content from Drupal
 export const query = graphql`
   query ProjectDetailsQuery {
     collections: allNodeCollection {

@@ -41,7 +41,9 @@ const matchesCategory = (collection, category) => {
 
 // The Olympics collection has its own hub page instead of the collection template
 const collectionLink = (collection) =>
-  isOlympics(collection) ? "/projects/olympics" : "/projects" + collection.path.alias;
+  isOlympics(collection)
+    ? "/projects/olympics"
+    : "/project-details" + collection.path.alias;
 
 const collectionImage = (collection) => {
   const url = collection.relationships?.field_image?.uri?.url;

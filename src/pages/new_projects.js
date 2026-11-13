@@ -11,6 +11,7 @@ const DRUPAL_BASE_URL = "https://empathybytes.library.gatech.edu";
 // "Sort by" options
 const CATEGORY_OPTIONS = [
   { value: "all", label: "All" },
+  { value: "olympics", label: "Olympics" },
   { value: "web", label: "Web" },
   { value: "media", label: "Media" },
   { value: "vr", label: "VR/XR" },
@@ -35,8 +36,9 @@ const isOlympics = (collection) =>
 
 const matchesCategory = (collection, category) => {
   if (category === "all") return true;
+  if (category === "olympics") return isOlympics(collection);
   const title = (collection.title || "").toLowerCase();
-  return CATEGORY_KEYWORDS[category].some((keyword) => title.includes(keyword));
+  return (CATEGORY_KEYWORDS[category] || []).some((keyword) => title.includes(keyword));
 };
 
 // The Olympics collection has its own hub page instead of the collection template

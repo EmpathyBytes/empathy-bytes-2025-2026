@@ -1,0 +1,73 @@
+/* Global nav bar: structure/layout only.
+   All colors, type and spacing are CSS variables so final designs from
+   media can be applied by editing the :root block. */
+
+:root {
+  /* TODO: replace placeholder values with final design tokens */
+  --nav-bg: #b8b8b8;
+  --nav-text: #111111;
+  --nav-link-hover: #000000;
+  --nav-height: 48px;
+  --nav-padding-x: 48px;
+  --nav-link-gap: 48px;
+  --nav-font-size: 0.75rem;
+  --nav-font-family: inherit;
+}
+
+/* The ".navbar" prefix keeps the site's global header/link rules
+   (commons.css) from overriding these. */
+.navbar {
+  display: block;
+  position: relative;
+  width: 100%;
+  background: var(--nav-bg);
+  color: var(--nav-text);
+  font-family: var(--nav-font-family);
+  font-size: var(--nav-font-size);
+}
+
+.navbar .navbar__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* logo left, links right */
+  width: 100%;
+  box-sizing: border-box;
+  min-height: var(--nav-height);
+  padding: 0 var(--nav-padding-x);
+}
+
+.navbar .navbar__logo {
+  margin-right: auto; /* keeps the logo on the far left */
+  color: var(--nav-text);
+  text-decoration: none;
+}
+
+.navbar .navbar__links {
+  display: flex;
+  align-items: center;
+  gap: var(--nav-link-gap);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.navbar .navbar__link {
+  color: var(--nav-text);
+  text-decoration: none;
+}
+
+.navbar .navbar__link:hover,
+.navbar .navbar__link:focus-visible {
+  /* TODO: final hover/focus styles from media */
+  color: var(--nav-link-hover);
+  text-decoration: underline;
+}
+
+/* TODO: mobile layout once media finalizes it.
+   Placeholder: tighten spacing on small screens. */
+@media (max-width: 600px) {
+  :root {
+    --nav-padding-x: 16px;
+    --nav-link-gap: 16px;
+  }
+}

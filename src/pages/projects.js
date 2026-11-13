@@ -57,6 +57,8 @@ const ProjectsPage = ({data}) => {
                     return title.includes('covid') || title.includes('covid-19');
                 case 'misc':
                     return title.includes('miscellaneous') || title.includes('misc');
+                case 'olympics':
+                    return title.trim() === 'olympics at georgia tech';
                 default:
                     return true;
             }
@@ -86,9 +88,27 @@ const ProjectsPage = ({data}) => {
 
                             {/* Div that contains the navbar */}
                             <div className="project-nav" style={{ paddingTop: 25, paddingBottom: 25 }}>
-                            <Grid container spacing={10} className="project-navBG" justifyContent="center">
+                            <Grid container spacing={4} className="project-navBG" justifyContent="center">
 
-                                <Grid xs={2}>
+                                <Grid xs="auto">
+                                    <h3
+                                        className={`project-nav-text ${selectedCategory === 'all' ? 'active' : ''}`}
+                                        onClick={() => setSelectedCategory('all')}
+                                    >
+                                        All
+                                    </h3>
+                                </Grid>
+
+                                <Grid xs="auto">
+                                    <h3
+                                        className={`project-nav-text ${selectedCategory === 'olympics' ? 'active' : ''}`}
+                                        onClick={() => selectCategory('olympics')}
+                                    >
+                                        Olympics
+                                    </h3>
+                                </Grid>
+
+                                <Grid xs="auto">
                                     <h3 
                                         className={`project-nav-text ${selectedCategory === 'makerspaces' ? 'active' : ''}`}
                                         onClick={() => selectCategory('makerspaces')}
@@ -97,7 +117,7 @@ const ProjectsPage = ({data}) => {
                                     </h3>
                                 </Grid>
 
-                                <Grid xs={2}>
+                                <Grid xs="auto">
                                     <h3 
                                         className={`project-nav-text ${selectedCategory === 'web' ? 'active' : ''}`}
                                         onClick={() => selectCategory('web')}
@@ -106,7 +126,7 @@ const ProjectsPage = ({data}) => {
                                     </h3>
                                 </Grid>
 
-                                <Grid xs={2}>
+                                <Grid xs="auto">
                                     <h3 
                                         className={`project-nav-text ${selectedCategory === 'media' ? 'active' : ''}`}
                                         onClick={() => selectCategory('media')}
@@ -115,7 +135,7 @@ const ProjectsPage = ({data}) => {
                                     </h3>
                                 </Grid>
 
-                                <Grid xs={2}>
+                                <Grid xs="auto">
                                     <h3 
                                         className={`project-nav-text ${selectedCategory === 'app' ? 'active' : ''}`}
                                         onClick={() => selectCategory('app')}
@@ -124,7 +144,7 @@ const ProjectsPage = ({data}) => {
                                     </h3>
                                 </Grid>
 
-                                <Grid xs={2}>
+                                <Grid xs="auto">
                                     <h3 
                                         className={`project-nav-text ${selectedCategory === 'misc' ? 'active' : ''}`}
                                         onClick={() => selectCategory('misc')}
@@ -138,20 +158,22 @@ const ProjectsPage = ({data}) => {
                             {/* Div that contains the navbar */}
 
                         <Grid container spacing={3} className="content-transition">
-                        <Grid item xs={6}>
-                            <FlexibleCard
-                                variant="collection"
-                                title="Emotions Map"
-                                image={buzzingThoughtsLogo}
-                                imageSx={{
-                                    backgroundColor: "#fff",
-                                    objectFit: "contain",
-                                    padding: "24px",
-                                    boxSizing: "border-box"
-                                }}
-                                link="/emotions-page"
-                            />
-                        </Grid>
+                        {(selectedCategory === 'all' || selectedCategory === 'misc') && (
+                            <Grid item xs={6}>
+                                <FlexibleCard
+                                    variant="collection"
+                                    title="Emotions Map"
+                                    image={buzzingThoughtsLogo}
+                                    imageSx={{
+                                        backgroundColor: "#fff",
+                                        objectFit: "contain",
+                                        padding: "24px",
+                                        boxSizing: "border-box"
+                                    }}
+                                    link="/emotions-page"
+                                />
+                            </Grid>
+                        )}
                         {getFilteredCollections().map((item) => ( // Mapping filtered collection data to card component
                             <Grid item xs={6}>
                             <CollectionCard 
@@ -177,6 +199,18 @@ const ProjectsPage = ({data}) => {
                         {/* Mobile Navigation */}
                         <div className="mobile-nav-container">
                             <div className="mobile-nav-scroll">
+                                <div
+                                    className={`mobile-nav-item ${selectedCategory === 'all' ? 'active' : ''}`}
+                                    onClick={() => setSelectedCategory('all')}
+                                >
+                                    All
+                                </div>
+                                <div
+                                    className={`mobile-nav-item ${selectedCategory === 'olympics' ? 'active' : ''}`}
+                                    onClick={() => selectCategory('olympics')}
+                                >
+                                    Olympics
+                                </div>
                                 <div 
                                     className={`mobile-nav-item ${selectedCategory === 'makerspaces' ? 'active' : ''}`}
                                     onClick={() => selectCategory('makerspaces')}
@@ -211,18 +245,20 @@ const ProjectsPage = ({data}) => {
                         </div>
                         
                         <div className="content-transition">
-                        <FlexibleCard
-                            variant="collection"
-                            title="Emotions Map"
-                            image={buzzingThoughtsLogo}
-                            imageSx={{
-                                backgroundColor: "#fff",
-                                objectFit: "contain",
-                                padding: "24px",
-                                boxSizing: "border-box"
-                            }}
-                            link="/emotions-page"
-                        />
+                        {(selectedCategory === 'all' || selectedCategory === 'misc') && (
+                            <FlexibleCard
+                                variant="collection"
+                                title="Emotions Map"
+                                image={buzzingThoughtsLogo}
+                                imageSx={{
+                                    backgroundColor: "#fff",
+                                    objectFit: "contain",
+                                    padding: "24px",
+                                    boxSizing: "border-box"
+                                }}
+                                link="/emotions-page"
+                            />
+                        )}
                         {getFilteredCollections().map((item) => ( // Mapping filtered collection data to card component
                             
                             <CollectionCard 

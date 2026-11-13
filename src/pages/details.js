@@ -1,27 +1,30 @@
-
 import React from "react";
 import "../styles/projectDetails.css";
 import { graphql } from "gatsby";
 import Layout from "../components/layout";
 
-export default function ProjectDetailsPage({ data }) {
-  // Get collection data from Drupal
-  const project = data?.collections?.nodes?.[0];
+//pageContext holds info when a page is created in gatsby-node.js
+export default function ProjectDetailsPage({ data, pageContext }) {
+  // Only set when the page was created for a specific project
+  const projectId = pageContext?.id;
 
-  // Get the Drupal image URL
+  // Find the matching project; undefined if visited directly
+  const project = projectId
+    ? data.collections.nodes.find((node) => node.id === projectId)
+    : null;
+
   const imageUrl = project?.relationships?.field_image?.uri?.url;
 
   return (
     <Layout>
       <main className="project-details-container">
-        <section className="project-content">
 
-          {/* Project title */}
+        {/*title, image, and description if project loaded, otherwise default */}
+        <section className="project-content">
           <h1 className="project-title">
             {project?.title || "Project Detail"}
           </h1>
 
-          {/* Project image */}
           <div className="project-image-placeholder">
             {imageUrl ? (
               <img
@@ -34,19 +37,16 @@ export default function ProjectDetailsPage({ data }) {
             )}
           </div>
 
-          {/* Project description */}
           <p className="project-description-placeholder">
             {project?.body?.summary ||
               "Placeholder text for the project description."}
           </p>
-
         </section>
       </main>
     </Layout>
   );
 }
 
-// Retrieve collection content from Drupal
 export const query = graphql`
   query ProjectDetailsQuery {
     collections: allNodeCollection {
@@ -71,6 +71,10 @@ export const query = graphql`
   }
 `;
 
-export const Head = () => (
-  <title>Project Detail | Empathy Bytes</title>
-);
+// sets browser tab title
+export const Head = ({ data, pageContext }) => {
+  const project = pageContext?.id
+    ? data.collections.nodes.find((node) => node.id === pageContext.id)
+    : null;
+  return <title>{project?.title || "Project Detail"} | Empathy Bytes</title>;
+};

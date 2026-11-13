@@ -3,7 +3,8 @@
   width: 100%;
   box-sizing: border-box;
   padding: 40px 4% 80px;
-  min-height: 70vh;
+  min-height: 100vh;
+  padding-bottom: 240px
 }
 
 /* Content */
@@ -49,7 +50,7 @@
 /* Responsive layout */
 @media (max-width: 768px) {
   .project-details-container {
-    padding: 28px 5% 60px;
+    padding: 28px 5% 280px;
   }
 
   .project-title {
@@ -66,4 +67,19 @@
     width: 100%;
     box-sizing: border-box;
   }
+}
+
+.project-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Only applies on pages that render .project-details-container */
+#page-container:has(.project-details-container) #footer {
+  position: static;
+}
+
+#page-container:has(.project-details-container) #content-wrap {
+  padding-bottom: 0;
 }

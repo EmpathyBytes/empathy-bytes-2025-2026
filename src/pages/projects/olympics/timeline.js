@@ -188,6 +188,34 @@ function OlympicsTimelinePage({ data }) {
         .timeline-event-body * {
           color: #000 !important;
         }
+
+        /* Desktop: the date sits next to the card on the blue background */
+        .olympic-timeline .vertical-timeline-element-content .timeline-event-date {
+          color: #fff;
+          font-size: 1.375rem;
+          font-weight: 700;
+          opacity: 1;
+        }
+
+        /* Mobile: the date moves inside the card, so show it at the top in navy */
+        @media only screen and (max-width: 1169px) {
+          .olympic-timeline .vertical-timeline-element-content {
+            display: flex;
+            flex-direction: column;
+          }
+
+          .olympic-timeline .vertical-timeline-element-content a {
+            align-self: flex-start;
+          }
+
+          .olympic-timeline .vertical-timeline-element-content .timeline-event-date {
+            order: -1;
+            float: none;
+            padding: 0 0 0.75rem;
+            color: #003057;
+            font-size: 1.125rem;
+          }
+        }
       `}</style>
 
       <section style={pageStyles.wrapper}>
@@ -220,7 +248,7 @@ function OlympicsTimelinePage({ data }) {
           </div>
         </div>
 
-        <VerticalTimeline>
+        <VerticalTimeline className="olympic-timeline">
           {timelineEvents.map((eventNode, index) => {
             const eventTitle = eventNode?.field_field_event_title?.value || "Untitled Event";
             // const eventSubtitle = eventNode?.field_field_event_subtitle || "";
@@ -234,6 +262,7 @@ function OlympicsTimelinePage({ data }) {
               <VerticalTimelineElement
                 key={eventNode?.id || `${eventTitle}-${index}`}
                 date={eventDate}
+                dateClassName="timeline-event-date"
                 contentStyle={{ background: "#fff", color: "#000" }}
                 contentArrowStyle={{ borderRight: "7px solid #fff" }}
                 iconStyle={{ background: "#003057", color: "#fff" }}

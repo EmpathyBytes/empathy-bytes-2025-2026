@@ -1,0 +1,128 @@
+@import "./fonts.css";
+
+/* Redesigned Projects page (src/pages/new_projects.js)
+ * Colors are placeholders until the final design is ready. */
+
+/* Layout makes the content area navy on every page; make it white only here */
+#page-container:has(.new-projects-page),
+#content-wrap:has(.new-projects-page) {
+    background-color: var(--new-projects-bg, #ffffff);
+}
+
+.new-projects-page {
+    --new-projects-text-color: #1a1a1a;
+
+    box-sizing: border-box;
+    max-width: 1208px;
+    margin: 0 auto;
+    padding: 100px 24px 220px;
+    color: var(--new-projects-text-color);
+    font-family: 'Roboto', sans-serif;
+}
+
+.new-projects-header {
+    margin-bottom: 180px;
+}
+
+.new-projects-title {
+    margin: 0 0 26px;
+    color: var(--new-projects-text-color);
+    font-family: 'Roboto', sans-serif;
+    font-size: clamp(3rem, 6.7vw, 6rem);
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+.new-projects-description {
+    margin: 0;
+    color: var(--new-projects-text-color);
+    font-size: clamp(1.25rem, 2.2vw, 2rem);
+    text-align: left;
+}
+
+.new-projects-filter {
+    margin-bottom: 71px;
+}
+
+.new-projects-sort-heading {
+    margin: 0 0 71px;
+    color: var(--new-projects-text-color);
+    font-family: 'Roboto', sans-serif;
+    font-size: clamp(2rem, 3.3vw, 3rem);
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+.new-projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 100px 80px;
+}
+
+.new-projects-empty {
+    color: var(--new-projects-text-color);
+    font-size: 1.5rem;
+    text-align: left;
+}
+
+@media screen and (max-width: 1024px) {
+    .new-projects-page {
+        padding-top: 72px;
+    }
+
+    .new-projects-header {
+        margin-bottom: 96px;
+    }
+
+    .new-projects-title {
+        margin-bottom: 16px;
+    }
+
+    .new-projects-sort-heading {
+        margin-bottom: 40px;
+    }
+
+    .new-projects-filter {
+        margin-bottom: 48px;
+    }
+
+    .new-projects-grid {
+        gap: 56px 40px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .new-projects-page {
+        padding: 48px 16px 80px;
+    }
+
+    .new-projects-header {
+        margin-bottom: 56px;
+    }
+
+    .new-projects-title {
+        font-size: 2.75rem;
+    }
+
+    .new-projects-description {
+        font-size: 1.125rem;
+    }
+
+    .new-projects-sort-heading {
+        margin-bottom: 24px;
+        font-size: 1.75rem;
+    }
+
+    .new-projects-filter {
+        margin-bottom: 32px;
+    }
+
+    .new-projects-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .new-projects-empty {
+        font-size: 1.125rem;
+    }
+}

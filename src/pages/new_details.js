@@ -1,9 +1,15 @@
 import React from "react";
-import "../styles/projectDetails.css";
+import "../styles/new_projectDetails.css";
 import { graphql } from "gatsby";
 import Layout from "../components/layout";
 
+
+const DRUPAL_BASE_URL = "https://empathybytes.library.gatech.edu";
+
 //pageContext holds info when a page is created in gatsby-node.js
+//Waiting on more from media team since this page is very basic
+//may need to make components for the image + description
+//NOTE: description is just a placeholder atm, but images and title display
 export default function ProjectDetailsPage({ data, pageContext }) {
   // Only set when the page was created for a specific project
   const projectId = pageContext?.id;
@@ -13,7 +19,8 @@ export default function ProjectDetailsPage({ data, pageContext }) {
     ? data.collections.nodes.find((node) => node.id === projectId)
     : null;
 
-  const imageUrl = project?.relationships?.field_image?.uri?.url;
+  const imagePath = project?.relationships?.field_image?.uri?.url;
+  const imageUrl = imagePath ? DRUPAL_BASE_URL + imagePath : undefined;
 
   return (
     <Layout>

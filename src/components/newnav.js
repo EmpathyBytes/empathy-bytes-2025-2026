@@ -55,7 +55,7 @@ function Newnav({ transparent }) {
 
     return (
       <>
-        <header>
+        <header className="site-header">
           <div className="nav-logo">
             <Link to={"/"} className="logo-link">
             <img

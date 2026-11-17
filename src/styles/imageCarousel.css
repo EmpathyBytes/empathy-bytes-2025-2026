@@ -1,0 +1,31 @@
+/* Shared Image Carousel */
+
+.shared-carousel-images {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 2%;
+  padding: 1rem 3%;
+  box-sizing: border-box;
+}
+
+.shared-carousel-images img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: 0.75rem;
+}
+
+/* Mobile Layout */
+
+@media screen and (max-width: 600px) {
+  .shared-carousel-images {
+    grid-template-columns: 1fr;
+    gap: 0;
+    padding: 1rem 8%;
+  }
+
+  .shared-carousel-images img {
+    aspect-ratio: 4 / 3;
+  }
+}

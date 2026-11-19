@@ -94,6 +94,14 @@ exports.createPages = async ({actions, graphql}) => {
           CollectionTitle: collectionData.title,
         },
       });
+
+      createPage({
+        path: "/project-details" + collectionData.path.alias,
+        component: path.resolve(`src/pages/new_details.js`),
+        context: {
+          id: collectionData.id,
+        },
+      });
     });
 
         /**

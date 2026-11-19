@@ -1,7 +1,12 @@
 import React from 'react';
 import { graphql, Link } from 'gatsby';
 import Layout from '../components/layout';
+import NewNavbar from "../components/new_navbar";
 import '../styles/new_teamspage.css';
+import githubIcon from "../images/socialmedia-icons/github_icon.png";
+import instagramIcon from "../images/socialmedia-icons/instagram_icon.png";
+import linkedinIcon from "../images/socialmedia-icons/linkedin_icon.png";
+import youtubeIcon from "../images/socialmedia-icons/youtube_icon.png";
 
 function NewTeamsPage({ data }) {
     const webName = data?.webTeam.name || "Web";
@@ -10,18 +15,19 @@ function NewTeamsPage({ data }) {
     const mediaName = data?.mediaTeam?.name || "Media";
 
     const teams = [
-        { title: mediaName, path: "/teams/media" },
-        { title: appName, path: "/teams/app" },
-        { title: webName, path: "/teams/web" },
-        { title: vrName, path: "/teams/vr" },
+        { id: 'web', title: webName, path: "/teams/web" },
+        { id: 'vr', title: vrName, path: "/teams/vr" },
+        { id: 'media', title: mediaName, path: "/teams/media" },
+        { id: 'app', title: appName, path: "/teams/app" },
     ];
 
     return (
-        <Layout>
+        <>
+            <NewNavbar />
             <div className="teams-container">
                 <section className="teams-header">
                     <h1>Teams</h1>
-                    <p>Explore our different sub-teams and the unique projects each is working on.</p>
+                    <p>Learn how our teams use their skills and technologies to bring our projects to life.</p>
                 </section>
 
                 <section className="teams-list">
@@ -44,10 +50,44 @@ function NewTeamsPage({ data }) {
                                 <span className="team-card-title">{team.title || team.name}</span>
                             </Link>
                         );    
-                    })};
+                    })}
                 </section>
             </div>
-        </Layout>
+
+                <footer className="new-about-footer">
+                          <div className="new-about-footer-content">
+                            <div className="new-about-footer-brand">
+                              <h2> Empathy Bytes</h2>
+                              <p>A Georgia Tech VIP exploring technology, creativity, and community.</p>
+                            </div>
+                            <div className="new-about-footer-links">
+                              <h3>Explore</h3>
+                              <ul>
+                                <li><Link to="/new_projects">Projects</Link></li>
+                                <li><Link to="/new_teamspage">Teams</Link></li>
+                                <li><Link to="/new_about">About</Link></li>
+                              </ul>
+                            </div>
+                            <div className="new-about-footer-social">
+                              <h3>Follow Us!</h3>
+                              <div className="new-about-footer-icons">
+                                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+                                  <img src={instagramIcon} alt="Instagram" width ="20" height="20" />
+                                </a>
+                                <a href="https://youtube.com" target="_blank" rel="noopener noreferrer">
+                                  <img src={youtubeIcon} alt="YouTube" width="20" height="20" />
+                                </a>
+                                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+                                  <img src={linkedinIcon} alt="LinkedIn" width="20" height="20" />
+                                </a>
+                                <a href="https://github.com" target="_blank" rel="noopener noreferrer">
+                                  <img src={githubIcon} alt="GitHub" width="20" height="20" />
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                </footer>
+            </>
     );
 };
 

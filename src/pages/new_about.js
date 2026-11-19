@@ -1,52 +1,26 @@
 import React, { useState } from "react"
-import Layout from "../components/layout" // importing the navbar and footer
 import All from "../images/people/fullTeam.jpg" // importing the full team picture
-// import { Link } from "gatsby"
+import Layout from '../components/layout';
+import NewNavbar from "../components/new_navbar";
+import { Link } from "gatsby";
 import { graphql } from "gatsby";
 import "../styles/new_about.css"
+import"../styles/new_navstyles.css";
 import "../styles/all.css"
-import AboutComponent from "../components/aboutComponent" // everything relating to the images
+import githubIcon from "../images/socialmedia-icons/github_icon.png";
+import instagramIcon from "../images/socialmedia-icons/instagram_icon.png";
+import linkedinIcon from "../images/socialmedia-icons/linkedin_icon.png";
+import youtubeIcon from "../images/socialmedia-icons/youtube_icon.png";
 
 import Grid from '@mui/material/Grid';
 
 function NewAboutPage({ data }) {
-
-  // These functions set the visibility of each team
-  const [visEmerging, setToggleEmerging] = useState(false);
-  const [visWeb, setToggleWeb] = useState(true);
-  const [visMedia, setToggleMedia] = useState(false);
-  const [visApp, setToggleApp] = useState(false);
 
   // FAQ Exapnd/Collapse state
   const [openFaqIndex, setOpenFaqIndex] = useState(null);
 
   const toggleFaq = (index) => {
     setOpenFaqIndex(openFaqIndex === index ? null : index);
-  }
-
-  function toggleEmerging() {
-    setToggleEmerging(true);
-    setToggleWeb(false);
-    setToggleMedia(false);
-    setToggleApp(false);
-  }
-  function toggleWeb() {
-    setToggleEmerging(false);
-    setToggleWeb(true);
-    setToggleMedia(false);
-    setToggleApp(false);
-  }
-  function toggleMedia() {
-    setToggleEmerging(false);
-    setToggleWeb(false);
-    setToggleMedia(true);
-    setToggleApp(false);
-  }
-  function toggleApp() {
-    setToggleEmerging(false);
-    setToggleWeb(false);
-    setToggleMedia(false);
-    setToggleApp(true);
   }
 
   // Contact list placeholders
@@ -58,40 +32,45 @@ function NewAboutPage({ data }) {
   // FAQ placeholders
   const faqList = [
     {
-        question: "Lorem ipsum dolor sit amet consectetur adipiscing elit aliqua.",
-        answer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+        question: "How do I apply?",
+        answer: "To register for a VIP at Georgia Tech as an undergraduate, please follow the instructions on the official VIP application page. We welcome students from all backgrounds!"
     },
     { 
-        question: "Lorem ipsum dolor sit amet consectetur adipiscing elit aliqua.",
-        answer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+        question: "Can I be on many teams?",
+        answer: "Yes! If you want to be on more than one sub-team per semester, make sure to register for the 2-3 credit hour option for the additional project work."
     },
     { 
-        question: "Lorem ipsum dolor sit amet consectetur adipiscing elit aliqua.",
-        answer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+        question: "Is this for Georgia Tech students only?",
+        answer: "Yes, Empathy Bytes is currently open to both undergraduate and graduate students enrolled at Georgia Tech."
+    },
+    { 
+        question: "Can I join as a freshman?",
+        answer: "While we appreciate the early interest, we recommend students wait until their sophomore year to join the VIP."
     }
   ];
 
   // Social icon external link placeholders
   const socialLinks = [
-    { name: "Instagram", url: "https://instagram.com" },
-    { name: "LinkedIn", url: "https://linkedin.com" },
-    { name: "GitHub", url: "https://github.com" },
-    { name: "X", url: "https://x.com" },
-    { name: "Discord", url: "https://discord.com"},
+    { name: "Instagram", url: "https://instagram.com", icon: instagramIcon },
+    { name: "LinkedIn", url: "https://linkedin.com", icon: linkedinIcon },
+    { name: "GitHub", url: "https://github.com", icon: githubIcon },
+    { name: "YouTube", url: "https://youtube.com", icon: youtubeIcon },
   ];
 
   return (
-    <Layout>
+    <>
+      <NewNavbar />
+
       <div className="new-about-page-container">
         <h1 className="new-about-title">About</h1>
 
         {/* Main Group Image */}
         <div className="about-main-image-container">
-            {All ? (
-                <img src={All} className="about-main-image" alt="Empathy Bytes VIP full team group photo" />
+            {false && All ? (
+                <img src={All} className="about-main-image" alt="Empathy Bytes VIP full team group" />
             ) : (
                 <div className="image-placeholder main-image-placeholder">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokewidth="1.5">
                         <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
                         <circle cx="8.5" cy="8.5" r="1.5" />
                         <polyline points="21 15 16 10 5 21" />
@@ -99,30 +78,25 @@ function NewAboutPage({ data }) {
                     <span>Main Group Image Placeholder</span>
                 </div>
             )}
-        </div>
+      </div>
 
         {/* About Us Paragraphs Section */}
         <section className="about-description-section">
             <h2> About Us</h2>
             <p className="paragraph-new-about">
-              Empathy Bytes VIP explores how multimedia and emerging technologies can enhance empathy and understanding as we create digital scholarship.
-              Our work documents the stories of diverse communities in Georgia and beyond. We examine how technology can deepen empathy,
-              expand access to resources,and help us understand new perspectives, solve problems, and be better people in a world full of daily challenges.
+              Empathy Bytes is organized into sub-teams that specialize in different areas of research while contributing to shared project goals. Within these groups, students pursue personal research interests and practice project-management skills and terminology.
             </p>
             <p className="paragraph-new-about">
-              Empathy Bytes is organized into sub-teams that specialize in different areas of research while contributing to shared project goals.
-              Within these groups, students pursue personal research interests and practice project-management skills and terminology.
+              Current technologies include React, GatsbyJS, Drupal, and GraphQL for the Web team; Adobe Creative Cloud for the Media team; Unity and Blender for the Emerging Tech team; and Swift for the App team.
             </p>
-            <p className="paragraph-new-about">
-              Current technologies include React, GatsbyJS, Drupal, and GraphQL for the Web team;
-              Adobe Creative Cloud for the Media team; Unity and Blender for the Emerging Tech team; and Swift for the App team.
-            </p>
-          </section>
+        </section>
 
-          {/* COntact Cards Section */}
+        <div className="section-white-bar"></div>
+
+          {/* Contact Cards Section */}
           <section className="contact-section">
             <h2>Contact</h2>
-            <Grid container spacing={4} justifyContent="center" className="contact-cards-grids">
+            <Grid container spacing={4} className="contact-cards-grids">
                 {contactsList.map((contact, idx) => (
                     <Grid item xs={12} sm={6} md={4} key={idx}>
                         <div className="contact-card">
@@ -151,15 +125,16 @@ function NewAboutPage({ data }) {
             {/* Clickable Social Icons Links */}
             <div className="social-links-row">
                 {socialLinks.map((social, idx) => (
-                    <a
-                        key={idx}
-                        href={social.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="social-circle-link"
-                        title={social.name}
+                    <a 
+                      key={idx}
+                      href={social.url} 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="social-circle"
                     >
-                        <span className="social-circle-placeholder" />
+                      <div className="social-circle-placeholder">
+                        <img src={social.icon} alt={social.name} width="22" height="22" />
+                      </div>
                     </a>
                 ))}
             </div>
@@ -177,8 +152,10 @@ function NewAboutPage({ data }) {
                             aria-expanded={openFaqIndex === idx}
                         >
                             <span>{faq.question}</span>
-                            <span calssName={`faq-icon-box ${openFaqIndex === idx ? 'open' : ''}`}>
-                                {openFaqIndex === idx ? '-' : '+'}
+                            <span className={`faq-icon-box ${openFaqIndex === idx ? 'open' : ''}`}>
+                              <svg width="15" height="8" viewBox="0 0 14 8" fill="none" xmlns="https://www.w3.org/2000/svg">
+                                <path d="M1 1L7 7L13 1" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                              </svg>
                             </span>
                         </button>
                         {openFaqIndex === idx && (
@@ -190,71 +167,44 @@ function NewAboutPage({ data }) {
                 ))}
             </div>
         </section>
-
-        {/* Div that contains the navbar */}
-        <div className="about-nav" style={{ paddingTop: 25, paddingBottom: 25 }}>
-          <Grid container spacing={2} className="navBG" justifyContent="center">
-            <Grid xs={12} sm={1} md={2}>
-            </Grid>
-            <Grid xs={12} sm={3} md={2}>
-              <a href="#about-emerging" className="noUnderline">
-                <h3 className="about-nav-text" onClick={toggleEmerging}>Emerging Tech</h3>
-              </a>
-            </Grid>
-
-            <Grid xs={12} sm={5} md={2}>
-              <a href="#about-web" className="noUnderline">
-                <h3 className="about-nav-text" onClick={toggleWeb}>Web</h3>
-              </a>
-            </Grid>
-
-            <Grid xs={12} sm={5} md={2}>
-              <a href="#about-media" className="noUnderline">
-                <h3 className="about-nav-text" onClick={toggleMedia}>Media</h3>
-              </a>
-            </Grid>
-
-            <Grid xs={12} sm={3} md={2}>
-              <a href="#about-app" className="noUnderline">
-                <h3 className="about-nav-text" onClick={toggleApp}>App</h3>
-              </a>
-            </Grid>
-            <Grid xs={12} sm={1} md={2}>
-            </Grid>
-          </Grid>
-        </div>
-
-
-        {/* The section that contains emerging tech information */}
-        <div id="about-emerging" className="emerging-tech-about" style={{ display: visEmerging ? 'block' : 'none', padding: '20px', textAlign: 'center' }}>
-          <h3>Emerging Tech Team</h3>
-          <p> The emerging tech team is comprised of students from a variety of different backgrounds and majors, including Computational Media and Computer Science. The team explores cutting-edge technologies and how they can create empathy. </p>
-          <a href="https://educast.library.gatech.edu/emergingtech/" target="_blank" rel="noopener noreferrer">Learn More</a>
-        </div>
-
-        {/* The section that contains web team information */}
-        <div id="about-web" className="web-about" style={{ display: visWeb ? 'block' : 'none', padding: '20px', textAlign: 'center' }}>
-          <h3>Web Team</h3>
-          <p>The Web team is comprised of students from a variety of backgrounds, such as Computer Science and Computational Media. The team maintains the public-facing site (GatsbyJS, GraphQL, Drupal) and explores WebXR and its capabilities to create unique and memorable experiences.</p>
-          <a href="https://educast.library.gatech.edu/webteam/" target="_blank" rel="noopener noreferrer">Learn More</a>
-        </div>
-
-        {/* The section that contains media team information */}
-        <div id="about-media" className="media-about" style={{ display: visMedia ? 'block' : 'none', padding: '20px', textAlign: 'center' }}>
-          <h3>Media Team</h3>
-          <p>"The Media team is comprised of students from a variety of backgrounds, such as Computer Science and Computational Media. The team creates site content and supports cross-team design needs.</p>
-          <a href="https://educast.library.gatech.edu/mediateam/" target="_blank" rel="noopener noreferrer">Learn More</a>
-        </div>
-
-        {/* The section that contains app team information */}
-        <div id="about-app" className="app-about" style={{ display: visApp ? 'block' : 'none', padding: '20px', textAlign: 'center' }}>
-          <h3>App Team</h3>
-          <p> The App team is comprised of students from a variety of backgrounds, such as Computer Science and Computational Media. The team is currently developing a mobile application to present the team’s research; future plans to publish on the App Store.</p>
-          <a href="https://educast.library.gatech.edu/appteam/" target="_blank" rel="noopener noreferrer">Learn More</a>
-        </div>
       </div>
-    </Layout>
-  );
+      
+        {/* Added the redesigned Figma footer component matching the hi-fi */}
+        <footer className="new-about-footer">
+          <div className="new-about-footer-content">
+            <div className="new-about-footer-brand">
+              <h2> Empathy Bytes</h2>
+              <p>A Georgia Tech VIP exploring technology, creativity, and community.</p>
+            </div>
+            <div className="new-about-footer-links">
+              <h3>Explore</h3>
+              <ul>
+                <li><Link to="/new_projects">Projects</Link></li>
+                <li><Link to="/new_teamspage">Teams</Link></li>
+                <li><Link to="/new_about">About</Link></li>
+              </ul>
+            </div>
+            <div className="new-about-footer-social">
+              <h3>Follow Us!</h3>
+              <div className="new-about-footer-icons">
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+                  <img src={instagramIcon} alt="Instagram" width ="20" height="20" />
+                </a>
+                <a href="https://youtube.com" target="_blank" rel="noopener noreferrer">
+                  <img src={youtubeIcon} alt="YouTube" width="20" height="20" />
+                </a>
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+                  <img src={linkedinIcon} alt="LinkedIn" width="20" height="20" />
+                </a>
+                <a href="https://github.com" target="_blank" rel="noopener noreferrer">
+                  <img src={githubIcon} alt="GitHub" width="20" height="20" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </footer>
+      </>
+    );
 }
 
 export const query = graphql`

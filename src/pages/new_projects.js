@@ -1,10 +1,16 @@
 import React, { useState } from "react";
-import { graphql } from "gatsby";
+import { graphql, Link } from "gatsby";
+import NewNavbar from "../components/new_navbar";
 import Layout from "../components/layout"; // importing the navbar and footer
 import ProjectCard from "../components/ProjectCard";
 import FilterChips from "../components/FilterChips";
 import "../styles/new_projects.css";
+import "../styles/new_navstyles.css";
 import "../styles/all.css";
+import githubIcon from "../images/socialmedia-icons/github_icon.png";
+import instagramIcon from "../images/socialmedia-icons/instagram_icon.png";
+import linkedinIcon from "../images/socialmedia-icons/linkedin_icon.png";
+import youtubeIcon from "../images/socialmedia-icons/youtube_icon.png";
 
 const DRUPAL_BASE_URL = "https://empathybytes.library.gatech.edu";
 
@@ -58,7 +64,9 @@ function NewProjectsPage({ data }) {
   const visibleCollections = collections.filter((collection) => matchesCategory(collection, category));
 
   return (
-    <Layout>
+    <>
+      <NewNavbar />
+
       <main className="new-projects-page">
         <div className="new-projects-header">
           <h1 className="new-projects-title">Projects</h1>
@@ -92,7 +100,41 @@ function NewProjectsPage({ data }) {
           <p className="new-projects-empty">No projects in this category yet.</p>
         )}
       </main>
-    </Layout>
+
+      <footer className="new-about-footer">
+                                <div className="new-about-footer-content">
+                                  <div className="new-about-footer-brand">
+                                    <h2> Empathy Bytes</h2>
+                                    <p>A Georgia Tech VIP exploring technology, creativity, and community.</p>
+                                  </div>
+                                  <div className="new-about-footer-links">
+                                    <h3>Explore</h3>
+                                    <ul>
+                                      <li><Link to="/new_projects">Projects</Link></li>
+                                      <li><Link to="/new_teamspage">Teams</Link></li>
+                                      <li><Link to="/new_about">About</Link></li>
+                                    </ul>
+                                  </div>
+                                  <div className="new-about-footer-social">
+                                    <h3>Follow Us!</h3>
+                                    <div className="new-about-footer-icons">
+                                      <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+                                        <img src={instagramIcon} alt="Instagram" width ="20" height="20" />
+                                      </a>
+                                      <a href="https://youtube.com" target="_blank" rel="noopener noreferrer">
+                                        <img src={youtubeIcon} alt="YouTube" width="20" height="20" />
+                                      </a>
+                                      <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+                                        <img src={linkedinIcon} alt="LinkedIn" width="20" height="20" />
+                                      </a>
+                                      <a href="https://github.com" target="_blank" rel="noopener noreferrer">
+                                        <img src={githubIcon} alt="GitHub" width="20" height="20" />
+                                      </a>
+                                    </div>
+                                  </div>
+                                </div>
+                      </footer>
+                    </>
   );
 }
 

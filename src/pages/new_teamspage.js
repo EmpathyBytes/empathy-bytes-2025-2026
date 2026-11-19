@@ -44,7 +44,7 @@ function NewTeamsPage({ data }) {
                                 <span className="team-card-title">{team.title || team.name}</span>
                             </Link>
                         );    
-                    })};
+                    })}
                 </section>
             </div>
         </Layout>

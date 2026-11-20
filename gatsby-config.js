@@ -49,6 +49,8 @@ module.exports = {
           },
           "node--contact_page": {
             "fields[node--contact_page]": "title,field_contact_items,field_faq_items",
+            "filter[status]": "1"
+          },
           "node--olympics_timeline_event": {
             "include": "field_field_event_images",
             "fields[node--olympics_timeline_event]": "title,field_field_display_date,field_field_event_body,field_field_event_date,field_field_event_order,field_field_event_subtitle,field_field_event_title,field_field_event_url,path,relationships",

@@ -3,6 +3,8 @@ import { useState } from "react"
 import Layout from "../components/layout";
 import { graphql } from "gatsby"
 import CollectionCard from "../components/collectioncard";
+import FlexibleCard from "../components/FlexibleCard";
+import buzzingThoughtsLogo from "../images/emotions_page_ui/buzzing_thoughts_logo_gold.png";
 import Grid from "@mui/material/Grid";
 import "../styles/projects.css"
 import "../styles/all.css"
@@ -23,6 +25,14 @@ const ProjectsPage = ({data}) => {
 
     //const arr takes in data from drupal
     const arr = data.collections.nodes;
+    // FUTURE TICKET IDEA: remove this local sort and add a real ordering system in Drupal, then remove this block.
+    const orderedCollections = [...arr].sort((a, b) => {
+        const aIsOlympics = (a?.title || "").trim().toLowerCase() === "olympics at georgia tech";
+        const bIsOlympics = (b?.title || "").trim().toLowerCase() === "olympics at georgia tech";
+
+        if (aIsOlympics === bIsOlympics) return 0;
+        return aIsOlympics ? -1 : 1;
+    });
 
     // State management for filtering collections
     const [selectedCategory, setSelectedCategory] = useState('all');
@@ -30,11 +40,11 @@ const ProjectsPage = ({data}) => {
     // Function to filter collections based on selected category
     const getFilteredCollections = () => {
         if (selectedCategory === 'all') {
-            return arr;
+            return orderedCollections;
         }
         
         // Filter collections based on title keywords
-        return arr.filter(item => {
+        return orderedCollections.filter(item => {
             const title = item.title.toLowerCase();
             switch (selectedCategory) {
                 case 'makerspaces':
@@ -128,12 +138,26 @@ const ProjectsPage = ({data}) => {
                             {/* Div that contains the navbar */}
 
                         <Grid container spacing={3} className="content-transition">
+                        <Grid item xs={6}>
+                            <FlexibleCard
+                                variant="collection"
+                                title="Emotions Map"
+                                image={buzzingThoughtsLogo}
+                                imageSx={{
+                                    backgroundColor: "#fff",
+                                    objectFit: "contain",
+                                    padding: "24px",
+                                    boxSizing: "border-box"
+                                }}
+                                link="/emotions-page"
+                            />
+                        </Grid>
                         {getFilteredCollections().map((item) => ( // Mapping filtered collection data to card component
                             <Grid item xs={6}>
                             <CollectionCard 
                             title = {item.title}
                             image = {item.relationships.field_image.uri.url}
-                            url = {item.path.alias}
+                            url = {(item?.title || "").trim().toLowerCase() === "olympics at georgia tech" ? "/olympics" : item.path.alias}
                             body = {item.body.summary}
                             />
                             </Grid> // This is a MUI grid.
@@ -187,12 +211,24 @@ const ProjectsPage = ({data}) => {
                         </div>
                         
                         <div className="content-transition">
+                        <FlexibleCard
+                            variant="collection"
+                            title="Emotions Map"
+                            image={buzzingThoughtsLogo}
+                            imageSx={{
+                                backgroundColor: "#fff",
+                                objectFit: "contain",
+                                padding: "24px",
+                                boxSizing: "border-box"
+                            }}
+                            link="/emotions-page"
+                        />
                         {getFilteredCollections().map((item) => ( // Mapping filtered collection data to card component
                             
                             <CollectionCard 
                             title = {item.title}
                             image = {item.relationships.field_image.uri.url}
-                            url = {item.path.alias}
+                            url = {(item?.title || "").trim().toLowerCase() === "olympics at georgia tech" ? "/olympics" : item.path.alias}
                             />
                             
                         ))}

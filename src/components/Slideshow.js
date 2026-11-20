@@ -1,12 +1,22 @@
 import React, { useEffect, useState, useCallback } from "react";
-
 /**
- * Reusable Slideshow
- * - slides: Array<{ image: string, alt?: string, description?: string }>
- * - initialIndex?: number
- * - title?: string
- * - className?: string
+ * An interactive slideshow/carousel component.
+ * * Features:
+ * - Keyboard Support: Use Left/Right arrows to navigate.
+ * - Accessibility: Implements ARIA roles for regions, tabs, and buttons.
+ * - Responsive: Renders captions and images based on the provided slide data.
+ * * @component
+ * @param {Object} props - The component props.
+ * @param {Array<Object>} [props.slides=[]] - An array of slide objects.
+ * @param {string} props.slides[].image - The source URL for the slide image.
+ * @param {string} [props.slides[].alt] - Accessibility text for the image.
+ * @param {string} [props.slides[].description] - Caption text displayed below the image.
+ * @param {number} [props.initialIndex=0] - The index of the slide to display on first render.
+ * @param {string} [props.title="Slideshow"] - A title for the slideshow region (used by screen readers).
+ * @param {string} [props.className=""] - Additional CSS classes for custom styling.
+ * * @returns {JSX.Element|null} The rendered slideshow or null if no slides are provided.
  */
+
 const Slideshow = ({ slides = [], initialIndex = 0, title = "Slideshow", className = "" }) => {
   const [index, setIndex] = useState(initialIndex);
 

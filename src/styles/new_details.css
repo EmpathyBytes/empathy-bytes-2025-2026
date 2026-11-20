@@ -1,0 +1,85 @@
+/* Main body */
+.project-details-container {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 40px 4% 80px;
+  min-height: 100vh;
+  padding-bottom: 240px
+}
+
+/* Content */
+.project-content {
+  width: 82%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Title */
+.project-details-container .project-content .project-title {
+  width: 100%;
+  margin: 0 0 24px;
+  font-size: 48px !important;
+  font-weight: 400;
+  text-align: left;
+}
+
+/* Image placeholder / Drupal image */
+.project-image-placeholder {
+  width: 100%;
+  aspect-ratio: 1.7 / 1;
+  margin: 0 auto;
+  border-radius: 12px;
+  background-color: #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #666;
+  overflow: hidden;
+}
+
+/* Description */
+.project-description-placeholder {
+  width: 100%;
+  margin: 24px auto 0;
+  font-size: 14px;
+  line-height: 1.5;
+  color: inherit;
+  text-align: left;
+}
+
+/* Responsive layout */
+@media (max-width: 768px) {
+  .project-details-container {
+    padding: 28px 5% 280px;
+  }
+
+  .project-title {
+    font-size: 36px;
+    margin-bottom: 24px;
+  }
+
+  .project-content {
+    width: 100%;
+  }
+
+  .project-image-placeholder,
+  .project-description-placeholder {
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
+
+.project-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Only applies on pages that render .project-details-container */
+#page-container:has(.project-details-container) #footer {
+  position: static;
+}
+
+#page-container:has(.project-details-container) #content-wrap {
+  padding-bottom: 0;
+}

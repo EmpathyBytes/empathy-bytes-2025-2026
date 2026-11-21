@@ -1,0 +1,318 @@
+
+/* Georgia Tech Dorm Launch */
+:root {
+  --navy: #082b49;
+  --gold: #e7b33f;
+  --cream: #fff8e9;
+  --text: #153752;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--text);
+  font-family: "Avenir Next", Avenir, "Segoe UI", sans-serif;
+}
+
+.site-header {
+  height: 82px;
+  padding: 0 65px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #fffdf7;
+  border-bottom: 1px solid #eee4d2;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  color: var(--navy);
+  text-decoration: none;
+  font-size: 25px;
+  font-weight: 800;
+}
+
+.brand-mark {
+  color: var(--gold);
+  font-size: 35px;
+  font-weight: 900;
+}
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  gap: 42px;
+}
+
+.main-nav a {
+  color: var(--navy);
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.main-nav a:hover {
+  color: #b78516;
+}
+
+.hero {
+  min-height: 550px;
+  padding: 65px 8%;
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  align-items: center;
+  gap: 65px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-copy {
+  max-width: 570px;
+  z-index: 1;
+}
+
+.eyebrow {
+  color: #b78516;
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+
+.hero h1 {
+  color: var(--navy);
+  font-size: 76px;
+  line-height: 0.99;
+  letter-spacing: -4px;
+  margin: 0;
+  font-weight: 850;
+}
+
+.hero-description {
+  max-width: 470px;
+  margin: 26px 0 32px;
+  font-size: 20px;
+  line-height: 1.6;
+}
+
+.launch-button {
+  height: 68px;
+  padding: 0 30px;
+  display: inline-flex;
+  align-items: center;
+  gap: 18px;
+  background: var(--gold);
+  color: var(--navy);
+  border: none;
+  border-radius: 40px;
+  font-size: 19px;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 6px 0 #d5a02f;
+  transition: 0.2s ease;
+}
+
+.launch-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 9px 0 #d5a02f;
+}
+
+.launch-button .arrow {
+  font-size: 26px;
+}
+
+.dorm-visual {
+  height: 430px;
+  position: relative;
+  display: grid;
+  place-items: center;
+}
+
+.dorm-photo-frame {
+  width: 100%;
+  height: 420px;
+  position: relative;
+  overflow: hidden;
+  background:
+    url("assets/dorm-room.jpg") center / cover no-repeat,
+    #e8d6b5;
+  clip-path: polygon(
+    20% 0, 78% 2%, 100% 42%,
+    84% 83%, 43% 100%, 4% 75%, 0 34%
+  );
+  filter: drop-shadow(0 12px 0 var(--gold));
+}
+
+.dorm-photo-frame::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 8px solid var(--gold);
+  pointer-events: none;
+}
+
+.photo-hint {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 12px 20px;
+  background: var(--navy);
+  color: white;
+  border-radius: 25px;
+  white-space: nowrap;
+  font-size: 14px;
+}
+
+.bee {
+  position: absolute;
+  z-index: 2;
+  font-size: 44px;
+  animation: float 3s ease-in-out infinite;
+}
+
+.bee-one {
+  top: 5px;
+  left: 0;
+}
+
+.bee-two {
+  right: -12px;
+  top: 48%;
+  animation-delay: -1.5s;
+}
+
+.flight-path {
+  position: absolute;
+  width: 125px;
+  height: 90px;
+  border: 3px dashed var(--gold);
+  border-color: var(--gold) transparent transparent var(--gold);
+  border-radius: 50%;
+}
+
+.flight-path-one {
+  top: 15px;
+  left: 10px;
+  transform: rotate(25deg);
+}
+
+.flight-path-two {
+  bottom: 10px;
+  right: -5px;
+  transform: rotate(205deg);
+}
+
+.honeycomb {
+  position: absolute;
+  width: 75px;
+  height: 85px;
+  background: #f3d58e;
+  opacity: 0.55;
+  clip-path: polygon(
+    25% 0, 75% 0, 100% 50%,
+    75% 100%, 25% 100%, 0 50%
+  );
+  z-index: -1;
+}
+
+.honeycomb-a {
+  right: 3%;
+  top: 5%;
+}
+
+.honeycomb-b {
+  left: 2%;
+  bottom: 8%;
+  width: 55px;
+  height: 62px;
+}
+
+.honeycomb-c {
+  left: 48%;
+  top: 25%;
+  width: 45px;
+  height: 50px;
+}
+
+.benefits {
+  max-width: 1150px;
+  margin: 10px auto 55px;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.benefit {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 20px 30px;
+  border-right: 1px solid #d8cdb8;
+}
+
+.benefit:last-child {
+  border-right: none;
+}
+
+.benefit-icon {
+  width: 70px;
+  height: 70px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  background: #ffebbd;
+  border-radius: 24px;
+  font-size: 30px;
+}
+
+.benefit h2 {
+  margin: 0 0 8px;
+  color: var(--navy);
+  font-size: 18px;
+}
+
+.benefit p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.skyline {
+  height: 75px;
+  background: linear-gradient(
+    0deg,
+    #f3c65f,
+    rgba(243, 198, 95, 0.08)
+  );
+}
+
+.launch-status {
+  display: none;
+  margin-top: 20px;
+  max-width: 460px;
+  padding: 15px;
+  border-radius: 14px;
+  background: white;
+  box-shadow: 0 8px 24px #082b4915;
+}
+
+.launch-status.is-visible {
+  display: block;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) rotate(-7deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(7deg);
+  }
+}
+
